@@ -10,14 +10,14 @@ type ShapeProps = {
 
 const Shape = ({
   shadowColor,
-  currentValue: { horizontal, vertical, blur, spread, shadowOpacity },
+  currentValue: { horizontal, vertical, blur, spread, opacity },
 }: ShapeProps) => {
   return (
     <div>
       <div
         style={{
           boxShadow: `${horizontal}px ${vertical}px ${blur}px ${spread}px rgba(${shadowColor},${
-            shadowOpacity / 100
+            opacity / 100
           })`,
         }}
         className="w-80 h-80 bg-primary    

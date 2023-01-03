@@ -5,5 +5,5 @@ export type CurrentValueType = {
   vertical: number
   blur: number
   spread: number
-  shadowOpacity: number
+  opacity: number
 }

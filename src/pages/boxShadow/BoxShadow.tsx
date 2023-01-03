@@ -15,7 +15,7 @@ const BoxShadow = () => {
     vertical: 12,
     blur: 4,
     spread: 0,
-    shadowOpacity: 20,
+    opacity: 20,
   })
 
   const resetState = () => {
@@ -25,20 +25,20 @@ const BoxShadow = () => {
       vertical: 12,
       blur: 4,
       spread: 0,
-      shadowOpacity: 20,
+      opacity: 20,
     })
   }
 
   return (
     <div className="flex justify-between max-w-4xl mx-auto pt-16 ">
-      <SideMenu title={`Box Shadow Config`} resetState={resetState}>
+      <SideMenu title={`Box shadow config`} resetState={resetState}>
         <div className="p-4 mb-4">
           {Object.keys(currentValue).map((key, i) => {
             if (key !== "shadowColor") {
               return (
                 <div key={i} className="h-8 w-full mb-8 ">
                   <div className="flex justify-between">
-                    <h2>{key}</h2>
+                    <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
                     <h2>{currentValue[key as keyof CurrentValueType]}px</h2>
                   </div>
                   <div className=" w-full h-[20px] mb-4">
@@ -62,6 +62,9 @@ const BoxShadow = () => {
               )
             }
           })}
+        </div>
+        <div>
+          
         </div>
       </SideMenu>
       <div>
