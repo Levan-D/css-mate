@@ -17,9 +17,20 @@ const BoxShadow = () => {
     shadowOpacity: 20,
   })
 
+  const resetState = () => {
+    setShadowColor("0,0,0")
+    setCurrentValue({
+      horizontal: 12,
+      vertical: 12,
+      blur: 4,
+      spread: 0,
+      shadowOpacity: 20,
+    })
+  }
+
   return (
     <div>
-      <SideMenu title={`Box Shadow Config`}>
+      <SideMenu title={`Box Shadow Config`} resetState={resetState}>
         <div className="p-4 mb-4">
           {Object.keys(currentValue).map((key, i) => {
             if (key !== "shadowColor") {

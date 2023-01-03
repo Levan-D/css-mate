@@ -1,1 +1,3 @@
-/// <reference types="vite/client" />
+/** @format */
+
+/// <reference types="vite-plugin-svgr/vite/client" />
