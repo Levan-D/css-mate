@@ -33,39 +33,33 @@ const BoxShadow = () => {
     <div className="flex justify-between max-w-4xl mx-auto pt-16 ">
       <SideMenu title={`Box shadow config`} resetState={resetState}>
         <div className="p-4 mb-4">
-          {Object.keys(currentValue).map((key, i) => {
-            if (key !== "shadowColor") {
-              return (
-                <div key={i} className="h-8 w-full mb-8 ">
-                  <div className="flex justify-between">
-                    <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
-                    <h2>{currentValue[key as keyof CurrentValueType]}px</h2>
-                  </div>
-                  <div className=" w-full h-[20px] mb-4">
-                    <ReactSlider
-                      className={styles.customSlider}
-                      trackClassName={styles["customSlider-track"]}
-                      thumbClassName={styles["customSlider-thumb"]}
-                      min={key === "horizontal" || key === "vertical" ? -150 : 0}
-                      max={key === "shadowOpacity" ? 100 : 150}
-                      defaultValue={currentValue[key as keyof CurrentValueType]}
-                      value={currentValue[key as keyof CurrentValueType]}
-                      onChange={value =>
-                        setCurrentValue(() => ({
-                          ...currentValue,
-                          [key as string]: value as number,
-                        }))
-                      }
-                    />
-                  </div>
-                </div>
-              )
-            }
-          })}
+          {Object.keys(currentValue).map((key, i) => (
+            <div key={i} className="h-8 w-full mb-8 ">
+              <div className="flex justify-between">
+                <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
+                <h2>{currentValue[key as keyof CurrentValueType]}px</h2>
+              </div>
+              <div className=" w-full h-[20px] mb-4">
+                <ReactSlider
+                  className={styles.customSlider}
+                  trackClassName={styles["customSlider-track"]}
+                  thumbClassName={styles["customSlider-thumb"]}
+                  min={key === "horizontal" || key === "vertical" ? -150 : 0}
+                  max={key === "shadowOpacity" ? 100 : 150}
+                  defaultValue={currentValue[key as keyof CurrentValueType]}
+                  value={currentValue[key as keyof CurrentValueType]}
+                  onChange={value =>
+                    setCurrentValue(() => ({
+                      ...currentValue,
+                      [key as string]: value as number,
+                    }))
+                  }
+                />
+              </div>
+            </div>
+          ))}
         </div>
-        <div>
-          
-        </div>
+        <div></div>
       </SideMenu>
       <div>
         <Shape currentValue={currentValue} shadowColor={shadowColor} />
