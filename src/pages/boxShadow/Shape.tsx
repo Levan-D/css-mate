@@ -1,14 +1,16 @@
 /** @format */
 
 import React from "react"
-import type { currentValueType } from "./BoxShadowTypes"
+import type { CurrentValueType } from "./BoxShadowTypes"
 
 type ShapeProps = {
-  currentValue: currentValueType
+  currentValue: CurrentValueType
+  shadowColor: string
 }
 
 const Shape = ({
-  currentValue: { horizontal, vertical, blur, spread, shadowColor, shadowOpacity },
+  shadowColor,
+  currentValue: { horizontal, vertical, blur, spread, shadowOpacity },
 }: ShapeProps) => {
   return (
     <div>

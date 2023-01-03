@@ -1,10 +1,9 @@
 /** @format */
 
-export type currentValueType = {
+export type CurrentValueType = {
   horizontal: number
   vertical: number
   blur: number
   spread: number
-  shadowColor: string
   shadowOpacity: number
 }
