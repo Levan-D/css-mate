@@ -5,6 +5,7 @@ import SideMenu from "../../components/wrappers/SideMenu"
 import ReactSlider from "react-slider"
 import styles from "./BoxShadow.module.css"
 import Shape from "./Shape"
+import Output from "../../components/wrappers/Output"
 import type { CurrentValueType } from "./BoxShadowTypes"
 
 const BoxShadow = () => {
@@ -29,7 +30,7 @@ const BoxShadow = () => {
   }
 
   return (
-    <div>
+    <div className="flex justify-between max-w-4xl mx-auto pt-16 ">
       <SideMenu title={`Box Shadow Config`} resetState={resetState}>
         <div className="p-4 mb-4">
           {Object.keys(currentValue).map((key, i) => {
@@ -63,7 +64,10 @@ const BoxShadow = () => {
           })}
         </div>
       </SideMenu>
-      <Shape currentValue={currentValue} shadowColor={shadowColor} />
+      <div>
+        <Shape currentValue={currentValue} shadowColor={shadowColor} />
+        <Output></Output>
+      </div>
     </div>
   )
 }

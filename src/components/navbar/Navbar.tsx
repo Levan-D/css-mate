@@ -35,7 +35,7 @@ const Navbar = () => {
   ]
 
   return (
-    <div className="bg-primary h-16 ">
+    <div className="bg-primary h-16 z-50">
       <nav className="max-w-4xl h-16 align-bottom items-center flex justify-between mx-auto">
         <div>
           <Link to="/">
