@@ -26,7 +26,7 @@ const BoxShadow = () => {
   }px ${currentValue.spread}px rgba(${shadowColor},${currentValue.opacity / 100})`
 
   const resetState = (): void => {
-    setShadowColor("0,0,256")
+    setShadowColor("256,256,256")
     setInset(false)
     setCurrentValue({
       horizontal: 12,
@@ -35,6 +35,10 @@ const BoxShadow = () => {
       spread: 0,
       opacity: 20,
     })
+  }
+
+  const HandleColorPick = (color: string) => {
+    setShadowColor(() => color)
   }
 
   const renderArray: OutputType[] = [
@@ -117,7 +121,7 @@ const BoxShadow = () => {
               >
                 Inner shadow
               </div>
-              <ColorPicker />
+              <ColorPicker HandleColorPick={HandleColorPick} />
             </div>
           </div>
         </SideMenu>

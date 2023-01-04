@@ -23,7 +23,7 @@ const Shape = ({
   return (
     <div
       className={` ${
-        darkmode ? "bg-inherit" : "bg-slate-100 border-secondary"
+        darkmode ? "bg-inherit" : "bg-slate-100 border-secondary "
       } mx-auto  border-2 rounded-xl h-[430px] md:h-full lg:w-[430px] w-96 flex  flex-col justify-center  `}
     >
       <div onClick={() => setDarkmode(x => !x)}>
