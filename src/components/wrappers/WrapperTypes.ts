@@ -1,6 +1,6 @@
 /** @format */
 
-export type OutputType = {
+export type OutputRenderArrayType = {
   title: string
   copy: string
   content: JSX.Element[] | string[]

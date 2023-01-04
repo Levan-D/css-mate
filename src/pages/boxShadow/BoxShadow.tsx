@@ -8,7 +8,7 @@ import Shape from "./Shape"
 import Output from "../../components/wrappers/Output"
 import type { CurrentValueType } from "./BoxShadowTypes"
 import ColorPicker from "../../components/ColorPicker"
-import { OutputType } from "../../components/wrappers/WrapperTypes"
+import { OutputRenderArrayType } from "../../components/wrappers/WrapperTypes"
 
 const BoxShadow = () => {
   const [shadowColor, setShadowColor] = useState<string>("256,256,256")
@@ -41,7 +41,7 @@ const BoxShadow = () => {
     setShadowColor(() => color)
   }
 
-  const renderArray: OutputType[] = [
+  const renderArray: OutputRenderArrayType[] = [
     {
       title: "Vanilla",
       copy: `box-shadow: ${boxShadowRender};
@@ -135,7 +135,5 @@ const BoxShadow = () => {
     </div>
   )
 }
-
-// boxShadow: `${horizontal}px ${vertical}px ${blur}px ${spread}px rgba(${shadowColor},${
 
 export default BoxShadow

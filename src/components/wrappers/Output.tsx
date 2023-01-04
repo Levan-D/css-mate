@@ -1,8 +1,9 @@
 /** @format */
 
 import React, { useState } from "react"
+import { OutputRenderArrayType } from "./WrapperTypes"
 
-type OutputProps = { title: string; renderArray: any[] }
+type OutputProps = { title: string; renderArray: OutputRenderArrayType[] }
 
 const Output = ({ title, renderArray }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
@@ -28,7 +29,7 @@ const Output = ({ title, renderArray }: OutputProps) => {
         {renderArray.map((item, index) => (
           <div key={index}>
             {selectedBtn === index &&
-              item.content.map((contentItem: string, contentIndex: number) => (
+              item.content.map((contentItem, contentIndex) => (
                 <div key={contentIndex}>{contentItem}</div>
               ))}
           </div>
