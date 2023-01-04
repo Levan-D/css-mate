@@ -45,7 +45,7 @@ const Shape = ({
         }}
         onClick={() => setSquare(x => !x)}
         className={` ${
-          square ? "rounded-xl" : "rounded-full"
+          square ? "rounded-xl " : "rounded-full "
         } mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none   bg-primary`}
       >
         <img
