@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="flex flex-col  min-h-screen	  ">
       <Navbar />
-      <div className="grow  ">
+      <div className="grow">
         <Routes>
           <Route path="/" element={<div>Home</div>} />
           <Route path="box-shadow" element={<BoxShadow />} />
