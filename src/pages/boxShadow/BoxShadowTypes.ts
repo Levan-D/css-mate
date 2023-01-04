@@ -7,3 +7,4 @@ export type CurrentValueType = {
   spread: number
   opacity: number
 }
+

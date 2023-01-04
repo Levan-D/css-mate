@@ -7,6 +7,8 @@ import styles from "./BoxShadow.module.css"
 import Shape from "./Shape"
 import Output from "../../components/wrappers/Output"
 import type { CurrentValueType } from "./BoxShadowTypes"
+import ColorPicker from "../../components/ColorPicker"
+import { OutputType } from "../../components/wrappers/WrapperTypes"
 
 const BoxShadow = () => {
   const [shadowColor, setShadowColor] = useState<string>("256,256,256")
@@ -35,21 +37,21 @@ const BoxShadow = () => {
     })
   }
 
-  const renderArray = [
+  const renderArray: OutputType[] = [
     {
       title: "Vanilla",
       copy: `box-shadow: ${boxShadowRender};
       -webkit-box-shadow: ${boxShadowRender};
       -moz-box-shadow: ${boxShadowRender};`,
       content: [
-        `box-shadow: ${boxShadowRender}`,
-        `-webkit-box-shadow: ${boxShadowRender}`,
-        `-moz-box-shadow: ${boxShadowRender}`,
+        `box-shadow: ${boxShadowRender};`,
+        `-webkit-box-shadow: ${boxShadowRender};`,
+        `-moz-box-shadow: ${boxShadowRender};`,
       ],
     },
     {
       title: "Tailwind inline",
-      copy: [`shadow-[${boxShadowRender.replace(/ /g, "_")}]`],
+      copy: `shadow-[${boxShadowRender.replace(/ /g, "_")}]`,
       content: [`shadow-[${boxShadowRender.replace(/ /g, "_")}]`],
     },
     {
@@ -108,11 +110,14 @@ const BoxShadow = () => {
                 </div>
               </div>
             ))}
-            <div
-              onClick={() => setInset(x => !x)}
-              className={`${!inset && `!bg-slate-400 text-slate-800`} btnPrimary`}
-            >
-              Inner shadow
+            <div className="flex justify-between">
+              <div
+                onClick={() => setInset(x => !x)}
+                className={`${!inset && `!bg-slate-400 text-slate-800`} btnPrimary`}
+              >
+                Inner shadow
+              </div>
+              <ColorPicker />
             </div>
           </div>
         </SideMenu>

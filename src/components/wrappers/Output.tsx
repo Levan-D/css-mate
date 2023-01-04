@@ -17,7 +17,7 @@ const Output = ({ title, renderArray }: OutputProps) => {
               <div
                 className={` ${
                   selectedBtn === index && `border-secondary`
-                } border-transparent border-2 btnPrimary mt-4`}
+                } border-transparent border-2 btnPrimary mt-4  mb-8`}
                 onClick={() => setSelectedBtn(() => index)}
               >
                 {item.title}
@@ -26,13 +26,10 @@ const Output = ({ title, renderArray }: OutputProps) => {
           ))}
         </div>
         {renderArray.map((item, index) => (
-          <div key={index} className={`  ${item.title === "Vanilla" && "mt-8"} mb-8`}>
+          <div key={index}>
             {selectedBtn === index &&
               item.content.map((contentItem: string, contentIndex: number) => (
-                <div key={contentIndex}>
-                  {contentItem}
-                  {item.title === "Vanilla" && ";"}
-                </div>
+                <div key={contentIndex}>{contentItem}</div>
               ))}
           </div>
         ))}
@@ -42,7 +39,7 @@ const Output = ({ title, renderArray }: OutputProps) => {
         onClick={() => {
           navigator.clipboard.writeText(renderArray[selectedBtn].copy)
         }}
-        className="btnPrimary  shadow-custom mx-auto mt-4"
+        className="btnPrimary  shadow-custom mx-auto mt-8"
       >
         Copy
       </div>
