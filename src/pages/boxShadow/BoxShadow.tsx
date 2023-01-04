@@ -9,7 +9,8 @@ import Output from "../../components/wrappers/Output"
 import type { CurrentValueType } from "./BoxShadowTypes"
 
 const BoxShadow = () => {
-  const [shadowColor, setShadowColor] = useState("256,256,256")
+  const [shadowColor, setShadowColor] = useState<string>("256,256,256")
+  const [inset, setInset] = useState<boolean>(false)
   const [currentValue, setCurrentValue] = useState<CurrentValueType>({
     horizontal: 12,
     vertical: 12,
@@ -17,12 +18,14 @@ const BoxShadow = () => {
     spread: 0,
     opacity: 20,
   })
+
   let boxShadowRender = `${currentValue.horizontal}px ${currentValue.vertical}px ${
     currentValue.blur
   }px ${currentValue.spread}px rgba(${shadowColor},${currentValue.opacity / 100})`
 
-  const resetState = () => {
-    setShadowColor("256,256,256")
+  const resetState = (): void => {
+    setShadowColor("0,0,256")
+    setInset(false)
     setCurrentValue({
       horizontal: 12,
       vertical: 12,
@@ -72,10 +75,10 @@ const BoxShadow = () => {
   ]
 
   return (
-    <div className=" max-w-4xl  mx-auto pt-16 ">
-      <div className="md:flex-row flex flex-col justify-between md:gap-8 gap-16 mb-16">
+    <div className=" max-w-6xl  mx-auto pt-16 ">
+      <div className="md:flex-row flex flex-col md:justify-center justify-between md:gap-8 gap-16 lg:gap-36 mb-16 ">
         <SideMenu title={`Box shadow config`} resetState={resetState}>
-          <div className="p-4 mb-4">
+          <div className="p-4 ">
             {Object.keys(currentValue).map((key, i) => (
               <div key={i} className="h-8 w-full mb-8 ">
                 <div className="flex justify-between">
@@ -105,10 +108,16 @@ const BoxShadow = () => {
                 </div>
               </div>
             ))}
+            <div
+              onClick={() => setInset(x => !x)}
+              className={`${!inset && `!bg-slate-400 text-slate-800`} btnPrimary`}
+            >
+              Inner shadow
+            </div>
           </div>
         </SideMenu>
         <div>
-          <Shape currentValue={currentValue} shadowColor={shadowColor} />
+          <Shape currentValue={currentValue} shadowColor={shadowColor} inset={inset} />
         </div>
       </div>
       <div className="mb-16">

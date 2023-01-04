@@ -17,7 +17,7 @@ const Output = ({ title, renderArray }: OutputProps) => {
               <div
                 className={` ${
                   selectedBtn === index && `border-secondary`
-                } border-transparent border-2 btnPrimary my-4`}
+                } border-transparent border-2 btnPrimary mt-4`}
                 onClick={() => setSelectedBtn(() => index)}
               >
                 {item.title}
@@ -26,7 +26,7 @@ const Output = ({ title, renderArray }: OutputProps) => {
           ))}
         </div>
         {renderArray.map((item, index) => (
-          <div key={index} className="mt-4 mb-12">
+          <div key={index} className={`  ${item.title === "Vanilla" && "mt-8"} mb-8`}>
             {selectedBtn === index &&
               item.content.map((contentItem: string, contentIndex: number) => (
                 <div key={contentIndex}>

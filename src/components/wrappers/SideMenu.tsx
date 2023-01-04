@@ -8,7 +8,7 @@ type SideMenuProps = { title: string; resetState?: Function; children: React.Rea
 
 const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
   return (
-    <div className="border-2 rounded-xl max-w-xl z-50 w-96 h-fit    mx-auto ">
+    <div className="border-2 rounded-xl  z-50 w-96 h-fit mx-auto md:mx-0   ">
       <div className="flex p-4 bg-primary rounded-t-xl justify-between">
         <h1 className="font-bold ">{title}</h1>
         {resetState && (
