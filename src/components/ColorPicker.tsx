@@ -56,7 +56,7 @@ const ColorPicker = ({ HandleColorPick }: ColorPickerProps) => {
           setColor(e.target.value)
           HandleColorPick(HexToRGB(e.target.value))
         }}
-        className="translate-y-[-1px] cursor-pointer"
+        className="translate-y-[-2px] cursor-pointer bg-transparent h-[28px]"
       ></input>
     </div>
   )
