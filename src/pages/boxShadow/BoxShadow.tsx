@@ -48,7 +48,7 @@ const BoxShadow = () => {
       ],
     },
     {
-      title: "Tailwind custom",
+      title: "Tailwind inline",
       copy: [`shadow-[${boxShadowRender.replace(/ /g, "_")}]`],
       content: [`shadow-[${boxShadowRender.replace(/ /g, "_")}]`],
     },

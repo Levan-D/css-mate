@@ -9,14 +9,14 @@ type SideMenuProps = { title: string; resetState?: Function; children: React.Rea
 const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
   return (
     <div className="border-2 rounded-xl  z-50 w-96 h-fit mx-auto md:mx-0   ">
-      <div className="flex p-4 bg-primary rounded-t-xl justify-between">
+      <div className="flex p-4 pb-2 bg-primary rounded-t-xl justify-between">
         <h1 className="font-bold  select-none ">{title}</h1>
         {resetState && (
           <div>
             <RestartIcon
-              height={20}
-              className="hover:brightness-90 active:brightness-75 cursor-pointer"
-              width={20}
+              height={30}
+              className="hover:border-white active:border-secondary border-2 border-transparent rounded-full p-[3px] cursor-pointer"
+              width={30}
               onClick={() => {
                 if (resetState !== undefined) {
                   resetState()
