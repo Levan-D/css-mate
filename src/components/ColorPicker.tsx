@@ -56,6 +56,10 @@ const ColorPicker = ({ HandleColorPick }: ColorPickerProps) => {
           setColor(e.target.value)
           HandleColorPick(HexToRGB(e.target.value))
         }}
+        onClick={e => {
+          setColor((e.target as HTMLInputElement).value)
+          HandleColorPick(HexToRGB((e.target as HTMLInputElement).value))
+        }}
         className="translate-y-[-2px] cursor-pointer bg-transparent h-[28px] border-2 border-transparent rounded-md  hover:border-white duration-200"
       ></input>
     </div>
