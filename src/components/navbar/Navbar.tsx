@@ -1,11 +1,19 @@
 /** @format */
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import logo from "../../assets/logo/logo.png"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 const Navbar = () => {
   const [selected, setSelected] = useState<string>("")
+  const location = useLocation()
+
+  useEffect(() => {
+    const index = buttons.findIndex(button => {
+      return button.path == location.pathname.slice(1)
+    })
+    index !== -1 && setSelected(() => buttons[index].name)
+  }, [])
 
   const buttons = [
     {
@@ -16,10 +24,10 @@ const Navbar = () => {
     //   name: "Text Shadow",
     //   path: "text-shadow",
     // },
-    // {
-    //   name: "Gradient",
-    //   path: "gradient",
-    // },
+    {
+      name: "Gradient",
+      path: "gradient",
+    },
     // {
     //   name: "Border",
     //   path: "border",
