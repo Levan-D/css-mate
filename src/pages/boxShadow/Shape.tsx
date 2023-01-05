@@ -24,13 +24,13 @@ const Shape = ({
     <div
       className={` ${
         darkmode ? "bg-inherit" : "bg-slate-100 border-secondary "
-      } mx-auto  border-2 rounded-xl h-[430px] md:h-full lg:w-[430px] w-96 flex  flex-col justify-center  `}
+      } mx-auto  border-2 rounded-xl h-[430px] md:h-full lg:w-[430px] w-96 flex  flex-col justify-between  `}
     >
       <div onClick={() => setDarkmode(x => !x)}>
         <img
           className={` ${
             darkmode ? `hover:border-white` : "hover:border-secondary"
-          } border-2 border-transparent rounded-full h-10  cursor-pointer m-1 absolute  translate-y-[-80px]  md:translate-y-[-90px]`}
+          } border-2 border-transparent rounded-full h-10  cursor-pointer m-1   `}
           src={darkmode ? moon : sun}
           alt="dark mode"
         />
@@ -54,6 +54,7 @@ const Shape = ({
           alt=""
         />
       </div>
+      <div className=" h-10 md:h-20"></div>
     </div>
   )
 }
