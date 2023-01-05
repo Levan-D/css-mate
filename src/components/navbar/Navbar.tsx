@@ -5,7 +5,7 @@ import logo from "../../assets/logo/logo.png"
 import { Link } from "react-router-dom"
 
 const Navbar = () => {
-  const [selected, setSelected] = useState("")
+  const [selected, setSelected] = useState<string>("")
 
   const buttons = [
     {
@@ -40,6 +40,7 @@ const Navbar = () => {
         <div>
           <Link to="/">
             <img
+              onClick={() => setSelected(() => "")}
               className="h-12 cursor-pointer active:brightness-75 duration-75"
               src={logo}
               alt="logo"
