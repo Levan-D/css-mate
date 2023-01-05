@@ -61,7 +61,7 @@ const Navbar = () => {
               key={i}
               className={`${
                 selected === button.name && "!border-secondary"
-              } font-bold cursor-pointer select-none  border-b-2 border-transparent hover:border-white duration-300 active:brightness-75 `}
+              } font-bold text-lg cursor-pointer select-none  border-b-2 border-transparent hover:border-white duration-300 active:brightness-75 `}
               onClick={() => setSelected(() => button.name)}
             >
               <Link className="p-1" to={button.path}>
