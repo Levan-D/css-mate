@@ -12,26 +12,26 @@ const Navbar = () => {
       name: "Box Shadow",
       path: "box-shadow",
     },
-    {
-      name: "Text Shadow",
-      path: "text-shadow",
-    },
-    {
-      name: "Gradient",
-      path: "gradient",
-    },
-    {
-      name: "Border",
-      path: "border",
-    },
-    {
-      name: "Transform",
-      path: "transform",
-    },
-    {
-      name: "Color Converter",
-      path: "color-converter",
-    },
+    // {
+    //   name: "Text Shadow",
+    //   path: "text-shadow",
+    // },
+    // {
+    //   name: "Gradient",
+    //   path: "gradient",
+    // },
+    // {
+    //   name: "Border",
+    //   path: "border",
+    // },
+    // {
+    //   name: "Transform",
+    //   path: "transform",
+    // },
+    // {
+    //   name: "Color Converter",
+    //   path: "color-converter",
+    // },
   ]
 
   return (
