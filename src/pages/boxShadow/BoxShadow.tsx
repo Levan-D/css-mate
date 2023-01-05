@@ -119,7 +119,7 @@ const BoxShadow = () => {
                 onClick={() => setInset(x => !x)}
                 className={`${!inset && `!bg-slate-400 text-slate-800`} btnPrimary`}
               >
-                Inner
+                Innerz
               </div>
               <ColorPicker HandleColorPick={HandleColorPick} />
             </div>
