@@ -30,7 +30,7 @@ const Shape = ({
         <img
           className={` ${
             darkmode ? `hover:border-white` : "hover:border-secondary"
-          } border-2 border-transparent rounded-full h-10 hover:border-white cursor-pointer m-1 absolute  translate-y-[-80px]  md:translate-y-[-90px]`}
+          } border-2 border-transparent rounded-full h-10  cursor-pointer m-1 absolute  translate-y-[-80px]  md:translate-y-[-90px]`}
           src={darkmode ? moon : sun}
           alt="dark mode"
         />
@@ -44,9 +44,9 @@ const Shape = ({
           })`,
         }}
         onClick={() => setSquare(x => !x)}
-        className={` ${
-          square ? "rounded-xl" : "rounded-full"
-        } mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none   bg-primary`}
+        className={` ${square ? "rounded-xl" : "rounded-full"}   ${
+          darkmode ? `hover:border-white` : "hover:border-secondary"
+        } border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none   bg-primary`}
       >
         <img
           className="h-[50px] mx-auto my-auto  translate-y-[105px]"
