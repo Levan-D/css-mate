@@ -14,7 +14,7 @@ function App() {
       <div className="grow">
         <Routes>
           <Route path="/" element={<div>Home</div>} />
-          <Route path="box-shadow" element={<BoxShadow />} />
+          <Route path="/box-shadow" element={<BoxShadow />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
