@@ -45,7 +45,7 @@ const ColorPicker = ({ HandleColorPick }: ColorPickerProps) => {
           onClick={() => HandleColorPick(color.value)}
           className={`h-6 w-6 rounded-full border-2 border-transparent ${
             color.name === "white" ? "hover:border-secondary" : "hover:border-white"
-          }  cursor-pointer`}
+          }  cursor-pointer duration-200`}
         ></div>
       ))}
       <input
@@ -56,7 +56,7 @@ const ColorPicker = ({ HandleColorPick }: ColorPickerProps) => {
           setColor(e.target.value)
           HandleColorPick(HexToRGB(e.target.value))
         }}
-        className="translate-y-[-2px] cursor-pointer bg-transparent h-[28px]"
+        className="translate-y-[-2px] cursor-pointer bg-transparent h-[28px] border-2 border-transparent rounded-md  hover:border-white duration-200"
       ></input>
     </div>
   )
