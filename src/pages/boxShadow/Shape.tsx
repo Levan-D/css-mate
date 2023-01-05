@@ -26,8 +26,9 @@ const Shape = ({
         darkmode ? "bg-inherit" : "bg-slate-100 border-secondary "
       } mx-auto  border-2 rounded-xl h-[430px] md:h-full lg:w-[430px] w-96 flex  flex-col justify-between  `}
     >
-      <div onClick={() => setDarkmode(x => !x)}>
+      <div>
         <img
+          onClick={() => setDarkmode(x => !x)}
           className={` ${
             darkmode ? `hover:border-white` : "hover:border-secondary"
           } border-2 border-transparent rounded-full h-10  cursor-pointer m-1   `}
