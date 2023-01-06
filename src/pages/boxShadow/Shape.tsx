@@ -78,7 +78,7 @@ const Shape = ({
           }
           setBtnContent(() => "I am a button")
         }}
-        className={`   btnPrimary   mx-auto mt-8  active:translate-y-[-10px]  `}
+        className={`   btnPrimary  tran mx-auto mt-8 transition-transform  active:translate-y-[-10px]  `}
       >
         {btnContent}
       </div>
