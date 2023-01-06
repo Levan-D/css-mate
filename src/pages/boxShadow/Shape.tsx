@@ -23,7 +23,6 @@ const Shape = ({
   const [darkmode, setDarkmode] = useState<boolean>(true)
   const [square, setSquare] = useState<boolean>(true)
   const [btnContent, setBtnContent] = useState<string>("I am a button")
-
   const btnIndex = useRef(0)
 
   return (
@@ -79,7 +78,7 @@ const Shape = ({
           }
           setBtnContent(() => "I am a button")
         }}
-        className={`   btnPrimary   mx-auto mt-8   cursor-pointer  select-none  active:translate-y-[-10px]   `}
+        className={`   btnPrimary   mx-auto mt-8  active:translate-y-[-10px]  `}
       >
         {btnContent}
       </div>

@@ -111,7 +111,7 @@ export const btnResponse = [
   "Stop!",
   "Srsly, stop!",
   "Ok, you win",
-  "lalalalalalalalalalalalalalala I will break your UI",
+  "lalalalalalalalalalalalalalalalalalalalalalalalalalalalalala  I will break your UI lalalalalalalalalalalalalalalalalalalalalalalalalalalalalala",
   "Can you just stop?!",
   "I want to speak to your manager",
   "Oh LoOk At Me I aM WasTinG Time ClicKing A bUTton InsTead of LiViNg My LiFe",
