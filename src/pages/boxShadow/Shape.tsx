@@ -1,10 +1,12 @@
 /** @format */
 
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import type { CurrentValueType } from "./BoxShadowTypes"
 import moon from "../../assets/icons/moon.png"
 import sun from "../../assets/icons/sun.png"
 import changeShape from "../../assets/icons/changeShape.png"
+import { btnResponse } from "./Data"
+import { useNavigate } from "react-router-dom"
 
 type ShapeProps = {
   currentValue: CurrentValueType
@@ -17,8 +19,12 @@ const Shape = ({
   inset,
   currentValue: { horizontal, vertical, blur, spread, opacity },
 }: ShapeProps) => {
+  const navigate = useNavigate()
   const [darkmode, setDarkmode] = useState<boolean>(true)
   const [square, setSquare] = useState<boolean>(true)
+  const [btnContent, setBtnContent] = useState<string>("I am a button")
+
+  const btnIndex = useRef(0)
 
   return (
     <div
@@ -54,6 +60,28 @@ const Shape = ({
           src={changeShape}
           alt=""
         />
+      </div>
+      <div
+        style={{
+          boxShadow: `${
+            inset ? `inset` : ""
+          } ${horizontal}px ${vertical}px ${blur}px ${spread}px rgba(${shadowColor},${
+            opacity / 100
+          })`,
+        }}
+        onMouseDown={() => {
+          setBtnContent(() => btnResponse[btnIndex.current])
+          btnIndex.current = btnIndex.current + 1
+        }}
+        onMouseUp={() => {
+          if (btnIndex.current === btnResponse.length - 1) {
+            navigate("/rekt")
+          }
+          setBtnContent(() => "I am a button")
+        }}
+        className={`   btnPrimary   mx-auto    cursor-pointer  select-none  active:translate-y-[-10px]   `}
+      >
+        {btnContent}
       </div>
       <div className=" h-10 md:h-20"></div>
     </div>

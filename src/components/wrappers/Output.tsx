@@ -1,14 +1,14 @@
 /** @format */
 
 import React, { useState } from "react"
-import { OutputRenderArrayType } from "./WrapperTypes"
+import type { OutputRenderArrayType } from "./WrapperTypes"
 
 type OutputProps = { title: string; renderArray: OutputRenderArrayType[] }
 
 const Output = ({ title, renderArray }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
-    <div className="py-8 px-6 border-white border-2 rounded-xl h-fit w-[560px] mx-auto">
+    <div className="py-8 px-6 border-white border-2 rounded-xl h-fit w-fit mx-auto">
       <h1 className="select-none font-bold">{title}</h1>
 
       <div>
@@ -30,7 +30,9 @@ const Output = ({ title, renderArray }: OutputProps) => {
           <div key={index}>
             {selectedBtn === index &&
               item.content.map((contentItem, contentIndex) => (
-                <div key={contentIndex}>{contentItem}</div>
+                <div key={contentIndex} className="text-sm md:text-base">
+                  {contentItem}
+                </div>
               ))}
           </div>
         ))}
