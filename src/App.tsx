@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
+import Home from "./pages/home/Home"
 import { Routes, Route } from "react-router-dom"
 import BoxShadow from "./pages/boxShadow/BoxShadow"
 import Error from "./pages/error/Error"
@@ -13,7 +14,7 @@ function App() {
       <Navbar />
       <div className="grow">
         <Routes>
-          <Route path="/" element={<div>Home</div>} />
+          <Route path="/" element={<Home />} />
           <Route path="box-shadow" element={<BoxShadow />} />
           <Route path="*" element={<Error />} />
         </Routes>

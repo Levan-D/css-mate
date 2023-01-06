@@ -8,7 +8,7 @@ type OutputProps = { title: string; renderArray: OutputRenderArrayType[] }
 const Output = ({ title, renderArray }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
-    <div className="py-8 px-6 border-white border-2 rounded-xl h-fit w-[540px] mx-auto">
+    <div className="py-8 px-6 border-white border-2 rounded-xl h-fit w-[560px] mx-auto">
       <h1 className="select-none font-bold">{title}</h1>
 
       <div>
