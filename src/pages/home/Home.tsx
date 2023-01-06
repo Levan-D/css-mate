@@ -24,42 +24,6 @@ const Home = () => {
             </Card>
           </div>
         ))}
-        {pageButtons.map((button, index) => (
-          <div key={index}>
-            <Card title={button.name} path={button.path}>
-              <div>
-                <img src={button.icon} alt="tool icons" />
-              </div>
-            </Card>
-          </div>
-        ))}
-        {pageButtons.map((button, index) => (
-          <div key={index}>
-            <Card title={button.name} path={button.path}>
-              <div>
-                <img src={button.icon} alt="tool icons" />
-              </div>
-            </Card>
-          </div>
-        ))}
-        {pageButtons.map((button, index) => (
-          <div key={index}>
-            <Card title={button.name} path={button.path}>
-              <div>
-                <img src={button.icon} alt="tool icons" />
-              </div>
-            </Card>
-          </div>
-        ))}
-        {pageButtons.map((button, index) => (
-          <div key={index}>
-            <Card title={button.name} path={button.path}>
-              <div>
-                <img src={button.icon} alt="tool icons" />
-              </div>
-            </Card>
-          </div>
-        ))}
       </div>
     </div>
   )
