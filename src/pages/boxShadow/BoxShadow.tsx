@@ -82,7 +82,7 @@ const BoxShadow = () => {
   ]
 
   return (
-    <div className=" max-w-6xl  mx-auto mt-10  mb-20 ">
+    <div className=" mt-10  mb-20 ">
       <div className="md:flex-row flex flex-col md:justify-center justify-between md:gap-8 gap-16 lg:gap-36 mb-16 ">
         <SideMenu title={`Box shadow config`} resetState={resetState}>
           <div className="p-4 ">
