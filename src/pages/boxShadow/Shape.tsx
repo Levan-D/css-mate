@@ -24,6 +24,7 @@ const Shape = ({
   const [square, setSquare] = useState<boolean>(true)
   const [btnContent, setBtnContent] = useState<string>("I am a button")
   const btnIndex = useRef(0)
+  const btnActive = useRef(false)
 
   return (
     <div
@@ -69,14 +70,29 @@ const Shape = ({
           })`,
         }}
         onMouseDown={() => {
-          setBtnContent(() => btnResponse[btnIndex.current])
-          btnIndex.current = btnIndex.current + 1
+          if (btnActive.current === false) {
+            setBtnContent(() => btnResponse[btnIndex.current])
+            btnIndex.current = btnIndex.current + 1
+            btnActive.current = true
+          }
         }}
         onMouseUp={() => {
-          if (btnIndex.current === btnResponse.length - 1) {
-            navigate("/rekt")
+          if (btnActive.current === true) {
+            if (btnResponse[btnIndex.current] === "1") {
+              navigate("/rekt")
+            }
+            setBtnContent(() => "I am a button")
+            btnActive.current = false
           }
-          setBtnContent(() => "I am a button")
+        }}
+        onMouseOut={() => {
+          if (btnActive.current === true) {
+            if (btnResponse[btnIndex.current] === "1") {
+              navigate("/rekt")
+            }
+            setBtnContent(() => "I am a button")
+            btnActive.current = false
+          }
         }}
         className={`   btnPrimary  tran mx-auto mt-8 transition-transform  active:translate-y-[-10px]  `}
       >
