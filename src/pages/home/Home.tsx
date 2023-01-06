@@ -10,7 +10,7 @@ const Home = () => {
       <div className="text-center  mt-8 font-cursiveCustom">
         <div className="text-6xl ">Hello,</div>
         <div className="text-xl mt-6 ">
-          CSS Mate is here to offer you many useful css creation and demonstration tools.
+          CSS Mate is here to offer you many useful css creation and demonstration tools.a
         </div>
         <div className="text-xl ">Pick one below to start.</div>
       </div>
