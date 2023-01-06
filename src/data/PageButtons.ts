@@ -1,6 +1,6 @@
 /** @format */
 
-import boxShadow from "../assets/pageIcons/boxshadow.png"
+import boxShadow from "../assets/pageIcons/boxShadow.png"
 import gradient from "../assets/pageIcons/gradient.png"
 
 export type pageButtonsType = {
