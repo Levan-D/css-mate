@@ -83,7 +83,7 @@ const BoxShadow = () => {
   return (
     <div className=" mt-10  mb-20 ">
       <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
-        Generate box shadow for your project with ease
+        Generate  <span className="text-secondary">box shadows</span> for your project with ease
       </h1>
       <div className="font-cursiveCustom text-center text-base mb-16">
         Start tinkering!

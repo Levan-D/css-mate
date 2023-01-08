@@ -3,7 +3,8 @@
 import boxShadow from "../assets/pageIcons/boxShadow.png"
 import gradient from "../assets/pageIcons/gradient.png"
 import cursor from "../assets/pageIcons/cursor.png"
-
+import emoji from "../assets/pageIcons/emoji.png"
+import entities from "../assets/pageIcons/entities.png"
 
 export type pageButtonsType = {
   name: string
@@ -18,19 +19,30 @@ export const pageButtons: pageButtonsType[] = [
     icon: boxShadow,
   },
   {
+    name: "Gradient",
+    path: "gradient",
+    icon: gradient,
+  },
+  {
     name: "Cursors",
     path: "cursors",
     icon: cursor,
+  },
+  {
+    name: "Emojis",
+    path: "emojis",
+    icon: emoji,
+  },
+  {
+    name: "Entities",
+    path: "entities",
+    icon: entities,
   },
   // {
   //   name: "Text Shadow",
   //   path: "text-shadow",
   // },
-  {
-    name: "Gradient",
-    path: "gradient",
-    icon: gradient,
-  },
+
   // {
   //   name: "Border",
   //   path: "border",

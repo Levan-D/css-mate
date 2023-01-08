@@ -1,7 +1,10 @@
 /** @format */
 
 export type CursorType = {
-  name: string
-  vanilla: string
-  tailwind: string
+  category: string
+  contents: {
+    name: string
+    vanilla: string
+    tailwind: string
+  }[]
 }

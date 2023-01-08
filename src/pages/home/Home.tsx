@@ -10,9 +10,11 @@ const Home = () => {
       <div className="text-center  mt-16 font-cursiveCustom">
         <div className="text-6xl ">Hello,</div>
         <div className="text-xl mt-6 ">
-          CSS Mate is here to offer you many useful css creation and demonstration tools.
+          CSS Mate is here to offer you many
+          <span className="text-secondary"> useful tools</span> for css rule creation and
+          demonstration .
         </div>
-        <div className="text-xl ">Pick one below to start.</div>
+        <div className="text-xl ">Pick one below to start!</div>
       </div>
       <div className="flex flex-wrap  mx-auto  w-fit gap-8 my-12 justify-center">
         {pageButtons.map((button, index) => (
