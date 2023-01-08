@@ -2,6 +2,8 @@
 
 import boxShadow from "../assets/pageIcons/boxShadow.png"
 import gradient from "../assets/pageIcons/gradient.png"
+import cursor from "../assets/pageIcons/cursor.png"
+
 
 export type pageButtonsType = {
   name: string
@@ -14,6 +16,11 @@ export const pageButtons: pageButtonsType[] = [
     name: "Box Shadow",
     path: "box-shadow",
     icon: boxShadow,
+  },
+  {
+    name: "Cursors",
+    path: "cursors",
+    icon: cursor,
   },
   // {
   //   name: "Text Shadow",

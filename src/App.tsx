@@ -7,6 +7,7 @@ import Home from "./pages/home/Home"
 import { Routes, Route } from "react-router-dom"
 import BoxShadow from "./pages/boxShadow/BoxShadow"
 import Error from "./pages/error/Error"
+import Cursors from "./pages/cursors/Cursors"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="box-shadow" element={<BoxShadow />} />
+          <Route path="cursors" element={<Cursors />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

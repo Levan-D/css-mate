@@ -3,7 +3,6 @@
 import React, { useState } from "react"
 import SideMenu from "../../components/wrappers/SideMenu"
 import ReactSlider from "react-slider"
-import styles from "./BoxShadow.module.css"
 import Shape from "./Shape"
 import Output from "../../components/wrappers/Output"
 import type { CurrentValueType } from "./BoxShadowTypes"
@@ -83,6 +82,12 @@ const BoxShadow = () => {
 
   return (
     <div className=" mt-10  mb-20 ">
+      <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
+        Generate box shadow for your project with ease
+      </h1>
+      <div className="font-cursiveCustom text-center text-base mb-16">
+        Start tinkering!
+      </div>
       <div className="md:flex-row flex flex-col md:justify-center justify-between md:gap-8 gap-16 lg:gap-36 mb-16 ">
         <SideMenu title={`Box shadow config`} resetState={resetState}>
           <div className="p-4 ">
@@ -98,9 +103,9 @@ const BoxShadow = () => {
                 </div>
                 <div className=" w-full h-[20px] mb-4">
                   <ReactSlider
-                    className={styles.customSlider}
-                    trackClassName={styles["customSlider-track"]}
-                    thumbClassName={styles["customSlider-thumb"]}
+                    className="customSlider"
+                    trackClassName="customSlider-track"
+                    thumbClassName="customSlider-thumb"
                     min={key === "horizontal" || key === "vertical" ? -150 : 0}
                     max={key === "opacity" ? 100 : 150}
                     defaultValue={currentValue[key as keyof CurrentValueType]}
@@ -133,7 +138,6 @@ const BoxShadow = () => {
             <Presets
               setCurrentValue={setCurrentValue}
               setInset={setInset}
-              setShadowColor={setShadowColor}
               shadowColor={shadowColor}
             />
           </div>

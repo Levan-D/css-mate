@@ -8,3 +8,13 @@ export type CurrentValueType = {
   opacity: number
 }
 
+export type boxShadowPresetsType = {
+  titile: string
+  settings: {
+    horizontal: number
+    vertical: number
+    blur: number
+    spread: number
+    opacity: number
+  }
+}

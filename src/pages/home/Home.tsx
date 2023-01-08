@@ -17,9 +17,13 @@ const Home = () => {
       <div className="flex flex-wrap  mx-auto  w-fit gap-8 my-12 justify-center">
         {pageButtons.map((button, index) => (
           <div key={index}>
-            <Card title={button.name} path={button.path}>
+            <Card
+              title={button.name}
+              path={button.path}
+              CSS={`hover:translate-y-[-10px]`}
+            >
               <div>
-                <img src={button.icon} alt="tool icons" />
+                <img src={button.icon} alt="tool icons" className="pl-4" />
               </div>
             </Card>
           </div>

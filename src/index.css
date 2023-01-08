@@ -11,6 +11,45 @@
   }
 }
 
+@layer utilities {
+  .customSlider {
+    /* max width of your slider */
+    max-width: 450px;
+    /* Optional: Only If you want to center your slider in the page */
+    margin: auto;
+  }
+
+  .customSlider-track {
+    /* Top value to align your track to the center of your thumb */
+    top: 6px;
+    /* thickness of the track */
+    height: 8px;
+    border-radius: 4px;
+    /* default color of your track */
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .customSlider-thumb {
+    cursor: pointer;
+    /*color for the thumb */
+    background: #5f9df7;
+    /* shape of the thumb: circle */
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    /* remove default outline when selected */
+    outline: none;
+  }
+
+  .customSlider-thumb:hover {
+    box-shadow: 0 0 0 8px rgba(95, 157, 247, 0.4);
+    transition: 200ms;
+  }
+  .customSlider-thumb:active {
+    box-shadow: 0 0 0 8px rgba(95, 157, 247, 0.4);
+  }
+}
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 

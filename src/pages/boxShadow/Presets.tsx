@@ -7,17 +7,11 @@ import { glowEffectPresets } from "./Data"
 
 type PresetsProps = {
   setCurrentValue: React.Dispatch<React.SetStateAction<CurrentValueType>>
-  setShadowColor: React.Dispatch<React.SetStateAction<string>>
   setInset: React.Dispatch<React.SetStateAction<boolean>>
   shadowColor: string
 }
 
-const Presets = ({
-  setCurrentValue,
-  setShadowColor,
-  setInset,
-  shadowColor,
-}: PresetsProps) => {
+const Presets = ({ setCurrentValue, setInset, shadowColor }: PresetsProps) => {
   return (
     <div>
       <h3 className=" mb-2">Box presets</h3>

@@ -1,6 +1,8 @@
 /** @format */
 
-export const boxShadowPresets = [
+import { boxShadowPresetsType } from "./BoxShadowTypes"
+
+export const boxShadowPresets: boxShadowPresetsType[] = [
   {
     titile: "S",
     settings: {
@@ -53,7 +55,7 @@ export const boxShadowPresets = [
   },
 ]
 
-export const glowEffectPresets = [
+export const glowEffectPresets: boxShadowPresetsType[] = [
   {
     titile: "S",
     settings: {
@@ -106,7 +108,7 @@ export const glowEffectPresets = [
   },
 ]
 
-export const btnResponse = [
+export const btnResponse: string[] = [
   "Dont click me!",
   "Stop!",
   "Srsly, stop!",
