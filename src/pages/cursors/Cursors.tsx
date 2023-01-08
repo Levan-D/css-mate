@@ -23,6 +23,7 @@ const Cursors = () => {
             <div className="flex justify-center flex-wrap gap-8 mb-12">
               {cursor.contents.map((content, i) => (
                 <Card title={content.name} key={i} CSS={content.tailwind}>
+                  <div className="text-dark text-center mb-4">{content.vanilla}</div>
                   <div className={`flex gap-2`}>
                     <div
                       className={`flex gap-1 btnPrimary`}
