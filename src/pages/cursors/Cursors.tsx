@@ -10,16 +10,32 @@ import TableOfContents from "../../components/TableOfContents"
 const Cursors = () => {
   let tableOfContets: string[] = []
   return (
-    <div className="my-16 ">
+    <div className={`my-16  `}>
       <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
         Almost every CSS <span className="text-secondary">cursor</span> type presented
         below
       </h1>
-      <div className="font-cursiveCustom text-center text-base mb-8">Click to copy!</div>
+      <div className="font-cursiveCustom text-center text-base mb-8">
+        Hover over to demo and click to copy!
+      </div>
       <div className="mb-8">
         <TableOfContents tableOfContets={tableOfContets} />
       </div>
-      <div className=" ">
+      <div className="text-center">
+        The exact looks of the cursor is based on the browser defaults.
+      </div>
+      <div className=" text-center">
+        You can also set custom cursors using the
+        <span className="text-secondary">
+          cursor: url&#x28; image link&#x29;, x y, fallback cursor type;
+        </span>
+        property.
+      </div>
+      <div className="mb-8 text-center">
+        &#x28; Although... custom cursors don't work half the time&#x29;
+      </div>
+
+      <div>
         {cursorData.map((cursor, i) => {
           tableOfContets.push(cursor.category)
           return (
@@ -33,8 +49,11 @@ const Cursors = () => {
               <div className="flex justify-center flex-wrap gap-8 mb-12">
                 {cursor.contents.map((content, i) => (
                   <Card title={content.name} key={i} CSS={content.tailwind}>
-                    <div className="text-dark text-center mb-4">{content.vanilla}</div>
-                    <div className={`flex gap-2`}>
+                    <div className="text-dark text-center ">{content.description}</div>
+                    <div className="text-secondary font-semibold text-center mb-4">
+                      {content.vanilla}
+                    </div>
+                    <div className={`flex gap-2 justify-center  `}>
                       <div
                         className={`flex gap-1 btnPrimary`}
                         onClick={() => {

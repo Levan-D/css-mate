@@ -4,23 +4,50 @@ import { CursorType } from "./CursorTypes"
 
 export const cursorData: CursorType[] = [
   {
-    category: "Logic",
+    category: "Custom cursors",
+    contents: [
+      {
+        name: "Carrot",
+        description: "Custom carrot cursor ",
+        vanilla: `cursor: url(https://i.imgur.com/wB5relR.png) 0 10 ,auto;`,
+        tailwind: ` cursor-[url(https://i.imgur.com/wB5relR.png)_0_0,auto]`,
+      },
+
+      {
+        name: "Rocket",
+        description: "Custom rocket cursor ",
+        vanilla: `cursor: url(https://i.imgur.com/bHSn9dh.png) 0 10 ,auto;`,
+        tailwind: ` cursor-[url(https://i.imgur.com/bHSn9dh.png)_0_10,auto]`,
+      },
+    ],
+  },
+  {
+    category: "General",
     contents: [
       {
         name: "Auto",
+        description: "The browser sets a cursor",
         vanilla: "cursor: auto;",
         tailwind: "cursor-auto",
       },
 
       {
         name: "Default",
+        description: "Default cursor",
         vanilla: "cursor: default;",
         tailwind: "cursor-default",
       },
       {
         name: "Initial",
+        description: "Sets the cursor to default",
         vanilla: "cursor: initial;",
         tailwind: "cursor-initial",
+      },
+      {
+        name: "None",
+        vanilla: "cursor: none;",
+        description: "No cursor is rendered",
+        tailwind: "cursor-none",
       },
     ],
   },
@@ -29,39 +56,81 @@ export const cursorData: CursorType[] = [
     contents: [
       {
         name: "Pointer",
+        description: "Sets cursor to pointer",
         vanilla: "cursor: pointer;",
         tailwind: "cursor-pointer",
       },
       {
-        name: "Grab",
-        vanilla: "cursor: grab;",
-        tailwind: "cursor-grab",
-      },
-
-      {
-        name: "Grabbing",
-        vanilla: "cursor: grabbing;",
-        tailwind: "cursor-grabbing",
-      },
-      {
         name: "Vertical Text",
+        description: "Indicates vertical text",
         vanilla: "cursor: vertical-text;",
         tailwind: "cursor-vertical-text",
       },
       {
         name: "Horizontal Text",
+        description: "Indicates Horizontal text",
         vanilla: "cursor: text;",
         tailwind: "cursor-text",
       },
+
+      {
+        name: "Cell",
+        description: "Indicates Cell or Cells",
+        vanilla: "cursor: cell;",
+        tailwind: "cursor-cell",
+      },
+      {
+        name: "Crosshair",
+        description: "Often used for bitmap",
+        vanilla: "cursor: crosshair;",
+        tailwind: "cursor-crosshair",
+      },
+    ],
+  },
+  {
+    category: "Drag & drop",
+    contents: [
+      {
+        name: "Copy",
+        description: "Show object can be copied",
+        vanilla: "cursor: copy;",
+        tailwind: "cursor-copy",
+      },
+      {
+        name: "Grab",
+        description: "Show object can be grabbed",
+        vanilla: "cursor: grab;",
+        tailwind: "cursor-grab",
+      },
+      {
+        name: "Grabbing",
+        description: "Object is being grabbed",
+        vanilla: "cursor: grabbing;",
+        tailwind: "cursor-grabbing",
+      },
       {
         name: "Move",
+        description: "Show object can be moved",
         vanilla: "cursor: move;",
         tailwind: "cursor-move",
       },
       {
-        name: "Cell",
-        vanilla: "cursor: cell;",
-        tailwind: "cursor-cell",
+        name: "Alias",
+        description: "Can create alias/shortcut",
+        vanilla: "cursor: alias;",
+        tailwind: "cursor-alias",
+      },
+      {
+        name: "Not Allowed",
+        description: "Action not allowed",
+        vanilla: "cursor: not-allowed;",
+        tailwind: "cursor-not-allowed",
+      },
+      {
+        name: "No Drop",
+        description: "Can't drop here",
+        vanilla: "cursor: no-drop;",
+        tailwind: "cursor-no-drop",
       },
     ],
   },
@@ -71,11 +140,13 @@ export const cursorData: CursorType[] = [
     contents: [
       {
         name: "Progress",
+        description: "Loading but can interact",
         vanilla: "cursor: progress;",
         tailwind: "cursor-progress",
       },
       {
         name: "Wait",
+        description: "Loading and can't interact",
         vanilla: "cursor: wait;",
         tailwind: "cursor-wait",
       },
@@ -87,32 +158,20 @@ export const cursorData: CursorType[] = [
     contents: [
       {
         name: "Zoom In",
+        description: "Can zoom in",
         vanilla: "cursor: zoom-in;",
         tailwind: "cursor-zoom-in",
       },
 
       {
         name: "Zoom Out",
+        description: "Can zoom out",
         vanilla: "cursor: zoom-out;",
         tailwind: "cursor-zoom-out",
       },
     ],
   },
-  {
-    category: "No-Go",
-    contents: [
-      {
-        name: "Not Allowed",
-        vanilla: "cursor: not-allowed;",
-        tailwind: "cursor-not-allowed",
-      },
-      {
-        name: "No Drop",
-        vanilla: "cursor: no-drop;",
-        tailwind: "cursor-no-drop",
-      },
-    ],
-  },
+
   {
     category: "Resize",
     contents: [
@@ -205,42 +264,21 @@ export const cursorData: CursorType[] = [
     category: "Misc",
     contents: [
       {
-        name: "Copy",
-        vanilla: "cursor: copy;",
-        tailwind: "cursor-copy",
-      },
-
-      {
         name: "Help",
+        description: "Help information available",
         vanilla: "cursor: help;",
         tailwind: "cursor-help",
       },
 
       {
-        name: "None",
-        vanilla: "cursor: none;",
-        tailwind: "cursor-none",
-      },
-
-      {
-        name: "Crosshair",
-        vanilla: "cursor: crosshair;",
-        tailwind: "cursor-crosshair",
-      },
-
-      {
-        name: "Alias",
-        vanilla: "cursor: alias;",
-        tailwind: "cursor-alias",
-      },
-
-      {
         name: "All Scroll",
+        description: "Can scroll in any direction",
         vanilla: "cursor: all-scroll;",
         tailwind: "cursor-all-scroll",
       },
       {
         name: "Context Menu",
+        description: "Context menu is available",
         vanilla: "cursor: context-menu;",
         tailwind: "cursor-context-menu",
       },
