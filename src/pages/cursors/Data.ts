@@ -67,7 +67,7 @@ export const cursorData: CursorType[] = [
   },
 
   {
-    category: "loaders",
+    category: "Loaders",
     contents: [
       {
         name: "Progress",
