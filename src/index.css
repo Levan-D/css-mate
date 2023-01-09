@@ -50,6 +50,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-family: "Brush Script MT", cursive;
 

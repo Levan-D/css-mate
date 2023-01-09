@@ -12,7 +12,7 @@ import Emojis from "./pages/emojis/Emojis"
 
 function App() {
   return (
-    <div className="flex flex-col  min-h-screen	  ">
+    <div className="flex flex-col  min-h-screen	 ">
       <Navbar />
       <div className="grow max-w-6xl mx-auto">
         <Routes>
