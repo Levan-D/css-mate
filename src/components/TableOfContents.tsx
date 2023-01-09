@@ -49,21 +49,21 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
               !visibility
                 ? "rotate-[-90deg] translate-y-[4px]"
                 : "rotate-90 translate-y-[7px]"
-            }  ml-3  duration-300 `}
+            }  ml-3  duration-200 `}
           />
         </div>
       </div>
 
-      <hr
-        className={`${visibility ? "block " : "hidden"}  duration-200  mx-2   ease-in`}
-      />
+      <hr className={`${visibility ? "block " : "hidden"}  duration-200  mx-2   `} />
 
       <nav
         className={`${
           visibility ? "scale-y-100 h-[" + height + "]  py-2 mb-4" : "scale-y-0  h-0 "
-        }  duration-200 origin-top   ease-in`}
+        }    duration-500 origin-top   `}
       >
-        <ul>
+        <ul
+          className={`${visibility ? "scale-y-100 " : "scale-y-0  "}     origin-top   `}
+        >
           {tableOfContets.map((link, i) => (
             <a href={`#${link}`}>
               <li
@@ -81,7 +81,7 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
         <div
           className={`${
             showButton ? "opacity-100" : "opacity-0  cursor-default"
-          }  fixed bottom-4 right-4 bg-slate-100 p-3  rounded-full cursor-pointer duration-300 shadow-[3px_3px_2px_0px_rgba(_255,_114,_94,0.40)] hover:translate-y-[-5px] active:bg-slate-500`}
+          }  fixed bottom-4 right-4 bg-slate-100 p-3  rounded-full cursor-pointer duration-200 shadow-[3px_3px_2px_0px_rgba(_255,_114,_94,0.40)] hover:translate-y-[-5px] active:bg-slate-500`}
         >
           <ChevronIcon
             height={26}
