@@ -37,7 +37,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
       <div className="px-4 py-2">
         <div className={"flex"}>
           {Headers.map((header, i) => (
-            <h3 key={i} className={`${flexBasis}`}>
+            <h3 key={i} className={`${flexBasis} font-bold`}>
               {header}
             </h3>
           ))}
