@@ -18,7 +18,7 @@ const Entities = () => {
       <div>
         <CatDisplay
           Data={EntitiesData}
-          gridCols={3}
+          flexBasis={"basis-1/3"}
           Headers={["Character", "Hexadecimal", "Description"]}
         />
       </div>

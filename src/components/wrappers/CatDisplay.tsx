@@ -6,10 +6,10 @@ import { CatDisplayDataType } from "./WrapperTypes"
 type CatDisplayType = {
   Data: CatDisplayDataType[]
   Headers: string[]
-  gridCols: number
+  flexBasis: string
 }
 
-const CatDisplay = ({ Data, Headers, gridCols }: CatDisplayType) => {
+const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
   const navBtns: string[] = []
 
   Data.forEach(data => {
@@ -37,7 +37,7 @@ const CatDisplay = ({ Data, Headers, gridCols }: CatDisplayType) => {
       <div className="px-4 py-2">
         <div className={"flex"}>
           {Headers.map((header, i) => (
-            <h3 key={i} className="basis-1/3">
+            <h3 key={i} className={`${flexBasis}`}>
               {header}
             </h3>
           ))}
@@ -48,16 +48,16 @@ const CatDisplay = ({ Data, Headers, gridCols }: CatDisplayType) => {
               <div>
                 {cat.content.map((char, i) => (
                   <div key={i} className={"flex"}>
-                    <div className="px-2 basis-1/3">{char.character}</div>
+                    <div className={`${flexBasis}  px-2 `}>{char.character}</div>
                     <div
-                      className="cursor-pointer  basis-1/3 hover:bg-slate-100  active:bg-slate-300 hover:text-dark w-fit px-2 duration-200 rounded-md"
+                      className={` ${flexBasis} cursor-pointer   hover:bg-slate-100  active:bg-slate-300 hover:text-dark w-fit px-2 duration-200 rounded-md `}
                       onClick={() => {
                         navigator.clipboard.writeText(char.hexadecimal)
                       }}
                     >
                       {char.hexadecimal}
                     </div>
-                    <div className="px-2 basis-1/3">{char.description}</div>
+                    <div className={`${flexBasis}  px-2 `}>{char.description}</div>
                   </div>
                 ))}
               </div>
