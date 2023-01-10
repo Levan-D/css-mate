@@ -58,7 +58,7 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
 
       <nav
         className={`${
-          visibility ? "scale-y-100 h-[" + height + "]  py-2 mb-4" : "scale-y-0  h-0 "
+          visibility ? "scale-y-100 h-[" + height + "]  py-2 " : "scale-y-0  h-0 "
         }    duration-500 origin-top   `}
       >
         <ul

@@ -94,7 +94,7 @@ const Shape = ({
             btnActive.current = false
           }
         }}
-        className={`   btnPrimary  tran mx-auto mt-8     active:translate-y-[-10px]  `}
+        className={`   btnPrimary  tran mx-auto mt-8 transition-transform    active:translate-y-[-10px]  `}
       >
         {btnContent}
       </div>
