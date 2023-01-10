@@ -5,9 +5,8 @@ A tool to help you visualize various css rules and convert values
 ## Quick Overview
 
 ```sh
-npx create-react-app my-app
-cd my-app
-npm start
+npm install
+npm run dev
 ```
 
 Then open [http://localhost:3000/](http://localhost:3000/) to see your app.
