@@ -27,7 +27,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
             onClick={() => setActiveBtn(() => btn)}
             className={`  ${
               activeBtn === btn && `!text-dark`
-            } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   hover:text-slate-600  duration-200 sm:px-6 md:px-8 md:text-lg`}
+            } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   hover:text-slate-600  duration-200 sm:mx-2 md:mx-6 md:text-lg`}
           >
             {btn}
           </div>
