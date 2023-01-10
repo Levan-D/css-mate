@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import logo from "../../assets/logo/logo.png"
 import { Link, useLocation } from "react-router-dom"
 import { pageButtons } from "../../data/PageButtons"
+import githubIcon from "../../assets/icons/github.png"
 
 const Navbar = () => {
   const [selected, setSelected] = useState<string>("")
@@ -43,6 +44,13 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
+          <li
+            className={` font-bold font-cursiveCustom text-lg cursor-pointer select-none  border-b-2 border-transparent hover:brightness-90 duration-300 active:brightness-75 `}
+          >
+            <a href="https://github.com/Levan-D/CSSHomie" target="_blank">
+              <img className="h-7" src={githubIcon} alt="" />
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
