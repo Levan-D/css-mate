@@ -4,7 +4,7 @@ import React from "react"
 
 const Emojis = () => {
   return (
-    <div className="my-16">
+    <div className="my-16 mx-4">
       <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
         Did you know html had <span className="text-secondary">Emojis</span>?
       </h1>

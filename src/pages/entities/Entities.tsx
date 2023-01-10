@@ -6,7 +6,7 @@ import CatDisplay from "../../components/wrappers/CatDisplay"
 
 const Entities = () => {
   return (
-    <div className="my-16">
+    <div className="my-16 mx-4">
       <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
         You can find commonly used HTML <span className="text-secondary">entities</span>{" "}
         below

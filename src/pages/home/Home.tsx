@@ -6,13 +6,13 @@ import Card from "../../components/Card"
 
 const Home = () => {
   return (
-    <div>
-      <div className="text-center  mt-16 font-cursiveCustom">
-        <div className="text-6xl ">Hello,</div>
+    <div className="my-16 mx-4">
+      <div className="text-center    font-cursiveCustom">
+        <div className="text-6xl ">Hello</div>
         <div className="text-xl mt-6 ">
           CSS Mate is here to offer you many
           <span className="text-secondary"> useful tools</span> for css rule creation and
-          demonstration .
+          demonstration.
         </div>
         <div className="text-xl ">Pick one below to start!</div>
       </div>

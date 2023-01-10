@@ -10,7 +10,7 @@ import TableOfContents from "../../components/TableOfContents"
 const Cursors = () => {
   let tableOfContets: string[] = []
   return (
-    <div className={`my-16  `}>
+    <div className="my-16 mx-4">
       <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
         Almost every CSS <span className="text-secondary">cursor</span> type presented
         below
@@ -27,7 +27,7 @@ const Cursors = () => {
       <div className=" text-center">
         You can also set custom cursors using the
         <span className="text-secondary">
-          cursor: url&#x28; image link&#x29;, x y, fallback cursor type;
+          &#32; cursor: url&#x28; image link&#x29;, x y, fallback cursor type;&#32;
         </span>
         property.
       </div>
@@ -42,11 +42,11 @@ const Cursors = () => {
             <div key={i}>
               <h2
                 id={`${cursor.category}`}
-                className="font-cursiveCustom text-center text-2xl   mb-6"
+                className="font-cursiveCustom text-center text-2xl  mt-8 mb-6"
               >
                 {cursor.category}
               </h2>
-              <div className="flex justify-center flex-wrap gap-8 mb-12">
+              <div className="flex justify-center flex-wrap gap-8 mb-1">
                 {cursor.contents.map((content, i) => (
                   <Card title={content.name} key={i} CSS={content.tailwind}>
                     <div className="text-dark text-center ">{content.description}</div>
