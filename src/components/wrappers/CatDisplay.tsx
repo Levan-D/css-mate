@@ -20,18 +20,20 @@ const CatDisplay = ({ Data, Headers, gridCols }: CatDisplayType) => {
 
   return (
     <div className="border-2 border-white rounded-xl mx-auto w-fit ">
-      <div className="flex   bg-primary [&>*:not(:last-child)]:border-r-2 [&>*]:border-l-white rounded-t-xl py-3 flex-wrap   ">
-        {navBtns.map((btn, i) => (
-          <div
-            key={i}
-            onClick={() => setActiveBtn(() => btn)}
-            className={`  ${
-              activeBtn === btn && `!text-dark`
-            } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   hover:text-slate-600  duration-200 sm:px-6 md:px-8 md:text-lg`}
-          >
-            {btn}
-          </div>
-        ))}
+      <div className="   bg-primary  rounded-t-xl py-3    ">
+        <div className="w-fit mx-auto flex [&>*:not(:last-child)]:border-r-2 [&>*]:border-l-white flex-wrap">
+          {navBtns.map((btn, i) => (
+            <div
+              key={i}
+              onClick={() => setActiveBtn(() => btn)}
+              className={`  ${
+                activeBtn === btn && `!text-dark`
+              } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   hover:text-slate-600  duration-200 sm:px-6 md:px-8 md:text-lg`}
+            >
+              {btn}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="px-4 py-2">
