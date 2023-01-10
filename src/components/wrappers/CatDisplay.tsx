@@ -25,7 +25,7 @@ const CatDisplay = ({ Data }: CatDisplayType) => {
             onClick={() => setActiveBtn(() => btn)}
             className={`  ${
               activeBtn === btn && `!text-dark`
-            } cursor-pointer font-bold text-lg  font-cursiveCustom  px-5 shrink-0  hover:text-slate-600  duration-200 `}
+            } cursor-pointer font-bold text-lg  font-cursiveCustom  px-8 shrink-0  hover:text-slate-600  duration-200 `}
           >
             {btn}
           </div>
