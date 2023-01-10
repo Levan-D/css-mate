@@ -12,6 +12,7 @@
 }
 
 @layer utilities {
+  /* sliders */
   .customSlider {
     /* max width of your slider */
     max-width: 450px;
@@ -48,6 +49,32 @@
   .customSlider-thumb:active {
     box-shadow: 0 0 0 8px rgba(95, 157, 247, 0.4);
   }
+  /* sliders */
+
+  /* scrollbar */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #cbdeff;
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ff725e;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e6614f;
+  }
+  /* scrollbar */
 }
 
 html {

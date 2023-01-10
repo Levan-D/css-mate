@@ -4,25 +4,25 @@ import { CatDisplayDataType } from "../../components/wrappers/WrapperTypes"
 
 export const EntitiesData: CatDisplayDataType[] = [
   {
-    category: "HTML Space Characters",
+    category: "Spaces",
     content: [
       {
-        character: <span>&#160;</span>,
+        character: <span>&#09;</span>,
         hexadecimal: "&#09;",
         description: "Horizontal tab",
       },
       {
-        character: " ",
+        character: <span>&#10;</span>,
         hexadecimal: "&#10;",
         description: "Line feed",
       },
       {
-        character: " ",
+        character: <span>&#13;</span>,
         hexadecimal: "&#13;",
         description: "Carriage return / enter",
       },
       {
-        character: " ",
+        character: <span>&#160;</span>,
         hexadecimal: "&#160;",
         description: "Non-breaking space",
       },
@@ -32,24 +32,9 @@ export const EntitiesData: CatDisplayDataType[] = [
     category: "lalalala",
     content: [
       {
-        character: <span>&#sdsadasdsa;</span>,
+        character: <span>&#;</span>,
         hexadecimal: "&#09;",
         description: "Horizontal tab",
-      },
-      {
-        character: " ",
-        hexadecimal: "&#10;",
-        description: "Line feed",
-      },
-      {
-        character: " ",
-        hexadecimal: "&#13;",
-        description: "Carriage return / enter",
-      },
-      {
-        character: " ",
-        hexadecimal: "&#160;",
-        description: "Non-breaking space",
       },
     ],
   },

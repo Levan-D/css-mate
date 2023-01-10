@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link to="/">
             <img
               onClick={() => setSelected(() => "")}
-              className="h-12 cursor-pointer active:brightness-75 duration-75"
+              className="h-12 cursor-pointer active:brightness-75 duration-200  "
               src={logo}
               alt="logo"
             />
@@ -36,7 +36,7 @@ const Navbar = () => {
               key={i}
               className={`${
                 selected === button.name && "!border-secondary"
-              } font-bold font-cursiveCustom text-lg cursor-pointer select-none  border-b-2 border-transparent hover:border-white duration-300 active:brightness-75 `}
+              } font-bold font-cursiveCustom shrink-0 text-lg cursor-pointer select-none  border-b-2 border-transparent hover:border-white duration-300 active:brightness-75 `}
               onClick={() => setSelected(() => button.name)}
             >
               <Link className="p-1" to={button.path}>
@@ -45,7 +45,7 @@ const Navbar = () => {
             </li>
           ))}
           <li
-            className={`font-bold font-cursiveCustom text-lg cursor-pointer select-none  border-2 border-transparent hover:border-white duration-300 rounded-full active:brightness-75`}
+            className={`   shrink-0 text-lg cursor-pointer select-none  border-2 border-transparent hover:border-white duration-300 rounded-full active:brightness-75`}
           >
             <a href="https://github.com/Levan-D/CSSHomie" target="_blank">
               <img className="h-6" src={githubIcon} alt="" />

@@ -10,26 +10,8 @@ type tableOfContetsType = {
 
 const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
   const [visibility, setVisibility] = useState(true)
-  const [showButton, setShowButton] = useState(false)
 
   const height = 28 * tableOfContets.length + "px"
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        setShowButton(true)
-      } else {
-        setShowButton(false)
-      }
-    })
-    return window.removeEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        setShowButton(true)
-      } else {
-        setShowButton(false)
-      }
-    })
-  }, [])
 
   return (
     <div className="border-2 border-white rounded-xl w-fit   mx-auto select-none ">
@@ -76,21 +58,6 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
           ))}
         </ul>
       </nav>
-
-      <a href={showButton ? `#` : ""}>
-        <div
-          className={`${
-            showButton ? "opacity-100" : "opacity-0  cursor-default"
-          }  fixed bottom-4 right-4 bg-slate-100 p-3  rounded-full cursor-pointer duration-200 shadow-[3px_3px_2px_0px_rgba(_255,_114,_94,0.40)] hover:translate-y-[-5px] active:bg-slate-500`}
-        >
-          <ChevronIcon
-            height={26}
-            width={26}
-            fill="#ff725e"
-            className={`rotate-[-90deg]`}
-          />
-        </div>
-      </a>
     </div>
   )
 }

@@ -12,7 +12,7 @@ const Entities = () => {
         below
       </h1>
       <div className="font-cursiveCustom text-center mb-16 text-base">
-        rata ta tat aaaa
+        click on hex to copy
       </div>
       <div>
         <CatDisplay Data={EntitiesData} />
