@@ -19,15 +19,15 @@ const CatDisplay = ({ Data, Headers, gridCols }: CatDisplayType) => {
   const [activeBtn, setActiveBtn] = useState<string>(navBtns[0])
 
   return (
-    <div className="border-2 border-white rounded-xl mx-auto w-fit max-w-6xl ">
-      <div className="flex   bg-primary [&>*:not(:last-child)]:border-r-2 [&>*]:border-l-white rounded-t-xl py-3 overflow-y-auto">
+    <div className="border-2 border-white rounded-xl mx-auto w-fit ">
+      <div className="flex   bg-primary [&>*:not(:last-child)]:border-r-2 [&>*]:border-l-white rounded-t-xl py-3 flex-wrap   ">
         {navBtns.map((btn, i) => (
           <div
             key={i}
             onClick={() => setActiveBtn(() => btn)}
             className={`  ${
               activeBtn === btn && `!text-dark`
-            } cursor-pointer font-bold text-lg  font-cursiveCustom  px-8 shrink-0  hover:text-slate-600  duration-200 `}
+            } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   hover:text-slate-600  duration-200 sm:px-6 md:px-8 md:text-lg`}
           >
             {btn}
           </div>
