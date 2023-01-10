@@ -15,7 +15,11 @@ const Entities = () => {
         click on hexadecimal elements to copy to clipboard
       </div>
       <div>
-        <CatDisplay Data={EntitiesData} />
+        <CatDisplay
+          Data={EntitiesData}
+          gridCols={3}
+          Headers={["Character", "Hexadecimal", "Description"]}
+        />
       </div>
     </div>
   )

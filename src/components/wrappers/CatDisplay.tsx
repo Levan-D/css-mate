@@ -5,9 +5,11 @@ import { CatDisplayDataType } from "./WrapperTypes"
 
 type CatDisplayType = {
   Data: CatDisplayDataType[]
+  Headers: string[]
+  gridCols: number
 }
 
-const CatDisplay = ({ Data }: CatDisplayType) => {
+const CatDisplay = ({ Data, Headers, gridCols }: CatDisplayType) => {
   const navBtns: string[] = []
 
   Data.forEach(data => {
@@ -33,17 +35,17 @@ const CatDisplay = ({ Data }: CatDisplayType) => {
       </div>
 
       <div className="px-4 py-2">
-        <div className="grid grid-cols-3 font-bold">
-          <h3>Character</h3>
-          <h3>Hexadecimal</h3>
-          <h3>Description</h3>
+        <div className={"grid grid-cols-" + gridCols + " font-bold"}>
+          {Headers.map((header, i) => (
+            <h3 key={i}>{header}</h3>
+          ))}
         </div>
         {Data.map((cat, i) => (
           <div key={i}>
             {cat.category === activeBtn && (
               <div>
                 {cat.content.map((char, i) => (
-                  <div key={i} className="grid grid-cols-3 py-1 ">
+                  <div key={i} className={"grid grid-cols-" + gridCols + " py-1 "}>
                     <div className="px-2">{char.character}</div>
                     <div
                       className="cursor-pointer hover:bg-slate-100  active:bg-slate-300 hover:text-dark w-fit px-2 duration-200 rounded-md"
