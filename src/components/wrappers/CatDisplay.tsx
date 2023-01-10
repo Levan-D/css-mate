@@ -20,7 +20,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
 
   return (
     <div className="border-2 border-white rounded-xl mx-auto w-fit ">
-      <div className="   bg-primary  rounded-t-xl py-3  justify-center flex flex-wrap [&>*:not(:last-child)]:border-r-2 [&>*]:border-l-white   ">
+      <div className="   bg-primary  rounded-t-xl py-3  justify-center flex flex-wrap">
         {navBtns.map((btn, i) => (
           <div
             key={i}
