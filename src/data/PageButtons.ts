@@ -18,11 +18,11 @@ export const pageButtons: pageButtonsType[] = [
     path: "box-shadow",
     icon: boxShadow,
   },
-  {
-    name: "Gradient",
-    path: "gradient",
-    icon: gradient,
-  },
+  // {
+  //   name: "Gradient",
+  //   path: "gradient",
+  //   icon: gradient,
+  // },
   {
     name: "Cursors",
     path: "cursors",
