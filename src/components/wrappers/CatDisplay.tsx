@@ -18,14 +18,14 @@ const CatDisplay = ({ Data }: CatDisplayType) => {
 
   return (
     <div className="border-2 border-white rounded-xl mx-auto w-fit max-w-6xl ">
-      <div className="flex   bg-primary [&>*:not(:last-child)]:border-r-2 [&>*]:border-l-white rounded-t-xl pt-3 pb-2 overflow-y-auto">
+      <div className="flex   bg-primary [&>*:not(:last-child)]:border-r-2 [&>*]:border-l-white rounded-t-xl py-3 overflow-y-auto">
         {navBtns.map((btn, i) => (
           <div
             key={i}
             onClick={() => setActiveBtn(() => btn)}
             className={`  ${
               activeBtn === btn && `!text-dark`
-            } cursor-pointer font-bold text-lg  font-cursiveCustom  px-4 shrink-0  hover:text-slate-600  duration-200 `}
+            } cursor-pointer font-bold text-lg  font-cursiveCustom  px-5 shrink-0  hover:text-slate-600  duration-200 `}
           >
             {btn}
           </div>
@@ -34,19 +34,26 @@ const CatDisplay = ({ Data }: CatDisplayType) => {
 
       <div className="px-4 py-2">
         <div className="grid grid-cols-3 font-bold">
-          <h3>Char</h3>
-          <h3>Hex</h3>
-          <h3>Desc</h3>
+          <h3>Character</h3>
+          <h3>Hexadecimal</h3>
+          <h3>Description</h3>
         </div>
         {Data.map((cat, i) => (
           <div key={i}>
             {cat.category === activeBtn && (
               <div>
                 {cat.content.map((char, i) => (
-                  <div key={i} className="grid grid-cols-3">
-                    <div>{char.character}</div>
-                    <div>{char.hexadecimal}</div>
-                    <div>{char.description}</div>
+                  <div key={i} className="grid grid-cols-3 py-1 ">
+                    <div className="px-2">{char.character}</div>
+                    <div
+                      className="cursor-pointer hover:bg-slate-100  active:bg-slate-300 hover:text-dark w-fit px-2 duration-200 rounded-md"
+                      onClick={() => {
+                        navigator.clipboard.writeText(char.hexadecimal)
+                      }}
+                    >
+                      {char.hexadecimal}
+                    </div>
+                    <div className="px-2">{char.description}</div>
                   </div>
                 ))}
               </div>
