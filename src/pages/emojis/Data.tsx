@@ -509,8 +509,344 @@ export const EmojisData: CatDisplayDataType[] = [
     category: "Animals",
     content: [
       {
-        character: <span>&#x231A;</span>,
-        hexadecimal: "&#x231A;",
+        character: <span>&#x1F400;</span>,
+        hexadecimal: "&#x1F400;",
+      },
+      {
+        character: <span>&#x1F401;</span>,
+        hexadecimal: "&#x1F401;",
+      },
+      {
+        character: <span>&#x1F402;</span>,
+        hexadecimal: "&#x1F402;",
+      },
+      {
+        character: <span>&#x1F403;</span>,
+        hexadecimal: "&#x1F403;",
+      },
+      {
+        character: <span>&#x1F404;</span>,
+        hexadecimal: "&#x1F404;",
+      },
+      {
+        character: <span>&#x1F405;</span>,
+        hexadecimal: "&#x1F405;",
+      },
+      {
+        character: <span>&#x1F406;</span>,
+        hexadecimal: "&#x1F406;",
+      },
+      {
+        character: <span>&#x1F407;</span>,
+        hexadecimal: "&#x1F407;",
+      },
+      {
+        character: <span>&#x1F408;</span>,
+        hexadecimal: "&#x1F408;",
+      },
+      {
+        character: <span>&#x1F409;</span>,
+        hexadecimal: "&#x1F409;",
+      },
+      {
+        character: <span>&#x1F40A;</span>,
+        hexadecimal: "&#x1F40A;",
+      },
+      {
+        character: <span>&#x1F40B;</span>,
+        hexadecimal: "&#x1F40B;",
+      },
+      {
+        character: <span>&#x1F40C;</span>,
+        hexadecimal: "&#x1F40C;",
+      },
+      {
+        character: <span>&#x1F40D;</span>,
+        hexadecimal: "&#x1F40D;",
+      },
+      {
+        character: <span>&#x1F40E;</span>,
+        hexadecimal: "&#x1F40E;",
+      },
+      {
+        character: <span>&#x1F40F;</span>,
+        hexadecimal: "&#x1F40F;",
+      },
+      {
+        character: <span>&#x1F410;</span>,
+        hexadecimal: "&#x1F410;",
+      },
+      {
+        character: <span>&#x1F411;</span>,
+        hexadecimal: "&#x1F411;",
+      },
+      {
+        character: <span>&#x1F412;</span>,
+        hexadecimal: "&#x1F412;",
+      },
+      {
+        character: <span>&#x1F413;</span>,
+        hexadecimal: "&#x1F413;",
+      },
+      {
+        character: <span>&#x1F414;</span>,
+        hexadecimal: "&#x1F414;",
+      },
+      {
+        character: <span>&#x1F415;</span>,
+        hexadecimal: "&#x1F415;",
+      },
+      {
+        character: <span>&#x1F416;</span>,
+        hexadecimal: "&#x1F416;",
+      },
+      {
+        character: <span>&#x1F417;</span>,
+        hexadecimal: "&#x1F417;",
+      },
+      {
+        character: <span>&#x1F418;</span>,
+        hexadecimal: "&#x1F418;",
+      },
+      {
+        character: <span>&#x1F419;</span>,
+        hexadecimal: "&#x1F419;",
+      },
+      {
+        character: <span>&#x1F41A;</span>,
+        hexadecimal: "&#x1F41A;",
+      },
+      {
+        character: <span>&#x1F41B;</span>,
+        hexadecimal: "&#x1F41B;",
+      },
+      {
+        character: <span>&#x1F41C;</span>,
+        hexadecimal: "&#x1F41C;",
+      },
+      {
+        character: <span>&#x1F41D;</span>,
+        hexadecimal: "&#x1F41D;",
+      },
+      {
+        character: <span>&#x1F41E;</span>,
+        hexadecimal: "&#x1F41E;",
+      },
+      {
+        character: <span>&#x1F41F;</span>,
+        hexadecimal: "&#x1F41F;",
+      },
+      {
+        character: <span>&#x1F420;</span>,
+        hexadecimal: "&#x1F420;",
+      },
+      {
+        character: <span>&#x1F421;</span>,
+        hexadecimal: "&#x1F421;",
+      },
+      {
+        character: <span>&#x1F422;</span>,
+        hexadecimal: "&#x1F422;",
+      },
+      {
+        character: <span>&#x1F423;</span>,
+        hexadecimal: "&#x1F423;",
+      },
+      {
+        character: <span>&#x1F424;</span>,
+        hexadecimal: "&#x1F424;",
+      },
+      {
+        character: <span>&#x1F425;</span>,
+        hexadecimal: "&#x1F425;",
+      },
+      {
+        character: <span>&#x1F426;</span>,
+        hexadecimal: "&#x1F426;",
+      },
+      {
+        character: <span>&#x1F427;</span>,
+        hexadecimal: "&#x1F427;",
+      },
+      {
+        character: <span>&#x1F428;</span>,
+        hexadecimal: "&#x1F428;",
+      },
+      {
+        character: <span>&#x1F429;</span>,
+        hexadecimal: "&#x1F429;",
+      },
+      {
+        character: <span>&#x1F42A;</span>,
+        hexadecimal: "&#x1F42A;",
+      },
+      {
+        character: <span>&#x1F42B;</span>,
+        hexadecimal: "&#x1F42B;",
+      },
+      {
+        character: <span>&#x1F42C;</span>,
+        hexadecimal: "&#x1F42C;",
+      },
+      {
+        character: <span>&#x1F42D;</span>,
+        hexadecimal: "&#x1F42D;",
+      },
+      {
+        character: <span>&#x1F42E;</span>,
+        hexadecimal: "&#x1F42E;",
+      },
+      {
+        character: <span>&#x1F42F;</span>,
+        hexadecimal: "&#x1F42F;",
+      },
+      {
+        character: <span>&#x1F430;</span>,
+        hexadecimal: "&#x1F430;",
+      },
+      {
+        character: <span>&#x1F431;</span>,
+        hexadecimal: "&#x1F431;",
+      },
+      {
+        character: <span>&#x1F432;</span>,
+        hexadecimal: "&#x1F432;",
+      },
+      {
+        character: <span>&#x1F433;</span>,
+        hexadecimal: "&#x1F433;",
+      },
+      {
+        character: <span>&#x1F434;</span>,
+        hexadecimal: "&#x1F434;",
+      },
+      {
+        character: <span>&#x1F435;</span>,
+        hexadecimal: "&#x1F435;",
+      },
+      {
+        character: <span>&#x1F436;</span>,
+        hexadecimal: "&#x1F436;",
+      },
+      {
+        character: <span>&#x1F437;</span>,
+        hexadecimal: "&#x1F437;",
+      },
+      {
+        character: <span>&#x1F438;</span>,
+        hexadecimal: "&#x1F438;",
+      },
+      {
+        character: <span>&#x1F439;</span>,
+        hexadecimal: "&#x1F439;",
+      },
+      {
+        character: <span>&#x1F43A;</span>,
+        hexadecimal: "&#x1F43A;",
+      },
+      {
+        character: <span>&#x1F43B;</span>,
+        hexadecimal: "&#x1F43B;",
+      },
+      {
+        character: <span>&#x1F43C;</span>,
+        hexadecimal: "&#x1F43C;",
+      },
+      {
+        character: <span>&#x1F980;</span>,
+        hexadecimal: "&#x1F980;",
+      },
+      {
+        character: <span>&#x1F981;</span>,
+        hexadecimal: "&#x1F981;",
+      },
+      {
+        character: <span>&#x1F982;</span>,
+        hexadecimal: "&#x1F982;",
+      },
+      {
+        character: <span>&#x1F983;</span>,
+        hexadecimal: "&#x1F983;",
+      },
+      {
+        character: <span>&#x1F984;</span>,
+        hexadecimal: "&#x1F984;",
+      },
+      {
+        character: <span>&#x1F985;</span>,
+        hexadecimal: "&#x1F985;",
+      },
+      {
+        character: <span>&#x1F986;</span>,
+        hexadecimal: "&#x1F986;",
+      },
+      {
+        character: <span>&#x1F987;</span>,
+        hexadecimal: "&#x1F987;",
+      },
+      {
+        character: <span>&#x1F988;</span>,
+        hexadecimal: "&#x1F988;",
+      },
+      {
+        character: <span>&#x1F989;</span>,
+        hexadecimal: "&#x1F989;",
+      },
+      {
+        character: <span>&#x1F98A;</span>,
+        hexadecimal: "&#x1F98A;",
+      },
+      {
+        character: <span>&#x1F98B;</span>,
+        hexadecimal: "&#x1F98B;",
+      },
+      {
+        character: <span>&#x1F98C;</span>,
+        hexadecimal: "&#x1F98C;",
+      },
+      {
+        character: <span>&#x1F98D;</span>,
+        hexadecimal: "&#x1F98D;",
+      },
+      {
+        character: <span>&#x1F98E;</span>,
+        hexadecimal: "&#x1F98E;",
+      },
+      {
+        character: <span>&#x1F98F;</span>,
+        hexadecimal: "&#x1F98F;",
+      },
+      {
+        character: <span>&#x1F990;</span>,
+        hexadecimal: "&#x1F990;",
+      },
+      {
+        character: <span>&#x1F991;</span>,
+        hexadecimal: "&#x1F991;",
+      },
+      {
+        character: <span>&#x1F992;</span>,
+        hexadecimal: "&#x1F992;",
+      },
+      {
+        character: <span>&#x1F993;</span>,
+        hexadecimal: "&#x1F993;",
+      },
+      {
+        character: <span>&#x1F994;</span>,
+        hexadecimal: "&#x1F994;",
+      },
+      {
+        character: <span>&#x1F995;</span>,
+        hexadecimal: "&#x1F995;",
+      },
+      {
+        character: <span>&#x1F996;</span>,
+        hexadecimal: "&#x1F996;",
+      },
+      {
+        character: <span>&#x1F997;</span>,
+        hexadecimal: "&#x1F997;",
       },
     ],
   },
@@ -911,8 +1247,120 @@ export const EmojisData: CatDisplayDataType[] = [
     category: "Clothes",
     content: [
       {
-        character: <span>&#x231A;</span>,
-        hexadecimal: "&#x231A;",
+        character: <span>&#x1F302;</span>,
+        hexadecimal: "&#x1F302;",
+      },
+      {
+        character: <span>&#x1F3A7;</span>,
+        hexadecimal: "&#x1F3A7;",
+      },
+      {
+        character: <span>&#x1F3A9;</span>,
+        hexadecimal: "&#x1F3A9;",
+      },
+      {
+        character: <span>&#x1F3BD;</span>,
+        hexadecimal: "&#x1F3BD;",
+      },
+      {
+        character: <span>&#x1F451;</span>,
+        hexadecimal: "&#x1F451;",
+      },
+      {
+        character: <span>&#x1F452;</span>,
+        hexadecimal: "&#x1F452;",
+      },
+      {
+        character: <span>&#x1F453;</span>,
+        hexadecimal: "&#x1F453;",
+      },
+      {
+        character: <span>&#x1F454;</span>,
+        hexadecimal: "&#x1F454;",
+      },
+      {
+        character: <span>&#x1F455;</span>,
+        hexadecimal: "&#x1F455;",
+      },
+      {
+        character: <span>&#x1F456;</span>,
+        hexadecimal: "&#x1F456;",
+      },
+      {
+        character: <span>&#x1F457;</span>,
+        hexadecimal: "&#x1F457;",
+      },
+      {
+        character: <span>&#x1F458;</span>,
+        hexadecimal: "&#x1F458;",
+      },
+      {
+        character: <span>&#x1F459;</span>,
+        hexadecimal: "&#x1F459;",
+      },
+      {
+        character: <span>&#x1F45A;</span>,
+        hexadecimal: "&#x1F45A;",
+      },
+      {
+        character: <span>&#x1F45B;</span>,
+        hexadecimal: "&#x1F45B;",
+      },
+      {
+        character: <span>&#x1F45C;</span>,
+        hexadecimal: "&#x1F45C;",
+      },
+      {
+        character: <span>&#x1F45D;</span>,
+        hexadecimal: "&#x1F45D;",
+      },
+      {
+        character: <span>&#x1F45E;</span>,
+        hexadecimal: "&#x1F45E;",
+      },
+      {
+        character: <span>&#x1F45F;</span>,
+        hexadecimal: "&#x1F45F;",
+      },
+      {
+        character: <span>&#x1F460;</span>,
+        hexadecimal: "&#x1F460;",
+      },
+      {
+        character: <span>&#x1F461;</span>,
+        hexadecimal: "&#x1F461;",
+      },
+      {
+        character: <span>&#x1F462;</span>,
+        hexadecimal: "&#x1F462;",
+      },
+      {
+        character: <span>&#x1F48D;</span>,
+        hexadecimal: "&#x1F48D;",
+      },
+      {
+        character: <span>&#x1F4BC;</span>,
+        hexadecimal: "&#x1F4BC;",
+      },
+      {
+        character: <span>&#x1F9E2;</span>,
+        hexadecimal: "&#x1F9E2;",
+      },
+      {
+        character: <span>&#x1F9E3;</span>,
+        hexadecimal: "&#x1F9E3;",
+      },
+      {
+        character: <span>&#x1F9E4;</span>,
+        hexadecimal: "&#x1F9E4;",
+      },
+      {
+        character: <span>&#x1F9E5;</span>,
+        hexadecimal: "&#x1F9E5;",
+      },
+      {
+        character: <span>&#x1F9E6;</span>,
+        hexadecimal: "&#x1F9E6;",
       },
     ],
   },
@@ -920,8 +1368,204 @@ export const EmojisData: CatDisplayDataType[] = [
     category: "Sports",
     content: [
       {
-        character: <span>&#x231A;</span>,
-        hexadecimal: "&#x231A;",
+        character: <span>&#x26BD;</span>,
+        hexadecimal: "&#x26BD;",
+      },
+      {
+        character: <span>&#x26BE;</span>,
+        hexadecimal: "&#x26BE;",
+      },
+      {
+        character: <span>&#x26F3;</span>,
+        hexadecimal: "&#x26F3;",
+      },
+      {
+        character: <span>&#x1F3B3;</span>,
+        hexadecimal: "&#x1F3B3;",
+      },
+      {
+        character: <span>&#x1F3C0;</span>,
+        hexadecimal: "&#x1F3C0;",
+      },
+      {
+        character: <span>&#x1F3C1;</span>,
+        hexadecimal: "&#x1F3C1;",
+      },
+      {
+        character: <span>&#x1F3C2;</span>,
+        hexadecimal: "&#x1F3C2;",
+      },
+      {
+        character: <span>&#x1F3C3;</span>,
+        hexadecimal: "&#x1F3C3;",
+      },
+      {
+        character: <span>&#x1F3C4;</span>,
+        hexadecimal: "&#x1F3C4;",
+      },
+      {
+        character: <span>&#x1F3C5;</span>,
+        hexadecimal: "&#x1F3C5;",
+      },
+      {
+        character: <span>&#x1F3C6;</span>,
+        hexadecimal: "&#x1F3C6;",
+      },
+      {
+        character: <span>&#x1F3C7;</span>,
+        hexadecimal: "&#x1F3C7;",
+      },
+      {
+        character: <span>&#x1F3C8;</span>,
+        hexadecimal: "&#x1F3C8;",
+      },
+      {
+        character: <span>&#x1F3C9;</span>,
+        hexadecimal: "&#x1F3C9;",
+      },
+      {
+        character: <span>&#x1F3CA;</span>,
+        hexadecimal: "&#x1F3CA;",
+      },
+      {
+        character: <span>&#x1F3CB;</span>,
+        hexadecimal: "&#x1F3CB;",
+      },
+      {
+        character: <span>&#x1F3CC;</span>,
+        hexadecimal: "&#x1F3CC;",
+      },
+      {
+        character: <span>&#x1F3CD;</span>,
+        hexadecimal: "&#x1F3CD;",
+      },
+      {
+        character: <span>&#x1F3CF;</span>,
+        hexadecimal: "&#x1F3CF;",
+      },
+      {
+        character: <span>&#x1F3D0;</span>,
+        hexadecimal: "&#x1F3D0;",
+      },
+      {
+        character: <span>&#x1F3D1;</span>,
+        hexadecimal: "&#x1F3D1;",
+      },
+      {
+        character: <span>&#x1F3D2;</span>,
+        hexadecimal: "&#x1F3D2;",
+      },
+      {
+        character: <span>&#x1F3D3;</span>,
+        hexadecimal: "&#x1F3D3;",
+      },
+      {
+        character: <span>&#x1F3F8;</span>,
+        hexadecimal: "&#x1F3F8;",
+      },
+      {
+        character: <span>&#x1F3F9;</span>,
+        hexadecimal: "&#x1F3F9;",
+      },
+      {
+        character: <span>&#x1F6B2;</span>,
+        hexadecimal: "&#x1F6B2;",
+      },
+      {
+        character: <span>&#x1F6B4;</span>,
+        hexadecimal: "&#x1F6B4;",
+      },
+      {
+        character: <span>&#x1F6B5;</span>,
+        hexadecimal: "&#x1F6B5;",
+      },
+      {
+        character: <span>&#x1F6F4;</span>,
+        hexadecimal: "&#x1F6F4;",
+      },
+      {
+        character: <span>&#x1F6F5;</span>,
+        hexadecimal: "&#x1F6F5;",
+      },
+      {
+        character: <span>&#x1F6F6;</span>,
+        hexadecimal: "&#x1F6F6;",
+      },
+      {
+        character: <span>&#x1F6F7;</span>,
+        hexadecimal: "&#x1F6F7;",
+      },
+      {
+        character: <span>&#x1F6F9;</span>,
+        hexadecimal: "&#x1F6F9;",
+      },
+      {
+        character: <span>&#x1F938;</span>,
+        hexadecimal: "&#x1F938;",
+      },
+      {
+        character: <span>&#x1F939;</span>,
+        hexadecimal: "&#x1F939;",
+      },
+      {
+        character: <span>&#x1F93A;</span>,
+        hexadecimal: "&#x1F93A;",
+      },
+      {
+        character: <span>&#x1F93B;</span>,
+        hexadecimal: "&#x1F93B;",
+      },
+      {
+        character: <span>&#x1F93C;</span>,
+        hexadecimal: "&#x1F93C;",
+      },
+      {
+        character: <span>&#x1F93D;</span>,
+        hexadecimal: "&#x1F93D;",
+      },
+      {
+        character: <span>&#x1F93E;</span>,
+        hexadecimal: "&#x1F93E;",
+      },
+      {
+        character: <span>&#x1F945;</span>,
+        hexadecimal: "&#x1F945;",
+      },
+      {
+        character: <span>&#x1F947;</span>,
+        hexadecimal: "&#x1F947;",
+      },
+      {
+        character: <span>&#x1F948;</span>,
+        hexadecimal: "&#x1F948;",
+      },
+      {
+        character: <span>&#x1F949;</span>,
+        hexadecimal: "&#x1F949;",
+      },
+      {
+        character: <span>&#x1F94A;</span>,
+        hexadecimal: "&#x1F94A;",
+      },
+      {
+        character: <span>&#x1F94B;</span>,
+        hexadecimal: "&#x1F94B;",
+      },
+      {
+        character: <span>&#x1F94C;</span>,
+        hexadecimal: "&#x1F94C;",
+      },
+      {
+        character: <span>&#x1F94D;</span>,
+        hexadecimal: "&#x1F94D;",
+      },
+      {
+        character: <span>&#x1F94E;</span>,
+        hexadecimal: "&#x1F94E;",
+      },
+      {
+        character: <span>&#x1F94F;</span>,
+        hexadecimal: "&#x1F94F;",
       },
     ],
   },
@@ -929,8 +1573,100 @@ export const EmojisData: CatDisplayDataType[] = [
     category: "Archi",
     content: [
       {
-        character: <span>&#x231A;</span>,
-        hexadecimal: "&#x231A;",
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x1F301;</span>,
+        hexadecimal: "&#x1F301;",
+      },
+      {
+        character: <span>&#x1F303;</span>,
+        hexadecimal: "&#x1F303;",
+      },
+      {
+        character: <span>&#x1F306;</span>,
+        hexadecimal: "&#x1F306;",
+      },
+      {
+        character: <span>&#x1F307;</span>,
+        hexadecimal: "&#x1F307;",
+      },
+      {
+        character: <span>&#x1F3E0;</span>,
+        hexadecimal: "&#x1F3E0;",
+      },
+      {
+        character: <span>&#x1F3E1;</span>,
+        hexadecimal: "&#x1F3E1;",
+      },
+      {
+        character: <span>&#x1F3E2;</span>,
+        hexadecimal: "&#x1F3E2;",
+      },
+      {
+        character: <span>&#x1F3E3;</span>,
+        hexadecimal: "&#x1F3E3;",
+      },
+      {
+        character: <span>&#x1F3E4;</span>,
+        hexadecimal: "&#x1F3E4;",
+      },
+      {
+        character: <span>&#x1F3E5;</span>,
+        hexadecimal: "&#x1F3E5;",
+      },
+      {
+        character: <span>&#x1F3E6;</span>,
+        hexadecimal: "&#x1F3E6;",
+      },
+      {
+        character: <span>&#x1F3E7;</span>,
+        hexadecimal: "&#x1F3E7;",
+      },
+      {
+        character: <span>&#x1F3E8;</span>,
+        hexadecimal: "&#x1F3E8;",
+      },
+      {
+        character: <span>&#x1F3E9;</span>,
+        hexadecimal: "&#x1F3E9;",
+      },
+      {
+        character: <span>&#x1F3EA;</span>,
+        hexadecimal: "&#x1F3EA;",
+      },
+      {
+        character: <span>&#x1F3EB;</span>,
+        hexadecimal: "&#x1F3EB;",
+      },
+      {
+        character: <span>&#x1F3EC;</span>,
+        hexadecimal: "&#x1F3EC;",
+      },
+      {
+        character: <span>&#x1F3ED;</span>,
+        hexadecimal: "&#x1F3ED;",
+      },
+      {
+        character: <span>&#x1F3EF;</span>,
+        hexadecimal: "&#x1F3EF;",
+      },
+      {
+        character: <span>&#x1F3F0;</span>,
+        hexadecimal: "&#x1F3F0;",
+      },
+      {
+        character: <span>&#x1F492;</span>,
+        hexadecimal: "&#x1F492;",
+      },
+      {
+        character: <span>&#x1F54C;</span>,
+        hexadecimal: "&#x1F54C;",
+      },
+      {
+        character: <span>&#x1F54D;</span>,
+        hexadecimal: "&#x1F54D;",
       },
     ],
   },
@@ -938,8 +1674,140 @@ export const EmojisData: CatDisplayDataType[] = [
     category: "Astro",
     content: [
       {
-        character: <span>&#x231A;</span>,
-        hexadecimal: "&#x231A;",
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
+      },
+      {
+        character: <span>&#x26EA;</span>,
+        hexadecimal: "&#x26EA;",
       },
     ],
   },
