@@ -1,6 +1,8 @@
 /** @format */
 
 import React from "react"
+import CatDisplay from "../../components/wrappers/CatDisplay"
+import { EmojisData } from "./Data"
 
 const Emojis = () => {
   return (
@@ -20,7 +22,13 @@ const Emojis = () => {
         It represents a character that is either reserved, <br />
         not on your keyboard at all or kinda hard to type.
       </div>
-      <div className="flex justify-center flex-wrap gap-20 ">ss</div>
+      <div className="flex justify-center flex-wrap gap-20 ">
+        <CatDisplay
+          Data={EmojisData}
+          flexBasis={"basis-1/2"}
+          Headers={["Character", "Hexadecimal"]}
+        />
+      </div>
     </div>
   )
 }

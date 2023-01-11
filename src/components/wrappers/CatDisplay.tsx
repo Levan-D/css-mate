@@ -37,7 +37,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
       <div className="px-4 py-2">
         <div className={"flex"}>
           {Headers.map((header, i) => (
-            <h3 key={i} className={`${flexBasis} font-bold`}>
+            <h3 key={i} className={`${flexBasis} font-bold pr-8`}>
               {header}
             </h3>
           ))}
@@ -59,7 +59,9 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                         {char.hexadecimal}
                       </div>
                     </div>
-                    <div className={`${flexBasis}  px-2 `}>{char.description}</div>
+                    {char.description && (
+                      <div className={`${flexBasis}  px-2 `}>{char.description}</div>
+                    )}
                   </div>
                 ))}
               </div>
