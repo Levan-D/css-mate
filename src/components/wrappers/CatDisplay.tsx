@@ -19,7 +19,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
   const [activeBtn, setActiveBtn] = useState<string>(navBtns[0])
 
   return (
-    <div className="border-2 border-white rounded-xl mx-auto w-fit ">
+    <div className="border-2 border-white rounded-xl mx-auto w-fit max-w-3xl ">
       <div className="   bg-primary  rounded-t-xl py-3  justify-center flex flex-wrap">
         {navBtns.map((btn, i) => (
           <div
@@ -42,26 +42,30 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
             </h3>
           ))}
         </div>
+        <hr className="mb-1 mt-2 bg-gray-500 h-[1px] border-0 opacity-30" />
         {Data.map((cat, i) => (
           <div key={i}>
             {cat.category === activeBtn && (
               <div>
                 {cat.content.map((char, i) => (
-                  <div key={i} className={"flex"}>
-                    <div className={`${flexBasis}  px-2 `}>{char.character}</div>
-                    <div className={`${flexBasis} `}>
-                      <div
-                        className={` cursor-pointer   hover:bg-slate-100  active:bg-slate-300 hover:text-dark w-fit px-2 duration-200 rounded-md `}
-                        onClick={() => {
-                          navigator.clipboard.writeText(char.hexadecimal)
-                        }}
-                      >
-                        {char.hexadecimal}
+                  <div key={i}>
+                    <div className={"flex"}>
+                      <div className={`${flexBasis}  px-2 `}>{char.character}</div>
+                      <div className={`${flexBasis} `}>
+                        <div
+                          className={` cursor-pointer   hover:bg-slate-100  active:bg-slate-300 hover:text-dark w-fit px-2 duration-200 rounded-md `}
+                          onClick={() => {
+                            navigator.clipboard.writeText(char.hexadecimal)
+                          }}
+                        >
+                          {char.hexadecimal}
+                        </div>
                       </div>
+                      {char.description && (
+                        <div className={`${flexBasis}  px-2 `}>{char.description}</div>
+                      )}
                     </div>
-                    {char.description && (
-                      <div className={`${flexBasis}  px-2 `}>{char.description}</div>
-                    )}
+                    <hr className="my-1 bg-gray-500 h-[1px] border-0 opacity-30" />
                   </div>
                 ))}
               </div>
