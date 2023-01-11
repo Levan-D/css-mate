@@ -10,10 +10,13 @@ const Emojis = () => {
       <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
         Did you know html had <span className="text-secondary">Emojis</span>?
       </h1>
-      <div className="font-cursiveCustom text-center mb-4 text-base">
-        they work as normal html entities!
+      <div className="font-cursiveCustom text-center mb-2 text-base">
+        they work as normal html entities
       </div>
       <div className="font-cursiveCustom text-center mb-4 text-base">
+        click on hex code to copy!
+      </div>
+      <div className="font-cursiveCustom text-center mb-2 text-base">
         What is an HTML entity you ask?
       </div>
       <div className="text-center text-base mb-16">
