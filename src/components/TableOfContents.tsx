@@ -47,11 +47,8 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
           className={`${visibility ? "scale-y-100 " : "scale-y-0  "}     origin-top   `}
         >
           {tableOfContets.map((link, i) => (
-            <a href={`#${link}`}>
-              <li
-                className="hover:bg-slate-100 hover:text-dark px-3  py-[2px] active:bg-slate-500  duration-200"
-                key={i}
-              >
+            <a href={`#${link}`} key={i}>
+              <li className="hover:bg-slate-100 hover:text-dark px-3  py-[2px] active:bg-slate-500  duration-200">
                 {link}
               </li>
             </a>

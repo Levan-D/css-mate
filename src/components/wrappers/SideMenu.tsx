@@ -4,9 +4,14 @@ import React from "react"
 // @ts-ignore
 import { ReactComponent as RestartIcon } from "../../assets/icons/restart.svg"
 
-type SideMenuProps = { title: string; resetState?: Function; children: React.ReactNode }
+type SideMenuProps = {
+  title: string
+  tabs?: { name: string; index: number }[]
+  resetState?: Function
+  children: React.ReactNode
+}
 
-const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
+const SideMenu = ({ title, tabs, children, resetState }: SideMenuProps) => {
   return (
     <div className="border-2 rounded-xl  z-50 w-96 h-fit mx-auto md:mx-0 ">
       <div className="flex p-4 pb-2 bg-primary rounded-t-xl justify-between">
@@ -26,6 +31,15 @@ const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
           </div>
         )}
       </div>
+      {tabs && (
+        <div className="flex gap-2 bg-white text-dark py-1  px-3 font-semibold">
+          {tabs.map((tab, i) => (
+            <div className="cursor-pointer px-1 py-1" key={i}>
+              {tab.name}
+            </div>
+          ))}
+        </div>
+      )}
       {children}
     </div>
   )

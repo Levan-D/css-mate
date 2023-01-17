@@ -1,30 +1,33 @@
 /** @format */
 
 import React, { useState, useRef } from "react"
-import type { CurrentValueType } from "./BoxShadowTypes"
+
+import { useAppSelector } from "../../app/hooks"
 import moon from "../../assets/icons/moon.png"
 import sun from "../../assets/icons/sun.png"
 import changeShape from "../../assets/icons/changeShape.png"
 import { btnResponse } from "./Data"
 import { useNavigate } from "react-router-dom"
 
-type ShapeProps = {
-  currentValue: CurrentValueType
-  shadowColor: string
-  inset: boolean
-}
-
-const Shape = ({
-  shadowColor,
-  inset,
-  currentValue: { horizontal, vertical, blur, spread, opacity },
-}: ShapeProps) => {
+const Shape = () => {
   const navigate = useNavigate()
+  const { boxShadowData } = useAppSelector(state => state.boxShadow)
+
   const [darkmode, setDarkmode] = useState<boolean>(true)
   const [square, setSquare] = useState<boolean>(true)
   const [btnContent, setBtnContent] = useState<string>("I am a button")
   const btnIndex = useRef(0)
   const btnActive = useRef(false)
+
+  let bowShadowStyle = boxShadowData
+    .map(data => {
+      return `${data.settings.inset ? "inset" : ""} ${data.settings.horizontal}px ${
+        data.settings.vertical
+      }px ${data.settings.blur}px ${data.settings.spread}px rgba(${
+        data.settings.shadowColor
+      },${data.settings.opacity / 100})`
+    })
+    .toString()
 
   return (
     <div
@@ -44,11 +47,7 @@ const Shape = ({
       </div>
       <div
         style={{
-          boxShadow: `${
-            inset ? `inset` : ""
-          } ${horizontal}px ${vertical}px ${blur}px ${spread}px rgba(${shadowColor},${
-            opacity / 100
-          })`,
+          boxShadow: bowShadowStyle,
         }}
         onClick={() => setSquare(x => !x)}
         className={` ${square ? "rounded-xl" : "rounded-full"}   ${
@@ -63,11 +62,7 @@ const Shape = ({
       </div>
       <div
         style={{
-          boxShadow: `${
-            inset ? `inset` : ""
-          } ${horizontal}px ${vertical}px ${blur}px ${spread}px rgba(${shadowColor},${
-            opacity / 100
-          })`,
+          boxShadow: bowShadowStyle,
         }}
         onMouseDown={() => {
           if (btnActive.current === false) {

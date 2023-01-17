@@ -11,6 +11,8 @@ export const boxShadowPresets: boxShadowPresetsType[] = [
       blur: 1,
       spread: 0,
       opacity: 20,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
   {
@@ -21,6 +23,8 @@ export const boxShadowPresets: boxShadowPresetsType[] = [
       blur: 2,
       spread: 0,
       opacity: 16,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
   {
@@ -31,6 +35,8 @@ export const boxShadowPresets: boxShadowPresetsType[] = [
       blur: 4,
       spread: 0,
       opacity: 16,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
   {
@@ -41,6 +47,8 @@ export const boxShadowPresets: boxShadowPresetsType[] = [
       blur: 6,
       spread: 0,
       opacity: 24,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
   {
@@ -51,6 +59,8 @@ export const boxShadowPresets: boxShadowPresetsType[] = [
       blur: 8,
       spread: 0,
       opacity: 28,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
 ]
@@ -64,6 +74,8 @@ export const glowEffectPresets: boxShadowPresetsType[] = [
       blur: 15,
       spread: 0,
       opacity: 60,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
   {
@@ -74,6 +86,8 @@ export const glowEffectPresets: boxShadowPresetsType[] = [
       blur: 20,
       spread: 0,
       opacity: 80,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
   {
@@ -84,6 +98,8 @@ export const glowEffectPresets: boxShadowPresetsType[] = [
       blur: 30,
       spread: 0,
       opacity: 80,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
   {
@@ -94,6 +110,8 @@ export const glowEffectPresets: boxShadowPresetsType[] = [
       blur: 30,
       spread: 5,
       opacity: 80,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
   {
@@ -104,6 +122,8 @@ export const glowEffectPresets: boxShadowPresetsType[] = [
       blur: 30,
       spread: 10,
       opacity: 80,
+      inset: false,
+      shadowColor: "255,255,255",
     },
   },
 ]

@@ -8,7 +8,7 @@ type OutputProps = { title: string; renderArray: OutputRenderArrayType[] }
 const Output = ({ title, renderArray }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
-    <div className="py-8 px-6 border-white border-2 rounded-xl h-fit w-fit mx-auto">
+    <div className="py-8 px-6 border-white border-2 rounded-xl h-fit w-fit mx-auto  max-w-5xl">
       <h1 className="select-none font-bold">{title}</h1>
 
       <div>
@@ -30,7 +30,7 @@ const Output = ({ title, renderArray }: OutputProps) => {
           <div key={index}>
             {selectedBtn === index &&
               item.content.map((contentItem, contentIndex) => (
-                <div key={contentIndex} className="text-sm md:text-base">
+                <div key={contentIndex} className="text-sm md:text-base break-words">
                   {contentItem}
                 </div>
               ))}

@@ -16,5 +16,7 @@ export type boxShadowPresetsType = {
     blur: number
     spread: number
     opacity: number
+    inset: boolean
+    shadowColor: string
   }
 }
