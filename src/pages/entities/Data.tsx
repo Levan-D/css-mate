@@ -4,31 +4,6 @@ import { CatDisplayDataType } from "../../components/wrappers/WrapperTypes"
 
 export const EntitiesData: CatDisplayDataType[] = [
   {
-    category: "Spaces",
-    content: [
-      {
-        character: <span>&#09;</span>,
-        hexadecimal: "&#09;",
-        description: "Horizontal tab",
-      },
-      {
-        character: <span>&#10;</span>,
-        hexadecimal: "&#10;",
-        description: "Line feed",
-      },
-      {
-        character: <span>&#13;</span>,
-        hexadecimal: "&#13;",
-        description: "Carriage return / enter",
-      },
-      {
-        character: <span>&#160;</span>,
-        hexadecimal: "&#160;",
-        description: "Non-breaking space",
-      },
-    ],
-  },
-  {
     category: "Commons",
     content: [
       {
@@ -118,6 +93,16 @@ export const EntitiesData: CatDisplayDataType[] = [
         description: "Left square bracket",
       },
       {
+        character: <span>&#40;</span>,
+        hexadecimal: "&#40;",
+        description: "Left parenthesis",
+      },
+      {
+        character: <span>&#41;</span>,
+        hexadecimal: "&#41;",
+        description: "Right parenthesis",
+      },
+      {
         character: <span>&#92;</span>,
         hexadecimal: "&#92;",
         description: "Backslash",
@@ -161,6 +146,31 @@ export const EntitiesData: CatDisplayDataType[] = [
         character: <span>&#126;</span>,
         hexadecimal: "&#126;",
         description: "Tilde",
+      },
+    ],
+  },
+  {
+    category: "Spaces",
+    content: [
+      {
+        character: <span>&#09;</span>,
+        hexadecimal: "&#09;",
+        description: "Horizontal tab",
+      },
+      {
+        character: <span>&#10;</span>,
+        hexadecimal: "&#10;",
+        description: "Line feed",
+      },
+      {
+        character: <span>&#13;</span>,
+        hexadecimal: "&#13;",
+        description: "Carriage return / enter",
+      },
+      {
+        character: <span>&#160;</span>,
+        hexadecimal: "&#160;",
+        description: "Non-breaking space",
       },
     ],
   },
