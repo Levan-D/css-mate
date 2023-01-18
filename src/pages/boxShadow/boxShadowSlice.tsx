@@ -3,6 +3,8 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../app/store"
+//@ts-ignore
+import { v4 as uuidv4 } from "uuid"
 
 interface boxshadowSettings {
   horizontal: number
@@ -16,6 +18,7 @@ interface boxshadowSettings {
 
 interface boxShadowState {
   tabName: string
+  id: string
   settings: boxshadowSettings
 }
 
@@ -23,7 +26,8 @@ const initialState = {
   currentTab: 0,
   boxShadowData: [
     {
-      tabName: "BS1",
+      tabName: "Sh1",
+      id: uuidv4(),
       settings: {
         horizontal: 12,
         vertical: 12,
@@ -34,18 +38,6 @@ const initialState = {
         shadowColor: "255,255,255",
       },
     },
-    {
-      tabName: "BS1",
-      settings: {
-        horizontal: 12,
-        vertical: 12,
-        blur: 42,
-        spread: 0,
-        opacity: 44,
-        inset: false,
-        shadowColor: "60, 179, 113",
-      },
-    },
   ] as boxShadowState[],
 }
 
@@ -54,6 +46,20 @@ const boxShadowSlice = createSlice({
   initialState,
   reducers: {
     resetState: () => initialState,
+    setTabPage: (state, action: PayloadAction<number>) => {
+      state.currentTab = action.payload
+    },
+    deleteTabPage: (state, action: PayloadAction<string>) => {
+      console.log(`frog`)
+      if (state.boxShadowData.length > 1) {
+        state.boxShadowData = state.boxShadowData.filter(
+          data => data.id !== action.payload
+        )
+        if (state.currentTab > 1) {
+          state.currentTab = state.currentTab - 1
+        } else state.currentTab
+      }
+    },
     setColor: (state, action: PayloadAction<string>) => {
       state.boxShadowData[state.currentTab].settings.shadowColor = action.payload
     },
@@ -73,6 +79,23 @@ const boxShadowSlice = createSlice({
       state.boxShadowData[state.currentTab].settings[`${action.payload.name}`] =
         action.payload.value
     },
+    addBoxShadow: state => {
+      if (state.boxShadowData.length < 10) {
+        state.boxShadowData.push({
+          tabName: `Sh${state.boxShadowData.length + 1}`,
+          id: uuidv4(),
+          settings: {
+            horizontal: 12,
+            vertical: 12,
+            blur: 4,
+            spread: 0,
+            opacity: 20,
+            inset: false,
+            shadowColor: "255,255,255",
+          },
+        })
+      }
+    },
   },
 })
 
@@ -81,10 +104,19 @@ export const getBoxShadowTabs = createSelector(
   boxShadow =>
     boxShadow.boxShadowData.map((z, i) => ({
       name: z.tabName,
+      id: z.id,
       index: i,
     }))
 )
 
-export const { setColor, resetState, setPreset, toggleInset, updateBoxShadow } =
-  boxShadowSlice.actions
+export const {
+  setColor,
+  setTabPage,
+  deleteTabPage,
+  resetState,
+  setPreset,
+  toggleInset,
+  updateBoxShadow,
+  addBoxShadow,
+} = boxShadowSlice.actions
 export default boxShadowSlice.reducer
