@@ -1,6 +1,6 @@
-# CSSHomie
+# CSSMate
 
-A tool to help you visualize various css rules and convert values
+A tool to help you visualize various css rules, convert values, & access HTML entity cheat sheets.
 
 ## Quick Overview
 
@@ -13,4 +13,4 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see your app.
 
 ## License
 
-CSSHomie is available under the MIT license. See the LICENSE file for more info.
+CSSMate is available under the MIT license. See the LICENSE file for more info.
