@@ -60,7 +60,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                           }}
                         >
                           <Tooltip text="Copied" onClick={true}>
-                            {char.hexadecimal}{" "}
+                            {char.hexadecimal}
                           </Tooltip>
                         </div>
                       </div>
