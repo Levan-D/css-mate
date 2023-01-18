@@ -7,6 +7,7 @@ import cssIcon from ".././../assets/icons/css.png"
 import { cursorData } from "./Data"
 import TableOfContents from "../../components/TableOfContents"
 import BackToTopBtn from "../../components/BackToTopBtn"
+import Tooltip from "../../components/Tooltip"
 
 const Cursors = () => {
   let tableOfContets: string[] = []
@@ -56,28 +57,33 @@ const Cursors = () => {
                       {content.vanilla}
                     </div>
                     <div className={`flex gap-2 justify-center  `}>
-                      <div
-                        className={`flex gap-1 btnPrimary`}
-                        onClick={() => {
-                          navigator.clipboard.writeText(content.vanilla)
-                        }}
-                      >
-                        <div>
-                          <img src={cssIcon} className="w-6" alt="" />
+                      <Tooltip text="Copied" onClick={true}>
+                        <div
+                          className={`flex gap-1 btnPrimary`}
+                          onClick={() => {
+                            navigator.clipboard.writeText(content.vanilla)
+                          }}
+                        >
+                          <div>
+                            <img src={cssIcon} className="w-6" alt="" />
+                          </div>
+
+                          <div className="text-sm leading-6">Copy</div>
                         </div>
-                        <div className="text-sm leading-6">Copy</div>
-                      </div>
-                      <div
-                        className={`flex gap-1 btnPrimary`}
-                        onClick={() => {
-                          navigator.clipboard.writeText(content.tailwind)
-                        }}
-                      >
-                        <div>
-                          <img src={tailwindIcon} className="w-6" alt="" />
+                      </Tooltip>
+                      <Tooltip text="Copied" onClick={true}>
+                        <div
+                          className={`flex gap-1 btnPrimary`}
+                          onClick={() => {
+                            navigator.clipboard.writeText(content.tailwind)
+                          }}
+                        >
+                          <div>
+                            <img src={tailwindIcon} className="w-6" alt="" />
+                          </div>
+                          <div className="text-sm leading-6">Copy</div>
                         </div>
-                        <div className="text-sm leading-6">Copy</div>
-                      </div>
+                      </Tooltip>
                     </div>
                   </Card>
                 ))}

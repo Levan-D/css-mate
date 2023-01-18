@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react"
 import { CatDisplayDataType } from "./WrapperTypes"
+import Tooltip from "../Tooltip"
 
 type CatDisplayType = {
   Data: CatDisplayDataType[]
@@ -58,7 +59,9 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                             navigator.clipboard.writeText(char.hexadecimal)
                           }}
                         >
-                          {char.hexadecimal}
+                          <Tooltip text="Copied" onClick={true}>
+                            {char.hexadecimal}{" "}
+                          </Tooltip>
                         </div>
                       </div>
                       {char.description && (
