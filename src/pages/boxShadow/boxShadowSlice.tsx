@@ -50,12 +50,11 @@ const boxShadowSlice = createSlice({
       state.currentTab = action.payload
     },
     deleteTabPage: (state, action: PayloadAction<string>) => {
-      console.log(`frog`)
       if (state.boxShadowData.length > 1) {
         state.boxShadowData = state.boxShadowData.filter(
           data => data.id !== action.payload
         )
-        if (state.currentTab > 1) {
+        if (state.currentTab >= 1) {
           state.currentTab = state.currentTab - 1
         } else state.currentTab
       }
