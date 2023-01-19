@@ -27,7 +27,7 @@ const Output = ({ title, renderArray }: OutputProps) => {
             </div>
           ))}
         </div>
-        <div className="border-l-2 border-orange-400 pl-4 pb-2 pt-1 rounded-lg">
+        <div className="border-l-2 border-primary pl-4 pb-2 pt-1 rounded-lg">
           {renderArray.map((item, index) => (
             <div key={index}>
               {selectedBtn === index &&
