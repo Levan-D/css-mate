@@ -26,16 +26,31 @@ const BoxShadowOutput = () => {
       -moz-box-shadow: ${boxShadowRender};`,
       content: [
         <>
-          <span className="text-blue-300">box-shadow: </span>
-          <span className="text-orange-300">{boxShadowRender};</span>
+          <span className="text-blue-300">
+            box-shadow<span className="text-white px-[4px]">:</span>
+          </span>
+          <span className="text-green-300">
+            {boxShadowRender}
+            <span className="text-white pl-[4px] ">;</span>
+          </span>
         </>,
         <>
-          <span className="text-blue-300">-webkit-box-shadow: </span>
-          <span className="text-orange-300">{boxShadowRender};</span>
+          <span className="text-blue-300">
+            -webkit-box-shadow<span className="text-white px-[4px]">:</span>
+          </span>
+          <span className="text-green-300">
+            {boxShadowRender}
+            <span className="text-white pl-[4px] ">;</span>
+          </span>
         </>,
         <>
-          <span className="text-blue-300">-moz-box-shadow: </span>
-          <span className="text-orange-300">{boxShadowRender};</span>
+          <span className="text-blue-300">
+            -moz-box-shadow<span className="text-white px-[4px]">:</span>
+          </span>
+          <span className="text-green-300">
+            {boxShadowRender}
+            <span className="text-white pl-[4px] ">;</span>
+          </span>
         </>,
       ],
     },
@@ -59,8 +74,12 @@ const BoxShadowOutput = () => {
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <span className=" select-text   ">
-            <span className="text-blue-300">"custom":&nbsp;</span>
-            <span className="text-orange-300">&#34;{boxShadowRender}&#34;</span>
+            <span className="text-blue-300">
+              "custom"<span className="text-white px-[4px]">:</span>&nbsp;
+            </span>
+            <span className="text-orange-300">
+              &#34;{boxShadowRender}&#34;<span className="text-white pl-[4px]">,</span>
+            </span>
           </span>
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#x2775; <br />
