@@ -9,18 +9,22 @@ import changeShape from "../../assets/icons/changeShape.png"
 import { btnResponse } from "./Data"
 import { useNavigate } from "react-router-dom"
 import ColorPicker from "../../components/ColorPicker"
+import ColorInverter from "../../utils/ColorInverter"
+import RgbToHex from "../../utils/RGBToHex"
+//@ts-ignore
+import { ReactComponent as Triangle } from "../../assets/misc/triangle.svg"
 
 const Shape = () => {
   const navigate = useNavigate()
   const [shapeColor, setShapeColor] = useState("94,161,255")
   const { boxShadowData } = useAppSelector(state => state.boxShadow)
-  console.log(shapeColor)
+
   const [darkmode, setDarkmode] = useState<boolean>(true)
-  const [square, setSquare] = useState<boolean>(true)
+  const [shape, setShape] = useState<number>(0)
   const [btnContent, setBtnContent] = useState<string>("I am a button")
   const btnIndex = useRef(0)
   const btnActive = useRef(false)
-
+  console.log(shape)
   let bowShadowStyle = boxShadowData
     .map(data => {
       return `${data.settings.inset ? "inset" : ""} ${data.settings.horizontal}px ${
@@ -62,10 +66,14 @@ const Shape = () => {
           boxShadow: bowShadowStyle,
           backgroundColor: `rgb(${shapeColor})`,
         }}
-        onClick={() => setSquare(x => !x)}
-        className={` ${square ? "rounded-xl" : "rounded-full"}   ${
+        onClick={() => {
+          if (shape < 2) {
+            setShape(x => x + 1)
+          } else setShape(() => 0)
+        }}
+        className={` ${shape == 0 && "rounded-xl"}  ${shape == 1 && "rounded-full"}   ${
           darkmode ? `hover:border-white` : "hover:border-secondary"
-        } border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none `}
+        }    border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none `}
       >
         <img
           className="h-[50px] mx-auto my-auto  translate-y-[100px]"
@@ -73,10 +81,12 @@ const Shape = () => {
           alt=""
         />
       </div>
+      <Triangle style={{ filter: `drop-shadow(32px 52px 2px rgb(220 220 220))` }} />
       <div
         style={{
           boxShadow: bowShadowStyle,
           backgroundColor: `rgb(${shapeColor})`,
+          color: ColorInverter(RgbToHex(shapeColor), `bw`),
         }}
         onMouseDown={() => {
           if (btnActive.current === false) {
