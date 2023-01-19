@@ -26,16 +26,18 @@ const Output = ({ title, renderArray }: OutputProps) => {
             </div>
           ))}
         </div>
-        {renderArray.map((item, index) => (
-          <div key={index}>
-            {selectedBtn === index &&
-              item.content.map((contentItem, contentIndex) => (
-                <div key={contentIndex} className="text-sm md:text-base break-words">
-                  {contentItem}
-                </div>
-              ))}
-          </div>
-        ))}
+        <div className="border-l-2 border-orange-400 pl-4 pb-2 pt-1 rounded-lg">
+          {renderArray.map((item, index) => (
+            <div key={index}>
+              {selectedBtn === index &&
+                item.content.map((contentItem, contentIndex) => (
+                  <div key={contentIndex} className="text-sm md:text-base break-words">
+                    {contentItem}
+                  </div>
+                ))}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div

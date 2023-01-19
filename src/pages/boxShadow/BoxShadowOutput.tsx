@@ -10,7 +10,7 @@ const BoxShadowOutput = () => {
 
   let boxShadowRender = boxShadowData
     .map(data => {
-      return `${data.settings.inset ? "inset" : ""} ${data.settings.horizontal}px ${
+      return `${data.settings.inset ? "inset " : ""}${data.settings.horizontal}px ${
         data.settings.vertical
       }px ${data.settings.blur}px ${data.settings.spread}px rgba(${
         data.settings.shadowColor
@@ -25,15 +25,28 @@ const BoxShadowOutput = () => {
       -webkit-box-shadow: ${boxShadowRender};
       -moz-box-shadow: ${boxShadowRender};`,
       content: [
-        `box-shadow: ${boxShadowRender};`,
-        `-webkit-box-shadow: ${boxShadowRender};`,
-        `-moz-box-shadow: ${boxShadowRender};`,
+        <>
+          <span className="text-blue-300">box-shadow: </span>
+          <span className="text-orange-400">{boxShadowRender};</span>
+        </>,
+        <>
+          <span className="text-blue-300">-webkit-box-shadow: </span>
+          <span className="text-orange-400">{boxShadowRender};</span>
+        </>,
+        <>
+          <span className="text-blue-300">-moz-box-shadow: </span>
+          <span className="text-orange-400">{boxShadowRender};</span>
+        </>,
       ],
     },
     {
       title: "Tailwind inline",
       copy: `shadow-[${boxShadowRender.replace(/ /g, "_")}]`,
-      content: [`shadow-[${boxShadowRender.replace(/ /g, "_")}]`],
+      content: [
+        <span className="text-orange-400">
+          shadow-&#91;{boxShadowRender.replace(/ /g, "_")}&#93;
+        </span>,
+      ],
     },
     {
       title: "Tailwind extend",
@@ -45,8 +58,9 @@ const BoxShadowOutput = () => {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boxShadow: &#x2774;
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span className=" select-text text-white ">
-            &#34;custom &#34;: &#34;{boxShadowRender}&#34;
+          <span className=" select-text   ">
+            <span className="text-blue-300">"custom":&nbsp;</span>
+            <span className="text-orange-400">&#34;{boxShadowRender}&#34;</span>
           </span>
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#x2775; <br />
