@@ -39,13 +39,13 @@ const BoxShadowSidemenu = () => {
       value = value * 100
     }
 
-    if (name === "vertical" || name === "horizontal") {
+    if (name === "vertical" || name === "horizontal" || name === "spread") {
       if (value > 150) {
         value = 150
       } else if (value < -150) {
         value = -150
       }
-    } else if (name === "blur" || name === "spread") {
+    } else if (name === "blur") {
       if (value > 150) {
         value = 150
       } else if (value < 0) {
@@ -151,7 +151,9 @@ const BoxShadowSidemenu = () => {
                               trackClassName="customSlider-track"
                               thumbClassName="customSlider-thumb"
                               min={
-                                property[0] === "horizontal" || property[0] === "vertical"
+                                property[0] === "horizontal" ||
+                                property[0] === "vertical" ||
+                                property[0] === "spread"
                                   ? -150
                                   : 0
                               }
