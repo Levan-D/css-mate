@@ -73,7 +73,7 @@ const BoxShadowSidemenu = () => {
         <div>
           {/* tab navbar */}
           {tabs && (
-            <div className="flex bg-slate-400 text-white gap-2  py-1  px-3 font-semibold  justify-between  select-none">
+            <div className="flex bg-slate-700 text-white gap-2  py-1  px-3 font-semibold  justify-between  select-none">
               <div className="flex flex-wrap ">
                 {tabs.map((tab, i) => (
                   <div key={i}>
