@@ -55,7 +55,7 @@ const Shape = () => {
         } border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none   bg-primary`}
       >
         <img
-          className="h-[50px] mx-auto my-auto  translate-y-[105px]"
+          className="h-[50px] mx-auto my-auto  translate-y-[100px]"
           src={changeShape}
           alt=""
         />
