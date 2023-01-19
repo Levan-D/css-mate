@@ -32,6 +32,41 @@ const BoxShadowSidemenu = () => {
     dispatch(setColor(color))
   }
 
+  const handlePropertyChange = (e: React.ChangeEvent<HTMLInputElement>, name: string) => {
+    let value = Number(e.target.value)
+
+    if (name === "opacity") {
+      value = value * 100
+    }
+
+    if (name === "vertical" || name === "horizontal") {
+      if (value > 150) {
+        value = 150
+      } else if (value < -150) {
+        value = -150
+      }
+    } else if (name === "blur" || name === "spread") {
+      if (value > 150) {
+        value = 150
+      } else if (value < 0) {
+        value = 0
+      }
+    } else if (name === "opacity") {
+      if (value > 100) {
+        value = 100
+      } else if (value < 0) {
+        value = 0
+      }
+    }
+
+    dispatch(
+      updateBoxShadow({
+        value: value,
+        name: name,
+      })
+    )
+  }
+
   return (
     <div>
       <SideMenu title={`Box shadow config`} resetState={resetState}>
@@ -80,10 +115,24 @@ const BoxShadowSidemenu = () => {
                             <h2>
                               {property[0].charAt(0).toUpperCase() + property[0].slice(1)}
                             </h2>
+
                             <h2>
-                              {property[0] === "opacity"
-                                ? property[1] / 100
-                                : `${property[1]}px`}
+                              {property[0] === "opacity" ? (
+                                <input
+                                  type="number"
+                                  value={property[1] / 100}
+                                  step={0.01}
+                                  onChange={e => handlePropertyChange(e, property[0])}
+                                  className="w-14 text-right rounded-md"
+                                />
+                              ) : (
+                                <input
+                                  type="number"
+                                  value={property[1]}
+                                  onChange={e => handlePropertyChange(e, property[0])}
+                                  className="w-14  text-right  rounded-md"
+                                />
+                              )}
                             </h2>
                           </div>
                           <div className=" w-full h-[20px] mb-4">
@@ -138,3 +187,11 @@ const BoxShadowSidemenu = () => {
 }
 
 export default BoxShadowSidemenu
+
+{
+  /* <h2>
+{property[0] === "opacity"
+  ? property[1] / 100
+  : `${property[1]}px`}
+</h2> */
+}
