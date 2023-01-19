@@ -120,8 +120,8 @@ const BoxShadowSidemenu = () => {
                                   &#40;&#32;px&#32;&#41;
                                 </span>
                               ) : (
-                                <span className="text-slate-400 text-sm">
-                                  &#40;&#32;I&#32;&#41;
+                                <span className="text-slate-400 text-sm italic">
+                                  &#40;&#32;N&#32;&#41;
                                 </span>
                               )}
                             </h2>
