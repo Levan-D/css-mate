@@ -93,6 +93,7 @@ const boxShadowSlice = createSlice({
             shadowColor: "255,255,255",
           },
         })
+        state.currentTab = state.currentTab + 1
       }
     },
   },

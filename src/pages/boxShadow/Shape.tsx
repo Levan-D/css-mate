@@ -12,9 +12,9 @@ import ColorPicker from "../../components/ColorPicker"
 
 const Shape = () => {
   const navigate = useNavigate()
-  const [shapeColor, setShapeColor] = useState("rgb(94,161,255)")
+  const [shapeColor, setShapeColor] = useState("94,161,255")
   const { boxShadowData } = useAppSelector(state => state.boxShadow)
-
+  console.log(shapeColor)
   const [darkmode, setDarkmode] = useState<boolean>(true)
   const [square, setSquare] = useState<boolean>(true)
   const [btnContent, setBtnContent] = useState<string>("I am a button")
@@ -32,7 +32,7 @@ const Shape = () => {
     .toString()
 
   const HandleColorPick = (color: string) => {
-    setShapeColor(color)
+    setShapeColor(color.replace(/ /g, ""))
   }
 
   return (
@@ -60,11 +60,12 @@ const Shape = () => {
       <div
         style={{
           boxShadow: bowShadowStyle,
+          backgroundColor: `rgb(${shapeColor})`,
         }}
         onClick={() => setSquare(x => !x)}
         className={` ${square ? "rounded-xl" : "rounded-full"}   ${
           darkmode ? `hover:border-white` : "hover:border-secondary"
-        } border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none   bg-[rgb(94,161,255)]`}
+        } border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none `}
       >
         <img
           className="h-[50px] mx-auto my-auto  translate-y-[100px]"
@@ -75,6 +76,7 @@ const Shape = () => {
       <div
         style={{
           boxShadow: bowShadowStyle,
+          backgroundColor: `rgb(${shapeColor})`,
         }}
         onMouseDown={() => {
           if (btnActive.current === false) {

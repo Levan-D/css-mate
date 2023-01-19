@@ -10,18 +10,18 @@ const ColorPicker = ({ HandleColorPick }: ColorPickerProps) => {
 
   const colorData = [
     {
-      color: "rgb(255, 0, 0)",
-      value: "255, 0, 0",
+      color: "rgb(255, 114, 94)",
+      value: "255, 114, 94",
       name: "red",
     },
     {
-      color: "rgb(0, 0, 255)",
-      value: "0, 0, 255",
+      color: "rgb(94, 161, 255)",
+      value: "94, 161, 255",
       name: "blue",
     },
     {
-      color: "rgb(60, 179, 113)",
-      value: "60, 179, 113",
+      color: "rgb(94, 255, 94)",
+      value: "94, 255, 94",
       name: "green",
     },
     {
