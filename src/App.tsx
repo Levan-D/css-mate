@@ -10,6 +10,7 @@ import Error from "./pages/error/Error"
 import Cursors from "./pages/cursors/Cursors"
 import Emojis from "./pages/emojis/Emojis"
 import Entities from "./pages/entities/Entities"
+import Gradient from "./pages/gradient/Gradient"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="box-shadow" element={<BoxShadow />} />
+          <Route path="gradient" element={<Gradient />} />
           <Route path="cursors" element={<Cursors />} />
           <Route path="emojis" element={<Emojis />} />
           <Route path="entities" element={<Entities />} />
