@@ -133,14 +133,14 @@ const BoxShadowSidemenu = () => {
                                   value={property[1] / 100}
                                   step={0.01}
                                   onChange={e => handlePropertyChange(e, property[0])}
-                                  className="w-14 text-right bg-slate-700 rounded-md"
+                                  className="w-14 text-center  md:text-right bg-slate-700 rounded-md"
                                 />
                               ) : (
                                 <input
                                   type="number"
                                   value={property[1]}
                                   onChange={e => handlePropertyChange(e, property[0])}
-                                  className="w-14  text-right bg-slate-700  rounded-md"
+                                  className="w-14 text-center  md:text-right bg-slate-700  rounded-md"
                                 />
                               )}
                             </h2>
