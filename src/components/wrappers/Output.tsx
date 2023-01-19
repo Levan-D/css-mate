@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import type { OutputRenderArrayType } from "./WrapperTypes"
+import Tooltip from "../Tooltip"
 
 type OutputProps = { title: string; renderArray: OutputRenderArrayType[] }
 
@@ -40,13 +41,17 @@ const Output = ({ title, renderArray }: OutputProps) => {
         </div>
       </div>
 
-      <div
-        onClick={() => {
-          navigator.clipboard.writeText(renderArray[selectedBtn].copy)
-        }}
-        className="btnPrimary  shadow-custom mx-auto mt-8"
-      >
-        Copy
+      <div className=" flex justify-center  mt-8">
+        <Tooltip text="Copied" onClick={true}>
+          <div
+            onClick={() => {
+              navigator.clipboard.writeText(renderArray[selectedBtn].copy)
+            }}
+            className="btnPrimary  shadow-custom "
+          >
+            Copy
+          </div>
+        </Tooltip>
       </div>
     </div>
   )
