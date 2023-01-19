@@ -56,7 +56,7 @@ const Cursors = () => {
                       {content.description}
                     </div>
                     <div className="text-secondary font-semibold text-center mb-4">
-                      {content.vanilla}
+                      {content.cssRule}
                     </div>
                     <div className={`flex gap-2 justify-center  `}>
                       <Tooltip text="Copied" onClick={true} dArrow={true}>
