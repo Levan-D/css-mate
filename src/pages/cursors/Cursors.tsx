@@ -59,7 +59,7 @@ const Cursors = () => {
                       {content.vanilla}
                     </div>
                     <div className={`flex gap-2 justify-center  `}>
-                      <Tooltip text="Copied" onClick={true}>
+                      <Tooltip text="Copied" onClick={true} dArrow={true}>
                         <div
                           className={`flex gap-1 btnPrimary`}
                           onClick={() => {
@@ -73,7 +73,7 @@ const Cursors = () => {
                           <div className="text-sm leading-6">Copy</div>
                         </div>
                       </Tooltip>
-                      <Tooltip text="Copied" onClick={true}>
+                      <Tooltip text="Copied" onClick={true} dArrow={true}>
                         <div
                           className={`flex gap-1 btnPrimary`}
                           onClick={() => {
