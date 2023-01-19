@@ -1,11 +1,9 @@
-import React from 'react'
+/** @format */
+
+import React from "react"
 
 const Tips = () => {
-  return (
-      <div>
-          
-    </div>
-  )
+  return <div>afogato</div>
 }
 
 export default Tips
