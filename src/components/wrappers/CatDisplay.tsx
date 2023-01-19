@@ -27,7 +27,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
             key={i}
             onClick={() => setActiveBtn(() => btn)}
             className={`  ${
-              activeBtn === btn && `!text-dark`
+              activeBtn === btn && `!text-slate-900`
             } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   hover:text-slate-600  duration-200 sm:mx-2 md:mx-6 md:text-lg`}
           >
             {btn}
@@ -43,7 +43,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
             </h3>
           ))}
         </div>
-        <hr className="mb-1 mt-2 bg-gray-500 h-[1px] border-0 opacity-30" />
+        <hr className="mb-1 mt-2 bg-slate-500 h-[1px] border-0 opacity-30" />
         {Data.map((cat, i) => (
           <div key={i}>
             {cat.category === activeBtn && (
@@ -54,7 +54,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                       <div className={`${flexBasis}  px-2 `}>{char.character}</div>
                       <div className={`${flexBasis} `}>
                         <div
-                          className={` cursor-pointer   hover:bg-slate-100  active:bg-slate-300 hover:text-dark w-fit px-2 duration-200 rounded-md `}
+                          className={` cursor-pointer   hover:bg-slate-100  active:bg-slate-300 hover:text-slate-900 w-fit px-2 duration-200 rounded-md `}
                           onClick={() => {
                             navigator.clipboard.writeText(char.hexadecimal)
                           }}
@@ -68,7 +68,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                         <div className={`${flexBasis}  px-2 `}>{char.description}</div>
                       )}
                     </div>
-                    <hr className="my-1 bg-gray-500 h-[1px] border-0 opacity-30" />
+                    <hr className="my-1 bg-slate-500 h-[1px] border-0 opacity-30" />
                   </div>
                 ))}
               </div>

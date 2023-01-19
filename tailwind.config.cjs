@@ -22,7 +22,7 @@ module.exports = {
         widescreen: { raw: "(min-aspect-ratio: 3/2)" },
         tallscreen: { raw: "(min-aspect-ratio: 1/2)" },
       },
-      colors: { primary: "#5ea1ff", secondary: "#ff725e", dark: "#242424" },
+      colors: { primary: "#5ea1ff", secondary: "#ff725e" },
       boxShadow: { primaryDark: "4px 4px 2px 0px rgba(256,256,256,0.15)" },
     },
     fontFamily: { cursiveCustom: ["Carter One", "cursive"] },

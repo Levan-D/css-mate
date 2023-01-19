@@ -91,15 +91,11 @@ html {
   box-sizing: border-box;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 1);
-  background-color: #242424;
+  background-color: rgb(15 23 42);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  box-shadow: 12px 12px 4px 0px rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: 12px 12px 4px 0px rgba(255, 255, 255, 0.2);
-  -moz-box-shadow: 12px 12px 4px 0px rgba(255, 255, 255, 0.2);
 }
