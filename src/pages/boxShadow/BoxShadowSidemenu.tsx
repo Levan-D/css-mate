@@ -195,11 +195,3 @@ const BoxShadowSidemenu = () => {
 }
 
 export default BoxShadowSidemenu
-
-{
-  /* <h2>
-{property[0] === "opacity"
-  ? property[1] / 100
-  : `${property[1]}px`}
-</h2> */
-}
