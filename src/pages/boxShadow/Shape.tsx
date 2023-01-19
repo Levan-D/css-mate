@@ -8,9 +8,11 @@ import sun from "../../assets/icons/sun.png"
 import changeShape from "../../assets/icons/changeShape.png"
 import { btnResponse } from "./Data"
 import { useNavigate } from "react-router-dom"
+import ColorPicker from "../../components/ColorPicker"
 
 const Shape = () => {
   const navigate = useNavigate()
+  const [shapeColor, setShapeColor] = useState("rgb(94,161,255)")
   const { boxShadowData } = useAppSelector(state => state.boxShadow)
 
   const [darkmode, setDarkmode] = useState<boolean>(true)
@@ -29,22 +31,32 @@ const Shape = () => {
     })
     .toString()
 
+  const HandleColorPick = (color: string) => {
+    setShapeColor(color)
+  }
+
   return (
     <div
       className={` ${
         darkmode ? "bg-inherit" : "bg-slate-100 border-secondary "
       } mx-auto  border-2 rounded-xl h-[530px] md:h-full lg:w-[430px] w-96 flex  flex-col justify-between  `}
     >
-      <div>
-        <img
-          onClick={() => setDarkmode(x => !x)}
-          className={` ${
-            darkmode ? `hover:border-white` : "hover:border-secondary"
-          } border-2 border-transparent rounded-full h-10  cursor-pointer m-1   `}
-          src={darkmode ? moon : sun}
-          alt="dark mode"
-        />
+      <div className="flex justify-between">
+        <div>
+          <img
+            onClick={() => setDarkmode(x => !x)}
+            className={` ${
+              darkmode ? `hover:border-white` : "hover:border-secondary"
+            } border-2 border-transparent rounded-full h-10  cursor-pointer m-1`}
+            src={darkmode ? moon : sun}
+            alt="dark mode"
+          />
+        </div>
+        <div className="mx-2 my-1">
+          <ColorPicker HandleColorPick={HandleColorPick} />
+        </div>
       </div>
+
       <div
         style={{
           boxShadow: bowShadowStyle,
@@ -52,7 +64,7 @@ const Shape = () => {
         onClick={() => setSquare(x => !x)}
         className={` ${square ? "rounded-xl" : "rounded-full"}   ${
           darkmode ? `hover:border-white` : "hover:border-secondary"
-        } border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none   bg-primary`}
+        } border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none   bg-[rgb(94,161,255)]`}
       >
         <img
           className="h-[50px] mx-auto my-auto  translate-y-[100px]"

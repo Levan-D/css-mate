@@ -1,15 +1,15 @@
 /** @format */
 
-import React, { useState } from "react"
-import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import React from "react"
 import Shape from "./Shape"
-import { getBoxShadowTabs } from "./boxShadowSlice"
 import BoxShadowOutput from "./BoxShadowOutput"
 import BoxShadowSidemenu from "./BoxShadowSidemenu"
+import BackToTopBtn from "../../components/BackToTopBtn"
 
 const BoxShadow = () => {
   return (
     <div className=" my-16 mx-4">
+      <BackToTopBtn />
       <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
         Generate <span className="text-secondary">box shadows</span> for your project with
         ease
