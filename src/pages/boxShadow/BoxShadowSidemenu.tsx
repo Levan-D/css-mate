@@ -116,7 +116,7 @@ const BoxShadowSidemenu = () => {
                               {property[0].charAt(0).toUpperCase() + property[0].slice(1)}{" "}
                               &#160;
                               {property[0] !== "opacity" ? (
-                                <span className="text-slate-400 text-sm ">
+                                <span className="text-slate-400 text-sm italic ">
                                   &#40;&#32;px&#32;&#41;
                                 </span>
                               ) : (
