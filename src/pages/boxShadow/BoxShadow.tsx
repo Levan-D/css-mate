@@ -9,6 +9,15 @@ import Tips from "./Tips"
 import TableOfContents from "../../components/TableOfContents"
 
 const BoxShadow = () => {
+  const tableOfContets = [
+    "Box shadow",
+    "Tips & tricks",
+    "Multiple shadows",
+    "Glow effects",
+    "3D effects",
+    "Cheese",
+  ]
+
   return (
     <div className=" my-16 mx-4">
       <BackToTopBtn />
@@ -19,8 +28,11 @@ const BoxShadow = () => {
       <div className="font-cursiveCustom text-center text-base mb-8">
         Scroll to bot for tips & tricks
       </div>
-      <TableOfContents tableOfContets={["s", "3333"]} />
-      <div className="md:flex-row flex flex-col md:justify-center justify-between md:gap-2 gap-16 lg:gap-36 mt-16 mb-16 ">
+      <TableOfContents tableOfContets={tableOfContets} />
+      <div
+        id="Box shadow"
+        className="md:flex-row flex flex-col md:justify-center justify-between md:gap-2 gap-16 lg:gap-36 mt-16 mb-16 "
+      >
         <BoxShadowSidemenu />
         <div>
           <Shape />

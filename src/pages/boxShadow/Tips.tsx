@@ -6,7 +6,7 @@ import { ReactComponent as ArrowIcon } from "../../assets/misc/arrow.svg"
 const Tips = () => {
   return (
     <div>
-      <h2 className="font-cursiveCustom text-2xl text-center ">
+      <h2 id="Tips & tricks" className="font-cursiveCustom text-2xl text-center ">
         The aforementioned <span className="text-secondary">tips & tricks</span>
       </h2>
       <section>
@@ -55,7 +55,7 @@ const Tips = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section id="Multiple shadows">
         <h3 className="font-cursiveCustom text-xl mb-4 mt-24">
           Setting multiple shadows
         </h3>
@@ -86,7 +86,7 @@ const Tips = () => {
           </blockquote>
         </div>
       </section>
-      <section>
+      <section id="Glow effects">
         <h3 className="font-cursiveCustom text-xl mb-4 mt-24">Neon glow effects</h3>
         <p>
           By layering multiple inner and outer shadows with varying color gradients,
@@ -119,7 +119,7 @@ const Tips = () => {
           </blockquote>
         </div>
       </section>
-      <section>
+      <section id="3D effects">
         <h3 className="font-cursiveCustom text-xl mb-4 mt-24">3D effects</h3>
         <p>
           If you layer inner and outer shadows you can create the perception of depth.
@@ -169,7 +169,7 @@ const Tips = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section id="Cheese">
         <h3 className="font-cursiveCustom text-xl mb-4 mt-24">Let the cheese flow</h3>
         <p>
           You can use box shadow and rotate properties to create the cheesiest collage
