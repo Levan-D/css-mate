@@ -14,7 +14,7 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
   const height = 28 * tableOfContets.length + "px"
 
   return (
-    <div className="border-2 border-white rounded-xl w-fit   mx-auto select-none ">
+    <div className="2xl:absolute left-4 top-36 block border-2 border-white rounded-xl w-fit   mx-auto select-none ">
       <div
         onClick={() => setVisibility(x => !x)}
         className={`flex px-3 py-2 gap-2 cursor-pointer hover:bg-slate-500 duration-200 ${

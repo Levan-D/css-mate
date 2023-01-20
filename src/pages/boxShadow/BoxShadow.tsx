@@ -6,6 +6,7 @@ import BoxShadowOutput from "./BoxShadowOutput"
 import BoxShadowSidemenu from "./boxShadowSidemenu/BoxShadowSidemenu"
 import BackToTopBtn from "../../components/BackToTopBtn"
 import Tips from "./Tips"
+import TableOfContents from "../../components/TableOfContents"
 
 const BoxShadow = () => {
   return (
@@ -15,11 +16,11 @@ const BoxShadow = () => {
         Generate <span className="text-secondary">box shadows</span> for your project with
         ease
       </h1>
-      <div className="font-cursiveCustom text-center text-base mb-16">
+      <div className="font-cursiveCustom text-center text-base mb-8">
         Scroll to bot for tips & tricks
       </div>
-
-      <div className="md:flex-row flex flex-col md:justify-center justify-between md:gap-8 gap-16 lg:gap-36 mb-16 ">
+      <TableOfContents tableOfContets={["s", "3333"]} />
+      <div className="md:flex-row flex flex-col md:justify-center justify-between md:gap-2 gap-16 lg:gap-36 mt-16 mb-16 ">
         <BoxShadowSidemenu />
         <div>
           <Shape />
