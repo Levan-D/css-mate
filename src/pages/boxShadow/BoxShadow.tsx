@@ -26,7 +26,9 @@ const BoxShadow = () => {
         </div>
       </div>
       <BoxShadowOutput />
-      <Tips />
+      <div className="mt-20">
+        <Tips />
+      </div>
     </div>
   )
 }

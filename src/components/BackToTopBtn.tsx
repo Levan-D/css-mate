@@ -24,10 +24,10 @@ const BackToTopBtn = () => {
   }, [])
   return (
     <div>
-      <a href={showButton ? `#` : ""}>
+      <a href={`#`}>
         <div
           className={`${
-            showButton ? "opacity-100" : "opacity-0  cursor-default"
+            !showButton && " hidden "
           }  fixed bottom-4 right-4 bg-slate-100 p-3  rounded-full cursor-pointer duration-200 shadow-[3px_3px_2px_0px_rgba(_255,_114,_94,0.40)] hover:translate-y-[-5px] active:bg-slate-500`}
         >
           <ChevronIcon
