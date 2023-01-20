@@ -35,11 +35,13 @@ const Presets = memo(() => {
                 <div
                   key={index}
                   style={{
-                    boxShadow: `${preset.settings.horizontal}px ${
-                      preset.settings.vertical
-                    }px ${preset.settings.blur}px ${preset.settings.spread}px rgba(${
-                      boxShadowData[0].settings.shadowColor
-                    },${preset.settings.opacity / 100})`,
+                    boxShadow: `${preset.settings.inset ? "inset" : ""} ${
+                      preset.settings.horizontal
+                    }px ${preset.settings.vertical}px ${preset.settings.blur}px ${
+                      preset.settings.spread
+                    }px rgba(${boxShadowData[0].settings.shadowColor},${
+                      preset.settings.opacity / 100
+                    })`,
                   }}
                   onClick={() => {
                     dispatch(resetState())

@@ -133,6 +133,71 @@ export const boxShadowPresets: boxShadowPresetsType[] = [
       },
     ],
   },
+  {
+    name: `Inner`,
+    presets: [
+      {
+        titile: "S",
+        settings: {
+          horizontal: 0,
+          vertical: 0,
+          blur: 4,
+          spread: 2,
+          opacity: 60,
+          inset: true,
+          shadowColor: "255,255,255",
+        },
+      },
+      {
+        titile: "M",
+        settings: {
+          horizontal: 0,
+          vertical: 0,
+          blur: 4,
+          spread: 3,
+          opacity: 80,
+          inset: true,
+          shadowColor: "255,255,255",
+        },
+      },
+      {
+        titile: "L",
+        settings: {
+          horizontal: 0,
+          vertical: 0,
+          blur: 5,
+          spread: 4,
+          opacity: 80,
+          inset: true,
+          shadowColor: "255,255,255",
+        },
+      },
+      {
+        titile: "XL",
+        settings: {
+          horizontal: 0,
+          vertical: 0,
+          blur: 6,
+          spread: 5,
+          opacity: 80,
+          inset: true,
+          shadowColor: "255,255,255",
+        },
+      },
+      {
+        titile: "2XL",
+        settings: {
+          horizontal: 0,
+          vertical: 0,
+          blur: 7,
+          spread: 6,
+          opacity: 80,
+          inset: true,
+          shadowColor: "255,255,255",
+        },
+      },
+    ],
+  },
 ]
 
 export const btnResponse: string[] = [
