@@ -3,7 +3,7 @@
 import React from "react"
 
 const Tips = () => {
-  return <div></div>
+  return <div>afo gato</div>
 }
 
 export default Tips

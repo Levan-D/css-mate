@@ -70,6 +70,7 @@ const Shape = () => {
         darkmode ? "bg-inherit" : "bg-slate-100 border-secondary "
       } mx-auto  border-2 rounded-xl h-[530px] md:h-full lg:w-[430px] w-96 flex  flex-col justify-between  `}
     >
+      {/* nav section */}
       <div className="flex justify-between">
         <div>
           <img
@@ -85,6 +86,7 @@ const Shape = () => {
           <ColorPicker handleColorPick={handleColorPick} />
         </div>
       </div>
+      {/* nav section */}
       {/* shape */}
       <div
         style={{
@@ -121,7 +123,9 @@ const Shape = () => {
         {btnContent}
       </div>
       {/* spicey button */}
+      {/* bottom padding for flexbox to work @me */}
       <div className=" h-6 md:h-20  "></div>
+      {/* bottom padding for flexbox to work @me */}
     </div>
   )
 }
