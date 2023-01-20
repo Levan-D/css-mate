@@ -5,7 +5,7 @@ import Shape from "./Shape"
 import BoxShadowOutput from "./BoxShadowOutput"
 import BoxShadowSidemenu from "./boxShadowSidemenu/BoxShadowSidemenu"
 import BackToTopBtn from "../../components/BackToTopBtn"
-import Tips from "./Tips"
+import Tips from "./tips/Tips"
 import TableOfContents from "../../components/TableOfContents"
 
 const BoxShadow = () => {
