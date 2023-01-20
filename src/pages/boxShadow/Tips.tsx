@@ -60,30 +60,36 @@ const Tips = () => {
           Setting multiple shadows
         </h3>
         <p>You can chain multiple box shadows by seperating each rule with a comma.</p>
-        <h4 className="font-bold my-8">Rule used below:</h4>
-        <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
-          <div className="flex gap-4 ">
-            <div className="text-blue-300">
-              box-shadow<span className="text-white px-[4px]">:</span> <br />
-            </div>
-            <div className="text-green-300">
-              inset -14px -15px 22px -2px rgba(0, 0, 0,0.35),
-              <br /> 0px 0px 0px 4px rgba( 150, 150, 150,1), <br />
-              8px 12px 4px 0px rgba(255, 255, 255,0.29)
-              <span className="text-white pl-[4px] ">;</span>
+        <div className="lg:flex gap-8 justify-center">
+          <div>
+            <h4 className="font-bold my-8">Rule used below:</h4>
+            <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
+              <div className="flex gap-4 ">
+                <div className="text-blue-300">
+                  box-shadow<span className="text-white px-[4px]">:</span> <br />
+                </div>
+                <div className="text-green-300">
+                  inset -14px -15px 22px -2px rgba(0, 0, 0,0.35),
+                  <br /> 0px 0px 0px 4px rgba( 150, 150, 150,1), <br />
+                  8px 12px 4px 0px rgba(255, 255, 255,0.29)
+                  <span className="text-white pl-[4px] ">;</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <h4 className="font-bold my-8">Result:</h4>
-        <div className="bg-slate-300 text-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8   shadow-[inset_-14px_-15px_22px_-2px_rgba(0,_0,_0,0.35),0px_0px_0px_3px_rgba(_150,_150,_150,1),8px_12px_4px_0px_rgba(255,_255,_255,0.29)] ">
-          <blockquote>
-            <q>
-              Do you think God stays in heaven because he, too,
-              <br />
-              lives in fear of what he's created here on earth?
-            </q>
-            <p className="text-right font-bold mt-4">&mdash; Dr. Romero</p>
-          </blockquote>
+          <div>
+            <h4 className="font-bold my-8">Result:</h4>
+            <div className="bg-slate-300 text-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8   shadow-[inset_-14px_-15px_22px_-2px_rgba(0,_0,_0,0.35),0px_0px_0px_3px_rgba(_150,_150,_150,1),8px_12px_4px_0px_rgba(255,_255,_255,0.29)] ">
+              <blockquote>
+                <q>
+                  Do you think God stays in heaven because he, too,
+                  <br />
+                  lives in fear of what he's created here on earth?
+                </q>
+                <p className="text-right font-bold mt-4">&mdash; Dr. Romero</p>
+              </blockquote>
+            </div>
+          </div>
         </div>
       </section>
       <section id="Glow effects">
@@ -92,31 +98,37 @@ const Tips = () => {
           By layering multiple inner and outer shadows with varying color gradients,
           intensities, and blurs <br /> you can create a neon glow effect.{" "}
         </p>
-        <h4 className="font-bold my-8">Rule used below:</h4>
-        <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
-          <div className="flex gap-4 ">
-            <div className="text-blue-300">
-              box-shadow<span className="text-white px-[4px]">:</span> <br />
-            </div>
-            <div className="text-green-300">
-              0px 0px 4px 0px rgba(255, 255, 255,1), <br /> 0px 0px 4px 0px rgba( 255,
-              255, 255,1), <br /> 0px 0px 36px 0px rgba( 188, 19, 254,0.7), <br /> 0px 0px
-              16px 0px rgba( 188, 19, 254,1), <br /> 0px 0px 50px 0px rgba( 188, 19,
-              254,0.8), <br /> inset 0px 0px 24px 0px rgba( 188, 19, 254,1)
-              <span className="text-white pl-[4px] ">;</span>
+        <div className="lg:flex gap-8 justify-center ">
+          <div>
+            <h4 className="font-bold my-8">Rule used below:</h4>
+            <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
+              <div className="flex gap-4 ">
+                <div className="text-blue-300">
+                  box-shadow<span className="text-white px-[4px]">:</span> <br />
+                </div>
+                <div className="text-green-300">
+                  0px 0px 4px 0px rgba(255, 255, 255,1), <br /> 0px 0px 4px 0px rgba( 255,
+                  255, 255,1), <br /> 0px 0px 36px 0px rgba( 188, 19, 254,0.7), <br /> 0px
+                  0px 16px 0px rgba( 188, 19, 254,1), <br /> 0px 0px 50px 0px rgba( 188,
+                  19, 254,0.8), <br /> inset 0px 0px 24px 0px rgba( 188, 19, 254,1)
+                  <span className="text-white pl-[4px] ">;</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <h4 className="font-bold  my-8">Result:</h4>
-        <div className="bg-transparent text-white px-12 py-16 rounded-xl w-fit mx-auto   shadow-[0px_0px_4px_0px_rgba(255,_255,_255,1),0px_0px_4px_0px_rgba(_255,_255,_255,1),0px_0px_36px_0px_rgba(_188,_19,_254,0.7),0px_0px_16px_0px_rgba(_188,_19,_254,1),0px_0px_50px_0px_rgba(_188,_19,_254,0.8),inset_0px_0px_24px_0px_rgba(_188,_19,_254,1)] ">
-          <blockquote>
-            <q className="   drop-shadow-neonPurple text-lg  ">
-              There's no place like home.
-            </q>
-            <p className="text-right font-bold mt-4 drop-shadow-neonPurple text-lg">
-              &mdash; Dorothy
-            </p>
-          </blockquote>
+          <div>
+            <h4 className="font-bold  my-8">Result:</h4>
+            <div className="bg-transparent text-white px-12 py-16 rounded-xl w-fit mx-auto   shadow-[0px_0px_4px_0px_rgba(255,_255,_255,1),0px_0px_4px_0px_rgba(_255,_255,_255,1),0px_0px_36px_0px_rgba(_188,_19,_254,0.7),0px_0px_16px_0px_rgba(_188,_19,_254,1),0px_0px_50px_0px_rgba(_188,_19,_254,0.8),inset_0px_0px_24px_0px_rgba(_188,_19,_254,1)] ">
+              <blockquote>
+                <q className="   drop-shadow-neonPurple text-lg  ">
+                  There's no place like home.
+                </q>
+                <p className="text-right font-bold mt-4 drop-shadow-neonPurple text-lg">
+                  &mdash; Dorothy
+                </p>
+              </blockquote>
+            </div>
+          </div>
         </div>
       </section>
       <section id="3D effects">
@@ -193,7 +205,7 @@ const Tips = () => {
         </div>
         <h4 className="font-bold  my-8">Results:</h4>
         <div className="flex justify-center gap-8 w-fit mx-auto ">
-          <div className="bg-orange-500 rotate-[-25deg] mt-20 z-40 text-white px-12 py-16 rounded-xl w-[300px] shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] ">
+          <div className="    bg-gradient-to-r from-orange-400 to-orange-500  rotate-[-7deg] md:rotate-[-25deg] mt-20 z-40 text-white px-12 py-16 rounded-xl w-[300px] shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] ">
             <blockquote>
               <q className="    text-lg  ">
                 Carpe diem. Seize the day, boys. Make your lives extraordinary.
@@ -201,7 +213,7 @@ const Tips = () => {
               <p className="text-right font-bold mt-4  text-lg">&mdash; John Keating</p>
             </blockquote>
           </div>
-          <div className=" hidden md:block bg-red-500  rotate-[30deg]  lg:rotate-[4deg] z-30  sm:translate-x-[-140px]  lg:translate-x-[-40px] translate-y-[-60px] mt-20 text-white px-12 py-16 rounded-md w-[300px]  shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] ">
+          <div className=" hidden md:block  bg-gradient-to-r from-red-400 to-red-500  rotate-[30deg]  lg:rotate-[4deg] z-30  sm:translate-x-[-140px]  lg:translate-x-[-40px] translate-y-[-60px] mt-20 text-white px-12 py-16 rounded-md w-[300px]  shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] ">
             <blockquote>
               <q className="    text-lg    ">
                 They may take our lives, but they'll never take our freedom!
@@ -211,7 +223,7 @@ const Tips = () => {
               </p>
             </blockquote>
           </div>
-          <div className=" hidden lg:block bg-purple-500 rotate-[30deg] z-20 translate-x-[-90px]  translate-y-[40px] mt-20 text-white px-12 py-16 rounded-md w-[300px]  shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] ">
+          <div className=" hidden lg:block bg-gradient-to-r from-purple-400 to-purple-500 rotate-[30deg] z-20 translate-x-[-90px]  translate-y-[40px] mt-20 text-white px-12 py-16 rounded-md w-[300px]  shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] ">
             <blockquote>
               <q className="    text-lg    ">
                 What we've got here is failure to communicate.
