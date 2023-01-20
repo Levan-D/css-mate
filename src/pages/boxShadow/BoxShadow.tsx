@@ -3,7 +3,7 @@
 import React from "react"
 import Shape from "./Shape"
 import BoxShadowOutput from "./BoxShadowOutput"
-import BoxShadowSidemenu from "./BoxShadowSidemenu"
+import BoxShadowSidemenu from "./boxShadowSidemenu/BoxShadowSidemenu"
 import BackToTopBtn from "../../components/BackToTopBtn"
 import Tips from "./Tips"
 

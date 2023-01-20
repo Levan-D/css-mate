@@ -5,13 +5,11 @@ import React, { useState, useRef } from "react"
 import { useAppSelector } from "../../app/hooks"
 import moon from "../../assets/icons/moon.png"
 import sun from "../../assets/icons/sun.png"
-import changeShape from "../../assets/icons/changeShape.png"
 import { btnResponse } from "./Data"
 import { useNavigate } from "react-router-dom"
 import ColorPicker from "../../components/ColorPicker"
 import ColorInverter from "../../utils/ColorInverter"
 import RgbToHex from "../../utils/RGBToHex"
-import HexToRGB from "../../utils/HexToRGB"
 // @ts-ignore
 import { ReactComponent as ChangeShape } from "../../assets/icons/changeShape.svg"
 
