@@ -1,6 +1,5 @@
 /** @format */
 
-
 // input hex string  like: 94,161,255
 
 export default function HexToRGB(hex: string): string {

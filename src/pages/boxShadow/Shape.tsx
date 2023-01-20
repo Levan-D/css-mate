@@ -11,8 +11,9 @@ import { useNavigate } from "react-router-dom"
 import ColorPicker from "../../components/ColorPicker"
 import ColorInverter from "../../utils/ColorInverter"
 import RgbToHex from "../../utils/RGBToHex"
-//@ts-ignore
-import { ReactComponent as Triangle } from "../../assets/misc/triangle.svg"
+import HexToRGB from "../../utils/HexToRGB"
+// @ts-ignore
+import { ReactComponent as ChangeShape } from "../../assets/icons/changeShape.svg"
 
 const Shape = () => {
   const navigate = useNavigate()
@@ -20,11 +21,11 @@ const Shape = () => {
   const { boxShadowData } = useAppSelector(state => state.boxShadow)
 
   const [darkmode, setDarkmode] = useState<boolean>(true)
-  const [shape, setShape] = useState<number>(0)
+  const [shape, setShape] = useState<boolean>(true)
   const [btnContent, setBtnContent] = useState<string>("I am a button")
   const btnIndex = useRef(0)
   const btnActive = useRef(false)
-  console.log(shape)
+
   let bowShadowStyle = boxShadowData
     .map(data => {
       return `${data.settings.inset ? "inset" : ""} ${data.settings.horizontal}px ${
@@ -35,8 +36,34 @@ const Shape = () => {
     })
     .toString()
 
-  const HandleColorPick = (color: string) => {
+  const handleColorPick = (color: string) => {
     setShapeColor(color.replace(/ /g, ""))
+  }
+
+  const handleMouseDown = () => {
+    if (btnActive.current === false) {
+      setBtnContent(() => btnResponse[btnIndex.current])
+      btnIndex.current = btnIndex.current + 1
+      btnActive.current = true
+    }
+  }
+  const handleMouseUp = () => {
+    if (btnActive.current === true) {
+      if (btnResponse[btnIndex.current] === "1") {
+        navigate("/rekt")
+      }
+      setBtnContent(() => "I am a button")
+      btnActive.current = false
+    }
+  }
+  const handleMouseOut = () => {
+    if (btnActive.current === true) {
+      if (btnResponse[btnIndex.current] === "1") {
+        navigate("/rekt")
+      }
+      setBtnContent(() => "I am a button")
+      btnActive.current = false
+    }
   }
 
   return (
@@ -57,66 +84,45 @@ const Shape = () => {
           />
         </div>
         <div className="mx-2 my-1">
-          <ColorPicker HandleColorPick={HandleColorPick} />
+          <ColorPicker handleColorPick={handleColorPick} />
         </div>
       </div>
-
+      {/* shape */}
       <div
         style={{
           boxShadow: bowShadowStyle,
           backgroundColor: `rgb(${shapeColor})`,
         }}
         onClick={() => {
-          if (shape < 2) {
-            setShape(x => x + 1)
-          } else setShape(() => 0)
+          setShape(x => !x)
         }}
-        className={` ${shape == 0 && "rounded-xl"}  ${shape == 1 && "rounded-full"}   ${
+        className={` ${shape ? "rounded-xl" : "rounded-full"} ${
           darkmode ? `hover:border-white` : "hover:border-secondary"
         }    border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none `}
       >
-        <img
-          className="h-[50px] mx-auto my-auto  translate-y-[100px]"
-          src={changeShape}
-          alt=""
+        <ChangeShape
+          height={72}
+          width={72}
+          stroke={ColorInverter(RgbToHex(shapeColor), `bw`)}
+          className="mx-auto mt-[89px]"
         />
       </div>
-      <Triangle style={{ filter: `drop-shadow(32px 52px 2px rgb(220 220 220))` }} />
+      {/* shape */}
+      {/* spicey button */}
       <div
         style={{
           boxShadow: bowShadowStyle,
           backgroundColor: `rgb(${shapeColor})`,
           color: ColorInverter(RgbToHex(shapeColor), `bw`),
         }}
-        onMouseDown={() => {
-          if (btnActive.current === false) {
-            setBtnContent(() => btnResponse[btnIndex.current])
-            btnIndex.current = btnIndex.current + 1
-            btnActive.current = true
-          }
-        }}
-        onMouseUp={() => {
-          if (btnActive.current === true) {
-            if (btnResponse[btnIndex.current] === "1") {
-              navigate("/rekt")
-            }
-            setBtnContent(() => "I am a button")
-            btnActive.current = false
-          }
-        }}
-        onMouseOut={() => {
-          if (btnActive.current === true) {
-            if (btnResponse[btnIndex.current] === "1") {
-              navigate("/rekt")
-            }
-            setBtnContent(() => "I am a button")
-            btnActive.current = false
-          }
-        }}
-        className={`btnPrimary tran mx-auto mt-8 transition-transform active:translate-y-[-10px]`}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseOut={handleMouseOut}
+        className={`btnPrimary  mx-auto mt-8 transition-transform active:translate-y-[-10px]`}
       >
         {btnContent}
       </div>
+      {/* spicey button */}
       <div className=" h-6 md:h-20  "></div>
     </div>
   )

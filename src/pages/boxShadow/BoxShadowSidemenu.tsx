@@ -28,7 +28,7 @@ const BoxShadowSidemenu = () => {
     dispatch(resetStateAction())
   }
 
-  const HandleColorPick = (color: string) => {
+  const handleColorPick = (color: string) => {
     dispatch(setColor(color))
   }
 
@@ -185,7 +185,7 @@ const BoxShadowSidemenu = () => {
               >
                 Inner
               </div>
-              <ColorPicker HandleColorPick={HandleColorPick} />
+              <ColorPicker handleColorPick={handleColorPick} />
             </div>
 
             <hr className="my-4" />
