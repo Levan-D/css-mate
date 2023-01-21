@@ -26,7 +26,7 @@ const MultipleShadows = () => {
         </div>
         <div>
           <h4 className="font-bold my-8">Result:</h4>
-          <div className="bg-transparent text-blue-200 px-8 py-6 rounded-xl w-fit mx-auto my-8   shadow-[inset_-8px_-8px_8px_0px_rgba(150,_255,_255,0.25),0px_0px_0px_2px_rgba(111,200,200,1),8px_12px_4px_0px_rgba(94,_161,_255,0.30)] ">
+          <div className="bg-transparent text-blue-200 px-8 py-5 rounded-xl w-fit mx-auto my-8   shadow-[inset_-8px_-8px_8px_0px_rgba(150,_255,_255,0.25),0px_0px_0px_2px_rgba(111,200,200,1),8px_12px_4px_0px_rgba(94,_161,_255,0.30)] ">
             <blockquote>
               <q>
                 Do you think God stays in heaven because he, too,
