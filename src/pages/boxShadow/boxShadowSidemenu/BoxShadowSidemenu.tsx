@@ -56,8 +56,6 @@ const BoxShadowSidemenu = () => {
           </TabsNConditions>
         )}
 
-        <hr className=" mb-4 mx-4" />
-
         <div className="flex justify-between mx-4">
           <div
             onClick={() => dispatch(toggleInset())}
@@ -70,7 +68,7 @@ const BoxShadowSidemenu = () => {
           <ColorPicker handleColorPick={handleColorPick} />
         </div>
 
-        <hr className="my-4 mx-4" />
+        <hr className="my-4 mx-4 border-transparent " />
 
         <Presets />
       </SideMenu>

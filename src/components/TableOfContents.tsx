@@ -38,7 +38,7 @@ const [tableOffset,setTableOffset]=useState(false)
     className="2xl:fixed left-4  block border-2 border-white rounded-xl w-fit   mx-auto select-none duration-200">
       <div
         onClick={() => setVisibility(x => !x)}
-        className={`flex px-3 py-2 gap-2 cursor-pointer hover:bg-slate-500 duration-200 ${
+        className={`flex px-3 py-2 gap-2 cursor-pointer hover:bg-blue-400 duration-200 ${
           visibility ? "rounded-t-lg " : "rounded-lg"
         }`}
       >

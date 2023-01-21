@@ -23,7 +23,10 @@ module.exports = {
         tallscreen: { raw: "(min-aspect-ratio: 1/2)" },
       },
       colors: { primary: "#5ea1ff", secondary: "#ff725e" },
-      boxShadow: { primaryDark: "4px 4px 2px 0px rgba(256,256,256,0.15)" },
+      boxShadow: {
+        primaryDark: "2px 3px 2px 0px rgba(255,255,255,0.30)",
+        primaryBr: "2px 3px 2px 0px rgba(0,0,0,0.30)",
+      },
       dropShadow: {
         neonPurple: [
           "0px 0px 4px rgba( 255, 255, 255,1)",

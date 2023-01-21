@@ -61,7 +61,7 @@ const Cursors = () => {
                     <div className={`flex gap-2 justify-center  `}>
                       <Tooltip text="Copied" onClick={true} dArrow={true}>
                         <div
-                          className={`flex gap-1 btnPrimary`}
+                          className={`flex gap-1 btnPrimary shadow-primaryBr`}
                           onClick={() => {
                             navigator.clipboard.writeText(content.vanilla)
                           }}
@@ -75,7 +75,7 @@ const Cursors = () => {
                       </Tooltip>
                       <Tooltip text="Copied" onClick={true} dArrow={true}>
                         <div
-                          className={`flex gap-1 btnPrimary`}
+                          className={`flex gap-1 btnPrimary shadow-primaryBr`}
                           onClick={() => {
                             navigator.clipboard.writeText(content.tailwind)
                           }}
