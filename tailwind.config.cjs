@@ -33,7 +33,11 @@ module.exports = {
         ],
       },
     },
-    fontFamily: { cursiveCustom: ["Carter One", "cursive"] },
+    fontFamily: {
+      cursiveCustom: ["Carter One", "cursive"],
+      handWritten: ["Caveat", "cursive"],
+      handWrittenT: ["Pacifico", "cursive"],
+    },
   },
   plugins: [],
 }
