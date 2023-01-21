@@ -9,11 +9,11 @@ const Home = () => {
     <div className="my-16 mx-4">
       <div className="text-center    font-cursiveCustom">
         <div className="text-6xl ">Hello</div>
-        <div className="text-xl mt-6 ">
+        <h1 className="text-xl mt-6 ">
           CSS Mate is here to offer you many
           <span className="text-secondary"> useful tools</span> for css rule creation and
           demonstration <br /> &#40;with a sprinkeling of HTML cheat sheets&#41;
-        </div>
+        </h1>
         <div className="text-xl ">Pick one below to start!</div>
       </div>
       <div className="flex flex-wrap  mx-auto  w-fit gap-8 my-12 justify-center">
