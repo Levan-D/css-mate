@@ -9,17 +9,16 @@ import Cheese from "./Cheese"
 
 const Tips = () => {
   return (
-    <div>
+    <div className="mt-56 max-w-3xl mx-auto ">
       <h2 id="Tips & tricks" className="font-cursiveCustom text-2xl text-center ">
         The aforementioned <span className="text-secondary">tips & tricks</span>
       </h2>
-      
-      <ForAQuickRefresher/>
-      <MultipleShadows/>
-      <NeonGlow/>
-      <TDEffects/>
-      <Cheese/>
-      
+
+      <ForAQuickRefresher />
+      <MultipleShadows />
+      <NeonGlow />
+      <TDEffects />
+      <Cheese />
     </div>
   )
 }

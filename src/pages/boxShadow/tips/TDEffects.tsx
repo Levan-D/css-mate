@@ -6,7 +6,49 @@ const TDEffects = () => {
   return (
     <section id="3D effects">
       <h3 className="font-cursiveCustom text-xl mb-4 mt-24">3D effects</h3>
-      <p>If you layer inner and outer shadows you can create the perception of depth.</p>
+      <p>
+        Creating 3D effects with box shadows can be achieved by using multiple box shadows
+        with different colors, offsets, and blur values. Here are the steps you can
+        follow:
+      </p>
+
+      <ol className="max-w-xl mx-auto mt-8">
+        <li className="list-decimal font-bold mb-4">
+          <span className="font-normal ">
+            First, create a base shadow by setting a single box shadow with a large blur
+            radius and a color that you want to use for the 3D effect. This will create
+            the base shadow.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          <span className="font-normal ">
+            Next, add multiple shadows with smaller blur radii and the same color as the
+            base shadow. You can adjust the horizontal and vertical offsets to create a
+            more dynamic effect.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          <span className="font-normal ">
+            To add more depth, you can add additional shadows with different colors. For
+            example, you can add a darker color shadow to the bottom and left sides of the
+            element to create the illusion of depth and a light color shadow to the top
+            and right sides to create the illusion of highlights.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          <span className="font-normal ">
+            You can also experiment with different offsets and blur values to create a
+            more natural, 3D effect.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          <span className="font-normal ">
+            To finish, you can adjust the opacity of the element to give it a more
+            realistic 3D look.
+          </span>
+        </li>
+      </ol>
+
       <h4 className="font-bold my-8">Rules used below:</h4>
       <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
         <div className=" flex gap-4 ">
@@ -53,6 +95,13 @@ const TDEffects = () => {
           </blockquote>
         </div>
       </div>
+
+      <p className="mt-8">
+        It's worth noting that the above example is just one way to create a 3D effect
+        with box shadows, there are many other ways to achieve this effect and it depends
+        on the design you want to achieve, you can adjust the values and colors to achieve
+        a different look.
+      </p>
     </section>
   )
 }

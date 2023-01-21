@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState,useEffect } from "react"
+import React, { useState, useEffect } from "react"
 // @ts-ignore
 import { ReactComponent as ChevronIcon } from "../assets/icons/chevron.svg"
 
@@ -10,7 +10,9 @@ type tableOfContetsType = {
 
 const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
   const [visibility, setVisibility] = useState(true)
-const [tableOffset,setTableOffset]=useState(false)
+  const [tableOffset, setTableOffset] = useState(false)
+
+  // need to manually set the line height to allow the table to generate automatically
 
   const height = 28 * tableOfContets.length + "px"
 
@@ -31,11 +33,11 @@ const [tableOffset,setTableOffset]=useState(false)
     })
   }, [])
 
-
   return (
-    <div 
-    style={{top: !tableOffset? "144px": "40px"}}
-    className="2xl:fixed left-4  block border-2 border-white rounded-xl w-fit   mx-auto select-none duration-200">
+    <div
+      style={{ top: !tableOffset ? "144px" : "40px" }}
+      className="2xl:fixed left-4  block border-2 border-white rounded-xl w-fit   mx-auto select-none duration-200"
+    >
       <div
         onClick={() => setVisibility(x => !x)}
         className={`flex px-3 py-2 gap-2 cursor-pointer hover:bg-blue-400 duration-200 ${

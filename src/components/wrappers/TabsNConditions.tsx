@@ -66,7 +66,7 @@ const TabsNConditions = ({
             }}
             height={32}
             width={32}
-            stroke="white"
+            stroke="#0f172a"
             className="hover:bg-blue-400 hover:opacity-90 p-2  rounded-full cursor-pointer duration-200"
           />
         )}

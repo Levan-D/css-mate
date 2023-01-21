@@ -1,55 +1,115 @@
-import React from 'react'
+/** @format */
+
+import React from "react"
 // @ts-ignore
 import { ReactComponent as ArrowIcon } from "../../../assets/misc/arrow.svg"
 
 const ForAQuickRefresher = () => {
   return (
     <section>
-    <h3 className="font-cursiveCustom text-xl mt-16">For a quick refresher</h3>
-    <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
+      <h3 className="font-cursiveCustom text-xl mt-16 mb-4">For a quick refresher</h3>
+
       <p>
-        <span className="text-blue-200">
-          box-shadow<span className="text-white px-[4px]">:</span>
-        </span>
-        <span className="text-green-300">
-          inset <span className="text-secondary">(boolean)</span> , offset-x
-          <span className="text-secondary">(&#177;px)</span>, offset-y
-          <span className="text-secondary">(&#177;px)</span>, blur
-          <span className="text-secondary">(&#177;px)</span>, spread
-          <span className="text-secondary">(&#43;px)</span>, color
-          <span className="text-white pl-[4px] ">;</span>
-        </span>
+        Box shadows are a powerful design tool that can add depth and dimension to any
+        website or application. Whether you're creating a subtle drop shadow or a more
+        dramatic effect, the ability to control the position, size, and color of a shadow
+        can help you create visually appealing layouts and user interfaces. In this
+        article, we will explore the various ways in which you can use box shadows to
+        enhance your designs, including tips and tricks for creating custom effects.
       </p>
-      <div className=" hidden md:flex mt-2">
-        <div className="w-fit  translate-x-[96px]">
-          <div>
-            <ArrowIcon
-              height={26}
-              width={26}
-              stroke="#ff725e"
-              className={`rotate-[19deg] mx-auto`}
-            />
+
+      <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-12 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
+        <p>
+          <span className="text-blue-200">
+            box-shadow<span className="text-white px-[4px]">:</span>
+          </span>
+          <span className="text-green-300">
+            inset <span className="text-secondary">(boolean)</span> , offset-x
+            <span className="text-secondary">(&#177;px)</span>, offset-y
+            <span className="text-secondary">(&#177;px)</span>, blur
+            <span className="text-secondary">(&#177;px)</span>, spread
+            <span className="text-secondary">(&#43;px)</span>, color
+            <span className="text-white pl-[4px] ">;</span>
+          </span>
+        </p>
+        <div className=" hidden md:flex mt-2">
+          <div className="w-fit  translate-x-[96px]">
+            <div>
+              <ArrowIcon
+                height={26}
+                width={26}
+                stroke="#ff725e"
+                className={`rotate-[19deg] mx-auto`}
+              />
+            </div>
+            <p className=" font-bold text-sm font-cursiveCustom rotate-[-5deg]">
+              optional
+            </p>
           </div>
-          <p className=" font-bold text-sm font-cursiveCustom rotate-[-5deg]">
-            optional
-          </p>
-        </div>
-        <div className="w-fit translate-x-[370px]">
-          <div>
-            <ArrowIcon
-              height={26}
-              width={26}
-              stroke="#ff725e"
-              className={`rotate-[-19deg] mx-auto scale-x-[-1]`}
-            />
+          <div className="w-fit translate-x-[370px]">
+            <div>
+              <ArrowIcon
+                height={26}
+                width={26}
+                stroke="#ff725e"
+                className={`rotate-[-19deg] mx-auto scale-x-[-1]`}
+              />
+            </div>
+            <p className=" font-bold text-sm font-cursiveCustom rotate-[5deg]">
+              optional
+            </p>
           </div>
-          <p className=" font-bold text-sm font-cursiveCustom rotate-[5deg]">
-            optional
-          </p>
         </div>
       </div>
-    </div>
-  </section>
+
+      <ol className="max-w-xl mx-auto">
+        <li className="list-decimal font-bold mb-4">
+          Inset: :&#32;
+          <span className="font-normal ">
+            This value is optional, and it makes the shadow inside the element rather than
+            outside.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          Horizontal offset:&#32;
+          <span className="font-normal ">
+            This value sets the distance the shadow should be offset from the left of the
+            element. A positive value will move the shadow to the right, and a negative
+            value will move it to the left.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          Vertical offset:&#32;
+          <span className="font-normal ">
+            This value sets the distance the shadow should be offset from the top of the
+            element. A positive value will move the shadow down, and a negative value will
+            move it up.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          Blur radius:&#32;
+          <span className="font-normal ">
+            This value sets the amount of blur applied to the shadow. A higher value will
+            create a more diffuse shadow, while a lower value will create a sharper
+            shadow.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          Spread radius:&#32;
+          <span className="font-normal ">
+            This value sets the size of the shadow. A positive value will increase the
+            size of the shadow, while a negative value will decrease it.
+          </span>
+        </li>
+        <li className="list-decimal font-bold mb-4">
+          Shadow color:&#32;
+          <span className="font-normal ">
+            This value sets the color of the shadow. This can be any valid CSS color
+            value, such as a hex code or a color name.
+          </span>
+        </li>
+      </ol>
+    </section>
   )
 }
 
