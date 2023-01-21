@@ -9,7 +9,7 @@ const Cheese = () => {
       <p>
         You can use box shadow and rotate properties to create the cheesiest collage ever!
       </p>
-      <h4 className="font-bold my-8">Rule used below:</h4>
+      <h4 className="font-bold my-8 font-cursiveCustom">Rule used below:</h4>
       <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
         <div className="flex gap-4 ">
           <div className="text-blue-300">
@@ -25,7 +25,7 @@ const Cheese = () => {
           </div>
         </div>
       </div>
-      <h4 className="font-bold  my-8">Results:</h4>
+      <h4 className="font-bold  my-8 font-cursiveCustom">Results:</h4>
       <div className="flex justify-center gap-8 w-fit mx-auto ">
         <div className="    bg-gradient-to-r from-orange-400 to-orange-500  rotate-[-7deg] md:rotate-[-25deg] mt-20 z-40 text-white px-6 py-16 rounded-sm w-[300px] shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] ">
           <blockquote>

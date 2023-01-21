@@ -7,13 +7,16 @@ import Card from "../../components/Card"
 const Home = () => {
   return (
     <div className="my-16 mx-4">
-      <div className="text-center    font-cursiveCustom">
-        <div className="text-6xl ">Hello</div>
+      <div className="text-center max-w-3xl mx-auto   font-cursiveCustom">
+        <div className="text-6xl ">Hello,</div>
         <h1 className="text-xl mt-6 ">
-          CSS Mate is here to offer you many
-          <span className="text-secondary"> useful tools</span> for css rule creation and
-          demonstration <br /> &#40;with a sprinkeling of HTML cheat sheets&#41;
+          Welcome to our collection of
+          <span className="text-secondary"> CSS and HTML tools! </span>
+          Whether you're a seasoned web developer or just getting started, our tools are
+          designed to make your life easier. Here, you'll find a wide range of tools to
+          help you create beautiful and responsive websites with minimal effort.
         </h1>
+        <br />
         <div className="text-xl ">Pick one below to start!</div>
       </div>
       <div className="flex flex-wrap  mx-auto  w-fit gap-8 my-12 justify-center">

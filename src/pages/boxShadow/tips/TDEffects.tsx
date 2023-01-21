@@ -49,7 +49,7 @@ const TDEffects = () => {
         </li>
       </ol>
 
-      <h4 className="font-bold my-8">Rules used below:</h4>
+      <h4 className="font-bold my-8 font-cursiveCustom">Rules used below:</h4>
       <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
         <div className=" flex gap-4 ">
           <div className="text-blue-300">
@@ -76,7 +76,7 @@ const TDEffects = () => {
           </div>
         </div>
       </div>
-      <h4 className="font-bold  my-8">Results:</h4>
+      <h4 className="font-bold  my-8 font-cursiveCustom">Results:</h4>
       <div className="lg:flex justify-center gap-8 ">
         <div className="bg-transparent mx-auto text-white px-12 py-16 rounded-xl w-fit shadow-[inset_-5px_-5px_16px_-10px_rgba(220,_220,_220,0.6),inset_5px_5px_16px_2px_rgba(0,_0,_0,1),inset_12px_12px_4px_150px_rgba(0,_0,_0,0.05)] ">
           <blockquote>

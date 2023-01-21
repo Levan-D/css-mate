@@ -26,7 +26,7 @@ const BoxShadow = () => {
         ease
       </h1>
       <div className="font-cursiveCustom text-center text-base mb-8">
-        Scroll to bot for tips & tricks
+        Scroll below for tips & tricks
       </div>
       <TableOfContents tableOfContets={tableOfContets} />
       <div

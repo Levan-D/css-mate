@@ -55,7 +55,7 @@ const NeonGlow = () => {
       </ol>
 
       <div>
-        <h4 className="font-bold my-8">Rule used below:</h4>
+        <h4 className="font-bold my-8 font-cursiveCustom">Rule used below:</h4>
         <div className="bg-slate-700 flex gap-4 px-8 py-6 rounded-xl w-fit mx-auto my-8 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
           <div className="text-blue-300 ">
             box-shadow<span className="text-white px-[4px]">:</span> <br />
@@ -71,7 +71,7 @@ const NeonGlow = () => {
       </div>
 
       <div>
-        <h4 className="font-bold  my-8">Result:</h4>
+        <h4 className="font-bold  my-8 font-cursiveCustom">Result:</h4>
         <div className="bg-transparent text-white px-12 py-14 rounded-xl w-fit mx-auto   shadow-[0px_0px_4px_0px_rgba(255,_255,_255,1),0px_0px_4px_0px_rgba(_255,_255,_255,1),0px_0px_36px_0px_rgba(_188,_19,_254,0.7),0px_0px_16px_0px_rgba(_188,_19,_254,1),0px_0px_50px_0px_rgba(_188,_19,_254,0.8),inset_0px_0px_24px_0px_rgba(_188,_19,_254,1)] ">
           <blockquote>
             <q className="   drop-shadow-neonPurple text-3xl font-handWrittenT ">
