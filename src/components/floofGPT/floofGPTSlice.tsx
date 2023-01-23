@@ -11,10 +11,10 @@ export const askFloofGPT = createAsyncThunk(
   "floof/ask",
   async ({ prompt }: { prompt: string }, { rejectWithValue }) => {
     const configuration = new Configuration({
-      apiKey: `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`,
+      apiKey: "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",
     })
     const openai = new OpenAIApi(configuration)
-
+    console.log(openai)
     const options = {
       model: "text-davinci-003",
       temperature: 0.3,
