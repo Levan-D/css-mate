@@ -14,7 +14,7 @@ export const askFloofGPT = createAsyncThunk(
       apiKey: "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",
     })
     const openai = new OpenAIApi(configuration)
-    console.log(openai)
+
     const options = {
       model: "text-davinci-003",
       temperature: 0.3,
@@ -28,10 +28,9 @@ export const askFloofGPT = createAsyncThunk(
       ...options,
       prompt,
     }
-    console.log(body)
+
     try {
       const response = await openai.createCompletion(body)
-      console.log(response)
 
       return response
     } catch (error) {
