@@ -19,7 +19,7 @@ const Body = () => {
   return (
     <div className="grow bg-gradient-to-br from-slate-200 to-blue-200 px-2 overflow-y-scroll overflow-x-hidden   ">
       {responseChain.map((response, index) => (
-        <div key={index} className={`break-normal mb-8 `}>
+        <div key={index} className={`break-normal mb-4 `}>
           <div
             className={`flex gap-2 ${
               response.user === "floofGPT" ? "" : "flex-row-reverse"
