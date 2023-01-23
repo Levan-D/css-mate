@@ -17,7 +17,7 @@ const FloofGPT = () => {
     <>
       <div
         className={`${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-40"} ${
-          isExpanded ? "w-[500px] h-[600px]" : " w-72 h-[420px]"
+          isExpanded ? "w-[500px] h-[600px]" : " w-72 h-[460px]"
         } flex flex-col fixed bottom-4 left-4  rounded-xl border duration-200  bg-slate-200   shadow-primaryBr origin-bottom-left  z-50`}
       >
         <Nav />
