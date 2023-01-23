@@ -11,10 +11,12 @@ import Cursors from "./pages/cursors/Cursors"
 import Emojis from "./pages/emojis/Emojis"
 import Entities from "./pages/entities/Entities"
 import Gradient from "./pages/gradient/Gradient"
+import FloofGPT from "./components/floofGPT/FloofGPT"
 
 function App() {
   return (
     <div className="flex flex-col  min-h-screen	 ">
+      <FloofGPT />
       <Navbar />
       <div className="grow max-w-6xl mx-auto">
         <Routes>
