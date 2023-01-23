@@ -11,7 +11,7 @@ export const askFloofGPT = createAsyncThunk(
   "floof/ask",
   async ({ prompt }: { prompt: string }, { rejectWithValue }) => {
     const configuration = new Configuration({
-      apiKey: import.meta.env.VITE_Open_AI_Key,
+      apiKey: `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`,
     })
     const openai = new OpenAIApi(configuration)
 
@@ -128,7 +128,6 @@ const floofSlice = createSlice({
           timeStamp: new Date().toLocaleString(),
           message: action.payload.data.choices[0].text,
         })
-        
       })
       .addCase(askFloofGPT.rejected, (state, action: PayloadAction<any>) => {
         state.askFloofGPTStatus.loading = false
