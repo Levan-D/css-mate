@@ -35,11 +35,17 @@ const Body = () => {
             <div className="text-sm leading-6  "> {response.timeStamp.split(",")[1]}</div>
           </div>
           <div
-            className={`${
-              response.user === "floofGPT" ? " bg-secondary" : " ml-[10%] bg-primary"
-            } px-2  py-1 my-1 rounded-xl shadow-primaryBr  max-w-[90%] `}
+            className={` ${
+              response.user === "floofGPT" ? " justify-start" : " justify-end"
+            }  flex`}
           >
-            {response.message}
+            <div
+              className={`${
+                response.user === "floofGPT" ? " bg-secondary" : "  bg-primary"
+              } px-2 w-fit  py-1 my-1 rounded-xl shadow-primaryBr  max-w-[90%] `}
+            >
+              {response.message}
+            </div>
           </div>
         </div>
       ))}
