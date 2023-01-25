@@ -11,13 +11,13 @@ import axios from "axios"
 export const askFloofGPT = createAsyncThunk(
   "floof/ask",
   async ({ prompt }: { prompt: string }, { rejectWithValue }) => {
-    const body = { prompt: prompt }
+    //const body = { prompt: prompt }
 
     try {
       const response = await axios({
         method: "GET",
         url: `https://api.levandolidze.me/floof`,
-        data: prompt,
+        data: { prompt: prompt },
       })
       console.log(response)
       return response
@@ -113,7 +113,7 @@ const floofSlice = createSlice({
         state.responseChain.push({
           user: "floofGPT",
           timeStamp: new Date().toLocaleString(),
-          message: action.payload.response,
+          message: action.payload.data.response,
         })
       })
       .addCase(askFloofGPT.rejected, (state, action: PayloadAction<any>) => {
