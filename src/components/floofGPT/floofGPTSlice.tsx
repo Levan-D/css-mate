@@ -11,14 +11,15 @@ import axios from "axios"
 export const askFloofGPT = createAsyncThunk(
   "floof/ask",
   async ({ prompt }: { prompt: string }, { rejectWithValue }) => {
-    //const body = { prompt: prompt }
-
     try {
       const response = await axios({
         method: "GET",
-        url: `https://api.levandolidze.me/floof`,
-        data: { prompt: prompt },
+        url: "https://api.levandolidze.me/floof",
+        data: {
+          prompt: prompt,
+        },
       })
+
       console.log(response)
       return response
     } catch (error) {
