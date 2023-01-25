@@ -1,7 +1,7 @@
 /** @format */
 
 import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit"
-import { Configuration, OpenAIApi } from "openai"
+import Request from "../../app/api/Request"
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../app/store"
 //@ts-ignore
@@ -10,28 +10,13 @@ import { v4 as uuidv4 } from "uuid"
 export const askFloofGPT = createAsyncThunk(
   "floof/ask",
   async ({ prompt }: { prompt: string }, { rejectWithValue }) => {
-    const configuration = new Configuration({
-      apiKey: import.meta.env.VITE_Open_AI_Key,
-    })
-    const openai = new OpenAIApi(configuration)
-    console.log(import.meta.env.VITE_Open_AI_Key)
-    const options = {
-      model: "text-davinci-003",
-      temperature: 0.3,
-      max_tokens: 100,
-      top_p: 1,
-      frequency_penalty: 0.0,
-      presence_penalty: 0.0,
-    }
-
-    let body = {
-      ...options,
-      prompt,
-    }
+    const method = "GET"
+    const url = `http://194.195.92.187:3001/floof`
+    const body = prompt
 
     try {
-      const response = await openai.createCompletion(body)
-
+      const response = Request({ method, url, body })
+      console.log(response)
       return response
     } catch (error) {
       return rejectWithValue(error)
