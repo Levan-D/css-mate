@@ -118,7 +118,7 @@ const floofSlice = createSlice({
           user: "floofGPT",
           timeStamp: new Date().toLocaleString(),
           message:
-            "Error:" + " " + action.payload.message + "." + " Please try again later.",
+            "Error:" + " " + action.payload.message + "." + " Please, refresh the page or try again later.",
         })
       })
   },
