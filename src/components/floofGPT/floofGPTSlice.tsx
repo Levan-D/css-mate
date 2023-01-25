@@ -7,7 +7,6 @@ import axios from "axios"
 export const askFloofGPT = createAsyncThunk(
   "floof/ask",
   async ({ prompt }: { prompt: string }, { rejectWithValue }) => {
-    console.log(prompt)
     try {
       const response = await axios({
         method: "GET",
@@ -16,7 +15,6 @@ export const askFloofGPT = createAsyncThunk(
         params: { prompt: prompt },
       })
 
-      console.log(response)
       return response
     } catch (error) {
       return rejectWithValue(error)
@@ -93,13 +91,11 @@ const floofSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(askFloofGPT.pending, state => {
-        console.log("pending")
         state.askFloofGPTStatus.loading = true
         state.askFloofGPTStatus.success = false
         state.askFloofGPTStatus.error = false
       })
       .addCase(askFloofGPT.fulfilled, (state, action: PayloadAction<any>) => {
-        console.log("fulfilled")
         state.askFloofGPTStatus.loading = false
         state.askFloofGPTStatus.success = true
 
@@ -117,7 +113,7 @@ const floofSlice = createSlice({
         state.askFloofGPTStatus.loading = false
 
         state.askFloofGPTStatus.error = action.payload.message
-        console.log("rejected", action.payload.message)
+
         state.responseChain.push({
           user: "floofGPT",
           timeStamp: new Date().toLocaleString(),
