@@ -25,7 +25,7 @@ const Home = () => {
             <Card
               title={button.name}
               path={button.path}
-              CSS={`hover:translate-y-[-10px]`}
+              CSS={`sm:hover:translate-y-[-10px]`}
             >
               <div>
                 <img src={button.icon} alt="tool icons" className="pl-4" />

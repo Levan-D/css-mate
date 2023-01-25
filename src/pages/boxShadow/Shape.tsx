@@ -76,7 +76,7 @@ const Shape = () => {
           <img
             onClick={() => setDarkmode(x => !x)}
             className={` ${
-              darkmode ? `hover:border-white` : "hover:border-secondary"
+              darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
             } border-2 border-transparent rounded-full h-10  cursor-pointer m-1`}
             src={darkmode ? moon : sun}
             alt="dark mode"
@@ -97,7 +97,7 @@ const Shape = () => {
           setShape(x => !x)
         }}
         className={` ${shape ? "rounded-xl" : "rounded-full"} ${
-          darkmode ? `hover:border-white` : "hover:border-secondary"
+          darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
         }    border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none `}
       >
         <ChangeShape

@@ -28,7 +28,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
             onClick={() => setActiveBtn(() => btn)}
             className={`  ${
               activeBtn === btn && `!text-slate-900`
-            } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   hover:text-slate-600  duration-200 sm:mx-2 md:mx-6 md:text-lg`}
+            } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   sm:hover:text-slate-600  duration-200 sm:mx-2 md:mx-6 md:text-lg`}
           >
             {btn}
           </div>
@@ -54,7 +54,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                       <div className={`${flexBasis}  px-2 `}>{char.character}</div>
                       <div className={`${flexBasis} `}>
                         <div
-                          className={` cursor-pointer   hover:bg-slate-100  active:bg-slate-300 hover:text-slate-900 w-fit px-2 duration-200 rounded-md `}
+                          className={` cursor-pointer   sm:hover:bg-slate-100  active:bg-slate-300 sm:hover:text-slate-900 w-fit px-2 duration-200 rounded-md `}
                           onClick={() => {
                             navigator.clipboard.writeText(char.hexadecimal)
                           }}

@@ -12,6 +12,7 @@ import Emojis from "./pages/emojis/Emojis"
 import Entities from "./pages/entities/Entities"
 import Gradient from "./pages/gradient/Gradient"
 import FloofGPT from "./components/floofGPT/FloofGPT"
+import FloofGPTFull from "./components/floofGPT/FloofGPTFull"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="cursors" element={<Cursors />} />
           <Route path="emojis" element={<Emojis />} />
           <Route path="entities" element={<Entities />} />
+          <Route path="floof-gpt" element={<FloofGPTFull />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

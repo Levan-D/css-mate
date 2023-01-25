@@ -40,7 +40,7 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
     >
       <div
         onClick={() => setVisibility(x => !x)}
-        className={`flex px-3 py-2 gap-2 cursor-pointer hover:bg-blue-400 duration-200 ${
+        className={`flex px-3 py-2 gap-2 cursor-pointer sm:hover:bg-blue-400 duration-200 ${
           visibility ? "rounded-t-lg " : "rounded-lg"
         }`}
       >
@@ -71,7 +71,7 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
         >
           {tableOfContets.map((link, i) => (
             <a href={`#${link}`} key={i}>
-              <li className="hover:bg-slate-100 hover:text-slate-900 px-3  py-[2px] active:bg-slate-500  duration-200">
+              <li className="sm:hover:bg-slate-100 sm:hover:text-slate-900 px-3  py-[2px] active:bg-slate-500  duration-200">
                 {link}
               </li>
             </a>

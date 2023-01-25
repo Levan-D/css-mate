@@ -9,7 +9,7 @@
 
 @layer components {
   .btnPrimary {
-    @apply bg-primary text-white font-bold w-fit duration-200 py-2 px-4  rounded-md cursor-pointer shadow-primaryDark select-none hover:brightness-110 active:brightness-90;
+    @apply bg-primary text-white font-bold w-fit duration-200 py-2 px-4  rounded-md cursor-pointer shadow-primaryDark select-none sm:hover:brightness-110 active:brightness-90;
   }
 }
 

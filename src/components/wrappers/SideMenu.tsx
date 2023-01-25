@@ -19,7 +19,7 @@ const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
           <div>
             <RestartIcon
               height={30}
-              className="hover:border-white  border-2 border-transparent rounded-full p-[3px] cursor-pointer translate-y-[-4px] "
+              className="sm:hover:border-white  border-2 border-transparent rounded-full p-[3px] cursor-pointer translate-y-[-4px] "
               width={30}
               onClick={() => {
                 if (resetState !== undefined) {

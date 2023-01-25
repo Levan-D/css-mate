@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useRef, useEffect } from "react"
-import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { useAppSelector } from "../../app/hooks"
 import FlooFGPTIcon from "../../assets/icons/floofGPT.png"
 import UserIcon from "../../assets/icons/user.png"
 

@@ -41,7 +41,7 @@ const TabsNConditions = ({
                 }}
                 className={` ${
                   i === currentTab && `bg-blue-400  text-white !opacity-100  shadow-primaryBr `
-                }  cursor-pointer px-4 py-1 hover:bg-blue-400 hover:opacity-60  rounded-lg duration-200`}
+                }  cursor-pointer px-4 py-1 sm:hover:bg-blue-400 sm:hover:opacity-60  rounded-lg duration-200`}
               >
                 {tab.name}
               </div>
@@ -67,7 +67,7 @@ const TabsNConditions = ({
             height={32}
             width={32}
             stroke="#0f172a"
-            className="hover:bg-blue-400 hover:opacity-90 p-2  rounded-full cursor-pointer duration-200"
+            className="sm:hover:bg-blue-400 sm:hover:opacity-90 p-2  rounded-full cursor-pointer duration-200"
           />
         )}
       </div>

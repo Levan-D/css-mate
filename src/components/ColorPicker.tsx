@@ -47,7 +47,7 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
           style={{ backgroundColor: color.color }}
           onClick={() => handleColorPick(color.value)}
           className={`h-6 w-6 rounded-full border-2 border-transparent ${
-            color.name === "white" ? "hover:border-secondary" : "hover:border-slate-400"
+            color.name === "white" ? "sm:hover:border-secondary" : "sm:hover:border-slate-400"
           }  cursor-pointer duration-200`}
         ></div>
       ))}
@@ -63,7 +63,7 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
           setColor((e.target as HTMLInputElement).value)
           handleColorPick(HexToRGB((e.target as HTMLInputElement).value))
         }}
-        className="translate-y-[-2px] cursor-pointer bg-transparent h-[28px] border-2 border-transparent rounded-md  hover:border-slate-400 duration-200"
+        className="translate-y-[-2px] cursor-pointer bg-transparent h-[28px] border-2 border-transparent rounded-md  sm:hover:border-slate-400 duration-200"
       ></input>
     </div>
   )
