@@ -53,10 +53,10 @@ const Nav = () => {
           <Link to="/floof-gpt">
             <div
               onClick={handleMinimize}
-              className="px-2 font-bold w-8 py-2 sm:hover:text-secondary leading-8 cursor-pointer duration-200 select-none "
+              className="px-2 font-bold w-8 py-2 sm:hover:text-secondary leading-4 cursor-pointer duration-200 select-none "
             >
-              <div className="rotate-[-45deg] translate-y-[-4px]"> &#8703;</div>
-              <div className="absolute rotate-45 translate-y-[-36px] translate-x-[2px]"> &#8703;</div>
+              <div className="rotate-[-45deg] "> &#8703;</div>
+              <div className="absolute rotate-45 translate-y-[-16px] translate-x-[2px]"> &#8703;</div>
             </div>
           </Link>
           <div
