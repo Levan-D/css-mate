@@ -25,7 +25,11 @@ const Nav = () => {
   }
 
   return (
-    <div className="bg-primary rounded-t-xl p-1 flex justify-between ">
+    <div
+      className={`${
+        location.pathname === "/floof-gpt" ? "" : "rounded-t-xl"
+      } bg-primary  p-1 flex justify-between`}
+    >
       <div
         onClick={meow}
         className="border-2 w-fit cursor-pointer sm:hover:brightness-110 sm:hover:border-secondary duration-200 rounded-full shadow-primaryBr select-none"
@@ -42,8 +46,7 @@ const Nav = () => {
           : premier A.I. floofsistant
         </span>
         {location.pathname === "/floof-gpt" && (
-          <span className={` italic font-normal  duration-200`}>
-            {" "}
+          <span className={` italic font-normal  duration-200  `}>
             : premier A.I. floofsistant
           </span>
         )}
@@ -56,7 +59,10 @@ const Nav = () => {
               className="px-2 font-bold w-8 py-2 sm:hover:text-secondary leading-4 cursor-pointer duration-200 select-none "
             >
               <div className="rotate-[-45deg] "> &#8703;</div>
-              <div className="absolute rotate-45 translate-y-[-16px] translate-x-[2px]"> &#8703;</div>
+              <div className="absolute rotate-45 translate-y-[-16px] translate-x-[2px]">
+                {" "}
+                &#8703;
+              </div>
             </div>
           </Link>
           <div

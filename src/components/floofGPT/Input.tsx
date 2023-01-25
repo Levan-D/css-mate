@@ -4,13 +4,14 @@ import React, { useState, useRef, useEffect } from "react"
 import SendIcon from "../../assets/icons/send.png"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { askFloofGPT, pushUserResponse } from "./floofGPTSlice"
+import { useLocation } from "react-router-dom"
 
 const Input = () => {
   const { isOpen, askFloofGPTStatus } = useAppSelector(state => state.floof)
   const dispatch = useAppDispatch()
   const [inputText, setInputText] = useState("")
   const inputRef = useRef<HTMLInputElement>(null)
-
+  const location = useLocation()
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!askFloofGPTStatus.loading) {
@@ -28,7 +29,11 @@ const Input = () => {
   }, [isOpen])
 
   return (
-    <div className="bg-primary rounded-b-xl p-2 shadow-primaryBr">
+    <div
+      className={`${
+        location.pathname === "/floof-gpt" ? "" : "rounded-b-xl"
+      } bg-primary  p-2 shadow-primaryBr`}
+    >
       <form onSubmit={handleFormSubmit}>
         <div className="flex justify-between">
           <input
