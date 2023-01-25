@@ -12,11 +12,11 @@ export const askFloofGPT = createAsyncThunk(
   "floof/ask",
   async ({ prompt }: { prompt: string }, { rejectWithValue }) => {
     const body = { prompt: prompt }
-    console.log(body)
+
     try {
       const response = await axios({
         method: "GET",
-        url: `http://194.195.92.187:3001/floof`,
+        url: `https://api.levandolidze.me/floof`,
         data: prompt,
       })
       console.log(response)
