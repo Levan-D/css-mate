@@ -115,8 +115,14 @@ const floofSlice = createSlice({
       })
       .addCase(askFloofGPT.rejected, (state, action: PayloadAction<any>) => {
         state.askFloofGPTStatus.loading = false
-        state.askFloofGPTStatus.error = action.payload
-        console.log("rejected")
+
+        state.askFloofGPTStatus.error = action.payload.message
+        console.log("rejected", action.payload.message)
+        state.responseChain.push({
+          user: "user",
+          timeStamp: new Date().toLocaleString(),
+          message: action.payload.message,
+        })
       })
   },
 })
