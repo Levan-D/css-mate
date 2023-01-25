@@ -58,7 +58,7 @@ const initialState: floofState = {
       user: "floofGPT",
       timeStamp: new Date().toLocaleString(),
       message:
-        "You can expand the chat by left clicking the arrow on top right... anyways, what can I help you with?",
+        "You can expand the chat by left clicking the arrow on top right... anyways, what can I help you with? P.S. I crash a lot, so please be patient with me.",
     },
   ],
 }
@@ -118,7 +118,11 @@ const floofSlice = createSlice({
           user: "floofGPT",
           timeStamp: new Date().toLocaleString(),
           message:
-            "Error:" + " " + action.payload.message + "." + " Please, refresh the page or try again later.",
+            "Error:" +
+            " " +
+            action.payload.message +
+            "." +
+            " Please, refresh the page or try again later.",
         })
       })
   },
