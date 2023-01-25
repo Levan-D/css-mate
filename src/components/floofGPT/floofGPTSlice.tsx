@@ -1,11 +1,7 @@
 /** @format */
 
-import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit"
-import Request from "../../app/api/Request"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
-import { RootState } from "../../app/store"
-//@ts-ignore
-import { v4 as uuidv4 } from "uuid"
 import axios from "axios"
 
 export const askFloofGPT = createAsyncThunk(
@@ -14,10 +10,9 @@ export const askFloofGPT = createAsyncThunk(
     try {
       const response = await axios({
         method: "GET",
+        headers: { ContentType: "application/json; charset=utf-8" },
         url: "https://api.levandolidze.me/floof",
-        data: {
-          prompt: prompt,
-        },
+        data: JSON.stringify({ prompt: prompt }),
       })
 
       console.log(response)
