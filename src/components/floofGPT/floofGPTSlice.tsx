@@ -121,7 +121,7 @@ const floofSlice = createSlice({
         state.responseChain.push({
           user: "floofGPT",
           timeStamp: new Date().toLocaleString(),
-          message: action.payload.message + " Please try again later",
+          message: "Error:" + action.payload.message + "." + " Please try again later.",
         })
       })
   },
