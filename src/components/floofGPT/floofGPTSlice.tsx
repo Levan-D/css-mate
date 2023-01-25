@@ -11,7 +11,7 @@ export const askFloofGPT = createAsyncThunk(
     try {
       const response = await axios({
         method: "GET",
-        headers: { ContentType: "application/json; charset=utf-8" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         url: "https://api.levandolidze.me/floof",
         data: JSON.stringify({ prompt: prompt }),
       })
