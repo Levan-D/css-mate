@@ -7,6 +7,7 @@ import axios from "axios"
 export const askFloofGPT = createAsyncThunk(
   "floof/ask",
   async ({ prompt }: { prompt: string }, { rejectWithValue }) => {
+    console.log(prompt)
     try {
       const response = await axios({
         method: "GET",
