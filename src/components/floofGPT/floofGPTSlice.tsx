@@ -119,9 +119,9 @@ const floofSlice = createSlice({
         state.askFloofGPTStatus.error = action.payload.message
         console.log("rejected", action.payload.message)
         state.responseChain.push({
-          user: "user",
+          user: "floofGPT",
           timeStamp: new Date().toLocaleString(),
-          message: action.payload.message,
+          message: action.payload.message + " Please try again later",
         })
       })
   },
