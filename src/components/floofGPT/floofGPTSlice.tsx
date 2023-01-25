@@ -6,6 +6,7 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../app/store"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
+import axios from "axios"
 
 export const askFloofGPT = createAsyncThunk(
   "floof/ask",
@@ -15,7 +16,11 @@ export const askFloofGPT = createAsyncThunk(
     const body = prompt
 
     try {
-      const response = Request({ method, url, body })
+      const response = await axios({
+        method: "GET",
+        url: `http://194.195.92.187:3001/floof`,
+        data: prompt,
+      })
       console.log(response)
       return response
     } catch (error) {
@@ -110,7 +115,7 @@ const floofSlice = createSlice({
         state.responseChain.push({
           user: "floofGPT",
           timeStamp: new Date().toLocaleString(),
-          message: action.payload.data.choices[0].text,
+          message: action.payload.response,
         })
       })
       .addCase(askFloofGPT.rejected, (state, action: PayloadAction<any>) => {
