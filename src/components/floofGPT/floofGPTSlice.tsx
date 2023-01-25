@@ -13,7 +13,7 @@ export const askFloofGPT = createAsyncThunk(
         method: "GET",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         url: "https://api.levandolidze.me/floof",
-        data: JSON.stringify({ prompt: prompt }),
+        data: { prompt: prompt },
       })
 
       console.log(response)
