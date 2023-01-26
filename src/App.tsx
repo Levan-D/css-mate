@@ -13,10 +13,16 @@ import Entities from "./pages/entities/Entities"
 import Gradient from "./pages/gradient/Gradient"
 import FloofGPT from "./components/floofGPT/FloofGPT"
 import FloofGPTFull from "./components/floofGPT/FloofGPTFull"
+import { useLocation } from "react-router-dom"
 
 function App() {
+  const location = useLocation()
   return (
-    <div className="flex flex-col  min-h-screen	 ">
+    <div
+      className={`${
+        location.pathname === "/floof-gpt" ? "bg-primary sm:bg-transparent" : ""
+      }  flex flex-col  min-h-screen`}
+    >
       <FloofGPT />
       <Navbar />
       <div className="grow max-w-6xl mx-auto">

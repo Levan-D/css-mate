@@ -29,7 +29,7 @@ const Input = () => {
   }, [isOpen])
 
   return (
-    <div className={`sm:rounded-b-xl bg-primary  p-2 shadow-primaryBr`}>
+    <div className={` sm:rounded-b-xl bg-primary   p-2 shadow-primaryBr`}>
       <form onSubmit={handleFormSubmit}>
         <div className="flex justify-between">
           <input

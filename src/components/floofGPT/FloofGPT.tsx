@@ -9,6 +9,7 @@ import Body from "./Body"
 import { setIsOpen } from "./floofGPTSlice"
 import Tooltip from "../Tooltip"
 import { useLocation, Link } from "react-router-dom"
+
 const FloofGPT = () => {
   const dispatch = useAppDispatch()
   const { isOpen, isExpanded } = useAppSelector(state => state.floof)
