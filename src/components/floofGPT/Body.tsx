@@ -8,12 +8,14 @@ import UserIcon from "../../assets/icons/user.png"
 const Body = () => {
   const { responseChain, askFloofGPTStatus } = useAppSelector(state => state.floof)
 
-  const recogRef = useRef<any>()
+  const recogRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    recogRef.current.scrollIntoView({
-      behavior: "smooth",
-    })
+    if (recogRef.current != null) {
+      recogRef.current.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
   }, [responseChain, askFloofGPTStatus.loading])
 
   return (

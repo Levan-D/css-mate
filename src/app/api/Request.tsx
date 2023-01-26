@@ -5,8 +5,8 @@ import axios from "axios"
 type RequestType = {
   method: string
   url: string
-  headers?: any
-  body?: any
+  headers?: unknown
+  body?: unknown
 }
 
 const Request = async ({ method, url, headers, body }: RequestType) => {
