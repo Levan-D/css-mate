@@ -99,7 +99,7 @@ const boxShadowSlice = createSlice({
   },
 })
 
-export const getBoxShadowTabs = createSelector(
+export const selectBoxShadowTabs = createSelector(
   (state: RootState) => state.boxShadow,
   boxShadow =>
     boxShadow.boxShadowData.map((z, i) => ({

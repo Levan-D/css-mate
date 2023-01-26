@@ -12,14 +12,14 @@ import {
   setTabPage,
   deleteTabPage,
 } from "../boxShadowSlice"
-import { getBoxShadowTabs, addBoxShadow } from "../boxShadowSlice"
+import { selectBoxShadowTabs, addBoxShadow } from "../boxShadowSlice"
 import Sliders from "./Sliders"
 import TabsNConditions from "../../../components/wrappers/TabsNConditions"
 
 const BoxShadowSidemenu = () => {
   const dispatch = useAppDispatch()
   const { boxShadowData, currentTab } = useAppSelector(state => state.boxShadow)
-  const tabs = useAppSelector(getBoxShadowTabs)
+  const tabs = useAppSelector(selectBoxShadowTabs)
 
   const resetState = (): void => {
     dispatch(resetStateAction())
