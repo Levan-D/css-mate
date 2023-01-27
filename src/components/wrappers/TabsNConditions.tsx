@@ -24,8 +24,8 @@ const TabsNConditions = ({
 }: TabsNConditionsType) => {
   return (
     <div>
-      <div className="flex bg-blue-300   text-slate-900 gap-2  py-2  px-3 font-semibold  justify-between  select-none">
-        <div className="flex flex-wrap ">
+      <div className="menuHeader flex  gap-2  py-2  px-3   justify-between  ">
+        <div className="flex flex-wrap gap-2 ">
           {tabs.map((tab, i) => {
             const tooltipChild = (
               <div
@@ -40,9 +40,8 @@ const TabsNConditions = ({
                   }
                 }}
                 className={` ${
-                  i === currentTab &&
-                  `bg-blue-400  text-white !opacity-100  shadow-primaryBr `
-                }  cursor-pointer px-4 py-1 sm:hover:bg-blue-400 sm:hover:opacity-60  rounded-lg duration-200`}
+                  i !== currentTab && "btnSecondaryFalse"
+                }  btnSecondary    `}
               >
                 {tab.name}
               </div>
@@ -59,17 +58,19 @@ const TabsNConditions = ({
           })}
         </div>
         {handleAddIconClick && (
-          <AddIcon
-            onClick={() => {
-              if (handleAddIconClick) {
-                handleAddIconClick()
-              }
-            }}
-            height={32}
-            width={32}
-            stroke="#0f172a"
-            className="sm:hover:bg-blue-400 sm:hover:opacity-90 p-2  rounded-full cursor-pointer duration-200"
-          />
+          <div className="w-4 mr-2">
+            <AddIcon
+              onClick={() => {
+                if (handleAddIconClick) {
+                  handleAddIconClick()
+                }
+              }}
+              height={32}
+              width={32}
+              stroke="white"
+              className="sm:hover:bg-blue-300  p-2  rounded-full cursor-pointer duration-200"
+            />
+          </div>
         )}
       </div>
       {children}

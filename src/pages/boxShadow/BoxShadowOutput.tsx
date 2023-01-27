@@ -91,7 +91,7 @@ const BoxShadowOutput = () => {
   ]
   return (
     <div>
-      <Output title="CSS Rules" renderArray={renderArray} />
+      <Output renderArray={renderArray} />
     </div>
   )
 }

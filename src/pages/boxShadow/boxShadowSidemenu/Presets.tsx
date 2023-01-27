@@ -22,14 +22,14 @@ const Presets = memo(() => {
   }
 
   return (
-    <div>
+    <div className="menuContainer mx-4 mb-4">
       <TabsNConditions
         tabs={tabs}
         currentTab={tabPage}
         handleSetTabPage={handleSetTabPage}
       >
         {boxShadowPresets.map((category, i) => (
-          <div key={i} className="flex justify-center gap-8  ">
+          <div key={i} className="flex justify-center gap-6  ">
             {tabPage === i &&
               category.presets.map((preset, index) => (
                 <div
@@ -47,7 +47,7 @@ const Presets = memo(() => {
                     dispatch(resetState())
                     dispatch(setPreset(preset.settings))
                   }}
-                  className="btnPrimary mt-4 mb-6  p-0  w-10 h-10 leading-[40px] text-sm text-center"
+                  className="btnPrimary  mt-4 mb-6  p-0  w-10 h-10 leading-[40px] text-sm text-center"
                 >
                   {preset.titile}
                 </div>

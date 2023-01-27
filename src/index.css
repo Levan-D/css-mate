@@ -11,6 +11,21 @@
   .btnPrimary {
     @apply bg-primary text-white font-bold w-fit duration-200 py-2 px-4  rounded-md cursor-pointer shadow-primaryDark select-none sm:hover:brightness-110 active:brightness-90;
   }
+  .btnSecondary {
+    @apply bg-blue-300 text-slate-900  w-fit duration-200 py-1 px-4  rounded-md cursor-pointer shadow-primaryDark select-none sm:hover:bg-blue-300 sm:hover:brightness-110 active:brightness-90 !opacity-100;
+  }
+  .btnSecondaryFalse {
+    @apply bg-transparent text-white shadow-none sm:hover:brightness-100;
+  }
+  .menuHeader {
+    @apply bg-darkJungle-600 rounded-t-lg border-b-2 border-darkJungle-500 font-semibold;
+  }
+  .menuContainer {
+    @apply border-2 rounded-xl bg-darkJungle-800 border-darkJungle-700;
+  }
+  .menuBlock {
+    @apply bg-darkJungle-600  rounded-lg  border-2 border-darkJungle-500;
+  }
 }
 
 @layer utilities {

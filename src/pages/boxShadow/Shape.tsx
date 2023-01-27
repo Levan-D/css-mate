@@ -71,18 +71,18 @@ const Shape = () => {
       } mx-auto  border-2 rounded-xl h-[530px] md:h-full lg:w-[430px] w-96 flex  flex-col justify-between  `}
     >
       {/* nav section */}
-      <div className="flex justify-between">
+      <div className="menuHeader flex justify-between">
         <div>
           <img
             onClick={() => setDarkmode(x => !x)}
             className={` ${
               darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
-            } border-2 border-transparent rounded-full h-10  cursor-pointer m-1`}
+            } border-2 duration-200 border-transparent rounded-full h-10  cursor-pointer m-2`}
             src={darkmode ? moon : sun}
             alt="dark mode"
           />
         </div>
-        <div className="mx-2 my-1">
+        <div className="m-2">
           <ColorPicker handleColorPick={handleColorPick} />
         </div>
       </div>

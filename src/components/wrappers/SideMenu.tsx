@@ -13,7 +13,7 @@ type SideMenuProps = {
 const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
   return (
     <div className="border-2 rounded-xl  z-40 w-96 h-fit mx-auto md:mx-0  ">
-      <div className="flex p-4 pb-2 bg-primary rounded-t-xl justify-between  ">
+      <div className="menuHeader !bg-primary flex p-4 pb-2  justify-between  ">
         <h2 className="font-bold  select-none ">{title}</h2>
         {resetState && (
           <div>

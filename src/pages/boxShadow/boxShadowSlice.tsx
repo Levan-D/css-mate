@@ -79,7 +79,7 @@ const boxShadowSlice = createSlice({
         action.payload.value
     },
     addBoxShadow: state => {
-      if (state.boxShadowData.length < 10) {
+      if (state.boxShadowData.length < 12) {
         state.boxShadowData.push({
           tabName: `Sh${state.boxShadowData.length + 1}`,
           id: uuidv4(),

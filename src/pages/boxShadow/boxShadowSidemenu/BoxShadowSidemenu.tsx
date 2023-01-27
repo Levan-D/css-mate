@@ -42,34 +42,32 @@ const BoxShadowSidemenu = () => {
   return (
     <div>
       <SideMenu title={`Box shadow config`} resetState={resetState}>
-        {tabs && (
-          <TabsNConditions
-            tabs={tabs}
-            currentTab={currentTab}
-            handleSetTabPage={handleSetTabPage}
-            handleOnDoubleClick={handleTabDelete}
-            handleAddIconClick={handleAddBoxShadow}
-          >
-            <div className="p-4 ">
+        <div className="menuContainer m-4  pb-4  ">
+          {tabs && (
+            <TabsNConditions
+              tabs={tabs}
+              currentTab={currentTab}
+              handleSetTabPage={handleSetTabPage}
+              handleOnDoubleClick={handleTabDelete}
+              handleAddIconClick={handleAddBoxShadow}
+            >
               <Sliders />
+            </TabsNConditions>
+          )}
+
+          <div className="flex justify-between mx-4 mt-4 ">
+            <div
+              onClick={() => dispatch(toggleInset())}
+              className={`${
+                !boxShadowData[0].settings.inset && `!bg-slate-400 text-slate-800`
+              } btnPrimary text-sm`}
+            >
+              Inner
             </div>
-          </TabsNConditions>
-        )}
-
-        <div className="flex justify-between mx-4">
-          <div
-            onClick={() => dispatch(toggleInset())}
-            className={`${
-              !boxShadowData[0].settings.inset && `!bg-slate-400 text-slate-800`
-            } btnPrimary text-sm`}
-          >
-            Inner
+            <ColorPicker handleColorPick={handleColorPick} />
           </div>
-          <ColorPicker handleColorPick={handleColorPick} />
         </div>
-
-        <hr className="my-4 mx-4 border-transparent " />
-
+        <hr className="mx-4 mb-4" />
         <Presets />
       </SideMenu>
     </div>

@@ -52,8 +52,8 @@ const Sliders = () => {
             Object.entries(boxShadow.settings).map((property, i) => {
               if (property[0] !== "shadowColor" && property[0] !== "inset") {
                 return (
-                  <div key={i} className="h-8 w-full mb-8 ">
-                    <div className="flex justify-between">
+                  <div key={i} className="menuBlock h-8 min-w-max m-2 p-2 pb-14 ">
+                    <div className="flex  justify-between ">
                       <h2>
                         {property[0].charAt(0).toUpperCase() + property[0].slice(1)}{" "}
                         &#160;
@@ -75,19 +75,19 @@ const Sliders = () => {
                             value={property[1] / 100}
                             step={0.01}
                             onChange={e => handlePropertyChange(e, property[0])}
-                            className="w-14 text-center  md:text-right bg-slate-700 rounded-md"
+                            className="w-14 text-center  md:text-right bg-darkJungle-300 rounded-md"
                           />
                         ) : (
                           <input
                             type="number"
                             value={property[1]}
                             onChange={e => handlePropertyChange(e, property[0])}
-                            className="w-14 text-center  md:text-right bg-slate-700  rounded-md"
+                            className="w-14 text-center  md:text-right bg-darkJungle-300  rounded-md"
                           />
                         )}
                       </h2>
                     </div>
-                    <div className=" w-full h-[20px] mb-4">
+                    <div className=" w-fill h-[20px] py-2">
                       <ReactSlider
                         className="customSlider"
                         trackClassName="customSlider-track"
