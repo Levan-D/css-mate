@@ -24,7 +24,7 @@ const TabsNConditions = ({
 }: TabsNConditionsType) => {
   return (
     <div>
-      <div className="flex bg-blue-300 text-slate-900 gap-2  py-2  px-3 font-semibold  justify-between  select-none">
+      <div className="flex bg-blue-300   text-slate-900 gap-2  py-2  px-3 font-semibold  justify-between  select-none">
         <div className="flex flex-wrap ">
           {tabs.map((tab, i) => {
             const tooltipChild = (
@@ -40,7 +40,8 @@ const TabsNConditions = ({
                   }
                 }}
                 className={` ${
-                  i === currentTab && `bg-blue-400  text-white !opacity-100  shadow-primaryBr `
+                  i === currentTab &&
+                  `bg-blue-400  text-white !opacity-100  shadow-primaryBr `
                 }  cursor-pointer px-4 py-1 sm:hover:bg-blue-400 sm:hover:opacity-60  rounded-lg duration-200`}
               >
                 {tab.name}

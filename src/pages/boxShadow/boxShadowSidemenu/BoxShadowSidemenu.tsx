@@ -50,7 +50,7 @@ const BoxShadowSidemenu = () => {
             handleOnDoubleClick={handleTabDelete}
             handleAddIconClick={handleAddBoxShadow}
           >
-            <div className="p-4">
+            <div className="p-4 ">
               <Sliders />
             </div>
           </TabsNConditions>
