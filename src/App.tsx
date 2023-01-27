@@ -21,7 +21,7 @@ function App() {
     <div
       className={`${
         location.pathname === "/floof-gpt" ? "bg-primary sm:bg-transparent" : ""
-      }  flex flex-col  min-h-screen`}
+      }  flex flex-col  min-h-screen   `}
     >
       <FloofGPT />
       <Navbar />

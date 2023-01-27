@@ -24,7 +24,7 @@
     @apply border-2 rounded-xl bg-darkJungle-800 border-darkJungle-700;
   }
   .menuBlock {
-    @apply bg-darkJungle-600  rounded-lg  border-2 border-darkJungle-500;
+    @apply bg-darkJungle-600  rounded-lg  border-2 border-darkJungle-500 sm:hover:border-slate-300 duration-200;
   }
 }
 
