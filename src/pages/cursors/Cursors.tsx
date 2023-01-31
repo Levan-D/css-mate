@@ -6,14 +6,12 @@ import tailwindIcon from ".././../assets/icons/tailwind.png"
 import cssIcon from ".././../assets/icons/css.png"
 import { cursorData } from "./Data"
 import TableOfContents from "../../components/TableOfContents"
-import BackToTopBtn from "../../components/BackToTopBtn"
 import Tooltip from "../../components/Tooltip"
 
 const Cursors = () => {
   let tableOfContets: string[] = []
   return (
     <div className="my-16 mx-4">
-      <BackToTopBtn />
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Almost every CSS <span className="text-secondary">cursor</span> type presented
         below

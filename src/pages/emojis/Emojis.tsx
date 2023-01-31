@@ -3,12 +3,10 @@
 import React from "react"
 import CatDisplay from "../../components/wrappers/CatDisplay"
 import { EmojisData } from "./Data"
-import BackToTopBtn from "../../components/BackToTopBtn"
 
 const Emojis = () => {
   return (
     <div className="my-16 mx-4">
-      <BackToTopBtn />
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Did you know html had <span className="text-secondary">Emojis</span>?
       </h1>

@@ -14,6 +14,7 @@ import Gradient from "./pages/gradient/Gradient"
 import FloofGPT from "./components/floofGPT/FloofGPT"
 import FloofGPTFull from "./components/floofGPT/FloofGPTFull"
 import { useLocation } from "react-router-dom"
+import BackToTopBtn from "./components/BackToTopBtn"
 
 function App() {
   const location = useLocation()
@@ -23,6 +24,7 @@ function App() {
         location.pathname === "/floof-gpt" ? "bg-primary sm:bg-transparent" : ""
       }  flex min-h-screen  flex-col   `}
     >
+      <BackToTopBtn />
       <FloofGPT />
       <Navbar />
       <div className="mx-auto max-w-6xl grow">

@@ -4,7 +4,6 @@ import React from "react"
 import Shape from "./Shape"
 import BoxShadowOutput from "./BoxShadowOutput"
 import BoxShadowSidemenu from "./boxShadowSidemenu/BoxShadowSidemenu"
-import BackToTopBtn from "../../components/BackToTopBtn"
 import Tips from "./tips/Tips"
 import TableOfContents from "../../components/TableOfContents"
 
@@ -20,7 +19,6 @@ const BoxShadow = () => {
 
   return (
     <div className=" my-16 mx-4">
-      <BackToTopBtn />
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Generate <span className="text-secondary">box shadows</span> for your project with
         ease
