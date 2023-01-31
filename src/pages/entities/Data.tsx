@@ -238,6 +238,292 @@ export const EntitiesData: CatDisplayDataType[] = [
         hexadecimal: "&#8362;",
         description: "Shekel",
       },
+      {
+        character: <span>&#8355;</span>,
+        hexadecimal: "&#8355;",
+        description: "French Franc",
+      },
+      {
+        character: <span>&#8356;</span>,
+        hexadecimal: "&#8356;",
+        description: "Lira",
+      },
+      {
+        character: <span>&#8365;</span>,
+        hexadecimal: "&#8365;",
+        description: "Kip",
+      },
+      {
+        character: <span>&#8366;</span>,
+        hexadecimal: "&#8366;",
+        description: "Tugrik",
+      },
+      {
+        character: <span>&#8367;</span>,
+        hexadecimal: "&#8367;",
+        description: "Drachma",
+      },
+      {
+        character: <span>&#8368;</span>,
+        hexadecimal: "&#8368;",
+        description: "German Penny",
+      },
+      {
+        character: <span>&#8366;</span>,
+        hexadecimal: "&#8366;",
+        description: "Tugrik",
+      },
+      {
+        character: <span>&#8371;</span>,
+        hexadecimal: "&#8371;",
+        description: "Austral",
+      },
+      {
+        character: <span>&#8372;</span>,
+        hexadecimal: "&#8372;",
+        description: "Hryvnia",
+      },
+      {
+        character: <span>&#8373;</span>,
+        hexadecimal: "&#8373;",
+        description: "Cedi",
+      },
+      {
+        character: <span>&#8374;</span>,
+        hexadecimal: "&#8374;",
+        description: "Livre Tournois",
+      },
+      {
+        character: <span>&#8375;</span>,
+        hexadecimal: "&#8375;",
+        description: "Spesmilo",
+      },
+      {
+        character: <span>&#8376;</span>,
+        hexadecimal: "&#8376;",
+        description: "Tenge",
+      },
+      {
+        character: <span>&#8379;</span>,
+        hexadecimal: "&#8379;",
+        description: "Mark",
+      },
+      {
+        character: <span>&#8381;</span>,
+        hexadecimal: "&#8381;",
+        description: "Ruble",
+      },
+      {
+        character: <span>&#8382;</span>,
+        hexadecimal: "&#8382;",
+        description: "Lari",
+      },
+      {
+        character: <span>&#8383;</span>,
+        hexadecimal: "&#8383;",
+        description: "Bitcoin",
+      },
+    ],
+  },
+  {
+    category: "Arrows",
+    content: [
+      {
+        character: <span>&#8592;</span>,
+        hexadecimal: "&#8592;",
+        description: "Leftward",
+      },
+
+      {
+        character: <span>&#8593;</span>,
+        hexadecimal: "&#8593;",
+        description: "Upward",
+      },
+
+      {
+        character: <span>&#8594;</span>,
+        hexadecimal: "&#8594;",
+        description: "Rightward",
+      },
+
+      {
+        character: <span>&#8595;</span>,
+        hexadecimal: "&#8595;",
+        description: "Downward",
+      },
+
+      {
+        character: <span>&#8596;</span>,
+        hexadecimal: "&#8596;",
+        description: "Left + Right",
+      },
+
+      {
+        character: <span>&#8597;</span>,
+        hexadecimal: "&#8597;",
+        description: "Top + Bottom",
+      },
+      {
+        character: <span>&#8630;</span>,
+        hexadecimal: "&#8630;",
+        description: "Anti-clockwise semicircle arrow",
+      },
+      {
+        character: <span>&#8631;</span>,
+        hexadecimal: "&#8631;",
+        description: "Clockwise semicircle arrow",
+      },
+      {
+        character: <span>&#8634;</span>,
+        hexadecimal: "&#8634;",
+        description: "Anti-clockwise circle arrow",
+      },
+      {
+        character: <span>&#8635;</span>,
+        hexadecimal: "&#8635;",
+        description: "Clockwise circle arrow",
+      },
+      {
+        character: <span>&#8628;</span>,
+        hexadecimal: "&#8628;",
+        description: "Upward arrow with corner",
+      },
+      {
+        character: <span>&#8629;</span>,
+        hexadecimal: "&#8629;",
+        description: "Downward arrow with corner",
+      },
+
+      {
+        character: <span>&#8598;</span>,
+        hexadecimal: "&#8598;",
+        description: "North-West",
+      },
+
+      {
+        character: <span>&#8599;</span>,
+        hexadecimal: "&#8599;",
+        description: "North-East",
+      },
+
+      {
+        character: <span>&#8600;</span>,
+        hexadecimal: "&#8600;",
+        description: "South-East",
+      },
+
+      {
+        character: <span>&#8601;</span>,
+        hexadecimal: "&#8601;",
+        description: "South-West",
+      },
+
+      {
+        character: <span>&#8602;</span>,
+        hexadecimal: "&#8602;",
+        description: "Leftward with stroke",
+      },
+
+      {
+        character: <span>&#8603;</span>,
+        hexadecimal: "&#8603;",
+        description: "Rightward with stroke",
+      },
+
+      {
+        character: <span>&#8604;</span>,
+        hexadecimal: "&#8604;",
+        description: "Leftward but curly",
+      },
+
+      {
+        character: <span>&#8605;</span>,
+        hexadecimal: "&#8605;",
+        description: "Rightward but curly",
+      },
+
+      {
+        character: <span>&#8606;</span>,
+        hexadecimal: "&#8606;",
+        description: "Leftward but double",
+      },
+
+      {
+        character: <span>&#8607;</span>,
+        hexadecimal: "&#8607;",
+        description: "Upward but double",
+      },
+
+      {
+        character: <span>&#8608;</span>,
+        hexadecimal: "&#8608;",
+        description: "Leftward but Double",
+      },
+
+      {
+        character: <span>&#8609;</span>,
+        hexadecimal: "&#8609;",
+        description: "Downward but double",
+      },
+
+      {
+        character: <span>&#8610;</span>,
+        hexadecimal: "&#8610;",
+        description: "Leftward but tail",
+      },
+
+      {
+        character: <span>&#8611;</span>,
+        hexadecimal: "&#8611;",
+        description: "Rightward but tail",
+      },
+
+      {
+        character: <span>&#8644;</span>,
+        hexadecimal: "&#8644;",
+        description: "Rightward over leftward",
+      },
+
+      {
+        character: <span>&#8645;</span>,
+        hexadecimal: "&#8645;",
+        description: "Upward and Downward",
+      },
+
+      {
+        character: <span>&#8646;</span>,
+        hexadecimal: "&#8646;",
+        description: "Leftward over rightward",
+      },
+
+      {
+        character: <span>&#8647;</span>,
+        hexadecimal: "&#8647;",
+        description: "Leftward double",
+      },
+
+      {
+        character: <span>&#8648;</span>,
+        hexadecimal: "&#8648;",
+        description: "Upward double",
+      },
+
+      {
+        character: <span>&#8649;</span>,
+        hexadecimal: "&#8649;",
+        description: "Rightward double",
+      },
+
+      {
+        character: <span>&#8650;</span>,
+        hexadecimal: "&#8650;",
+        description: "Downward double",
+      },
+      {
+        character: <span>&#8694;</span>,
+        hexadecimal: "&#8694;",
+        description: "Rightward triple",
+      },
     ],
   },
   {
