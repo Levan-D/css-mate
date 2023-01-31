@@ -20,15 +20,15 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
   const [activeBtn, setActiveBtn] = useState<string>(navBtns[0])
 
   return (
-    <div className="border-2 border-white rounded-xl mx-auto w-fit max-w-3xl ">
-      <div className="   bg-primary  rounded-t-xl py-3  justify-center flex flex-wrap">
+    <div className="mx-auto w-fit max-w-3xl rounded-xl border-2 border-white ">
+      <div className="   flex  flex-wrap justify-center  rounded-t-xl bg-primary py-3">
         {navBtns.map((btn, i) => (
           <div
             key={i}
             onClick={() => setActiveBtn(() => btn)}
             className={`  ${
               activeBtn === btn && `!text-slate-900`
-            } cursor-pointer font-bold   font-cursiveCustom     px-2 text-md   sm:hover:text-slate-600  duration-200 sm:mx-2 md:mx-6 md:text-lg`}
+            } text-md cursor-pointer   px-2     font-cursiveCustom font-bold   duration-200  sm:mx-2 sm:hover:text-slate-600 md:mx-6 md:text-lg`}
           >
             {btn}
           </div>
@@ -38,12 +38,12 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
       <div className="px-4 py-2">
         <div className={"flex"}>
           {Headers.map((header, i) => (
-            <h3 key={i} className={`${flexBasis} font-bold pr-8`}>
+            <h3 key={i} className={`${flexBasis} pr-8 font-bold`}>
               {header}
             </h3>
           ))}
         </div>
-        <hr className="mb-1 mt-2 bg-slate-500 h-[1px] border-0 opacity-30" />
+        <hr className="mb-1 mt-2 h-[1px] border-0 bg-slate-500 opacity-30" />
         {Data.map((cat, i) => (
           <div key={i}>
             {cat.category === activeBtn && (
@@ -54,7 +54,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                       <div className={`${flexBasis}  px-2 `}>{char.character}</div>
                       <div className={`${flexBasis} `}>
                         <div
-                          className={` cursor-pointer   sm:hover:bg-slate-100  active:bg-slate-300 sm:hover:text-slate-900 w-fit px-2 duration-200 rounded-md `}
+                          className={` w-fit   cursor-pointer  rounded-md px-2 duration-200 active:bg-slate-300 sm:hover:bg-slate-100 sm:hover:text-slate-900 `}
                           onClick={() => {
                             navigator.clipboard.writeText(char.hexadecimal)
                           }}
@@ -68,7 +68,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                         <div className={`${flexBasis}  px-2 `}>{char.description}</div>
                       )}
                     </div>
-                    <hr className="my-1 bg-slate-500 h-[1px] border-0 opacity-30" />
+                    <hr className="my-1 h-[1px] border-0 bg-slate-500 opacity-30" />
                   </div>
                 ))}
               </div>

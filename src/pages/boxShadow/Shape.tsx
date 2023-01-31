@@ -67,8 +67,8 @@ const Shape = () => {
   return (
     <div
       className={` ${
-        darkmode ? "bg-inherit" : "bg-slate-100 border-secondary "
-      } mx-auto  border-2 rounded-xl h-[530px] md:h-full lg:w-[430px] w-96 flex  flex-col justify-between  `}
+        darkmode ? "bg-inherit" : "border-secondary bg-slate-100 "
+      } mx-auto  flex h-[530px] w-96 flex-col justify-between rounded-xl border-2  md:h-full lg:w-[430px]  `}
     >
       {/* nav section */}
       <div className="menuHeader flex justify-between">
@@ -77,7 +77,7 @@ const Shape = () => {
             onClick={() => setDarkmode(x => !x)}
             className={` ${
               darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
-            } border-2 duration-200 border-transparent rounded-full h-10  cursor-pointer m-2`}
+            } m-2 h-10 cursor-pointer rounded-full border-2  border-transparent duration-200`}
             src={darkmode ? moon : sun}
             alt="dark mode"
           />
@@ -98,7 +98,7 @@ const Shape = () => {
         }}
         className={` ${shape ? "rounded-xl" : "rounded-full"} ${
           darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
-        }    border-2 border-transparent  mx-auto  mb-4 h-[250px] w-[250px] cursor-pointer  select-none `}
+        }    mx-auto mb-4  h-[250px]  w-[250px] cursor-pointer select-none border-2  border-transparent `}
       >
         <ChangeShape
           height={72}

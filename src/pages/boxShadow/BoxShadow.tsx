@@ -21,17 +21,17 @@ const BoxShadow = () => {
   return (
     <div className=" my-16 mx-4">
       <BackToTopBtn />
-      <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
+      <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Generate <span className="text-secondary">box shadows</span> for your project with
         ease
       </h1>
-      <div className="font-cursiveCustom text-center text-base mb-8">
+      <div className="mb-8 text-center font-cursiveCustom text-base">
         Scroll below for tips & tricks
       </div>
       <TableOfContents tableOfContets={tableOfContets} />
       <div
         id="Box shadow"
-        className="md:flex-row flex flex-col md:justify-center justify-between md:gap-2 gap-16 lg:gap-36 mt-16 mb-16 "
+        className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-2 lg:gap-36 "
       >
         <BoxShadowSidemenu />
         <div>

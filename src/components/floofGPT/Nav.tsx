@@ -24,24 +24,24 @@ const Nav = () => {
   }
 
   return (
-    <div className={` bg-primary sm:rounded-t-xl  p-1 flex justify-between`}>
+    <div className={` flex justify-between  bg-primary p-1 sm:rounded-t-xl`}>
       <div
         onClick={meow}
-        className="border-2 w-fit cursor-pointer sm:hover:brightness-110 sm:hover:border-secondary duration-200 rounded-full shadow-primaryBr select-none"
+        className="w-fit cursor-pointer select-none rounded-full border-2 shadow-primaryBr duration-200 sm:hover:border-secondary sm:hover:brightness-110"
       >
         <img className="w-8  " src={FlooFGPTIcon} alt="" />
       </div>
-      <p className="font-bold text-md leading-8 grow text-center  ">
+      <p className="text-md grow text-center font-bold leading-8  ">
         FlooF-GPT
         <span
           className={` ${
-            isExpanded ? "  opacity-100 inline " : " opacity-0  hidden "
-          } italic font-normal  duration-200`}
+            isExpanded ? "  inline opacity-100 " : " hidden  opacity-0 "
+          } font-normal italic  duration-200`}
         >
           : premier A.I. floofsistant
         </span>
         {location.pathname === "/floof-gpt" && (
-          <span className={` italic font-normal  duration-200 hidden sm:inline  `}>
+          <span className={` hidden font-normal  italic duration-200 sm:inline  `}>
             : premier A.I. floofsistant
           </span>
         )}
@@ -52,10 +52,10 @@ const Nav = () => {
             <Tooltip text="Fullscreen">
               <div
                 onClick={handleMinimize}
-                className="px-2 font-bold w-8 py-2 sm:hover:text-secondary leading-4 cursor-pointer duration-200 select-none "
+                className="w-8 cursor-pointer select-none px-2 py-2 font-bold leading-4 duration-200 sm:hover:text-secondary "
               >
                 <div className="rotate-[-45deg] "> &#8703;</div>
-                <div className="absolute rotate-45 translate-y-[-16px] translate-x-[2px]">
+                <div className="absolute translate-y-[-16px] translate-x-[2px] rotate-45">
                   &#8703;
                 </div>
               </div>
@@ -64,7 +64,7 @@ const Nav = () => {
           <Tooltip text={isExpanded ? "Contract" : "Expand"}>
             <div
               onClick={() => dispatch(setIsExpanded())}
-              className="px-2 font-bold rotate-[-45deg] sm:hover:text-secondary leading-8 cursor-pointer duration-200 select-none "
+              className="rotate-[-45deg] cursor-pointer select-none px-2 font-bold leading-8 duration-200 sm:hover:text-secondary "
             >
               &#x2194;
             </div>
@@ -72,7 +72,7 @@ const Nav = () => {
           <Tooltip text="Minimize">
             <div
               onClick={handleMinimize}
-              className="px-2 font-bold sm:hover:text-secondary leading-8 cursor-pointer duration-200 select-none"
+              className="cursor-pointer select-none px-2 font-bold leading-8 duration-200 sm:hover:text-secondary"
             >
               &#8722;
             </div>

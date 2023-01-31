@@ -56,5 +56,5 @@ module.exports = {
       handWrittenT: ["Pacifico", "cursive"],
     },
   },
-  plugins: [],
+  plugins: [require("prettier-plugin-tailwindcss")],
 }

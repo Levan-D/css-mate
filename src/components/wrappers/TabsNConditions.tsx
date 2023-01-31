@@ -24,7 +24,7 @@ const TabsNConditions = ({
 }: TabsNConditionsType) => {
   return (
     <div>
-      <div className="menuHeader flex  gap-2  py-2  px-3   justify-between  ">
+      <div className="menuHeader flex  justify-between  gap-2  py-2   px-3  ">
         <div className="flex flex-wrap gap-2 ">
           {tabs.map((tab, i) => {
             const tooltipChild = (
@@ -58,7 +58,7 @@ const TabsNConditions = ({
           })}
         </div>
         {handleAddIconClick && (
-          <div className="w-4 mr-2">
+          <div className="mr-2 w-4">
             <AddIcon
               onClick={() => {
                 if (handleAddIconClick) {
@@ -68,7 +68,7 @@ const TabsNConditions = ({
               height={32}
               width={32}
               stroke="white"
-              className="sm:hover:bg-blue-300  p-2  rounded-full cursor-pointer duration-200"
+              className="cursor-pointer  rounded-full  p-2 duration-200 sm:hover:bg-blue-300"
             />
           </div>
         )}

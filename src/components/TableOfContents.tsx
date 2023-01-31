@@ -36,15 +36,15 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
   return (
     <div
       style={{ top: !tableOffset ? "144px" : "40px" }}
-      className="2xl:fixed left-4  block border-2 border-white rounded-xl w-fit   mx-auto select-none duration-200"
+      className="left-4 mx-auto  block w-fit select-none rounded-xl border-2   border-white duration-200 2xl:fixed"
     >
       <div
         onClick={() => setVisibility(x => !x)}
-        className={`flex px-3 py-2 gap-2 cursor-pointer sm:hover:bg-blue-400 duration-200 ${
+        className={`flex cursor-pointer gap-2 px-3 py-2 duration-200 sm:hover:bg-blue-400 ${
           visibility ? "rounded-t-lg " : "rounded-lg"
         }`}
       >
-        <h2 className="font-cursiveCustom text-center text-xl  ">Table of contents</h2>
+        <h2 className="text-center font-cursiveCustom text-xl  ">Table of contents</h2>
         <div>
           <ChevronIcon
             height={15}
@@ -52,26 +52,26 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
             fill={!visibility ? `#ff725e` : `white`}
             className={`${
               !visibility
-                ? "rotate-[-90deg] translate-y-[4px]"
-                : "rotate-90 translate-y-[7px]"
+                ? "translate-y-[4px] rotate-[-90deg]"
+                : "translate-y-[7px] rotate-90"
             }  ml-3  duration-200 `}
           />
         </div>
       </div>
 
-      <hr className={`${visibility ? "block " : "hidden"}  duration-200  mx-2   `} />
+      <hr className={`${visibility ? "block " : "hidden"}  mx-2  duration-200   `} />
 
       <nav
         className={`${
-          visibility ? "scale-y-100 h-[" + height + "]  py-2 " : "scale-y-0  h-0 "
-        }    duration-500 origin-top   `}
+          visibility ? "h-[ scale-y-100" + height + "]  py-2 " : "h-0  scale-y-0 "
+        }    origin-top duration-500   `}
       >
         <ul
           className={`${visibility ? "scale-y-100 " : "scale-y-0  "}     origin-top   `}
         >
           {tableOfContets.map((link, i) => (
             <a href={`#${link}`} key={i}>
-              <li className="sm:hover:bg-slate-100 sm:hover:text-slate-900 px-3  py-[2px] active:bg-slate-500  duration-200">
+              <li className="px-3 py-[2px] duration-200  active:bg-slate-500 sm:hover:bg-slate-100  sm:hover:text-slate-900">
                 {link}
               </li>
             </a>

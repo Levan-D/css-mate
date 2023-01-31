@@ -47,7 +47,7 @@ const Presets = memo(() => {
                     dispatch(resetState())
                     dispatch(setPreset(preset.settings))
                   }}
-                  className="btnPrimary  mt-4 mb-6  p-0  w-10 h-10 leading-[40px] text-sm text-center"
+                  className="btnPrimary  mt-4 mb-6  h-10  w-10 p-0 text-center text-sm leading-[40px]"
                 >
                   {preset.titile}
                 </div>

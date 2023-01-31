@@ -40,7 +40,7 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
   ]
 
   return (
-    <div className="flex gap-[6px] mt-2 ">
+    <div className="mt-2 flex gap-[6px] ">
       {colorData.map((color, i) => (
         <div
           key={i}
@@ -63,7 +63,7 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
           setColor((e.target as HTMLInputElement).value)
           handleColorPick(HexToRGB((e.target as HTMLInputElement).value))
         }}
-        className="translate-y-[-2px] cursor-pointer bg-transparent h-[28px] border-2 border-transparent rounded-md  sm:hover:border-white duration-200"
+        className="h-[28px] translate-y-[-2px] cursor-pointer rounded-md border-2 border-transparent bg-transparent  duration-200 sm:hover:border-white"
       ></input>
     </div>
   )

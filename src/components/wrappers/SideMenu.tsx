@@ -12,14 +12,14 @@ type SideMenuProps = {
 
 const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
   return (
-    <div className="border-2 rounded-xl  z-40 w-96 h-fit mx-auto md:mx-0  ">
-      <div className="menuHeader !bg-primary flex p-4 pb-2  justify-between  ">
-        <h2 className="font-bold  select-none ">{title}</h2>
+    <div className="z-40 mx-auto  h-fit w-96 rounded-xl border-2 md:mx-0  ">
+      <div className="menuHeader flex justify-between !bg-primary p-4  pb-2  ">
+        <h2 className="select-none  font-bold ">{title}</h2>
         {resetState && (
           <div>
             <RestartIcon
               height={30}
-              className="sm:hover:border-white  border-2 border-transparent rounded-full p-[3px] cursor-pointer translate-y-[-4px] "
+              className="translate-y-[-4px]  cursor-pointer rounded-full border-2 border-transparent p-[3px] sm:hover:border-white "
               width={30}
               onClick={() => {
                 if (resetState !== undefined) {

@@ -29,7 +29,7 @@ const Input = () => {
   }, [isOpen])
 
   return (
-    <div className={` sm:rounded-b-xl bg-primary   p-2 shadow-primaryBr`}>
+    <div className={` bg-primary p-2   shadow-primaryBr sm:rounded-b-xl`}>
       <form onSubmit={handleFormSubmit}>
         <div className="flex justify-between">
           <input
@@ -42,12 +42,12 @@ const Input = () => {
             }}
             autoComplete="off"
             name="name"
-            className={`w-full mr-4 rounded-md text-slate-900 px-2 py-1 outline duration-200  outline-transparent bg-blue-200 `}
+            className={`mr-4 w-full rounded-md bg-blue-200 px-2 py-1 text-slate-900 outline  outline-transparent duration-200 `}
           />
 
           <button type="submit" value="Rename" className=" h-8">
             <img
-              className="h-7 px-1 sm:hover:brightness-90 active:brightness-75 duration-200 "
+              className="h-7 px-1 duration-200 active:brightness-75 sm:hover:brightness-90 "
               src={SendIcon}
               alt=""
             />

@@ -52,17 +52,17 @@ const Sliders = () => {
             Object.entries(boxShadow.settings).map((property, i) => {
               if (property[0] !== "shadowColor" && property[0] !== "inset") {
                 return (
-                  <div key={i} className="menuBlock h-8 min-w-max m-2 p-2 pb-14 ">
+                  <div key={i} className="menuBlock m-2 h-8 min-w-max p-2 pb-14 ">
                     <div className="flex  justify-between ">
                       <h2>
                         {property[0].charAt(0).toUpperCase() + property[0].slice(1)}{" "}
                         &#160;
                         {property[0] !== "opacity" ? (
-                          <span className="text-slate-400 text-sm italic ">
+                          <span className="text-sm italic text-slate-400 ">
                             &#40;&#32;px&#32;&#41;
                           </span>
                         ) : (
-                          <span className="text-slate-400 text-sm italic">
+                          <span className="text-sm italic text-slate-400">
                             &#40;&#32;N&#32;&#41;
                           </span>
                         )}
@@ -75,14 +75,14 @@ const Sliders = () => {
                             value={property[1] / 100}
                             step={0.01}
                             onChange={e => handlePropertyChange(e, property[0])}
-                            className="w-14 text-center  md:text-right bg-darkJungle-300 rounded-md"
+                            className="w-14 rounded-md  bg-darkJungle-300 text-center md:text-right"
                           />
                         ) : (
                           <input
                             type="number"
                             value={property[1]}
                             onChange={e => handlePropertyChange(e, property[0])}
-                            className="w-14 text-center  md:text-right bg-darkJungle-300  rounded-md"
+                            className="w-14 rounded-md  bg-darkJungle-300 text-center  md:text-right"
                           />
                         )}
                       </h2>

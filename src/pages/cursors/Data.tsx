@@ -12,11 +12,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               url(https://i.imgur.com/wB5relR.png) 0 10 ,auto
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -30,11 +30,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               url(https://i.imgur.com/bHSn9dh.png) 0 10 ,auto
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -52,11 +52,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               auto
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -70,11 +70,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               default
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -87,11 +87,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               initial
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -103,11 +103,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               none
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -126,11 +126,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               pointer
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -143,11 +143,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               vertical-text
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -160,11 +160,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               text
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -178,11 +178,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               cell
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -195,11 +195,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               crosshair
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -217,11 +217,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               copy
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -234,11 +234,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               grab
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -251,11 +251,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               grabbing
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -268,11 +268,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               move
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -285,11 +285,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               alias
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -302,11 +302,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               not-allowed
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -319,11 +319,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               no-drop
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -342,11 +342,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               progress
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -359,11 +359,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               wait
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -382,11 +382,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               zoom-in
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -400,11 +400,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               zoom-out
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -422,11 +422,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               col-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -439,11 +439,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               row-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -456,11 +456,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               n-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -473,11 +473,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               e-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -490,11 +490,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               s-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -507,11 +507,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               w-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -524,11 +524,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               ne-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -541,11 +541,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               nw-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -558,11 +558,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               se-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -575,11 +575,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               sw-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -592,11 +592,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               ew-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -609,11 +609,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               ns-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -626,11 +626,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               nesw-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -643,11 +643,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               nwse-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -665,11 +665,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               help-resize
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -683,11 +683,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               all-scroll
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),
@@ -700,11 +700,11 @@ export const cursorData: CursorType[] = [
         cssRule: (
           <>
             <span className="text-blue-600">
-              cursor<span className="text-slate-900 px-[4px]">:</span>
+              cursor<span className="px-[4px] text-slate-900">:</span>
             </span>
             <span className="text-orange-600">
               context-menu
-              <span className="text-slate-900 pl-[4px] ">;</span>
+              <span className="pl-[4px] text-slate-900 ">;</span>
             </span>
           </>
         ),

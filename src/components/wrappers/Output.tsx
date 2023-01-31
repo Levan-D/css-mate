@@ -9,9 +9,9 @@ type OutputProps = { renderArray: OutputRenderArrayType[] }
 const Output = ({ renderArray }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
-    <div className=" border-white border-2 rounded-xl h-fit md:w-[600px] sm:w-[500px] mx-auto ">
+    <div className=" mx-auto h-fit rounded-xl border-2 border-white sm:w-[500px] md:w-[600px] ">
       <div>
-        <div className="menuHeader flex gap-4 justify-center ">
+        <div className="menuHeader flex justify-center gap-4 ">
           {renderArray.map((item, index) => (
             <div key={index}>
               <div
@@ -26,12 +26,12 @@ const Output = ({ renderArray }: OutputProps) => {
           ))}
         </div>
         <div className="menuContainer m-4">
-          <div className="border-l-2 border-primary m-4 pt-3 pb-4 pl-4 rounded-lg">
+          <div className="m-4 rounded-lg border-l-2 border-primary pt-3 pb-4 pl-4">
             {renderArray.map((item, index) => (
               <div key={index}>
                 {selectedBtn === index &&
                   item.content.map((contentItem, contentIndex) => (
-                    <div key={contentIndex} className="text-sm md:text-base break-words">
+                    <div key={contentIndex} className="break-words text-sm md:text-base">
                       {contentItem}
                     </div>
                   ))}
@@ -41,7 +41,7 @@ const Output = ({ renderArray }: OutputProps) => {
         </div>
       </div>
 
-      <div className=" flex justify-center  my-4">
+      <div className=" my-4 flex  justify-center">
         <Tooltip text="Copied" onClick={true}>
           <div
             onClick={() => {

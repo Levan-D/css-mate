@@ -27,29 +27,29 @@ const BoxShadowOutput = () => {
       content: [
         <>
           <span className="text-blue-300">
-            box-shadow<span className="text-white px-[4px]">:</span>
+            box-shadow<span className="px-[4px] text-white">:</span>
           </span>
           <span className="text-green-300">
             {boxShadowRender}
-            <span className="text-white pl-[4px] ">;</span>
+            <span className="pl-[4px] text-white ">;</span>
           </span>
         </>,
         <>
           <span className="text-blue-300">
-            -webkit-box-shadow<span className="text-white px-[4px]">:</span>
+            -webkit-box-shadow<span className="px-[4px] text-white">:</span>
           </span>
           <span className="text-green-300">
             {boxShadowRender}
-            <span className="text-white pl-[4px] ">;</span>
+            <span className="pl-[4px] text-white ">;</span>
           </span>
         </>,
         <>
           <span className="text-blue-300">
-            -moz-box-shadow<span className="text-white px-[4px]">:</span>
+            -moz-box-shadow<span className="px-[4px] text-white">:</span>
           </span>
           <span className="text-green-300">
             {boxShadowRender}
-            <span className="text-white pl-[4px] ">;</span>
+            <span className="pl-[4px] text-white ">;</span>
           </span>
         </>,
       ],
@@ -75,10 +75,10 @@ const BoxShadowOutput = () => {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <span className=" select-text   ">
             <span className="text-blue-300">
-              "custom"<span className="text-white px-[4px]">:</span>&nbsp;
+              "custom"<span className="px-[4px] text-white">:</span>&nbsp;
             </span>
             <span className="text-orange-300">
-              &#34;{boxShadowRender}&#34;<span className="text-white pl-[4px]">,</span>
+              &#34;{boxShadowRender}&#34;<span className="pl-[4px] text-white">,</span>
             </span>
           </span>
           <br />

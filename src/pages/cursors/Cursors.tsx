@@ -14,11 +14,11 @@ const Cursors = () => {
   return (
     <div className="my-16 mx-4">
       <BackToTopBtn />
-      <h1 className="font-cursiveCustom text-center text-2xl   mb-2">
+      <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Almost every CSS <span className="text-secondary">cursor</span> type presented
         below
       </h1>
-      <div className="font-cursiveCustom text-center text-base mb-8">
+      <div className="mb-8 text-center font-cursiveCustom text-base">
         Hover over to demo and click to copy!
       </div>
       <div className="mb-8">
@@ -45,23 +45,23 @@ const Cursors = () => {
             <div key={i}>
               <h2
                 id={`${cursor.category}`}
-                className="font-cursiveCustom text-center text-2xl  mt-8 mb-6"
+                className="mt-8 mb-6 text-center  font-cursiveCustom text-2xl"
               >
                 {cursor.category}
               </h2>
-              <div className="flex justify-center flex-wrap gap-8 mb-1">
+              <div className="mb-1 flex flex-wrap justify-center gap-8">
                 {cursor.contents.map((content, i) => (
                   <Card title={content.name} key={i} CSS={content.tailwind}>
-                    <div className="text-slate-900 text-center ">
+                    <div className="text-center text-slate-900 ">
                       {content.description}
                     </div>
-                    <div className="text-secondary font-semibold text-center mb-4">
+                    <div className="mb-4 text-center font-semibold text-secondary">
                       {content.cssRule}
                     </div>
-                    <div className={`flex gap-2 justify-center  `}>
+                    <div className={`flex justify-center gap-2  `}>
                       <Tooltip text="Copied" onClick={true} dArrow={true}>
                         <div
-                          className={`flex gap-1 btnPrimary shadow-primaryBr`}
+                          className={`btnPrimary flex gap-1 shadow-primaryBr`}
                           onClick={() => {
                             navigator.clipboard.writeText(content.vanilla)
                           }}
@@ -75,7 +75,7 @@ const Cursors = () => {
                       </Tooltip>
                       <Tooltip text="Copied" onClick={true} dArrow={true}>
                         <div
-                          className={`flex gap-1 btnPrimary shadow-primaryBr`}
+                          className={`btnPrimary flex gap-1 shadow-primaryBr`}
                           onClick={() => {
                             navigator.clipboard.writeText(content.tailwind)
                           }}

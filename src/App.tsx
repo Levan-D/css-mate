@@ -21,11 +21,11 @@ function App() {
     <div
       className={`${
         location.pathname === "/floof-gpt" ? "bg-primary sm:bg-transparent" : ""
-      }  flex flex-col  min-h-screen   `}
+      }  flex min-h-screen  flex-col   `}
     >
       <FloofGPT />
       <Navbar />
-      <div className="grow max-w-6xl mx-auto">
+      <div className="mx-auto max-w-6xl grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="box-shadow" element={<BoxShadow />} />

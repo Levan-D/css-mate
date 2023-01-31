@@ -19,17 +19,17 @@ const Body = () => {
   }, [responseChain, askFloofGPTStatus.loading])
 
   return (
-    <div className="grow bg-gradient-to-br from-slate-200 to-blue-200 px-2 overflow-y-scroll overflow-x-hidden   ">
+    <div className="grow overflow-x-hidden overflow-y-scroll bg-gradient-to-br from-slate-200 to-blue-200 px-2   ">
       {responseChain.map((response, index) => (
-        <div key={index} className={`break-normal mb-4 `}>
+        <div key={index} className={`mb-4 break-normal `}>
           <div
             className={`flex gap-2 ${
               response.user === "floofGPT" ? "" : "flex-row-reverse"
             } text-slate-900   `}
           >
-            <div className="border shadow-md rounded-full">
+            <div className="rounded-full border shadow-md">
               <img
-                className="w-6 bg-primary rounded-full "
+                className="w-6 rounded-full bg-primary "
                 src={response.user === "floofGPT" ? FlooFGPTIcon : UserIcon}
                 alt=""
               />
@@ -44,7 +44,7 @@ const Body = () => {
             <div
               className={`${
                 response.user === "floofGPT" ? " bg-secondary" : "  bg-primary"
-              } px-2 w-fit  py-1 my-1 rounded-xl shadow-primaryBr  max-w-[90%] `}
+              } my-1 w-fit  max-w-[90%] rounded-xl px-2 py-1  shadow-primaryBr `}
             >
               {response.message}
             </div>
@@ -55,7 +55,7 @@ const Body = () => {
       {askFloofGPTStatus.loading && (
         <div className="flex">
           <div>
-            <img className="w-6 bg-primary rounded-full " src={FlooFGPTIcon} alt="" />
+            <img className="w-6 rounded-full bg-primary " src={FlooFGPTIcon} alt="" />
           </div>
           <div className="lds-ripple translate-x-2">
             <div></div>

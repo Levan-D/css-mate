@@ -7,7 +7,7 @@ import { ReactComponent as ArrowIcon } from "../../../assets/misc/arrow.svg"
 const ForAQuickRefresher = () => {
   return (
     <section>
-      <h3 className="font-cursiveCustom text-xl mt-16 mb-4">For a quick refresher</h3>
+      <h3 className="mt-16 mb-4 font-cursiveCustom text-xl">For a quick refresher</h3>
 
       <p>
         Box shadows are a powerful design tool that can add depth and dimension to any
@@ -18,10 +18,10 @@ const ForAQuickRefresher = () => {
         enhance your designs, including tips and tricks for creating custom effects.
       </p>
 
-      <div className="bg-slate-700 px-8 py-6 rounded-xl w-fit mx-auto my-12 border-2 border-slate-600 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
+      <div className="mx-auto my-12 w-fit rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
         <p>
           <span className="text-blue-200">
-            box-shadow<span className="text-white px-[4px]">:</span>
+            box-shadow<span className="px-[4px] text-white">:</span>
           </span>
           <span className="text-green-300">
             inset <span className="text-secondary">(boolean)</span> , offset-x
@@ -29,20 +29,20 @@ const ForAQuickRefresher = () => {
             <span className="text-secondary">(&#177;px)</span>, blur
             <span className="text-secondary">(&#177;px)</span>, spread
             <span className="text-secondary">(&#43;px)</span>, color
-            <span className="text-white pl-[4px] ">;</span>
+            <span className="pl-[4px] text-white ">;</span>
           </span>
         </p>
-        <div className=" hidden md:flex mt-2">
+        <div className=" mt-2 hidden md:flex">
           <div className="w-fit  translate-x-[96px]">
             <div>
               <ArrowIcon
                 height={26}
                 width={26}
                 stroke="#ff725e"
-                className={`rotate-[19deg] mx-auto`}
+                className={`mx-auto rotate-[19deg]`}
               />
             </div>
-            <p className=" font-bold text-sm font-cursiveCustom rotate-[-5deg]">
+            <p className=" rotate-[-5deg] font-cursiveCustom text-sm font-bold">
               optional
             </p>
           </div>
@@ -52,25 +52,25 @@ const ForAQuickRefresher = () => {
                 height={26}
                 width={26}
                 stroke="#ff725e"
-                className={`rotate-[-19deg] mx-auto scale-x-[-1]`}
+                className={`mx-auto rotate-[-19deg] scale-x-[-1]`}
               />
             </div>
-            <p className=" font-bold text-sm font-cursiveCustom rotate-[5deg]">
+            <p className=" rotate-[5deg] font-cursiveCustom text-sm font-bold">
               optional
             </p>
           </div>
         </div>
       </div>
 
-      <ol className="max-w-xl mx-auto">
-        <li className="list-decimal font-bold mb-4">
+      <ol className="mx-auto max-w-xl">
+        <li className="mb-4 list-decimal font-bold">
           Inset: :&#32;
           <span className="font-normal ">
             This value is optional, and it makes the shadow inside the element rather than
             outside.
           </span>
         </li>
-        <li className="list-decimal font-bold mb-4">
+        <li className="mb-4 list-decimal font-bold">
           Horizontal offset:&#32;
           <span className="font-normal ">
             This value sets the distance the shadow should be offset from the left of the
@@ -78,7 +78,7 @@ const ForAQuickRefresher = () => {
             value will move it to the left.
           </span>
         </li>
-        <li className="list-decimal font-bold mb-4">
+        <li className="mb-4 list-decimal font-bold">
           Vertical offset:&#32;
           <span className="font-normal ">
             This value sets the distance the shadow should be offset from the top of the
@@ -86,7 +86,7 @@ const ForAQuickRefresher = () => {
             move it up.
           </span>
         </li>
-        <li className="list-decimal font-bold mb-4">
+        <li className="mb-4 list-decimal font-bold">
           Blur radius:&#32;
           <span className="font-normal ">
             This value sets the amount of blur applied to the shadow. A higher value will
@@ -94,14 +94,14 @@ const ForAQuickRefresher = () => {
             shadow.
           </span>
         </li>
-        <li className="list-decimal font-bold mb-4">
+        <li className="mb-4 list-decimal font-bold">
           Spread radius:&#32;
           <span className="font-normal ">
             This value sets the size of the shadow. A positive value will increase the
             size of the shadow, while a negative value will decrease it.
           </span>
         </li>
-        <li className="list-decimal font-bold mb-4">
+        <li className="mb-4 list-decimal font-bold">
           Shadow color:&#32;
           <span className="font-normal ">
             This value sets the color of the shadow. This can be any valid CSS color

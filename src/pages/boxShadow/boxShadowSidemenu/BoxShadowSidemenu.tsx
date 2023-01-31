@@ -55,7 +55,7 @@ const BoxShadowSidemenu = () => {
             </TabsNConditions>
           )}
 
-          <div className="flex justify-between mx-4 mt-4 ">
+          <div className="mx-4 mt-4 flex justify-between ">
             <div
               onClick={() => dispatch(toggleInset())}
               className={`${

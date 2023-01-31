@@ -7,9 +7,9 @@ import Card from "../../components/Card"
 const Home = () => {
   return (
     <div className="my-16 mx-4">
-      <div className="text-center max-w-3xl mx-auto   font-cursiveCustom">
+      <div className="mx-auto max-w-3xl text-center   font-cursiveCustom">
         <div className="text-6xl ">Hello,</div>
-        <h1 className="text-xl mt-6 ">
+        <h1 className="mt-6 text-xl ">
           Welcome to our collection of
           <span className="text-secondary"> CSS and HTML tools! </span>
           Whether you're a seasoned web developer or just getting started, our tools are
@@ -19,7 +19,7 @@ const Home = () => {
         <br />
         <div className="text-xl ">Pick one below to start!</div>
       </div>
-      <div className="flex flex-wrap  mx-auto  w-fit gap-8 my-12 justify-center">
+      <div className="mx-auto my-12  flex  w-fit flex-wrap justify-center gap-8">
         {pageButtons.map((button, index) => (
           <div key={index}>
             <Card

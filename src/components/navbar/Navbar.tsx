@@ -18,13 +18,13 @@ const Navbar = () => {
   }, [])
 
   return (
-    <div className="bg-primary h-16 z-40">
-      <nav className="max-w-4xl h-16 align-bottom items-center flex justify-between mx-auto px-4">
+    <div className="z-40 h-16 bg-primary">
+      <nav className="mx-auto flex h-16 max-w-4xl items-center justify-between px-4 align-bottom">
         <div>
           <Link to="/">
             <img
               onClick={() => setSelected(() => "")}
-              className="h-12 cursor-pointer active:brightness-75 duration-200  "
+              className="h-12 cursor-pointer duration-200 active:brightness-75  "
               src={logo}
               alt="logo"
             />
@@ -36,7 +36,7 @@ const Navbar = () => {
               key={i}
               className={`${
                 selected === button.name && "!border-secondary"
-              } font-bold font-cursiveCustom shrink-0 text-lg cursor-pointer select-none  border-b-2 border-transparent sm:hover:border-white duration-300 active:brightness-75 `}
+              } shrink-0 cursor-pointer select-none border-b-2 border-transparent font-cursiveCustom  text-lg font-bold duration-300 active:brightness-75 sm:hover:border-white `}
               onClick={() => setSelected(() => button.name)}
             >
               <Link className="p-1" to={button.path}>
@@ -45,7 +45,7 @@ const Navbar = () => {
             </li>
           ))}
           <li
-            className={`   shrink-0 text-lg cursor-pointer select-none  border-2 border-transparent sm:hover:border-white duration-300 rounded-full active:brightness-75`}
+            className={`   shrink-0 cursor-pointer select-none rounded-full  border-2 border-transparent text-lg duration-300 active:brightness-75 sm:hover:border-white`}
           >
             <a href="https://github.com/Levan-D/CSSHomie" target="_blank">
               <img className="h-6" src={githubIcon} alt="" />
