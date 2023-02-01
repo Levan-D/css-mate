@@ -9,22 +9,22 @@
 
 @layer components {
   .btnPrimary {
-    @apply bg-primary text-white font-bold w-fit duration-200 py-2 px-4  rounded-md cursor-pointer shadow-primaryDark select-none sm:hover:brightness-110 active:brightness-90;
+    @apply w-fit cursor-pointer select-none rounded-md bg-primary py-2 px-4  font-bold text-white shadow-primaryDark duration-200 active:brightness-90 sm:hover:brightness-110;
   }
   .btnSecondary {
-    @apply bg-blue-300 text-slate-900  w-fit duration-200 py-1 px-4  rounded-md cursor-pointer shadow-primaryDark select-none sm:hover:bg-blue-300 sm:hover:brightness-110 active:brightness-90 !opacity-100;
+    @apply w-fit cursor-pointer  select-none rounded-md bg-blue-300 py-1  px-4 text-slate-900 !opacity-100 shadow-primaryDark duration-200 active:brightness-90 sm:hover:bg-blue-300 sm:hover:brightness-110;
   }
   .btnSecondaryFalse {
     @apply bg-transparent text-white shadow-none sm:hover:brightness-100;
   }
   .menuHeader {
-    @apply bg-darkJungle-600 rounded-t-lg border-b-2 border-darkJungle-500 font-semibold;
+    @apply rounded-t-lg border-b-2 border-darkJungle-500 bg-darkJungle-600 font-semibold;
   }
   .menuContainer {
-    @apply border-2 rounded-xl bg-darkJungle-800 border-darkJungle-700;
+    @apply rounded-xl border-2 border-darkJungle-700 bg-darkJungle-800;
   }
   .menuBlock {
-    @apply bg-darkJungle-600  rounded-lg  border-2 border-darkJungle-500 sm:hover:border-slate-300 duration-200;
+    @apply rounded-lg  border-2  border-darkJungle-500 bg-darkJungle-600 duration-200 sm:hover:border-slate-300;
   }
 }
 
@@ -163,4 +163,8 @@ html {
     height: 36px;
     opacity: 0;
   }
+}
+
+.kil {
+  border: 2 black;
 }

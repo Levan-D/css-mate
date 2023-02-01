@@ -9,3 +9,9 @@ export default function HexToRGB(hex: string): string {
 
   return ` ${r}, ${g}, ${b}`
 }
+
+function bob() {
+  return 5
+}
+
+let mike = bob
