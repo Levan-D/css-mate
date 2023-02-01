@@ -36,7 +36,7 @@ const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
   return (
     <div
       style={{ top: !tableOffset ? "144px" : "40px" }}
-      className="left-4 mx-auto  block w-fit select-none rounded-xl border-2   border-white duration-200 2xl:fixed"
+      className="left-4 mx-auto  block w-fit select-none rounded-xl border-2   border-white duration-200 2xl:fixed 2xl:left-[calc(50%-768px)]"
     >
       <div
         onClick={() => setVisibility(x => !x)}
