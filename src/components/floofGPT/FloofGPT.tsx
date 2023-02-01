@@ -21,7 +21,7 @@ const FloofGPT = () => {
           <div
             className={`${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-40"} ${
               isExpanded ? "h-[600px] w-[500px]" : " h-[460px] w-72"
-            }  fixed bottom-4 left-4  z-50 hidden origin-bottom-left flex-col  rounded-xl  bg-slate-200  shadow-primaryBr   duration-200 sm:flex  2xl:left-[calc(50%-768px)]`}
+            }  fixed bottom-4 left-4  z-50 hidden origin-bottom-left flex-col  rounded-xl  bg-slate-200  shadow-primaryBr   duration-200 sm:flex  8xl:left-[calc(50%-1240px)]`}
           >
             <Nav />
             <Body />
@@ -29,7 +29,7 @@ const FloofGPT = () => {
           </div>
 
           <div
-            className={` fixed bottom-4 left-4 z-40 cursor-pointer  rounded-full border-2 shadow-primaryBr duration-500 ease-out sm:hidden sm:hover:border-secondary  sm:hover:brightness-110     2xl:left-[calc(50%-768px)]`}
+            className={` fixed bottom-4 left-4 z-40 cursor-pointer  rounded-full border-2 shadow-primaryBr duration-500 ease-out sm:hidden sm:hover:border-secondary  sm:hover:brightness-110     8xl:left-[calc(50%-1240px)]`}
           >
             <Link to="/floof-gpt">
               <img className="w-14  " src={FlooFGPTIcon} alt="" />
@@ -40,7 +40,7 @@ const FloofGPT = () => {
             onClick={() => dispatch(setIsOpen(true))}
             className={` ${
               !isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
-            } fixed bottom-4 left-4  z-40 hidden cursor-pointer  rounded-full border-2 shadow-primaryBr duration-500 ease-out sm:block sm:hover:border-secondary  sm:hover:brightness-110     2xl:left-[calc(50%-768px)]`}
+            } fixed bottom-4 left-4  z-40 hidden cursor-pointer  rounded-full border-2 shadow-primaryBr duration-500 ease-out sm:block sm:hover:border-secondary  sm:hover:brightness-110     8xl:left-[calc(50%-1240px)]`}
           >
             <Tooltip text="Hi, chat?">
               <img className="w-14  " src={FlooFGPTIcon} alt="" />

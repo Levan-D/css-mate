@@ -28,7 +28,7 @@ const BackToTopBtn = () => {
         <div
           className={`${
             !showButton && " hidden "
-          }  fixed bottom-4 right-4 cursor-pointer rounded-full bg-slate-100  p-3 shadow-[3px_3px_2px_0px_rgba(_255,_114,_94,0.40)] duration-200 active:bg-slate-500 sm:hover:translate-y-[-5px] 2xl:right-[calc(50%-768px)]`}
+          }  fixed bottom-4 right-4 cursor-pointer rounded-full bg-slate-100  p-3 shadow-[3px_3px_2px_0px_rgba(_255,_114,_94,0.40)] duration-200 active:bg-slate-500 sm:hover:translate-y-[-5px] 8xl:right-[calc(50%-1240px)]`}
         >
           <ChevronIcon
             height={26}
