@@ -7,52 +7,57 @@ import emoji from "../assets/pageIcons/emoji.png"
 import entities from "../assets/pageIcons/entities.png"
 
 export type pageButtonsType = {
-  name: string
-  path: string
-  icon: string
+  catName: string
+  catPath: string
+  catCon: {
+    name: string
+    path: string
+    icon: string
+  }[]
 }
 
 export const pageButtons: pageButtonsType[] = [
   {
-    name: "Box Shadow",
-    path: "box-shadow",
-    icon: boxShadow,
+    catName: "Shadow",
+    catPath: "",
+    catCon: [
+      {
+        name: "Box Shadow",
+        path: "box-shadow",
+        icon: boxShadow,
+      },
+    ],
   },
   {
-    name: "Gradient",
-    path: "gradient",
-    icon: gradient,
+    catName: "Gradient",
+    catPath: "",
+    catCon: [
+      {
+        name: "Gradient",
+        path: "gradient",
+        icon: gradient,
+      },
+    ],
   },
   {
-    name: "Cursors",
-    path: "cursors",
-    icon: cursor,
+    catName: "Misc",
+    catPath: "",
+    catCon: [
+      {
+        name: "Cursors",
+        path: "cursors",
+        icon: cursor,
+      },
+      {
+        name: "Emojis",
+        path: "emojis",
+        icon: emoji,
+      },
+      {
+        name: "Entities",
+        path: "entities",
+        icon: entities,
+      },
+    ],
   },
-  {
-    name: "Emojis",
-    path: "emojis",
-    icon: emoji,
-  },
-  {
-    name: "Entities",
-    path: "entities",
-    icon: entities,
-  },
-  // {
-  //   name: "Text Shadow",
-  //   path: "text-shadow",
-  // },
-
-  // {
-  //   name: "Border",
-  //   path: "border",
-  // },
-  // {
-  //   name: "Transform",
-  //   path: "transform",
-  // },
-  // {
-  //   name: "Color Converter",
-  //   path: "color-converter",
-  // },
 ]

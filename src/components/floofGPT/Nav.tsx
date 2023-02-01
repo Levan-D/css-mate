@@ -40,7 +40,11 @@ const Nav = () => {
         >
           : premier A.I. floofsistant
         </span>
-        {location.pathname === "/floof-gpt" && (
+        {location.pathname
+        
+          
+          
+          === "/floof-gpt" && (
           <span className={` hidden font-normal  italic duration-200 sm:inline  `}>
             : premier A.I. floofsistant
           </span>

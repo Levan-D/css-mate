@@ -10,12 +10,12 @@ const Navbar = () => {
   const [selected, setSelected] = useState<string>("")
   const location = useLocation()
 
-  useEffect(() => {
-    const index = pageButtons.findIndex(button => {
-      return button.path == location.pathname.slice(1)
-    })
-    index !== -1 && setSelected(() => pageButtons[index].name)
-  }, [])
+  // useEffect(() => {
+  //   const index = pageButtons.findIndex(button => {
+  //     return button.path == location.pathname.slice(1)
+  //   })
+  //   index !== -1 && setSelected(() => pageButtons[index].name)
+  // }, [])
 
   return (
     <div className="z-40 h-16 bg-primary">
@@ -30,20 +30,31 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <ul className="flex gap-4   ">
-          {pageButtons.map((button, i) => (
+        <ul className="flex gap-4">
+          {pageButtons.map((category, i) => (
             <li
               key={i}
-              className={`${
-                selected === button.name && "!border-secondary"
-              } shrink-0 cursor-pointer select-none border-b-2 border-transparent font-cursiveCustom  text-lg font-bold duration-300 active:brightness-75 sm:hover:border-white `}
-              onClick={() => setSelected(() => button.name)}
+              className={`  group shrink-0 cursor-pointer select-none whitespace-nowrap border-b-2  border-transparent font-cursiveCustom text-xl font-bold `}
             >
-              <Link className="p-1" to={button.path}>
-                {button.name}
-              </Link>
+              <div> {category.catName}</div>
+              <ul className="absolute hidden rounded-lg border-2 bg-gradient-to-r from-[#151f36] to-slate-900 py-4 px-8 duration-200 group-hover:block">
+                {category.catCon.map((btn, index) => (
+                  <li
+                    key={index}
+                    className={`${
+                      selected === btn.name && "!text-secondary"
+                    } shrink-0 cursor-pointer select-none border-b-2 border-transparent font-cursiveCustom  text-lg font-bold duration-300 active:brightness-75 sm:hover:border-white `}
+                    onClick={() => setSelected(() => btn.name)}
+                  >
+                    <Link className="p-1" to={btn.path}>
+                      {btn.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
+
           <li
             className={`   shrink-0 cursor-pointer select-none rounded-full  border-2 border-transparent text-lg duration-300 active:brightness-75 sm:hover:border-white`}
           >
