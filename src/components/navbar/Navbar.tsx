@@ -1,35 +1,29 @@
 /** @format */
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import logo from "../../assets/logo/logo.png"
-import { Link, useLocation, Outlet } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { pageButtons } from "../../data/PageButtons"
 import githubIcon from "../../assets/icons/github.png"
-import type { pageButtonsType } from "../../data/PageButtons"
+import { setPath } from "./navbarSlice"
 
 const Navbar = () => {
-  const [selectedBtn, setSelectedBtn] = useState("")
-  const [selectedCat, setSelectedCat] = useState("")
-
+  const { pathArray } = useAppSelector(store => store.navbar)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [subMenuVis, setSubMenuVis] = useState(false)
+  const dispatch = useAppDispatch()
   const location = useLocation()
 
-  // useEffect(() => {}, [])
+  const updateWindowWidth = () => {
+    setWindowWidth(() => window.innerWidth)
+  }
+  useEffect(() => {
+    dispatch(setPath(location.pathname))
+    window.addEventListener("resize", updateWindowWidth)
 
-  const handleHomeClick = () => {
-    setSelectedBtn(() => "")
-    setSelectedCat(() => "")
-  }
-  const handleCatClick = (category: pageButtonsType) => {
-    if (selectedCat === category.catName && window.innerWidth < 540) {
-      setSelectedCat(() => "")
-    } else {
-      setSelectedCat(() => category.catName)
-    }
-  }
-  const handleBtnClick = (btnName: string, catName: string) => {
-    setSelectedBtn(() => btnName)
-    setSelectedCat(() => catName)
-  }
+    return () => window.removeEventListener("resize", updateWindowWidth)
+  }, [location])
 
   return (
     <div className="z-40 h-fit bg-primary sm:h-16">
@@ -38,7 +32,6 @@ const Navbar = () => {
         <div className="mx-auto w-fit py-2 pl-8 sm:mx-0 sm:p-0">
           <Link to="/">
             <img
-              onClick={handleHomeClick}
               className="h-12 cursor-pointer duration-200 active:brightness-75  "
               src={logo}
               alt="logo"
@@ -51,14 +44,13 @@ const Navbar = () => {
           {pageButtons.map((category, i) => (
             <li
               key={i}
-              onClick={() => handleCatClick(category)}
               className={` ${
-                selectedCat === category.catName &&
+                pathArray[0] === category.catPath &&
                 "   mx-4 !bg-slate-500 sm:mx-0 sm:!bg-secondary  "
               }  group shrink-0 cursor-pointer select-none whitespace-nowrap rounded-2xl  px-4 py-1 font-cursiveCustom text-xl  font-bold duration-200  sm:hover:bg-[rgba(255,114,94,0.8)] `}
             >
-              {window.innerWidth < 540 ? (
-                <div> {category.catName}</div>
+              {windowWidth < 540 ? (
+                <div onClick={() => setSubMenuVis(true)}> {category.catName}</div>
               ) : (
                 <Link to={category.catPath}>
                   <div> {category.catName}</div>
@@ -68,16 +60,15 @@ const Navbar = () => {
               {/* dropdown menu */}
               <ul
                 className={`${
-                  selectedCat === category.catName ? "  block  sm:hidden" : "hidden"
+                  pathArray[0] === category.catPath ? "  block  sm:hidden" : "hidden"
                 } static    translate-x-[0]  translate-y-[2px] rounded-lg  border-0  bg-none from-[#151f36]  to-slate-900 px-4 py-2 duration-200  sm:absolute sm:translate-x-[-30px] sm:border-2 sm:bg-gradient-to-r sm:group-hover:block`}
               >
                 {category.catCon.map((btn, index) => (
                   <li
                     key={index}
                     className={`${
-                      selectedBtn === btn.name && "   !bg-secondary  "
+                      pathArray[1] === btn.path && "   !bg-secondary  "
                     } shrink-0 cursor-pointer select-none rounded-2xl   py-1 px-4 font-cursiveCustom text-base  font-bold duration-300 active:brightness-75 sm:text-lg sm:hover:bg-[rgba(255,114,94,0.8)] `}
-                    onClick={() => handleBtnClick(btn.name, category.catName)}
                   >
                     <Link className="p-1" to={category.catPath + "/" + btn.path}>
                       {btn.name}

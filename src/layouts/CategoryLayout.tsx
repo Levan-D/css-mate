@@ -1,43 +1,35 @@
 /** @format */
 
-import { useState, useEffect } from "react"
 import { pageButtons } from "../data/PageButtons"
 import { Outlet } from "react-router-dom"
-import { useLocation } from "react-router-dom"
 import Card from "../components/Card"
+import { useAppSelector } from "../app/hooks"
 
 const CategoryLayout = () => {
-  const location = useLocation()
-
-  const findPath = location.pathname.split("/").filter(n => n)
-  console.log(findPath[1])
-  const [visibility, setVisibility] = useState(true)
-
-  const index = pageButtons.findIndex(x => x.catPath === findPath[0])
-
-  useEffect(() => {
-    if (findPath[1]) {
-      setVisibility(() => false)
-    } else setVisibility(() => true)
-  }, [location])
+  const { categoryIndex, pathArray } = useAppSelector(store => store.navbar)
 
   return (
     <div>
-      {visibility && (
-        <div className="mx-auto my-12  flex  w-fit flex-wrap justify-center gap-8">
-          {pageButtons[index].catCon.map((button, i) => (
-            <div key={i}>
-              <Card
-                title={button.name}
-                path={button.path}
-                CSS={`sm:hover:translate-y-[-10px]`}
-              >
-                <div>
-                  <img src={button.icon} alt="tool icons" className="pl-4" />
-                </div>
-              </Card>
-            </div>
-          ))}
+      {!pathArray[1] && (
+        <div>
+          <h2 className="mx-auto my-12 max-w-3xl   text-center font-cursiveCustom  text-4xl  ">
+            {pageButtons[categoryIndex].catName}
+          </h2>
+          <div className="mx-auto  flex  w-fit flex-wrap justify-center gap-8">
+            {pageButtons[categoryIndex].catCon.map((button, i) => (
+              <div key={i}>
+                <Card
+                  title={button.name}
+                  path={button.path}
+                  CSS={`sm:hover:translate-y-[-10px]`}
+                >
+                  <div>
+                    <img src={button.icon} alt="tool icons" className="pl-4" />
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
       )}
       <Outlet />
