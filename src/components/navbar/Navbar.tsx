@@ -20,14 +20,10 @@ const Navbar = () => {
     setSelectedCat(() => "")
   }
   const handleCatClick = (category: pageButtonsType) => {
-    console.log(category)
     if (selectedCat === category.catName && window.innerWidth < 540) {
       setSelectedCat(() => "")
     } else {
       setSelectedCat(() => category.catName)
-      if (!category.catCon.find(obj => obj.name === selectedBtn)) {
-        setSelectedBtn(() => "")
-      }
     }
   }
   const handleBtnClick = (btnName: string, catName: string) => {

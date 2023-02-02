@@ -20,19 +20,21 @@ const Home = () => {
         <div className="text-xl ">Pick one below to start!</div>
       </div>
       <div className="mx-auto my-12  flex  w-fit flex-wrap justify-center gap-8">
-        {pageButtons.map((button, index) => (
-          <div key={index}>
-            <Card
-              title={button.name}
-              path={button.path}
-              CSS={`sm:hover:translate-y-[-10px]`}
-            >
-              <div>
-                <img src={button.icon} alt="tool icons" className="pl-4" />
-              </div>
-            </Card>
-          </div>
-        ))}
+        {pageButtons.map(category =>
+          category.catCon.map((button, i) => (
+            <div key={i}>
+              <Card
+                title={button.name}
+                path={button.path}
+                CSS={`sm:hover:translate-y-[-10px]`}
+              >
+                <div>
+                  <img src={button.icon} alt="tool icons" className="pl-4" />
+                </div>
+              </Card>
+            </div>
+          ))
+        )}
       </div>
     </div>
   )
