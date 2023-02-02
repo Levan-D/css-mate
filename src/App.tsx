@@ -22,7 +22,7 @@ function App() {
     <div
       className={`${
         location.pathname === "/floof-gpt" ? "bg-primary sm:bg-transparent" : ""
-      }  flex min-h-screen  flex-col   `}
+      }  flex min-h-screen  flex-col overflow-x-hidden  `}
     >
       <BackToTopBtn />
       <FloofGPT />

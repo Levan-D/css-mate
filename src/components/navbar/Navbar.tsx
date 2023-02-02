@@ -56,10 +56,11 @@ const Navbar = () => {
               }  group shrink-0 cursor-pointer select-none whitespace-nowrap rounded-2xl  px-4 py-1 font-cursiveCustom text-xl  font-bold duration-200  sm:hover:bg-[rgba(255,114,94,0.8)] `}
             >
               <div> {category.catName}</div>
+              {/* dropdown menu */}
               <ul
                 className={`${
                   selectedCat === category.catName ? "  block  sm:hidden" : "hidden"
-                } static    translate-x-[0]  translate-y-[2px] rounded-lg  border-0  bg-none from-[#151f36]  to-slate-900 p-4 duration-200  sm:absolute sm:translate-x-[-30px] sm:border-2 sm:bg-gradient-to-r sm:group-hover:block`}
+                } static    translate-x-[0]  translate-y-[2px] rounded-lg  border-0  bg-none from-[#151f36]  to-slate-900 px-4 py-2 duration-200  sm:absolute sm:translate-x-[-30px] sm:border-2 sm:bg-gradient-to-r sm:group-hover:block`}
               >
                 {category.catCon.map((btn, index) => (
                   <li
@@ -75,6 +76,7 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
+              {/* dropdown menu */}
             </li>
           ))}
 
