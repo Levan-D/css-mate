@@ -27,6 +27,7 @@ const Navbar = () => {
     setWindowWidth(() => window.innerWidth)
     setSubMenuVis("")
   }
+
   useEffect(() => {
     dispatch(setPath(location.pathname))
     window.addEventListener("resize", updateWindowWidth)
