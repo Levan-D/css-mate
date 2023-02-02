@@ -19,7 +19,7 @@ export type pageButtonsType = {
 export const pageButtons: pageButtonsType[] = [
   {
     catName: "Shadows",
-    catPath: "",
+    catPath: "shadows",
     catCon: [
       {
         name: "Box Shadow",
@@ -30,7 +30,7 @@ export const pageButtons: pageButtonsType[] = [
   },
   {
     catName: "Gradients",
-    catPath: "",
+    catPath: "gradients",
     catCon: [
       {
         name: "Gradient",
@@ -41,7 +41,7 @@ export const pageButtons: pageButtonsType[] = [
   },
   {
     catName: "Misc",
-    catPath: "",
+    catPath: "misc",
     catCon: [
       {
         name: "Cursors",

@@ -25,7 +25,7 @@ const Home = () => {
             <div key={i}>
               <Card
                 title={button.name}
-                path={button.path}
+                path={category.catPath + "/" + button.path}
                 CSS={`sm:hover:translate-y-[-10px]`}
               >
                 <div>

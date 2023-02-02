@@ -1,45 +1,51 @@
 /** @format */
 
-import { useState } from "react"
-import Navbar from "./components/navbar/Navbar"
-import Footer from "./components/footer/Footer"
+import { createRoutesFromElements, useLocation, RouterProvider } from "react-router-dom"
+import { Route, createBrowserRouter } from "react-router-dom"
+
+// pages
 import Home from "./pages/home/Home"
-import { Routes, Route } from "react-router-dom"
 import BoxShadow from "./pages/boxShadow/BoxShadow"
 import Error from "./pages/error/Error"
 import Cursors from "./pages/cursors/Cursors"
 import Emojis from "./pages/emojis/Emojis"
 import Entities from "./pages/entities/Entities"
 import Gradient from "./pages/gradient/Gradient"
-import FloofGPT from "./components/floofGPT/FloofGPT"
 import FloofGPTFull from "./components/floofGPT/FloofGPTFull"
-import { useLocation } from "react-router-dom"
-import BackToTopBtn from "./components/BackToTopBtn"
+
+// layouts
+import RootLayout from "./layouts/RootLayout"
+import CategoryLayout from "./layouts/CategoryLayout"
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+
+      <Route path="shadows" element={<CategoryLayout />}>
+        <Route path="box-shadow" element={<BoxShadow />} />
+      </Route>
+
+      <Route path="gradients" element={<CategoryLayout />}>
+        <Route path="gradient" element={<Gradient />} />
+      </Route>
+
+      <Route path="misc" element={<CategoryLayout />}>
+        <Route path="cursors" element={<Cursors />} />
+        <Route path="emojis" element={<Emojis />} />
+        <Route path="entities" element={<Entities />} />
+      </Route>
+
+      <Route path="floof-gpt" element={<FloofGPTFull />} />
+      <Route path="*" element={<Error />} />
+    </Route>
+  )
+)
 
 function App() {
-  const location = useLocation()
   return (
-    <div
-      className={`${
-        location.pathname === "/floof-gpt" ? "bg-primary sm:bg-transparent" : ""
-      }  flex min-h-screen  flex-col overflow-x-hidden  `}
-    >
-      <BackToTopBtn />
-      <FloofGPT />
-      <Navbar />
-      <div className="mx-auto max-w-6xl grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="box-shadow" element={<BoxShadow />} />
-          <Route path="gradient" element={<Gradient />} />
-          <Route path="cursors" element={<Cursors />} />
-          <Route path="emojis" element={<Emojis />} />
-          <Route path="entities" element={<Entities />} />
-          <Route path="floof-gpt" element={<FloofGPTFull />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </div>
-      <Footer />
+    <div>
+      <RouterProvider router={router} />
     </div>
   )
 }

@@ -34,6 +34,7 @@ const Navbar = () => {
   return (
     <div className="z-40 h-fit bg-primary sm:h-16">
       <nav className="mx-auto h-fit max-w-4xl items-center justify-between align-bottom sm:flex sm:h-16 sm:px-4">
+        {/* home */}
         <div className="mx-auto w-fit py-2 pl-8 sm:mx-0 sm:p-0">
           <Link to="/">
             <img
@@ -44,6 +45,7 @@ const Navbar = () => {
             />
           </Link>
         </div>
+        {/* home */}
 
         <ul className=" bg-slate-700 py-2 text-center sm:flex sm:bg-transparent sm:py-0 sm:text-start">
           {pageButtons.map((category, i) => (
@@ -55,7 +57,14 @@ const Navbar = () => {
                 "   mx-4 !bg-slate-500 sm:mx-0 sm:!bg-secondary  "
               }  group shrink-0 cursor-pointer select-none whitespace-nowrap rounded-2xl  px-4 py-1 font-cursiveCustom text-xl  font-bold duration-200  sm:hover:bg-[rgba(255,114,94,0.8)] `}
             >
-              <div> {category.catName}</div>
+              {window.innerWidth < 540 ? (
+                <div> {category.catName}</div>
+              ) : (
+                <Link to={category.catPath}>
+                  <div> {category.catName}</div>
+                </Link>
+              )}
+
               {/* dropdown menu */}
               <ul
                 className={`${
@@ -70,7 +79,7 @@ const Navbar = () => {
                     } shrink-0 cursor-pointer select-none rounded-2xl   py-1 px-4 font-cursiveCustom text-base  font-bold duration-300 active:brightness-75 sm:text-lg sm:hover:bg-[rgba(255,114,94,0.8)] `}
                     onClick={() => handleBtnClick(btn.name, category.catName)}
                   >
-                    <Link className="p-1" to={btn.path}>
+                    <Link className="p-1" to={category.catPath + "/" + btn.path}>
                       {btn.name}
                     </Link>
                   </li>
@@ -79,7 +88,7 @@ const Navbar = () => {
               {/* dropdown menu */}
             </li>
           ))}
-
+          {/* github link */}
           <li
             className={` my-1 ml-4 hidden shrink-0  cursor-pointer select-none rounded-full border-2  border-transparent text-lg duration-300 active:brightness-75 sm:block sm:hover:border-white`}
           >
@@ -87,6 +96,7 @@ const Navbar = () => {
               <img className="h-6" src={githubIcon} alt="" />
             </a>
           </li>
+          {/* github link */}
         </ul>
       </nav>
     </div>
