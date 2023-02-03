@@ -8,9 +8,15 @@ type DropeDownType = {
   category: pageButtonsType
   subMenuVis: string
   windowWidth: number
+  handleSubMenuClick: (path: string) => void
 }
 
-const DropDown = ({ category, subMenuVis, windowWidth }: DropeDownType) => {
+const DropDown = ({
+  category,
+  subMenuVis,
+  windowWidth,
+  handleSubMenuClick,
+}: DropeDownType) => {
   const { pathArray } = useAppSelector(store => store.navbar)
   return (
     <div>
@@ -24,6 +30,7 @@ const DropDown = ({ category, subMenuVis, windowWidth }: DropeDownType) => {
         {category.catCon.map((btn, index) => (
           <li
             key={index}
+            onClick={() => handleSubMenuClick(category.catPath)}
             className={`   ${
               windowWidth > 540 ? pathArray[1] === btn.path && " !bg-secondary" : ""
             } 

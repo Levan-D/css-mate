@@ -77,6 +77,7 @@ const Navbar = () => {
                 category={category}
                 subMenuVis={subMenuVis}
                 windowWidth={windowWidth}
+                handleSubMenuClick={handleSubMenuClick}
               />
               {/* dropdown menu */}
             </li>
