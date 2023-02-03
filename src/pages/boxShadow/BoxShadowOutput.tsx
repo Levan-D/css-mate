@@ -56,7 +56,7 @@ const BoxShadowOutput = () => {
     },
     {
       title: "Tailwind extend",
-      copy: `"custom": "${boxShadowStyle}"`,
+      copy: ` "${boxShadowStyle}"`,
       content: [
         <span className="select-none text-slate-400">
           module.exports = &#x2774; <br /> &nbsp;&nbsp;&nbsp;theme: &#x2774; <br />

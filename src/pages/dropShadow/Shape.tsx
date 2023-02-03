@@ -27,7 +27,6 @@ const Shape = () => {
   const handleColorPick = (color: string) => {
     setShapeColor(color.replace(/ /g, ""))
   }
-  console.log(shape)
   const handleMouseDown = () => {
     if (btnActive.current === false) {
       setBtnContent(() => btnResponse[btnIndex.current])
