@@ -1,6 +1,7 @@
 /** @format */
 
 import boxShadow from "../assets/pageIcons/boxShadow.png"
+import dropShadow from "../assets/pageIcons/dropShadow.png"
 import gradient from "../assets/pageIcons/gradient.png"
 import cursor from "../assets/pageIcons/cursor.png"
 import emoji from "../assets/pageIcons/emoji.png"
@@ -25,6 +26,11 @@ export const pageButtons: pageButtonsType[] = [
         name: "Box Shadow",
         path: "box-shadow",
         icon: boxShadow,
+      },
+      {
+        name: "Drop Shadow",
+        path: "drop-shadow",
+        icon: dropShadow,
       },
     ],
   },

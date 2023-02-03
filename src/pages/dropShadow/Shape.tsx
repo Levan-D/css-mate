@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useRef } from "react"
-import { selectBoxShadowStyle } from "./boxShadowSlice"
+import { selectDropShadowStyle } from "./dropShadowSlice"
 import { useAppSelector } from "../../app/hooks"
 import moon from "../../assets/icons/moon.png"
 import sun from "../../assets/icons/sun.png"
@@ -11,23 +11,23 @@ import ColorPicker from "../../components/ColorPicker"
 import ColorInverter from "../../utils/ColorInverter"
 import RgbToHex from "../../utils/RGBToHex"
 // @ts-ignore
-import { ReactComponent as ChangeShape } from "../../assets/icons/changeShape.svg"
+import { ReactComponent as Triangle } from "../../assets/misc/triangle.svg"
+// @ts-ignore
+import { ReactComponent as ChangeShapeThrise } from "../../assets/icons/changeShapeThrise.svg"
 
 const Shape = () => {
   const navigate = useNavigate()
   const [shapeColor, setShapeColor] = useState("94,161,255")
-  const boxShadowStyle = useAppSelector(selectBoxShadowStyle)
-
-  const [darkmode, setDarkmode] = useState<boolean>(true)
-  const [shape, setShape] = useState<boolean>(true)
-  const [btnContent, setBtnContent] = useState<string>("I am a button")
+  const dropShadowRender = useAppSelector(selectDropShadowStyle)
+  const [darkmode, setDarkmode] = useState(true)
+  const [shape, setShape] = useState(0)
+  const [btnContent, setBtnContent] = useState("I am a button")
   const btnIndex = useRef(0)
   const btnActive = useRef(false)
-
   const handleColorPick = (color: string) => {
     setShapeColor(color.replace(/ /g, ""))
   }
-
+  console.log(shape)
   const handleMouseDown = () => {
     if (btnActive.current === false) {
       setBtnContent(() => btnResponse[btnIndex.current])
@@ -51,6 +51,14 @@ const Shape = () => {
       }
       setBtnContent(() => "I am a button")
       btnActive.current = false
+    }
+  }
+
+  const handleShapeClick = () => {
+    if (shape >= 2) {
+      setShape(() => 0)
+    } else if (shape < 2) {
+      setShape(x => x + 1)
     }
   }
 
@@ -78,30 +86,48 @@ const Shape = () => {
       </div>
       {/* nav section */}
       {/* shape */}
-      <div
-        style={{
-          boxShadow: boxShadowStyle,
-          backgroundColor: `rgb(${shapeColor})`,
-        }}
-        onClick={() => {
-          setShape(x => !x)
-        }}
-        className={` ${shape ? "rounded-xl" : "rounded-full"} ${
-          darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
-        }    mx-auto mb-4  h-[250px]  w-[250px] cursor-pointer select-none border-2  border-transparent `}
-      >
-        <ChangeShape
-          height={72}
-          width={72}
-          stroke={ColorInverter(RgbToHex(shapeColor), `bw`)}
-          className="mx-auto mt-[89px]"
-        />
-      </div>
+      {shape > 1 ? (
+        <div onClick={handleShapeClick} className="grid grid-cols-1">
+          <Triangle
+            style={{
+              filter: dropShadowRender,
+            }}
+            stroke={ColorInverter(RgbToHex(shapeColor), `bw`)}
+            fill={RgbToHex(shapeColor)}
+            className={`  gridChild z-10  mx-auto  mb-4 h-[250px]  w-[250px]   cursor-pointer select-none border-2  border-transparent `}
+          />
+
+          <ChangeShapeThrise
+            height={100}
+            width={100}
+            stroke={ColorInverter(RgbToHex(shapeColor), `bw`)}
+            className=" gridChild z-20  mx-auto mt-[80px]"
+          />
+        </div>
+      ) : (
+        <div
+          style={{
+            filter: dropShadowRender,
+            backgroundColor: `rgb(${shapeColor})`,
+          }}
+          onClick={handleShapeClick}
+          className={` ${shape ? "rounded-xl" : "rounded-full"} ${
+            darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
+          }    mx-auto mb-4  h-[250px]  w-[250px] cursor-pointer select-none border-2  border-transparent `}
+        >
+          <ChangeShapeThrise
+            height={100}
+            width={100}
+            stroke={ColorInverter(RgbToHex(shapeColor), `bw`)}
+            className=" mx-auto  mt-[78px]"
+          />
+        </div>
+      )}
       {/* shape */}
       {/* spicey button */}
       <div
         style={{
-          boxShadow: boxShadowStyle,
+          filter: dropShadowRender,
           backgroundColor: `rgb(${shapeColor})`,
           color: ColorInverter(RgbToHex(shapeColor), `bw`),
         }}

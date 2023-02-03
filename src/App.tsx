@@ -6,6 +6,7 @@ import { Route, createBrowserRouter } from "react-router-dom"
 // pages
 import Home from "./pages/home/Home"
 import BoxShadow from "./pages/boxShadow/BoxShadow"
+import DropShadow from "./pages/dropShadow/DropShadow"
 import Error from "./pages/error/Error"
 import Cursors from "./pages/cursors/Cursors"
 import Emojis from "./pages/emojis/Emojis"
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
 
       <Route path="shadows" element={<CategoryLayout />}>
         <Route path="box-shadow" element={<BoxShadow />} />
+        <Route path="drop-shadow" element={<DropShadow />} />
       </Route>
 
       <Route path="gradients" element={<CategoryLayout />}>

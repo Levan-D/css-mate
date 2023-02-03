@@ -1,20 +1,19 @@
 /** @format */
 
 import React, { useState, memo } from "react"
-import { boxShadowPresets } from "../Data"
+import { dropShadowPresets } from "../Data"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import TabsNConditions from "../../../components/wrappers/TabsNConditions"
-import { setPreset, resetState } from "../boxShadowSlice"
-import ShadowStyleGenerator from "../../../utils/ShadowStyleGenerator"
+import { setPreset, resetState } from "../dropShadowSlice"
 
 const Presets = memo(() => {
   const dispatch = useAppDispatch()
   const [tabPage, setTabPage] = useState(0)
   const { boxShadowData } = useAppSelector(state => state.boxShadow)
 
-  const tabs = boxShadowPresets.map((x, i) => {
+  const tabs = dropShadowPresets.map((x, i) => {
     return { name: x.name, id: uuidv4() }
   })
 
@@ -29,17 +28,18 @@ const Presets = memo(() => {
         currentTab={tabPage}
         handleSetTabPage={handleSetTabPage}
       >
-        {boxShadowPresets.map((category, i) => (
+        {dropShadowPresets.map((category, i) => (
           <div key={i} className="flex justify-center gap-6  ">
             {tabPage === i &&
               category.presets.map((preset, index) => (
                 <div
                   key={index}
                   style={{
-                    boxShadow: ShadowStyleGenerator(
-                      preset.settings,
+                    boxShadow: `${preset.settings.inset ? "inset" : ""} ${
+                      preset.settings.horizontal
+                    }px ${preset.settings.vertical}px ${preset.settings.blur}px rgba(${
                       boxShadowData[0].settings.shadowColor
-                    ),
+                    },${preset.settings.opacity / 100})`,
                   }}
                   onClick={() => {
                     dispatch(resetState())

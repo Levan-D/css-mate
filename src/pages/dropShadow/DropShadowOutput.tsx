@@ -2,44 +2,25 @@
 
 import React from "react"
 import Output from "../../components/wrappers/Output"
-import { selectBoxShadowStyle } from "./boxShadowSlice"
 import { useAppSelector } from "../../app/hooks"
 import { OutputRenderArrayType } from "../../components/wrappers/WrapperTypes"
+import { selectDropShadowStyle } from "./dropShadowSlice"
 
-const BoxShadowOutput = () => {
-  const boxShadowStyle = useAppSelector(selectBoxShadowStyle)
+const DropShadowOutput = () => {
+  const dropShadowRender = useAppSelector(selectDropShadowStyle)
 
   const renderArray: OutputRenderArrayType[] = [
     {
       title: "Vanilla",
-      copy: `box-shadow: ${boxShadowStyle};
-      -webkit-box-shadow: ${boxShadowStyle};
-      -moz-box-shadow: ${boxShadowStyle};`,
+      copy: `filter: ${dropShadowRender};
+    `,
       content: [
         <>
           <span className="text-blue-300">
-            box-shadow<span className="px-[4px] text-white">:</span>
+            filter<span className="px-[4px] text-white">:</span>
           </span>
           <span className="text-green-300">
-            {boxShadowStyle}
-            <span className="pl-[4px] text-white ">;</span>
-          </span>
-        </>,
-        <>
-          <span className="text-blue-300">
-            -webkit-box-shadow<span className="px-[4px] text-white">:</span>
-          </span>
-          <span className="text-green-300">
-            {boxShadowStyle}
-            <span className="pl-[4px] text-white ">;</span>
-          </span>
-        </>,
-        <>
-          <span className="text-blue-300">
-            -moz-box-shadow<span className="px-[4px] text-white">:</span>
-          </span>
-          <span className="text-green-300">
-            {boxShadowStyle}
+            {dropShadowRender}
             <span className="pl-[4px] text-white ">;</span>
           </span>
         </>,
@@ -47,21 +28,21 @@ const BoxShadowOutput = () => {
     },
     {
       title: "Tailwind inline",
-      copy: `shadow-[${boxShadowStyle.replace(/ /g, "_")}]`,
+      copy: `shadow-[${dropShadowRender.replace(/ /g, "_")}]`,
       content: [
         <span className="text-orange-300">
-          shadow-&#91;{boxShadowStyle.replace(/ /g, "_")}&#93;
+          shadow-&#91;{dropShadowRender.replace(/ /g, "_")}&#93;
         </span>,
       ],
     },
     {
       title: "Tailwind extend",
-      copy: `"custom": "${boxShadowStyle}"`,
+      copy: `"custom": "${dropShadowRender}"`,
       content: [
         <span className="select-none text-slate-400">
           module.exports = &#x2774; <br /> &nbsp;&nbsp;&nbsp;theme: &#x2774; <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extend: &#x2774; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boxShadow: &#x2774;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filter: &#x2774;
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <span className=" select-text   ">
@@ -69,7 +50,7 @@ const BoxShadowOutput = () => {
               "custom"<span className="px-[4px] text-white">:</span>&nbsp;
             </span>
             <span className="text-orange-300">
-              &#34;{boxShadowStyle}&#34;<span className="pl-[4px] text-white">,</span>
+              &#34;{dropShadowRender}&#34;<span className="pl-[4px] text-white">,</span>
             </span>
           </span>
           <br />
@@ -87,4 +68,4 @@ const BoxShadowOutput = () => {
   )
 }
 
-export default BoxShadowOutput
+export default DropShadowOutput
