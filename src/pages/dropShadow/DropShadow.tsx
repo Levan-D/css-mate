@@ -11,10 +11,9 @@ const DropShadow = () => {
   const tableOfContets = [
     "Drop shadow",
     "Tips & tricks",
-    "Multiple shadows",
-    "Glow effects",
-    "3D effects",
-    "Cheese",
+    "Basics",
+    "Difference between box & drop",
+    "When to use",
   ]
 
   return (

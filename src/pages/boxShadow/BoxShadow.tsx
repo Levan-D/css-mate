@@ -11,6 +11,7 @@ const BoxShadow = () => {
   const tableOfContets = [
     "Box shadow",
     "Tips & tricks",
+    "Basics",
     "Multiple shadows",
     "Glow effects",
     "3D effects",

@@ -6,7 +6,7 @@ import { ReactComponent as ArrowIcon } from "../../../assets/misc/arrow.svg"
 
 const ForAQuickRefresher = () => {
   return (
-    <section>
+    <section id="Basics">
       <h3 className="mt-16 mb-4 font-cursiveCustom text-xl">For a quick refresher</h3>
 
       <p>

@@ -4,57 +4,90 @@ import React from "react"
 
 const NeonGlow = () => {
   return (
-    <section id="Glow effects">
-      <h3 className="mb-4 mt-24 font-cursiveCustom text-xl">Neon glow effects</h3>
+    <section id="When to use ">
+      <h3 className="mb-4 mt-24 font-cursiveCustom text-xl">
+        When to use box & drop shadow
+      </h3>
       <p>
-        To achieve a neon glow effect using box shadows, you can use multiple box shadows
-        with different colors, offsets, and blur values. Here are the steps you can
-        follow:
+        Both box-shadow and filter: drop-shadow(...) can be used to create drop shadow
+        effects, but they each have their own advantages and disadvantages. Understanding
+        when to use box-shadow and when to use filter: drop-shadow(...) can help you make
+        the right choice for your design needs.
       </p>
 
-      <ol className="mx-auto mt-8 max-w-xl">
+      <h3 className="my-8  font-cursiveCustom">When to use box-shadow:</h3>
+
+      <ol className="mx-auto max-w-xl">
         <li className="mb-4 list-decimal font-bold">
+          Browser support:&#32;
           <span className="font-normal ">
-            First, create a base shadow by setting a single box shadow with a large blur
-            radius and a color that you want to use for the neon effect. This will create
-            the base glow.
+            box-shadow is a well-established CSS property and is widely supported by
+            modern browsers. If you need to support older browsers, box-shadow is a more
+            reliable option than filter: drop-shadow(...).
           </span>
         </li>
         <li className="mb-4 list-decimal font-bold">
+          Performance:&#32;
           <span className="font-normal ">
-            Next, add multiple shadows with smaller blur radii and the same color as the
-            base shadow. You can adjust the horizontal and vertical offsets to create a
-            more dynamic effect.
+            box-shadow is generally faster and more efficient than filter:
+            drop-shadow(...), especially when applied to large elements or many elements
+            on a page. If performance is a concern for your design, box-shadow may be the
+            better choice.
           </span>
         </li>
         <li className="mb-4 list-decimal font-bold">
+          Simple drop shadows:&#32;
           <span className="font-normal ">
-            To add more depth, you can add additional shadows with different colors. For
-            example, you can add a yellow or white shadow to the outermost part of the
-            glow and a pink or purple shadow to the innermost part.
+            box-shadow is easier to use and control than filter: drop-shadow(...) for
+            simple drop shadow effects. The syntax is straightforward and can be used to
+            add a single shadow or multiple shadows to an element with a simple
+            comma-separated list.
           </span>
         </li>
         <li className="mb-4 list-decimal font-bold">
+          Consistent behavior:&#32;
           <span className="font-normal ">
-            You can also experiment with different offsets and blur values to create a
-            more natural, organic glow effect.
-          </span>
-        </li>
-        <li className="mb-4 list-decimal font-bold">
-          <span className="font-normal ">
-            You can also add a text-shadow to the text inside the element to make it look
-            like it's glowing as well.
-          </span>
-        </li>
-        <li className="mb-4 list-decimal font-bold">
-          <span className="font-normal ">
-            To finish, you can adjust the opacity of the element to give it a more
-            realistic neon look.
+            box-shadow applies a consistent drop shadow to the entire element, including
+            the element's padding and content. This makes it a good choice for adding a
+            simple and consistent drop shadow effect to elements such as buttons, cards,
+            and panels.
           </span>
         </li>
       </ol>
 
-      <div>
+      <h3 className="my-8  font-cursiveCustom">When to use filter: drop-shadow(...):</h3>
+
+      <ol className="mx-auto max-w-xl">
+        <li className="mb-4 list-decimal font-bold">
+          Complex drop shadows:&#32;
+          <span className="font-normal ">
+            filter: drop-shadow(...) is more flexible and powerful than box-shadow for
+            creating complex and intricate drop shadow effects. The cumulative effect of
+            multiple drop shadow filters can be used to create unique and visually
+            striking drop shadow effects.
+          </span>
+        </li>
+        <li className="mb-4 list-decimal font-bold">
+          Image manipulation:&#32;
+          <span className="font-normal ">
+            filter: drop-shadow(...) is part of the CSS Filter Effects module, which
+            includes a range of filter functions for image manipulation. If you need to
+            add a drop shadow effect to an image, you can use filter: drop-shadow(...) in
+            conjunction with other filter functions to achieve the desired result.
+          </span>
+        </li>
+        <li className="mb-4 list-decimal font-bold">
+          Complex shapes:&#32;
+          <span className="font-normal ">
+            box-shadow can only create square and circular drop shadows, while filter:
+            drop-shadow(...) can create more complex shaped shadows for elements like
+            SVGs. If you need to add a drop shadow to a complex shape, filter:
+            drop-shadow(...) may be the better choice.
+          </span>
+        </li>
+      </ol>
+
+      {/* <div>
         <h4 className="my-8 font-cursiveCustom font-bold">Rule used below:</h4>
         <div className="mx-auto my-8 flex w-fit gap-4 rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
           <div className="text-blue-300 ">
@@ -82,7 +115,7 @@ const NeonGlow = () => {
             </p>
           </blockquote>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }
