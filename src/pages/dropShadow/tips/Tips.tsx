@@ -1,11 +1,10 @@
 /** @format */
 
 import React from "react"
-import ForAQuickRefresher from "./ForAQuickRefresher"
-import MultipleShadows from "./MultipleShadows"
-import NeonGlow from "./NeonGlow"
-import TDEffects from "./TDEffects"
-import Cheese from "./Cheese"
+import Basics from "./Basics"
+import Differences from "./Differences"
+import WhenToUse from "./WhenToUse"
+
 
 const Tips = () => {
   return (
@@ -14,11 +13,10 @@ const Tips = () => {
         The aforementioned <span className="text-secondary">tips & tricks</span>
       </h2>
 
-      <ForAQuickRefresher />
-      <MultipleShadows />
-      <NeonGlow />
-      <TDEffects />
-      <Cheese />
+      <Basics />
+      <Differences />
+      <WhenToUse />
+    
     </div>
   )
 }

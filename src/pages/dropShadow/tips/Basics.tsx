@@ -1,13 +1,9 @@
 /** @format */
 
-import React from "react"
-// @ts-ignore
-import { ReactComponent as ArrowIcon } from "../../../assets/misc/arrow.svg"
-
-const ForAQuickRefresher = () => {
+const Basics = () => {
   return (
     <section id="Basics">
-      <h3 className="mt-16 mb-4 font-cursiveCustom text-xl">For a quick refresher</h3>
+      <h3 className="mt-16 mb-4 font-cursiveCustom text-xl">Basics</h3>
 
       <p>
         CSS filters are a powerful tool that allow you to apply visual effects to elements
@@ -73,4 +69,4 @@ const ForAQuickRefresher = () => {
   )
 }
 
-export default ForAQuickRefresher
+export default Basics

@@ -2,9 +2,9 @@
 
 import React from "react"
 
-const NeonGlow = () => {
+const WhenToUse = () => {
   return (
-    <section id="When to use ">
+    <section id="When to use">
       <h3 className="mb-4 mt-24 font-cursiveCustom text-xl">
         When to use box & drop shadow
       </h3>
@@ -55,7 +55,7 @@ const NeonGlow = () => {
         </li>
       </ol>
 
-      <h3 className="my-8  font-cursiveCustom">When to use filter: drop-shadow(...):</h3>
+      <h3 className="my-8  font-cursiveCustom">When to use drop-shadow:</h3>
 
       <ol className="mx-auto max-w-xl">
         <li className="mb-4 list-decimal font-bold">
@@ -80,44 +80,42 @@ const NeonGlow = () => {
           Complex shapes:&#32;
           <span className="font-normal ">
             box-shadow can only create square and circular drop shadows, while filter:
-            drop-shadow(...) can create more complex shaped shadows for elements like
-            SVGs. If you need to add a drop shadow to a complex shape, filter:
-            drop-shadow(...) may be the better choice.
+            drop-shadow(...) can create more complex shaped shadows.
           </span>
+          <ul className="mx-auto mt-4 max-w-xl pl-8">
+            <li className="mb-4 list-disc font-bold">
+              SVGs:&#32;
+              <span className="font-normal ">
+                using drop shadow on SVGs will create a shadow that is the exact shape of
+                it unlike box shadow output which can only support rectangular shapes.
+              </span>
+            </li>
+            <li className="mb-4 list-disc font-bold">
+              Clip-path or mask-image:&#32;
+              <span className="font-normal ">
+                for clipped or masked elements any box-shadow added to that element will
+                also be clipped and won't be visible if it falls outside of the clipped
+                area. However, you can still create a drop shadow on the clipped element
+                by applying the filter: drop-shadow(...) to the parent of the clipped
+                element.
+              </span>
+            </li>
+            <li className="mb-4 list-disc font-bold">
+              Grouped elements:&#32;
+              <span className="font-normal ">
+                If we want to create a complex shape with overlapping divs and then give
+                them a shadow we have two options with box shadows: either give every
+                child div a shadow and watch as they overlap each other or give the parent
+                div a shadow which will give empty spaces shadows too. To avoid dealing
+                with such issues we can apply a drop shadow to the parent and avoid all
+                the complexity.
+              </span>
+            </li>
+          </ul>
         </li>
       </ol>
-
-      {/* <div>
-        <h4 className="my-8 font-cursiveCustom font-bold">Rule used below:</h4>
-        <div className="mx-auto my-8 flex w-fit gap-4 rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
-          <div className="text-blue-300 ">
-            box-shadow<span className="px-[4px] text-white">:</span> <br />
-          </div>
-          <div className="text-green-300">
-            0px 0px 4px 0px rgba(255, 255, 255,1), <br /> 0px 0px 4px 0px rgba( 255, 255,
-            255,1), <br /> 0px 0px 36px 0px rgba( 188, 19, 254,0.7), <br /> 0px 0px 16px
-            0px rgba( 188, 19, 254,1), <br /> 0px 0px 50px 0px rgba( 188, 19, 254,0.8),{" "}
-            <br /> inset 0px 0px 24px 0px rgba( 188, 19, 254,1)
-            <span className="pl-[4px] text-white ">;</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h4 className="my-8  font-cursiveCustom font-bold">Result:</h4>
-        <div className="mx-auto w-fit rounded-xl bg-transparent px-12 py-14 text-white   shadow-[0px_0px_4px_0px_rgba(255,_255,_255,1),0px_0px_4px_0px_rgba(_255,_255,_255,1),0px_0px_36px_0px_rgba(_188,_19,_254,0.7),0px_0px_16px_0px_rgba(_188,_19,_254,1),0px_0px_50px_0px_rgba(_188,_19,_254,0.8),inset_0px_0px_24px_0px_rgba(_188,_19,_254,1)] ">
-          <blockquote>
-            <q className="   font-handWrittenT text-3xl drop-shadow-neonPurple ">
-              There's no place like home.
-            </q>
-            <p className="mt-6 text-right font-handWrittenT text-2xl  font-bold drop-shadow-neonPurple">
-              &mdash; Dorothy
-            </p>
-          </blockquote>
-        </div>
-      </div> */}
     </section>
   )
 }
 
-export default NeonGlow
+export default WhenToUse

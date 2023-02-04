@@ -95,6 +95,30 @@
   .gridChild {
     grid-area: 1 / 1 / 2 / 2;
   }
+
+  /* circle animation */
+  .parentElement {
+    filter: drop-shadow(25px 0 0 rgba(94, 161, 255, 0.5))
+      drop-shadow(-25px 0 0 rgba(94, 161, 255, 0.5))
+      drop-shadow(50px 0 0 rgba(94, 161, 255, 0.5))
+      drop-shadow(-50px 0 0 rgba(94, 161, 255, 0.5))
+      drop-shadow(75px 0 0 rgba(94, 161, 255, 0.5))
+      drop-shadow(-75px 0 0 rgba(94, 161, 255, 0.5));
+    transition: filter 1000ms;
+  }
+
+  .parentElement:hover {
+    filter: drop-shadow(0 0 0 rgba(94, 161, 255, 0.5));
+  }
+
+  .childElement {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #ff725e;
+    border-radius: 100%;
+  }
+  /* circle animation */
 }
 
 html {

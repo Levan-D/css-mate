@@ -4,7 +4,6 @@ import React from "react"
 import SideMenu from "../../../components/wrappers/SideMenu"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import ColorPicker from "../../../components/ColorPicker"
-import Presets from "./Presets"
 import {
   setColor,
   resetState as resetStateAction,
@@ -59,8 +58,6 @@ const DropShadowSidemenu = () => {
             <ColorPicker handleColorPick={handleColorPick} />
           </div>
         </div>
-        {/* <hr className="mx-4 mb-4" />
-        <Presets /> */}
       </SideMenu>
     </div>
   )

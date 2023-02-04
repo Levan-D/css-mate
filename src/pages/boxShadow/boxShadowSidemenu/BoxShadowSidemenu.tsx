@@ -27,10 +27,12 @@ const BoxShadowSidemenu = () => {
   }
 
   const handleColorPick = (color: string) => {
+    console.log(color)
     dispatch(setColor(color))
   }
 
   const handleSetTabPage = (i: number) => {
+    console.log(i)
     dispatch(setTabPage(i))
   }
   const handleTabDelete = (id: string) => {

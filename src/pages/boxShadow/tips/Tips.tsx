@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react"
-import ForAQuickRefresher from "./ForAQuickRefresher"
+import Basics from "./Basics"
 import MultipleShadows from "./MultipleShadows"
 import NeonGlow from "./NeonGlow"
 import TDEffects from "./TDEffects"
@@ -14,7 +14,7 @@ const Tips = () => {
         The aforementioned <span className="text-secondary">tips & tricks</span>
       </h2>
 
-      <ForAQuickRefresher />
+      <Basics />
       <MultipleShadows />
       <NeonGlow />
       <TDEffects />
