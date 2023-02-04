@@ -77,6 +77,9 @@ const NeonGlow = () => {
           <span className="pl-[4px] text-white ">;</span>
         </div>
       </div>
+
+      <div className="flicker">Hover over me</div>
+
     </section>
   )
 }

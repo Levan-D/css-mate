@@ -1,13 +1,13 @@
 /** @format */
 
-import React, { useState } from "react"
+import React, { ReactNode, useState } from "react"
 import type { OutputRenderArrayType } from "./WrapperTypes"
 import Tooltip from "../Tooltip"
 import { comment } from "postcss"
 
 type OutputProps = {
   renderArray: OutputRenderArrayType[]
-  comments?: { onActive: number; comment: string }
+  comments?: { onActive: number; comment: ReactNode }[]
 }
 
 const Output = ({ renderArray, comments }: OutputProps) => {
@@ -29,13 +29,13 @@ const Output = ({ renderArray, comments }: OutputProps) => {
             </div>
           ))}
         </div>
-        <h3 className="py-2 text-center text-slate-300">
-          {comments && comments.onActive === selectedBtn ? (
-            comments.comment
+      {comments && comments.map((comment, index) => (  <h3 key={index} className="py-2 mx-4 text-center text-slate-300">
+          { comment.onActive === selectedBtn ? (
+            comment.comment
           ) : (
             <span>&#160;</span>
           )}
-        </h3>
+        </h3>))}
         <div className="menuContainer m-4">
           <div className="m-4 rounded-lg border-l-2 border-primary pt-3 pb-4 pl-4">
             {renderArray.map((item, index) => (

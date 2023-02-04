@@ -99,11 +99,11 @@ const DropShadowOutput = () => {
     <div>
       <Output
         renderArray={renderArray}
-        comments={{
+        comments={[{
           onActive: 1,
-          comment:
-            "Tailwind inline only supports a single drop shadow rule so if you want to add multiple use tailwind extend",
-        }}
+          comment: <span>Tailwind inline only supports a single drop shadow rule. <br /> If you want to add more use tailwind extend.</span>,
+           
+        }]}
       />
     </div>
   )
