@@ -139,7 +139,7 @@ const Shape = () => {
       </div>
       {/* spicey button */}
       {/* bottom padding for flexbox to work @me */}
-      <div className=" h-6 md:h-20  "></div>
+      <div className=" h-6  "></div>
       {/* bottom padding for flexbox to work @me */}
     </div>
   )
