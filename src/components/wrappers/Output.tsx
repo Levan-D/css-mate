@@ -3,10 +3,14 @@
 import React, { useState } from "react"
 import type { OutputRenderArrayType } from "./WrapperTypes"
 import Tooltip from "../Tooltip"
+import { comment } from "postcss"
 
-type OutputProps = { renderArray: OutputRenderArrayType[] }
+type OutputProps = {
+  renderArray: OutputRenderArrayType[]
+  comments?: { onActive: number; comment: string }
+}
 
-const Output = ({ renderArray }: OutputProps) => {
+const Output = ({ renderArray, comments }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
     <div className=" mx-auto h-fit rounded-xl border-2 border-white sm:w-[500px] md:w-[600px] ">
@@ -25,6 +29,13 @@ const Output = ({ renderArray }: OutputProps) => {
             </div>
           ))}
         </div>
+        <h3 className="py-2 text-center text-slate-300">
+          {comments && comments.onActive === selectedBtn ? (
+            comments.comment
+          ) : (
+            <span>&#160;</span>
+          )}
+        </h3>
         <div className="menuContainer m-4">
           <div className="m-4 rounded-lg border-l-2 border-primary pt-3 pb-4 pl-4">
             {renderArray.map((item, index) => (
