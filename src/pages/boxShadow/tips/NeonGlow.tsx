@@ -54,33 +54,27 @@ const NeonGlow = () => {
         </li>
       </ol>
 
-      <div>
-        <h4 className="my-8 font-cursiveCustom font-bold">Rule used below:</h4>
-        <div className="mx-auto my-8 flex w-fit gap-4 rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
-          <div className="text-blue-300 ">
-            box-shadow<span className="px-[4px] text-white">:</span> <br />
-          </div>
-          <div className="text-green-300">
-            0px 0px 4px 0px rgba(255, 255, 255,1), <br /> 0px 0px 4px 0px rgba( 255, 255,
-            255,1), <br /> 0px 0px 36px 0px rgba( 188, 19, 254,0.7), <br /> 0px 0px 16px
-            0px rgba( 188, 19, 254,1), <br /> 0px 0px 50px 0px rgba( 188, 19, 254,0.8),{" "}
-            <br /> inset 0px 0px 24px 0px rgba( 188, 19, 254,1)
-            <span className="pl-[4px] text-white ">;</span>
-          </div>
-        </div>
+      <div className="mx-auto mt-8 mb-16 w-fit rounded-xl bg-transparent px-12 py-14 text-white   shadow-[0px_0px_4px_0px_rgba(255,_255,_255,1),0px_0px_4px_0px_rgba(_255,_255,_255,1),0px_0px_36px_0px_rgba(_188,_19,_254,0.7),0px_0px_16px_0px_rgba(_188,_19,_254,1),0px_0px_50px_0px_rgba(_188,_19,_254,0.8),inset_0px_0px_24px_0px_rgba(_188,_19,_254,1)] ">
+        <blockquote>
+          <q className="   font-handWrittenT text-3xl drop-shadow-neonPurple ">
+            There's no place like home.
+          </q>
+          <p className="mt-6 text-right font-handWrittenT text-2xl  font-bold drop-shadow-neonPurple">
+            &mdash; Dorothy
+          </p>
+        </blockquote>
       </div>
 
-      <div>
-        <h4 className="my-8  font-cursiveCustom font-bold">Result:</h4>
-        <div className="mx-auto w-fit rounded-xl bg-transparent px-12 py-14 text-white   shadow-[0px_0px_4px_0px_rgba(255,_255,_255,1),0px_0px_4px_0px_rgba(_255,_255,_255,1),0px_0px_36px_0px_rgba(_188,_19,_254,0.7),0px_0px_16px_0px_rgba(_188,_19,_254,1),0px_0px_50px_0px_rgba(_188,_19,_254,0.8),inset_0px_0px_24px_0px_rgba(_188,_19,_254,1)] ">
-          <blockquote>
-            <q className="   font-handWrittenT text-3xl drop-shadow-neonPurple ">
-              There's no place like home.
-            </q>
-            <p className="mt-6 text-right font-handWrittenT text-2xl  font-bold drop-shadow-neonPurple">
-              &mdash; Dorothy
-            </p>
-          </blockquote>
+      <div className="mx-auto my-8 flex w-fit gap-4 rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
+        <div className="text-blue-300 ">
+          box-shadow<span className="px-[4px] text-white">:</span> <br />
+        </div>
+        <div className="text-green-300">
+          0px 0px 4px 0px rgba(255, 255, 255,1), <br /> 0px 0px 4px 0px rgba( 255, 255,
+          255,1), <br /> 0px 0px 36px 0px rgba( 188, 19, 254,0.7), <br /> 0px 0px 16px 0px
+          rgba( 188, 19, 254,1), <br /> 0px 0px 50px 0px rgba( 188, 19, 254,0.8), <br />{" "}
+          inset 0px 0px 24px 0px rgba( 188, 19, 254,1)
+          <span className="pl-[4px] text-white ">;</span>
         </div>
       </div>
     </section>

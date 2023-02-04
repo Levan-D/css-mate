@@ -49,7 +49,25 @@ const TDEffects = () => {
         </li>
       </ol>
 
-      <h4 className="my-8 font-cursiveCustom font-bold">Rules used below:</h4>
+      <div className="mt-8 mb-16 justify-center gap-8 lg:flex ">
+        <div className="mx-auto w-fit rounded-xl bg-transparent px-12 py-16 text-white shadow-[inset_-5px_-5px_16px_-10px_rgba(220,_220,_220,0.6),inset_5px_5px_16px_2px_rgba(0,_0,_0,1),inset_12px_12px_4px_150px_rgba(0,_0,_0,0.05)] ">
+          <blockquote>
+            <q className="    text-lg text-slate-500 ">
+              Roads? Where we're going we don't need roads.
+            </q>
+            <p className="mt-4 text-right text-lg  font-bold text-slate-500">
+              &mdash; Doc Brown
+            </p>
+          </blockquote>
+        </div>
+        <div className="mx-auto  mt-6 h-[200px] w-[200px] rounded-full bg-black px-12 py-16  text-gray-500 shadow-[inset_-30px_-30px_30px_-10px_rgba(_0,_0,_0,1),inset_-15px_-18px_53px_20px_rgba(_31,_31,_31,0.7),inset_-40px_-60px_52px_81px_rgba(_64,_64,_64,1),inset_12px_12px_20px_150px_rgba(255,_255,_255,1),12px_12px_12px_0px_rgba(0,0,0,1)] lg:mt-0 ">
+          <blockquote>
+            <q className="    text-lg text-gray-400  ">Yo Adrian!</q>
+            <p className="mt-4 text-right text-lg   font-bold">- Rocky</p>
+          </blockquote>
+        </div>
+      </div>
+
       <div className="mx-auto my-8 w-fit rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
         <div className=" flex gap-4 ">
           <div className="text-blue-300">
@@ -74,25 +92,6 @@ const TDEffects = () => {
             <br /> 12px 12px 4px 0px rgba(255,255,255,0.2);
             <span className="pl-[4px] text-white ">;</span>
           </div>
-        </div>
-      </div>
-      <h4 className="my-8  font-cursiveCustom font-bold">Results:</h4>
-      <div className="justify-center gap-8 lg:flex ">
-        <div className="mx-auto w-fit rounded-xl bg-transparent px-12 py-16 text-white shadow-[inset_-5px_-5px_16px_-10px_rgba(220,_220,_220,0.6),inset_5px_5px_16px_2px_rgba(0,_0,_0,1),inset_12px_12px_4px_150px_rgba(0,_0,_0,0.05)] ">
-          <blockquote>
-            <q className="    text-lg text-slate-500 ">
-              Roads? Where we're going we don't need roads.
-            </q>
-            <p className="mt-4 text-right text-lg  font-bold text-slate-500">
-              &mdash; Doc Brown
-            </p>
-          </blockquote>
-        </div>
-        <div className="mx-auto  mt-6 h-[200px] w-[200px] rounded-full bg-black px-12 py-16  text-gray-500 shadow-[inset_-30px_-30px_30px_-10px_rgba(_0,_0,_0,1),inset_-15px_-18px_53px_20px_rgba(_31,_31,_31,0.7),inset_-40px_-60px_52px_81px_rgba(_64,_64,_64,1),inset_12px_12px_20px_150px_rgba(255,_255,_255,1),12px_12px_12px_0px_rgba(0,0,0,1)] lg:mt-0 ">
-          <blockquote>
-            <q className="    text-lg text-gray-400  ">Yo Adrian!</q>
-            <p className="mt-4 text-right text-lg   font-bold">- Rocky</p>
-          </blockquote>
         </div>
       </div>
 
