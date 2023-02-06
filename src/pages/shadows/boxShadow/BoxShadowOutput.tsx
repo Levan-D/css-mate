@@ -27,7 +27,7 @@ const BoxShadowOutput = () => {
   const vanillaStyleCopy = boxShadowStyle.join()
 
   const inlineStyle = (
-    <div className="ml-20">
+    <div className="sm:ml-20">
       {boxShadowStyle.map((x, i) => (
         <div key={i} className="text-orange-300">
           {x.replace(/ /g, "_").replace(/^_/, "")}
@@ -123,7 +123,7 @@ const BoxShadowOutput = () => {
     },
   ]
   return (
-    <div className="">
+    <div>
       <Output renderArray={renderArray} />
     </div>
   )
