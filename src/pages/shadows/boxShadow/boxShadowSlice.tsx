@@ -61,7 +61,6 @@ const boxShadowSlice = createSlice({
       }
     },
     setColor: (state, action: PayloadAction<string>) => {
-      console.log(action.payload, state.currentTab)
       state.boxShadowData[state.currentTab].settings.shadowColor = action.payload
     },
     setPreset: (state, action: PayloadAction<boxshadowSettings>) => {

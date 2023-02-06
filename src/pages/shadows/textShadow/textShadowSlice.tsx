@@ -58,7 +58,6 @@ const textShadowSlice = createSlice({
       }
     },
     setColor: (state, action: PayloadAction<string>) => {
-      console.log(action.payload, state.currentTab)
       state.textShadowData[state.currentTab].settings.shadowColor = action.payload
     },
     setPreset: (state, action: PayloadAction<textshadowSettings>) => {
