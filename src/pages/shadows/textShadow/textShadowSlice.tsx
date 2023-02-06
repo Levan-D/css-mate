@@ -103,15 +103,12 @@ export const selectTextShadowTabs = createSelector(
 export const selectTextShadowStyle = createSelector(
   (state: RootState) => state.textShadow.textShadowData,
   textShadowData => {
-    let style = textShadowData
-      .map(
-        data =>
-          `${data.settings.horizontal}px ${data.settings.vertical}px ${
-            data.settings.blur
-          }px  rgba(${data.settings.shadowColor},${data.settings.opacity / 100})`
-      )
-      .join(",")
-    return style
+    return textShadowData.map(
+      data =>
+        `${data.settings.horizontal}px ${data.settings.vertical}px ${
+          data.settings.blur
+        }px  rgba(${data.settings.shadowColor},${data.settings.opacity / 100})`
+    )
   }
 )
 
