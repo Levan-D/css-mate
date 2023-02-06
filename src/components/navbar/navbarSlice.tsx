@@ -6,12 +6,14 @@ import { pageButtons } from "../../data/PageButtons"
 
 interface navbarState {
   path: string
+  windowWidth: number
   pathArray: string[]
   categoryIndex: number
 }
 
 const initialState: navbarState = {
   path: "",
+  windowWidth: window.innerWidth,
   pathArray: [],
   categoryIndex: 0,
 }
@@ -29,8 +31,11 @@ const navbarSlice = createSlice({
           ? pageButtons.findIndex(x => x.catPath === findPath[0])
           : 0
     },
+    setWindowWidth: (state, action: PayloadAction<number>) => {
+      state.windowWidth = action.payload
+    },
   },
 })
 
-export const { setPath } = navbarSlice.actions
+export const { setPath, setWindowWidth } = navbarSlice.actions
 export default navbarSlice.reducer

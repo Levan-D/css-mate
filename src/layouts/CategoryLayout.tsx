@@ -4,9 +4,10 @@ import { pageButtons } from "../data/PageButtons"
 import { Outlet } from "react-router-dom"
 import Card from "../components/Card"
 import { useAppSelector } from "../app/hooks"
+import { Link } from "react-router-dom"
 
 const CategoryLayout = () => {
-  const { categoryIndex, pathArray } = useAppSelector(store => store.navbar)
+  const { categoryIndex, pathArray, windowWidth } = useAppSelector(store => store.navbar)
 
   return (
     <div>
@@ -32,20 +33,21 @@ const CategoryLayout = () => {
           </div>
         </div>
       ) : (
-        <div className=" mx-auto mt-4  flex  w-fit flex-wrap justify-center gap-4">
-          {pageButtons[categoryIndex].catCon.map((button, i) => (
-            <div key={i}>
-              <Card
-                title={button.name}
-                path={button.path}
-                CSS={`   ${
-                  pathArray[1] === button.path ? " !bg-secondary-300" : ""
-                }   pb-0 pt-2 bg-transparent  hover:bg-[#f78777]  sm:hover:shadow-none  shadow-none [&>*]:text-base [&>*]:text-white !rounded-full  `}
+        <div className=" mx-auto mt-4  flex  w-fit flex-wrap justify-center">
+          {windowWidth > 540 &&
+            pageButtons[categoryIndex].catCon.map((button, i) => (
+              <div
+                key={i}
+                className={`              
+              ${
+                pathArray[1] === button.path ? " !bg-secondary-300" : ""
+              }   rounded-full  py-2 px-4 font-cursiveCustom duration-200  hover:bg-secondary-200`}
               >
-                <div></div>
-              </Card>
-            </div>
-          ))}
+                <Link to={button.path}>
+                  <div> {button.name}</div>
+                </Link>
+              </div>
+            ))}
         </div>
       )}
 

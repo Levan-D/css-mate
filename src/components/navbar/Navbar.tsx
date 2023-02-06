@@ -6,16 +6,16 @@ import logo from "../../assets/logo/logo.png"
 import { Link, useLocation } from "react-router-dom"
 import { pageButtons } from "../../data/PageButtons"
 import githubIcon from "../../assets/icons/github.png"
-import { setPath } from "./navbarSlice"
+import { setPath, setWindowWidth } from "./navbarSlice"
 import DropDown from "./DropDown"
 
 const Navbar = () => {
-  const { pathArray } = useAppSelector(store => store.navbar)
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  const [subMenuVis, setSubMenuVis] = useState("")
-
   const dispatch = useAppDispatch()
   const location = useLocation()
+
+  const { pathArray, windowWidth } = useAppSelector(store => store.navbar)
+
+  const [subMenuVis, setSubMenuVis] = useState("")
 
   const handleSubMenuClick = (path: string) => {
     if (subMenuVis === path) {
@@ -24,7 +24,7 @@ const Navbar = () => {
   }
 
   const updateWindowWidth = () => {
-    setWindowWidth(() => window.innerWidth)
+    dispatch(setWindowWidth(window.innerWidth))
     setSubMenuVis("")
   }
 
