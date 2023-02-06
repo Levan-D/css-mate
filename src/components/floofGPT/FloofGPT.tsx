@@ -28,7 +28,7 @@ const FloofGPT = () => {
           </div>
 
           <div
-            className={` fixed bottom-4 left-4 z-40 cursor-pointer  rounded-full border-2 shadow-primaryBr duration-500 ease-out sm:hidden sm:hover:border-secondary  sm:hover:brightness-110     8xl:left-[calc(50%-1240px)]`}
+            className={` fixed bottom-4 left-4 z-40 cursor-pointer  rounded-full border-2 shadow-primaryBr duration-500 ease-out sm:hidden sm:hover:border-secondary-300  sm:hover:brightness-110     8xl:left-[calc(50%-1240px)]`}
           >
             <Link to="/floof-gpt">
               <img className="w-14  " src={FlooFGPTIcon} alt="" />
@@ -39,7 +39,7 @@ const FloofGPT = () => {
             onClick={() => dispatch(setIsOpen(true))}
             className={` ${
               !isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
-            } fixed bottom-4 left-4  z-40 hidden cursor-pointer  rounded-full border-2 shadow-primaryBr duration-500 ease-out sm:block sm:hover:border-secondary  sm:hover:brightness-110     8xl:left-[calc(50%-1240px)]`}
+            } fixed bottom-4 left-4  z-40 hidden cursor-pointer  rounded-full border-2 shadow-primaryBr duration-500 ease-out sm:block sm:hover:border-secondary-300  sm:hover:brightness-110     8xl:left-[calc(50%-1240px)]`}
           >
             <Tooltip text="Hi, chat?">
               <img className="w-14  " src={FlooFGPTIcon} alt="" />

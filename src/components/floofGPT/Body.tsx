@@ -43,7 +43,7 @@ const Body = () => {
           >
             <div
               className={`${
-                response.user === "floofGPT" ? " bg-secondary" : "  bg-primary"
+                response.user === "floofGPT" ? " bg-secondary-300" : "  bg-primary"
               } my-1 w-fit  max-w-[90%] rounded-xl px-2 py-1  shadow-primaryBr `}
             >
               {response.message}

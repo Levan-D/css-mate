@@ -39,8 +39,8 @@ const CategoryLayout = () => {
                 title={button.name}
                 path={button.path}
                 CSS={`   ${
-                  pathArray[1] === button.path ? " !bg-secondary" : ""
-                }   pb-0 pt-2 bg-transparent  hover:bg-[#f78777]  sm:hover:shadow-[0px_0px_12px_5px_rgba(_255,_114,_94,0.8)]  shadow-none [&>*]:text-base [&>*]:text-white !rounded-full  `}
+                  pathArray[1] === button.path ? " !bg-secondary-300" : ""
+                }   pb-0 pt-2 bg-transparent  hover:bg-[#f78777]  sm:hover:shadow-none  shadow-none [&>*]:text-base [&>*]:text-white !rounded-full  `}
               >
                 <div></div>
               </Card>

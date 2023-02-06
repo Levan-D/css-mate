@@ -11,7 +11,7 @@ const Home = () => {
         <div className="text-6xl ">Hello,</div>
         <h1 className="mt-6 text-xl ">
           Welcome to our collection of
-          <span className="text-secondary"> CSS and HTML tools! </span>
+          <span className="text-secondary-300"> CSS and HTML tools! </span>
           Whether you're a seasoned web developer or just getting started, our tools are
           designed to make your life easier. Here, you'll find a wide range of tools to
           help you create beautiful and responsive websites with minimal effort.

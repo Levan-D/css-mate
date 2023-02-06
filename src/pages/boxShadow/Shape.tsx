@@ -57,7 +57,7 @@ const Shape = () => {
   return (
     <div
       className={` ${
-        darkmode ? "bg-inherit" : "border-secondary bg-slate-100 "
+        darkmode ? "bg-inherit" : "border-secondary-300 bg-slate-100 "
       } mx-auto  flex h-[530px] w-96 flex-col justify-between rounded-xl border-2  md:h-full lg:w-[430px]  `}
     >
       {/* nav section */}
@@ -66,7 +66,7 @@ const Shape = () => {
           <img
             onClick={() => setDarkmode(x => !x)}
             className={` ${
-              darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
+              darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary-300"
             } m-2 h-10 cursor-pointer rounded-full border-2  border-transparent duration-200`}
             src={darkmode ? moon : sun}
             alt="dark mode"
@@ -87,7 +87,7 @@ const Shape = () => {
           setShape(x => !x)
         }}
         className={` ${shape ? "rounded-xl" : "rounded-full"} ${
-          darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary"
+          darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary-300"
         }    mx-auto mb-4  h-[250px]  w-[250px] cursor-pointer select-none border-2  border-transparent `}
       >
         <ChangeShape

@@ -13,7 +13,7 @@ const Cursors = () => {
   return (
     <div className="my-16 mx-4">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Almost every CSS <span className="text-secondary">cursor</span> type presented
+        Almost every CSS <span className="text-secondary-300">cursor</span> type presented
         below
       </h1>
       <div className="mb-8 text-center font-cursiveCustom text-base">
@@ -27,7 +27,7 @@ const Cursors = () => {
       </div>
       <div className=" text-center">
         You can also set custom cursors using the
-        <span className="text-secondary">
+        <span className="text-secondary-300">
           &#32; cursor: url&#x28; image link&#x29;, x y, fallback cursor type;&#32;
         </span>
         property.
@@ -53,7 +53,7 @@ const Cursors = () => {
                     <div className="text-center text-slate-900 ">
                       {content.description}
                     </div>
-                    <div className="mb-4 text-center font-semibold text-secondary">
+                    <div className="mb-4 text-center font-semibold text-secondary-300">
                       {content.cssRule}
                     </div>
                     <div className={`flex justify-center gap-2  `}>

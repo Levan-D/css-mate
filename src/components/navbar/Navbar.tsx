@@ -57,10 +57,10 @@ const Navbar = () => {
               className={` ${
                 windowWidth > 540
                   ? pathArray[0] === category.catPath &&
-                    "   mx-4 !bg-slate-500 sm:mx-0 sm:!bg-secondary  "
+                    "   mx-4 !bg-slate-500 sm:mx-0 sm:!bg-secondary-300  "
                   : subMenuVis === category.catPath &&
-                    "   mx-4 !bg-slate-500 sm:mx-0 sm:!bg-secondary  "
-              }  group shrink-0 cursor-pointer select-none whitespace-nowrap rounded-2xl  px-4 py-1 font-cursiveCustom text-xl  font-bold duration-200  sm:hover:bg-[rgba(255,114,94,0.8)] `}
+                    "   mx-4 !bg-slate-500 sm:mx-0 sm:!bg-secondary-300  "
+              }  group shrink-0 cursor-pointer select-none whitespace-nowrap rounded-2xl  px-4 py-1 font-cursiveCustom text-xl  font-bold duration-200  sm:hover:bg-secondary-200 `}
             >
               {windowWidth < 540 ? (
                 <div onClick={() => handleSubMenuClick(category.catPath)}>

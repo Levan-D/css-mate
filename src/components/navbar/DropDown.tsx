@@ -32,9 +32,9 @@ const DropDown = ({
             key={index}
             onClick={() => handleSubMenuClick(category.catPath)}
             className={`   ${
-              windowWidth > 540 ? pathArray[1] === btn.path && " !bg-secondary" : ""
+              windowWidth > 540 ? pathArray[1] === btn.path && " !bg-secondary-300" : ""
             } 
-            shrink-0 cursor-pointer select-none rounded-2xl   py-1 px-4 font-cursiveCustom text-base  font-bold duration-300 active:brightness-75 sm:text-lg sm:hover:bg-[rgba(255,114,94,0.8)] `}
+            shrink-0 cursor-pointer select-none rounded-2xl   py-1 px-4 font-cursiveCustom text-base  font-bold duration-300 active:brightness-75 sm:text-lg sm:hover:bg-secondary-200 `}
           >
             <Link className="p-1" to={category.catPath + "/" + btn.path}>
               {btn.name}

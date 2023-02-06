@@ -24,9 +24,9 @@ const Basics = () => {
           <span className="text-green-300">
             drop-shadow<span className="pl-[4px] text-white ">&#40;</span>
             offset-x
-            <span className="text-secondary">(&#177;px)</span>, offset-y
-            <span className="text-secondary">(&#177;px)</span>, blur
-            <span className="text-secondary">(&#177;px)</span>, color
+            <span className="text-secondary-300">(&#177;px)</span>, offset-y
+            <span className="text-secondary-300">(&#177;px)</span>, blur
+            <span className="text-secondary-300">(&#177;px)</span>, color
             <span className="pl-[4px] text-white ">&#41;;</span>
           </span>
         </p>

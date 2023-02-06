@@ -24,11 +24,11 @@ const Basics = () => {
             box-shadow<span className="px-[4px] text-white">:</span>
           </span>
           <span className="text-green-300">
-            inset <span className="text-secondary">(boolean)</span> , offset-x
-            <span className="text-secondary">(&#177;px)</span>, offset-y
-            <span className="text-secondary">(&#177;px)</span>, blur
-            <span className="text-secondary">(&#177;px)</span>, spread
-            <span className="text-secondary">(&#43;px)</span>, color
+            inset <span className="text-secondary-300">(boolean)</span> , offset-x
+            <span className="text-secondary-300">(&#177;px)</span>, offset-y
+            <span className="text-secondary-300">(&#177;px)</span>, blur
+            <span className="text-secondary-300">(&#177;px)</span>, spread
+            <span className="text-secondary-300">(&#43;px)</span>, color
             <span className="pl-[4px] text-white ">;</span>
           </span>
         </p>

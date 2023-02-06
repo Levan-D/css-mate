@@ -21,7 +21,7 @@ const BoxShadow = () => {
   return (
     <div className=" my-16 mx-4">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Generate <span className="text-secondary">box shadows</span> for your project with
+        Generate <span className="text-secondary-300">box shadows</span> for your project with
         ease
       </h1>
       <div className="mb-8 text-center font-cursiveCustom text-base">

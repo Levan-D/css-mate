@@ -47,7 +47,9 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
           style={{ backgroundColor: color.color }}
           onClick={() => handleColorPick(color.value)}
           className={`h-6 w-6 rounded-full border-2 border-transparent ${
-            color.name === "white" ? "sm:hover:border-secondary" : "sm:hover:border-white"
+            color.name === "white"
+              ? "sm:hover:border-secondary-300"
+              : "sm:hover:border-white"
           }  cursor-pointer duration-200`}
         ></div>
       ))}
