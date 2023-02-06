@@ -1,9 +1,9 @@
 /** @format */
 
 import React from "react"
-import SideMenu from "../../../components/wrappers/SideMenu"
-import { useAppDispatch, useAppSelector } from "../../../app/hooks"
-import ColorPicker from "../../../components/ColorPicker"
+import SideMenu from "../../../../components/wrappers/SideMenu"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import ColorPicker from "../../../../components/ColorPicker"
 import {
   setColor,
   resetState as resetStateAction,
@@ -13,7 +13,7 @@ import {
   addDropShadow,
 } from "../dropShadowSlice"
 import Sliders from "./Sliders"
-import TabsNConditions from "../../../components/wrappers/TabsNConditions"
+import TabsNConditions from "../../../../components/wrappers/TabsNConditions"
 
 const DropShadowSidemenu = () => {
   const dispatch = useAppDispatch()

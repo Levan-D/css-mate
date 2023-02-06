@@ -1,8 +1,8 @@
 /** @format */
 
 import { configureStore } from "@reduxjs/toolkit"
-import boxShadowReducer from "../pages/boxShadow/boxShadowSlice"
-import dropShadowReducer from "../pages/dropShadow/dropShadowSlice"
+import boxShadowReducer from "../pages/shadows/boxShadow/boxShadowSlice"
+import dropShadowReducer from "../pages/shadows/dropShadow/dropShadowSlice"
 import floofReducer from "../components/floofGPT/floofGPTSlice"
 import navbarReducer from "../components/navbar/navbarSlice"
 

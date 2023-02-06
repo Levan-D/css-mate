@@ -5,7 +5,7 @@ import Shape from "./Shape"
 import DropShadowOutput from "./DropShadowOutput"
 import DropShadowSidemenu from "./dropShadowSidemenu/DropShadowSidemenu"
 import Tips from "./tips/Tips"
-import TableOfContents from "../../components/TableOfContents"
+import TableOfContents from "../../../components/TableOfContents"
 
 const DropShadow = () => {
   const tableOfContets = [

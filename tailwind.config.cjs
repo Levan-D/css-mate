@@ -42,14 +42,6 @@ module.exports = {
         primaryDark: "2px 3px 2px 0px rgba(255,255,255,0.30)",
         primaryBr: "2px 3px 2px 0px rgba(0,0,0,0.30)",
       },
-      dropShadow: {
-        neonPurple: [
-          "0px 0px 4px rgba( 255, 255, 255,1)",
-          "0px 0px 8px rgba( 188, 19, 254,0.7)",
-          "0px 0px 16px rgba( 188, 19, 254,1)",
-          "0px 0px 22px rgba( 188, 19, 254,0.8)",
-        ],
-      },
     },
     fontFamily: {
       cursiveCustom: ["Carter One", "cursive"],

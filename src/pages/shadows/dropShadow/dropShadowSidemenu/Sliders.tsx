@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react"
-import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { updateDropShadow } from "../dropShadowSlice"
 import ReactSlider from "react-slider"
 

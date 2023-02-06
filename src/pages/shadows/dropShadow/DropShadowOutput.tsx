@@ -1,9 +1,9 @@
 /** @format */
 
 import React from "react"
-import Output from "../../components/wrappers/Output"
-import { useAppSelector } from "../../app/hooks"
-import { OutputRenderArrayType } from "../../components/wrappers/WrapperTypes"
+import Output from "../../../components/wrappers/Output"
+import { useAppSelector } from "../../../app/hooks"
+import { OutputRenderArrayType } from "../../../components/wrappers/WrapperTypes"
 import { selectDropShadowStyle } from "./dropShadowSlice"
 
 const DropShadowOutput = () => {
@@ -99,11 +99,17 @@ const DropShadowOutput = () => {
     <div>
       <Output
         renderArray={renderArray}
-        comments={[{
-          onActive: 1,
-          comment: <span>Tailwind inline only supports a single drop shadow rule. <br /> If you want to add more use tailwind extend.</span>,
-           
-        }]}
+        comments={[
+          {
+            onActive: 1,
+            comment: (
+              <span>
+                Tailwind inline only supports a single drop shadow rule. <br /> If you
+                want to add more use tailwind extend.
+              </span>
+            ),
+          },
+        ]}
       />
     </div>
   )

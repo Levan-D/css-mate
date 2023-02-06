@@ -2,18 +2,18 @@
 
 import React, { useState, useRef } from "react"
 import { selectDropShadowStyle } from "./dropShadowSlice"
-import { useAppSelector } from "../../app/hooks"
-import moon from "../../assets/icons/moon.png"
-import sun from "../../assets/icons/sun.png"
+import { useAppSelector } from "../../../app/hooks"
+import moon from "../../../assets/icons/moon.png"
+import sun from "../../../assets/icons/sun.png"
 import { btnResponse } from "./Data"
 import { useNavigate } from "react-router-dom"
-import ColorPicker from "../../components/ColorPicker"
-import ColorInverter from "../../utils/ColorInverter"
-import RgbToHex from "../../utils/RGBToHex"
+import ColorPicker from "../../../components/ColorPicker"
+import ColorInverter from "../../../utils/ColorInverter"
+import RgbToHex from "../../../utils/RGBToHex"
 // @ts-ignore
-import { ReactComponent as Triangle } from "../../assets/misc/triangle.svg"
+import { ReactComponent as Triangle } from "../../../assets/misc/triangle.svg"
 // @ts-ignore
-import { ReactComponent as ChangeShapeThrise } from "../../assets/icons/changeShapeThrise.svg"
+import { ReactComponent as ChangeShapeThrise } from "../../../assets/icons/changeShapeThrise.svg"
 
 const Shape = () => {
   const navigate = useNavigate()

@@ -2,7 +2,7 @@
 
 import React from "react"
 // @ts-ignore
-import { ReactComponent as Star } from "../../../assets/misc/star.svg"
+import { ReactComponent as Star } from "../../../../assets/misc/star.svg"
 
 const Differences = () => {
   return (
