@@ -40,7 +40,7 @@ const CategoryLayout = () => {
                 path={button.path}
                 CSS={`   ${
                   pathArray[1] === button.path ? " !bg-secondary" : ""
-                }   pb-0 pt-2 bg-transparent hover:bg-secondary hover:bg-#d68478  sm:hover:shadow-[0px_0px_12px_5px_rgba(_255,_114,_94,0.8)]  shadow-none [&>*]:text-base [&>*]:text-white !rounded-full  `}
+                }   pb-0 pt-2 bg-transparent  hover:bg-[#f78777]  sm:hover:shadow-[0px_0px_12px_5px_rgba(_255,_114,_94,0.8)]  shadow-none [&>*]:text-base [&>*]:text-white !rounded-full  `}
               >
                 <div></div>
               </Card>
