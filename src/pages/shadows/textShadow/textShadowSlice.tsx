@@ -59,13 +59,7 @@ const textShadowSlice = createSlice({
     setColor: (state, action: PayloadAction<string>) => {
       state.textShadowData[state.currentTab].settings.shadowColor = action.payload
     },
-    setPreset: (state, action: PayloadAction<textshadowSettings>) => {
-      let settings = {
-        ...action.payload,
-        shadowColor: state.textShadowData[state.currentTab].settings.shadowColor,
-      }
-      state.textShadowData[state.currentTab].settings = settings
-    },
+
     updateTextShadow: (state, action: PayloadAction<{ value: number; name: string }>) => {
       //@ts-ignore
       state.textShadowData[state.currentTab].settings[`${action.payload.name}`] =
@@ -117,7 +111,6 @@ export const {
   setTabPage,
   deleteTabPage,
   resetState,
-  setPreset,
   updateTextShadow,
   addTextShadow,
 } = textShadowSlice.actions

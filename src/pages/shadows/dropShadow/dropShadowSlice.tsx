@@ -58,13 +58,6 @@ const dropShadowSlice = createSlice({
     setColor: (state, action: PayloadAction<string>) => {
       state.dropShadowData[state.currentTab].settings.shadowColor = action.payload
     },
-    setPreset: (state, action: PayloadAction<dropshadowSettings>) => {
-      let settings = {
-        ...action.payload,
-        shadowColor: state.dropShadowData[state.currentTab].settings.shadowColor,
-      }
-      state.dropShadowData[state.currentTab].settings = settings
-    },
     updateDropShadow: (state, action: PayloadAction<{ value: number; name: string }>) => {
       //@ts-ignore
       state.dropShadowData[state.currentTab].settings[`${action.payload.name}`] =
@@ -116,7 +109,6 @@ export const {
   setTabPage,
   deleteTabPage,
   resetState,
-  setPreset,
   updateDropShadow,
   addDropShadow,
 } = dropShadowSlice.actions

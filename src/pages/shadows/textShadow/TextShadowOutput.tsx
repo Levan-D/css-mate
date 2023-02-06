@@ -78,39 +78,38 @@ const TextShadowOutput = () => {
         </div>,
       ],
     },
-    {
-      title: "Tailwind inline",
-      copy: `shadow-[${inlineStyleCopy}]`,
-      content: [<span className="text-orange-300">shadow-&#91;{inlineStyle}&#93;</span>],
-    },
-    {
-      title: "Tailwind extend",
-      copy: ` "${customStyleCopy}"`,
-      content: [
-        <div className="select-none text-slate-400">
-          <div className="select-none text-slate-400">module.exports =&#x2774;</div>
-          <div className="ml-4">theme: &#x2774;</div>
-          <div className="ml-8">extend: &#x2774;</div>
-          <div className="ml-12">textShadow: &#x2774;</div>
-          <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe]">
-              "custom"<span className="px-[4px] text-white">:</span>&nbsp;
-            </div>
-            <div className="text-orange-300">&#34;</div>
-            <div>{customStyle}</div>
-          </div>
-          <div className="ml-16">&#x2775;,</div>
-          <div className="ml-12">&#x2775;,</div>
-          <div className="ml-8">&#x2775;,</div>
-          <div className="ml-4">&#x2775;</div>
-        </div>,
-      ],
-    },
+    // {
+    //   title: "Tailwind inline",
+    //   copy: `shadow-[${inlineStyleCopy}]`,
+    //   content: [<span className="text-orange-300">shadow-&#91;{inlineStyle}&#93;</span>],
+    // },
+    // {
+    //   title: "Tailwind extend",
+    //   copy: ` "${customStyleCopy}"`,
+    //   content: [
+    //     <div className="select-none text-slate-400">
+    //       <div className="select-none text-slate-400">module.exports =&#x2774;</div>
+    //       <div className="ml-4">theme: &#x2774;</div>
+    //       <div className="ml-8">extend: &#x2774;</div>
+    //       <div className="ml-12">textShadow: &#x2774;</div>
+    //       <div className="ml-16 flex select-text ">
+    //         <div className="text-[#9cdcfe]">
+    //           "custom"<span className="px-[4px] text-white">:</span>&nbsp;
+    //         </div>
+    //         <div className="text-orange-300">&#34;</div>
+    //         <div>{customStyle}</div>
+    //       </div>
+    //       <div className="ml-16">&#x2775;,</div>
+    //       <div className="ml-12">&#x2775;,</div>
+    //       <div className="ml-8">&#x2775;,</div>
+    //       <div className="ml-4">&#x2775;</div>
+    //     </div>,
+    //   ],
+    // },
   ]
   return (
     <div>
       <Output renderArray={renderArray} />
-      <div className="   text-shadow-sm">a s d f b</div>
     </div>
   )
 }

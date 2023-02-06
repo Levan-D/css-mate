@@ -1,57 +1,20 @@
 /** @format */
 
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import { selectTextShadowStyle } from "./textShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
 import moon from "../../../assets/icons/moon.png"
 import sun from "../../../assets/icons/sun.png"
-import { btnResponse } from "./Data"
-import { useNavigate } from "react-router-dom"
+
 import ColorPicker from "../../../components/ColorPicker"
-import ColorInverter from "../../../utils/ColorInverter"
-import RgbToHex from "../../../utils/RGBToHex"
-// @ts-ignore
-import { ReactComponent as ChangeShape } from "../../../assets/icons/changeShape.svg"
 
 const Shape = () => {
-  const navigate = useNavigate()
   const [shapeColor, setShapeColor] = useState("94,161,255")
   const textShadowStyle = useAppSelector(selectTextShadowStyle).join(",")
-  console.log(textShadowStyle)
   const [darkmode, setDarkmode] = useState<boolean>(true)
-  const [shape, setShape] = useState<boolean>(true)
-  const [btnContent, setBtnContent] = useState<string>("I am a button")
-  const btnIndex = useRef(0)
-  const btnActive = useRef(false)
 
   const handleColorPick = (color: string) => {
     setShapeColor(color.replace(/ /g, ""))
-  }
-
-  const handleMouseDown = () => {
-    if (btnActive.current === false) {
-      setBtnContent(() => btnResponse[btnIndex.current])
-      btnIndex.current = btnIndex.current + 1
-      btnActive.current = true
-    }
-  }
-  const handleMouseUp = () => {
-    if (btnActive.current === true) {
-      if (btnResponse[btnIndex.current] === "1") {
-        navigate("/rekt")
-      }
-      setBtnContent(() => "I am a button")
-      btnActive.current = false
-    }
-  }
-  const handleMouseOut = () => {
-    if (btnActive.current === true) {
-      if (btnResponse[btnIndex.current] === "1") {
-        navigate("/rekt")
-      }
-      setBtnContent(() => "I am a button")
-      btnActive.current = false
-    }
   }
 
   return (
@@ -81,39 +44,14 @@ const Shape = () => {
       <div
         style={{
           textShadow: textShadowStyle,
-          backgroundColor: `rgb(${shapeColor})`,
+          color: `rgb(${shapeColor})`,
         }}
-        onClick={() => {
-          setShape(x => !x)
-        }}
-        className={` ${shape ? "rounded-xl" : "rounded-full"} ${
-          darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary-300"
-        }    mx-auto mb-4  h-[250px]  w-[250px] cursor-pointer select-none border-2  border-transparent `}
+        className={`   mx-auto mb-4    w-80 select-none text-center text-4xl font-bold`}
       >
-        dasdasdadas
-        <ChangeShape
-          height={72}
-          width={72}
-          stroke={ColorInverter(RgbToHex(shapeColor), `bw`)}
-          className="mx-auto mt-[89px]"
-        />
+        “You is kind. You is smart. You is important.”
       </div>
       {/* shape */}
-      {/* spicey button */}
-      <div
-        style={{
-          textShadow: textShadowStyle,
-          backgroundColor: `rgb(${shapeColor})`,
-          color: ColorInverter(RgbToHex(shapeColor), `bw`),
-        }}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseOut={handleMouseOut}
-        className={`btnPrimary  mx-auto mt-8 transition-transform active:translate-y-[-10px]`}
-      >
-        {btnContent}
-      </div>
-      {/* spicey button */}
+
       {/* bottom padding for flexbox to work @me */}
       <div className=" h-6 md:h-20  "></div>
       {/* bottom padding for flexbox to work @me */}

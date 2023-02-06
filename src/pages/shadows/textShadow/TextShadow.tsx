@@ -27,7 +27,7 @@ const TextShadow = () => {
       <div className="mb-8 text-center font-cursiveCustom text-base">
         Scroll below for tips & tricks
       </div>
-      <TableOfContents tableOfContets={tableOfContets} />
+      {/* <TableOfContents tableOfContets={tableOfContets} /> */}
       <div
         id="Text shadow"
         className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-2 lg:gap-36 "
@@ -38,9 +38,7 @@ const TextShadow = () => {
         </div>
       </div>
       <TextShadowOutput />
-      <div className="mt-20">
-        <Tips />
-      </div>
+      <div className="mt-20">{/* <Tips /> */}</div>
     </div>
   )
 }
