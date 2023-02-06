@@ -1,10 +1,10 @@
 /** @format */
 
 import React from "react"
-import Output from "../../components/wrappers/Output"
+import Output from "../../../components/wrappers/Output"
 import { selectBoxShadowStyle } from "./boxShadowSlice"
-import { useAppSelector } from "../../app/hooks"
-import { OutputRenderArrayType } from "../../components/wrappers/WrapperTypes"
+import { useAppSelector } from "../../../app/hooks"
+import { OutputRenderArrayType } from "../../../components/wrappers/WrapperTypes"
 
 const BoxShadowOutput = () => {
   const boxShadowStyle = useAppSelector(selectBoxShadowStyle)

@@ -4,10 +4,10 @@ import React, { useState, memo } from "react"
 import { boxShadowPresets } from "../Data"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
-import { useAppDispatch, useAppSelector } from "../../../app/hooks"
-import TabsNConditions from "../../../components/wrappers/TabsNConditions"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import TabsNConditions from "../../../../components/wrappers/TabsNConditions"
 import { setPreset, resetState } from "../boxShadowSlice"
-import ShadowStyleGenerator from "../../../utils/ShadowStyleGenerator"
+import ShadowStyleGenerator from "../../../../utils/ShadowStyleGenerator"
 
 const Presets = memo(() => {
   const dispatch = useAppDispatch()

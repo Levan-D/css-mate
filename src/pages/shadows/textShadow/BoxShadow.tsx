@@ -5,7 +5,7 @@ import Shape from "./Shape"
 import BoxShadowOutput from "./BoxShadowOutput"
 import BoxShadowSidemenu from "./boxShadowSidemenu/BoxShadowSidemenu"
 import Tips from "./tips/Tips"
-import TableOfContents from "../../components/TableOfContents"
+import TableOfContents from "../../../components/TableOfContents"
 
 const BoxShadow = () => {
   const tableOfContets = [
@@ -21,8 +21,8 @@ const BoxShadow = () => {
   return (
     <div className=" my-16 mx-4">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Generate <span className="text-secondary-300">box shadows</span> for your project with
-        ease
+        Generate <span className="text-secondary-300">box shadows</span> for your project
+        with ease
       </h1>
       <div className="mb-8 text-center font-cursiveCustom text-base">
         Scroll below for tips & tricks

@@ -1,9 +1,9 @@
 /** @format */
 
 import React from "react"
-import SideMenu from "../../../components/wrappers/SideMenu"
-import { useAppDispatch, useAppSelector } from "../../../app/hooks"
-import ColorPicker from "../../../components/ColorPicker"
+import SideMenu from "../../../../components/wrappers/SideMenu"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import ColorPicker from "../../../../components/ColorPicker"
 import Presets from "./Presets"
 import {
   setColor,
@@ -15,7 +15,7 @@ import {
   addBoxShadow,
 } from "../boxShadowSlice"
 import Sliders from "./Sliders"
-import TabsNConditions from "../../../components/wrappers/TabsNConditions"
+import TabsNConditions from "../../../../components/wrappers/TabsNConditions"
 
 const BoxShadowSidemenu = () => {
   const dispatch = useAppDispatch()

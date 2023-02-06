@@ -2,7 +2,7 @@
 
 import React from "react"
 // @ts-ignore
-import { ReactComponent as ArrowIcon } from "../../../assets/misc/arrow.svg"
+import { ReactComponent as ArrowIcon } from "../../../../assets/misc/arrow.svg"
 
 const Basics = () => {
   return (

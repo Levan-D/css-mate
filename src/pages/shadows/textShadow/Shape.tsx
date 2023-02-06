@@ -2,16 +2,16 @@
 
 import React, { useState, useRef } from "react"
 import { selectBoxShadowStyle } from "./boxShadowSlice"
-import { useAppSelector } from "../../app/hooks"
-import moon from "../../assets/icons/moon.png"
-import sun from "../../assets/icons/sun.png"
+import { useAppSelector } from "../../../app/hooks"
+import moon from "../../../assets/icons/moon.png"
+import sun from "../../../assets/icons/sun.png"
 import { btnResponse } from "./Data"
 import { useNavigate } from "react-router-dom"
-import ColorPicker from "../../components/ColorPicker"
-import ColorInverter from "../../utils/ColorInverter"
-import RgbToHex from "../../utils/RGBToHex"
+import ColorPicker from "../../../components/ColorPicker"
+import ColorInverter from "../../../utils/ColorInverter"
+import RgbToHex from "../../../utils/RGBToHex"
 // @ts-ignore
-import { ReactComponent as ChangeShape } from "../../assets/icons/changeShape.svg"
+import { ReactComponent as ChangeShape } from "../../../assets/icons/changeShape.svg"
 
 const Shape = () => {
   const navigate = useNavigate()
