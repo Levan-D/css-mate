@@ -8,7 +8,7 @@ export type CurrentValueType = {
   opacity: number
 }
 
-export type boxShadowPresetsType = {
+export type textShadowPresetsType = {
   name: string
   presets: {
     titile: string

@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useRef } from "react"
-import { selectBoxShadowStyle } from "./boxShadowSlice"
+import { selectTextShadowStyle } from "./textShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
 import moon from "../../../assets/icons/moon.png"
 import sun from "../../../assets/icons/sun.png"
@@ -16,8 +16,8 @@ import { ReactComponent as ChangeShape } from "../../../assets/icons/changeShape
 const Shape = () => {
   const navigate = useNavigate()
   const [shapeColor, setShapeColor] = useState("94,161,255")
-  const boxShadowStyle = useAppSelector(selectBoxShadowStyle)
-  console.log(boxShadowStyle)
+  const textShadowStyle = useAppSelector(selectTextShadowStyle)
+
   const [darkmode, setDarkmode] = useState<boolean>(true)
   const [shape, setShape] = useState<boolean>(true)
   const [btnContent, setBtnContent] = useState<string>("I am a button")
@@ -80,7 +80,7 @@ const Shape = () => {
       {/* shape */}
       <div
         style={{
-          boxShadow: boxShadowStyle,
+          textShadow: textShadowStyle,
           backgroundColor: `rgb(${shapeColor})`,
         }}
         onClick={() => {
@@ -90,6 +90,7 @@ const Shape = () => {
           darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary-300"
         }    mx-auto mb-4  h-[250px]  w-[250px] cursor-pointer select-none border-2  border-transparent `}
       >
+        dasdasdadas
         <ChangeShape
           height={72}
           width={72}
@@ -101,7 +102,7 @@ const Shape = () => {
       {/* spicey button */}
       <div
         style={{
-          boxShadow: boxShadowStyle,
+          textShadow: textShadowStyle,
           backgroundColor: `rgb(${shapeColor})`,
           color: ColorInverter(RgbToHex(shapeColor), `bw`),
         }}

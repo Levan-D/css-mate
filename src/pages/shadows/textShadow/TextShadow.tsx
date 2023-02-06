@@ -2,14 +2,14 @@
 
 import React from "react"
 import Shape from "./Shape"
-import BoxShadowOutput from "./BoxShadowOutput"
-import BoxShadowSidemenu from "./boxShadowSidemenu/BoxShadowSidemenu"
+import TextShadowSidemenu from "./textShadowSidemenu/TextShadowSidemenu"
+import TextShadowOutput from "./TextShadowOutput"
 import Tips from "./tips/Tips"
 import TableOfContents from "../../../components/TableOfContents"
 
-const BoxShadow = () => {
+const TextShadow = () => {
   const tableOfContets = [
-    "Box shadow",
+    "Text shadow",
     "Tips & tricks",
     "Basics",
     "Multiple shadows",
@@ -21,7 +21,7 @@ const BoxShadow = () => {
   return (
     <div className=" my-16 mx-4">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Generate <span className="text-secondary-300">box shadows</span> for your project
+        Generate <span className="text-secondary-300">text shadows</span> for your project
         with ease
       </h1>
       <div className="mb-8 text-center font-cursiveCustom text-base">
@@ -29,15 +29,15 @@ const BoxShadow = () => {
       </div>
       <TableOfContents tableOfContets={tableOfContets} />
       <div
-        id="Box shadow"
+        id="Text shadow"
         className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-2 lg:gap-36 "
       >
-        <BoxShadowSidemenu />
+        <TextShadowSidemenu />
         <div>
           <Shape />
         </div>
       </div>
-      <BoxShadowOutput />
+      <TextShadowOutput />
       <div className="mt-20">
         <Tips />
       </div>
@@ -45,4 +45,4 @@ const BoxShadow = () => {
   )
 }
 
-export default BoxShadow
+export default TextShadow

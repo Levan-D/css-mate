@@ -16,8 +16,7 @@ import { ReactComponent as ChangeShape } from "../../../assets/icons/changeShape
 const Shape = () => {
   const navigate = useNavigate()
   const [shapeColor, setShapeColor] = useState("94,161,255")
-  const boxShadowStyle = useAppSelector(selectBoxShadowStyle)
-  console.log(boxShadowStyle)
+  const boxShadowStyle = useAppSelector(selectBoxShadowStyle).join()
   const [darkmode, setDarkmode] = useState<boolean>(true)
   const [shape, setShape] = useState<boolean>(true)
   const [btnContent, setBtnContent] = useState<string>("I am a button")

@@ -2,12 +2,12 @@
 
 import React from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import { updateBoxShadow } from "../boxShadowSlice"
+import { updateTextShadow } from "../textShadowSlice"
 import ReactSlider from "react-slider"
 
 const Sliders = () => {
   const dispatch = useAppDispatch()
-  const { boxShadowData, currentTab } = useAppSelector(state => state.boxShadow)
+  const { textShadowData, currentTab } = useAppSelector(state => state.textShadow)
 
   const handlePropertyChange = (e: React.ChangeEvent<HTMLInputElement>, name: string) => {
     let value = Number(e.target.value)
@@ -16,7 +16,7 @@ const Sliders = () => {
       value = value * 100
     }
 
-    if (name === "vertical" || name === "horizontal" || name === "spread") {
+    if (name === "vertical" || name === "horizontal") {
       if (value > 150) {
         value = 150
       } else if (value < -150) {
@@ -37,7 +37,7 @@ const Sliders = () => {
     }
 
     dispatch(
-      updateBoxShadow({
+      updateTextShadow({
         value: value,
         name: name,
       })
@@ -46,10 +46,10 @@ const Sliders = () => {
 
   return (
     <div>
-      {boxShadowData.map((boxShadow, index) => (
+      {textShadowData.map((textShadow, index) => (
         <div key={index}>
           {currentTab === index &&
-            Object.entries(boxShadow.settings).map((property, i) => {
+            Object.entries(textShadow.settings).map((property, i) => {
               if (property[0] !== "shadowColor" && property[0] !== "inset") {
                 return (
                   <div key={i} className="menuBlock m-2 h-8 min-w-max p-2 pb-14 ">
@@ -93,9 +93,7 @@ const Sliders = () => {
                         trackClassName="customSlider-track"
                         thumbClassName="customSlider-thumb"
                         min={
-                          property[0] === "horizontal" ||
-                          property[0] === "vertical" ||
-                          property[0] === "spread"
+                          property[0] === "horizontal" || property[0] === "vertical"
                             ? -150
                             : 0
                         }
@@ -103,7 +101,7 @@ const Sliders = () => {
                         defaultValue={property[1]}
                         value={property[1]}
                         onChange={value =>
-                          dispatch(updateBoxShadow({ value: value, name: property[0] }))
+                          dispatch(updateTextShadow({ value: value, name: property[0] }))
                         }
                       />
                     </div>

@@ -114,10 +114,14 @@ export const selectBoxShadowTabs = createSelector(
 export const selectBoxShadowStyle = createSelector(
   (state: RootState) => state.boxShadow.boxShadowData,
   boxShadowData => {
-    let style = boxShadowData
-      .map(data => ShadowStyleGenerator(data.settings, data.settings.shadowColor))
-      .join(",")
-    return style
+    return boxShadowData.map(
+      data =>
+        `${data.settings.inset ? "inset" : ""} ${data.settings.horizontal}px ${
+          data.settings.vertical
+        }px ${data.settings.blur}px ${data.settings.spread}px rgba(${
+          data.settings.shadowColor
+        },${data.settings.opacity / 100})`
+    )
   }
 )
 

@@ -3,7 +3,6 @@
 import React, { ReactNode, useState } from "react"
 import type { OutputRenderArrayType } from "./WrapperTypes"
 import Tooltip from "../Tooltip"
-import { comment } from "postcss"
 
 type OutputProps = {
   renderArray: OutputRenderArrayType[]
@@ -29,13 +28,12 @@ const Output = ({ renderArray, comments }: OutputProps) => {
             </div>
           ))}
         </div>
-      {comments && comments.map((comment, index) => (  <h3 key={index} className="py-2 mx-4 text-center text-slate-300">
-          { comment.onActive === selectedBtn ? (
-            comment.comment
-          ) : (
-            <span>&#160;</span>
-          )}
-        </h3>))}
+        {comments &&
+          comments.map((comment, index) => (
+            <h3 key={index} className="mx-4 py-2 text-center text-slate-300">
+              {comment.onActive === selectedBtn ? comment.comment : ""}
+            </h3>
+          ))}
         <div className="menuContainer m-4">
           <div className="m-4 rounded-lg border-l-2 border-primary pt-3 pb-4 pl-4">
             {renderArray.map((item, index) => (
