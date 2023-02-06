@@ -54,12 +54,12 @@ const NeonGlow = () => {
         </li>
       </ol>
 
-      <div className="mx-auto mt-8 mb-16 w-fit rounded-xl bg-transparent px-12 py-14 text-white   shadow-[0px_0px_4px_0px_rgba(255,_255,_255,1),0px_0px_4px_0px_rgba(_255,_255,_255,1),0px_0px_36px_0px_rgba(_188,_19,_254,0.7),0px_0px_16px_0px_rgba(_188,_19,_254,1),0px_0px_50px_0px_rgba(_188,_19,_254,0.8),inset_0px_0px_24px_0px_rgba(_188,_19,_254,1)] ">
+      <div className="flickerBox    mx-auto mt-8 mb-16 w-fit rounded-xl  px-12 py-14 text-white    ">
         <blockquote>
-          <q className="   font-handWrittenT text-3xl drop-shadow-neonPurple ">
+          <q className="  flickerText flickerTextBefore  font-handWrittenT text-3xl ">
             There's no place like home.
           </q>
-          <p className="mt-6 text-right font-handWrittenT text-2xl  font-bold drop-shadow-neonPurple">
+          <p className="  flickerText flickerTextBefore mt-6 text-right font-handWrittenT  text-2xl font-bold">
             &mdash; Dorothy
           </p>
         </blockquote>
@@ -77,9 +77,6 @@ const NeonGlow = () => {
           <span className="pl-[4px] text-white ">;</span>
         </div>
       </div>
-
-      <div className="flicker">Hover over me</div>
-
     </section>
   )
 }
