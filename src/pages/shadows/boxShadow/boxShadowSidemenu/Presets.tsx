@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from "uuid"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import TabsNConditions from "../../../../components/wrappers/TabsNConditions"
 import { setPreset, resetState } from "../boxShadowSlice"
-import ShadowStyleGenerator from "../../../../utils/ShadowStyleGenerator"
 
 const Presets = memo(() => {
   const dispatch = useAppDispatch()
@@ -36,10 +35,11 @@ const Presets = memo(() => {
                 <div
                   key={index}
                   style={{
-                    boxShadow: ShadowStyleGenerator(
-                      preset.settings,
-                      boxShadowData[0].settings.shadowColor
-                    ),
+                    boxShadow: `${preset.settings.horizontal}px ${
+                      preset.settings.vertical
+                    }px ${preset.settings.blur}px rgba(${preset.settings.shadowColor},${
+                      preset.settings.opacity / 100
+                    })`,
                   }}
                   onClick={() => {
                     dispatch(resetState())

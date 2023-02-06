@@ -12,7 +12,7 @@ type OutputProps = {
 const Output = ({ renderArray, comments }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
-    <div className=" mx-auto h-fit rounded-xl border-2 border-white sm:w-[500px] md:w-[600px] ">
+    <div className=" mx-auto h-fit rounded-xl border-2 border-white sm:w-[500px] md:w-[600px]  ">
       <div>
         <div className="menuHeader flex justify-center gap-4 ">
           {renderArray.map((item, index) => (

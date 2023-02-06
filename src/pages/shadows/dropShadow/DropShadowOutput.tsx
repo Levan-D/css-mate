@@ -7,96 +7,103 @@ import { OutputRenderArrayType } from "../../../components/wrappers/WrapperTypes
 import { selectDropShadowStyle } from "./dropShadowSlice"
 
 const DropShadowOutput = () => {
-  const dropShadowRender = useAppSelector(selectDropShadowStyle)
+  const dropShadowStyle = useAppSelector(selectDropShadowStyle)
 
-  function transfromInline(string: string) {
-    const array = string.split(") ")
-    let newString
-    if (array.length === 1) {
-      newString = array[0]
-    } else newString = array[0] + ")"
-    newString = newString.replace(/drop-shadow/, "drop-shadow-")
-    newString = newString.replace(/\s+/g, "_")
-    newString = newString.replace(/\(/, "[").replace(/\)(?!.*\))/, "]")
+  const vanillaStyle = (
+    <div>
+      {dropShadowStyle.map((x, i) => (
+        <div key={i} className="text-[#afcdb2]">
+          drop-shadow({x})
+          {dropShadowStyle.length === i + 1 ? (
+            <span className="pl-[4px] text-white ">;</span>
+          ) : (
+            ""
+          )}
+        </div>
+      ))}
+    </div>
+  )
+  const vanillaStyleCopy = dropShadowStyle.map(x => `drop-shadow(${x})`).join(" ")
 
-    return newString
-  }
+  const inlineStyle = (
+    <div className="sm:ml-20">
+      <div className="text-orange-300">
+        {dropShadowStyle[0].replace(/ /g, "_").replace(/^_/, "")}
+      </div>
+    </div>
+  )
+  const inlineStyleCopy = `filter drop-shadow-[${dropShadowStyle[0]
+    .replace(/ /g, "_")
+    .replace(/^_/, "")}]`
 
-  function transformExtend(string: string) {
-    const array = string.split(") ")
-
-    const newArray = array
-      .map((x, i) => {
-        let newString
-        if (array.length === i + 1) {
-          newString = x
-        } else newString = x + ")"
-        return `"${newString
-          .replace(/drop-shadow/, "")
-          .replace(/\(/, "")
-          .replace(/\)(?!.*\))/, "")}"`
-      })
-      .join(", ")
-
-    return array.length === 1 ? newArray : `[${newArray}]`
-  }
+  const customStyle = (
+    <div>
+      {dropShadowStyle.length > 1 && <div>&#91;</div>}
+      {dropShadowStyle.map((x, i) => (
+        <div key={i} className="text-orange-300">
+          &#39;{x}&#39;
+          {dropShadowStyle.length === i + 1 ? (
+            ""
+          ) : (
+            <span className="pl-[4px] text-slate-400 ">,</span>
+          )}
+        </div>
+      ))}
+      {dropShadowStyle.length > 1 && <div>&#93;</div>}
+    </div>
+  )
+  const customStyleCopy = `${dropShadowStyle.length > 1 ? "[" : ""}${dropShadowStyle
+    .map(x => `'${x}'`)
+    .join()}${dropShadowStyle.length > 1 ? "]" : ""}`
 
   const renderArray: OutputRenderArrayType[] = [
     {
       title: "Vanilla",
-      copy: `filter: ${dropShadowRender};
-    `,
+      copy: `filter: ${vanillaStyleCopy};`,
       content: [
-        <>
-          <span className="text-blue-300">
+        <div className="mb-4 flex">
+          <div className="basis-1/4 text-[#9cdcfe]">
             filter<span className="px-[4px] text-white">:</span>
-          </span>
-          <span className="text-green-300">
-            {dropShadowRender}
-            <span className="pl-[4px] text-white ">;</span>
-          </span>
-        </>,
+          </div>
+          <div>{vanillaStyle}</div>
+        </div>,
       ],
     },
     {
       title: "Tailwind inline",
-      copy: `filter ${transfromInline(dropShadowRender)}`,
+      copy: `${inlineStyleCopy}`,
       content: [
         <span className="text-orange-300">
-          filter &#32;
-          {transfromInline(dropShadowRender)}
+          filter drop-shadow-&#91;{inlineStyle}&#93;
         </span>,
       ],
     },
     {
       title: "Tailwind extend",
-      copy: ` ${transformExtend(dropShadowRender)}`,
+      copy: `${customStyleCopy}`,
       content: [
-        <span className="select-none text-slate-400">
-          module.exports = &#x2774; <br /> &nbsp;&nbsp;&nbsp;theme: &#x2774; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extend: &#x2774; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dropShadow: &#x2774;
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span className=" select-text   ">
-            <span className="text-blue-300">
+        <div className="select-none text-slate-400">
+          <div className="select-none text-slate-400">module.exports =&#x2774;</div>
+          <div className="ml-4">theme: &#x2774;</div>
+          <div className="ml-8">extend: &#x2774;</div>
+          <div className="ml-12">dropShadow: &#x2774;</div>
+          <div className="ml-16 flex select-text ">
+            <div className="text-[#9cdcfe]">
               "custom"<span className="px-[4px] text-white">:</span>&nbsp;
-            </span>
-            <span className="text-orange-300">
-              {transformExtend(dropShadowRender)}
-              <span className="pl-[4px] text-white">,</span>
-            </span>
-          </span>
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#x2775; <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#x2775; , <br />
-          &nbsp;&nbsp;&nbsp; &#x2775; , <br /> &#x2775;
-        </span>,
+            </div>
+
+            <div>{customStyle}</div>
+          </div>
+          <div className="ml-16">&#x2775;,</div>
+          <div className="ml-12">&#x2775;,</div>
+          <div className="ml-8">&#x2775;,</div>
+          <div className="ml-4">&#x2775;</div>
+        </div>,
       ],
     },
   ]
   return (
-    <div>
+    <div className="  drop-shadow-primaryDark filter ">
       <Output
         renderArray={renderArray}
         comments={[

@@ -5,7 +5,6 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../../app/store"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
-import ShadowStyleGenerator from "../../../utils/ShadowStyleGenerator"
 
 interface textshadowSettings {
   horizontal: number

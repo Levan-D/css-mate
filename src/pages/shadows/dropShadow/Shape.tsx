@@ -18,12 +18,15 @@ import { ReactComponent as ChangeShapeThrise } from "../../../assets/icons/chang
 const Shape = () => {
   const navigate = useNavigate()
   const [shapeColor, setShapeColor] = useState("94,161,255")
-  const dropShadowRender = useAppSelector(selectDropShadowStyle)
+  const dropShadowStyle = useAppSelector(selectDropShadowStyle)
   const [darkmode, setDarkmode] = useState(true)
   const [shape, setShape] = useState(0)
   const [btnContent, setBtnContent] = useState("I am a button")
   const btnIndex = useRef(0)
   const btnActive = useRef(false)
+
+  const dropShadowStyleMapped = dropShadowStyle.map(x => `drop-shadow(${x})`).join(" ")
+
   const handleColorPick = (color: string) => {
     setShapeColor(color.replace(/ /g, ""))
   }
@@ -60,7 +63,7 @@ const Shape = () => {
       setShape(x => x + 1)
     }
   }
-
+  console.log(dropShadowStyleMapped)
   return (
     <div
       className={` ${
@@ -89,7 +92,7 @@ const Shape = () => {
         <div onClick={handleShapeClick} className="grid grid-cols-1">
           <Triangle
             style={{
-              filter: dropShadowRender,
+              filter: dropShadowStyleMapped,
             }}
             stroke={ColorInverter(RgbToHex(shapeColor), `bw`)}
             fill={RgbToHex(shapeColor)}
@@ -106,7 +109,7 @@ const Shape = () => {
       ) : (
         <div
           style={{
-            filter: dropShadowRender,
+            filter: dropShadowStyleMapped,
             backgroundColor: `rgb(${shapeColor})`,
           }}
           onClick={handleShapeClick}
@@ -126,7 +129,7 @@ const Shape = () => {
       {/* spicey button */}
       <div
         style={{
-          filter: dropShadowRender,
+          filter: dropShadowStyleMapped,
           backgroundColor: `rgb(${shapeColor})`,
           color: ColorInverter(RgbToHex(shapeColor), `bw`),
         }}

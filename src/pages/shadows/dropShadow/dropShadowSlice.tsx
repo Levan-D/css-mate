@@ -5,7 +5,6 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../../app/store"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
-import ShadowStyleGenerator from "../../../utils/ShadowStyleGenerator"
 
 interface dropshadowSettings {
   horizontal: number
@@ -103,12 +102,12 @@ export const selectDropShadowTabs = createSelector(
 export const selectDropShadowStyle = createSelector(
   (state: RootState) => state.dropShadow.dropShadowData,
   dropShadowData => {
-    let style = dropShadowData
-      .map(data =>
-        ShadowStyleGenerator(data.settings, dropShadowData[0].settings.shadowColor)
-      )
-      .join(" ")
-    return style
+    return dropShadowData.map(
+      data =>
+        `${data.settings.horizontal}px ${data.settings.vertical}px ${
+          data.settings.blur
+        }px rgba(${data.settings.shadowColor},${data.settings.opacity / 100})`
+    )
   }
 )
 
