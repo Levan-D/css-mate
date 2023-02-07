@@ -4,14 +4,12 @@ import React, { useState, useRef, useEffect } from "react"
 import SendIcon from "../../assets/icons/send.png"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { askFloofGPT, pushUserResponse } from "./floofGPTSlice"
-import { useLocation } from "react-router-dom"
 
 const Input = () => {
-  const { isOpen, askFloofGPTStatus } = useAppSelector(state => state.floof)
+  const { isOpen, askFloofGPTStatus } = useAppSelector((state) => state.floof)
   const dispatch = useAppDispatch()
   const [inputText, setInputText] = useState("")
   const inputRef = useRef<HTMLInputElement>(null)
-  const location = useLocation()
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!askFloofGPTStatus.loading) {
@@ -37,7 +35,7 @@ const Input = () => {
             required
             ref={inputRef}
             value={inputText}
-            onChange={e => {
+            onChange={(e) => {
               setInputText(e.target.value)
             }}
             autoComplete="off"
