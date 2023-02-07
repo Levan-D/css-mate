@@ -64,8 +64,7 @@ const TextShadowOutput = () => {
     </div>
   )
   const customStyleCopy = textShadowStyle.join()
-  // [text-shadow:_0_12px_0_rgb(255_255_255_/_1)]
-  // [text-shadow:_0_12px_0_rgb(255_255_255_/_1),_0_-12px_0_rgb(255_255_255_/_1)]
+
   const renderArray: OutputRenderArrayType[] = [
     {
       title: "Vanilla",
@@ -92,7 +91,7 @@ const TextShadowOutput = () => {
       title: "Tailwind extend",
       copy: ` "${customStyleCopy}"`,
       content: [
-        <div className="select-none text-slate-400">
+        <div className="select-none text-slate-400 text-sm">
           <div className="select-none text-slate-400">
             module.exports =&#x2774;
           </div>
@@ -100,7 +99,7 @@ const TextShadowOutput = () => {
           <div className="ml-8">extend: &#x2774;</div>
           <div className="ml-12">textShadow: &#x2774;</div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe] basis-1/5 ">
+            <div className="basis-1/5 text-[#9cdcfe] ">
               "sm"<span className="px-[4px] text-white">:</span>&nbsp;
             </div>
             <div className="text-orange-300">
@@ -109,7 +108,7 @@ const TextShadowOutput = () => {
             </div>
           </div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe] basis-1/5">
+            <div className="basis-1/5 text-[#9cdcfe]">
               "DEFAULT"<span className="px-[4px] text-white">:</span>&nbsp;
             </div>
             <div className="text-orange-300">
@@ -118,7 +117,7 @@ const TextShadowOutput = () => {
             </div>
           </div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe] basis-1/5">
+            <div className="basis-1/5 text-[#9cdcfe]">
               "lg"<span className="px-[4px] text-white">:</span>&nbsp;
             </div>
             <div className="text-orange-300">
@@ -127,7 +126,7 @@ const TextShadowOutput = () => {
             </div>
           </div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe] basis-1/5">
+            <div className="basis-1/5 text-[#9cdcfe]">
               "custom"<span className="px-[4px] text-white">:</span>&nbsp;
             </div>
             <div className="text-orange-300">&#34;</div>
