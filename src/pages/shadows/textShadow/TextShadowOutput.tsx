@@ -100,7 +100,7 @@ const TextShadowOutput = () => {
           <div className="ml-8">extend: &#x2774;</div>
           <div className="ml-12">textShadow: &#x2774;</div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe]">
+            <div className="text-[#9cdcfe] basis-1/5 ">
               "sm"<span className="px-[4px] text-white">:</span>&nbsp;
             </div>
             <div className="text-orange-300">
@@ -109,7 +109,7 @@ const TextShadowOutput = () => {
             </div>
           </div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe]">
+            <div className="text-[#9cdcfe] basis-1/5">
               "DEFAULT"<span className="px-[4px] text-white">:</span>&nbsp;
             </div>
             <div className="text-orange-300">
@@ -118,7 +118,7 @@ const TextShadowOutput = () => {
             </div>
           </div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe]">
+            <div className="text-[#9cdcfe] basis-1/5">
               "lg"<span className="px-[4px] text-white">:</span>&nbsp;
             </div>
             <div className="text-orange-300">
@@ -127,7 +127,7 @@ const TextShadowOutput = () => {
             </div>
           </div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe]">
+            <div className="text-[#9cdcfe] basis-1/5">
               "custom"<span className="px-[4px] text-white">:</span>&nbsp;
             </div>
             <div className="text-orange-300">&#34;</div>
