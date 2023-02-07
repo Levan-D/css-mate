@@ -1,4 +1,5 @@
 /** @format */
+const plugin = require("tailwindcss/plugin")
 
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -42,6 +43,11 @@ module.exports = {
         primaryDark: "2px 3px 2px 0px rgba(255,255,255,0.30)",
         primaryBr: "2px 3px 2px 0px rgba(0,0,0,0.30)",
       },
+      textShadow: {
+        sm: "0 1px 2px var(--tw-shadow-color)",
+        DEFAULT: "0 2px 4px var(--tw-shadow-color)",
+        lg: "0 8px 16px var(--tw-shadow-color)",
+      },
     },
     fontFamily: {
       cursiveCustom: ["Carter One", "cursive"],
@@ -49,5 +55,17 @@ module.exports = {
       handWrittenT: ["Pacifico", "cursive"],
     },
   },
-  plugins: [require("prettier-plugin-tailwindcss")],
+  plugins: [
+    require("prettier-plugin-tailwindcss"),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      )
+    }),
+  ],
 }

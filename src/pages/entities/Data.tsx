@@ -103,6 +103,16 @@ export const EntitiesData: CatDisplayDataType[] = [
         description: "Right parenthesis",
       },
       {
+        character: <span>&#60;</span>,
+        hexadecimal: "&#60;",
+        description: "Less",
+      },
+      {
+        character: <span>&#62;</span>,
+        hexadecimal: "&#62;",
+        description: "More",
+      },
+      {
         character: <span>&#92;</span>,
         hexadecimal: "&#92;",
         description: "Backslash",
