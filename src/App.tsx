@@ -12,7 +12,7 @@ import Error from "./pages/error/Error"
 import Cursors from "./pages/cursors/Cursors"
 import Emojis from "./pages/emojis/Emojis"
 import Entities from "./pages/entities/Entities"
-import Gradient from "./pages/gradient/Gradient"
+import Gradient from "./pages/gradients/linearGradient/Gradient"
 import FloofGPTFull from "./components/floofGPT/FloofGPTFull"
 
 // layouts
