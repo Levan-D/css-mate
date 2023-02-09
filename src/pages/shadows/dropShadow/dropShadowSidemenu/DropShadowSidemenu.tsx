@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import SideMenu from "../../../../components/wrappers/SideMenu"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import ColorPicker from "../../../../components/ColorPicker"

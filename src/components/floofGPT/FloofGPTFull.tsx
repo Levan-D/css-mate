@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import Nav from "./Nav"
 import Input from "./Input"
 import Body from "./Body"

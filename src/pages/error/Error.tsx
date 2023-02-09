@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import errorKitty from "../../assets/error/error.png"
 
 const Error = () => {

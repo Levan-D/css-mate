@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import Output from "../../../components/wrappers/Output"
 import { selectBoxShadowStyle } from "./boxShadowSlice"
 import { useAppSelector } from "../../../app/hooks"

@@ -1,4 +1,6 @@
 /** @format */
+// @ts-ignore
+import { ReactComponent as ArrowIcon } from "../../../../assets/misc/arrow.svg"
 
 const Basics = () => {
   return (
@@ -6,14 +8,15 @@ const Basics = () => {
       <h3 className="mt-16 mb-4 font-cursiveCustom text-xl">Basics</h3>
 
       <p>
-        CSS filters are a powerful tool that allow you to apply visual effects to elements
-        on a web page. One of the most commonly used filters is the drop shadow, which
-        adds a shadow to an element to give it a three-dimensional look.
+        CSS filters are a powerful tool that allow you to apply visual effects
+        to elements on a web page. One of the most commonly used filters is the
+        drop shadow, which adds a shadow to an element to give it a
+        three-dimensional look.
       </p>
       <p className="mt-4">
-        It's worth noting that the filter property is widely supported across modern
-        browsers, but it may not be supported by older browsers. In such cases, you may
-        want to use the box-shadow property as a fallback.
+        It's worth noting that the filter property is widely supported across
+        modern browsers, but it may not be supported by older browsers. In such
+        cases, you may want to use the box-shadow property as a fallback.
       </p>
 
       <div className="mx-auto my-12 w-fit rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
@@ -30,38 +33,53 @@ const Basics = () => {
             <span className="pl-[4px] text-white ">&#41;;</span>
           </span>
         </p>
+        <div className=" mt-2 hidden md:flex">
+          <div className="w-fit translate-x-[360px]">
+            <div>
+              <ArrowIcon
+                height={26}
+                width={26}
+                stroke="#ff725e"
+                className={`mx-auto rotate-[-19deg] scale-x-[-1]`}
+              />
+            </div>
+            <p className=" rotate-[5deg] font-cursiveCustom text-sm font-bold">
+              optional
+            </p>
+          </div>
+        </div>
       </div>
 
       <ol className="mx-auto max-w-xl">
         <li className="mb-4 list-decimal font-bold">
           Horizontal offset:&#32;
           <span className="font-normal ">
-            This value sets the distance the shadow should be offset from the left of the
-            element. A positive value will move the shadow to the right, and a negative
-            value will move it to the left.
+            This value sets the distance the shadow should be offset from the
+            left of the element. A positive value will move the shadow to the
+            right, and a negative value will move it to the left.
           </span>
         </li>
         <li className="mb-4 list-decimal font-bold">
           Vertical offset:&#32;
           <span className="font-normal ">
-            This value sets the distance the shadow should be offset from the top of the
-            element. A positive value will move the shadow down, and a negative value will
-            move it up.
+            This value sets the distance the shadow should be offset from the
+            top of the element. A positive value will move the shadow down, and
+            a negative value will move it up.
           </span>
         </li>
         <li className="mb-4 list-decimal font-bold">
           Blur radius:&#32;
           <span className="font-normal ">
-            This value sets the amount of blur applied to the shadow. A higher value will
-            create a more diffuse shadow, while a lower value will create a sharper
-            shadow.
+            This value sets the amount of blur applied to the shadow. A higher
+            value will create a more diffuse shadow, while a lower value will
+            create a sharper shadow.
           </span>
         </li>
         <li className="mb-4 list-decimal font-bold">
           Shadow color:&#32;
           <span className="font-normal ">
-            This value sets the color of the shadow. This can be any valid CSS color
-            value, such as a hex code or a color name.
+            This value sets the color of the shadow. This can be any valid CSS
+            color value, such as a hex code or a color name.
           </span>
         </li>
       </ol>

@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect } from "react"
+import  { useState, useEffect } from "react"
 // @ts-ignore
 import { ReactComponent as ChevronIcon } from "../assets/icons/chevron.svg"
 

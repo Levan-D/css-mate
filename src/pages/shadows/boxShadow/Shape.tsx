@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useRef } from "react"
+import  { useState, useRef } from "react"
 import { selectBoxShadowStyle } from "./boxShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
 import moon from "../../../assets/icons/moon.png"

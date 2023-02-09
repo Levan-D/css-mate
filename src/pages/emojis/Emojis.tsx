@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import CatDisplay from "../../components/wrappers/CatDisplay"
 import { EmojisData } from "./Data"
 

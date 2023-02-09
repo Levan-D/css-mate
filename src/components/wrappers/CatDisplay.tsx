@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useMemo } from "react"
+import  { useState, useMemo } from "react"
 import { CatDisplayDataType } from "./WrapperTypes"
 import Tooltip from "../Tooltip"
 

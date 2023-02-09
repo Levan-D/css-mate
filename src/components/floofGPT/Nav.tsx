@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import FlooFGPTIcon from "../../assets/icons/floofGPT.png"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setIsOpen, setIsExpanded } from "./floofGPTSlice"

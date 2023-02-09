@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useRef, useEffect } from "react"
+import  { useRef, useEffect } from "react"
 import { useAppSelector } from "../../app/hooks"
 import FlooFGPTIcon from "../../assets/icons/floofGPT.png"
 import UserIcon from "../../assets/icons/user.png"

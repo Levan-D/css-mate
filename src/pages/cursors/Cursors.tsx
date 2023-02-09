@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import Card from "../../components/Card"
 import tailwindIcon from ".././../assets/icons/tailwind.png"
 import cssIcon from ".././../assets/icons/css.png"

@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react"
+import  { useState } from "react"
 import HexToRGB from "../utils/HexToRGB"
 
 type ColorPickerProps = { handleColorPick: (color: string) => void }

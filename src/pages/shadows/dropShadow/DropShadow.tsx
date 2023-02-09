@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import Shape from "./Shape"
 import DropShadowOutput from "./DropShadowOutput"
 import DropShadowSidemenu from "./dropShadowSidemenu/DropShadowSidemenu"

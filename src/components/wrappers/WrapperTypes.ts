@@ -1,5 +1,5 @@
 /** @format */
-import React, { ReactNode } from "react"
+import  { ReactNode } from "react"
 
 export type OutputRenderArrayType = {
   title: string

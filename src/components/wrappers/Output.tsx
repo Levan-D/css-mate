@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { ReactNode, useState } from "react"
+import  { ReactNode, useState } from "react"
 import type { OutputRenderArrayType } from "./WrapperTypes"
 import Tooltip from "../Tooltip"
 
