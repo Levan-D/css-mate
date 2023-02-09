@@ -97,7 +97,7 @@ const Shape = () => {
           <form action="">
             <select
               id="status"
-              className=" w-30 btnSecondary mb-1 cursor-pointer "
+              className=" w-30 btnSecondary bg-slate-400 mb-1 cursor-pointer "
               value={font}
               onChange={onFontChange}
               name="favColor"
