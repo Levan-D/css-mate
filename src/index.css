@@ -12,10 +12,10 @@
     @apply w-fit cursor-pointer select-none rounded-md bg-primary py-2 px-4  font-bold text-white shadow-primaryDark duration-200 active:brightness-90 sm:hover:brightness-110;
   }
   .btnSecondary {
-    @apply w-fit cursor-pointer  select-none rounded-md bg-blue-300 py-1  px-4 text-slate-900 !opacity-100 shadow-primaryDark duration-200 active:brightness-90 sm:hover:bg-blue-300 sm:hover:brightness-110;
+    @apply w-fit  cursor-pointer select-none rounded-md bg-blue-300 py-1 px-4 text-slate-900 !opacity-100 shadow-primaryDark duration-200 active:brightness-90 sm:hover:bg-blue-300 sm:hover:brightness-110;
   }
   .btnSecondaryFalse {
-    @apply bg-transparent text-white shadow-none sm:hover:brightness-100;
+    @apply rounded-lg bg-transparent text-white shadow-[inset_0px_0px_0px_1px_rgba(255,255,255,1),2px_3px_2px_0px_rgba(255,_255,_255,0.3)] hover:bg-transparent;
   }
   .menuHeader {
     @apply rounded-t-lg border-b-2 border-darkJungle-500 bg-darkJungle-600 font-semibold;
@@ -124,6 +124,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  box-sizing: border-box;
 }
 
 :root {
