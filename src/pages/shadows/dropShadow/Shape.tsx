@@ -63,7 +63,7 @@ const Shape = () => {
       setShape(x => x + 1)
     }
   }
-  console.log(dropShadowStyleMapped)
+
   return (
     <div
       className={` ${

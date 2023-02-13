@@ -11,6 +11,9 @@
   .btnPrimary {
     @apply w-fit cursor-pointer select-none rounded-md bg-primary py-2 px-4  font-bold text-white shadow-primaryDark duration-200 active:brightness-90 sm:hover:brightness-110;
   }
+  .btnPrimaryDisabled {
+    @apply w-fit cursor-pointer select-none rounded-md bg-slate-400 py-2 px-4  font-bold text-slate-800 shadow-primaryDark duration-200 active:brightness-90 sm:hover:brightness-110;
+  }
   .btnSecondary {
     @apply w-fit  cursor-pointer select-none rounded-md bg-blue-300 py-1 px-4 text-slate-900 !opacity-100 shadow-primaryDark duration-200 active:brightness-90 sm:hover:bg-blue-300 sm:hover:brightness-110;
   }

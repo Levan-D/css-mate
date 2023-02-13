@@ -1,11 +1,8 @@
 /** @format */
-import { useAppSelector } from "../../../app/hooks";
-import { selectLinearGradientStyle } from "./linearGradientSlice";
+
 import LinearGradientSidemenu from "./linearGradientSidemenu/LinearGradientSidemenu";
 
 const LinearGradient = () => {
-  const bleh = useAppSelector(selectLinearGradientStyle);
-  console.log("bleh:", bleh);
   return (
     <div className="my-16 mx-4   ">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">

@@ -1,14 +1,14 @@
 /** @format */
 
-import React from "react"
-import Output from "../../../components/wrappers/Output"
-import { selectTextShadowStyle } from "./textShadowSlice"
-import { useAppSelector } from "../../../app/hooks"
-import { OutputRenderArrayType } from "../../../components/wrappers/WrapperTypes"
+import React from "react";
+import Output from "../../../components/wrappers/Output";
+import { selectTextShadowStyle } from "./textShadowSlice";
+import { useAppSelector } from "../../../app/hooks";
+import { OutputRenderArrayType } from "../../../components/wrappers/WrapperTypes";
 
 const TextShadowOutput = () => {
-  const textShadowStyle = useAppSelector(selectTextShadowStyle)
-  console.log(textShadowStyle)
+  const textShadowStyle = useAppSelector(selectTextShadowStyle);
+
   const vanillaStyle = (
     <div>
       {textShadowStyle.map((x, i) => (
@@ -22,8 +22,8 @@ const TextShadowOutput = () => {
         </div>
       ))}
     </div>
-  )
-  const vanillaStyleCopy = textShadowStyle.join()
+  );
+  const vanillaStyleCopy = textShadowStyle.join();
 
   const inlineStyle = (
     <div className="sm:ml-20">
@@ -38,11 +38,11 @@ const TextShadowOutput = () => {
         </div>
       ))}
     </div>
-  )
+  );
 
   const inlineStyleCopy = textShadowStyle
     .map((x) => x.replace(/ /g, "_").replace(/^_/, ""))
-    .join()
+    .join();
 
   const customStyle = (
     <div>
@@ -62,8 +62,8 @@ const TextShadowOutput = () => {
         </div>
       ))}
     </div>
-  )
-  const customStyleCopy = textShadowStyle.join()
+  );
+  const customStyleCopy = textShadowStyle.join();
 
   const renderArray: OutputRenderArrayType[] = [
     {
@@ -91,7 +91,7 @@ const TextShadowOutput = () => {
       title: "Tailwind extend",
       copy: ` "${customStyleCopy}"`,
       content: [
-        <div className="select-none text-slate-400 text-sm">
+        <div className="select-none text-sm text-slate-400">
           <div className="select-none text-slate-400">
             module.exports =&#x2774;
           </div>
@@ -139,7 +139,7 @@ const TextShadowOutput = () => {
         </div>,
       ],
     },
-  ]
+  ];
   return (
     <div>
       <Output
@@ -219,7 +219,7 @@ const TextShadowOutput = () => {
         ]}
       />
     </div>
-  )
-}
+  );
+};
 
-export default TextShadowOutput
+export default TextShadowOutput;

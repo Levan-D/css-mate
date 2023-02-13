@@ -1,10 +1,10 @@
 /** @format */
 
-import React from "react"
-import SideMenu from "../../../../components/wrappers/SideMenu"
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import ColorPicker from "../../../../components/ColorPicker"
-import Presets from "./Presets"
+import React from "react";
+import SideMenu from "../../../../components/wrappers/SideMenu";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
+import ColorPicker from "../../../../components/ColorPicker";
+import Presets from "./Presets";
 import {
   setColor,
   resetState as resetStateAction,
@@ -13,32 +13,34 @@ import {
   deleteTabPage,
   selectBoxShadowTabs,
   addBoxShadow,
-} from "../boxShadowSlice"
-import Sliders from "./Sliders"
-import TabsNConditions from "../../../../components/wrappers/TabsNConditions"
+} from "../boxShadowSlice";
+import Sliders from "./Sliders";
+import TabsNConditions from "../../../../components/wrappers/TabsNConditions";
 
 const BoxShadowSidemenu = () => {
-  const dispatch = useAppDispatch()
-  const { boxShadowData, currentTab } = useAppSelector(state => state.boxShadow)
-  const tabs = useAppSelector(selectBoxShadowTabs)
+  const dispatch = useAppDispatch();
+  const { boxShadowData, currentTab } = useAppSelector(
+    (state) => state.boxShadow
+  );
+  const tabs = useAppSelector(selectBoxShadowTabs);
 
   const resetState = (): void => {
-    dispatch(resetStateAction())
-  }
+    dispatch(resetStateAction());
+  };
 
   const handleColorPick = (color: string) => {
-    dispatch(setColor(color))
-  }
+    dispatch(setColor(color));
+  };
 
   const handleSetTabPage = (i: number) => {
-    dispatch(setTabPage(i))
-  }
+    dispatch(setTabPage(i));
+  };
   const handleTabDelete = (id: string) => {
-    dispatch(deleteTabPage(id))
-  }
+    dispatch(deleteTabPage(id));
+  };
   const handleAddBoxShadow = (id: string) => {
-    dispatch(addBoxShadow())
-  }
+    dispatch(addBoxShadow());
+  };
 
   return (
     <div>
@@ -60,7 +62,7 @@ const BoxShadowSidemenu = () => {
             <div
               onClick={() => dispatch(toggleInset())}
               className={`${
-                !boxShadowData[0].settings.inset && `!bg-slate-400 text-slate-800`
+                !boxShadowData[0].settings.inset && `btnPrimaryDisabled`
               } btnPrimary text-sm`}
             >
               Inner
@@ -72,7 +74,7 @@ const BoxShadowSidemenu = () => {
         <Presets />
       </SideMenu>
     </div>
-  )
-}
+  );
+};
 
-export default BoxShadowSidemenu
+export default BoxShadowSidemenu;
