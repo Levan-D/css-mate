@@ -45,8 +45,8 @@ export const pageButtons: pageButtonsType[] = [
     catPath: "gradients",
     catCon: [
       {
-        name: "Gradient",
-        path: "gradient",
+        name: "Linear Gradient",
+        path: "linear-gradient",
         icon: gradient,
       },
     ],
