@@ -4,13 +4,14 @@ import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import {
   resetState as resetStateAction,
   setType,
+  setKind,
 } from "../linearGradientSlice";
 
 const LinearGradientSidemenu = () => {
   const dispatch = useAppDispatch();
-  const { type } = useAppSelector((store) => store.linearGradient);
+  const { type, kind } = useAppSelector((store) => store.linearGradient);
   console.log("kind:", type.toLowerCase());
-  const kindBtns = ["Linear", "Radial", "Conic"];
+  const btnTypes = ["Linear", "Radial", "Conic"];
 
   const resetState = (): void => {
     dispatch(resetStateAction());
@@ -18,10 +19,10 @@ const LinearGradientSidemenu = () => {
 
   return (
     <div className="mx-auto w-fit">
-      <SideMenu title={`Linear Gradient config`} resetState={resetState}>
+      <SideMenu title={`Gradient config`} resetState={resetState}>
         <div className="menuContainer m-4  pb-4  ">
           <div className="menuBlock m-2 flex justify-around p-2">
-            {kindBtns.map((btn, i) => (
+            {btnTypes.map((btn, i) => (
               <div
                 key={i}
                 onClick={() => {
@@ -34,6 +35,28 @@ const LinearGradientSidemenu = () => {
                 {btn}
               </div>
             ))}
+          </div>
+          <div className="menuBlock m-2 flex justify-around p-2">
+            <div
+              onClick={() => {
+                dispatch(setKind("constant"));
+              }}
+              className={`${
+                kind === "constant" ? "btnPrimary" : "btnPrimaryDisabled"
+              } mt-1 mb-2 text-sm`}
+            >
+              Regular
+            </div>
+            <div
+              onClick={() => {
+                dispatch(setKind("repeating"));
+              }}
+              className={`${
+                kind === "repeating" ? "btnPrimary" : "btnPrimaryDisabled"
+              } mt-1 mb-2 text-sm`}
+            >
+              Repeating
+            </div>
           </div>
         </div>
       </SideMenu>

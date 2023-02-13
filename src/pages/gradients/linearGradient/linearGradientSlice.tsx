@@ -24,7 +24,7 @@ interface initialStateType {
 
 const initialState: initialStateType = {
   type: "Linear",
-  kind: "Linear",
+  kind: "constant",
   currentTab: 0,
   degree: `135deg`,
   radialShape: "circle",
@@ -56,6 +56,9 @@ const linearGradientSlice = createSlice({
     resetState: () => initialState,
     setType: (state, action: PayloadAction<string>) => {
       state.type = action.payload;
+    },
+    setKind: (state, action: PayloadAction<string>) => {
+      state.kind = action.payload;
     },
   },
 });
@@ -102,5 +105,5 @@ export const selectLinearGradientStyle = createSelector(
   }
 );
 
-export const { resetState, setType } = linearGradientSlice.actions;
+export const { resetState, setType, setKind } = linearGradientSlice.actions;
 export default linearGradientSlice.reducer;
