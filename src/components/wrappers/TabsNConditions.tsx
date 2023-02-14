@@ -40,7 +40,7 @@ const TabsNConditions = ({
                   }
                 }}
                 className={` ${
-                  i !== currentTab && "btnSecondaryFalse"
+                  i !== currentTab && "btnSecondaryDisabled"
                 }  btnSecondary    `}
               >
                 {tab.name}

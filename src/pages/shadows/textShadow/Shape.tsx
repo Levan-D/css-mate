@@ -11,9 +11,7 @@ import ColorPicker from "../../../components/ColorPicker"
 
 const Shape = () => {
   const [shapeColor, setShapeColor] = useState("94,161,255")
-  const [quote, setQuote] = useState(
-    quotes[Math.floor(Math.random() * quotes.length)]
-  )
+  const [quote, setQuote] = useState(quotes[Math.floor(Math.random() * quotes.length)])
   const [font, setFont] = useState("")
   const [textSize, setTextSize] = useState("4xl")
 
@@ -51,11 +49,9 @@ const Shape = () => {
         <div className="menuHeader flex justify-between">
           <div>
             <img
-              onClick={() => setDarkmode((x) => !x)}
+              onClick={() => setDarkmode(x => !x)}
               className={` ${
-                darkmode
-                  ? `sm:hover:border-white`
-                  : "sm:hover:border-secondary-300"
+                darkmode ? `sm:hover:border-white` : "sm:hover:border-secondary-300"
               } m-2 h-10 cursor-pointer rounded-full border-2  border-transparent duration-200`}
               src={darkmode ? moon : sun}
               alt="dark mode"
@@ -71,24 +67,24 @@ const Shape = () => {
             <div
               onClick={() => setTextSize(() => "2xl")}
               className={`  ${
-                textSize === "2xl" ? "btnSecondary" : " btnSecondaryFalse "
-              } mb-1 h-8  w-8 cursor-pointer  p-0  text-center text-sm font-bold leading-[32px]`}
+                textSize === "2xl" ? "btnSecondary" : " btnSecondaryDisabled "
+              } my-1 h-10  w-10 cursor-pointer  p-0  text-center text-sm font-bold leading-[40px]`}
             >
               S
             </div>
             <div
               onClick={() => setTextSize(() => "4xl")}
               className={`  ${
-                textSize === "4xl" ? "btnSecondary" : "btnSecondaryFalse"
-              } mb-1 h-8  w-8 cursor-pointer  p-0  text-center text-sm font-bold leading-[32px]`}
+                textSize === "4xl" ? "btnSecondary" : "btnSecondaryDisabled"
+              } my-1 h-10  w-10 cursor-pointer  p-0  text-center text-sm font-bold leading-[40px]`}
             >
               M
             </div>
             <div
               onClick={() => setTextSize(() => "6xl")}
               className={`  ${
-                textSize === "6xl" ? "btnSecondary" : "btnSecondaryFalse"
-              } mb-1 h-8  w-8 cursor-pointer  p-0  text-center text-sm font-bold leading-[32px]`}
+                textSize === "6xl" ? "btnSecondary" : "btnSecondaryDisabled"
+              } my-1 h-10  w-10 cursor-pointer  p-0  text-center text-sm font-bold leading-[40px]`}
             >
               L
             </div>
@@ -97,7 +93,7 @@ const Shape = () => {
           <form action="">
             <select
               id="status"
-              className=" w-30 btnSecondary bg-slate-400 mb-1 cursor-pointer "
+              className=" w-30 btnSecondary my-1 h-10  cursor-pointer bg-slate-400   "
               value={font}
               onChange={onFontChange}
               name="favColor"
@@ -117,7 +113,7 @@ const Shape = () => {
               type="text"
               required
               value={inputText}
-              onChange={(e) => {
+              onChange={e => {
                 setInputText(e.target.value)
               }}
               autoComplete="off"

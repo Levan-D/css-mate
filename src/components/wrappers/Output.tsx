@@ -19,8 +19,8 @@ const Output = ({ renderArray, comments }: OutputProps) => {
             <div key={index}>
               <div
                 className={` ${
-                  selectedBtn !== index && `btnSecondaryFalse `
-                } btnSecondary my-2 !box-border py-2 `}
+                  selectedBtn !== index && `btnSecondaryDisabled `
+                } btnSecondary my-2 !box-border  `}
                 onClick={() => setSelectedBtn(() => index)}
               >
                 {item.title}
@@ -40,10 +40,7 @@ const Output = ({ renderArray, comments }: OutputProps) => {
               <div key={index}>
                 {selectedBtn === index &&
                   item.content.map((contentItem, contentIndex) => (
-                    <div
-                      key={contentIndex}
-                      className="break-words text-sm md:text-base"
-                    >
+                    <div key={contentIndex} className="break-words text-sm md:text-base">
                       {contentItem}
                     </div>
                   ))}

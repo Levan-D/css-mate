@@ -1,6 +1,6 @@
 /** @format */
 
-// input rgb string  like: #a24949
+// input rgb string  like: 94,161,255
 
 function componentToHex(c: number) {
   const hex = c.toString(16)

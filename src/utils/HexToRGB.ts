@@ -1,6 +1,6 @@
 /** @format */
 
-// input hex string  like: 94,161,255
+// input hex string  like: #a24949
 
 export default function HexToRGB(hex: string): string {
   const r = parseInt(hex.slice(1, 3), 16)
