@@ -23,8 +23,10 @@ const LinearGradientSidemenu = () => {
       <SideMenu title={`Gradient config`} resetState={resetState} visibility={true}>
         <div className="menuContainer m-4  pb-4  ">
           <TypePicker />
-          <KindPicker />
-          {type === "radial" && <RadialOps />}
+          <div className="flex">
+            <KindPicker />
+            {type === "radial" && <RadialOps />}
+          </div>
           <StopsSlider />
           <StopsDisplay />
 

@@ -66,7 +66,7 @@ const StopsDisplay = () => {
               value={RgbToHex(stop.stop.color)}
               onChange={e => handleColorChange(e, i)}
               style={{ backgroundColor: `rgb(${stop.stop.color})` }}
-              className=" block h-10 w-10 cursor-pointer  rounded-md border-2 border-slate-400 "
+              className=" block h-10 w-10 cursor-pointer  rounded-md border-2 border-darkJungle-400 duration-200  sm:hover:border-slate-300"
             ></input>
             {/* color picker */}
             {/* hex color input */}
@@ -75,7 +75,7 @@ const StopsDisplay = () => {
               id="hexText"
               value={RgbToHex(stop.stop.color)}
               onChange={e => handleColorChange(e, i)}
-              className=" block h-10 w-20   rounded-md border-2 border-slate-400  bg-darkJungle-600 text-center  text-white  "
+              className=" block h-10 w-20   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600  text-center text-white  duration-200 sm:hover:border-slate-300  "
             ></input>
             {/* hex color input */}
 
@@ -85,7 +85,7 @@ const StopsDisplay = () => {
               value={stop.stop.opacity / 100}
               step={0.01}
               onChange={e => HandleOpacity(e, i)}
-              className=" block h-10 w-16  rounded-md border-2 border-slate-400  bg-darkJungle-600 text-center  text-white  "
+              className=" block h-10 w-16  rounded-md border-2 border-darkJungle-400 bg-darkJungle-600  text-center text-white  duration-200 sm:hover:border-slate-300  "
             />
             {/* opacity input */}
 
@@ -95,7 +95,7 @@ const StopsDisplay = () => {
               id="stopInput"
               value={stop.stop.percent}
               onChange={e => HandleStopPercentage(e, i)}
-              className=" block h-10 w-16  rounded-md border-2 border-slate-400  bg-darkJungle-600 text-center  text-white  "
+              className=" block h-10 w-16  rounded-md border-2 border-darkJungle-400 bg-darkJungle-600  text-center text-white  duration-200 sm:hover:border-slate-300  "
             ></input>
 
             {/* stop input */}

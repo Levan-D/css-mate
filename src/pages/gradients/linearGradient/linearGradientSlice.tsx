@@ -78,7 +78,21 @@ const linearGradientSlice = createSlice({
       state,
       action: PayloadAction<{ index: number; percent: number }>
     ) => {
-      state.stops[action.payload.index].stop.percent = action.payload.percent
+      let currentStop = action.payload.percent
+
+      let previousStop
+
+      if (action.payload.index > 0) {
+        previousStop = state.stops[action.payload.index - 1].stop.percent
+      } else previousStop = action.payload.percent
+
+      if (previousStop === currentStop + 1) {
+        currentStop = previousStop - 2
+      } else if (previousStop === currentStop - 1) {
+        currentStop = previousStop + 2
+      }
+
+      state.stops[action.payload.index].stop.percent = currentStop
     },
     addNewStop: state => {
       if (state.stops.length < 10) {
