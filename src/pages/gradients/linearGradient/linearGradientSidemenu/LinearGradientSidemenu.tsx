@@ -1,19 +1,8 @@
 /** @format */
 
-import { useState } from "react"
 import SideMenu from "../../../../components/wrappers/SideMenu"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import {
-  resetState as resetStateAction,
-  setType,
-  setKind,
-  setRadialShape,
-  setStopColor,
-  setStopOpacity,
-  setStopPercentage,
-  addNewStop,
-  deleteStop,
-} from "../linearGradientSlice"
+import { resetState as resetStateAction, addNewStop } from "../linearGradientSlice"
 
 import TypePicker from "./TypePicker"
 import KindPicker from "./KindPicker"
@@ -23,8 +12,7 @@ import RadialOps from "./RadialOps"
 
 const LinearGradientSidemenu = () => {
   const dispatch = useAppDispatch()
-  const { type, kind, radialShape, stops } = useAppSelector(store => store.linearGradient)
-  // repeating-linear-gradient(45deg, #3f87a6, #ebf8e1 15%, #f69d3c 20%);
+  const { type } = useAppSelector(store => store.linearGradient)
 
   const resetState = (): void => {
     dispatch(resetStateAction())

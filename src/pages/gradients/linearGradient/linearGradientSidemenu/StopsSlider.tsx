@@ -21,7 +21,7 @@ const StopsSlider = () => {
         min={0}
         max={100}
         snapDragDisabled
-        minDistance={5}
+        minDistance={1}
         // pearling
         defaultValue={stopArray}
         renderThumb={(props, state) => (
@@ -32,9 +32,8 @@ const StopsSlider = () => {
                 color: ColorInverter(RgbToHex(stops[state.index].stop.color), "bw"),
                 borderColor: ColorInverter(RgbToHex(stops[state.index].stop.color), "bw"),
               }}
-              className="w-10 translate-y-[-30px] translate-x-[-10px] rounded-lg border-2 bg-slate-300 text-center"
+              className="w-10 translate-y-[-30px] translate-x-[-10px] select-none rounded-lg border-2 bg-slate-300 text-center"
             >
-              {" "}
               {state.valueNow}
             </div>
           </div>
