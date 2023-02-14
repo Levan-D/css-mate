@@ -16,9 +16,13 @@ const RadialOps = () => {
         }}
         className={`${
           radialShape === "circle" ? "btnSecondary" : "btnSecondaryDisabled"
-        }   h-8  text-sm leading-4`}
+        }   h-8   text-sm leading-4`}
       >
-        <div className="h-6 w-6 translate-y-[-4px] rounded-full border-4"></div>
+        <div
+          className={` ${
+            radialShape === "circle" ? "border-slate-900" : ""
+          }   h-6 w-6  translate-y-[-4px] rounded-full border-[3px]`}
+        ></div>
       </div>
       <div
         onClick={() => {
@@ -28,7 +32,11 @@ const RadialOps = () => {
           radialShape === "ellipse" ? "btnSecondary" : "btnSecondaryDisabled"
         }   h-8  text-sm leading-4`}
       >
-        <div className="h-6 w-8 translate-y-[-4px] rounded-full  border-4"></div>
+        <div
+          className={` ${
+            radialShape === "ellipse" ? "border-slate-900" : ""
+          }   h-6 w-8  translate-y-[-4px] rounded-full border-[3px]`}
+        ></div>
       </div>
     </div>
   )
