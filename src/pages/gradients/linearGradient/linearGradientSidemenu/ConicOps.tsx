@@ -4,7 +4,7 @@ import React from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { setRadialShape } from "../linearGradientSlice"
 
-const RadialOps = () => {
+const ConicOps = () => {
   const dispatch = useAppDispatch()
   const { radialShape } = useAppSelector(store => store.linearGradient)
 
@@ -42,4 +42,4 @@ const RadialOps = () => {
   )
 }
 
-export default RadialOps
+export default ConicOps

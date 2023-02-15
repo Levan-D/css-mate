@@ -388,3 +388,9 @@ html {
       -8px 0px 8px rgba(188, 19, 254, 1);
   }
 }
+
+.removeArrow[type="number"]::-webkit-inner-spin-button,
+.removeArrow[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

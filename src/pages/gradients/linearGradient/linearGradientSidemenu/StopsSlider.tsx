@@ -9,11 +9,11 @@ import ColorInverter from "../../../../utils/ColorInverter"
 
 const StopsSlider = () => {
   const dispatch = useAppDispatch()
-  const { stops } = useAppSelector(store => store.linearGradient)
+  const { stops, offset } = useAppSelector(store => store.linearGradient)
   const stopArray = stops.map(stop => stop.stop.percent)
 
   return (
-    <div className="menuBlock m-2 p-2 pt-10 pb-6">
+    <div className="menuBlock m-2 p-2 pt-9 pb-6">
       <ReactSlider
         className="customSlider"
         trackClassName="customSlider-track"
@@ -21,7 +21,7 @@ const StopsSlider = () => {
         min={0}
         max={100}
         snapDragDisabled
-        minDistance={1}
+        minDistance={offset}
         // pearling
         defaultValue={stopArray}
         renderThumb={(props, state) => (

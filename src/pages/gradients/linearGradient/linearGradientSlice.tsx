@@ -10,9 +10,10 @@ interface initialStateType {
   type: string
   kind: string
   currentTab: number
-  degree: string
+  linearDegree: number
   radialShape: string
   conicFrom: string
+  offset: number
   stops: {
     id: string
     stop: {
@@ -27,9 +28,10 @@ const initialState: initialStateType = {
   type: "linear",
   kind: "constant",
   currentTab: 0,
-  degree: `135deg`,
+  linearDegree: 135,
   radialShape: "circle",
   conicFrom: "90deg",
+  offset: 1,
   stops: [
     {
       id: uuidv4(),
@@ -74,30 +76,17 @@ const linearGradientSlice = createSlice({
     ) => {
       state.stops[action.payload.index].stop.opacity = action.payload.opacity
     },
+    setLinearDegree: (state, action: PayloadAction<number>) => {
+      state.linearDegree = action.payload
+    },
     setStopPercentage: (
       state,
       action: PayloadAction<{ index: number; percent: number }>
     ) => {
-      let currentStop = action.payload.percent
-
-      let previousStop
-
-      if (action.payload.index > 0) {
-        previousStop = state.stops[action.payload.index - 1].stop.percent
-      } else previousStop = action.payload.percent
-
-      if (previousStop === currentStop + 1) {
-        currentStop = previousStop - 2
-      } else if (previousStop === currentStop - 1) {
-        currentStop = previousStop + 2
-      }
-
-      state.stops[action.payload.index].stop.percent = currentStop
+      state.stops[action.payload.index].stop.percent = action.payload.percent
     },
     addNewStop: state => {
       if (state.stops.length < 10) {
-        state.stops[state.stops.length - 1].stop.percent =
-          state.stops[state.stops.length - 1].stop.percent - 20
         state.stops.push({
           id: uuidv4(),
           stop: {
@@ -106,6 +95,12 @@ const linearGradientSlice = createSlice({
             opacity: 100,
           },
         })
+
+        for (let i = state.stops.length - 1; i > 0; i--) {
+          if (state.stops[i].stop.percent === state.stops[i - 1].stop.percent) {
+            state.stops[i - 1].stop.percent = state.stops[i - 1].stop.percent - 1
+          }
+        }
       } else return
     },
     deleteStop: (state, action: PayloadAction<string>) => {
@@ -117,16 +112,6 @@ const linearGradientSlice = createSlice({
   },
 })
 
-// export const selectBoxShadowTabs = createSelector(
-//   (state: RootState) => state.boxShadow,
-//   boxShadow =>
-//     boxShadow.boxShadowData.map((z, i) => ({
-//       name: z.tabName,
-//       id: z.id,
-//       index: i,
-//     }))
-// )
-
 export const selectLinearGradientStyle = createSelector(
   (state: RootState) => state.linearGradient,
   linearGradient => {
@@ -134,7 +119,7 @@ export const selectLinearGradientStyle = createSelector(
       linearGradient.type
     }-gradient(${
       linearGradient.type === "linear"
-        ? linearGradient.degree
+        ? linearGradient.linearDegree + `deg`
         : linearGradient.type === "radial"
         ? linearGradient.radialShape
         : `from ${linearGradient.conicFrom}`
@@ -157,5 +142,6 @@ export const {
   setStopPercentage,
   addNewStop,
   deleteStop,
+  setLinearDegree,
 } = linearGradientSlice.actions
 export default linearGradientSlice.reducer

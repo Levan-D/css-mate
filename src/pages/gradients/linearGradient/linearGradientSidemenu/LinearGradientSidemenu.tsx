@@ -8,7 +8,9 @@ import TypePicker from "./TypePicker"
 import KindPicker from "./KindPicker"
 import StopsDisplay from "./StopsDisplay"
 import StopsSlider from "./StopsSlider"
+import LinearOps from "./LinearOps"
 import RadialOps from "./RadialOps"
+import ConicOps from "./ConicOps"
 
 const LinearGradientSidemenu = () => {
   const dispatch = useAppDispatch()
@@ -25,7 +27,9 @@ const LinearGradientSidemenu = () => {
           <TypePicker />
           <div className="flex">
             <KindPicker />
+            {type === "linear" && <LinearOps />}
             {type === "radial" && <RadialOps />}
+            {type === "conic" && <ConicOps />}
           </div>
           <StopsSlider />
           <StopsDisplay />
