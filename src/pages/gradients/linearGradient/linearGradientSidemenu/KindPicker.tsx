@@ -9,7 +9,7 @@ const KindPicker = () => {
   const { kind } = useAppSelector(store => store.linearGradient)
 
   return (
-    <div className="menuBlock m-2 flex grow justify-between px-2 py-1">
+    <div className="menuBlock m-2 flex grow justify-around px-2 py-1">
       <div
         onClick={() => {
           dispatch(setKind("constant"))

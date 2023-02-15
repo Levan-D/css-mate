@@ -118,12 +118,12 @@ const StopsDisplay = () => {
   return (
     <div className="mt-4 max-h-[350px] overflow-y-auto">
       <div className="menuContainer mx-2  bg-slate-500 bg-opacity-10">
-        <div className="menuHeader flex   justify-between bg-slate-500 bg-opacity-10 px-4">
+        <div className="menuHeader flex    bg-slate-500 bg-opacity-10 px-4 pb-1">
           <div className="basis-[15%] text-center text-xs italic  text-slate-300 ">
             Color
           </div>
-          <div className="basis-[28%] text-center text-xs italic text-slate-300">HEX</div>
-          <div className="basis-[27%] text-center text-xs italic text-slate-300">
+          <div className="basis-[35%] text-center text-xs italic text-slate-300">HEX</div>
+          <div className="basis-[20%] text-center text-xs italic text-slate-300">
             Opacity
           </div>
           <div className="basis-[20%] text-center text-xs italic text-slate-300">
