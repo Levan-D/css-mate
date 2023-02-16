@@ -1,47 +1,32 @@
 /** @format */
 
-import React from "react"
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import { setType } from "../linearGradientSlice"
+import React from "react";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
+import { setType } from "../linearGradientSlice";
 
 const TypePicker = () => {
-  const dispatch = useAppDispatch()
-  const { type } = useAppSelector(store => store.linearGradient)
+  const dispatch = useAppDispatch();
+  const { type } = useAppSelector((store) => store.linearGradient);
+
+  const types = ["linear", "radial", "conic"];
 
   return (
     <div className="menuBlock m-2 flex justify-around px-2 py-1">
-      <div
-        onClick={() => {
-          dispatch(setType("linear"))
-        }}
-        className={`${
-          type === "linear" ? "btnSecondary" : "btnSecondaryDisabled"
-        }   h-8 text-sm leading-4`}
-      >
-        Linear
-      </div>
-      <div
-        onClick={() => {
-          dispatch(setType("radial"))
-        }}
-        className={`${
-          type === "radial" ? "btnSecondary  " : "btnSecondaryDisabled"
-        }  h-8 text-sm leading-4`}
-      >
-        Radial
-      </div>
-      <div
-        onClick={() => {
-          dispatch(setType("conic"))
-        }}
-        className={`${
-          type === "conic" ? "btnSecondary   " : "btnSecondaryDisabled"
-        }  h-8 text-sm leading-4`}
-      >
-        Conic
-      </div>
+      {types.map((btnType, i) => (
+        <div
+          key={i}
+          onClick={() => {
+            dispatch(setType(btnType));
+          }}
+          className={`${
+            type === btnType ? "btnSecondary" : "btnSecondaryDisabled"
+          }   h-8 text-sm leading-4`}
+        >
+          {btnType.charAt(0).toUpperCase() + btnType.slice(1)}
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default TypePicker
+export default TypePicker;
