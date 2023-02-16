@@ -30,7 +30,7 @@ const RadialOps = () => {
         <div
           className={` ${
             shape === "circle" ? "mx-1 h-5 w-5" : "h-5 w-7"
-          }  mt-[2px] translate-y-[-4px]  rounded-full border-[3px] border-slate-900`}
+          }  mt-[2px] translate-y-[-4px]  rounded-full border-2 border-slate-900`}
         ></div>
       </div>
       <div
