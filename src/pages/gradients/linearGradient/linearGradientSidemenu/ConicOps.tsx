@@ -8,7 +8,10 @@ import ReactSlider from "react-slider";
 const ConicOps = () => {
   const dispatch = useAppDispatch();
   const {
-    conicParams: { degree, x, y },
+    conicParams: {
+      degree,
+      coords: { x, y },
+    },
   } = useAppSelector((store) => store.linearGradient);
 
   const [coordsVisi, setCoordsVisi] = useState(false);

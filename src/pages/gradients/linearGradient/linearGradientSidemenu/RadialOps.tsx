@@ -8,7 +8,7 @@ import ReactSlider from "react-slider";
 const RadialOps = () => {
   const dispatch = useAppDispatch();
   const {
-    radialParams: { shape, x, y },
+    radialParams: { shape, coords },
   } = useAppSelector((store) => store.linearGradient);
 
   const [visibility, setVisibility] = useState(false);
@@ -41,7 +41,7 @@ const RadialOps = () => {
       </div>
 
       {visibility && (
-        <div className="menuBlock absolute z-50 w-32 translate-y-8 translate-x-8 gap-4 border-slate-500 bg-darkJungle-400 px-4  pb-8">
+        <div className="menuBlock absolute z-50 w-32 translate-y-8 translate-x-8 gap-4 border-slate-500 bg-darkJungle-400 px-4">
           <div className="flex  justify-end">
             <div
               className="z-50 cursor-pointer p-1 text-slate-300"
@@ -50,49 +50,32 @@ const RadialOps = () => {
               &#8634;
             </div>
           </div>
-          <div className="translate-y-[-18px]">
-            <div className="text-xs italic text-slate-300">x</div>
-            <ReactSlider
-              className="customSlider group"
-              trackClassName="customSlider-track"
-              thumbClassName="customSlider-thumb"
-              min={0}
-              max={100}
-              defaultValue={x}
-              renderThumb={(props, state) => (
-                <div style={{ background: "black" }} {...props}>
-                  <div className="w-10 translate-y-[-30px] translate-x-[-10px] select-none rounded-lg border-2 bg-darkJungle-700  text-center  sm:hidden sm:group-hover:block">
-                    {state.valueNow}
-                  </div>
-                </div>
-              )}
-              value={x}
-              onChange={(value) =>
-                dispatch(setRadialCoords({ x: value, y: y }))
-              }
-            />
-          </div>
-          <div>
-            <div className="text-xs italic text-slate-300">y</div>
-            <ReactSlider
-              className="customSlider group"
-              trackClassName="customSlider-track"
-              thumbClassName="customSlider-thumb"
-              min={0}
-              max={100}
-              defaultValue={y}
-              renderThumb={(props, state) => (
-                <div style={{ background: "black" }} {...props}>
-                  <div className="w-10 translate-y-[-30px] translate-x-[-10px] select-none rounded-lg border-2 bg-darkJungle-700  text-center  sm:hidden sm:group-hover:block">
-                    {state.valueNow}
-                  </div>
-                </div>
-              )}
-              value={y}
-              onChange={(value) =>
-                dispatch(setRadialCoords({ x: x, y: value }))
-              }
-            />
+
+          <div className="translate-y-[-12px]">
+            {Object.entries(coords).map((coord, i) => (
+              <div key={i} className="mb-6">
+                <div className="text-xs italic text-slate-300">{coord[0]}</div>
+                <ReactSlider
+                  className="customSlider group"
+                  trackClassName="customSlider-track"
+                  thumbClassName="customSlider-thumb"
+                  min={0}
+                  max={100}
+                  defaultValue={coord[1]}
+                  renderThumb={(props, state) => (
+                    <div style={{ background: "black" }} {...props}>
+                      <div className="w-10 translate-y-[-30px] translate-x-[-10px] select-none rounded-lg border-2 bg-darkJungle-700  text-center  sm:hidden sm:group-hover:block">
+                        {state.valueNow}
+                      </div>
+                    </div>
+                  )}
+                  value={coord[1]}
+                  onChange={(value) =>
+                    dispatch(setRadialCoords({ ...coords, [coord[0]]: value }))
+                  }
+                />
+              </div>
+            ))}
           </div>
         </div>
       )}

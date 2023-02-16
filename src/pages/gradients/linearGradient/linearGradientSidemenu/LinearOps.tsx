@@ -14,6 +14,8 @@ const LinearOps = () => {
   const [tempLinearDeg, setTempLinearDeg] = useState<number | string>("");
   const [visibility, setVisibility] = useState(false);
 
+  const directionArray = [1, 2, 3, 4];
+
   const HandleStopPercentage = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = Number(e.target.value);
 
@@ -64,81 +66,34 @@ const LinearOps = () => {
       {visibility && (
         <div className="menuBlock absolute z-50 flex translate-y-8 translate-x-8 gap-4 border-slate-500 bg-darkJungle-400 px-4 py-2">
           <div>
-            <div
-              onClick={() => {
-                setVisibility((x) => !x);
-                dispatch(setLinearDegree(90));
-              }}
-              className="h-6 w-6 rotate-[180deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white"
-            >
-              &#8592;
-            </div>
-            <div
-              onClick={() => {
-                setVisibility((x) => !x);
-                dispatch(setLinearDegree(45));
-              }}
-              className="h-6 w-6 rotate-[135deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white"
-            >
-              &#8592;
-            </div>
-            <div
-              onClick={() => {
-                setVisibility((x) => !x);
-                dispatch(setLinearDegree(0));
-              }}
-              className="h-6 w-6 rotate-[90deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white"
-            >
-              &#8592;
-            </div>
-            <div
-              onClick={() => {
-                setVisibility((x) => !x);
-                dispatch(setLinearDegree(135));
-              }}
-              className="h-6 w-6 rotate-[225deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white"
-            >
-              &#8592;
-            </div>
+            {directionArray.map((btn, i) => (
+              <div
+                onClick={() => {
+                  setVisibility((x) => !x);
+                  dispatch(setLinearDegree(0 + i * 45));
+                }}
+                className={`h-6 w-6 rotate-[${
+                  90 + i * 45
+                }deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white`}
+              >
+                &#8592;
+              </div>
+            ))}
           </div>
           <div>
-            <div
-              onClick={() => {
-                setVisibility((x) => !x);
-                dispatch(setLinearDegree(270));
-              }}
-              className="h-6 w-6 rotate-[0deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white"
-            >
-              &#8592;
-            </div>
-            <div
-              onClick={() => {
-                setVisibility((x) => !x);
-                dispatch(setLinearDegree(315));
-              }}
-              className="h-6 w-6 rotate-[45deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white"
-            >
-              &#8592;
-            </div>
-
-            <div
-              onClick={() => {
-                setVisibility((x) => !x);
-                dispatch(setLinearDegree(180));
-              }}
-              className="h-6 w-6 rotate-[270deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white"
-            >
-              &#8592;
-            </div>
-            <div
-              onClick={() => {
-                setVisibility((x) => !x);
-                dispatch(setLinearDegree(225));
-              }}
-              className="h-6 w-6 rotate-[315deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white"
-            >
-              &#8592;
-            </div>
+            {directionArray.map((btn, i) => (
+              <div
+                onClick={() => {
+                  setVisibility((x) => !x);
+                  dispatch(setLinearDegree(180 + i * 45));
+                }}
+                className={`h-6 w-6 rotate-[${
+                  i !== 3 ? 270 + i * 45 : 45
+                }deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white`}
+              >
+                &#8592;
+              </div>
+            ))}
           </div>
         </div>
       )}

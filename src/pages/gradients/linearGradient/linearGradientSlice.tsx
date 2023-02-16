@@ -16,13 +16,11 @@ interface initialStateType {
   };
   radialParams: {
     shape: string;
-    x: number;
-    y: number;
+    coords: { x: number; y: number };
   };
   conicParams: {
     degree: number;
-    x: number;
-    y: number;
+    coords: { x: number; y: number };
   };
 
   offset: number;
@@ -46,13 +44,17 @@ const initialState: initialStateType = {
   },
   radialParams: {
     shape: "circle",
-    x: 50,
-    y: 50,
+    coords: {
+      x: 50,
+      y: 50,
+    },
   },
   conicParams: {
     degree: 0,
-    x: 50,
-    y: 50,
+    coords: {
+      x: 50,
+      y: 50,
+    },
   },
 
   offset: 1,
@@ -95,15 +97,13 @@ const linearGradientSlice = createSlice({
       state,
       action: PayloadAction<{ x: number; y: number }>
     ) => {
-      state.radialParams.x = action.payload.x;
-      state.radialParams.y = action.payload.y;
+      state.radialParams.coords = action.payload;
     },
     setConicCoords: (
       state,
       action: PayloadAction<{ x: number; y: number }>
     ) => {
-      state.conicParams.x = action.payload.x;
-      state.conicParams.y = action.payload.y;
+      state.conicParams.coords = action.payload;
     },
     setStopColor: (
       state,
@@ -168,8 +168,8 @@ export const selectLinearGradientStyle = createSelector(
       linearGradient.type === "linear"
         ? linearGradient.linearParams.degree + `deg`
         : linearGradient.type === "radial"
-        ? `${linearGradient.radialParams.shape} at ${linearGradient.radialParams.x}% ${linearGradient.radialParams.y}%`
-        : `from ${linearGradient.conicParams.degree}deg at ${linearGradient.conicParams.x}% ${linearGradient.conicParams.y}%`;
+        ? `${linearGradient.radialParams.shape} at ${linearGradient.radialParams.coords.x}% ${linearGradient.radialParams.coords.y}%`
+        : `from ${linearGradient.conicParams.degree}deg at ${linearGradient.conicParams.coords.x}% ${linearGradient.conicParams.coords.y}%`;
 
     const style = linearGradient.stops
       .map(
