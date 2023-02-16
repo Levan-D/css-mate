@@ -1,36 +1,60 @@
 /** @format */
 
-import { createSlice, createSelector } from "@reduxjs/toolkit"
-import type { PayloadAction } from "@reduxjs/toolkit"
-import { RootState } from "../../../app/store"
+import { createSlice, createSelector } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../../../app/store";
 //@ts-ignore
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from "uuid";
 
 interface initialStateType {
-  type: string
-  kind: string
-  currentTab: number
-  linearDegree: number
-  radialShape: string
-  conicFrom: string
-  offset: number
+  type: string;
+  kind: string;
+  currentTab: number;
+
+  linearParams: {
+    degree: number;
+  };
+  radialParams: {
+    shape: string;
+    simple: boolean;
+    difSizeRule: string;
+    difSizeDegreeOne: number;
+    difSizeDegreeTwo: number;
+  };
+  conicParams: {
+    degree: number;
+  };
+
+  offset: number;
   stops: {
-    id: string
+    id: string;
     stop: {
-      percent: number
-      color: string
-      opacity: number
-    }
-  }[]
+      percent: number;
+      color: string;
+      opacity: number;
+    };
+  }[];
 }
 
 const initialState: initialStateType = {
   type: "linear",
   kind: "constant",
   currentTab: 0,
-  linearDegree: 135,
-  radialShape: "circle",
-  conicFrom: "90deg",
+
+  linearParams: {
+    degree: 135,
+  },
+  radialParams: {
+    shape: "circle",
+    simple: true,
+    difSizeRule: "",
+    difSizeDegreeOne: 0,
+    difSizeDegreeTwo: 0,
+  },
+  conicParams: {
+    degree: 0,
+  },
+
   offset: 1,
   stops: [
     {
@@ -51,7 +75,7 @@ const initialState: initialStateType = {
       },
     },
   ],
-}
+};
 
 const linearGradientSlice = createSlice({
   name: "gradient",
@@ -59,33 +83,37 @@ const linearGradientSlice = createSlice({
   reducers: {
     resetState: () => initialState,
     setType: (state, action: PayloadAction<string>) => {
-      state.type = action.payload
+      state.type = action.payload;
     },
     setKind: (state, action: PayloadAction<string>) => {
-      state.kind = action.payload
+      state.kind = action.payload;
     },
     setRadialShape: (state, action: PayloadAction<string>) => {
-      state.radialShape = action.payload
+      state.radialParams.shape = action.payload;
+      state.radialParams.simple = true;
     },
-    setStopColor: (state, action: PayloadAction<{ index: number; color: string }>) => {
-      state.stops[action.payload.index].stop.color = action.payload.color
+    setStopColor: (
+      state,
+      action: PayloadAction<{ index: number; color: string }>
+    ) => {
+      state.stops[action.payload.index].stop.color = action.payload.color;
     },
     setStopOpacity: (
       state,
       action: PayloadAction<{ index: number; opacity: number }>
     ) => {
-      state.stops[action.payload.index].stop.opacity = action.payload.opacity
+      state.stops[action.payload.index].stop.opacity = action.payload.opacity;
     },
     setLinearDegree: (state, action: PayloadAction<number>) => {
-      state.linearDegree = action.payload
+      state.linearParams.degree = action.payload;
     },
     setStopPercentage: (
       state,
       action: PayloadAction<{ index: number; percent: number }>
     ) => {
-      state.stops[action.payload.index].stop.percent = action.payload.percent
+      state.stops[action.payload.index].stop.percent = action.payload.percent;
     },
-    addNewStop: state => {
+    addNewStop: (state) => {
       if (state.stops.length < 10) {
         state.stops.push({
           id: uuidv4(),
@@ -94,43 +122,48 @@ const linearGradientSlice = createSlice({
             color: state.stops[state.stops.length - 1].stop.color,
             opacity: 100,
           },
-        })
+        });
 
         for (let i = state.stops.length - 1; i > 0; i--) {
           if (state.stops[i].stop.percent === state.stops[i - 1].stop.percent) {
-            state.stops[i - 1].stop.percent = state.stops[i - 1].stop.percent - 1
+            state.stops[i - 1].stop.percent =
+              state.stops[i - 1].stop.percent - 1;
           }
         }
-      } else return
+      } else return;
     },
     deleteStop: (state, action: PayloadAction<string>) => {
       if (state.stops.length > 2) {
-        const newStops = state.stops.filter(x => x.id !== action.payload)
-        state.stops = newStops
-      } else return
+        const newStops = state.stops.filter((x) => x.id !== action.payload);
+        state.stops = newStops;
+      } else return;
     },
   },
-})
+});
 
 export const selectLinearGradientStyle = createSelector(
   (state: RootState) => state.linearGradient,
-  linearGradient => {
+  (linearGradient) => {
     return `${linearGradient.kind === "repeating" ? "repeating-" : ""}${
       linearGradient.type
     }-gradient(${
       linearGradient.type === "linear"
-        ? linearGradient.linearDegree + `deg`
+        ? linearGradient.linearParams.degree + `deg`
         : linearGradient.type === "radial"
-        ? linearGradient.radialShape
-        : `from ${linearGradient.conicFrom}`
+        ? linearGradient.radialParams.simple
+          ? linearGradient.radialParams.shape
+          : `${linearGradient.radialParams.difSizeRule} at ${linearGradient.radialParams.difSizeDegreeOne} ${linearGradient.radialParams.difSizeDegreeTwo}`
+        : `from ${linearGradient.conicParams.degree}`
     }, ${linearGradient.stops
       .map(
-        stop =>
-          `rgba(${stop.stop.color}, ${stop.stop.opacity / 100}) ${stop.stop.percent}%`
+        (stop) =>
+          `rgba(${stop.stop.color}, ${stop.stop.opacity / 100}) ${
+            stop.stop.percent
+          }%`
       )
-      .join(",")})`
+      .join(",")})`;
   }
-)
+);
 
 export const {
   resetState,
@@ -143,5 +176,5 @@ export const {
   addNewStop,
   deleteStop,
   setLinearDegree,
-} = linearGradientSlice.actions
-export default linearGradientSlice.reducer
+} = linearGradientSlice.actions;
+export default linearGradientSlice.reducer;

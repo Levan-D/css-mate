@@ -1,13 +1,15 @@
 /** @format */
 
-import { pageButtons } from "../data/PageButtons"
-import { Outlet } from "react-router-dom"
-import Card from "../components/Card"
-import { useAppSelector } from "../app/hooks"
-import { Link } from "react-router-dom"
+import { pageButtons } from "../data/PageButtons";
+import { Outlet } from "react-router-dom";
+import Card from "../components/Card";
+import { useAppSelector } from "../app/hooks";
+import { Link } from "react-router-dom";
 
 const CategoryLayout = () => {
-  const { categoryIndex, pathArray, windowWidth } = useAppSelector(store => store.navbar)
+  const { categoryIndex, pathArray, windowWidth } = useAppSelector(
+    (store) => store.navbar
+  );
 
   return (
     <div>
@@ -35,6 +37,7 @@ const CategoryLayout = () => {
       ) : (
         <div className=" mx-auto mt-4  flex  w-fit flex-wrap justify-center">
           {windowWidth > 540 &&
+            pageButtons[categoryIndex].catCon.length > 1 &&
             pageButtons[categoryIndex].catCon.map((button, i) => (
               <div
                 key={i}
@@ -53,7 +56,7 @@ const CategoryLayout = () => {
 
       <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default CategoryLayout
+export default CategoryLayout;
