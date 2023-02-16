@@ -160,22 +160,27 @@ const linearGradientSlice = createSlice({
 export const selectLinearGradientStyle = createSelector(
   (state: RootState) => state.linearGradient,
   (linearGradient) => {
-    return `${linearGradient.kind === "repeating" ? "repeating-" : ""}${
-      linearGradient.type
-    }-gradient(${
+    const kind = linearGradient.kind === "repeating" ? "repeating-" : "";
+
+    const type = linearGradient.type;
+
+    const params =
       linearGradient.type === "linear"
         ? linearGradient.linearParams.degree + `deg`
         : linearGradient.type === "radial"
         ? `${linearGradient.radialParams.shape} at ${linearGradient.radialParams.x}% ${linearGradient.radialParams.y}%`
-        : `from ${linearGradient.conicParams.degree}deg at ${linearGradient.conicParams.x}% ${linearGradient.conicParams.y}%`
-    }, ${linearGradient.stops
+        : `from ${linearGradient.conicParams.degree}deg at ${linearGradient.conicParams.x}% ${linearGradient.conicParams.y}%`;
+
+    const style = linearGradient.stops
       .map(
         (stop) =>
           `rgba(${stop.stop.color}, ${stop.stop.opacity / 100}) ${
             stop.stop.percent
           }%`
       )
-      .join(",")})`;
+      .join(",");
+
+    return `${kind}${type}-gradient(${params}, ${style})`;
   }
 );
 
