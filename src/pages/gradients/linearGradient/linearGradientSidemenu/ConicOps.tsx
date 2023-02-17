@@ -42,7 +42,7 @@ const ConicOps = () => {
   }
 
   return (
-    <div className="menuBlock m-2 flex grow justify-around px-2 py-1">
+    <div className="menuBlock m-2 flex grow  px-2 py-1">
       <input
         type="number"
         id="stopInput"
@@ -57,7 +57,7 @@ const ConicOps = () => {
 
       <div
         onClick={() => setCoordsVisi(x => !x)}
-        className="duration-2000 cursor-pointer select-none italic leading-7 text-slate-300 sm:hover:text-white "
+        className="duration-2000 grow cursor-pointer select-none text-center italic leading-7 text-slate-300 sm:hover:text-white "
       >
         Cords
       </div>

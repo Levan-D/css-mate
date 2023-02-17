@@ -44,7 +44,7 @@ const LinearOps = () => {
   }
 
   return (
-    <div className="menuBlock m-2 flex grow justify-around px-2 py-1">
+    <div className="menuBlock m-2 flex grow px-2 py-1">
       <input
         type="number"
         id="stopInput"
@@ -58,7 +58,7 @@ const LinearOps = () => {
       ></input>
       <div
         onClick={() => setVisibility(x => !x)}
-        className="duration-2000 cursor-pointer select-none italic leading-7 text-slate-300 sm:hover:text-white "
+        className="duration-2000  grow cursor-pointer select-none text-center italic leading-7 text-slate-300 sm:hover:text-white "
       >
         deg
       </div>
@@ -89,6 +89,7 @@ const LinearOps = () => {
             <div>
               {directionArray.map((btn, i) => (
                 <div
+                  key={i}
                   onClick={() => {
                     setVisibility(x => !x)
                     dispatch(setLinearDegree(180 + i * 45))
