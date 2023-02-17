@@ -68,23 +68,23 @@ const ConicOps = () => {
             onClick={() => setCoordsVisi(() => false)}
             className="absolute top-0 left-0 z-40 h-screen w-screen "
           ></div>
-          <div className="menuBlock absolute z-50 w-32 translate-y-8 translate-x-[-80px] gap-4 border-slate-500 bg-darkJungle-400 px-4  ">
-            <div className="flex justify-end gap-2">
+          <div className="menuBlock absolute z-50 w-32 translate-y-8 translate-x-[-80px] gap-4 border-slate-500 bg-darkJungle-400 px-1  ">
+            <div className="flex justify-end   ">
               <div
-                className="z-50 cursor-pointer p-1 text-slate-300"
+                className="z-50 my-1   h-6 w-6 cursor-pointer rounded-full  border-2 border-transparent text-center leading-5 text-slate-300 sm:hover:border-slate-300"
                 onClick={() => dispatch(setConicCoords({ x: 50, y: 50 }))}
               >
                 &#8634;
               </div>
               <div
-                className="z-50 cursor-pointer  text-xl text-slate-300"
+                className="z-50 my-1  h-6 w-6 cursor-pointer rounded-full border-2  border-transparent text-center text-xl leading-4 text-slate-300 sm:hover:border-slate-300"
                 onClick={() => setCoordsVisi(() => false)}
               >
                 &#215;
               </div>
             </div>
 
-            <div className="translate-y-[-12px]">
+            <div className="translate-y-[-12px] px-2">
               {Object.entries(coords).map((coord, i) => (
                 <div key={i} className="mb-6">
                   <div className="text-xs italic text-slate-300">{coord[0]}</div>

@@ -69,38 +69,50 @@ const LinearOps = () => {
             onClick={() => setVisibility(() => false)}
             className="absolute top-0 left-0 z-40 h-screen w-screen "
           ></div>
-          <div className="menuBlock absolute z-50 flex translate-y-8 translate-x-[-70px] gap-4 border-slate-500 bg-darkJungle-400 px-4 py-2">
-            <div>
-              {directionArray.map((btn, i) => (
-                <div
-                  key={i}
-                  onClick={() => {
-                    setVisibility(x => !x)
-                    dispatch(setLinearDegree(0 + i * 45))
-                  }}
-                  className={`h-6 w-6 rotate-[${
-                    90 + i * 45
-                  }deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white`}
-                >
-                  &#8592;
-                </div>
-              ))}
+
+          <div className="menuBlock absolute z-50  translate-y-8 translate-x-[-80px]  border-slate-500 bg-darkJungle-400 px-1">
+            <div className="flex justify-end   ">
+              <div
+                className="z-50 my-1  h-6 w-6 cursor-pointer rounded-full border-2  border-transparent text-center text-xl leading-4 text-slate-300 sm:hover:border-slate-300"
+                onClick={() => setVisibility(() => false)}
+              >
+                &#215;
+              </div>
             </div>
-            <div>
-              {directionArray.map((btn, i) => (
-                <div
-                  key={i}
-                  onClick={() => {
-                    setVisibility(x => !x)
-                    dispatch(setLinearDegree(180 + i * 45))
-                  }}
-                  className={`h-6 w-6 rotate-[${
-                    i !== 3 ? 270 + i * 45 : 45
-                  }deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white`}
-                >
-                  &#8592;
-                </div>
-              ))}
+
+            <div className="flex  gap-4 px-4 pb-4">
+              <div>
+                {directionArray.map((btn, i) => (
+                  <div
+                    key={i}
+                    onClick={() => {
+                      setVisibility(x => !x)
+                      dispatch(setLinearDegree(0 + i * 45))
+                    }}
+                    className={`h-6 w-6 rotate-[${
+                      90 + i * 45
+                    }deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white`}
+                  >
+                    &#8592;
+                  </div>
+                ))}
+              </div>
+              <div>
+                {directionArray.map((btn, i) => (
+                  <div
+                    key={i}
+                    onClick={() => {
+                      setVisibility(x => !x)
+                      dispatch(setLinearDegree(180 + i * 45))
+                    }}
+                    className={`h-6 w-6 rotate-[${
+                      i !== 3 ? 270 + i * 45 : 45
+                    }deg] cursor-pointer rounded-full border-2  border-transparent text-2xl font-bold leading-[14px] sm:hover:border-white`}
+                  >
+                    &#8592;
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

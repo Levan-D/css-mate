@@ -125,7 +125,7 @@ const Shape = () => {
             <button
               type="submit"
               value="Rename"
-              className=" h-8 w-8 rotate-[140deg] rounded-full border-2 border-slate-300 text-4xl font-bold leading-[25px] text-slate-300 duration-200 sm:hover:border-blue-300 sm:hover:text-blue-300 sm:active:border-slate-900 sm:active:text-slate-900 "
+              className=" h-8 w-8 rotate-[140deg] rounded-full border-2 border-transparent text-4xl font-bold leading-[25px]  text-slate-300 duration-200  sm:hover:border-slate-300  "
             >
               &#8630;
               {/* <img
