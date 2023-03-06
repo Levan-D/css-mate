@@ -62,7 +62,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                           <Tooltip text="Copied" onClick={true}>
                             {char.hexadecimal}
                           </Tooltip>
-                          <div className=" absolute z-50 hidden h-[70px] w-[70px] translate-y-[-48px] translate-x-[-100px] rounded-full border-[3px] border-white bg-primary text-center text-5xl font-bold leading-[58px]   group-hover:block ">
+                          <div className=" absolute z-50 hidden h-[70px] w-[70px] translate-y-[-48px] translate-x-[-100px] rounded-full border-[3px] border-white bg-primary text-center text-5xl font-bold leading-[58px]   sm:group-hover:block ">
                             {char.character}
                           </div>
                         </div>
