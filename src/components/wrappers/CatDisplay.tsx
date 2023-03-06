@@ -1,6 +1,6 @@
 /** @format */
 
-import  { useState, useMemo } from "react"
+import { useState, useMemo } from "react"
 import { CatDisplayDataType } from "./WrapperTypes"
 import Tooltip from "../Tooltip"
 
@@ -54,7 +54,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                       <div className={`${flexBasis}  px-2 `}>{char.character}</div>
                       <div className={`${flexBasis} `}>
                         <div
-                          className={` w-fit   cursor-pointer  rounded-md px-2 duration-200 active:bg-slate-300 sm:hover:bg-slate-100 sm:hover:text-slate-900 `}
+                          className={`group  w-fit   cursor-pointer  rounded-md px-2 duration-200 active:bg-slate-300 sm:hover:bg-slate-100 sm:hover:text-slate-900 `}
                           onClick={() => {
                             navigator.clipboard.writeText(char.hexadecimal)
                           }}
@@ -62,6 +62,9 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                           <Tooltip text="Copied" onClick={true}>
                             {char.hexadecimal}
                           </Tooltip>
+                          <div className=" absolute z-50 hidden h-[70px] w-[70px] translate-y-[-48px] translate-x-[-100px] rounded-full border-[3px] border-white bg-primary text-center text-5xl font-bold leading-[58px]   group-hover:block ">
+                            {char.character}
+                          </div>
                         </div>
                       </div>
                       {char.description && (

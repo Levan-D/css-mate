@@ -1,6 +1,6 @@
 /** @format */
 
-import CatDisplay from "../../components/wrappers/CatDisplay"
+import CatDisplay from "../../../components/wrappers/CatDisplay"
 import { EmojisData } from "./Data"
 
 const Emojis = () => {

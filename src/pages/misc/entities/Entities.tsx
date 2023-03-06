@@ -2,7 +2,7 @@
 
 import React from "react"
 import { EntitiesData } from "./Data"
-import CatDisplay from "../../components/wrappers/CatDisplay"
+import CatDisplay from "../../../components/wrappers/CatDisplay"
 
 const Entities = () => {
   return (

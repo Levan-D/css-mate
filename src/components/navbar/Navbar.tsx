@@ -1,46 +1,46 @@
 /** @format */
 
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import logo from "../../assets/logo/logo.png";
-import { Link, useLocation } from "react-router-dom";
-import { pageButtons } from "../../data/PageButtons";
-import githubIcon from "../../assets/icons/github.png";
-import { setPath, setWindowWidth } from "./navbarSlice";
-import DropDown from "./DropDown";
+import { useEffect, useState } from "react"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import logo from "../../assets/logo/logo.png"
+import { Link, useLocation } from "react-router-dom"
+import { pageButtons } from "../../data/PageButtons"
+import githubIcon from "../../assets/icons/github.png"
+import { setPath, setWindowWidth } from "./navbarSlice"
+import DropDown from "./DropDown"
 
 const Navbar = () => {
-  const dispatch = useAppDispatch();
-  const location = useLocation();
+  const dispatch = useAppDispatch()
+  const location = useLocation()
 
-  const { pathArray, windowWidth } = useAppSelector((store) => store.navbar);
+  const { pathArray, windowWidth } = useAppSelector(store => store.navbar)
 
-  const [subMenuVis, setSubMenuVis] = useState("");
+  const [subMenuVis, setSubMenuVis] = useState("")
 
   const handleSubMenuClick = (path: string) => {
     if (subMenuVis === path) {
-      setSubMenuVis("");
-    } else setSubMenuVis(path);
-  };
+      setSubMenuVis("")
+    } else setSubMenuVis(path)
+  }
 
   const updateWindowWidth = () => {
-    dispatch(setWindowWidth(window.innerWidth));
-    setSubMenuVis("");
-  };
+    dispatch(setWindowWidth(window.innerWidth))
+    setSubMenuVis("")
+  }
 
   useEffect(() => {
-    dispatch(setPath(location.pathname));
-    window.addEventListener("resize", updateWindowWidth);
+    dispatch(setPath(location.pathname))
+    window.addEventListener("resize", updateWindowWidth)
 
-    return () => window.removeEventListener("resize", updateWindowWidth);
-  }, [location]);
+    return () => window.removeEventListener("resize", updateWindowWidth)
+  }, [location])
 
   return (
     <div
       className={` ${
         !location.pathname.includes("/gradients/")
           ? "bg-primary"
-          : "bg-transparent"
+          : "bg-primary sm:bg-transparent"
       }  z-40 h-fit     sm:h-16`}
     >
       <nav className="mx-auto h-fit max-w-4xl items-center justify-between align-bottom sm:flex sm:h-16 sm:px-4">
@@ -100,7 +100,7 @@ const Navbar = () => {
         </ul>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

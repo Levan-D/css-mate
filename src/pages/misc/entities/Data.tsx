@@ -1,6 +1,6 @@
 /** @format */
 
-import { CatDisplayDataType } from "../../components/wrappers/WrapperTypes"
+import { CatDisplayDataType } from "../../../components/wrappers/WrapperTypes"
 
 export const EntitiesData: CatDisplayDataType[] = [
   {

@@ -5,21 +5,16 @@ import React from "react"
 const MultipleShadows = () => {
   return (
     <section id="Multiple shadows">
-      <h3 className="mb-4 mt-24 font-cursiveCustom text-xl">
-        Multiple shadows
-      </h3>
+      <h3 className="mb-4 mt-24 font-cursiveCustom text-xl">Multiple shadows</h3>
       <p>
-        Adding depth and dimension to web designs can be achieved by utilizing
-        multiple text shadows. This can be accomplished by applying multiple
-        shadows to an element using the CSS 'text-shadow' property. By
-        comma-separating different values, you can create unique and visually
-        interesting effects that can add depth and dimension to your designs.
+        Adding depth and dimension to web designs can be achieved by utilizing multiple
+        text shadows. This can be accomplished by applying multiple shadows to an element
+        using the CSS 'text-shadow' property. By comma-separating different values, you
+        can create unique and visually interesting effects that can add depth and
+        dimension to your designs.
       </p>
 
-      <h4
-        id="90's word"
-        className="mt-8 text-center font-cursiveCustom text-xl"
-      >
+      <h4 id="90's word" className="mt-8 text-center font-cursiveCustom text-xl">
         90's word
       </h4>
 
@@ -27,11 +22,11 @@ const MultipleShadows = () => {
         style={{
           textShadow: `1px 1px rgba(247, 135, 119, 1), 0px 0px rgba(247, 135, 119, 1), 1px 1px rgba(247, 135, 119, 1), 2px 2px rgba(247, 135, 119, 1), 3px 3px rgba(247, 135, 119, 1), 4px 4px rgba(247, 135, 119, 1), 5px 5px rgba(247, 135, 119, 1), 6px 6px rgba(247, 135, 119, 1), 7px 7px rgba(247, 135, 119, 1), 8px 8px rgba(247, 135, 119, 1), 9px 9px rgba(247, 135, 119, 1), 10px 10px rgba(247, 135, 119, 1), 11px 11px rgba(247, 135, 119, 1), 12px 12px rgba(247, 135, 119, 1), 13px 13px rgba(247, 135, 119, 1), 14px 14px rgba(247, 135, 119, 1), 15px 15px rgba(247, 135, 119, 1)`,
         }}
-        className="mx-auto mt-4 mb-16 max-w-[600px] px-8 py-5  font-cursiveCustom text-6xl  font-bold text-orange-800 "
+        className="mx-auto mt-4 mb-16 max-w-[600px] px-8 py-5  font-cursiveCustom text-4xl font-bold  text-orange-800 sm:text-6xl "
       >
         <blockquote>
           <q>This is how I win.</q>
-          <p className="mt-4 text-right text-5xl ">&mdash; Howard Ratner</p>
+          <p className="mt-4 text-right text-3xl sm:text-5xl ">&mdash; Howard Ratner</p>
         </blockquote>
       </div>
       <div className="mx-auto   w-fit rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
@@ -40,26 +35,21 @@ const MultipleShadows = () => {
             text-shadow<span className="px-[4px] text-white">:</span> <br />
           </div>
           <div className="text-green-300">
-            1px 1px rgba(247, 135, 119, 1), <br /> 0px 0px rgba(247, 135, 119,
-            1), <br /> 1px 1px rgba(247, 135, 119, 1), <br /> 2px 2px rgba(247,
-            135, 119, 1), <br /> 3px 3px rgba(247, 135, 119, 1), <br /> 4px 4px
-            rgba(247, 135, 119, 1), <br /> 5px 5px rgba(247, 135, 119, 1),{" "}
-            <br /> 6px 6px rgba(247, 135, 119, 1), <br /> 7px 7px rgba(247, 135,
-            119, 1), <br /> 8px 8px rgba(247, 135, 119, 1), <br /> 9px 9px
-            rgba(247, 135, 119, 1), <br /> 10px 10px rgba(247, 135, 119, 1),{" "}
-            <br /> 11px 11px rgba(247, 135, 119, 1), <br /> 12px 12px rgba(247,
-            135, 119, 1), <br /> 13px 13px rgba(247, 135, 119, 1), <br /> 14px
-            14px rgba(247, 135, 119, 1), <br /> 15px 15px rgba(247, 135, 119,
-            1);
+            1px 1px rgba(247, 135, 119, 1), <br /> 0px 0px rgba(247, 135, 119, 1), <br />{" "}
+            1px 1px rgba(247, 135, 119, 1), <br /> 2px 2px rgba(247, 135, 119, 1), <br />{" "}
+            3px 3px rgba(247, 135, 119, 1), <br /> 4px 4px rgba(247, 135, 119, 1), <br />{" "}
+            5px 5px rgba(247, 135, 119, 1), <br /> 6px 6px rgba(247, 135, 119, 1), <br />{" "}
+            7px 7px rgba(247, 135, 119, 1), <br /> 8px 8px rgba(247, 135, 119, 1), <br />{" "}
+            9px 9px rgba(247, 135, 119, 1), <br /> 10px 10px rgba(247, 135, 119, 1),{" "}
+            <br /> 11px 11px rgba(247, 135, 119, 1), <br /> 12px 12px rgba(247, 135, 119,
+            1), <br /> 13px 13px rgba(247, 135, 119, 1), <br /> 14px 14px rgba(247, 135,
+            119, 1), <br /> 15px 15px rgba(247, 135, 119, 1);
             <span className="pl-[4px] text-white ">;</span>
           </div>
         </div>
       </div>
 
-      <h4
-        id="Fiery glow"
-        className="mt-20 text-center font-cursiveCustom text-xl"
-      >
+      <h4 id="Fiery glow" className="mt-20 text-center font-cursiveCustom text-xl">
         Fiery glow
       </h4>
 
@@ -70,11 +60,11 @@ const MultipleShadows = () => {
           0 0 40px rgba(248, 113, 113, 1),
           0 0 80px rgba(185, 28, 28, 1)`,
         }}
-        className="mx-auto mt-4 mb-16 max-w-[600px] px-8 py-5   text-6xl  font-extrabold text-slate-900 "
+        className="mx-auto mt-4 mb-16 max-w-[600px] px-8 py-5   text-3xl sm:text-6xl  font-extrabold text-slate-900 "
       >
         <blockquote>
           <q>Go ahead: Make my day.</q>
-          <p className="mt-4 text-right text-5xl ">&mdash; Dirty Harry</p>
+          <p className="mt-4 text-right text-3xl sm:text-5xl ">&mdash; Dirty Harry</p>
         </blockquote>
       </div>
       <div className="mx-auto   w-fit rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
@@ -130,11 +120,11 @@ const MultipleShadows = () => {
           28px 28px rgba(255, 227, 87, 0.77),
           29px 29px rgba(255, 229, 88, 0.78)`,
         }}
-        className=" mx-auto mt-4 mb-16 max-w-[600px] rounded-xl bg-[rgba(255,_229,_88,_1)] px-8 py-5  text-6xl  font-extrabold text-red-600 "
+        className=" text-4xl mx-auto mt-4 mb-16 max-w-[600px] rounded-xl bg-[rgba(255,_229,_88,_1)] px-8  py-5 font-extrabold  text-red-600 sm:text-6xl "
       >
         <blockquote>
           <q>Just keep swimming!</q>
-          <p className="mt-4 translate-y-[-30px] text-right text-5xl">
+          <p className="mt-4 translate-y-[-30px] text-right text-3xl sm:text-5xl">
             &mdash; Dory
           </p>
         </blockquote>
@@ -214,11 +204,11 @@ const MultipleShadows = () => {
         style={{
           textShadow: ` 2px 2px 0px rgba(255,255,255,0.1)`,
         }}
-        className="mx-auto   mb-16 max-w-[600px] px-8 py-5   text-6xl  font-extrabold text-black "
+        className="mx-auto   mb-16 max-w-[600px] px-8 py-5   text-4xl font-extrabold  text-black sm:text-6xl "
       >
         <blockquote>
           <q>Gentlemen, you can’t fight in here! This is the War Room!</q>
-          <p className="mt-4 text-right text-5xl ">&mdash; Merkin Muffley</p>
+          <p className="mt-4 text-right text-3xl sm:text-5xl ">&mdash; Merkin Muffley</p>
         </blockquote>
       </div>
       <div className="mx-auto   w-fit rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
@@ -233,10 +223,7 @@ const MultipleShadows = () => {
         </div>
       </div>
 
-      <h4
-        id="3D glow effect"
-        className="mt-20 text-center font-cursiveCustom text-xl"
-      >
+      <h4 id="3D glow effect" className="mt-20 text-center font-cursiveCustom text-xl">
         3D glow effect
       </h4>
 
@@ -255,11 +242,11 @@ const MultipleShadows = () => {
           0 10px 10px rgba(255,255,255,.2),
           0 20px 20px rgba(255,255,255,.15)`,
         }}
-        className="mx-auto  mb-16 max-w-[600px] px-8 py-5   text-6xl  font-extrabold text-slate-100 "
+        className="mx-auto  mb-16 max-w-[600px] px-8 py-5   text-3xl sm:text-6xl  font-extrabold text-slate-100 "
       >
         <blockquote>
           <q>I’ll have what she’s having.</q>
-          <p className="mt-4 text-right text-5xl ">&mdash; Harry</p>
+          <p className="mt-4 text-right text-3xl sm:text-5xl ">&mdash; Harry</p>
         </blockquote>
       </div>
       <div className="mx-auto   w-fit rounded-xl border-2 border-slate-600 bg-slate-700 px-8 py-6 shadow-[0px_0px_20px_0px_rgba(94,_161,_255,0.8)]">
@@ -278,8 +265,8 @@ const MultipleShadows = () => {
             0 1px 3px rgba(255, 255, 255, 0.6), <br />
             0 3px 5px rgba(255, 255, 255, 0.4), <br />
             0 5px 10px rgba(255, 255, 255, 0.5), <br />
-            0 10px 10px rgba(255, 255, 255, 0.2), <br />0 20px 20px rgba(255,
-            255, 255, 0.15)
+            0 10px 10px rgba(255, 255, 255, 0.2), <br />0 20px 20px rgba(255, 255, 255,
+            0.15)
             <span className="pl-[4px] text-white ">;</span>
           </div>
         </div>

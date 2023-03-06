@@ -1,23 +1,23 @@
 /** @format */
 
-import { createRoutesFromElements, RouterProvider } from "react-router-dom";
-import { Route, createBrowserRouter } from "react-router-dom";
+import { createRoutesFromElements, RouterProvider } from "react-router-dom"
+import { Route, createBrowserRouter } from "react-router-dom"
 
 // pages
-import Home from "./pages/home/Home";
-import BoxShadow from "./pages/shadows/boxShadow/BoxShadow";
-import DropShadow from "./pages/shadows/dropShadow/DropShadow";
-import TextShadow from "./pages/shadows/textShadow/TextShadow";
-import Error from "./pages/error/Error";
-import Cursors from "./pages/cursors/Cursors";
-import Emojis from "./pages/emojis/Emojis";
-import Entities from "./pages/entities/Entities";
-import LinearGradient from "./pages/gradients/linearGradient/LinearGradient";
-import FloofGPTFull from "./components/floofGPT/FloofGPTFull";
+import Home from "./pages/home/Home"
+import BoxShadow from "./pages/shadows/boxShadow/BoxShadow"
+import DropShadow from "./pages/shadows/dropShadow/DropShadow"
+import TextShadow from "./pages/shadows/textShadow/TextShadow"
+import Error from "./pages/error/Error"
+import Cursors from "./pages/misc/cursors/Cursors"
+import Emojis from "./pages/misc/emojis/Emojis"
+import Entities from "./pages/misc/entities/Entities"
+import LinearGradient from "./pages/gradients/linearGradient/LinearGradient"
+import FloofGPTFull from "./components/floofGPT/FloofGPTFull"
 
 // layouts
-import RootLayout from "./layouts/RootLayout";
-import CategoryLayout from "./layouts/CategoryLayout";
+import RootLayout from "./layouts/RootLayout"
+import CategoryLayout from "./layouts/CategoryLayout"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,14 +44,14 @@ const router = createBrowserRouter(
       <Route path="*" element={<Error />} />
     </Route>
   )
-);
+)
 
 function App() {
   return (
     <div>
       <RouterProvider router={router} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

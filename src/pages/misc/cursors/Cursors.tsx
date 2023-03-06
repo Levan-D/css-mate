@@ -1,11 +1,11 @@
 /** @format */
 
-import Card from "../../components/Card"
-import tailwindIcon from ".././../assets/icons/tailwind.png"
-import cssIcon from ".././../assets/icons/css.png"
+import Card from "../../../components/Card"
+import tailwindIcon from ".././../../assets/icons/tailwind.png"
+import cssIcon from ".././../../assets/icons/css.png"
 import { cursorData } from "./Data"
-import TableOfContents from "../../components/TableOfContents"
-import Tooltip from "../../components/Tooltip"
+import TableOfContents from "../../../components/TableOfContents"
+import Tooltip from "../../../components/Tooltip"
 
 const Cursors = () => {
   let tableOfContets: string[] = []
