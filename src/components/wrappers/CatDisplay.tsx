@@ -62,7 +62,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                       <div className={`${flexBasis}  px-2 `}>{char.character}</div>
                       <div className={`${flexBasis} `}>
                         <div
-                          className={`group  w-fit   cursor-pointer  rounded-md px-2 duration-200 active:bg-slate-300 sm:hover:bg-slate-100 sm:hover:text-slate-900 `}
+                          className={`group  w-fit   cursor-pointer  rounded-md px-2 transition-colors  active:bg-slate-300 sm:hover:bg-slate-100 sm:hover:text-slate-900 `}
                           onClick={() => {
                             navigator.clipboard.writeText(char.hexadecimal)
                           }}
@@ -70,7 +70,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                           <Tooltip text="Copied" onClick={true}>
                             {char.hexadecimal}
                           </Tooltip>
-                          <div className=" absolute z-50 hidden h-[70px] w-[70px] translate-y-[-48px] translate-x-[-100px] rounded-full border-[3px] border-white bg-primary text-center text-5xl font-bold leading-[58px]   sm:group-hover:block ">
+                          <div className=" invisible  absolute  z-50 h-[70px] w-[70px] translate-y-[-48px] translate-x-[-100px] rounded-full border-[3px] border-white bg-primary text-center text-5xl font-bold   leading-[58px]  opacity-0 transition-opacity delay-300  sm:group-hover:visible sm:group-hover:opacity-100">
                             {char.character}
                           </div>
                         </div>
