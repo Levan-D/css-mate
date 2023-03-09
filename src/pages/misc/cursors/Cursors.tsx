@@ -8,7 +8,7 @@ import TableOfContents from "../../../components/TableOfContents"
 import Tooltip from "../../../components/Tooltip"
 
 const Cursors = () => {
-  let tableOfContets: string[] = []
+  let TOCData: string[] = []
   return (
     <div className="my-16 mx-4">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
@@ -19,7 +19,7 @@ const Cursors = () => {
         Hover over to demo and click to copy!
       </div>
       <div className="mb-8">
-        <TableOfContents tableOfContets={tableOfContets} />
+        <TableOfContents TOCData={TOCData} />
       </div>
       <div className="text-center">
         The exact looks of the cursor is based on the browser defaults.
@@ -37,7 +37,7 @@ const Cursors = () => {
 
       <div>
         {cursorData.map((cursor, i) => {
-          tableOfContets.push(cursor.category)
+          TOCData.push(cursor.category)
           return (
             <div key={i}>
               <h2

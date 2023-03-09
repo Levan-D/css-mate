@@ -8,6 +8,9 @@ import { blogData } from "./Data"
 import BlogGenerator from "../../../components/BlogGenerator"
 
 const BoxShadow = () => {
+  const TOCData = blogData.sections.map(section => section.id)
+  TOCData.unshift(blogData.id)
+  TOCData.unshift(`Tool`)
   return (
     <div className=" my-16 mx-4">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
@@ -17,7 +20,7 @@ const BoxShadow = () => {
       <div className="mb-8 text-center font-cursiveCustom text-base">
         Scroll below for tips & tricks
       </div>
-      <TableOfContents data={blogData} />
+      <TableOfContents TOCData={TOCData} />
       <div
         id="Tool"
         className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-2 lg:gap-36 "

@@ -3,22 +3,18 @@
 import { useState, useEffect } from "react"
 // @ts-ignore
 import { ReactComponent as ChevronIcon } from "../assets/icons/chevron.svg"
-import { BlogData } from "./BlogGenerator"
 
 type tableOfContetsType = {
-  data: BlogData
+  TOCData: string[]
 }
 
-const TableOfContents = ({ data }: tableOfContetsType) => {
+const TableOfContents = ({ TOCData }: tableOfContetsType) => {
   const [visibility, setVisibility] = useState(true)
   const [tableOffset, setTableOffset] = useState(false)
 
-  const tableOfContets = data.sections.map(section => section.id)
-  tableOfContets.unshift(data.id)
-  tableOfContets.unshift(`Tool`)
   // need to manually set the line height to allow the table to generate automatically
 
-  const height = 28 * tableOfContets.length + "px"
+  const height = 28 * TOCData.length + "px"
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -73,7 +69,7 @@ const TableOfContents = ({ data }: tableOfContetsType) => {
         <ul
           className={`${visibility ? "scale-y-100 " : "scale-y-0  "}     origin-top   `}
         >
-          {tableOfContets.map((link, i) => (
+          {TOCData.map((link, i) => (
             <a href={`#${link}`} key={i}>
               <li className="px-3 py-[2px] duration-200  active:bg-slate-500 sm:hover:bg-slate-100  sm:hover:text-slate-900">
                 {link}
