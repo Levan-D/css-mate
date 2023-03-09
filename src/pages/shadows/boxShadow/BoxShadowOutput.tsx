@@ -7,7 +7,7 @@ import { OutputRenderArrayType } from "../../../components/wrappers/Output"
 
 const BoxShadowOutput = () => {
   const boxShadowStyle = useAppSelector(selectBoxShadowStyle)
-
+  console.log(boxShadowStyle)
   const vanillaStyle = (
     <div>
       {boxShadowStyle.map((x, i) => (
