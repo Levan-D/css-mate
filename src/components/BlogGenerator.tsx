@@ -20,15 +20,24 @@ type Content =
   | {
       type: "list"
       kind: "ul" | "ol"
-      data: string[]
+      data: string[] | React.ReactNode[]
     }
   | {
       type: "demo"
+      inlineStyle?: object
       styleC: string
       styleQ: string
       quote: string
       styleA: string
       author: string
+    }
+  | {
+      type: "demo"
+      element: React.ReactNode
+    }
+  | {
+      type: "subHeader"
+      subHeader: string
     }
 
 export type BlogData = {
@@ -79,20 +88,24 @@ export default function BlogGenerator({ data }: Data) {
 
       case "list":
         if (Array.isArray(piece.data)) {
-          const list = piece.data.map((li, itemI) => (
-            <li key={itemI} className="mb-4 list-decimal font-bold  ">
-              {li.includes(`:`) ? (
-                <>
-                  <span>{li.substring(0, li.indexOf(":"))}:</span>
-                  <span className="font-medium ">
-                    {li.substring(li.indexOf(":") + 1)}
-                  </span>
-                </>
-              ) : (
-                <span className="font-medium ">{li}</span>
-              )}
-            </li>
-          ))
+          const list = piece.data.map((li, itemI) => {
+            if (typeof li === `string`) {
+              return (
+                <li key={itemI} className="mb-4 list-decimal font-bold  ">
+                  {li.includes(`:`) ? (
+                    <>
+                      <span>{li.substring(0, li.indexOf(":"))}:</span>
+                      <span className="font-normal ">
+                        {li.substring(li.indexOf(":") + 1)}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="font-normal ">{li}</span>
+                  )}
+                </li>
+              )
+            } else return li
+          })
 
           if ("kind" in piece && piece.kind === "ol") {
             return (
@@ -110,15 +123,26 @@ export default function BlogGenerator({ data }: Data) {
         }
 
       case "demo":
-        if ("styleQ" in piece) {
+        if (`element` in piece) {
+          return piece.element
+        } else if ("styleQ" in piece) {
           return (
-            <div key={uuidv4()} className={`${piece.styleC} !my-12`}>
+            <div
+              key={uuidv4()}
+              className={`${piece.styleC} !my-12`}
+              style={piece.inlineStyle}
+            >
               <blockquote>
                 <q className={piece.styleQ}>{piece.quote}</q>
                 <p className={piece.styleA}>&mdash; {piece.author}</p>
               </blockquote>
             </div>
           )
+        }
+
+      case "subHeader":
+        if (`subHeader` in piece) {
+          return <h3 className="my-8  font-cursiveCustom">{piece.subHeader}</h3>
         }
       default:
         return

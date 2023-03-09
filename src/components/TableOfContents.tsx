@@ -15,6 +15,7 @@ const TableOfContents = ({ data }: tableOfContetsType) => {
 
   const tableOfContets = data.sections.map(section => section.id)
   tableOfContets.unshift(data.id)
+  tableOfContets.unshift(`Tool`)
   // need to manually set the line height to allow the table to generate automatically
 
   const height = 28 * tableOfContets.length + "px"

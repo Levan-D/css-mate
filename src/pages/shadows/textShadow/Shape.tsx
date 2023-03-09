@@ -6,7 +6,6 @@ import { useAppSelector } from "../../../app/hooks"
 import moon from "../../../assets/icons/moon.png"
 import sun from "../../../assets/icons/sun.png"
 import { quotes } from "./Data"
-import SendIcon from "../../../assets/icons/send.png"
 import ColorPicker from "../../../components/ColorPicker"
 
 const Shape = () => {

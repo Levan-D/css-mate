@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react"
 import Shape from "./Shape"
 import BoxShadowOutput from "./BoxShadowOutput"
 import BoxShadowSidemenu from "./boxShadowSidemenu/BoxShadowSidemenu"
@@ -20,7 +19,7 @@ const BoxShadow = () => {
       </div>
       <TableOfContents data={blogData} />
       <div
-        id="Box shadow"
+        id="Tool"
         className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-2 lg:gap-36 "
       >
         <BoxShadowSidemenu />
