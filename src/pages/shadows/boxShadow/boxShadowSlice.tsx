@@ -114,7 +114,7 @@ export const selectBoxShadowStyle = createSelector(
   boxShadowData => {
     return boxShadowData.map(
       data =>
-        `${data.settings.inset ? "inset" : ""} ${data.settings.horizontal}px ${
+        `${data.settings.inset ? "inset " : ""}${data.settings.horizontal}px ${
           data.settings.vertical
         }px ${data.settings.blur}px ${data.settings.spread}px rgba(${
           data.settings.shadowColor

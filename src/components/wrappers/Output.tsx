@@ -18,7 +18,7 @@ type OutputProps = {
 const Output = ({ renderArray, comments }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
-    <div className=" mx-auto h-fit rounded-xl border-2 border-white sm:w-[500px] md:w-[600px]  ">
+    <div className=" mx-auto h-fit max-w-[700px] rounded-xl border-2 border-white ">
       <div>
         <div className="menuHeader flex justify-center gap-4 ">
           {renderArray.map((item, index) => (
@@ -36,7 +36,7 @@ const Output = ({ renderArray, comments }: OutputProps) => {
         </div>
         {comments &&
           comments.map((comment, index) => (
-            <h3 key={index} className="mx-4 py-2 text-center text-slate-300">
+            <h3 key={index} className="mx-4 py-2 text-center text-slate-300 ">
               {comment.onActive === selectedBtn ? comment.comment : ""}
             </h3>
           ))}

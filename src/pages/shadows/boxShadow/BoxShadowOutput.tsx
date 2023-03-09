@@ -4,101 +4,75 @@ import Output from "../../../components/wrappers/Output"
 import { selectBoxShadowStyle } from "./boxShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
 import { OutputRenderArrayType } from "../../../components/wrappers/Output"
+//@ts-ignore
+import SyntaxHighlighter from "react-syntax-highlighter"
+//@ts-ignore
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs"
+//@ts-ignore
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 const BoxShadowOutput = () => {
   const boxShadowStyle = useAppSelector(selectBoxShadowStyle)
-  console.log(boxShadowStyle)
-  const vanillaStyle = (
-    <div>
-      {boxShadowStyle.map((x, i) => (
-        <div key={i} className="text-[#afcdb2]">
-          {x}
-          {boxShadowStyle.length === i + 1 ? (
-            <span className="pl-[4px] text-white ">;</span>
-          ) : (
-            <span className="pl-[4px] text-white ">,</span>
-          )}
-        </div>
-      ))}
-    </div>
-  )
-  const vanillaStyleCopy = boxShadowStyle.join()
 
-  const inlineStyle = (
-    <div className="sm:ml-20">
-      {boxShadowStyle.map((x, i) => (
-        <div key={i} className="text-orange-300">
-          {x.replace(/ /g, "_").replace(/^_/, "")}
-          {boxShadowStyle.length === i + 1 ? (
-            <span className="pl-[4px]  "></span>
-          ) : (
-            <span className="pl-[4px]  ">,</span>
-          )}
-        </div>
-      ))}
-    </div>
-  )
+  const vanillaStyle = boxShadowStyle.join(",")
 
-  const inlineStyleCopy = boxShadowStyle
-    .map(x => x.replace(/ /g, "_").replace(/^_/, ""))
-    .join()
+  const inlineStyle = boxShadowStyle.join(",").replace(/ /g, "_").replace(/^_/, "")
 
-  const customStyle = (
-    <div>
-      {boxShadowStyle.map((x, i) => (
-        <div key={i} className="text-orange-300">
-          {x}
-          {boxShadowStyle.length === i + 1 ? (
-            <span className="pl-[4px]  "></span>
-          ) : (
-            <span className="pl-[4px]  ">,</span>
-          )}
-          {boxShadowStyle.length === i + 1 && (
-            <span>
-              &#34;<span className="text-white">,</span>
-            </span>
-          )}
-        </div>
-      ))}
-    </div>
-  )
-  const customStyleCopy = boxShadowStyle.join()
+  const syntaxFunc = (string: string, style: string[], numSpaces = 0) => {
+    const spaces = " ".repeat(numSpaces)
+
+    let syntaxStyle
+
+    if (Array.isArray(style)) {
+      if (string === `"custom"`) {
+        syntaxStyle = `"${style.join(`,\n${spaces}`)}",`
+      } else {
+        syntaxStyle = style.join(`,\n${spaces}`) + ";"
+      }
+    } else syntaxStyle = style
+
+    return (
+      <SyntaxHighlighter
+        language="css"
+        style={string === `"custom"` ? nightOwl : vs2015}
+        wrapLongLines={true}
+        customStyle={{
+          backgroundColor: "transparent",
+          overflowX: "hidden",
+          color: string === `"custom"` ? "#ecc48d" : "",
+        }}
+      >
+        {`${string}: ${syntaxStyle}`}
+      </SyntaxHighlighter>
+    )
+  }
 
   const renderArray: OutputRenderArrayType[] = [
     {
       title: "Vanilla",
-      copy: `box-shadow: ${vanillaStyleCopy};
-      -webkit-box-shadow: ${vanillaStyleCopy};
-      -moz-box-shadow: ${vanillaStyleCopy};`,
+      copy: `box-shadow: ${vanillaStyle};
+      -webkit-box-shadow: ${vanillaStyle};
+      -moz-box-shadow: ${vanillaStyle};`,
       content: [
-        <div className="mb-4 flex">
-          <div className="basis-1/3 text-[#9cdcfe]">
-            box-shadow<span className="px-[4px] text-white">:</span>
-          </div>
-          <div>{vanillaStyle}</div>
-        </div>,
-        <div className="mb-4  flex">
-          <div className="basis-1/3 text-[#9cdcfe]">
-            -webkit-box-shadow<span className="px-[4px] text-white">:</span>
-          </div>
-          <div>{vanillaStyle}</div>
-        </div>,
-        <div className="mb-4 flex">
-          <div className="basis-1/3 text-[#9cdcfe]">
-            -moz-box-shadow<span className="px-[4px] text-white">:</span>
-          </div>
-          <div>{vanillaStyle}</div>
-        </div>,
+        syntaxFunc(`box-shadow`, boxShadowStyle, 12),
+        syntaxFunc(`-webkit-box-shadow`, boxShadowStyle, 20),
+        syntaxFunc(`-moz-box-shadow`, boxShadowStyle, 17),
       ],
     },
     {
       title: "Tailwind inline",
-      copy: `shadow-[${inlineStyleCopy}]`,
-      content: [<span className="text-orange-300">shadow-&#91;{inlineStyle}&#93;</span>],
+      copy: `shadow-[${inlineStyle}]`,
+      content: [
+        <div className="max-w-[265px] text-orange-300 md:max-w-[300px]">
+          <div>shadow-</div>
+          <div>&#91;</div>
+          {inlineStyle} <div>&#93;</div>
+        </div>,
+      ],
     },
     {
       title: "Tailwind extend",
-      copy: ` "${customStyleCopy}"`,
+      copy: `"${vanillaStyle}"`,
       content: [
         <div className="select-none text-slate-400">
           <div className="select-none text-slate-400">module.exports =&#x2774;</div>
@@ -106,11 +80,7 @@ const BoxShadowOutput = () => {
           <div className="ml-8">extend: &#x2774;</div>
           <div className="ml-12">boxShadow: &#x2774;</div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe]">
-              "custom"<span className="px-[4px] text-white">:</span>&nbsp;
-            </div>
-            <div className="text-orange-300">&#34;</div>
-            <div>{customStyle}</div>
+            {syntaxFunc(`"custom"`, boxShadowStyle, 11)}
           </div>
           <div className="ml-16">&#x2775;,</div>
           <div className="ml-12">&#x2775;,</div>
