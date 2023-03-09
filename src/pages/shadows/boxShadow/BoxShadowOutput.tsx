@@ -3,7 +3,7 @@
 import Output from "../../../components/wrappers/Output"
 import { selectBoxShadowStyle } from "./boxShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
-import { OutputRenderArrayType } from "../../../components/wrappers/WrapperTypes"
+import { OutputRenderArrayType } from "../../../components/wrappers/Output"
 
 const BoxShadowOutput = () => {
   const boxShadowStyle = useAppSelector(selectBoxShadowStyle)

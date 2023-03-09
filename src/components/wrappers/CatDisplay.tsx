@@ -1,8 +1,16 @@
 /** @format */
 
-import { useState, useMemo } from "react"
-import { CatDisplayDataType } from "./WrapperTypes"
+import { useState, useMemo, ReactNode } from "react"
 import Tooltip from "../Tooltip"
+
+export type CatDisplayDataType = {
+  category: string
+  content: {
+    character: ReactNode | string
+    hexadecimal: string
+    description?: string
+  }[]
+}
 
 type CatDisplayType = {
   Data: CatDisplayDataType[]

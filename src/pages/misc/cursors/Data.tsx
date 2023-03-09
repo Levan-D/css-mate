@@ -1,6 +1,16 @@
 /** @format */
+import React, { ReactNode } from "react"
 
-import { CursorType } from "./CursorTypes"
+export type CursorType = {
+  category: string
+  contents: {
+    name: string
+    description?: string
+    cssRule?: ReactNode
+    vanilla: string
+    tailwind: string
+  }[]
+}
 
 export const cursorData: CursorType[] = [
   {

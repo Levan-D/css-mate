@@ -1,13 +1,13 @@
 /** @format */
 
-import React from "react";
-import Output from "../../../components/wrappers/Output";
-import { selectTextShadowStyle } from "./textShadowSlice";
-import { useAppSelector } from "../../../app/hooks";
-import { OutputRenderArrayType } from "../../../components/wrappers/WrapperTypes";
+import React from "react"
+import Output from "../../../components/wrappers/Output"
+import { selectTextShadowStyle } from "./textShadowSlice"
+import { useAppSelector } from "../../../app/hooks"
+import { OutputRenderArrayType } from "../../../components/wrappers/Output"
 
 const TextShadowOutput = () => {
-  const textShadowStyle = useAppSelector(selectTextShadowStyle);
+  const textShadowStyle = useAppSelector(selectTextShadowStyle)
 
   const vanillaStyle = (
     <div>
@@ -22,8 +22,8 @@ const TextShadowOutput = () => {
         </div>
       ))}
     </div>
-  );
-  const vanillaStyleCopy = textShadowStyle.join();
+  )
+  const vanillaStyleCopy = textShadowStyle.join()
 
   const inlineStyle = (
     <div className="sm:ml-20">
@@ -38,11 +38,11 @@ const TextShadowOutput = () => {
         </div>
       ))}
     </div>
-  );
+  )
 
   const inlineStyleCopy = textShadowStyle
-    .map((x) => x.replace(/ /g, "_").replace(/^_/, ""))
-    .join();
+    .map(x => x.replace(/ /g, "_").replace(/^_/, ""))
+    .join()
 
   const customStyle = (
     <div>
@@ -62,8 +62,8 @@ const TextShadowOutput = () => {
         </div>
       ))}
     </div>
-  );
-  const customStyleCopy = textShadowStyle.join();
+  )
+  const customStyleCopy = textShadowStyle.join()
 
   const renderArray: OutputRenderArrayType[] = [
     {
@@ -82,9 +82,7 @@ const TextShadowOutput = () => {
       title: "Tailwind inline",
       copy: `[text-shadow:${inlineStyleCopy}]`,
       content: [
-        <span className="text-orange-300">
-          &#91;text-shadow:{inlineStyle}&#93;
-        </span>,
+        <span className="text-orange-300">&#91;text-shadow:{inlineStyle}&#93;</span>,
       ],
     },
     {
@@ -92,9 +90,7 @@ const TextShadowOutput = () => {
       copy: ` "${customStyleCopy}"`,
       content: [
         <div className="select-none text-sm text-slate-400">
-          <div className="select-none text-slate-400">
-            module.exports =&#x2774;
-          </div>
+          <div className="select-none text-slate-400">module.exports =&#x2774;</div>
           <div className="ml-4">theme: &#x2774;</div>
           <div className="ml-8">extend: &#x2774;</div>
           <div className="ml-12">textShadow: &#x2774;</div>
@@ -139,7 +135,7 @@ const TextShadowOutput = () => {
         </div>,
       ],
     },
-  ];
+  ]
   return (
     <div>
       <Output
@@ -151,8 +147,8 @@ const TextShadowOutput = () => {
               <div className="mt-4 text-sm ">
                 Tailwind inline doesn't currently support text shadows.
                 <br />
-                To still add them inline use custom JIT or <br /> add custom
-                classes through confing.
+                To still add them inline use custom JIT or <br /> add custom classes
+                through confing.
               </div>
             ),
           },
@@ -162,8 +158,7 @@ const TextShadowOutput = () => {
               <div className="text-sm">
                 Tailwind inline doesn't currently support text shadows.
                 <br />
-                So... what do? Just add the following to your
-                tailwind.config.js:
+                So... what do? Just add the following to your tailwind.config.js:
                 <div className="menuContainer mt-4 select-none text-left  text-slate-400">
                   <div className="m-4 rounded-lg border-l-2 border-primary pt-3 pb-4 pl-4">
                     <div className="select-text text-white">
@@ -180,8 +175,8 @@ const TextShadowOutput = () => {
                       <div>plugins: &#91;</div>
                       <div className="select-text text-white">
                         <div className="ml-4">
-                          plugin&#40;function &#40; &#123; matchUtilities, theme
-                          &#125; &#41; &#123;
+                          plugin&#40;function &#40; &#123; matchUtilities, theme &#125;
+                          &#41; &#123;
                         </div>
                         <div className="ml-8">matchUtilities&#40;</div>
                         <div className="ml-12">&#123;</div>
@@ -203,13 +198,13 @@ const TextShadowOutput = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  For custom classes we've used var(--tw-shadow-color). This
-                  allows us to use Tailwind CSS shadow-[color] classes with the
-                  text-shadow classes we've added.
+                  For custom classes we've used var(--tw-shadow-color). This allows us to
+                  use Tailwind CSS shadow-[color] classes with the text-shadow classes
+                  we've added.
                 </div>
                 <div className="mt-2">
-                  Thats pretty much it. Now we can use text shadows like other
-                  tailwind classes text-shadow-[sm] shadow-slate-300 .
+                  Thats pretty much it. Now we can use text shadows like other tailwind
+                  classes text-shadow-[sm] shadow-slate-300 .
                   <br />
                   For DEFAULT option just write text-shadow without [size]
                 </div>
@@ -219,7 +214,7 @@ const TextShadowOutput = () => {
         ]}
       />
     </div>
-  );
-};
+  )
+}
 
-export default TextShadowOutput;
+export default TextShadowOutput

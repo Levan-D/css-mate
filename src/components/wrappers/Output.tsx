@@ -1,8 +1,14 @@
 /** @format */
 
 import { ReactNode, useState } from "react"
-import type { OutputRenderArrayType } from "./WrapperTypes"
+
 import Tooltip from "../Tooltip"
+
+export type OutputRenderArrayType = {
+  title: string
+  copy: string
+  content: JSX.Element[] | string[]
+}
 
 type OutputProps = {
   renderArray: OutputRenderArrayType[]

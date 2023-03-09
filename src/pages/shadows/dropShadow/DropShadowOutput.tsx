@@ -2,7 +2,7 @@
 
 import Output from "../../../components/wrappers/Output"
 import { useAppSelector } from "../../../app/hooks"
-import { OutputRenderArrayType } from "../../../components/wrappers/WrapperTypes"
+import { OutputRenderArrayType } from "../../../components/wrappers/Output"
 import { selectDropShadowStyle } from "./dropShadowSlice"
 
 const DropShadowOutput = () => {

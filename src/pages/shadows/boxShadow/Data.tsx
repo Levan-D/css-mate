@@ -1,7 +1,22 @@
 /** @format */
 
-import { boxShadowPresetsType } from "./BoxShadowTypes"
 import { BlogData } from "../../../components/BlogGenerator"
+
+export type boxShadowPresetsType = {
+  name: string
+  presets: {
+    titile: string
+    settings: {
+      horizontal: number
+      vertical: number
+      blur: number
+      spread: number
+      opacity: number
+      inset: boolean
+      shadowColor: string
+    }
+  }[]
+}
 
 export const boxShadowPresets: boxShadowPresetsType[] = [
   {
