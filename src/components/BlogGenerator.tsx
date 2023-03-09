@@ -24,6 +24,7 @@ type Content =
     }
   | {
       type: "demo"
+      styleC: string
       styleQ: string
       quote: string
       styleA: string
@@ -57,6 +58,7 @@ export default function BlogGenerator({ data }: Data) {
               <SyntaxHighlighter
                 language={piece.language}
                 style={vs2015}
+                wrapLongLines={true}
                 customStyle={{
                   backgroundColor: "#1e293b",
                   borderRadius: "12px",
@@ -66,6 +68,7 @@ export default function BlogGenerator({ data }: Data) {
                   width: `fit-content`,
                   margin: `3rem auto`,
                   padding: `2rem 1.5rem`,
+                  overflowX: "hidden",
                 }}
               >
                 {piece.data}
@@ -77,21 +80,29 @@ export default function BlogGenerator({ data }: Data) {
       case "list":
         if (Array.isArray(piece.data)) {
           const list = piece.data.map((li, itemI) => (
-            <li key={itemI} className="mb-4 list-decimal font-bold">
-              <span>{li.substring(0, li.indexOf(":"))}:</span>
-              <span className="font-medium ">{li.substring(li.indexOf(":") + 1)}</span>
+            <li key={itemI} className="mb-4 list-decimal font-bold  ">
+              {li.includes(`:`) ? (
+                <>
+                  <span>{li.substring(0, li.indexOf(":"))}:</span>
+                  <span className="font-medium ">
+                    {li.substring(li.indexOf(":") + 1)}
+                  </span>
+                </>
+              ) : (
+                <span className="font-medium ">{li}</span>
+              )}
             </li>
           ))
 
           if ("kind" in piece && piece.kind === "ol") {
             return (
-              <ol key={uuidv4()} className="mx-auto max-w-xl">
+              <ol key={uuidv4()} className="mx-auto my-8 max-w-xl">
                 {list}
               </ol>
             )
           } else if ("kind" in piece && piece.kind === "ul") {
             return (
-              <ul key={uuidv4()} className="mx-auto max-w-xl">
+              <ul key={uuidv4()} className="mx-auto  my-8 max-w-xl">
                 {list}
               </ul>
             )
@@ -101,9 +112,9 @@ export default function BlogGenerator({ data }: Data) {
       case "demo":
         if ("styleQ" in piece) {
           return (
-            <div key={uuidv4()} className={piece.styleQ}>
+            <div key={uuidv4()} className={`${piece.styleC} !my-12`}>
               <blockquote>
-                <q>{piece.quote}</q>
+                <q className={piece.styleQ}>{piece.quote}</q>
                 <p className={piece.styleA}>&mdash; {piece.author}</p>
               </blockquote>
             </div>
@@ -116,13 +127,15 @@ export default function BlogGenerator({ data }: Data) {
 
   return (
     <article>
-      <h2 className="text-center font-cursiveCustom text-2xl">{data.title}</h2>
+      <h2 id={data.id} className="text-center font-cursiveCustom text-2xl">
+        {data.title}
+      </h2>
       {data.sections.map((section, i) => (
         <div key={i}>
           <h3 id={section.id} className="mt-16 mb-4 font-cursiveCustom text-xl">
             {section.title}
           </h3>
-          {section.content.map(piece => SwitchFunc(piece))}
+          <div className="my-8"> {section.content.map(piece => SwitchFunc(piece))}</div>
         </div>
       ))}
     </article>

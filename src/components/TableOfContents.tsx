@@ -1,17 +1,20 @@
 /** @format */
 
-import  { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 // @ts-ignore
 import { ReactComponent as ChevronIcon } from "../assets/icons/chevron.svg"
+import { BlogData } from "./BlogGenerator"
 
 type tableOfContetsType = {
-  tableOfContets: string[]
+  data: BlogData
 }
 
-const TableOfContents = ({ tableOfContets }: tableOfContetsType) => {
+const TableOfContents = ({ data }: tableOfContetsType) => {
   const [visibility, setVisibility] = useState(true)
   const [tableOffset, setTableOffset] = useState(false)
 
+  const tableOfContets = data.sections.map(section => section.id)
+  tableOfContets.unshift(data.id)
   // need to manually set the line height to allow the table to generate automatically
 
   const height = 28 * tableOfContets.length + "px"
