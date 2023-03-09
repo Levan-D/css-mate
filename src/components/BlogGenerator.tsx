@@ -57,7 +57,7 @@ export default function BlogGenerator({ data }: Data) {
     switch (piece.type) {
       case "paragraph":
         if (Array.isArray(piece.data)) {
-          return piece.data.map((paragraph, parI) => <div key={parI}>{paragraph}</div>)
+          return piece.data.map(paragraph => <div key={uuidv4()}>{paragraph}</div>)
         }
 
       case "code":
@@ -88,10 +88,10 @@ export default function BlogGenerator({ data }: Data) {
 
       case "list":
         if (Array.isArray(piece.data)) {
-          const list = piece.data.map((li, itemI) => {
+          const list = piece.data.map(li => {
             if (typeof li === `string`) {
               return (
-                <li key={itemI} className="mb-4 list-decimal font-bold  ">
+                <li key={uuidv4()} className="mb-4 list-decimal font-bold  ">
                   {li.includes(`:`) ? (
                     <>
                       <span>{li.substring(0, li.indexOf(":"))}:</span>
@@ -104,7 +104,7 @@ export default function BlogGenerator({ data }: Data) {
                   )}
                 </li>
               )
-            } else return li
+            } else return <span key={uuidv4()}>{li}</span>
           })
 
           if ("kind" in piece && piece.kind === "ol") {
@@ -124,7 +124,7 @@ export default function BlogGenerator({ data }: Data) {
 
       case "demo":
         if (`element` in piece) {
-          return piece.element
+          return <span key={uuidv4()}>{piece.element}</span>
         } else if ("styleQ" in piece) {
           return (
             <div
@@ -142,7 +142,11 @@ export default function BlogGenerator({ data }: Data) {
 
       case "subHeader":
         if (`subHeader` in piece) {
-          return <h3 className="my-8  font-cursiveCustom">{piece.subHeader}</h3>
+          return (
+            <h3 key={uuidv4()} className="my-8  font-cursiveCustom">
+              {piece.subHeader}
+            </h3>
+          )
         }
       default:
         return
@@ -150,16 +154,18 @@ export default function BlogGenerator({ data }: Data) {
   }
 
   return (
-    <article>
+    <article key={uuidv4()}>
       <h2 id={data.id} className="text-center font-cursiveCustom text-2xl">
         {data.title}
       </h2>
-      {data.sections.map((section, i) => (
-        <div key={i}>
+      {data.sections.map(section => (
+        <div key={uuidv4()}>
           <h3 id={section.id} className="mt-16 mb-4 font-cursiveCustom text-xl">
             {section.title}
           </h3>
-          <div className="my-8"> {section.content.map(piece => SwitchFunc(piece))}</div>
+          <div key={uuidv4()} className="my-8">
+            {section.content.map(piece => SwitchFunc(piece))}
+          </div>
         </div>
       ))}
     </article>
