@@ -13,8 +13,10 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 const BoxShadowOutput = () => {
   const boxShadowStyle = useAppSelector(selectBoxShadowStyle)
+
   const vanillaStyle = boxShadowStyle.join(",")
-  const inlineStyle = boxShadowStyle.join(",").replace(/ /g, "_").replace(/^_/, "")
+
+  const inlineStyle = vanillaStyle.replace(/ /g, "_").replace(/^_/, "")
 
   const syntaxFunc = (string: string, style: string[], numSpaces = 0) => {
     const spaces = " ".repeat(numSpaces)
@@ -37,7 +39,7 @@ const BoxShadowOutput = () => {
         customStyle={{
           backgroundColor: "transparent",
           overflowX: "hidden",
-          color: string === `"custom"` ? "#ecc48d" : "",
+          color: string === `"custom"` && "#ecc48d",
         }}
       >
         {`${string}: ${syntaxStyle}`}
@@ -61,32 +63,31 @@ const BoxShadowOutput = () => {
       title: "Tailwind inline",
       copy: `shadow-[${inlineStyle}]`,
       content: [
-        <div className="max-w-[265px] text-orange-300 md:max-w-[300px]">
-          <div>shadow-</div>
-          <div>&#91;</div>
-          {inlineStyle} <div>&#93;</div>
+        <div className="max-w-[345px] text-orange-300 md:max-w-[380px]">
+          <div>shadow-&#91;</div>
+          <div className="ml-20">{inlineStyle}</div> <div>&#93;</div>
         </div>,
       ],
     },
-    // {
-    //   title: "Tailwind extend",
-    //   copy: `"${vanillaStyle}"`,
-    //   content: [
-    //     <div className="select-none text-slate-400">
-    //       <div className="select-none text-slate-400">module.exports =&#x2774;</div>
-    //       <div className="ml-4">theme: &#x2774;</div>
-    //       <div className="ml-8">extend: &#x2774;</div>
-    //       <div className="ml-12">boxShadow: &#x2774;</div>
-    //       <div className="ml-16 flex select-text ">
-    //         {syntaxFunc(`"custom"`, boxShadowStyle, 11)}
-    //       </div>
-    //       <div className="ml-16">&#x2775;,</div>
-    //       <div className="ml-12">&#x2775;,</div>
-    //       <div className="ml-8">&#x2775;,</div>
-    //       <div className="ml-4">&#x2775;</div>
-    //     </div>,
-    //   ],
-    // },
+    {
+      title: "Tailwind extend",
+      copy: `"${vanillaStyle}"`,
+      content: [
+        <div className="select-none text-slate-400">
+          <div className="select-none text-slate-400">module.exports =&#x2774;</div>
+          <div className="ml-4">theme: &#x2774;</div>
+          <div className="ml-8">extend: &#x2774;</div>
+          <div className="ml-12">boxShadow: &#x2774;</div>
+          <div className="ml-16 flex select-text ">
+            {syntaxFunc(`"custom"`, boxShadowStyle, 11)}
+          </div>
+          <div className="ml-16">&#x2775;,</div>
+          <div className="ml-12">&#x2775;,</div>
+          <div className="ml-8">&#x2775;,</div>
+          <div className="ml-4">&#x2775;</div>
+        </div>,
+      ],
+    },
   ]
   return (
     <div>

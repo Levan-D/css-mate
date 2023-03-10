@@ -14,78 +14,78 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs"
 const DropShadowOutput = () => {
   const dropShadowStyle = useAppSelector(selectDropShadowStyle)
 
-  const vanillaStyle = (
-    <div>
-      {dropShadowStyle.map((x, i) => (
-        <div key={i} className="text-[#afcdb2]">
-          drop-shadow({x})
-          {dropShadowStyle.length === i + 1 ? (
-            <span className="pl-[4px] text-white ">;</span>
-          ) : (
-            ""
-          )}
-        </div>
-      ))}
-    </div>
-  )
-  const vanillaStyleCopy = dropShadowStyle.map(x => `drop-shadow(${x})`).join(" ")
+  const vanillaStyle = dropShadowStyle.map(x => `drop-shadow(${x})`).join(" ")
 
-  const inlineStyle = (
-    <div className="sm:ml-20">
-      <div className="text-orange-300">
-        {dropShadowStyle[0].replace(/ /g, "_").replace(/^_/, "")}
-      </div>
-    </div>
-  )
-  const inlineStyleCopy = `filter drop-shadow-[${dropShadowStyle[0]
-    .replace(/ /g, "_")
-    .replace(/^_/, "")}]`
+  const inlineStyle = dropShadowStyle[0].replace(/ /g, "_").replace(/^_/, "")
 
-  const customStyle = (
-    <div>
-      {dropShadowStyle.length > 1 && <div>&#91;</div>}
-      {dropShadowStyle.map((x, i) => (
-        <div key={i} className="text-orange-300">
-          &#39;{x}&#39;
-          {dropShadowStyle.length === i + 1 ? (
-            ""
-          ) : (
-            <span className="pl-[4px] text-slate-400 ">,</span>
-          )}
-        </div>
-      ))}
-      {dropShadowStyle.length > 1 && <div>&#93;</div>}
-    </div>
-  )
-  const customStyleCopy = `${dropShadowStyle.length > 1 ? "[" : ""}${dropShadowStyle
-    .map(x => `'${x}'`)
-    .join()}${dropShadowStyle.length > 1 ? "]" : ""}`
+  const extendStyle = dropShadowStyle.map(x => `"${x}"`)
+  dropShadowStyle.length !== 1 && extendStyle.push("]")
+  dropShadowStyle.length !== 1 && extendStyle.unshift("[")
+
+  const syntaxFunc = (string: string, style: string[], numSpaces = 0) => {
+    const spaces = " ".repeat(numSpaces)
+
+    let syntaxStyle
+
+    if (Array.isArray(style)) {
+      if (string === `"custom"`) {
+        if (style.length > 1) {
+          syntaxStyle = style.map(
+            (x, i) =>
+              `${x}${
+                i > 0 && i !== style.length - 2 && i !== style.length - 1 ? "," : ""
+              }`
+          )
+          syntaxStyle = syntaxStyle.join(`\n${spaces}`)
+        } else syntaxStyle = style.join(``)
+      } else {
+        syntaxStyle = style.map(x => `drop-shadow(${x})`).join(` \n${spaces}`) + ";"
+      }
+    } else {
+      syntaxStyle = style
+    }
+
+    return (
+      <SyntaxHighlighter
+        language="css"
+        style={string === `"custom"` ? nightOwl : vs2015}
+        wrapLongLines={true}
+        customStyle={{
+          backgroundColor: "transparent",
+          overflowX: "hidden",
+          color: string === `"custom"` && "#ecc48d",
+        }}
+      >
+        {`${string}: ${syntaxStyle}`}
+      </SyntaxHighlighter>
+    )
+  }
 
   const renderArray: OutputRenderArrayType[] = [
     {
       title: "Vanilla",
-      copy: `filter: ${vanillaStyleCopy};`,
+      copy: `filter: ${vanillaStyle};`,
+      content: [syntaxFunc(`filter`, dropShadowStyle, 8)],
+    },
+    {
+      title: "Tailwind inline",
+      copy: `filter drop-shadow-[${inlineStyle}]`,
       content: [
-        <div className="mb-4 flex">
-          <div className="basis-1/4 text-[#9cdcfe]">
-            filter<span className="px-[4px] text-white">:</span>
-          </div>
-          <div>{vanillaStyle}</div>
+        <div className="max-w-[345px] text-orange-300 md:max-w-[380px]">
+          <div>filter drop-shadow-&#91;</div>
+          <div className="ml-20">{inlineStyle}</div> <div>&#93;</div>
         </div>,
       ],
     },
     {
-      title: "Tailwind inline",
-      copy: `${inlineStyleCopy}`,
-      content: [
-        <span className="text-orange-300">
-          filter drop-shadow-&#91;{inlineStyle}&#93;
-        </span>,
-      ],
-    },
-    {
       title: "Tailwind extend",
-      copy: `${customStyleCopy}`,
+      copy: `${
+        extendStyle.length === 1
+          ? extendStyle.join(",")
+          : extendStyle.join(",").slice(0, 1) +
+            extendStyle.join(",").slice(2, -2) +
+            extendStyle.join(",").slice(-1)
+      }`,
       content: [
         <div className="select-none text-slate-400">
           <div className="select-none text-slate-400">module.exports =&#x2774;</div>
@@ -93,11 +93,8 @@ const DropShadowOutput = () => {
           <div className="ml-8">extend: &#x2774;</div>
           <div className="ml-12">dropShadow: &#x2774;</div>
           <div className="ml-16 flex select-text ">
-            <div className="text-[#9cdcfe]">
-              "custom"<span className="px-[4px] text-white">:</span>&nbsp;
-            </div>
-
-            <div>{customStyle}</div>
+            <div></div>
+            {syntaxFunc(`"custom"`, extendStyle, 10)}
           </div>
           <div className="ml-16">&#x2775;,</div>
           <div className="ml-12">&#x2775;,</div>
