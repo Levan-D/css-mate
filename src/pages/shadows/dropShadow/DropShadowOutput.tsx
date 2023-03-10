@@ -4,6 +4,12 @@ import Output from "../../../components/wrappers/Output"
 import { useAppSelector } from "../../../app/hooks"
 import { OutputRenderArrayType } from "../../../components/wrappers/Output"
 import { selectDropShadowStyle } from "./dropShadowSlice"
+//@ts-ignore
+import SyntaxHighlighter from "react-syntax-highlighter"
+//@ts-ignore
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs"
+//@ts-ignore
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 const DropShadowOutput = () => {
   const dropShadowStyle = useAppSelector(selectDropShadowStyle)
