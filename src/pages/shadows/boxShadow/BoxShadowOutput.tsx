@@ -68,25 +68,25 @@ const BoxShadowOutput = () => {
         </div>,
       ],
     },
-    {
-      title: "Tailwind extend",
-      copy: `"${vanillaStyle}"`,
-      content: [
-        <div className="select-none text-slate-400">
-          <div className="select-none text-slate-400">module.exports =&#x2774;</div>
-          <div className="ml-4">theme: &#x2774;</div>
-          <div className="ml-8">extend: &#x2774;</div>
-          <div className="ml-12">boxShadow: &#x2774;</div>
-          <div className="ml-16 flex select-text ">
-            {syntaxFunc(`"custom"`, boxShadowStyle, 11)}
-          </div>
-          <div className="ml-16">&#x2775;,</div>
-          <div className="ml-12">&#x2775;,</div>
-          <div className="ml-8">&#x2775;,</div>
-          <div className="ml-4">&#x2775;</div>
-        </div>,
-      ],
-    },
+    // {
+    //   title: "Tailwind extend",
+    //   copy: `"${vanillaStyle}"`,
+    //   content: [
+    //     <div className="select-none text-slate-400">
+    //       <div className="select-none text-slate-400">module.exports =&#x2774;</div>
+    //       <div className="ml-4">theme: &#x2774;</div>
+    //       <div className="ml-8">extend: &#x2774;</div>
+    //       <div className="ml-12">boxShadow: &#x2774;</div>
+    //       <div className="ml-16 flex select-text ">
+    //         {syntaxFunc(`"custom"`, boxShadowStyle, 11)}
+    //       </div>
+    //       <div className="ml-16">&#x2775;,</div>
+    //       <div className="ml-12">&#x2775;,</div>
+    //       <div className="ml-8">&#x2775;,</div>
+    //       <div className="ml-4">&#x2775;</div>
+    //     </div>,
+    //   ],
+    // },
   ]
   return (
     <div>
