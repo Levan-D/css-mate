@@ -1,6 +1,6 @@
 /** @format */
 
-import  { useState, useRef } from "react"
+import { useState, useRef } from "react"
 import { selectDropShadowStyle } from "./dropShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
 import moon from "../../../assets/icons/moon.png"
@@ -31,23 +31,14 @@ const Shape = () => {
     setShapeColor(color.replace(/ /g, ""))
   }
   const handleMouseDown = () => {
-    if (btnActive.current === false) {
+    if (!btnActive.current) {
       setBtnContent(() => btnResponse[btnIndex.current])
       btnIndex.current = btnIndex.current + 1
       btnActive.current = true
     }
   }
-  const handleMouseUp = () => {
-    if (btnActive.current === true) {
-      if (btnResponse[btnIndex.current] === "1") {
-        navigate("/rekt")
-      }
-      setBtnContent(() => "I am a button")
-      btnActive.current = false
-    }
-  }
-  const handleMouseOut = () => {
-    if (btnActive.current === true) {
+  const handleButtonAction = () => {
+    if (btnActive.current) {
       if (btnResponse[btnIndex.current] === "1") {
         navigate("/rekt")
       }
@@ -134,8 +125,8 @@ const Shape = () => {
           color: ColorInverter(RgbToHex(shapeColor), `bw`),
         }}
         onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseOut={handleMouseOut}
+        onMouseUp={handleButtonAction}
+        onMouseOut={handleButtonAction}
         className={`btnPrimary  mx-auto mt-8 transition-transform active:translate-y-[-10px]`}
       >
         {btnContent}

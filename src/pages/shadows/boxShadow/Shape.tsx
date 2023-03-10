@@ -1,6 +1,6 @@
 /** @format */
 
-import  { useState, useRef } from "react"
+import { useState, useRef } from "react"
 import { selectBoxShadowStyle } from "./boxShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
 import moon from "../../../assets/icons/moon.png"
@@ -15,8 +15,9 @@ import { ReactComponent as ChangeShape } from "../../../assets/icons/changeShape
 
 const Shape = () => {
   const navigate = useNavigate()
-  const [shapeColor, setShapeColor] = useState("94,161,255")
   const boxShadowStyle = useAppSelector(selectBoxShadowStyle).join()
+
+  const [shapeColor, setShapeColor] = useState("94,161,255")
   const [darkmode, setDarkmode] = useState<boolean>(true)
   const [shape, setShape] = useState<boolean>(true)
   const [btnContent, setBtnContent] = useState<string>("I am a button")
@@ -28,23 +29,14 @@ const Shape = () => {
   }
 
   const handleMouseDown = () => {
-    if (btnActive.current === false) {
+    if (!btnActive.current) {
       setBtnContent(() => btnResponse[btnIndex.current])
       btnIndex.current = btnIndex.current + 1
       btnActive.current = true
     }
   }
-  const handleMouseUp = () => {
-    if (btnActive.current === true) {
-      if (btnResponse[btnIndex.current] === "1") {
-        navigate("/rekt")
-      }
-      setBtnContent(() => "I am a button")
-      btnActive.current = false
-    }
-  }
-  const handleMouseOut = () => {
-    if (btnActive.current === true) {
+  const handleButtonAction = () => {
+    if (btnActive.current) {
       if (btnResponse[btnIndex.current] === "1") {
         navigate("/rekt")
       }
@@ -105,8 +97,8 @@ const Shape = () => {
           color: ColorInverter(RgbToHex(shapeColor), `bw`),
         }}
         onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseOut={handleMouseOut}
+        onMouseUp={handleButtonAction}
+        onMouseOut={handleButtonAction}
         className={`btnPrimary  mx-auto mt-8 transition-transform active:translate-y-[-10px]`}
       >
         {btnContent}
