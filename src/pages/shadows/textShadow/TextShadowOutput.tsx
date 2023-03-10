@@ -5,84 +5,65 @@ import Output from "../../../components/wrappers/Output"
 import { selectTextShadowStyle } from "./textShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
 import { OutputRenderArrayType } from "../../../components/wrappers/Output"
+//@ts-ignore
+import SyntaxHighlighter from "react-syntax-highlighter"
+//@ts-ignore
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs"
+//@ts-ignore
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 const TextShadowOutput = () => {
   const textShadowStyle = useAppSelector(selectTextShadowStyle)
 
-  const vanillaStyle = (
-    <div>
-      {textShadowStyle.map((x, i) => (
-        <div key={i} className="text-[#afcdb2]">
-          {x}
-          {textShadowStyle.length === i + 1 ? (
-            <span className="pl-[4px] text-white ">;</span>
-          ) : (
-            <span className="pl-[4px] text-white ">,</span>
-          )}
-        </div>
-      ))}
-    </div>
-  )
-  const vanillaStyleCopy = textShadowStyle.join()
+  const vanillaStyle = textShadowStyle.join(",")
 
-  const inlineStyle = (
-    <div className="sm:ml-20">
-      {textShadowStyle.map((x, i) => (
-        <div key={i} className="text-orange-300">
-          {x.replace(/ /g, "_").replace(/^_/, "")}
-          {textShadowStyle.length === i + 1 ? (
-            <span className="pl-[4px]  "></span>
-          ) : (
-            <span className="pl-[4px]  ">,</span>
-          )}
-        </div>
-      ))}
-    </div>
-  )
+  const inlineStyle = vanillaStyle.replace(/ /g, "_").replace(/^_/, "")
 
-  const inlineStyleCopy = textShadowStyle
-    .map(x => x.replace(/ /g, "_").replace(/^_/, ""))
-    .join()
-
-  const customStyle = (
-    <div>
-      {textShadowStyle.map((x, i) => (
-        <div key={i} className="text-orange-300">
-          {x}
-          {textShadowStyle.length === i + 1 ? (
-            <span className="pl-[4px]  "></span>
-          ) : (
-            <span className="pl-[4px]  ">,</span>
-          )}
-          {textShadowStyle.length === i + 1 && (
-            <span>
-              &#34;<span className="text-white">,</span>
-            </span>
-          )}
-        </div>
-      ))}
-    </div>
-  )
   const customStyleCopy = textShadowStyle.join()
+
+  const syntaxFunc = (string: string, style: string[], numSpaces = 0) => {
+    const spaces = " ".repeat(numSpaces)
+
+    let syntaxStyle
+
+    if (Array.isArray(style)) {
+      if (string === `"custom"`) {
+        syntaxStyle = `"${style.join(`,\n${spaces}`)}",`
+      } else {
+        syntaxStyle = style.join(`,\n${spaces}`) + ";"
+      }
+    } else syntaxStyle = style
+
+    return (
+      <SyntaxHighlighter
+        language="css"
+        style={string === `"custom"` ? nightOwl : vs2015}
+        wrapLongLines={true}
+        customStyle={{
+          backgroundColor: "transparent",
+          overflowX: "hidden",
+          color: string === `"custom"` && "#ecc48d",
+        }}
+      >
+        {`${string}: ${syntaxStyle}`}
+      </SyntaxHighlighter>
+    )
+  }
 
   const renderArray: OutputRenderArrayType[] = [
     {
       title: "Vanilla",
-      copy: `text-shadow: ${vanillaStyleCopy};`,
-      content: [
-        <div className="mb-4 flex">
-          <div className="basis-1/3 text-[#9cdcfe]">
-            text-shadow<span className="px-[4px] text-white">:</span>
-          </div>
-          <div>{vanillaStyle}</div>
-        </div>,
-      ],
+      copy: `text-shadow: ${vanillaStyle};`,
+      content: [syntaxFunc(`text-shadow`, textShadowStyle, 13)],
     },
     {
       title: "Tailwind inline",
-      copy: `[text-shadow:${inlineStyleCopy}]`,
+      copy: `[text-shadow:${inlineStyle}]`,
       content: [
-        <span className="text-orange-300">&#91;text-shadow:{inlineStyle}&#93;</span>,
+        <div className="max-w-[305px] text-orange-300 md:max-w-[340px]">
+          <div>&#91;text-shadow:</div>
+          <div className="ml-20">{inlineStyle}</div> <div>&#93;</div>
+        </div>,
       ],
     },
     {
@@ -121,12 +102,8 @@ const TextShadowOutput = () => {
               <span className="text-white">,</span>
             </div>
           </div>
-          <div className="ml-16 flex select-text ">
-            <div className="basis-1/5 text-[#9cdcfe]">
-              "custom"<span className="px-[4px] text-white">:</span>&nbsp;
-            </div>
-            <div className="text-orange-300">&#34;</div>
-            <div>{customStyle}</div>
+          <div className="ml-[58px]  select-text ">
+            {syntaxFunc(`"custom"`, textShadowStyle, 11)}
           </div>
           <div className="ml-16">&#x2775;,</div>
           <div className="ml-12">&#x2775;,</div>
