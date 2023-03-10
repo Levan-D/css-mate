@@ -13,9 +13,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 const BoxShadowOutput = () => {
   const boxShadowStyle = useAppSelector(selectBoxShadowStyle)
-
   const vanillaStyle = boxShadowStyle.join(",")
-
   const inlineStyle = boxShadowStyle.join(",").replace(/ /g, "_").replace(/^_/, "")
 
   const syntaxFunc = (string: string, style: string[], numSpaces = 0) => {
