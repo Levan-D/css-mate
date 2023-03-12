@@ -107,11 +107,8 @@ export const blogData: BlogData = {
         },
         {
           type: "demo",
-          inlineStyle: {
-            textShadow: `1px 1px rgba(247, 135, 119, 1), 0px 0px rgba(247, 135, 119, 1), 1px 1px rgba(247, 135, 119, 1), 2px 2px rgba(247, 135, 119, 1), 3px 3px rgba(247, 135, 119, 1), 4px 4px rgba(247, 135, 119, 1), 5px 5px rgba(247, 135, 119, 1), 6px 6px rgba(247, 135, 119, 1), 7px 7px rgba(247, 135, 119, 1), 8px 8px rgba(247, 135, 119, 1), 9px 9px rgba(247, 135, 119, 1), 10px 10px rgba(247, 135, 119, 1), 11px 11px rgba(247, 135, 119, 1), 12px 12px rgba(247, 135, 119, 1), 13px 13px rgba(247, 135, 119, 1), 14px 14px rgba(247, 135, 119, 1), 15px 15px rgba(247, 135, 119, 1)`,
-          },
           styleC:
-            "mx-auto mt-4 mb-16 max-w-[600px] px-8 py-5  font-cursiveCustom text-4xl font-bold  text-orange-800 sm:text-6xl",
+            "mx-auto wavy-text  mt-4 mb-16 max-w-[600px] px-8 py-5  font-cursiveCustom text-4xl font-bold  text-orange-800 sm:text-6xl",
           styleQ: "",
           quote: "This is how I win.",
           styleA: "mt-4 text-right text-3xl sm:text-5xl",

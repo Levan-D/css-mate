@@ -14,7 +14,7 @@ const TextShadow = () => {
   TOCData.unshift(`Tool`)
   return (
     <div className=" my-16 mx-4">
-      <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
+      <h1 className="mb-2 text-center font-cursiveCustom   text-2xl ">
         Generate <span className="text-secondary-300">text shadows</span> for your project
         with ease
       </h1>

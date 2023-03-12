@@ -27,7 +27,7 @@ type Content =
       inlineStyle?: object
       styleC: string
       styleQ: string
-      quote: string
+      quote: string | React.ReactNode
       styleA: string
       author: string
     }
