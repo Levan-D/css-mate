@@ -9,7 +9,7 @@ const ConicOps = () => {
   const dispatch = useAppDispatch()
   const {
     conicParams: { degree, coords },
-  } = useAppSelector(store => store.linearGradient)
+  } = useAppSelector(store => store.Gradient)
 
   const [coordsVisi, setCoordsVisi] = useState(false)
   const [tempLinearDeg, setTempLinearDeg] = useState<number | string>("")

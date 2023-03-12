@@ -6,7 +6,7 @@ import { setType } from "../gradientSlice"
 
 const TypePicker = () => {
   const dispatch = useAppDispatch()
-  const { type } = useAppSelector(store => store.linearGradient)
+  const { type } = useAppSelector(store => store.Gradient)
 
   const types = ["linear", "radial", "conic"]
 

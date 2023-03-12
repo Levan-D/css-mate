@@ -9,7 +9,7 @@ const LinearOps = () => {
   const dispatch = useAppDispatch()
   const {
     linearParams: { degree },
-  } = useAppSelector(store => store.linearGradient)
+  } = useAppSelector(store => store.Gradient)
 
   const [tempLinearDeg, setTempLinearDeg] = useState<number | string>("")
   const [visibility, setVisibility] = useState(false)

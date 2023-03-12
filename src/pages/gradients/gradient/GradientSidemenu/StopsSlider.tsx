@@ -9,7 +9,7 @@ import ColorInverter from "../../../../utils/ColorInverter"
 
 const StopsSlider = () => {
   const dispatch = useAppDispatch()
-  const { stops, offset } = useAppSelector(store => store.linearGradient)
+  const { stops, offset } = useAppSelector(store => store.Gradient)
   const stopArray = stops.map(stop => stop.stop.percent)
 
   return (

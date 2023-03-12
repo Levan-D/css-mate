@@ -6,7 +6,7 @@ import { setKind } from "../gradientSlice"
 
 const KindPicker = () => {
   const dispatch = useAppDispatch()
-  const { kind } = useAppSelector(store => store.linearGradient)
+  const { kind } = useAppSelector(store => store.Gradient)
 
   const kinds = [
     { value: "constant", name: "Const" },

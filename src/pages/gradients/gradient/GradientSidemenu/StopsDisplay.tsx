@@ -12,7 +12,7 @@ import {
 } from "../gradientSlice"
 const StopsDisplay = () => {
   const dispatch = useAppDispatch()
-  const { stops, offset } = useAppSelector(store => store.linearGradient)
+  const { stops, offset } = useAppSelector(store => store.Gradient)
 
   const [tempHex, setTempHex] = useState({ value: "", index: 0 })
   const [tempStop, setTempStop] = useState({ value: 0, index: 100 })

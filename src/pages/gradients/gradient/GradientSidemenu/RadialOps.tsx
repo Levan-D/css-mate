@@ -9,7 +9,7 @@ const RadialOps = () => {
   const dispatch = useAppDispatch()
   const {
     radialParams: { shape, coords },
-  } = useAppSelector(store => store.linearGradient)
+  } = useAppSelector(store => store.Gradient)
 
   const [visibility, setVisibility] = useState(false)
 
