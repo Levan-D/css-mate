@@ -4,6 +4,7 @@ import boxShadow from "../assets/pageIcons/boxShadow.png"
 import dropShadow from "../assets/pageIcons/dropShadow.png"
 import textShadow from "../assets/pageIcons/textShadow.png"
 import gradient from "../assets/pageIcons/gradient.png"
+import converter from "../assets/pageIcons/converter.png"
 import cursor from "../assets/pageIcons/cursor.png"
 import emoji from "../assets/pageIcons/emoji.png"
 import entities from "../assets/pageIcons/entities.png"
@@ -41,12 +42,23 @@ export const pageButtons: pageButtonsType[] = [
     ],
   },
   {
+    catName: "Colors",
+    catPath: "colors",
+    catCon: [
+      {
+        name: "Converter",
+        path: "converter",
+        icon: converter,
+      },
+    ],
+  },
+  {
     catName: "Gradients",
     catPath: "gradients",
     catCon: [
       {
-        name: "Linear Gradient",
-        path: "linear-gradient",
+        name: "Gradient",
+        path: "gradient",
         icon: gradient,
       },
     ],

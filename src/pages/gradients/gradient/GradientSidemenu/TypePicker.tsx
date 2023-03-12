@@ -1,14 +1,14 @@
 /** @format */
 
-import React from "react";
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { setType } from "../linearGradientSlice";
+import React from "react"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import { setType } from "../gradientSlice"
 
 const TypePicker = () => {
-  const dispatch = useAppDispatch();
-  const { type } = useAppSelector((store) => store.linearGradient);
+  const dispatch = useAppDispatch()
+  const { type } = useAppSelector(store => store.linearGradient)
 
-  const types = ["linear", "radial", "conic"];
+  const types = ["linear", "radial", "conic"]
 
   return (
     <div className="menuBlock m-2 flex justify-around px-2 py-1">
@@ -16,7 +16,7 @@ const TypePicker = () => {
         <div
           key={i}
           onClick={() => {
-            dispatch(setType(btnType));
+            dispatch(setType(btnType))
           }}
           className={`${
             type === btnType ? "btnSecondary" : "btnSecondaryDisabled"
@@ -26,7 +26,7 @@ const TypePicker = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default TypePicker;
+export default TypePicker

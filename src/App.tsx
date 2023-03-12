@@ -8,11 +8,12 @@ import Home from "./pages/home/Home"
 import BoxShadow from "./pages/shadows/boxShadow/BoxShadow"
 import DropShadow from "./pages/shadows/dropShadow/DropShadow"
 import TextShadow from "./pages/shadows/textShadow/TextShadow"
+import Converter from "./pages/colors/converter/Converter"
 import Error from "./pages/error/Error"
 import Cursors from "./pages/misc/cursors/Cursors"
 import Emojis from "./pages/misc/emojis/Emojis"
 import Entities from "./pages/misc/entities/Entities"
-import LinearGradient from "./pages/gradients/linearGradient/LinearGradient"
+import Gradient from "./pages/gradients/gradient/Gradient"
 import FloofGPTFull from "./components/floofGPT/FloofGPTFull"
 
 // layouts
@@ -30,8 +31,12 @@ const router = createBrowserRouter(
         <Route path="text-shadow" element={<TextShadow />} />
       </Route>
 
+      <Route path="colors" element={<CategoryLayout />}>
+        <Route path="converter" element={<Converter />} />
+      </Route>
+
       <Route path="gradients" element={<CategoryLayout />}>
-        <Route path="linear-gradient" element={<LinearGradient />} />
+        <Route path="gradient" element={<Gradient />} />
       </Route>
 
       <Route path="misc" element={<CategoryLayout />}>

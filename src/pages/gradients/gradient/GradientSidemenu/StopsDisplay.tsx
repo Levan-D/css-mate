@@ -9,7 +9,7 @@ import {
   setStopOpacity,
   setStopPercentage,
   deleteStop,
-} from "../linearGradientSlice"
+} from "../gradientSlice"
 const StopsDisplay = () => {
   const dispatch = useAppDispatch()
   const { stops, offset } = useAppSelector(store => store.linearGradient)

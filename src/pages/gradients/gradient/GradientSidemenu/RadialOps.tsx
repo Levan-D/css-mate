@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import { setRadialShape, setRadialCoords } from "../linearGradientSlice"
+import { setRadialShape, setRadialCoords } from "../gradientSlice"
 import ReactSlider from "react-slider"
 
 const RadialOps = () => {

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import { setConicDegree, setConicCoords } from "../linearGradientSlice"
+import { setConicDegree, setConicCoords } from "../gradientSlice"
 import ReactSlider from "react-slider"
 
 const ConicOps = () => {

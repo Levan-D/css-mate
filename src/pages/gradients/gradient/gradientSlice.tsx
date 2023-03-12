@@ -79,7 +79,7 @@ const initialState: initialStateType = {
   ],
 }
 
-const linearGradientSlice = createSlice({
+const GradientSlice = createSlice({
   name: "gradient",
   initialState,
   reducers: {
@@ -147,21 +147,21 @@ const linearGradientSlice = createSlice({
   },
 })
 
-export const selectLinearGradientStyle = createSelector(
-  (state: RootState) => state.linearGradient,
-  linearGradient => {
-    const kind = linearGradient.kind === "repeating" ? "repeating-" : ""
+export const selectGradientStyle = createSelector(
+  (state: RootState) => state.Gradient,
+  Gradient => {
+    const kind = Gradient.kind === "repeating" ? "repeating-" : ""
 
-    const type = linearGradient.type
+    const type = Gradient.type
 
     const params =
-      linearGradient.type === "linear"
-        ? linearGradient.linearParams.degree + `deg`
-        : linearGradient.type === "radial"
-        ? `${linearGradient.radialParams.shape} at ${linearGradient.radialParams.coords.x}% ${linearGradient.radialParams.coords.y}%`
-        : `from ${linearGradient.conicParams.degree}deg at ${linearGradient.conicParams.coords.x}% ${linearGradient.conicParams.coords.y}%`
+      Gradient.type === "linear"
+        ? Gradient.linearParams.degree + `deg`
+        : Gradient.type === "radial"
+        ? `${Gradient.radialParams.shape} at ${Gradient.radialParams.coords.x}% ${Gradient.radialParams.coords.y}%`
+        : `from ${Gradient.conicParams.degree}deg at ${Gradient.conicParams.coords.x}% ${Gradient.conicParams.coords.y}%`
 
-    const style = linearGradient.stops
+    const style = Gradient.stops
       .map(
         stop =>
           `rgba(${stop.stop.color}, ${stop.stop.opacity / 100}) ${stop.stop.percent}%`
@@ -186,5 +186,5 @@ export const {
   setLinearDegree,
   setConicCoords,
   setRadialCoords,
-} = linearGradientSlice.actions
-export default linearGradientSlice.reducer
+} = GradientSlice.actions
+export default GradientSlice.reducer

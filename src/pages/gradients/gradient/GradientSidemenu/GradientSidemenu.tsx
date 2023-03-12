@@ -2,7 +2,7 @@
 
 import SideMenu from "../../../../components/wrappers/SideMenu"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import { resetState as resetStateAction, addNewStop } from "../linearGradientSlice"
+import { resetState as resetStateAction, addNewStop } from "../gradientSlice"
 
 import TypePicker from "./TypePicker"
 import KindPicker from "./KindPicker"
@@ -12,9 +12,9 @@ import LinearOps from "./LinearOps"
 import RadialOps from "./RadialOps"
 import ConicOps from "./ConicOps"
 
-const LinearGradientSidemenu = () => {
+const GradientSidemenu = () => {
   const dispatch = useAppDispatch()
-  const { type } = useAppSelector(store => store.linearGradient)
+  const { type } = useAppSelector(store => store.Gradient)
 
   const resetState = (): void => {
     dispatch(resetStateAction())
@@ -43,4 +43,4 @@ const LinearGradientSidemenu = () => {
   )
 }
 
-export default LinearGradientSidemenu
+export default GradientSidemenu
