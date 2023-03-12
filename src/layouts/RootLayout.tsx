@@ -16,9 +16,9 @@ const RootLayout = () => {
     <div
       className={`${
         location.pathname === "/floof-gpt" ? "bg-primary sm:bg-transparent" : ""
-      } flex min-h-screen  flex-col overflow-x-hidden`}
+      } flex min-h-screen  flex-col overflow-x-hidden `}
       style={{
-        background: location.pathname.includes("/linear-gradient") ? linearGradient : "",
+        background: location.pathname.includes("/gradient") ? linearGradient : "",
       }}
     >
       <BackToTopBtn />

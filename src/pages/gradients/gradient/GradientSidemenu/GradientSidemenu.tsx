@@ -22,7 +22,7 @@ const GradientSidemenu = () => {
 
   return (
     <div className="mx-auto w-fit ">
-      <SideMenu title={`Gradient config`} resetState={resetState} visibility={true}>
+      <SideMenu title={`Gradient config`} resetState={resetState}>
         <div className="menuContainer m-4  pb-4  ">
           <TypePicker />
           <div className="flex">

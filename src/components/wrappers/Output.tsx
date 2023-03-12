@@ -12,13 +12,16 @@ export type OutputRenderArrayType = {
 
 type OutputProps = {
   renderArray: OutputRenderArrayType[]
+
   comments?: { onActive: number; comment: ReactNode }[]
 }
 
 const Output = ({ renderArray, comments }: OutputProps) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
-    <div className=" mx-auto h-fit max-w-[700px] rounded-xl border-2 border-white ">
+    <div
+      className={` mx-auto h-fit max-w-[700px] rounded-xl border-2 border-white bg-darkJungle-900 `}
+    >
       <div>
         <div className="menuHeader flex justify-center gap-4 ">
           {renderArray.map((item, index) => (
