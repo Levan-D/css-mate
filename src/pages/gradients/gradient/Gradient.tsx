@@ -1,6 +1,6 @@
 /** @format */
 
-import GradientSidemenu from "./GradientSidemenu/GradientSidemenu"
+import GradientSidemenu from "./gradientSidemenu/GradientSidemenu"
 import GradientOutput from "./GradientOutput"
 import { useState } from "react"
 // @ts-ignore

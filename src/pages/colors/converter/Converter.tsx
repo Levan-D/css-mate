@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react"
+import ConverterSidemenu from "./converterSidemenu/ConverterSidemenu";
 
 export default function Converter() {
   return (
@@ -9,10 +9,9 @@ export default function Converter() {
         Convert
         <span className="text-secondary-300">&#32;colors&#32;</span>
         below
-          </h1>
-          
+      </h1>
 
-          
+      <ConverterSidemenu />
     </div>
-  )
+  );
 }

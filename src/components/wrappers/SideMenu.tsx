@@ -1,29 +1,32 @@
 /** @format */
 
-import React, { useState } from "react"
+import React, { useState } from "react";
 // @ts-ignore
-import { ReactComponent as RestartIcon } from "../../assets/icons/restart.svg"
+import { ReactComponent as RestartIcon } from "../../assets/icons/restart.svg";
 
 type SideMenuProps = {
-  title: string
-  resetState?: Function
+  title: string;
+  resetState?: Function;
 
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
-  const [visi, setVisi] = useState(true)
+  const [visi, setVisi] = useState(true);
 
   const handleVisi = () => {
-    setVisi(x => !x)
-  }
+    setVisi((x) => !x);
+  };
 
   if (!visi) {
     return (
-      <div className="h-10 cursor-pointer text-6xl leading-8" onClick={handleVisi}>
+      <div
+        className="h-10 cursor-pointer text-6xl leading-8"
+        onClick={handleVisi}
+      >
         &#128065;
       </div>
-    )
+    );
   }
 
   return (
@@ -33,7 +36,7 @@ const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
       }  z-40 mx-auto  h-fit w-96 rounded-xl border-2 bg-darkJungle-900 md:mx-0`}
     >
       <div className="menuHeader flex justify-between gap-4 !bg-primary  p-4  pb-2  ">
-        <h2 className=" grow select-none font-bold">{title}</h2>
+        <h2 className=" grow select-none font-bold mb-1">{title}</h2>
 
         {resetState && (
           <div>
@@ -43,7 +46,7 @@ const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
               width={30}
               onClick={() => {
                 if (resetState !== undefined) {
-                  resetState()
+                  resetState();
                 }
               }}
             />
@@ -52,7 +55,7 @@ const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
       </div>
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default SideMenu
+export default SideMenu;
