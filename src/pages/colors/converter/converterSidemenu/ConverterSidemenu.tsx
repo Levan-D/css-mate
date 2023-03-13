@@ -1,30 +1,8 @@
-import React, { useState } from "react";
 import SideMenu from "../../../../components/wrappers/SideMenu";
 import Input from "./Input";
 import Output from "./Output";
-import Tooltip from "../../../../components/Tooltip";
-
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-
-import HexToRGB from "../../../../utils/HexToRGB";
-import RgbToHex from "../../../../utils/RGBToHex";
-
-import {
-  resetState,
-  setIsColorValid,
-  setError,
-  handleInputBtn,
-  handleOutputBtn,
-} from "../converterSlice";
-
-
 
 export default function ConverterSidemenu() {
-  const { inputType, outputType, inputText, outputText, isColorValid, error } =
-    useAppSelector((store) => store.converter);
-  const dispatch = useAppDispatch();
-
-
   // const handleColorValidation = () => {
   //   const HEXRegex = /^#[0-9A-F]{6}$/i;
   //   const RGBRegex = /^rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i;
@@ -88,8 +66,6 @@ export default function ConverterSidemenu() {
   //       return;
   //   }
   // };
-
-
 
   return (
     <div className="mx-auto w-fit ">
