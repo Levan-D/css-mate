@@ -3,15 +3,14 @@
 // input hex string  like: #a24949
 
 export default function HexToRGB(hex: string): string {
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
+  let hexColor;
+  if (!hex.startsWith("#")) {
+    hexColor = "#" + hex;
+  } else hexColor = hex;
 
-  return ` ${r}, ${g}, ${b}`
+  const r = parseInt(hexColor.slice(1, 3), 16);
+  const g = parseInt(hexColor.slice(3, 5), 16);
+  const b = parseInt(hexColor.slice(5, 7), 16);
+
+  return ` ${r}, ${g}, ${b}`;
 }
-
-function bob() {
-  return 5
-}
-
-let mike = bob
