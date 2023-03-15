@@ -1,6 +1,6 @@
 /** @format */
 
-import ConverterSidemenu from "./converterSidemenu/ConverterSidemenu";
+import ConverterSidemenu from "./converterSidemenu/ConverterSidemenu"
 
 export default function Converter() {
   return (
@@ -13,5 +13,5 @@ export default function Converter() {
 
       <ConverterSidemenu />
     </div>
-  );
+  )
 }

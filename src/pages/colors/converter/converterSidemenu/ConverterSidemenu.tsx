@@ -4,7 +4,7 @@ import Output from "./Output";
 
 export default function ConverterSidemenu() {
   // const handleColorValidation = () => {
-  //   const HEXRegex = /^#[0-9A-F]{6}$/i;
+  //   ;
   //   const RGBRegex = /^rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i;
 
   //   const expression = inputText.trim();

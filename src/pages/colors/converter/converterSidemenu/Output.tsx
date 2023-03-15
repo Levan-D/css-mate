@@ -1,21 +1,13 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import {
-  resetState,
-  setIsColorValid,
-  setError,
-  handleInputBtn,
-  handleOutputBtn,
-  setInputText,
-  setOutputText,
-} from "../converterSlice";
-import Tooltip from "../../../../components/Tooltip";
-import { inputBtns } from "../converterSlice";
+/** @format */
+
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import { handleOutputBtn } from "../converterSlice"
+import Tooltip from "../../../../components/Tooltip"
+import { inputBtns } from "../converterSlice"
 
 export default function Output() {
-  const { inputType, outputType, inputText, outputText, isColorValid, error } =
-    useAppSelector((store) => store.converter);
-  const dispatch = useAppDispatch();
+  const { inputType, outputType, outputText } = useAppSelector(store => store.converter)
+  const dispatch = useAppDispatch()
 
   return (
     <div className="menuContainer m-4  pb-4  ">
@@ -26,9 +18,7 @@ export default function Output() {
             key={i}
             onClick={() => dispatch(handleOutputBtn(btnType))}
             className={`${
-              outputType.name === btnType.name
-                ? "btnSecondary"
-                : "btnSecondaryDisabled"
+              outputType.name === btnType.name ? "btnSecondary" : "btnSecondaryDisabled"
             } ${
               inputType.name === btnType.name && " cursor-auto opacity-60"
             }   h-8 px-3 text-sm leading-4`}
@@ -39,13 +29,15 @@ export default function Output() {
       </div>
 
       <div className="menuBlock m-2   px-2 py-1 text-center">
-        <div className=" menuContainer py-2 text-lg font-bold">
+        <div className={`${outputText === "" && `text-slate-300`} menuContainer py-2 text-lg font-bold`}>
           {outputText === "" ? outputType.value : outputText}
         </div>
         <Tooltip text="Copied" onClick={true}>
           <div
             onClick={() => {
-              navigator.clipboard.writeText(outputText);
+              navigator.clipboard.writeText(
+                outputText === "" ? outputType.value : outputText
+              )
             }}
             className="btnPrimary shadow-custom my-1 w-full !py-1 "
           >
@@ -54,5 +46,5 @@ export default function Output() {
         </Tooltip>
       </div>
     </div>
-  );
+  )
 }

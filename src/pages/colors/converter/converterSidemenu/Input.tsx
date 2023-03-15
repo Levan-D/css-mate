@@ -1,29 +1,18 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import {
-  resetState,
-  setIsColorValid,
-  setError,
-  handleInputBtn,
-  handleOutputBtn,
-  setInputText,
-  setOutputText,
-} from "../converterSlice";
-import { inputBtns } from "../converterSlice";
+/** @format */
+
+import React from "react"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import { handleInputBtn, setInputText, convertColor } from "../converterSlice"
+import { inputBtns, setError } from "../converterSlice"
 
 export default function Input() {
-  const { inputType, outputType, inputText, outputText, isColorValid, error } =
-    useAppSelector((store) => store.converter);
-  const dispatch = useAppDispatch();
-
+  const { inputType, inputText, error } = useAppSelector(store => store.converter)
+  const dispatch = useAppDispatch()
+  
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // e.preventDefault();
-    // setIsValid(() => false);
-    // handleColorValidation();
-    // if (isValid === true) {
-    //   handleConversion();
-    // }
-  };
+    e.preventDefault()
+    dispatch(convertColor())
+  }
   return (
     <div className="menuContainer m-4    ">
       <div className="menuHeader py-1 text-center">Input Color Values</div>
@@ -32,12 +21,10 @@ export default function Input() {
           <div
             key={i}
             onClick={() => {
-              dispatch(handleInputBtn(btnType));
+              dispatch(handleInputBtn(btnType))
             }}
             className={`${
-              inputType.name === btnType.name
-                ? "btnSecondary"
-                : "btnSecondaryDisabled"
+              inputType.name === btnType.name ? "btnSecondary" : "btnSecondaryDisabled"
             }   h-8 px-3 text-sm leading-4`}
           >
             {btnType.name}
@@ -51,8 +38,9 @@ export default function Input() {
               type="text"
               required
               value={inputText}
-              onChange={(e) => {
-                dispatch(setInputText(e.target.value));
+              onFocus={() => dispatch(setError(false))}
+              onChange={e => {
+                dispatch(setInputText(e.target.value))
               }}
               autoComplete="off"
               name="name"
@@ -74,5 +62,5 @@ export default function Input() {
         <div className=" mb-2 text-center text-sm text-red-300">{`${inputText} is not a valid ${inputType.name} value`}</div>
       )}
     </div>
-  );
+  )
 }
