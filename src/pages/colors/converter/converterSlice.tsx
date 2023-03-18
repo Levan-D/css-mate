@@ -2,35 +2,36 @@
 
 import { createSlice, createSelector } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
+import ColorConverter from "../../../utils/ColorConverter"
+import ColorValidator from "../../../utils/ColorValidator"
 import { RootState } from "../../../app/store"
-//@ts-ignore
-import { v4 as uuidv4 } from "uuid"
 
-import HexToRGB from "../../../utils/HexToRGB"
-import RgbToHex from "../../../utils/RGBToHex"
-
-export const inputBtns = [
-  { name: `HEX`, value: "#ffffff" },
-  { name: `RGB`, value: "255, 255, 255" },
-  { name: `HSL`, value: "0°, 0%, 100%" },
-  { name: `CMYK`, value: "0%, 0%, 0%, 0%" },
-  { name: `HSV`, value: "0°, 0%, 100%" },
-]
+export interface inputBtnsProps {
+  name: "HEX" | "RGB" | "HSL" | "CMYK" | "HSV"
+  value: "#ffffff" | "255, 255, 255" | "0, 0%, 100%" | "0%, 0%, 0%, 0%"
+  outputValue:
+    | "#ffffff"
+    | "RGB(255, 255, 255)"
+    | "HSL(0, 0%, 100%)"
+    | "CMYK(0%, 0%, 0%, 0%)"
+    | "HSV(0, 0%, 100%)"
+}
 
 interface initialStateType {
-  inputType: {
-    name: string
-    value: string
-  }
-  outputType: {
-    name: string
-    value: string
-  }
+  inputType: inputBtnsProps
+  outputType: inputBtnsProps
   inputText: string
   outputText: string
   isColorValid: boolean
   error: boolean
 }
+export const inputBtns: inputBtnsProps[] = [
+  { name: `HEX`, outputValue: "#ffffff", value: "#ffffff" },
+  { name: `RGB`, outputValue: "RGB(255, 255, 255)", value: "255, 255, 255" },
+  { name: `HSL`, outputValue: "HSL(0, 0%, 100%)", value: "0, 0%, 100%" },
+  { name: `CMYK`, outputValue: "CMYK(0%, 0%, 0%, 0%)", value: "0%, 0%, 0%, 0%" },
+  { name: `HSV`, outputValue: "HSV(0, 0%, 100%)", value: "0, 0%, 100%" },
+]
 
 const initialState: initialStateType = {
   inputType: inputBtns[0],
@@ -75,67 +76,36 @@ const converterSlice = createSlice({
     },
 
     convertColor: state => {
+      const { expression, error } = ColorValidator({
+        colorString: state.inputText,
+        type: state.inputType.name,
+      })
+      state.error = error
+
       const conType = state.inputType.name + "to" + state.outputType.name
-      const expression = state.inputText.trim()
-      const HEXRegex = /^#[0-9A-F]{6}$/i
-      const RGBRegex =
-        /^(?:\s*(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\s*,){2}\s*(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\s*$/
 
-      switch (conType) {
-        case `HEXtoCMYK`:
-        case `HEXtoHSL`:
-        case `HEXtoHSV`:
-        case `HEXtoRGB`:
-          let HEXtoRGB = expression
-          if (!expression.startsWith("#")) {
-            HEXtoRGB = "#" + expression
-          }
-
-          if (HEXRegex.test(HEXtoRGB)) {
-            state.error = false
-            state.outputText = HexToRGB(HEXtoRGB)
-          } else state.error = true
-          break
-
-        case `RGBtoCMYK`:
-        case `RGBtoHEX`:
-          let RGBtoHEX = expression
-
-          if (expression.startsWith("(") && expression.endsWith(")")) {
-            RGBtoHEX = expression.slice(1, -1)
-          }
-
-          if (RGBRegex.test(RGBtoHEX)) {
-            state.error = false
-            state.outputText = RgbToHex(RGBtoHEX)
-          } else state.error = true
-
-          break
-
-        case `RGBtoHSL`:
-        case `RGBtoHSV`:
-
-        case `HSLtoCMYK`:
-        case `HSLtoHEX`:
-        case `HSLtoHSV`:
-        case `HSLtoRGB`:
-
-        case `CMYKtoHEX`:
-        case `CMYKtoHSV`:
-        case `CMYKtoRGB`:
-        case `CMYKtoHSL`:
-
-        case `HSVtoCMYK`:
-        case `HSVtoHEX`:
-        case `HSVtoHSL`:
-        case `HSVtoRGB`:
-
-        default:
-          return
+      if (!state.error) {
+        state.outputText = ColorConverter(expression, conType)
       }
     },
   },
 })
+
+export const selectColor = createSelector(
+  (state: RootState) => state.converter,
+  converter => {
+    const { expression, error } = ColorValidator({
+      colorString: converter.inputText,
+      type: converter.inputType.name,
+    })
+
+    const conType = converter.inputType.name + "to" + "HEX"
+
+    if (!error && converter.inputText !== "") {
+      return ColorConverter(expression, conType)
+    }
+  }
+)
 
 export const {
   resetState,

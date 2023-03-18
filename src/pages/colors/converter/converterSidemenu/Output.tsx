@@ -3,12 +3,24 @@
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { handleOutputBtn } from "../converterSlice"
 import Tooltip from "../../../../components/Tooltip"
-import { inputBtns } from "../converterSlice"
+import { inputBtns, convertColor, inputBtnsProps } from "../converterSlice"
 
 export default function Output() {
-  const { inputType, outputType, outputText } = useAppSelector(store => store.converter)
+  const { inputType, outputType, outputText, inputText } = useAppSelector(
+    store => store.converter
+  )
   const dispatch = useAppDispatch()
 
+  const outputString =
+    outputType.name === "HEX" ? outputText : `${outputType.name}(${outputText})`
+
+  const handleClick = (btnType: inputBtnsProps) => {
+    dispatch(handleOutputBtn(btnType))
+
+    if (inputText !== "") {
+      dispatch(convertColor())
+    }
+  }
   return (
     <div className="menuContainer m-4  pb-4  ">
       <div className="menuHeader py-1 text-center">Output Color Value</div>
@@ -16,7 +28,7 @@ export default function Output() {
         {inputBtns.map((btnType, i) => (
           <div
             key={i}
-            onClick={() => dispatch(handleOutputBtn(btnType))}
+            onClick={() => handleClick(btnType)}
             className={`${
               outputType.name === btnType.name ? "btnSecondary" : "btnSecondaryDisabled"
             } ${
@@ -29,17 +41,21 @@ export default function Output() {
       </div>
 
       <div className="menuBlock m-2   px-2 py-1 text-center">
-        <div className={`${outputText === "" && `text-slate-300`} menuContainer py-2 text-lg font-bold`}>
-          {outputText === "" ? outputType.value : outputText}
+        <div
+          className={`${
+            outputText === "" && `text-slate-300`
+          } menuContainer py-2 text-lg font-bold`}
+        >
+          {outputText === "" ? outputType.outputValue : outputString}
         </div>
         <Tooltip text="Copied" onClick={true}>
           <div
             onClick={() => {
               navigator.clipboard.writeText(
-                outputText === "" ? outputType.value : outputText
+                outputText === "" ? outputType.outputValue : outputString
               )
             }}
-            className="btnPrimary shadow-custom my-1 w-full !py-1 "
+            className="btnPrimary shadow-custom my-1 w-full !py-2 "
           >
             Copy
           </div>

@@ -3,12 +3,12 @@
 import React from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { handleInputBtn, setInputText, convertColor } from "../converterSlice"
-import { inputBtns, setError } from "../converterSlice"
+import { inputBtns } from "../converterSlice"
 
 export default function Input() {
   const { inputType, inputText, error } = useAppSelector(store => store.converter)
   const dispatch = useAppDispatch()
-  
+
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     dispatch(convertColor())
@@ -22,6 +22,7 @@ export default function Input() {
             key={i}
             onClick={() => {
               dispatch(handleInputBtn(btnType))
+              dispatch(convertColor())
             }}
             className={`${
               inputType.name === btnType.name ? "btnSecondary" : "btnSecondaryDisabled"
@@ -38,9 +39,9 @@ export default function Input() {
               type="text"
               required
               value={inputText}
-              onFocus={() => dispatch(setError(false))}
               onChange={e => {
                 dispatch(setInputText(e.target.value))
+                dispatch(convertColor())
               }}
               autoComplete="off"
               name="name"
