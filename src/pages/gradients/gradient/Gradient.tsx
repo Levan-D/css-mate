@@ -3,7 +3,7 @@
 import GradientSidemenu from "./GradientSidemenu/GradientSidemenu"
 import GradientOutput from "./GradientOutput"
 import { useState } from "react"
-// @ts-ignore
+// @ts-ignore 
 import { ReactComponent as ChevronIcon } from "../../../assets/icons/chevron.svg"
 
 const Gradient = () => {
