@@ -3,6 +3,9 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../../app/store"
+//@ts-ignore
+import colorNamer from "color-namer"
+import RgbToHex from "../../../utils/RGBToHex"
 
 interface initialStateType {
   colorStart: string
@@ -58,11 +61,23 @@ export const selectInbetweenColors = createSelector(
     const bDiff = (colorEnd[2] - colorStart[2]) / (palette.stops - 1)
 
     const colors = []
+
     for (let i = 0; i < palette.stops; i++) {
       const r = Math.round(colorStart[0] + rDiff * i)
       const g = Math.round(colorStart[1] + gDiff * i)
       const b = Math.round(colorStart[2] + bDiff * i)
-      colors.push(`${r}, ${g}, ${b}`)
+
+      try {
+        colors.push({
+          color: `${r}, ${g}, ${b}`,
+          name: colorNamer(RgbToHex(`${r}, ${g}, ${b}`)).ntc[0].name,
+        })
+      } catch (error) {
+        colors.push({
+          color: `${r}, ${g}, ${b}`,
+          name: "Name Not Known",
+        })
+      }
     }
 
     if (palette.reverse) {

@@ -15,17 +15,21 @@ export default function ColorCodeDisplay() {
         <div>
           <h3 className="mb-2 text-center  text-lg font-bold  text-slate-300">HEX</h3>
           <div className="rounded-lg border-2 py-4 px-8">
-            {stops.map((stop, i) => (
-              <div key={i}>{RgbToHex(stop)}</div>
-            ))}
+            {stops.map((stop, i) => {
+              if (typeof stop === "object" && stop.color !== undefined) {
+                return <div key={i}>{RgbToHex(stop.color)}</div>
+              }
+            })}
           </div>
         </div>
         <div>
           <h3 className="mb-2 text-center text-lg font-bold  text-slate-300">RGB</h3>
           <div className="rounded-lg border-2 py-4 px-8">
-            {stops.map((stop, i) => (
-              <div key={i}>rgb({stop})</div>
-            ))}
+            {stops.map((stop, i) => {
+              if (typeof stop === "object" && stop.color !== undefined) {
+                return <div key={i}>rgb({stop.color})</div>
+              }
+            })}
           </div>
         </div>
       </div>

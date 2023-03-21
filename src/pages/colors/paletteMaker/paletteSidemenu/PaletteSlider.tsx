@@ -45,7 +45,7 @@ export default function PaletteSlider() {
               </div>
             </div>
           )}
-          onChange={value => dispatch(setStops(value))}
+          onAfterChange={value => dispatch(setStops(value))}
         />
       </div>
       <div className="basis-1/6">
