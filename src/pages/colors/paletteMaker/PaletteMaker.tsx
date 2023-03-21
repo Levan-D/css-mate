@@ -3,6 +3,7 @@
 import React from "react"
 import PaletteSidemenu from "./paletteSidemenu/PaletteSidemenu"
 import StopDisplay from "./StopDisplay"
+import ColorCodeDisplay from "./ColorCodeDisplay"
 
 export default function PaletteMaker() {
   return (
@@ -14,13 +15,13 @@ export default function PaletteMaker() {
       <div className="mb-8 text-center font-cursiveCustom text-base">
         Scroll below for tips & tricks
       </div>
-      <div className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-2 lg:gap-12 ">
+      <div className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-4 lg:gap-12 ">
         <div>
           <PaletteSidemenu />
         </div>
-
         <StopDisplay />
       </div>
+      <ColorCodeDisplay />
     </div>
   )
 }

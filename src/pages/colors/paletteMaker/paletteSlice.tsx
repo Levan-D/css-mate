@@ -3,19 +3,19 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../../app/store"
-//@ts-ignore
-import { v4 as uuidv4 } from "uuid"
 
 interface initialStateType {
   colorStart: string
   colorEnd: string
   stops: number
+  reverse: boolean
 }
 
 const initialState: initialStateType = {
   colorStart: "94, 161, 255",
   colorEnd: "255, 114, 94",
   stops: 10,
+  reverse: true,
 }
 
 const PaletteSlice = createSlice({
@@ -28,6 +28,9 @@ const PaletteSlice = createSlice({
     },
     setEnd: (state, action: PayloadAction<initialStateType["colorEnd"]>) => {
       state.colorEnd = action.payload
+    },
+    setReverse: state => {
+      state.reverse = !state.reverse
     },
     setStops: (state, action: PayloadAction<initialStateType["stops"]>) => {
       state.stops = action.payload
@@ -62,9 +65,12 @@ export const selectInbetweenColors = createSelector(
       colors.push(`${r}, ${g}, ${b}`)
     }
 
+    if (palette.reverse) {
+      colors.reverse()
+    }
     return colors
   }
 )
 
-export const { resetState, setStart, setEnd, setStops } = PaletteSlice.actions
+export const { resetState, setStart, setEnd, setStops, setReverse } = PaletteSlice.actions
 export default PaletteSlice.reducer

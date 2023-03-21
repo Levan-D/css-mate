@@ -1,16 +1,16 @@
 /** @format */
 
 import React from "react"
-import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { useAppSelector } from "../../../app/hooks"
 import { selectInbetweenColors } from "./paletteSlice"
 import RgbToHex from "../../../utils/RGBToHex"
 import Tooltip from "../../../components/Tooltip"
 
 export default function StopDisplay() {
   const stops = useAppSelector(selectInbetweenColors)
-  console.log(stops)
+
   return (
-    <div className=" w-[690px] rounded-xl border-2 border-white bg-darkJungle-900  ">
+    <div className=" mx-auto w-[350px] rounded-xl border-2  border-white bg-darkJungle-900 sm:w-[520px] md:w-[350px] lg:w-[520px] xl:w-[690px]  ">
       <div className="menuHeader      px-4 py-2">
         <div className="basis-[15%] text-center text-lg italic  text-slate-300 ">
           Shades
