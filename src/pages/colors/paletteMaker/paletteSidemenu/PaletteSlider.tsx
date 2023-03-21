@@ -14,8 +14,8 @@ export default function PaletteSlider() {
 
     if (value > 20) {
       value = 20
-    } else if (value < 0) {
-      value = 0
+    } else if (value < 1) {
+      value = 1
     }
 
     dispatch(setStops(value))
@@ -28,7 +28,7 @@ export default function PaletteSlider() {
           className="customSlider"
           trackClassName="customSlider-track"
           thumbClassName="customSlider-thumb"
-          min={0}
+          min={1}
           max={20}
           value={stops}
           renderThumb={(props, state) => (

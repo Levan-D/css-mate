@@ -38,8 +38,17 @@ const PaletteSlice = createSlice({
 export const selectInbetweenColors = createSelector(
   (state: RootState) => state.palette,
   palette => {
-    const colorStart: number[] = palette.colorEnd.split(",").map(str => Number(str))
+    const colorStart: number[] = palette.colorStart.split(",").map(str => Number(str))
     const colorEnd: number[] = palette.colorEnd.split(",").map(str => Number(str))
+
+    if (palette.stops === 1) {
+      const midpoint = [
+        Math.round((colorStart[0] + colorEnd[0]) / 2),
+        Math.round((colorStart[1] + colorEnd[1]) / 2),
+        Math.round((colorStart[2] + colorEnd[2]) / 2),
+      ]
+      return [`${midpoint[0]}, ${midpoint[1]}, ${midpoint[2]}`]
+    }
 
     const rDiff = (colorEnd[0] - colorStart[0]) / (palette.stops - 1)
     const gDiff = (colorEnd[1] - colorStart[1]) / (palette.stops - 1)

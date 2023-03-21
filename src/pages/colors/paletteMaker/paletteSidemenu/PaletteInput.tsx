@@ -52,7 +52,7 @@ export default function PaletteInput() {
       <div className="   menuContainer m-2  my-4  bg-slate-500 bg-opacity-10">
         <div className="menuHeader     bg-slate-500 bg-opacity-10 px-4 pb-1">
           <div className="basis-[15%] text-center text-xs italic  text-slate-300 ">
-            Color Input
+            First shade
           </div>
         </div>
         {/* color picker */}
@@ -87,7 +87,7 @@ export default function PaletteInput() {
       <div className="   menuContainer   m-2  bg-slate-500 bg-opacity-10">
         <div className="menuHeader     bg-slate-500 bg-opacity-10 px-4 pb-1">
           <div className="basis-[15%] text-center text-xs italic  text-slate-300 ">
-            Color Input
+            Last shade
           </div>
         </div>
         {/* color picker */}
