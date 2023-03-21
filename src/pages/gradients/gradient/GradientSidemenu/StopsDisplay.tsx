@@ -57,12 +57,13 @@ const StopsDisplay = () => {
         })
       )
       setTempHex({ value: "", index: 0 })
-    } else setTempHex({ value: "", index: 0 })
+    }
   }
 
   const handleOnKeyDownColor = (e: React.KeyboardEvent<HTMLInputElement>, i: number) => {
     if (e.key === "Enter" && tempHex.index === i) {
       handleOnBLurColor(i)
+      setTempHex({ value: "", index: 0 })
       e.currentTarget.blur()
     }
   }

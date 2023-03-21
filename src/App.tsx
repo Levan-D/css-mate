@@ -15,6 +15,7 @@ import Emojis from "./pages/misc/emojis/Emojis"
 import Entities from "./pages/misc/entities/Entities"
 import Gradient from "./pages/gradients/gradient/Gradient"
 import FloofGPTFull from "./components/floofGPT/FloofGPTFull"
+import PaletteMaker from "./pages/colors/paletteMaker/PaletteMaker"
 
 // layouts
 import RootLayout from "./layouts/RootLayout"
@@ -33,6 +34,7 @@ const router = createBrowserRouter(
 
       <Route path="colors" element={<CategoryLayout />}>
         <Route path="converter" element={<Converter />} />
+        <Route path="palette-maker" element={<PaletteMaker />} />
       </Route>
 
       <Route path="gradients" element={<CategoryLayout />}>
