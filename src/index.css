@@ -199,6 +199,10 @@
   color: black;
 }
 
+.swatches-picker div {
+  background-color: #172437;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;

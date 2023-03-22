@@ -4,9 +4,9 @@ import { useState, useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import RgbToHex from "../../../../utils/RGBToHex"
 import HexToRGB from "../../../../utils/HexToRGB"
-import { setStart, setEnd,setReset } from "../paletteSlice"
+import { setStart, setEnd, setReset } from "../paletteSlice"
 //@ts-ignore
-import { ChromePicker } from "react-color"
+import { ChromePicker, SwatchesPicker } from "react-color"
 import ColorInverter from "../../../../utils/ColorInverter"
 import { color } from "../../../../components/ColorPicker"
 
@@ -16,6 +16,9 @@ export default function PaletteInput() {
 
   const [displayColorPickerSt, setDisplayColorPickerSt] = useState(false)
   const [displayColorPickerEn, setDisplayColorPickerEn] = useState(false)
+
+  const [displaySwatchesOne, setDisplaySwatchesOne] = useState(false)
+  const [displaySwatchesTwo, setDisplaySwatchesTwo] = useState(false)
 
   const [tempStart, setTempStart] = useState("")
   const [tempEnd, setTempEnd] = useState("")
@@ -35,6 +38,7 @@ export default function PaletteInput() {
 
   const handleChangeCompleteSt = (color: color) => {
     dispatch(setStart(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`))
+    setColorSt(color.hex)
   }
 
   const handleClickSt = () => {
@@ -43,26 +47,19 @@ export default function PaletteInput() {
     dispatch(setStart(`${HexToRGB(colorSt)}`))
   }
 
-  const handleCloseSt = () => {
-    setDisplayColorPickerSt(false)
-  }
-
   const handleChangeEn = (color: color) => {
     setColorEn(color.hex)
   }
 
   const handleChangeCompleteEn = (color: color) => {
     dispatch(setEnd(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`))
+    setColorEn(color.hex)
   }
 
   const handleClickEn = () => {
     setDisplayColorPickerEn(!displayColorPickerEn)
     setColorEn(colorEn)
     dispatch(setEnd(`${HexToRGB(colorEn)}`))
-  }
-
-  const handleCloseEn = () => {
-    setDisplayColorPickerEn(false)
   }
 
   const handleOnBlur = (type: "end" | "start") => {
@@ -122,7 +119,7 @@ export default function PaletteInput() {
             <div className="absolute z-10 select-none">
               <div
                 className="fixed top-0 right-0 bottom-0  left-0  "
-                onMouseDown={handleCloseSt}
+                onMouseDown={() => setDisplayColorPickerSt(false)}
               />
               <div className="translate-x-10   ">
                 <ChromePicker
@@ -139,7 +136,7 @@ export default function PaletteInput() {
         {/* color picker */}
 
         {/* hex color input */}
-        <div className=" mx-2 mb-2">
+        <div className=" mx-2 mb-2 flex gap-2">
           <input
             type="text"
             id="hexText"
@@ -150,6 +147,29 @@ export default function PaletteInput() {
             onBlur={() => handleOnBlur("start")}
             className=" block h-10 w-40   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
           ></input>
+
+          <div
+            onClick={() => setDisplaySwatchesOne(true)}
+            className="btnSecondary w-full text-center"
+          >
+            Swatches
+          </div>
+
+          {displaySwatchesOne ? (
+            <div className="absolute z-10 select-none">
+              <div
+                className="fixed top-0 right-0 bottom-0  left-0  "
+                onMouseDown={() => setDisplaySwatchesOne(false)}
+              />
+              <div className="translate-x-4 translate-y-10 rounded-md border-2">
+                <SwatchesPicker
+                  width={280}
+                  height={280}
+                  onChange={handleChangeCompleteSt}
+                />
+              </div>
+            </div>
+          ) : null}
         </div>
         {/* hex color input */}
       </div>
@@ -175,7 +195,7 @@ export default function PaletteInput() {
             <div className="absolute z-10 select-none">
               <div
                 className="fixed top-0 right-0 bottom-0  left-0  "
-                onMouseDown={handleCloseEn}
+                onMouseDown={() => setDisplayColorPickerEn(false)}
               />
               <div className="translate-x-10   ">
                 <ChromePicker
@@ -192,7 +212,7 @@ export default function PaletteInput() {
         {/* color picker */}
 
         {/* hex color input */}
-        <div className=" mx-2 mb-2">
+        <div className=" mx-2 mb-2 flex gap-2">
           <input
             type="text"
             id="hexText"
@@ -203,6 +223,29 @@ export default function PaletteInput() {
             onBlur={() => handleOnBlur("end")}
             className=" block h-10 w-40   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
           ></input>
+
+          <div
+            onClick={() => setDisplaySwatchesTwo(true)}
+            className="btnSecondary w-full text-center"
+          >
+            Swatches
+          </div>
+
+          {displaySwatchesTwo ? (
+            <div className="absolute z-10 select-none">
+              <div
+                className="fixed top-0 right-0 bottom-0  left-0  "
+                onMouseDown={() => setDisplaySwatchesTwo(false)}
+              />
+              <div className="translate-x-4 translate-y-10 rounded-md border-2">
+                <SwatchesPicker
+                  width={280}
+                  height={280}
+                  onChange={handleChangeCompleteEn}
+                />
+              </div>
+            </div>
+          ) : null}
         </div>
         {/* hex color input */}
       </div>
