@@ -7,7 +7,7 @@ import ColorInverter from "../utils/ColorInverter"
 
 type ColorPickerProps = { handleColorPick: (color: string) => void }
 
-type color = {
+export type color = {
   hex: string
   rgb: {
     r: number
@@ -109,7 +109,7 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
             background: color.hex,
             color: ColorInverter(color.hex, `bw`),
           }}
-          className={`h-6 w-12 cursor-pointer select-none rounded-full border-2 border-transparent text-center text-sm italic leading-5 duration-200 sm:hover:border-white`}
+          className={`h-6 w-12 cursor-pointer select-none rounded-full border-2 border-transparent text-center text-sm font-normal italic leading-[18px] duration-200 sm:hover:border-white`}
         >
           cust
         </div>
