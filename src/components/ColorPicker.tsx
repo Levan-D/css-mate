@@ -119,7 +119,7 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
               className="fixed top-0 right-0 bottom-0  left-0  "
               onMouseDown={handleClose}
             />
-            <div className="-translate-x-36 text-white  ">
+            <div className="-translate-x-36   ">
               <ChromePicker
                 disableAlpha={true}
                 color={color}
