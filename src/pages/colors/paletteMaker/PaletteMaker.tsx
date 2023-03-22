@@ -3,7 +3,8 @@
 import React from "react"
 import PaletteSidemenu from "./paletteSidemenu/PaletteSidemenu"
 import StopDisplay from "./StopDisplay"
-import ColorCodeDisplay from "./ColorCodeDisplay"
+
+import PaletteOutput from "./PaletteOutput"
 
 export default function PaletteMaker() {
   return (
@@ -21,7 +22,7 @@ export default function PaletteMaker() {
         </div>
         <StopDisplay />
       </div>
-      <ColorCodeDisplay />
+      <PaletteOutput />
     </div>
   )
 }
