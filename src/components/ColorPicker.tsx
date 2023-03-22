@@ -1,16 +1,47 @@
 /** @format */
 
-import  { useState } from "react"
-import HexToRGB from "../utils/HexToRGB"
+import { useState } from "react"
+//@ts-ignore
+import { ChromePicker } from "react-color"
+import ColorInverter from "../utils/ColorInverter"
 
 type ColorPickerProps = { handleColorPick: (color: string) => void }
 
-const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
-  // color input stores colors as hex so you need to run it through HEXtoRGB function to receive RGB values x,x,x back.
-  // we mainly use rgb  rgba so  using hex on top of it will mess everything up...
+type color = {
+  hex: string
+  rgb: {
+    r: number
+    g: number
+    b: number
+    a: number
+  }
+  hsl: {
+    h: number
+    s: number
+    l: number
+    a: number
+  }
+}
 
-  const [color, setColor] = useState<string>("#000000")
-  color
+const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
+  const [color, setColor] = useState({
+    hex: `#000000`,
+    rgb: {
+      r: 0,
+      g: 0,
+      b: 0,
+      a: 0,
+    },
+    hsl: {
+      h: 0,
+      s: 0,
+      l: 0,
+      a: 0,
+    },
+  })
+
+  const [displayColorPicker, setDisplayColorPicker] = useState(false)
+
   const colorData = [
     {
       color: "rgb(94, 161, 255)",
@@ -38,6 +69,23 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
       name: "black",
     },
   ]
+  const handleChange = (color: color) => {
+    setColor(color)
+  }
+
+  const handleChangeComplete = (color: color) => {
+    handleColorPick(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`)
+  }
+
+  const handleClick = () => {
+    setDisplayColorPicker(!displayColorPicker)
+    setColor(color)
+    handleColorPick(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`)
+  }
+
+  const handleClose = () => {
+    setDisplayColorPicker(false)
+  }
 
   return (
     <div className="mt-2 flex gap-[6px] ">
@@ -53,20 +101,35 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
           }  cursor-pointer duration-200`}
         ></div>
       ))}
-      <input
-        type="color"
-        id="colorpicker"
-        value={color}
-        onChange={e => {
-          setColor(e.target.value)
-          handleColorPick(HexToRGB(e.target.value))
-        }}
-        onClick={e => {
-          setColor((e.target as HTMLInputElement).value)
-          handleColorPick(HexToRGB((e.target as HTMLInputElement).value))
-        }}
-        className="h-[28px] translate-y-[-2px] cursor-pointer rounded-md border-2 border-transparent bg-transparent  duration-200 sm:hover:border-white"
-      ></input>
+
+      <div>
+        <div
+          onClick={handleClick}
+          style={{
+            background: color.hex,
+            color: ColorInverter(color.hex, `bw`),
+          }}
+          className={`h-6 w-12 cursor-pointer select-none rounded-full border-2 border-transparent text-center text-sm italic leading-5 duration-200 sm:hover:border-white`}
+        >
+          cust
+        </div>
+        {displayColorPicker ? (
+          <div className="absolute z-10 select-none">
+            <div
+              className="fixed top-0 right-0 bottom-0  left-0  "
+              onMouseDown={handleClose}
+            />
+            <div className="-translate-x-36 text-white  ">
+              <ChromePicker
+                disableAlpha={true}
+                color={color}
+                onChange={handleChange}
+                onChangeComplete={handleChangeComplete}
+              />
+            </div>
+          </div>
+        ) : null}
+      </div>
     </div>
   )
 }

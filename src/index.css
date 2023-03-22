@@ -194,6 +194,10 @@
   }
   /* hide arrows in input numbers */
 }
+.chrome-picker input {
+  background-color: white;
+  color: black;
+}
 
 html {
   scroll-behavior: smooth;
