@@ -1,10 +1,10 @@
 /** @format */
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import RgbToHex from "../../../../utils/RGBToHex"
 import HexToRGB from "../../../../utils/HexToRGB"
-import { setStart, setEnd } from "../paletteSlice"
+import { setStart, setEnd,setReset } from "../paletteSlice"
 //@ts-ignore
 import { ChromePicker } from "react-color"
 import ColorInverter from "../../../../utils/ColorInverter"
@@ -12,46 +12,25 @@ import { color } from "../../../../components/ColorPicker"
 
 export default function PaletteInput() {
   const dispatch = useAppDispatch()
-  const { colorStart, colorEnd } = useAppSelector(store => store.palette)
+  const { colorStart, colorEnd, reset } = useAppSelector(store => store.palette)
+
   const [displayColorPickerSt, setDisplayColorPickerSt] = useState(false)
   const [displayColorPickerEn, setDisplayColorPickerEn] = useState(false)
+
   const [tempStart, setTempStart] = useState("")
   const [tempEnd, setTempEnd] = useState("")
 
-  const [colorSt, setColorSt] = useState({
-    hex: `#5ea1ff`,
-    rgb: {
-      r: 94,
-      g: 161,
-      b: 255,
-      a: 1,
-    },
-    hsl: {
-      h: 215,
-      s: 100,
-      l: 68,
-      a: 1,
-    },
-  })
+  const [colorSt, setColorSt] = useState(RgbToHex(colorStart))
+  const [colorEn, setColorEn] = useState(RgbToHex(colorEnd))
 
-  const [colorEn, setColorEn] = useState({
-    hex: `#ff725e`,
-    rgb: {
-      r: 255,
-      g: 114,
-      b: 94,
-      a: 1,
-    },
-    hsl: {
-      h: 7,
-      s: 100,
-      l: 68,
-      a: 1,
-    },
-  })
+  useEffect(() => {
+    setColorSt(RgbToHex(colorStart))
+    setColorEn(RgbToHex(colorEnd))
+    dispatch(setReset())
+  }, [reset])
 
   const handleChangeSt = (color: color) => {
-    setColorSt(color)
+    setColorSt(color.hex)
   }
 
   const handleChangeCompleteSt = (color: color) => {
@@ -61,7 +40,7 @@ export default function PaletteInput() {
   const handleClickSt = () => {
     setDisplayColorPickerSt(!displayColorPickerSt)
     setColorSt(colorSt)
-    dispatch(setStart(`${colorSt.rgb.r},${colorSt.rgb.g},${colorSt.rgb.b}`))
+    dispatch(setStart(`${HexToRGB(colorSt)}`))
   }
 
   const handleCloseSt = () => {
@@ -69,7 +48,7 @@ export default function PaletteInput() {
   }
 
   const handleChangeEn = (color: color) => {
-    setColorEn(color)
+    setColorEn(color.hex)
   }
 
   const handleChangeCompleteEn = (color: color) => {
@@ -79,7 +58,7 @@ export default function PaletteInput() {
   const handleClickEn = () => {
     setDisplayColorPickerEn(!displayColorPickerEn)
     setColorEn(colorEn)
-    dispatch(setEnd(`${colorEn.rgb.r},${colorEn.rgb.g},${colorEn.rgb.b}`))
+    dispatch(setEnd(`${HexToRGB(colorEn)}`))
   }
 
   const handleCloseEn = () => {
@@ -134,8 +113,8 @@ export default function PaletteInput() {
           <div
             onClick={handleClickSt}
             style={{
-              background: colorSt.hex,
-              color: ColorInverter(colorSt.hex, `bw`),
+              background: colorSt,
+              color: ColorInverter(colorSt, `bw`),
             }}
             className={`h-20 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
           ></div>
@@ -187,8 +166,8 @@ export default function PaletteInput() {
           <div
             onClick={handleClickEn}
             style={{
-              background: colorEn.hex,
-              color: ColorInverter(colorEn.hex, `bw`),
+              background: colorEn,
+              color: ColorInverter(colorEn, `bw`),
             }}
             className={`h-20 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
           ></div>

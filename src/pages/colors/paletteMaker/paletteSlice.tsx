@@ -12,13 +12,15 @@ interface initialStateType {
   colorEnd: string
   stops: number
   reverse: boolean
+  reset: boolean
 }
 
 const initialState: initialStateType = {
   colorStart: "94, 161, 255",
   colorEnd: "255, 114, 94",
   stops: 10,
-  reverse: true,
+  reverse: false,
+  reset: true,
 }
 
 const PaletteSlice = createSlice({
@@ -26,6 +28,9 @@ const PaletteSlice = createSlice({
   initialState,
   reducers: {
     resetState: () => initialState,
+    setReset: state => {
+      state.reset = false
+    },
     setStart: (state, action: PayloadAction<initialStateType["colorStart"]>) => {
       state.colorStart = action.payload
     },
@@ -87,5 +92,6 @@ export const selectInbetweenColors = createSelector(
   }
 )
 
-export const { resetState, setStart, setEnd, setStops, setReverse } = PaletteSlice.actions
+export const { resetState, setReset, setStart, setEnd, setStops, setReverse } =
+  PaletteSlice.actions
 export default PaletteSlice.reducer
