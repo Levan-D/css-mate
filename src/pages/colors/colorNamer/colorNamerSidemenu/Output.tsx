@@ -37,7 +37,7 @@ export default function Output() {
         >
           <div
             style={{ color: outputText && ColorInverter(outputText, "bw") }}
-            className="mx-auto w-fit"
+            className="mx-auto w-fit [text-shadow:0px_0px_10px__rgba(0,_0,_0,1),0px_0px_16px__rgba(255,255,255,1)]"
           >
             {colorDisplay}
           </div>
