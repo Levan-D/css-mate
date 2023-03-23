@@ -5,9 +5,10 @@ import { useAppSelector } from "../../../../app/hooks"
 import ColorInverter from "../../../../utils/ColorInverter"
 //@ts-ignore
 import colorNamer from "color-namer"
+import Tooltip from "../../../../components/Tooltip"
 
 export default function Output() {
-  const { outputText, outputType, inputText, isColorValid } = useAppSelector(
+  const { outputText, inputText, isColorValid } = useAppSelector(
     store => store.colorNamer
   )
   const [colorDisplay, setColorDisplay] = useState("")
@@ -24,17 +25,24 @@ export default function Output() {
 
   return (
     <div className="menuContainer m-4">
-      <div
-        style={{ backgroundColor: outputText || `#172437` }}
-        className=" m-2 flex  h-24  flex-col justify-around rounded-xl border-2    font-bold"
-      >
+      <Tooltip text="Copied" onClick={colorDisplay !== "" ? true : false}>
         <div
-          style={{ color: outputText && ColorInverter(outputText, "bw") }}
-          className="mx-auto w-fit"
+          style={{ backgroundColor: outputText || `#172437` }}
+          onClick={() => {
+            colorDisplay !== "" && navigator.clipboard.writeText(colorDisplay)
+          }}
+          className={` ${
+            colorDisplay !== "" && `cursor-pointer`
+          } m-2 flex  h-24  flex-col justify-around rounded-xl border-2    font-bold`}
         >
-          {colorDisplay}
+          <div
+            style={{ color: outputText && ColorInverter(outputText, "bw") }}
+            className="mx-auto w-fit"
+          >
+            {colorDisplay}
+          </div>
         </div>
-      </div>
+      </Tooltip>
     </div>
   )
 }

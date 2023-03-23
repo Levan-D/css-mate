@@ -13,7 +13,7 @@ import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 export default function PaletteOutput() {
   const stops = useAppSelector(selectInbetweenColors)
-  console.log(stops)
+
   const syntaxFunc = (style: string) => {
     return (
       <SyntaxHighlighter
