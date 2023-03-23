@@ -14,7 +14,7 @@ export default function Input() {
   }
   return (
     <div className="menuContainer m-4    ">
-      <div className="menuHeader py-1 text-center">Input Color Values</div>
+      <div className="menuHeader py-1 text-center">Input Color Value</div>
       <div className="menuBlock m-2 flex justify-between px-2 py-1">
         {inputBtns.map((btnType, i) => (
           <div
