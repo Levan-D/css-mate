@@ -9,6 +9,7 @@ import cursor from "../assets/pageIcons/cursor.png"
 import emoji from "../assets/pageIcons/emoji.png"
 import entities from "../assets/pageIcons/entities.png"
 import paletteMaker from "../assets/pageIcons/paletteMaker.png"
+import colorNamer from "../assets/pageIcons/colorNamer.png"
 
 export type pageButtonsType = {
   catName: string
@@ -50,6 +51,11 @@ export const pageButtons: pageButtonsType[] = [
         name: "Converter",
         path: "converter",
         icon: converter,
+      },
+      {
+        name: "Color namer ",
+        path: "color-namer",
+        icon: colorNamer,
       },
       {
         name: "Palette maker ",

@@ -22,7 +22,6 @@ interface initialStateType {
   outputType: inputBtnsProps
   inputText: string
   outputText: string
-  isColorValid: boolean
   error: boolean
 }
 export const inputBtns: inputBtnsProps[] = [
@@ -38,7 +37,6 @@ const initialState: initialStateType = {
   outputType: inputBtns[1],
   inputText: "",
   outputText: "",
-  isColorValid: false,
   error: false,
 }
 const converterSlice = createSlice({
@@ -46,9 +44,6 @@ const converterSlice = createSlice({
   initialState,
   reducers: {
     resetState: () => initialState,
-    setIsColorValid: state => {
-      state.isColorValid = !state.isColorValid
-    },
     setError: (state, action: PayloadAction<initialStateType["error"]>) => {
       state.error = action.payload
     },
@@ -109,7 +104,6 @@ export const selectColor = createSelector(
 
 export const {
   resetState,
-  setIsColorValid,
   setError,
   handleInputBtn,
   handleOutputBtn,

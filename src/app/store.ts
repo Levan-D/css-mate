@@ -9,6 +9,7 @@ import floofReducer from "../components/floofGPT/floofGPTSlice"
 import navbarReducer from "../components/navbar/navbarSlice"
 import converterReducer from "../pages/colors/converter/converterSlice"
 import paleteReducer from "../pages/colors/paletteMaker/paletteSlice"
+import colorNamerReducer from "../pages/colors/colorNamer/colorNamerSlice"
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
     navbar: navbarReducer,
     converter: converterReducer,
     palette: paleteReducer,
+    colorNamer: colorNamerReducer,
   },
 })
 
