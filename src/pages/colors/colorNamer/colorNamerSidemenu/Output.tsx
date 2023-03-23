@@ -25,24 +25,32 @@ export default function Output() {
 
   return (
     <div className="menuContainer m-4">
-      <Tooltip text="Copied" onClick={colorDisplay !== "" ? true : false}>
+      <div
+        style={{ backgroundColor: outputText || `#172437` }}
+        className={`  m-2 flex  h-24  flex-col justify-around rounded-xl border-2    font-bold`}
+      >
         <div
-          style={{ backgroundColor: outputText || `#172437` }}
-          onClick={() => {
-            colorDisplay !== "" && navigator.clipboard.writeText(colorDisplay)
-          }}
-          className={` ${
-            colorDisplay !== "" && `cursor-pointer`
-          } m-2 flex  h-24  flex-col justify-around rounded-xl border-2    font-bold`}
+          style={{ color: outputText && ColorInverter(outputText, "bw") }}
+          className="mx-auto w-fit text-xl [text-shadow:0px_0px_10px__rgba(0,_0,_0,1),0px_0px_16px__rgba(255,255,255,1)]"
         >
-          <div
-            style={{ color: outputText && ColorInverter(outputText, "bw") }}
-            className="mx-auto w-fit [text-shadow:0px_0px_10px__rgba(0,_0,_0,1),0px_0px_16px__rgba(255,255,255,1)]"
-          >
-            {colorDisplay}
-          </div>
+          {colorDisplay}
         </div>
-      </Tooltip>
+      </div>
+
+      <div className="m-2">
+        <Tooltip text="Copied" onClick={colorDisplay !== "" ? true : false}>
+          <div
+            onClick={() => {
+              colorDisplay !== "" && navigator.clipboard.writeText(colorDisplay)
+            }}
+            className={` ${
+              colorDisplay !== "" && `cursor-pointer`
+            }  btnPrimary w-full text-center`}
+          >
+            Copy
+          </div>
+        </Tooltip>
+      </div>
     </div>
   )
 }
