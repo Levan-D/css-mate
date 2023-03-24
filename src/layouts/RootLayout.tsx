@@ -1,12 +1,12 @@
 /** @format */
 
 import BackToTopBtn from "../components/BackToTopBtn"
-import FloofGPT from "../components/floofGPT/FloofGPT"
+import FloofGPT from "../features/floofGPT/FloofGPT"
 import Navbar from "../components/navbar/Navbar"
-import Footer from "../components/footer/Footer"
+import Footer from "../components/Footer"
 import { Outlet, useLocation } from "react-router-dom"
 import { useAppSelector } from "../app/hooks"
-import { selectGradientStyle } from "../pages/gradients/gradient/gradientSlice"
+import { selectGradientStyle } from "../features/colors/gradientMaker/gradientSlice"
 
 const RootLayout = () => {
   const location = useLocation()
@@ -18,7 +18,7 @@ const RootLayout = () => {
         location.pathname === "/floof-gpt" ? "bg-primary sm:bg-transparent" : ""
       } flex min-h-screen  flex-col overflow-x-hidden `}
       style={{
-        background: location.pathname.includes("/gradients/") ? linearGradient : "",
+        background: location.pathname.includes("/gradient-maker") ? linearGradient : "",
       }}
     >
       <BackToTopBtn />
@@ -29,7 +29,7 @@ const RootLayout = () => {
         <Outlet />
       </main>
 
-      {!location.pathname.includes("/gradients/") && <Footer />}
+      {!location.pathname.includes("/gradient-maker") && <Footer />}
     </div>
   )
 }

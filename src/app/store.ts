@@ -1,15 +1,15 @@
 /** @format */
 
 import { configureStore } from "@reduxjs/toolkit"
-import boxShadowReducer from "../pages/shadows/boxShadow/boxShadowSlice"
-import dropShadowReducer from "../pages/shadows/dropShadow/dropShadowSlice"
-import textShadowReducer from "../pages/shadows/textShadow/textShadowSlice"
-import GradientReducer from "../pages/gradients/gradient/gradientSlice"
-import floofReducer from "../components/floofGPT/floofGPTSlice"
+import boxShadowReducer from "../features/shadows/boxShadow/boxShadowSlice"
+import dropShadowReducer from "../features/shadows/dropShadow/dropShadowSlice"
+import textShadowReducer from "../features/shadows/textShadow/textShadowSlice"
+import GradientReducer from "../features/colors/gradientMaker/gradientSlice"
+import floofReducer from "../features/floofGPT/floofGPTSlice"
 import navbarReducer from "../components/navbar/navbarSlice"
-import converterReducer from "../pages/colors/converter/converterSlice"
-import paleteReducer from "../pages/colors/paletteMaker/paletteSlice"
-import colorNamerReducer from "../pages/colors/colorNamer/colorNamerSlice"
+import colorConverterReducer from "../features/converters/colorConverter/colorConverterSlice"
+import paletteMixerReducer from "../features/colors/paletteMixer/paletteMixerSlice"
+import colorNamerReducer from "../features/colors/colorNamer/colorNamerSlice"
 
 export const store = configureStore({
   reducer: {
@@ -19,8 +19,8 @@ export const store = configureStore({
     Gradient: GradientReducer,
     floof: floofReducer,
     navbar: navbarReducer,
-    converter: converterReducer,
-    palette: paleteReducer,
+    colorConverter: colorConverterReducer,
+    paletteMixer: paletteMixerReducer,
     colorNamer: colorNamerReducer,
   },
 })

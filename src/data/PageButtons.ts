@@ -1,15 +1,28 @@
 /** @format */
 
+// page icons
 import boxShadow from "../assets/pageIcons/boxShadow.png"
 import dropShadow from "../assets/pageIcons/dropShadow.png"
 import textShadow from "../assets/pageIcons/textShadow.png"
 import gradient from "../assets/pageIcons/gradient.png"
-import converter from "../assets/pageIcons/converter.png"
+import colorConverter from "../assets/pageIcons/colorConverter.png"
 import cursor from "../assets/pageIcons/cursor.png"
 import emoji from "../assets/pageIcons/emoji.png"
 import entities from "../assets/pageIcons/entities.png"
-import paletteMaker from "../assets/pageIcons/paletteMaker.png"
+import paletteMixer from "../assets/pageIcons/paletteMixer.png"
 import colorNamer from "../assets/pageIcons/colorNamer.png"
+
+// pages
+import BoxShadow from "../features/shadows/boxShadow/BoxShadow"
+import DropShadow from "../features/shadows/dropShadow/DropShadow"
+import TextShadow from "../features/shadows/textShadow/TextShadow"
+import ColorConverter from "../features/converters/colorConverter/ColorConverter"
+import Cursors from "../features/misc/cursors/Cursors"
+import Emojis from "../features/misc/emojis/Emojis"
+import Entities from "../features/misc/entities/Entities"
+import Gradient from "../features/colors/gradientMaker/Gradient"
+import PaletteMixer from "../features/colors/paletteMixer/PaletteMixer"
+import ColorNamer from "../features/colors/colorNamer/ColorNamer"
 
 export type pageButtonsType = {
   catName: string
@@ -17,6 +30,7 @@ export type pageButtonsType = {
   catCon: {
     name: string
     path: string
+    element: React.ComponentType<any>
     icon: string
   }[]
 }
@@ -29,16 +43,19 @@ export const pageButtons: pageButtonsType[] = [
       {
         name: "Box Shadow",
         path: "box-shadow",
+        element: BoxShadow,
         icon: boxShadow,
       },
       {
         name: "Drop Shadow",
         path: "drop-shadow",
+        element: DropShadow,
         icon: dropShadow,
       },
       {
         name: "Text Shadow",
         path: "text-shadow",
+        element: TextShadow,
         icon: textShadow,
       },
     ],
@@ -48,30 +65,34 @@ export const pageButtons: pageButtonsType[] = [
     catPath: "colors",
     catCon: [
       {
-        name: "Converter",
-        path: "converter",
-        icon: converter,
+        name: "Gradient maker",
+        path: "gradient-maker",
+        element: Gradient,
+        icon: gradient,
       },
       {
         name: "Color namer ",
         path: "color-namer",
+        element: ColorNamer,
         icon: colorNamer,
       },
       {
-        name: "Palette maker ",
-        path: "palette-maker",
-        icon: paletteMaker,
+        name: "Palette mixer ",
+        path: "palette-mixer",
+        element: PaletteMixer,
+        icon: paletteMixer,
       },
     ],
   },
   {
-    catName: "Gradients",
-    catPath: "gradients",
+    catName: "Converters",
+    catPath: "converters",
     catCon: [
       {
-        name: "Gradient",
-        path: "gradient",
-        icon: gradient,
+        name: "Color converter",
+        path: "color-converter",
+        element: ColorConverter,
+        icon: colorConverter,
       },
     ],
   },
@@ -82,16 +103,19 @@ export const pageButtons: pageButtonsType[] = [
       {
         name: "Cursors",
         path: "cursors",
+        element: Cursors,
         icon: cursor,
       },
       {
         name: "Emojis",
         path: "emojis",
+        element: Emojis,
         icon: emoji,
       },
       {
         name: "Entities",
         path: "entities",
+        element: Entities,
         icon: entities,
       },
     ],

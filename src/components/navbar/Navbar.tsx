@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <div
       className={` ${
-        !location.pathname.includes("/gradients/")
+        !location.pathname.includes("/gradient-maker")
           ? "bg-primary"
           : "bg-primary sm:bg-transparent"
       }  z-40 h-fit     sm:h-16`}
