@@ -25,7 +25,7 @@ export default function PaletteInput() {
 
   const [colorSt, setColorSt] = useState(RgbToHex(colorStart))
   const [colorEn, setColorEn] = useState(RgbToHex(colorEnd))
-
+  console.log(colorSt)
   useEffect(() => {
     setColorSt(RgbToHex(colorStart))
     setColorEn(RgbToHex(colorEnd))
@@ -74,10 +74,12 @@ export default function PaletteInput() {
     if (colorRegex.test(newHex)) {
       if (type === "end") {
         dispatch(setEnd(HexToRGB(newHex)))
+        setColorEn(newHex)
         setTempEnd("")
       } else if (type === "start") {
         dispatch(setStart(HexToRGB(newHex)))
         setTempStart("")
+        setColorSt(newHex)
       }
     }
   }
@@ -111,7 +113,6 @@ export default function PaletteInput() {
             onClick={handleClickSt}
             style={{
               background: colorSt,
-              color: ColorInverter(colorSt, `bw`),
             }}
             className={`h-20 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
           ></div>
@@ -187,7 +188,6 @@ export default function PaletteInput() {
             onClick={handleClickEn}
             style={{
               background: colorEn,
-              color: ColorInverter(colorEn, `bw`),
             }}
             className={`h-20 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
           ></div>
