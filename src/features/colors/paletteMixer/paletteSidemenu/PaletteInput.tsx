@@ -7,7 +7,6 @@ import HexToRGB from "../../../../utils/HexToRGB"
 import { setStart, setEnd, setReset } from "../paletteMixerSlice"
 //@ts-ignore
 import { ChromePicker, SwatchesPicker } from "react-color"
-import ColorInverter from "../../../../utils/ColorInverter"
 import { color } from "../../../../components/ColorPicker"
 
 export default function PaletteInput() {
