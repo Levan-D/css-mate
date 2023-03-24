@@ -15,18 +15,20 @@ import CategoryLayout from "./layouts/CategoryLayout"
 // routes
 import { pageButtons } from "./data/PageButtons"
 
+const routes = pageButtons.map((routeMenu, index) => (
+  <Route key={index} path={routeMenu.catPath} element={<CategoryLayout />}>
+    {routeMenu.catCon.map((route, i) => (
+      <Route key={i} path={route.path} element={<route.element />} />
+    ))}
+  </Route>
+))
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
 
-      {pageButtons.map((routeMenu, index) => (
-        <Route key={index} path={routeMenu.catPath} element={<CategoryLayout />}>
-          {routeMenu.catCon.map((route, i) => (
-            <Route key={i} path={route.path} element={<route.element />} />
-          ))}
-        </Route>
-      ))}
+      {routes}
 
       <Route path="floof-gpt" element={<FloofGPTFull />} />
       <Route path="*" element={<Error />} />
