@@ -70,7 +70,7 @@ const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
                           <Tooltip text="Copied" onClick={true}>
                             {char.hexadecimal}
                           </Tooltip>
-                          <div className=" invisible  absolute  z-50 h-[70px] w-[70px] translate-y-[-48px] translate-x-[-100px] rounded-full border-[3px] border-white bg-primary text-center text-5xl font-bold   leading-[58px]  opacity-0 transition-opacity delay-300  sm:group-hover:visible sm:group-hover:opacity-100">
+                          <div className=" invisible  absolute  z-50 h-[70px] w-[70px] translate-y-[-48px] translate-x-[-100px] rounded-full border-[3px] border-white bg-primary text-center text-5xl font-bold   leading-[58px]  opacity-0 transition-opacity delay-200  sm:group-hover:visible sm:group-hover:opacity-100">
                             {char.character}
                           </div>
                         </div>
