@@ -8,8 +8,8 @@ import sun from "../../../assets/icons/sun.png"
 import { btnResponse } from "./Data"
 import { useNavigate } from "react-router-dom"
 import ColorPicker from "../../../components/ColorPicker"
-import ColorInverter from "../../../utils/ColorInverter"
-import RgbToHex from "../../../utils/RGBToHex"
+import ColorInverter from "../../../utils/colors/ColorInverter"
+import RgbToHex from "../../../utils/colors/RGBToHex"
 // @ts-ignore
 import { ReactComponent as Triangle } from "../../../assets/misc/triangle.svg"
 // @ts-ignore

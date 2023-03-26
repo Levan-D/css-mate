@@ -4,8 +4,8 @@ import React from "react"
 import ReactSlider from "react-slider"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { setStopPercentage } from "../gradientSlice"
-import RgbToHex from "../../../../utils/RGBToHex"
-import ColorInverter from "../../../../utils/ColorInverter"
+import RgbToHex from "../../../../utils/colors/RGBToHex"
+import ColorInverter from "../../../../utils/colors/ColorInverter"
 
 const StopsSlider = () => {
   const dispatch = useAppDispatch()

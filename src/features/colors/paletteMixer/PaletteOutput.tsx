@@ -5,7 +5,7 @@ import Output from "../../../components/Output"
 import { useAppSelector } from "../../../app/hooks"
 import { selectInbetweenColors } from "./paletteMixerSlice"
 import { OutputRenderArrayType } from "../../../components/Output"
-import RgbToHex from "../../../utils/RGBToHex"
+import RgbToHex from "../../../utils/colors/RGBToHex"
 //@ts-ignore
 import SyntaxHighlighter from "react-syntax-highlighter"
 //@ts-ignore

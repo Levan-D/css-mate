@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import RgbToHex from "../../../../utils/RGBToHex"
-import HexToRGB from "../../../../utils/HexToRGB"
+import RgbToHex from "../../../../utils/colors/RGBToHex"
+import HexToRGB from "../../../../utils/colors/HexToRGB"
 import { setStart, setEnd, setReset } from "../paletteMixerSlice"
 //@ts-ignore
 import { ChromePicker, SwatchesPicker } from "react-color"

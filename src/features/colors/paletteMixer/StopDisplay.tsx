@@ -3,7 +3,7 @@
 import React from "react"
 import { useAppSelector } from "../../../app/hooks"
 import { selectInbetweenColors } from "./paletteMixerSlice"
-import RgbToHex from "../../../utils/RGBToHex"
+import RgbToHex from "../../../utils/colors/RGBToHex"
 import Tooltip from "../../../components/Tooltip"
 
 export default function StopDisplay() {

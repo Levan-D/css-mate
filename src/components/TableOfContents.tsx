@@ -29,6 +29,11 @@ const TableOfContents = ({ TOCData }: tableOfContetsType) => {
     })
   }, [])
 
+  const scrollToElementSmooth = (elementId: string) => {
+    const element = document.getElementById(elementId)
+    element?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <div
       style={{ top: !tableOffset ? "144px" : "40px" }}
@@ -70,11 +75,13 @@ const TableOfContents = ({ TOCData }: tableOfContetsType) => {
       >
         <ul>
           {TOCData.map((link, i) => (
-            <a href={`#${link}`} key={i}>
-              <li className="px-3 py-[2px] duration-200  active:bg-slate-500 sm:hover:bg-slate-100  sm:hover:text-slate-900">
-                {link}
-              </li>
-            </a>
+            <li
+              key={i}
+              onClick={() => scrollToElementSmooth(link)}
+              className="px-3 py-[2px] duration-200  active:bg-slate-500 sm:hover:bg-slate-100  sm:hover:text-slate-900"
+            >
+              {link}
+            </li>
           ))}
         </ul>
       </nav>

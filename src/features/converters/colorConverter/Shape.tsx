@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react"
-import ColorInverter from "../../../utils/ColorInverter"
+import ColorInverter from "../../../utils/colors/ColorInverter"
 import { useAppSelector } from "../../../app/hooks"
 import { selectColor } from "./colorConverterSlice"
 

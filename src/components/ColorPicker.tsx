@@ -3,7 +3,7 @@
 import { useState } from "react"
 //@ts-ignore
 import { ChromePicker } from "react-color"
-import ColorInverter from "../utils/ColorInverter"
+import ColorInverter from "../utils/colors/ColorInverter"
 
 type ColorPickerProps = { handleColorPick: (color: string) => void }
 

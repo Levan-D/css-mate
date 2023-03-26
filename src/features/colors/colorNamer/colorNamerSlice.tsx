@@ -2,8 +2,8 @@
 
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
-import ColorConverter from "../../../utils/ColorConverter"
-import ColorValidator from "../../../utils/ColorValidator"
+import ColorConverter from "../../../utils/colors/ColorConverter"
+import ColorValidator from "../../../utils/colors/ColorValidator"
 
 export interface inputBtnsProps {
   name: "HEX" | "RGB" | "HSL" | "CMYK" | "HSV"

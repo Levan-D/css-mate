@@ -5,7 +5,7 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../../app/store"
 //@ts-ignore
 import colorNamer from "color-namer"
-import RgbToHex from "../../../utils/RGBToHex"
+import RgbToHex from "../../../utils/colors/RGBToHex"
 
 interface initialStateType {
   colorStart: string

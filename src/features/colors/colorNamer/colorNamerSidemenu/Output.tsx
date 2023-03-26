@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useAppSelector } from "../../../../app/hooks"
-import ColorInverter from "../../../../utils/ColorInverter"
+import ColorInverter from "../../../../utils/colors/ColorInverter"
 //@ts-ignore
 import colorNamer from "color-namer"
 import Tooltip from "../../../../components/Tooltip"

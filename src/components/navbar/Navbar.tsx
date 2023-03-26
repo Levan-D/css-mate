@@ -32,6 +32,8 @@ const Navbar = () => {
     dispatch(setPath(location.pathname))
     window.addEventListener("resize", updateWindowWidth)
 
+    window.scrollTo(0, 0)
+
     return () => window.removeEventListener("resize", updateWindowWidth)
   }, [location])
 

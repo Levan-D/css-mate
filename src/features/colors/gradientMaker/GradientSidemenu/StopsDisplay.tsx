@@ -2,8 +2,8 @@
 
 import React, { useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import RgbToHex from "../../../../utils/RGBToHex"
-import HexToRGB from "../../../../utils/HexToRGB"
+import RgbToHex from "../../../../utils/colors/RGBToHex"
+import HexToRGB from "../../../../utils/colors/HexToRGB"
 import {
   setStopColor,
   setStopOpacity,
