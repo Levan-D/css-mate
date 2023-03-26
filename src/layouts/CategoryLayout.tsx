@@ -23,7 +23,6 @@ const CategoryLayout = () => {
                   title={button.name}
                   path={button.path}
                   description={button.description}
-                  CSS={`sm:hover:translate-y-[-10px]`}
                 >
                   <div>
                     <img src={button.icon} alt="tool icons" className="h-[195px] pl-4" />
