@@ -385,3 +385,24 @@ html {
       0px 0px 10px 5px rgba(255, 114, 94, 0.1);
   }
 }
+
+.card {
+  position: absolute;
+  width: 270px;
+  transition: all 0.4s;
+}
+
+.card-animation {
+  animation-name: cardAnimation;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cardAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(270px * var(--card-index) + 32px * var(--card-index)));
+  }
+}

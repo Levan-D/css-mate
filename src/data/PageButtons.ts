@@ -49,6 +49,7 @@ export const pageButtons: pageButtonsType[] = [
           "Easily create and customize box shadows with real-time previews and CSS code generation.",
         icon: boxShadow,
       },
+
       {
         name: "Drop Shadow",
         path: "drop-shadow",

@@ -5,9 +5,12 @@ import { Outlet } from "react-router-dom"
 import Card from "../components/Card"
 import { useAppSelector } from "../app/hooks"
 import { Link } from "react-router-dom"
+//@ts-ignore
+import { v4 as uuidv4 } from "uuid"
 
 const CategoryLayout = () => {
   const { categoryIndex, pathArray, windowWidth } = useAppSelector(store => store.navbar)
+  const pageB = pageButtons[categoryIndex].catCon
 
   return (
     <div>
@@ -16,9 +19,30 @@ const CategoryLayout = () => {
           <h2 className="mx-auto my-12 max-w-3xl   text-center font-cursiveCustom  text-4xl  ">
             {pageButtons[categoryIndex].catName}
           </h2>
-          <div className="mx-auto  flex  w-fit flex-wrap justify-center gap-8">
-            {pageButtons[categoryIndex].catCon.map((button, i) => (
-              <div key={i}>
+          <div
+            key={uuidv4()}
+            style={{
+              transform:
+                pageB.length < 5 && pageB.length > 1
+                  ? `translate(-${
+                      (270 * (pageB.length - 1)) / 2 + (18 * (pageB.length - 1)) / 2
+                    }px, 0px)`
+                  : `translate(${16}px, 0px)`,
+            }}
+            className={` relative mx-auto flex  w-fit flex-wrap justify-center gap-8`}
+          >
+            {pageB.map((button, i) => (
+              <div
+                key={i}
+                style={
+                  {
+                    "--card-index": i,
+                  } as React.CSSProperties
+                }
+                className={`${
+                  pageB.length < 5 && pageB.length > 1 ? `card-animation ` : ""
+                }  card `}
+              >
                 <Card
                   title={button.name}
                   path={button.path}
@@ -35,8 +59,8 @@ const CategoryLayout = () => {
       ) : (
         <div className=" mx-auto mt-4  flex  w-fit flex-wrap justify-center">
           {windowWidth > 540 &&
-            pageButtons[categoryIndex].catCon.length > 1 &&
-            pageButtons[categoryIndex].catCon.map((button, i) => (
+            pageB.length > 1 &&
+            pageB.map((button, i) => (
               <div
                 key={i}
                 className={`              
