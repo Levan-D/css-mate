@@ -1,15 +1,13 @@
 /** @format */
 
-import { pageButtons } from "../data/PageButtons";
-import { Outlet } from "react-router-dom";
-import Card from "../components/Card";
-import { useAppSelector } from "../app/hooks";
-import { Link } from "react-router-dom";
+import { pageButtons } from "../data/PageButtons"
+import { Outlet } from "react-router-dom"
+import Card from "../components/Card"
+import { useAppSelector } from "../app/hooks"
+import { Link } from "react-router-dom"
 
 const CategoryLayout = () => {
-  const { categoryIndex, pathArray, windowWidth } = useAppSelector(
-    (store) => store.navbar
-  );
+  const { categoryIndex, pathArray, windowWidth } = useAppSelector(store => store.navbar)
 
   return (
     <div>
@@ -27,7 +25,7 @@ const CategoryLayout = () => {
                   CSS={`sm:hover:translate-y-[-10px]`}
                 >
                   <div>
-                    <img src={button.icon} alt="tool icons" className="pl-4" />
+                    <img src={button.icon} alt="tool icons" className="h-[175px] pl-4" />
                   </div>
                 </Card>
               </div>
@@ -56,7 +54,7 @@ const CategoryLayout = () => {
 
       <Outlet />
     </div>
-  );
-};
+  )
+}
 
-export default CategoryLayout;
+export default CategoryLayout
