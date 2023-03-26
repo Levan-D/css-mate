@@ -388,14 +388,14 @@ html {
 
 .card {
   position: absolute;
-  width: 270px;
-  transition: all 0.4s;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .card-animation {
   animation-name: cardAnimation;
-  animation-duration: 0.4s;
+  animation-duration: 0.6s;
   animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @keyframes cardAnimation {

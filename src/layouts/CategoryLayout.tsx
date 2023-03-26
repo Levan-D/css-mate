@@ -25,9 +25,9 @@ const CategoryLayout = () => {
               transform:
                 pageB.length < 5 && pageB.length > 1
                   ? `translate(-${
-                      (270 * (pageB.length - 1)) / 2 + (18 * (pageB.length - 1)) / 2
+                      (270 * (pageB.length - 1)) / 2 + (32 * (pageB.length - 1)) / 2
                     }px, 0px)`
-                  : `translate(${16}px, 0px)`,
+                  : ``,
             }}
             className={` relative mx-auto flex  w-fit flex-wrap justify-center gap-8`}
           >
