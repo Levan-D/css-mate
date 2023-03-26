@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import dice from "../../../../assets/icons/dice.png"
 import RgbToHex from "../../../../utils/colors/RGBToHex"
 import HexToRGB from "../../../../utils/colors/HexToRGB"
 import { setStart, setEnd, setReset } from "../paletteMixerSlice"
@@ -83,6 +84,18 @@ export default function PaletteInput() {
     }
   }
 
+  const handleRandomColor = () => {
+    const randomColor = getRandomPaletteColor()
+    dispatch(setStart(randomColor))
+    setColorSt(RgbToHex(randomColor))
+  }
+
+  const handleRandomColorEnd = () => {
+    const randomColor = getRandomPaletteColor()
+    dispatch(setEnd(randomColor))
+    setColorEn(RgbToHex(randomColor))
+  }
+
   const handleOnKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
     type: "end" | "start"
@@ -95,6 +108,29 @@ export default function PaletteInput() {
         setTempStart("")
       }
     }
+  }
+
+  function getRandomHSLColor() {
+    const hue = Math.floor(Math.random() * 361)
+    const saturation = Math.floor(Math.random() * 61) + 40
+    const lightness = Math.floor(Math.random() * 41) + 30
+
+    return [hue, saturation, lightness]
+  }
+
+  function hslToRGB(h, s, l) {
+    const a = s * Math.min(l, 1 - l)
+    const f = n => {
+      const k = (n + h / 30) % 12
+      return l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1)
+    }
+    const [r, g, b] = [f(0), f(8), f(4)]
+    return `${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}`
+  }
+
+  function getRandomPaletteColor() {
+    const [h, s, l] = getRandomHSLColor()
+    return hslToRGB(h, s / 100, l / 100)
   }
 
   return (
@@ -145,9 +181,11 @@ export default function PaletteInput() {
             onChange={e => setTempStart(e.target.value)}
             onKeyDown={e => handleOnKeyDown(e, "start")}
             onBlur={() => handleOnBlur("start")}
-            className=" block h-10 w-40   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
+            className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
           ></input>
-
+          <div onClick={() => handleRandomColor()} className="btnSecondary w-20">
+            <img src={dice} alt="" className="inline-block  w-20  scale-[1.8]" />
+          </div>
           <div
             onClick={() => setDisplaySwatchesOne(true)}
             className="btnSecondary w-full text-center"
@@ -220,8 +258,12 @@ export default function PaletteInput() {
             onChange={e => setTempEnd(e.target.value)}
             onKeyDown={e => handleOnKeyDown(e, "end")}
             onBlur={() => handleOnBlur("end")}
-            className=" block h-10 w-40   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
+            className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
           ></input>
+
+          <div onClick={() => handleRandomColorEnd()} className="btnSecondary w-20">
+            <img src={dice} alt="" className="inline-block  w-20  scale-[1.8]" />
+          </div>
 
           <div
             onClick={() => setDisplaySwatchesTwo(true)}
