@@ -24,7 +24,7 @@ export default function PaletteInput() {
 
   const [colorSt, setColorSt] = useState(RgbToHex(colorStart))
   const [colorEn, setColorEn] = useState(RgbToHex(colorEnd))
-  console.log(colorSt)
+
   useEffect(() => {
     setColorSt(RgbToHex(colorStart))
     setColorEn(RgbToHex(colorEnd))
