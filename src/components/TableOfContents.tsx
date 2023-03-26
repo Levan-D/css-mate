@@ -12,10 +12,6 @@ const TableOfContents = ({ TOCData }: tableOfContetsType) => {
   const [visibility, setVisibility] = useState(true)
   const [tableOffset, setTableOffset] = useState(false)
 
-  // need to manually set the line height to allow the table to generate automatically
-
-  const height = 28 * TOCData.length + "px"
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 70) {
@@ -59,16 +55,20 @@ const TableOfContents = ({ TOCData }: tableOfContetsType) => {
         </div>
       </div>
 
-      <hr className={`${visibility ? "block " : "hidden"}  mx-2  duration-200   `} />
+      <hr
+        className={`${
+          visibility ? "  opacity-100 " : " opacity-0"
+        }  mx-2  origin-top duration-300   `}
+      />
 
       <nav
         className={`${
-          visibility ? "h-[ scale-y-100" + height + "]  py-2 " : "h-0  scale-y-0 "
-        }    origin-top duration-500   `}
+          visibility
+            ? "visible h-auto scale-y-100 py-2  opacity-100"
+            : " collapse  h-0  scale-y-0 overflow-hidden opacity-0"
+        }    origin-top   duration-300 `}
       >
-        <ul
-          className={`${visibility ? "scale-y-100 " : "scale-y-0  "}     origin-top   `}
-        >
+        <ul>
           {TOCData.map((link, i) => (
             <a href={`#${link}`} key={i}>
               <li className="px-3 py-[2px] duration-200  active:bg-slate-500 sm:hover:bg-slate-100  sm:hover:text-slate-900">

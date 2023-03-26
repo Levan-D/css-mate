@@ -47,8 +47,14 @@ const Cursors = () => {
                 {cursor.category}
               </h2>
               <div className="mb-1 flex flex-wrap justify-center gap-8">
-                {cursor.contents.map((content, i) => (
-                  <Card title={content.name} key={i} CSS={content.tailwind}>
+                {cursor.contents.map((content, index) => (
+                  <div
+                    key={index}
+                    className={`w-fit cursor-pointer select-none rounded-xl border-2  border-transparent  bg-slate-200 p-4 shadow-[6px_6px_4px_0px_rgba(_255,_114,_94,0.60)]      duration-300  ease-in-out active:border-secondary-200  sm:hover:border-secondary-300 sm:hover:shadow-[0px_0px_37px_10px_rgba(_255,_114,_94,0.8)] ${content.tailwind}`}
+                  >
+                    <h2 className="mb-2 text-center font-cursiveCustom text-xl text-slate-900 ">
+                      {content.name}
+                    </h2>
                     <div className="text-center text-slate-900 ">
                       {content.description}
                     </div>
@@ -84,7 +90,7 @@ const Cursors = () => {
                         </div>
                       </Tooltip>
                     </div>
-                  </Card>
+                  </div>
                 ))}
               </div>
             </div>

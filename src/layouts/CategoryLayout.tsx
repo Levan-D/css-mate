@@ -22,10 +22,11 @@ const CategoryLayout = () => {
                 <Card
                   title={button.name}
                   path={button.path}
+                  description={button.description}
                   CSS={`sm:hover:translate-y-[-10px]`}
                 >
                   <div>
-                    <img src={button.icon} alt="tool icons" className="h-[175px] pl-4" />
+                    <img src={button.icon} alt="tool icons" className="h-[195px] pl-4" />
                   </div>
                 </Card>
               </div>

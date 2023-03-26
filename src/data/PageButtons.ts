@@ -31,6 +31,7 @@ export type pageButtonsType = {
     name: string
     path: string
     element: React.ComponentType<any>
+    description: string
     icon: string
   }[]
 }
@@ -44,18 +45,24 @@ export const pageButtons: pageButtonsType[] = [
         name: "Box Shadow",
         path: "box-shadow",
         element: BoxShadow,
+        description:
+          "Easily create and customize box shadows with real-time previews and CSS code generation.",
         icon: boxShadow,
       },
       {
         name: "Drop Shadow",
         path: "drop-shadow",
         element: DropShadow,
+        description:
+          "Generate unique drop shadows for your elements by adjusting angle, distance, size, and color.",
         icon: dropShadow,
       },
       {
         name: "Text Shadow",
         path: "text-shadow",
         element: TextShadow,
+        description:
+          "Enhance your text with custom shadows, offering a range of offset, blur, and color options.",
         icon: textShadow,
       },
     ],
@@ -68,18 +75,24 @@ export const pageButtons: pageButtonsType[] = [
         name: "Gradient maker",
         path: "gradient-maker",
         element: Gradient,
+        description:
+          "Design beautiful linear, radial, and conic gradients with full control over colors and angles.",
         icon: gradient,
       },
       {
         name: "Color namer ",
         path: "color-namer",
         element: ColorNamer,
+        description:
+          "Identify the name of any color by inputting its HEX, RGB, HSL, HSV, or CMYK values.",
         icon: colorNamer,
       },
       {
         name: "Palette mixer ",
         path: "palette-mixer",
         element: PaletteMixer,
+        description:
+          "Combine and create new color palettes by mixing existing ones or generating fresh schemes.",
         icon: paletteMixer,
       },
     ],
@@ -92,6 +105,8 @@ export const pageButtons: pageButtonsType[] = [
         name: "Color converter",
         path: "color-converter",
         element: ColorConverter,
+        description:
+          "Easily convert color codes between HEX, RGB, HSL, HSV, and CMYK formats.",
         icon: colorConverter,
       },
     ],
@@ -104,18 +119,23 @@ export const pageButtons: pageButtonsType[] = [
         name: "Cursors",
         path: "cursors",
         element: Cursors,
+        description:
+          "Explore a comprehensive list of CSS cursor types with visual examples and descriptions.",
         icon: cursor,
       },
       {
         name: "Emojis",
         path: "emojis",
         element: Emojis,
+        description:
+          "Find the perfect emoji hex code with a detailed glossary and examples.",
         icon: emoji,
       },
       {
         name: "Entities",
         path: "entities",
         element: Entities,
+        description: "look through HTML entities with a handy reference guide.",
         icon: entities,
       },
     ],
