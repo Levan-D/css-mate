@@ -32,34 +32,46 @@ export default function PaletteInput() {
     dispatch(setReset())
   }, [reset])
 
-  const handleChangeSt = (color: color) => {
-    setColorSt(color.hex)
+  const handleChange = (color: color, type: "end" | "start") => {
+    if (type === "start") {
+      setColorSt(color.hex)
+    } else if (type === "end") {
+      setColorEn(color.hex)
+    }
   }
 
-  const handleChangeCompleteSt = (color: color) => {
-    dispatch(setStart(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`))
-    setColorSt(color.hex)
+  const handleChangeComplete = (color: color, type: "end" | "start") => {
+    if (type === "start") {
+      dispatch(setStart(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`))
+      setColorSt(color.hex)
+    } else if (type === "end") {
+      dispatch(setEnd(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`))
+      setColorEn(color.hex)
+    }
   }
 
-  const handleClickSt = () => {
-    setDisplayColorPickerSt(!displayColorPickerSt)
-    setColorSt(colorSt)
-    dispatch(setStart(`${HexToRGB(colorSt)}`))
+  const handleClick = (type: "end" | "start") => {
+    if (type === "start") {
+      setDisplayColorPickerSt(!displayColorPickerSt)
+      setColorSt(colorSt)
+      dispatch(setStart(`${HexToRGB(colorSt)}`))
+    } else if (type === "end") {
+      setDisplayColorPickerEn(!displayColorPickerEn)
+      setColorEn(colorEn)
+      dispatch(setEnd(`${HexToRGB(colorEn)}`))
+    }
   }
 
-  const handleChangeEn = (color: color) => {
-    setColorEn(color.hex)
-  }
-
-  const handleChangeCompleteEn = (color: color) => {
-    dispatch(setEnd(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`))
-    setColorEn(color.hex)
-  }
-
-  const handleClickEn = () => {
-    setDisplayColorPickerEn(!displayColorPickerEn)
-    setColorEn(colorEn)
-    dispatch(setEnd(`${HexToRGB(colorEn)}`))
+  const handleRandomColor = (type: "end" | "start") => {
+    if (type === "start") {
+      const randomColor = getRandomPaletteColor()
+      dispatch(setStart(randomColor))
+      setColorSt(RgbToHex(randomColor))
+    } else if (type === "end") {
+      const randomColor = getRandomPaletteColor()
+      dispatch(setEnd(randomColor))
+      setColorEn(RgbToHex(randomColor))
+    }
   }
 
   const handleOnBlur = (type: "end" | "start") => {
@@ -84,18 +96,6 @@ export default function PaletteInput() {
     }
   }
 
-  const handleRandomColor = () => {
-    const randomColor = getRandomPaletteColor()
-    dispatch(setStart(randomColor))
-    setColorSt(RgbToHex(randomColor))
-  }
-
-  const handleRandomColorEnd = () => {
-    const randomColor = getRandomPaletteColor()
-    dispatch(setEnd(randomColor))
-    setColorEn(RgbToHex(randomColor))
-  }
-
   const handleOnKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
     type: "end" | "start"
@@ -118,9 +118,9 @@ export default function PaletteInput() {
     return [hue, saturation, lightness]
   }
 
-  function hslToRGB(h, s, l) {
+  function hslToRGB(h: number, s: number, l: number) {
     const a = s * Math.min(l, 1 - l)
-    const f = n => {
+    const f = (n: number) => {
       const k = (n + h / 30) % 12
       return l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1)
     }
@@ -145,7 +145,7 @@ export default function PaletteInput() {
 
         <div className="  m-2 ">
           <div
-            onClick={handleClickSt}
+            onClick={() => handleClick("start")}
             style={{
               background: colorSt,
             }}
@@ -161,8 +161,10 @@ export default function PaletteInput() {
                 <ChromePicker
                   disableAlpha={true}
                   color={colorSt}
-                  onChange={handleChangeSt}
-                  onChangeComplete={handleChangeCompleteSt}
+                  onChange={(color: color) => handleChange(color, "start")}
+                  onChangeComplete={(color: color) =>
+                    handleChangeComplete(color, "start")
+                  }
                 />
               </div>
             </div>
@@ -183,7 +185,7 @@ export default function PaletteInput() {
             onBlur={() => handleOnBlur("start")}
             className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
           ></input>
-          <div onClick={() => handleRandomColor()} className="btnSecondary w-20">
+          <div onClick={() => handleRandomColor("start")} className="btnSecondary w-20">
             <img src={dice} alt="" className="inline-block  w-20  scale-[1.8]" />
           </div>
           <div
@@ -203,7 +205,9 @@ export default function PaletteInput() {
                 <SwatchesPicker
                   width={280}
                   height={280}
-                  onChange={handleChangeCompleteSt}
+                  onChangeComplete={(color: color) =>
+                    handleChangeComplete(color, "start")
+                  }
                 />
               </div>
             </div>
@@ -222,7 +226,7 @@ export default function PaletteInput() {
 
         <div className="  m-2 ">
           <div
-            onClick={handleClickEn}
+            onClick={() => handleClick("end")}
             style={{
               background: colorEn,
             }}
@@ -238,8 +242,8 @@ export default function PaletteInput() {
                 <ChromePicker
                   disableAlpha={true}
                   color={colorEn}
-                  onChange={handleChangeEn}
-                  onChangeComplete={handleChangeCompleteEn}
+                  onChange={(color: color) => handleChange(color, "end")}
+                  onChangeComplete={(color: color) => handleChangeComplete(color, "end")}
                 />
               </div>
             </div>
@@ -261,7 +265,7 @@ export default function PaletteInput() {
             className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
           ></input>
 
-          <div onClick={() => handleRandomColorEnd()} className="btnSecondary w-20">
+          <div onClick={() => handleRandomColor("end")} className="btnSecondary w-20">
             <img src={dice} alt="" className="inline-block  w-20  scale-[1.8]" />
           </div>
 
@@ -282,7 +286,7 @@ export default function PaletteInput() {
                 <SwatchesPicker
                   width={280}
                   height={280}
-                  onChange={handleChangeCompleteEn}
+                  onChangeComplete={(color: color) => handleChangeComplete(color, "end")}
                 />
               </div>
             </div>
