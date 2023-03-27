@@ -1,40 +1,40 @@
 /** @format */
 
 // page icons
-import boxShadow from "../assets/pageIcons/boxShadow.png"
-import dropShadow from "../assets/pageIcons/dropShadow.png"
-import textShadow from "../assets/pageIcons/textShadow.png"
-import gradient from "../assets/pageIcons/gradient.png"
-import colorConverter from "../assets/pageIcons/colorConverter.png"
-import cursor from "../assets/pageIcons/cursor.png"
-import emoji from "../assets/pageIcons/emoji.png"
-import entities from "../assets/pageIcons/entities.png"
-import paletteMixer from "../assets/pageIcons/paletteMixer.png"
-import colorNamer from "../assets/pageIcons/colorNamer.png"
+import boxShadow from "../assets/pageIcons/boxShadow.png";
+import dropShadow from "../assets/pageIcons/dropShadow.png";
+import textShadow from "../assets/pageIcons/textShadow.png";
+import gradient from "../assets/pageIcons/gradient.png";
+import colorConverter from "../assets/pageIcons/colorConverter.png";
+import cursor from "../assets/pageIcons/cursor.png";
+import emoji from "../assets/pageIcons/emoji.png";
+import entities from "../assets/pageIcons/entities.png";
+import paletteMixer from "../assets/pageIcons/paletteMixer.png";
+import colorNamer from "../assets/pageIcons/colorNamer.png";
 
 // pages
-import BoxShadow from "../features/shadows/boxShadow/BoxShadow"
-import DropShadow from "../features/shadows/dropShadow/DropShadow"
-import TextShadow from "../features/shadows/textShadow/TextShadow"
-import ColorConverter from "../features/converters/colorConverter/ColorConverter"
-import Cursors from "../features/misc/cursors/Cursors"
-import Emojis from "../features/misc/emojis/Emojis"
-import Entities from "../features/misc/entities/Entities"
-import Gradient from "../features/colors/gradientMaker/Gradient"
-import PaletteMixer from "../features/colors/paletteMixer/PaletteMixer"
-import ColorNamer from "../features/colors/colorNamer/ColorNamer"
+import BoxShadow from "../features/shadows/boxShadow/BoxShadow";
+import DropShadow from "../features/shadows/dropShadow/DropShadow";
+import TextShadow from "../features/shadows/textShadow/TextShadow";
+import ColorConverter from "../features/converters/colorConverter/ColorConverter";
+import Cursors from "../features/misc/cursors/Cursors";
+import Emojis from "../features/misc/emojis/Emojis";
+import Entities from "../features/misc/entities/Entities";
+import Gradient from "../features/colors/gradientMaker/Gradient";
+import PaletteMixer from "../features/colors/paletteMixer/PaletteMixer";
+import ColorNamer from "../features/colors/colorNamer/ColorNamer";
 
 export type pageButtonsType = {
-  catName: string
-  catPath: string
+  catName: string;
+  catPath: string;
   catCon: {
-    name: string
-    path: string
-    element: React.ComponentType<any>
-    description: string
-    icon: string
-  }[]
-}
+    name: string;
+    path: string;
+    element: React.ComponentType<any>;
+    description: string;
+    icon: string;
+  }[];
+};
 
 export const pageButtons: pageButtonsType[] = [
   {
@@ -49,7 +49,6 @@ export const pageButtons: pageButtonsType[] = [
           "Easily create and customize box shadows with real-time previews and CSS code generation.",
         icon: boxShadow,
       },
-
       {
         name: "Drop Shadow",
         path: "drop-shadow",
@@ -141,4 +140,4 @@ export const pageButtons: pageButtonsType[] = [
       },
     ],
   },
-]
+];
