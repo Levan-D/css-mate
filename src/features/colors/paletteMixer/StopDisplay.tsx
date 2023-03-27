@@ -64,8 +64,8 @@ export default function StopDisplay() {
             className={`${
               showText && showShadow && `!border-slate-300 !text-slate-300`
             } ${
-              showText && `cursor-pointer !border-slate-500 !text-slate-500`
-            } h-6 w-6  select-none rounded-full border-2 border-slate-600 text-center leading-5 text-slate-600`}
+              showText && `!cursor-pointer !border-slate-500 !text-slate-500`
+            } h-6 w-6  cursor-not-allowed select-none rounded-full border-2 border-slate-600 text-center leading-5 text-slate-600`}
             onClick={() => showText && setShowShadow((x) => !x)}
           >
             S
@@ -74,8 +74,8 @@ export default function StopDisplay() {
             className={`${
               showText && toggleBold && `!border-slate-300 !text-slate-300`
             } ${
-              showText && `cursor-pointer !border-slate-500 !text-slate-500`
-            } h-6 w-6  select-none rounded-full border-2 border-slate-600 text-center leading-5 text-slate-600`}
+              showText && `!cursor-pointer !border-slate-500 !text-slate-500`
+            } h-6 w-6  cursor-not-allowed select-none rounded-full border-2 border-slate-600 text-center leading-5 text-slate-600`}
             onClick={() => showText && setToggleBold((x) => !x)}
           >
             B
