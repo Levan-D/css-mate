@@ -422,10 +422,6 @@ html {
     opacity: 1;
     transform: scale(1.1);
   }
-  95% {
-    opacity: 1;
-    transform: scale(0.98);
-  }
   100% {
     opacity: 1;
     transform: scale(1);
