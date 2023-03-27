@@ -2,15 +2,19 @@
 
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { setShadowColor, toggleShadow } from "../contrastCheckerSlice";
+import {
+  setShadowColor,
+  toggleShadow,
+  setShadowOpacity,
+} from "../contrastCheckerSlice";
 //@ts-ignore
 import { ChromePicker, SwatchesPicker } from "react-color";
 import { color } from "../../../../components/ColorPicker";
 import RgbToHex from "../../../../utils/colors/RGBToHex";
-import HexToRGB from "../../../../utils/colors/HexToRGB";
+import ReactSlider from "react-slider";
 
 export default function InputShadow() {
-  const { shadowColor, shadow } = useAppSelector(
+  const { shadowColor, shadow, shadowOpacity } = useAppSelector(
     (store) => store.contrastChecker
   );
   const dispatch = useAppDispatch();
@@ -55,6 +59,34 @@ export default function InputShadow() {
           Shadow
         </div>
       </div>
+
+      <div className="menuBlock m-2   pb-6 pt-2">
+        <div className="mx-2 flex justify-between">
+          <div className=" text-sm leading-[24px]">
+            Opacity &#32;
+            <span className="italic text-slate-400">&#40;&#32;N&#32;&#41;</span>
+          </div>
+          <input
+            type="number"
+            value={shadowOpacity}
+            step={0.01}
+            onChange={(e) => dispatch(setShadowOpacity(Number(e.target.value)))}
+            className=" w-14 rounded-md bg-darkJungle-300 text-center md:text-right"
+          />
+        </div>
+        <div className="m-2 basis-5/6">
+          <ReactSlider
+            className="customSlider"
+            trackClassName="customSlider-track"
+            thumbClassName="customSlider-thumb"
+            min={0}
+            max={100}
+            value={shadowOpacity * 100}
+            onChange={(value) => dispatch(setShadowOpacity(value / 100))}
+          />
+        </div>
+      </div>
+
       <div className="m-2 flex gap-2">
         {/* color picker */}
         <div>

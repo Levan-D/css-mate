@@ -65,7 +65,7 @@ export default function Shape() {
           }  py-1`}
           style={{
             textShadow: shadow
-              ? `2px 1px 2px rgb(${shadowColor},${shadowOpacity})`
+              ? `3px 2px 1px rgb(${shadowColor},${shadowOpacity})`
               : "",
           }}
         >
@@ -83,7 +83,7 @@ export default function Shape() {
           style={{
             color: textColor,
             textShadow: shadow
-              ? `2px 1px 2px rgb(${shadowColor},${shadowOpacity})`
+              ? `3px 2px 1px rgb(${shadowColor},${shadowOpacity})`
               : "",
           }}
           className={`  ${textSize ? "text-[18px]" : "text-[14px]"} ${
@@ -106,7 +106,7 @@ export default function Shape() {
           } py-1`}
           style={{
             textShadow: shadow
-              ? `2px 1px 2px rgb(${shadowColor},${shadowOpacity})`
+              ? `3px 2px 1px rgb(${shadowColor},${shadowOpacity})`
               : "",
           }}
         >

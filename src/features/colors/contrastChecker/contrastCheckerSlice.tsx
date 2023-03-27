@@ -14,8 +14,8 @@ interface initialStateType {
 }
 
 const initialState: initialStateType = {
-  backgroundColor: `#000000`,
-  textColor: `#ffffff`,
+  backgroundColor: `#5ea1ff`,
+  textColor: `#ff725e`,
   shadowColor: `255,255,255`,
   shadowOpacity: 1,
   shadow: false,
