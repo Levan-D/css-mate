@@ -23,6 +23,7 @@ import Entities from "../features/misc/entities/Entities";
 import Gradient from "../features/colors/gradientMaker/Gradient";
 import PaletteMixer from "../features/colors/paletteMixer/PaletteMixer";
 import ColorNamer from "../features/colors/colorNamer/ColorNamer";
+import ContrastChecker from "../features/colors/contrastChecker/ContrastChecker";
 
 export type pageButtonsType = {
   catName: string;
@@ -85,6 +86,14 @@ export const pageButtons: pageButtonsType[] = [
         element: ColorNamer,
         description:
           "Identify the name of any color by inputting its HEX, RGB, HSL, HSV, or CMYK values.",
+        icon: colorNamer,
+      },
+      {
+        name: "Contrast checker ",
+        path: "contrast-checker",
+        element: ContrastChecker,
+        description:
+          "Check if your background and text have sufficient contrast for readability.",
         icon: colorNamer,
       },
       {

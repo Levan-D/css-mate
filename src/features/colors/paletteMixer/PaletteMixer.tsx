@@ -21,15 +21,11 @@ export default function PaletteMixer() {
         Pick a color close to white as the last shade to create a neutral tint
         palette for your styleguide.
       </p>
-      <p className="mb-2 text-center font-cursiveCustom text-base">
+      <p className="mb-8 text-center font-cursiveCustom text-base">
         You can also check contrast ratios of backgrounds and textcolors for
         readability based on w3 standards.
       </p>
-      <p className="mb-8 text-center font-cursiveCustom text-base">
-        WCAG recommends a contrast ratio of 4.5:1 or greater for normal text
-        (14px or smaller) and 3:1 or greater for large text (18px or larger).
-        (text below is 14px).
-      </p>
+ 
 
       <div className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-4 lg:gap-12 ">
         <div>
