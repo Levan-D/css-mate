@@ -186,7 +186,7 @@ export default function PaletteInput() {
             className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
           ></input>
           <div onClick={() => handleRandomColor("start")} className="btnSecondary w-20">
-            <img src={dice} alt="" className="inline-block  w-20  scale-[1.8]" />
+            <img src={dice} alt="" className="inline-block  w-20  scale-[2] -translate-y-[2px] " />
           </div>
           <div
             onClick={() => setDisplaySwatchesOne(true)}
@@ -266,7 +266,7 @@ export default function PaletteInput() {
           ></input>
 
           <div onClick={() => handleRandomColor("end")} className="btnSecondary w-20">
-            <img src={dice} alt="" className="inline-block  w-20  scale-[1.8]" />
+            <img src={dice} alt="" className="inline-block  w-20  scale-[2] -translate-y-[2px]" />
           </div>
 
           <div

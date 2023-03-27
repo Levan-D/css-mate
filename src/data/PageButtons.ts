@@ -11,6 +11,7 @@ import emoji from "../assets/pageIcons/emoji.png";
 import entities from "../assets/pageIcons/entities.png";
 import paletteMixer from "../assets/pageIcons/paletteMixer.png";
 import colorNamer from "../assets/pageIcons/colorNamer.png";
+import contrastChecker from "../assets/pageIcons/contrastChecker.png";
 
 // pages
 import BoxShadow from "../features/shadows/boxShadow/BoxShadow";
@@ -94,7 +95,7 @@ export const pageButtons: pageButtonsType[] = [
         element: ContrastChecker,
         description:
           "Check if your background and text have sufficient contrast for readability.",
-        icon: colorNamer,
+        icon: contrastChecker,
       },
       {
         name: "Palette mixer ",
