@@ -23,6 +23,12 @@ export default function Shape() {
       (Math.max(bgLuminance, textLuminance) + 0.05) /
       (Math.min(bgLuminance, textLuminance) + 0.05)
 
+    const formattedRatio = (ratio: number) => {
+      const fixedValue = ratio.toFixed(1)
+      const lastDigit = fixedValue.charAt(fixedValue.length - 1)
+      return lastDigit === "0" ? ratio.toFixed(0) : fixedValue
+    }
+
     if (contrastRatio >= 7) {
       return { rating: "Great", ratio: "(7:1)" }
     } else if (contrastRatio >= 4.5) {
@@ -30,7 +36,7 @@ export default function Shape() {
     } else if (contrastRatio >= 2.9) {
       return { rating: "Poor", ratio: "(3:1)" }
     } else {
-      return { rating: "Fail", ratio: `(${contrastRatio.toFixed(1)}:1)` }
+      return { rating: "Fail", ratio: `(${formattedRatio(contrastRatio)}:1)` }
     }
   }
 
