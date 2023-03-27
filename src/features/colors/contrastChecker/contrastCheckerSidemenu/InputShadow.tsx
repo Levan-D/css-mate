@@ -32,16 +32,13 @@ export default function InputShadow() {
   };
 
   const handleOnBlur = () => {
-    const colorRegex = /^#[0-9A-F]{6}$/i;
-    let newHex = color;
-    newHex.replace(/\s+/g, "");
+    const RGBRegex =
+      /^(?:\s*(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\s*,){2}\s*(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\s*$/;
+    let newRGB = color;
+    newRGB.replace(/[^,%#\d\w\s]/g, "");
 
-    if (!newHex.startsWith("#")) {
-      newHex = "#" + newHex;
-    }
-
-    if (colorRegex.test(newHex)) {
-      dispatch(setShadowColor(newHex));
+    if (RGBRegex.test(newRGB)) {
+      dispatch(setShadowColor(newRGB));
     }
   };
 
