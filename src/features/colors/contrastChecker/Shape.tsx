@@ -56,7 +56,7 @@ export default function Shape() {
       style={{
         backgroundColor: backgroundColor,
       }}
-      className={`   mx-auto  flex  h-48 w-[344px] flex-col justify-around rounded-xl border-2  `}
+      className={`   mx-auto  flex  h-64 w-[344px] flex-col justify-around rounded-xl border-2  `}
     >
       <div className="mt-2 flex justify-center gap-8 text-black">
         <div

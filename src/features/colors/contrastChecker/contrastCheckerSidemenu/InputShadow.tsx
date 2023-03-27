@@ -63,7 +63,7 @@ export default function InputShadow() {
             style={{
               background: RgbToHex(shadowColor),
             }}
-            className={`h-10 w-20 cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
+            className={`h-10 w-10 cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
           ></div>
           {displayColorPicker ? (
             <div className="absolute z-10 select-none">
