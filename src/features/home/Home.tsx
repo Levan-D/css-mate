@@ -3,6 +3,7 @@
 import React from "react"
 import { pageButtons } from "../../data/PageButtons"
 import Card from "../../components/Card"
+import styles from "./home.module.css"
 
 const Home = () => {
   const generateAnimationDelay = (categoryIndex: number, cardIndex: number) => {
@@ -36,7 +37,7 @@ const Home = () => {
               style={{
                 animationDelay: generateAnimationDelay(categoryIndex, cardIndex),
               }}
-              className="card-animation-home"
+              className={styles.cardAnimationHome}
             >
               <Card
                 title={button.name}

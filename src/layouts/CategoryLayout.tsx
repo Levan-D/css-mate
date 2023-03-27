@@ -1,20 +1,19 @@
 /** @format */
 
-import { pageButtons } from "../data/PageButtons";
-import { Outlet } from "react-router-dom";
-import Card from "../components/Card";
-import { useAppSelector } from "../app/hooks";
-import { Link } from "react-router-dom";
+import { pageButtons } from "../data/PageButtons"
+import { Outlet } from "react-router-dom"
+import Card from "../components/Card"
+import { useAppSelector } from "../app/hooks"
+import { Link } from "react-router-dom"
 //@ts-ignore
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid"
+import styles from "./categoryLayout.module.css"
 
 const CategoryLayout = () => {
-  const { categoryIndex, pathArray, windowWidth } = useAppSelector(
-    (store) => store.navbar
-  );
-  const pageB = pageButtons[categoryIndex].catCon;
+  const { categoryIndex, pathArray, windowWidth } = useAppSelector(store => store.navbar)
+  const pageB = pageButtons[categoryIndex].catCon
 
-  const math = (270 * (pageB.length - 1)) / 2 + (32 * (pageB.length - 1)) / 2;
+  const math = (270 * (pageB.length - 1)) / 2 + (32 * (pageB.length - 1)) / 2
   return (
     <div>
       {!pathArray[1] ? (
@@ -44,8 +43,8 @@ const CategoryLayout = () => {
                   pageB.length < 5 &&
                   pageB.length > 1 &&
                   window.innerWidth > 1152 &&
-                  `card-animation `
-                } ${window.innerWidth > 1152 && "card"}  w-fit `}
+                  styles.cardAnimation
+                } ${window.innerWidth > 1152 && styles.card}  w-fit `}
               >
                 <Card
                   title={button.name}
@@ -53,11 +52,7 @@ const CategoryLayout = () => {
                   description={button.description}
                 >
                   <div>
-                    <img
-                      src={button.icon}
-                      alt="tool icons"
-                      className="h-[195px] pl-4"
-                    />
+                    <img src={button.icon} alt="tool icons" className="h-[195px] pl-4" />
                   </div>
                 </Card>
               </div>
@@ -86,7 +81,7 @@ const CategoryLayout = () => {
 
       <Outlet />
     </div>
-  );
-};
+  )
+}
 
-export default CategoryLayout;
+export default CategoryLayout

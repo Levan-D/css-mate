@@ -1,9 +1,10 @@
 /** @format */
 
-import  { useRef, useEffect } from "react"
+import { useRef, useEffect } from "react"
 import { useAppSelector } from "../../app/hooks"
 import FlooFGPTIcon from "../../assets/icons/floofGPT.png"
 import UserIcon from "../../assets/icons/user.png"
+import styles from "./floofGPT.module.css"
 
 const Body = () => {
   const { responseChain, askFloofGPTStatus } = useAppSelector(state => state.floof)
@@ -57,7 +58,7 @@ const Body = () => {
           <div>
             <img className="w-6 rounded-full bg-primary " src={FlooFGPTIcon} alt="" />
           </div>
-          <div className="lds-ripple translate-x-2">
+          <div className={`${styles.ldsRipple} translate-x-2`}>
             <div></div>
             <div></div>
           </div>
