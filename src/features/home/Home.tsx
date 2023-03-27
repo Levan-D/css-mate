@@ -5,6 +5,15 @@ import { pageButtons } from "../../data/PageButtons"
 import Card from "../../components/Card"
 
 const Home = () => {
+  const generateAnimationDelay = (categoryIndex: number, cardIndex: number) => {
+    const baseDelay = 100 // Adjust this value to control the delay between each card's animation
+    let totalPreviousCards = 0
+    for (let i = 0; i < categoryIndex; i++) {
+      totalPreviousCards += pageButtons[i].catCon.length
+    }
+    return `${baseDelay * (totalPreviousCards + cardIndex)}ms`
+  }
+
   return (
     <div className="my-16 mx-4">
       <div className="mx-auto max-w-3xl text-center   font-cursiveCustom">
@@ -19,10 +28,16 @@ const Home = () => {
         <br />
         <div className="text-xl ">Pick one below to start!</div>
       </div>
-      <div className="mx-auto my-12  flex  w-fit flex-wrap justify-center gap-8">
-        {pageButtons.map(category =>
-          category.catCon.map((button, i) => (
-            <div key={i}>
+      <div className="mx-auto my-12 flex w-fit flex-wrap justify-center gap-8">
+        {pageButtons.map((category, categoryIndex) =>
+          category.catCon.map((button, cardIndex) => (
+            <div
+              key={cardIndex}
+              style={{
+                animationDelay: generateAnimationDelay(categoryIndex, cardIndex),
+              }}
+              className="card-animation-home"
+            >
               <Card
                 title={button.name}
                 path={category.catPath + "/" + button.path}
