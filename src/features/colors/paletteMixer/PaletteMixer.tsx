@@ -1,26 +1,36 @@
 /** @format */
 
-import React from "react"
-import PaletteSidemenu from "./paletteSidemenu/PaletteSidemenu"
-import StopDisplay from "./StopDisplay"
+import React from "react";
+import PaletteSidemenu from "./paletteSidemenu/PaletteSidemenu";
+import StopDisplay from "./StopDisplay";
 
-import PaletteOutput from "./PaletteOutput"
+import PaletteOutput from "./PaletteOutput";
 
 export default function PaletteMixer() {
   return (
     <div className=" mx-4   mb-16  mt-8">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Generate <span className="text-secondary-300">color palettes</span> for your
-        project with ease
+        Generate <span className="text-secondary-300">color palettes</span> for
+        your project with ease
       </h1>
-      <div className=" mb-2 text-center font-cursiveCustom text-base">
-        Pick the starting & ending color by clicking the shade rectangle, from swatches,
-        or by entering a custom hex value
-      </div>
-      <div className="mb-8 text-center font-cursiveCustom text-base">
-        Pick a color close to white as the last shade to create a neutral tint palette for
-        your styleguide
-      </div>
+      <p className=" mb-2 text-center font-cursiveCustom text-base">
+        Pick the starting & ending color by clicking the shade rectangle, from
+        swatches, or by entering a custom hex value.
+      </p>
+      <p className="mb-4 text-center font-cursiveCustom text-base">
+        Pick a color close to white as the last shade to create a neutral tint
+        palette for your styleguide.
+      </p>
+      <p className="mb-2 text-center font-cursiveCustom text-base">
+        You can also check contrast ratios of backgrounds and textcolors for
+        readability based on w3 standards.
+      </p>
+      <p className="mb-8 text-center font-cursiveCustom text-base">
+        WCAG recommends a contrast ratio of 4.5:1 or greater for normal text
+        (14px or smaller) and 3:1 or greater for large text (18px or larger).
+        (text below is 14px).
+      </p>
+
       <div className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-4 lg:gap-12 ">
         <div>
           <PaletteSidemenu />
@@ -29,5 +39,5 @@ export default function PaletteMixer() {
       </div>
       <PaletteOutput />
     </div>
-  )
+  );
 }

@@ -15,7 +15,6 @@ const CategoryLayout = () => {
   const pageB = pageButtons[categoryIndex].catCon;
 
   const math = (270 * (pageB.length - 1)) / 2 + (32 * (pageB.length - 1)) / 2;
-  console.log("screen.width:", window.innerWidth);
   return (
     <div>
       {!pathArray[1] ? (
