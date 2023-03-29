@@ -17,3 +17,26 @@
     transform: scale(1);
   }
 }
+
+.bounce {
+  animation: bounce 8s ease 4s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  13% {
+    transform: translateY(-5px) scaleX(1) scaleY(1);
+  }
+  2% {
+    transform: translateY(-40px) scaleX(0.8);
+  }
+  3% {
+    transform: translateY(-40px) scaleX(0.8) scaleY(1.1);
+  }
+  9% {
+    transform: translateY(0) scaleX(1.1) scaleY(0.9);
+  }
+  100% {
+    transform: translateY(-5px) scaleX(1) scaleY(1);
+  }
+}

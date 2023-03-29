@@ -17,8 +17,8 @@ const Home = () => {
 
   return (
     <div className="my-16 mx-4">
-      <div className="mx-auto max-w-3xl text-center   font-cursiveCustom">
-        <div className="text-6xl ">Hello,</div>
+      <div className="mx-auto max-w-3xl text-center font-cursiveCustom">
+        <div className={`typing text-6xl ${styles.bounce} `}>Hello,</div>
         <h1 className="mt-6 text-xl ">
           Welcome to our collection of
           <span className="text-secondary-300"> CSS and HTML tools! </span>
