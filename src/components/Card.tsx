@@ -19,10 +19,10 @@ const Card = ({ title, children, path, description }: CardProps) => {
           className={`${styles.cardShadow} relative h-full w-full  cursor-pointer  select-none rounded-xl border-2    border-transparent bg-slate-100   p-4 shadow-[6px_6px_4px_0px_rgba(_255,_114,_94,0.60)]  transition-all delay-100 duration-500 ease-in-out [transform-style:preserve-3d]   hover:shadow-none active:border-secondary-200 sm:hover:border-secondary-300 sm:group-hover:[transform:rotateY(180deg)]`}
         >
           <div>
-            <h2 className="mb-2 text-center font-cursiveCustom text-xl  text-slate-900 duration-200 sm:group-hover:scale-110">
+            <h2 className="mb-2 text-center font-cursiveCustom text-xl  text-slate-900 duration-200 sm:group-hover:scale-105">
               {title}
             </h2>
-            <div className="duration-200 sm:group-hover:scale-90">{children}</div>
+            <div className="duration-200 sm:group-hover:scale-95">{children}</div>
           </div>
 
           <div className=" absolute inset-0 flex h-full w-full flex-col justify-between rounded-xl bg-darkJungle-800 p-4  text-center text-slate-100 [transform:rotateY(180deg)] [backface-visibility:hidden]">
