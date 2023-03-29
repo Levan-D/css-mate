@@ -1,9 +1,8 @@
 /**
- * circle animation
- *
  * @format
  */
 
+/* circle animation */
 .parentElement {
   filter: drop-shadow(25px 0 0 rgba(94, 161, 255, 0.5))
     drop-shadow(-25px 0 0 rgba(94, 161, 255, 0.5))
