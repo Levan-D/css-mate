@@ -1,12 +1,15 @@
 /** @format */
 
-import React from "react"
+import React, { useState } from "react"
 import PaletteSideMenu from "./PaletteSideMenu"
+import PaletteOutput from "./PaletteOutput"
 
 export default function PaletteGenerartor() {
+  const [mainColor, setMainColor] = useState("#5ea1ff")
+
   return (
     <div className=" mx-4   mb-16  mt-8">
-      <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
+      {/* <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Generate <span className="text-secondary-300">color palettes</span> for your
         project with ease
       </h1>
@@ -21,11 +24,13 @@ export default function PaletteGenerartor() {
       <p className="mb-8 text-center font-cursiveCustom text-base">
         You can also check contrast ratios of backgrounds and textcolors for readability
         based on w3 standards.
-      </p>
+      </p> */}
 
-      <div className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-4 lg:gap-12 ">
-        <PaletteSideMenu />
+      <div className="mx-auto  w-[325px] ">
+        <PaletteSideMenu setMainColor={setMainColor} />
       </div>
+
+      <PaletteOutput mainColor={mainColor} />
     </div>
   )
 }

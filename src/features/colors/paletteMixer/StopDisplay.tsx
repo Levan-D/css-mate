@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useAppSelector } from "../../../app/hooks"
 import { selectInbetweenColors } from "./paletteMixerSlice"
 import RgbToHex from "../../../utils/colors/RGBToHex"
-
+import ColorCard from "../../../components/ColorCard"
 import Tooltip from "../../../components/Tooltip"
 import ContrastChecker from "../../../utils/colors/ContrastChecker"
 
@@ -56,10 +56,12 @@ export default function StopDisplay() {
         {stops.map((stop, i) => {
           if (typeof stop === "object" && stop.color !== undefined) {
             return (
-              <div key={i} className="menuBlock w-40">
-                <div
-                  style={{ backgroundColor: `rgb(${stop.color})` }}
-                  className=" flex h-24 flex-col justify-around rounded-t-lg rounded-b-md text-center"
+              <div key={i}>
+                <ColorCard
+                  bgColor={stop.color}
+                  hex={RgbToHex(stop.color)}
+                  rgb={stop.color}
+                  colorName={stop.name}
                 >
                   {showText && (
                     <>
@@ -104,31 +106,7 @@ export default function StopDisplay() {
                       </div>
                     </>
                   )}
-                </div>
-                <div className="mx-2 mt-1 rounded-md text-center  font-semibold  ">
-                  {stop.name}
-                </div>
-                <Tooltip text="Copied" onClick={true}>
-                  <div
-                    onClick={() => {
-                      navigator.clipboard.writeText(RgbToHex(stop.color))
-                    }}
-                    className="mx-2 cursor-pointer rounded-md py-[2px] text-center text-sm font-semibold text-slate-200 duration-300 hover:bg-darkJungle-900 "
-                  >
-                    {RgbToHex(stop.color)}
-                  </div>
-                </Tooltip>
-
-                <Tooltip text="Copied" onClick={true}>
-                  <div
-                    onClick={() => {
-                      navigator.clipboard.writeText(`rgb(${stop.color})`)
-                    }}
-                    className="  mx-2 mb-1 cursor-pointer rounded-md py-[2px] text-center text-sm font-semibold text-slate-200 duration-300 hover:bg-darkJungle-900"
-                  >
-                    rgb({stop.color})
-                  </div>
-                </Tooltip>
+                </ColorCard>
               </div>
             )
           }

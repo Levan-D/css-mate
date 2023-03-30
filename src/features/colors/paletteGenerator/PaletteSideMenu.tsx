@@ -9,32 +9,28 @@ import { ChromePicker, SwatchesPicker } from "react-color"
 import { color } from "../../../components/ColorPicker"
 import RandomColorGenerator from "../../../utils/colors/RandomColorGenerator"
 
-export default function PaletteSideMenu() {
+type props = {
+  setMainColor: React.Dispatch<React.SetStateAction<string>>
+}
+export default function PaletteSideMenu({ setMainColor }: props) {
   const [displayColorPicker, setDisplayColorPicker] = useState(false)
-
   const [displaySwatches, setDisplaySwatches] = useState(false)
-
   const [temp, setTemp] = useState("")
-
-  const [color, setColor] = useState("#ffffff")
+  const [color, setColor] = useState("#5ea1ff")
 
   const handleChange = (color: color) => {
     setColor(color.hex)
-  }
-
-  const handleChangeComplete = (color: color) => {
-    setColor(color.hex)
+    setMainColor(color.hex)
   }
 
   const handleClick = () => {
     setDisplayColorPicker(!displayColorPicker)
-    setColor(color)
   }
 
   const handleRandomColor = () => {
     const randomColor = RandomColorGenerator()
-
     setColor(RgbToHex(randomColor))
+    setMainColor(RgbToHex(randomColor))
   }
 
   const handleOnBlur = () => {
@@ -48,6 +44,7 @@ export default function PaletteSideMenu() {
 
     if (colorRegex.test(newHex)) {
       setColor(newHex)
+      setMainColor(newHex)
       setTemp("")
     }
   }
@@ -61,11 +58,6 @@ export default function PaletteSideMenu() {
 
   return (
     <div className="menuContainer border-2 border-white py-2">
-      <div className="menuHeader     bg-slate-500 bg-opacity-10  pb-1">
-        <div className="basis-[15%] text-center text-xs italic  text-slate-300 ">
-          First shade
-        </div>
-      </div>
       {/* color picker */}
       <div className="  m-2 ">
         <div
@@ -73,7 +65,7 @@ export default function PaletteSideMenu() {
           style={{
             background: color,
           }}
-          className={`h-20 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
+          className={`h-10 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
         ></div>
         {displayColorPicker ? (
           <div className="absolute z-10 select-none">
@@ -82,12 +74,7 @@ export default function PaletteSideMenu() {
               onMouseDown={() => setDisplayColorPicker(false)}
             />
             <div className="translate-x-10   ">
-              <ChromePicker
-                disableAlpha={true}
-                color={color}
-                onChange={handleChange}
-                onChangeComplete={handleChangeComplete}
-              />
+              <ChromePicker disableAlpha={true} color={color} onChange={handleChange} />
             </div>
           </div>
         ) : null}
@@ -99,7 +86,7 @@ export default function PaletteSideMenu() {
           type="text"
           id="hexText"
           value={temp}
-          placeholder={""}
+          placeholder={color}
           onChange={e => setTemp(e.target.value)}
           onKeyDown={e => handleOnKeyDown(e)}
           onBlur={handleOnBlur}
@@ -126,11 +113,7 @@ export default function PaletteSideMenu() {
               onMouseDown={() => setDisplaySwatches(false)}
             />
             <div className="translate-x-4 translate-y-10 rounded-md border-2">
-              <SwatchesPicker
-                width={280}
-                height={280}
-                onChangeComplete={handleChangeComplete}
-              />
+              <SwatchesPicker width={280} height={280} onChangeComplete={handleChange} />
             </div>
           </div>
         ) : null}
