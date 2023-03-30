@@ -20,6 +20,9 @@ export default function PaletteSideMenu({ setMainColor }: props) {
 
   const handleChange = (color: color) => {
     setColor(color.hex)
+  }
+
+  const handleChangeComplete = (color: color) => {
     setMainColor(color.hex)
   }
 
@@ -74,7 +77,12 @@ export default function PaletteSideMenu({ setMainColor }: props) {
               onMouseDown={() => setDisplayColorPicker(false)}
             />
             <div className="translate-x-10   ">
-              <ChromePicker disableAlpha={true} color={color} onChange={handleChange} />
+              <ChromePicker
+                disableAlpha={true}
+                color={color}
+                onChange={handleChange}
+                onChangeComplete={handleChangeComplete}
+              />
             </div>
           </div>
         ) : null}
@@ -113,7 +121,11 @@ export default function PaletteSideMenu({ setMainColor }: props) {
               onMouseDown={() => setDisplaySwatches(false)}
             />
             <div className="translate-x-4 translate-y-10 rounded-md border-2">
-              <SwatchesPicker width={280} height={280} onChangeComplete={handleChange} />
+              <SwatchesPicker
+                width={280}
+                height={280}
+                onChangeComplete={handleChangeComplete}
+              />
             </div>
           </div>
         ) : null}
