@@ -108,38 +108,6 @@ export const pageButtons: pageButtonsType[] = [
         icon: paletteGenerator,
       },
       {
-        name: "Palette Generator",
-        path: "palette-generator",
-        element: PaletteGenerartor,
-        description:
-          "Just input a color and receive a bunch of nice color palettes for your next project.",
-        icon: paletteGenerator,
-      },
-      {
-        name: "Palette Generator",
-        path: "palette-generator",
-        element: PaletteGenerartor,
-        description:
-          "Just input a color and receive a bunch of nice color palettes for your next project.",
-        icon: paletteGenerator,
-      },
-      {
-        name: "Palette Generator",
-        path: "palette-generator",
-        element: PaletteGenerartor,
-        description:
-          "Just input a color and receive a bunch of nice color palettes for your next project.",
-        icon: paletteGenerator,
-      },
-      {
-        name: "Palette Generator",
-        path: "palette-generator",
-        element: PaletteGenerartor,
-        description:
-          "Just input a color and receive a bunch of nice color palettes for your next project.",
-        icon: paletteGenerator,
-      },
-      {
         name: "Palette Mixer ",
         path: "palette-mixer",
         element: PaletteMixer,
