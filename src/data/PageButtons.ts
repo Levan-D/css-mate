@@ -1,42 +1,44 @@
 /** @format */
 
 // page icons
-import boxShadow from "../assets/pageIcons/boxShadow.png";
-import dropShadow from "../assets/pageIcons/dropShadow.png";
-import textShadow from "../assets/pageIcons/textShadow.png";
-import gradient from "../assets/pageIcons/gradient.png";
-import colorConverter from "../assets/pageIcons/colorConverter.png";
-import cursor from "../assets/pageIcons/cursor.png";
-import emoji from "../assets/pageIcons/emoji.png";
-import entities from "../assets/pageIcons/entities.png";
-import paletteMixer from "../assets/pageIcons/paletteMixer.png";
-import colorNamer from "../assets/pageIcons/colorNamer.png";
-import contrastChecker from "../assets/pageIcons/contrastChecker.png";
+import boxShadow from "../assets/pageIcons/boxShadow.png"
+import dropShadow from "../assets/pageIcons/dropShadow.png"
+import textShadow from "../assets/pageIcons/textShadow.png"
+import gradient from "../assets/pageIcons/gradient.png"
+import colorConverter from "../assets/pageIcons/colorConverter.png"
+import cursor from "../assets/pageIcons/cursor.png"
+import emoji from "../assets/pageIcons/emoji.png"
+import entities from "../assets/pageIcons/entities.png"
+import paletteMixer from "../assets/pageIcons/paletteMixer.png"
+import paletteGenerator from "../assets/pageIcons/paletteGenerator.png"
+import colorNamer from "../assets/pageIcons/colorNamer.png"
+import contrastChecker from "../assets/pageIcons/contrastChecker.png"
 
 // pages
-import BoxShadow from "../features/shadows/boxShadow/BoxShadow";
-import DropShadow from "../features/shadows/dropShadow/DropShadow";
-import TextShadow from "../features/shadows/textShadow/TextShadow";
-import ColorConverter from "../features/converters/colorConverter/ColorConverter";
-import Cursors from "../features/misc/cursors/Cursors";
-import Emojis from "../features/misc/emojis/Emojis";
-import Entities from "../features/misc/entities/Entities";
-import Gradient from "../features/colors/gradientMaker/Gradient";
-import PaletteMixer from "../features/colors/paletteMixer/PaletteMixer";
-import ColorNamer from "../features/colors/colorNamer/ColorNamer";
-import ContrastChecker from "../features/colors/contrastChecker/ContrastChecker";
+import BoxShadow from "../features/shadows/boxShadow/BoxShadow"
+import DropShadow from "../features/shadows/dropShadow/DropShadow"
+import TextShadow from "../features/shadows/textShadow/TextShadow"
+import ColorConverter from "../features/converters/colorConverter/ColorConverter"
+import Cursors from "../features/misc/cursors/Cursors"
+import Emojis from "../features/misc/emojis/Emojis"
+import Entities from "../features/misc/entities/Entities"
+import Gradient from "../features/colors/gradientMaker/Gradient"
+import PaletteMixer from "../features/colors/paletteMixer/PaletteMixer"
+import PaletteGenerartor from "../features/colors/paletteGenerator/PaletteGenerartor"
+import ColorNamer from "../features/colors/colorNamer/ColorNamer"
+import ContrastChecker from "../features/colors/contrastChecker/ContrastChecker"
 
 export type pageButtonsType = {
-  catName: string;
-  catPath: string;
+  catName: string
+  catPath: string
   catCon: {
-    name: string;
-    path: string;
-    element: React.ComponentType<any>;
-    description: string;
-    icon: string;
-  }[];
-};
+    name: string
+    path: string
+    element: React.ComponentType<any>
+    description: string
+    icon: string
+  }[]
+}
 
 export const pageButtons: pageButtonsType[] = [
   {
@@ -74,7 +76,7 @@ export const pageButtons: pageButtonsType[] = [
     catPath: "colors",
     catCon: [
       {
-        name: "Gradient maker",
+        name: "Gradient Maker",
         path: "gradient-maker",
         element: Gradient,
         description:
@@ -82,7 +84,7 @@ export const pageButtons: pageButtonsType[] = [
         icon: gradient,
       },
       {
-        name: "Color namer ",
+        name: "Color Namer ",
         path: "color-namer",
         element: ColorNamer,
         description:
@@ -90,7 +92,7 @@ export const pageButtons: pageButtonsType[] = [
         icon: colorNamer,
       },
       {
-        name: "Contrast checker ",
+        name: "Contrast Checker ",
         path: "contrast-checker",
         element: ContrastChecker,
         description:
@@ -98,7 +100,15 @@ export const pageButtons: pageButtonsType[] = [
         icon: contrastChecker,
       },
       {
-        name: "Palette mixer ",
+        name: "Palette Generator",
+        path: "palette-generator",
+        element: PaletteGenerartor,
+        description:
+          "Just input a color and receive a bunch of nice color palettes for your next project.",
+        icon: paletteGenerator,
+      },
+      {
+        name: "Palette Mixer ",
         path: "palette-mixer",
         element: PaletteMixer,
         description:
@@ -112,7 +122,7 @@ export const pageButtons: pageButtonsType[] = [
     catPath: "converters",
     catCon: [
       {
-        name: "Color converter",
+        name: "Color Converter",
         path: "color-converter",
         element: ColorConverter,
         description:
@@ -150,4 +160,4 @@ export const pageButtons: pageButtonsType[] = [
       },
     ],
   },
-];
+]
