@@ -1,9 +1,7 @@
 /** @format */
 
-import { useState } from "react"
 import { useAppSelector } from "../../../app/hooks"
-import HexToRGB from "../../../utils/colors/HexToRGB"
-import TextShadow from "../../shadows/textShadow/TextShadow"
+import ContrastChecker from "../../../utils/colors/ContrastChecker"
 
 export default function Shape() {
   const {
@@ -15,47 +13,6 @@ export default function Shape() {
     shadowOpacity,
     textSize,
   } = useAppSelector(store => store.contrastChecker)
-
-  const getContrastRating = (bgColor: string, textColor: string) => {
-    const bgLuminance = getRelativeLuminance(bgColor)
-    const textLuminance = getRelativeLuminance(textColor)
-    const contrastRatio =
-      (Math.max(bgLuminance, textLuminance) + 0.05) /
-      (Math.min(bgLuminance, textLuminance) + 0.05)
-
-    const formattedRatio = (ratio: number) => {
-      const fixedValue = ratio.toFixed(1)
-      const lastDigit = fixedValue.charAt(fixedValue.length - 1)
-      return lastDigit === "0" ? ratio.toFixed(0) : fixedValue
-    }
-
-    if (contrastRatio >= 7) {
-      return { rating: "Great", ratio: "(7:1)" }
-    } else if (contrastRatio >= 4.5) {
-      return { rating: "Ok", ratio: "(4.5:1)" }
-    } else if (contrastRatio >= 2.9) {
-      return { rating: "Poor", ratio: "(3:1)" }
-    } else {
-      return { rating: "Fail", ratio: `(${formattedRatio(contrastRatio)}:1)` }
-    }
-  }
-
-  const getRelativeLuminance = (color: string) => {
-    const rgb = HexToRGB(color).split(",")
-    const r = getRelativeLuminanceChannel(Number(rgb[0]))
-    const g = getRelativeLuminanceChannel(Number(rgb[1]))
-    const b = getRelativeLuminanceChannel(Number(rgb[2]))
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b
-  }
-
-  const getRelativeLuminanceChannel = (channelValue: number) => {
-    const srgbChannelValue = channelValue / 255
-    if (srgbChannelValue <= 0.03928) {
-      return srgbChannelValue / 12.92
-    } else {
-      return Math.pow((srgbChannelValue + 0.055) / 1.055, 2.4)
-    }
-  }
 
   return (
     <div
@@ -76,9 +33,9 @@ export default function Shape() {
           Black
         </div>
         <div className=" rounded-md bg-slate-200 bg-opacity-60 px-4 py-1">
-          <span>{getContrastRating(backgroundColor, "#000000").ratio}</span>
+          <span>{ContrastChecker(backgroundColor, "#000000").ratio}</span>
           &#160;&#160;
-          <span>{getContrastRating(backgroundColor, "#000000").rating}</span>
+          <span>{ContrastChecker(backgroundColor, "#000000").rating}</span>
         </div>
       </div>
 
@@ -95,9 +52,9 @@ export default function Shape() {
           Custom
         </div>
         <div className=" rounded-md bg-slate-200 bg-opacity-60 px-4 py-1">
-          <span>{getContrastRating(backgroundColor, textColor).ratio}</span>
+          <span>{ContrastChecker(backgroundColor, textColor).ratio}</span>
           &#160;&#160;
-          <span>{getContrastRating(backgroundColor, textColor).rating}</span>
+          <span>{ContrastChecker(backgroundColor, textColor).rating}</span>
         </div>
       </div>
 
@@ -113,9 +70,9 @@ export default function Shape() {
           white
         </div>
         <div className=" rounded-md bg-slate-200 bg-opacity-60 px-4 py-1 text-black">
-          <span>{getContrastRating(backgroundColor, "#ffffff").ratio}</span>
+          <span>{ContrastChecker(backgroundColor, "#ffffff").ratio}</span>
           &#160; &#160;
-          <span>{getContrastRating(backgroundColor, "#ffffff").rating}</span>
+          <span>{ContrastChecker(backgroundColor, "#ffffff").rating}</span>
         </div>
       </div>
     </div>

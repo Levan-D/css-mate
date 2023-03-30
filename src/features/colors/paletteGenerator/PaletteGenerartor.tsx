@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react"
+import PaletteSideMenu from "./PaletteSideMenu"
 
 export default function PaletteGenerartor() {
   return (
@@ -23,12 +24,8 @@ export default function PaletteGenerartor() {
       </p>
 
       <div className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-4 lg:gap-12 ">
-        <div>
-      
-        </div>
-    
+        <PaletteSideMenu />
       </div>
-  
     </div>
   )
 }

@@ -9,6 +9,7 @@ import { setStart, setEnd, setReset } from "../paletteMixerSlice"
 //@ts-ignore
 import { ChromePicker, SwatchesPicker } from "react-color"
 import { color } from "../../../../components/ColorPicker"
+import RandomColorGenerator from "../../../../utils/colors/RandomColorGenerator"
 
 export default function PaletteInput() {
   const dispatch = useAppDispatch()
@@ -63,12 +64,11 @@ export default function PaletteInput() {
   }
 
   const handleRandomColor = (type: "end" | "start") => {
+    const randomColor = RandomColorGenerator()
     if (type === "start") {
-      const randomColor = getRandomPaletteColor()
       dispatch(setStart(randomColor))
       setColorSt(RgbToHex(randomColor))
     } else if (type === "end") {
-      const randomColor = getRandomPaletteColor()
       dispatch(setEnd(randomColor))
       setColorEn(RgbToHex(randomColor))
     }
@@ -108,29 +108,6 @@ export default function PaletteInput() {
         setTempStart("")
       }
     }
-  }
-
-  function getRandomHSLColor() {
-    const hue = Math.floor(Math.random() * 361)
-    const saturation = Math.floor(Math.random() * 61) + 40
-    const lightness = Math.floor(Math.random() * 41) + 30
-
-    return [hue, saturation, lightness]
-  }
-
-  function hslToRGB(h: number, s: number, l: number) {
-    const a = s * Math.min(l, 1 - l)
-    const f = (n: number) => {
-      const k = (n + h / 30) % 12
-      return l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1)
-    }
-    const [r, g, b] = [f(0), f(8), f(4)]
-    return `${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}`
-  }
-
-  function getRandomPaletteColor() {
-    const [h, s, l] = getRandomHSLColor()
-    return hslToRGB(h, s / 100, l / 100)
   }
 
   return (
@@ -186,7 +163,11 @@ export default function PaletteInput() {
             className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
           ></input>
           <div onClick={() => handleRandomColor("start")} className="btnSecondary w-20">
-            <img src={dice} alt="" className="inline-block  w-20  scale-[2] -translate-y-[2px] " />
+            <img
+              src={dice}
+              alt=""
+              className="inline-block  w-20  -translate-y-[2px] scale-[2] "
+            />
           </div>
           <div
             onClick={() => setDisplaySwatchesOne(true)}
@@ -266,7 +247,11 @@ export default function PaletteInput() {
           ></input>
 
           <div onClick={() => handleRandomColor("end")} className="btnSecondary w-20">
-            <img src={dice} alt="" className="inline-block  w-20  scale-[2] -translate-y-[2px]" />
+            <img
+              src={dice}
+              alt=""
+              className="inline-block  w-20  -translate-y-[2px] scale-[2]"
+            />
           </div>
 
           <div

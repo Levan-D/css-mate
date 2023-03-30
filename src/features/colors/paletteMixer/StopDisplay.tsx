@@ -1,52 +1,18 @@
 /** @format */
 
-import { useState } from "react";
-import { useAppSelector } from "../../../app/hooks";
-import { selectInbetweenColors } from "./paletteMixerSlice";
-import RgbToHex from "../../../utils/colors/RGBToHex";
-import HexToRGB from "../../../utils/colors/HexToRGB";
-import Tooltip from "../../../components/Tooltip";
+import { useState } from "react"
+import { useAppSelector } from "../../../app/hooks"
+import { selectInbetweenColors } from "./paletteMixerSlice"
+import RgbToHex from "../../../utils/colors/RGBToHex"
+
+import Tooltip from "../../../components/Tooltip"
+import ContrastChecker from "../../../utils/colors/ContrastChecker"
 
 export default function StopDisplay() {
-  const stops = useAppSelector(selectInbetweenColors);
-  const [showText, setShowText] = useState(false);
-  const [showShadow, setShowShadow] = useState(false);
-  const [toggleBold, setToggleBold] = useState(false);
-
-  const getContrastRating = (bgColor: string, textColor: string) => {
-    const bgLuminance = getRelativeLuminance(bgColor);
-    const textLuminance = getRelativeLuminance(textColor);
-    const contrastRatio =
-      (Math.max(bgLuminance, textLuminance) + 0.05) /
-      (Math.min(bgLuminance, textLuminance) + 0.05);
-
-    if (contrastRatio >= 7) {
-      return { rating: "Great", ratio: "7 : 1" };
-    } else if (contrastRatio >= 4.5) {
-      return { rating: "Ok", ratio: "4.5 : 1" };
-    } else if (contrastRatio >= 2.9) {
-      return { rating: "Poor", ratio: "3 : 1" };
-    } else {
-      return { rating: "Fail", ratio: `${contrastRatio.toFixed(1)} : 1` };
-    }
-  };
-
-  const getRelativeLuminance = (color: string) => {
-    const rgb = HexToRGB(color).split(",");
-    const r = getRelativeLuminanceChannel(Number(rgb[0]));
-    const g = getRelativeLuminanceChannel(Number(rgb[1]));
-    const b = getRelativeLuminanceChannel(Number(rgb[2]));
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  };
-
-  const getRelativeLuminanceChannel = (channelValue: number) => {
-    const srgbChannelValue = channelValue / 255;
-    if (srgbChannelValue <= 0.03928) {
-      return srgbChannelValue / 12.92;
-    } else {
-      return Math.pow((srgbChannelValue + 0.055) / 1.055, 2.4);
-    }
-  };
+  const stops = useAppSelector(selectInbetweenColors)
+  const [showText, setShowText] = useState(false)
+  const [showShadow, setShowShadow] = useState(false)
+  const [toggleBold, setToggleBold] = useState(false)
 
   return (
     <div className=" mx-auto w-[350px] rounded-xl border-2  border-white bg-darkJungle-900 sm:w-[520px] md:w-[350px] lg:w-[520px] xl:w-[690px]  ">
@@ -56,7 +22,7 @@ export default function StopDisplay() {
             className={`${
               !showText && `!border-slate-500 !text-slate-500`
             }  h-6 w-6 cursor-pointer select-none rounded-full border-2 border-slate-300 text-center leading-5 text-slate-300`}
-            onClick={() => setShowText((x) => !x)}
+            onClick={() => setShowText(x => !x)}
           >
             T
           </div>
@@ -66,7 +32,7 @@ export default function StopDisplay() {
             } ${
               showText && `!cursor-pointer !border-slate-500 !text-slate-500`
             } h-6 w-6  cursor-not-allowed select-none rounded-full border-2 border-slate-600 text-center leading-5 text-slate-600`}
-            onClick={() => showText && setShowShadow((x) => !x)}
+            onClick={() => showText && setShowShadow(x => !x)}
           >
             S
           </div>
@@ -76,7 +42,7 @@ export default function StopDisplay() {
             } ${
               showText && `!cursor-pointer !border-slate-500 !text-slate-500`
             } h-6 w-6  cursor-not-allowed select-none rounded-full border-2 border-slate-600 text-center leading-5 text-slate-600`}
-            onClick={() => showText && setToggleBold((x) => !x)}
+            onClick={() => showText && setToggleBold(x => !x)}
           >
             B
           </div>
@@ -102,31 +68,22 @@ export default function StopDisplay() {
                       >
                         <div
                           className={`${
-                            showShadow &&
-                            "[text-shadow:2px_1px_2px__rgba(0,0,0,0.6)]"
+                            showShadow && "[text-shadow:2px_1px_2px__rgba(0,0,0,0.6)]"
                           } ${toggleBold && `font-bold`} `}
                         >
                           Black
                         </div>
                         <div className="rounded-md bg-slate-200 bg-opacity-60 px-2">
                           <span>
-                            {
-                              getContrastRating(RgbToHex(stop.color), "#000000")
-                                .ratio
-                            }
+                            {ContrastChecker(RgbToHex(stop.color), "#000000").ratio}
                           </span>
                           &#32;
                           <span>
-                            {
-                              getContrastRating(RgbToHex(stop.color), "#000000")
-                                .rating
-                            }
+                            {ContrastChecker(RgbToHex(stop.color), "#000000").rating}
                           </span>
                         </div>
                       </div>
-                      <div
-                        className={`flex justify-center gap-4 pb-2 text-[14px] `}
-                      >
+                      <div className={`flex justify-center gap-4 pb-2 text-[14px] `}>
                         <div
                           className={`${
                             showShadow &&
@@ -137,17 +94,11 @@ export default function StopDisplay() {
                         </div>
                         <div className="rounded-md bg-slate-700 bg-opacity-60 px-2">
                           <span>
-                            {
-                              getContrastRating(RgbToHex(stop.color), "#ffffff")
-                                .ratio
-                            }
+                            {ContrastChecker(RgbToHex(stop.color), "#ffffff").ratio}
                           </span>
                           &#32;
                           <span>
-                            {
-                              getContrastRating(RgbToHex(stop.color), "#ffffff")
-                                .rating
-                            }
+                            {ContrastChecker(RgbToHex(stop.color), "#ffffff").rating}
                           </span>
                         </div>
                       </div>
@@ -160,7 +111,7 @@ export default function StopDisplay() {
                 <Tooltip text="Copied" onClick={true}>
                   <div
                     onClick={() => {
-                      navigator.clipboard.writeText(RgbToHex(stop.color));
+                      navigator.clipboard.writeText(RgbToHex(stop.color))
                     }}
                     className="mx-2 cursor-pointer rounded-md py-[2px] text-center text-sm font-semibold text-slate-200 duration-300 hover:bg-darkJungle-900 "
                   >
@@ -171,7 +122,7 @@ export default function StopDisplay() {
                 <Tooltip text="Copied" onClick={true}>
                   <div
                     onClick={() => {
-                      navigator.clipboard.writeText(`rgb(${stop.color})`);
+                      navigator.clipboard.writeText(`rgb(${stop.color})`)
                     }}
                     className="  mx-2 mb-1 cursor-pointer rounded-md py-[2px] text-center text-sm font-semibold text-slate-200 duration-300 hover:bg-darkJungle-900"
                   >
@@ -179,10 +130,10 @@ export default function StopDisplay() {
                   </div>
                 </Tooltip>
               </div>
-            );
+            )
           }
         })}
       </div>
     </div>
-  );
+  )
 }
