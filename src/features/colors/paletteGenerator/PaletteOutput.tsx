@@ -97,22 +97,6 @@ export default function PaletteOutput({ mainColor }: props) {
     return colors
   }
 
-  function square(hex: string) {
-    const array = HexToHSL(hex).split(",")
-    const h = parseFloat(array[0])
-    const s = parseFloat(array[1])
-    const l = parseFloat(array[2])
-
-    const colors = [
-      hex,
-      HSLToHex([adjustHue(h, 60), s, l].join()),
-      HSLToHex([adjustHue(h, 180), s, l].join()),
-      HSLToHex([adjustHue(h, 240), s, l].join()),
-    ]
-
-    return colors
-  }
-
   function monochromatic(hex: string) {
     const array = HexToHSL(hex).split(",")
     const h = parseFloat(array[0])
@@ -194,8 +178,8 @@ export default function PaletteOutput({ mainColor }: props) {
 
     for (let i = 0; i < count; i++) {
       const newH = adjustHue(h, i * (360 / count))
-      const newS = Math.max(s * 0.75, 0)
-      const newL = Math.max(l * 0.75, 0)
+      const newS = Math.max(s * 0.60, 0)
+      const newL = Math.max(l * 1, 0)
 
       colors.push(HSLToHex([newH, newS, newL].join()))
     }
@@ -204,7 +188,7 @@ export default function PaletteOutput({ mainColor }: props) {
   }
 
   return (
-    <div className="mt-16">
+    <div className="mt-32">
       <div className="my-8">
         <h2 className="text-center font-cursiveCustom text-lg">Complementary</h2>
         <p className="mb-4 text-center">
@@ -307,26 +291,6 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Square</h2>
-        <p className="mb-4 text-center">
-          Colorful quartet! Pick four evenly spaced colors on the color wheel for variety,
-          but be mindful of visual chaos.
-        </p>
-        <div className="flex justify-center gap-4">
-          {square(mainColor).map((color, i) => (
-            <div key={i}>
-              <ColorCard
-                colorName={colorNamerFunc(color)}
-                bgColor={HexToRGB(color)}
-                hex={color}
-                rgb={HexToRGB(color)}
-              />
-            </div>
-          ))}
-        </div>
-        <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
-      </div>
-      <div className="my-8">
         <h2 className="text-center font-cursiveCustom text-lg">Monochromatic</h2>
         <p className="mb-4 text-center">
           One is all you need! Craft a cohesive look with different shades, tints, and
@@ -348,7 +312,7 @@ export default function PaletteOutput({ mainColor }: props) {
       </div>
       <div className="my-8">
         <h2 className="text-center font-cursiveCustom text-lg">
-          Shades, Tints, and Tones
+          Shades, Tints, & Tones
         </h2>
         <p className="mb-4 text-center">
           Dive into the depths of a color by adjusting its lightness, darkness, or

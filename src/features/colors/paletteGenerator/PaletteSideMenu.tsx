@@ -24,6 +24,7 @@ export default function PaletteSideMenu({ setMainColor }: props) {
 
   const handleChangeComplete = (color: color) => {
     setMainColor(color.hex)
+    setColor(color.hex)
   }
 
   const handleClick = () => {
@@ -68,7 +69,7 @@ export default function PaletteSideMenu({ setMainColor }: props) {
           style={{
             background: color,
           }}
-          className={`h-10 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
+          className={`h-20 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
         ></div>
         {displayColorPicker ? (
           <div className="absolute z-10 select-none">
