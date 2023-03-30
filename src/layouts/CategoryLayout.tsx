@@ -48,7 +48,7 @@ const CategoryLayout = () => {
                   ? `${pageBHeight * 300}px `
                   : "",
             }}
-            className={`grid-container  mx-auto  mb-20 flex w-fit flex-wrap justify-center  gap-8`}
+            className={`  mx-auto  mb-20 flex w-fit flex-wrap justify-center  gap-8`}
           >
             {pageButtons[categoryIndex].catCon.map((button, i) => (
               <div

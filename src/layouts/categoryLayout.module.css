@@ -7,21 +7,9 @@
 
 .cardAnimation {
   animation-name: cardAnimation;
-  animation-duration: 0.6s;
+  animation-duration: 0.8s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 0px;
-  justify-content: center;
-  opacity: 0;
-}
-
-.grid-container.visible {
-  opacity: 1;
-  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @keyframes cardAnimation {
