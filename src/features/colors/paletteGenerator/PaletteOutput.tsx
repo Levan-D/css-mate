@@ -178,7 +178,7 @@ export default function PaletteOutput({ mainColor }: props) {
 
     for (let i = 0; i < count; i++) {
       const newH = adjustHue(h, i * (360 / count))
-      const newS = Math.max(s * 0.60, 0)
+      const newS = Math.max(s * 0.6, 0)
       const newL = Math.max(l * 1, 0)
 
       colors.push(HSLToHex([newH, newS, newL].join()))
@@ -311,9 +311,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">
-          Shades, Tints, & Tones
-        </h2>
+        <h2 className="text-center font-cursiveCustom text-lg">Shades, Tints, & Tones</h2>
         <p className="mb-4 text-center">
           Dive into the depths of a color by adjusting its lightness, darkness, or
           grayness for a harmonious yet contrasted palette.
@@ -372,7 +370,7 @@ export default function PaletteOutput({ mainColor }: props) {
         </div>
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
-      <div className="my-8">
+      <div className="mt-8 mb-24">
         <h2 className="text-center font-cursiveCustom text-lg">Pastel</h2>
         <p className="mb-4 text-center">
           Soft and subtle! Reduce saturation for a soothing, muted, or pastel palette that
@@ -390,7 +388,6 @@ export default function PaletteOutput({ mainColor }: props) {
             </div>
           ))}
         </div>
-        <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
     </div>
   )
