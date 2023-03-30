@@ -1,20 +1,42 @@
+/** @format */
+
 .card {
-    position: absolute;
-    transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cardAnimation {
+  animation-name: cardAnimation;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes cardAnimation {
+  from {
+    transform: translateX(0);
   }
-  
-  .cardAnimation {
-    animation-name: cardAnimation;
-    animation-duration: 0.6s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  to {
+    transform: translateX(calc(270px * var(--card-index) + 32px * var(--card-index)));
   }
-  
-  @keyframes cardAnimation {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(270px * var(--card-index) + 32px * var(--card-index)));
-    }
+}
+
+.waveText {
+  animation-name: wave;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
   }
+  10% {
+    transform: translateY(-10px);
+    color: #ff725e;
+  }
+  20% {
+    transform: translateY(0);
+  }
+}

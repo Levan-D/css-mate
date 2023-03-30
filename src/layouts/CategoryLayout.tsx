@@ -17,9 +17,17 @@ const CategoryLayout = () => {
   return (
     <div>
       {!pathArray[1] ? (
-        <div className="m  mt-[10vh]  ">
-          <h2 className="mx-auto my-12 max-w-3xl   text-center font-cursiveCustom  text-4xl  ">
-            {pageButtons[categoryIndex].catName}
+        <div className=" mt-[10vh]  ">
+          <h2 className=" mx-auto my-12 flex w-fit max-w-3xl  select-none text-center  !font-cursiveCustom text-4xl ">
+            {pageButtons[categoryIndex].catName.split("").map((letter, i) => (
+              <div
+                key={uuidv4()}
+                style={{ animationDelay: `${0.1 * i}s` }}
+                className={styles.waveText}
+              >
+                {letter}
+              </div>
+            ))}
           </h2>
           <div
             key={uuidv4()}
@@ -29,7 +37,7 @@ const CategoryLayout = () => {
                   ? `translate(-${math}px, 0px)`
                   : "",
             }}
-            className={` relative mx-auto flex  w-fit flex-wrap justify-center gap-8`}
+            className={` relative mx-auto mb-20  flex w-fit flex-wrap justify-center gap-8`}
           >
             {pageB.map((button, i) => (
               <div
