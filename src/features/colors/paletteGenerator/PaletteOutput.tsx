@@ -1,93 +1,101 @@
 /** @format */
 
 import React from "react"
+import ColorCard from "../../../components/ColorCard"
+import HexToHSL from "../../../utils/colors/HexToHSL"
+import HSLToHex from "../../../utils/colors/HSLToHex"
 
 type props = {
   mainColor: string
 }
 
 export default function PaletteOutput({ mainColor }: props) {
-  function hexToRGB(hex) {
-    const bigint = parseInt(hex.substring(1), 16)
-    const r = (bigint >> 16) & 255
-    const g = (bigint >> 8) & 255
-    const b = bigint & 255
-
-    return [r, g, b]
+  function adjustHue(h: number, degrees: number) {
+    return h + degrees > 360 ? h + degrees - 360 : h + degrees
   }
 
-  function RGBToHex(r, g, b) {
-    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+  function complementary(hex: string) {
+    const array = HexToHSL(hex).split(",")
+    const h = parseFloat(array[0])
+    const s = parseFloat(array[1])
+    const l = parseFloat(array[2])
+
+    const newHue = adjustHue(h, 180)
+
+    return [hex, HSLToHex([newHue, s, l].join())]
   }
 
-  function RGBToHSL(r, g, b) {
-    r /= 255
-    g /= 255
-    b /= 255
-
-    const max = Math.max(r, g, b)
-    const min = Math.min(r, g, b)
-    let h,
-      s,
-      l = (max + min) / 2
-
-    if (max === min) {
-      h = s = 0
-    } else {
-      const d = max - min
-      s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
-
-      switch (max) {
-        case r:
-          h = (g - b) / d + (g < b ? 6 : 0)
-          break
-        case g:
-          h = (b - r) / d + 2
-          break
-        case b:
-          h = (r - g) / d + 4
-          break
-      }
-
-      h /= 6
-    }
-
-    return [h, s, l]
-  }
-
-  function HSLToRGB(h, s, l) {
-    function hue2rgb(p, q, t) {
-      if (t < 0) t += 1
-      if (t > 1) t -= 1
-      if (t < 1 / 6) return p + (q - p) * 6 * t
-      if (t < 1 / 2) return q
-      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
-      return p
-    }
-
-    if (s === 0) {
-      l = Math.round(l * 255)
-      return [l, l, l]
-    }
-
-    const q = l < 0.5 ? l * (1 + s) : l + s - l * s
-    const p = 2 * l - q
-    const r = hue2rgb(p, q, h + 1 / 3)
-    const g = hue2rgb(p, q, h)
-    const b = hue2rgb(p, q, h - 1 / 3)
-
-    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)]
-  }
-
-  function adjustHue(h, degrees) {
-    return (h + degrees / 360) % 1
-  }
-
-  function complementary(hex) {
+  function analogous(hex, count = 2, angle = 30) {
     const [h, s, l] = RGBToHSL(...hexToRGB(hex))
-    const newHue = adjustHue(h, 0.5)
-    return [RGBToHex(...HSLToRGB(newHue, s, l))]
+    const colors = []
+
+    for (let i = 1; i <= count; i++) {
+      const newHue = adjustHue(h, angle * i)
+      colors.push(RGBToHex(...HSLToRGB(newHue, s, l)))
+    }
+
+    return colors
   }
 
-  return <div>{complementary(mainColor)}</div>
+  function triadic(hex) {
+    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
+    const colors = [
+      RGBToHex(...HSLToRGB(adjustHue(h, 1 / 3), s, l)),
+      RGBToHex(...HSLToRGB(adjustHue(h, 2 / 3), s, l)),
+    ]
+
+    return colors
+  }
+
+  function splitComplementary(hex, angle = 150) {
+    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
+    const colors = [
+      RGBToHex(...HSLToRGB(adjustHue(h, (360 - angle) / 360), s, l)),
+      RGBToHex(...HSLToRGB(adjustHue(h, (360 + angle) / 360), s, l)),
+    ]
+
+    return colors
+  }
+
+  function tetradic(hex, angle = 90) {
+    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
+    const colors = [
+      RGBToHex(...HSLToRGB(adjustHue(h, 0.5), s, l)),
+      RGBToHex(...HSLToRGB(adjustHue(h, 0.5 + angle / 360), s, l)),
+      RGBToHex(...HSLToRGB(adjustHue(h, 1 - angle / 360), s, l)),
+    ]
+
+    return colors
+  }
+
+  function square(hex: string, angle = 90) {
+    const array = HexToHSL(hex).split(",")
+    const h = parseFloat(array[0])
+    const s = parseFloat(array[1])
+    const l = parseFloat(array[2])
+
+    const colors = [
+      hex,
+      HSLToHex([adjustHue(h, angle), s, l].join()),
+      HSLToHex([adjustHue(h, angle * 2), s, l].join()),
+      HSLToHex([adjustHue(h, angle * 3), s, l].join()),
+    ]
+
+    return colors
+  }
+
+  function monochromatic(hex, count = 3) {
+    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
+    const colors = []
+
+    for (let i = 1; i <= count; i++) {
+      const newL = (l + i * (1 / (count + 1))) % 1
+      colors.push(RGBToHex(...HSLToRGB(h, s, newL)))
+    }
+
+    return colors
+  }
+
+  console.log(square(mainColor))
+  return <div>{square(mainColor)}</div>
 }
