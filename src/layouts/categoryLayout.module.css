@@ -11,13 +11,28 @@
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 0px;
+  justify-content: center;
+  opacity: 0;
+}
+
+.grid-container.visible {
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
 
 @keyframes cardAnimation {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(270px * var(--card-index) + 32px * var(--card-index)));
+    transform: translate(
+      calc(270px * var(--card-index) + 0px * var(--card-index)),
+      calc(270px * var(--card-row) + 24px * var(--card-row))
+    );
   }
 }
 

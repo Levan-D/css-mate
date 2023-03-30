@@ -11,9 +11,16 @@ import styles from "./categoryLayout.module.css"
 
 const CategoryLayout = () => {
   const { categoryIndex, pathArray, windowWidth } = useAppSelector(store => store.navbar)
-  const pageB = pageButtons[categoryIndex].catCon
 
-  const math = (270 * (pageB.length - 1)) / 2 + (32 * (pageB.length - 1)) / 2
+  const pageBLength =
+    pageButtons[categoryIndex].catCon.length > 4
+      ? 4
+      : pageButtons[categoryIndex].catCon.length
+
+  const pageBHeight = Math.ceil(pageButtons[categoryIndex].catCon.length / 4)
+
+  const translate = (270 * (pageBLength - 1)) / 2
+
   return (
     <div>
       {!pathArray[1] ? (
@@ -33,26 +40,28 @@ const CategoryLayout = () => {
             key={uuidv4()}
             style={{
               transform:
-                pageB.length < 5 && pageB.length > 1 && window.innerWidth > 1152
-                  ? `translate(-${math}px, 0px)`
+                pageBLength > 1 && window.innerWidth > 1060
+                  ? `translate(-${translate}px, 0px) `
+                  : "",
+              height:
+                pageBLength > 1 && window.innerWidth > 1060
+                  ? `${pageBHeight * 300}px `
                   : "",
             }}
-            className={` relative mx-auto mb-20  flex w-fit flex-wrap justify-center gap-8`}
+            className={`grid-container  mx-auto  mb-20 flex w-fit flex-wrap justify-center  gap-8`}
           >
-            {pageB.map((button, i) => (
+            {pageButtons[categoryIndex].catCon.map((button, i) => (
               <div
                 key={i}
                 style={
                   {
-                    "--card-index": i,
+                    "--card-index": i % 4,
+                    "--card-row": Math.floor(i / 4),
                   } as React.CSSProperties
                 }
                 className={`${
-                  pageB.length < 5 &&
-                  pageB.length > 1 &&
-                  window.innerWidth > 1152 &&
-                  styles.cardAnimation
-                } ${window.innerWidth > 1152 && styles.card}  w-fit `}
+                  pageBLength > 1 && window.innerWidth > 1060 && styles.cardAnimation
+                } ${window.innerWidth > 1060 && styles.card}  w-fit `}
               >
                 <Card
                   title={button.name}
@@ -70,8 +79,8 @@ const CategoryLayout = () => {
       ) : (
         <div className=" mx-auto mt-4  flex  w-fit flex-wrap justify-center">
           {windowWidth > 540 &&
-            pageB.length > 1 &&
-            pageB.map((button, i) => (
+            pageBLength > 1 &&
+            pageButtons[categoryIndex].catCon.map((button, i) => (
               <div
                 key={i}
                 className={`              
