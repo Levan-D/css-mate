@@ -195,7 +195,7 @@ export default function PaletteOutput({ mainColor }: props) {
           Opposites attract! Create striking contrast with colors on opposite sides of the
           color wheel.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {complementary(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -216,7 +216,7 @@ export default function PaletteOutput({ mainColor }: props) {
           Friendly neighbors unite! Build a harmonious and cohesive look using adjacent
           colors on the wheel.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {analogous(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -236,7 +236,7 @@ export default function PaletteOutput({ mainColor }: props) {
           Three's company! Achieve a balanced and vibrant palette with colors evenly
           spaced on the color wheel.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {triadic(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -256,7 +256,7 @@ export default function PaletteOutput({ mainColor }: props) {
           A harmonious twist! Combine the base color with its complement's neighbors for
           less contrast but great visual appeal.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {splitComplementary(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -276,7 +276,7 @@ export default function PaletteOutput({ mainColor }: props) {
           Double the fun! Create a rich and diverse palette with two complementary color
           pairs - just watch the balance!
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {tetradic(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -296,7 +296,7 @@ export default function PaletteOutput({ mainColor }: props) {
           One is all you need! Craft a cohesive look with different shades, tints, and
           tones of a single color.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {monochromatic(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -316,7 +316,7 @@ export default function PaletteOutput({ mainColor }: props) {
           Dive into the depths of a color by adjusting its lightness, darkness, or
           grayness for a harmonious yet contrasted palette.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {shadesTintsTones(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -336,7 +336,7 @@ export default function PaletteOutput({ mainColor }: props) {
           Mix and match! Choose colors that aren't direct neighbors on the color wheel for
           a diverse yet slightly less harmonious look.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {compoundColors(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -356,7 +356,7 @@ export default function PaletteOutput({ mainColor }: props) {
           Smooth transitions! Generate a cohesive palette by blending colors seamlessly
           for backgrounds, illustrations, or visual elements.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {gradientPalette(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
@@ -376,7 +376,7 @@ export default function PaletteOutput({ mainColor }: props) {
           Soft and subtle! Reduce saturation for a soothing, muted, or pastel palette that
           complements the main color.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {mutedPalette(mainColor).map((color, i) => (
             <div key={i}>
               <ColorCard
