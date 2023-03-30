@@ -190,7 +190,7 @@ export default function PaletteOutput({ mainColor }: props) {
   return (
     <div className="mt-32">
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Complementary</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Complementary</h2>
         <p className="mb-4 text-center">
           Opposites attract! Create striking contrast with colors on opposite sides of the
           color wheel.
@@ -211,7 +211,7 @@ export default function PaletteOutput({ mainColor }: props) {
       </div>
 
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Analogous</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Analogous</h2>
         <p className="mb-4 text-center">
           Friendly neighbors unite! Build a harmonious and cohesive look using adjacent
           colors on the wheel.
@@ -231,7 +231,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Triadic</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Triadic</h2>
         <p className="mb-4 text-center">
           Three's company! Achieve a balanced and vibrant palette with colors evenly
           spaced on the color wheel.
@@ -251,7 +251,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Split Complementary</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Split Complementary</h2>
         <p className="mb-4 text-center">
           A harmonious twist! Combine the base color with its complement's neighbors for
           less contrast but great visual appeal.
@@ -271,7 +271,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Tetradic</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Tetradic</h2>
         <p className="mb-4 text-center">
           Double the fun! Create a rich and diverse palette with two complementary color
           pairs - just watch the balance!
@@ -291,7 +291,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Monochromatic</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Monochromatic</h2>
         <p className="mb-4 text-center">
           One is all you need! Craft a cohesive look with different shades, tints, and
           tones of a single color.
@@ -311,7 +311,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Shades, Tints, & Tones</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Shades, Tints, & Tones</h2>
         <p className="mb-4 text-center">
           Dive into the depths of a color by adjusting its lightness, darkness, or
           grayness for a harmonious yet contrasted palette.
@@ -331,7 +331,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Compound</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Compound</h2>
         <p className="mb-4 text-center">
           Mix and match! Choose colors that aren't direct neighbors on the color wheel for
           a diverse yet slightly less harmonious look.
@@ -351,7 +351,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="my-8">
-        <h2 className="text-center font-cursiveCustom text-lg">Gradient</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Gradient</h2>
         <p className="mb-4 text-center">
           Smooth transitions! Generate a cohesive palette by blending colors seamlessly
           for backgrounds, illustrations, or visual elements.
@@ -371,7 +371,7 @@ export default function PaletteOutput({ mainColor }: props) {
         <hr className="mx-auto mt-10 h-0.5  w-2/3 border-t border-slate-700" />
       </div>
       <div className="mt-8 mb-24">
-        <h2 className="text-center font-cursiveCustom text-lg">Pastel</h2>
+        <h2 className="text-center font-cursiveCustom mb-4 text-lg">Pastel</h2>
         <p className="mb-4 text-center">
           Soft and subtle! Reduce saturation for a soothing, muted, or pastel palette that
           complements the main color.
