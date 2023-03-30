@@ -25,44 +25,62 @@ export default function PaletteOutput({ mainColor }: props) {
     return [hex, HSLToHex([newHue, s, l].join())]
   }
 
-  function analogous(hex, count = 2, angle = 30) {
-    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
-    const colors = []
+  function analogous(hex: string) {
+    const array = HexToHSL(hex).split(",")
+    const h = parseFloat(array[0])
+    const s = parseFloat(array[1])
+    const l = parseFloat(array[2])
 
-    for (let i = 1; i <= count; i++) {
-      const newHue = adjustHue(h, angle * i)
-      colors.push(RGBToHex(...HSLToRGB(newHue, s, l)))
-    }
-
-    return colors
-  }
-
-  function triadic(hex) {
-    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
     const colors = [
-      RGBToHex(...HSLToRGB(adjustHue(h, 1 / 3), s, l)),
-      RGBToHex(...HSLToRGB(adjustHue(h, 2 / 3), s, l)),
+      hex,
+      HSLToHex([adjustHue(h, 30), s, l].join()),
+      HSLToHex([adjustHue(h, -30), s, l].join()),
     ]
 
     return colors
   }
 
-  function splitComplementary(hex, angle = 150) {
-    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
+  function triadic(hex: string) {
+    const array = HexToHSL(hex).split(",")
+    const h = parseFloat(array[0])
+    const s = parseFloat(array[1])
+    const l = parseFloat(array[2])
+
     const colors = [
-      RGBToHex(...HSLToRGB(adjustHue(h, (360 - angle) / 360), s, l)),
-      RGBToHex(...HSLToRGB(adjustHue(h, (360 + angle) / 360), s, l)),
+      hex,
+      HSLToHex([adjustHue(h, 120), s, l].join()),
+      HSLToHex([adjustHue(h, 240), s, l].join()),
     ]
 
     return colors
   }
 
-  function tetradic(hex, angle = 90) {
-    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
+  function splitComplementary(hex: string) {
+    const array = HexToHSL(hex).split(",")
+    const h = parseFloat(array[0])
+    const s = parseFloat(array[1])
+    const l = parseFloat(array[2])
+
     const colors = [
-      RGBToHex(...HSLToRGB(adjustHue(h, 0.5), s, l)),
-      RGBToHex(...HSLToRGB(adjustHue(h, 0.5 + angle / 360), s, l)),
-      RGBToHex(...HSLToRGB(adjustHue(h, 1 - angle / 360), s, l)),
+      hex,
+      HSLToHex([adjustHue(h, 150), s, l].join()),
+      HSLToHex([adjustHue(h, 210), s, l].join()),
+    ]
+
+    return colors
+  }
+
+  function tetradic(hex: string) {
+    const array = HexToHSL(hex).split(",")
+    const h = parseFloat(array[0])
+    const s = parseFloat(array[1])
+    const l = parseFloat(array[2])
+
+    const colors = [
+      hex,
+      HSLToHex([adjustHue(h, 90), s, l].join()),
+      HSLToHex([adjustHue(h, 180), s, l].join()),
+      HSLToHex([adjustHue(h, 270), s, l].join()),
     ]
 
     return colors
@@ -84,18 +102,19 @@ export default function PaletteOutput({ mainColor }: props) {
     return colors
   }
 
-  function monochromatic(hex, count = 3) {
-    const [h, s, l] = RGBToHSL(...hexToRGB(hex))
-    const colors = []
+  function monochromatic(hex: string) {
+    const array = HexToHSL(hex).split(",")
+    const h = parseFloat(array[0])
+    const s = parseFloat(array[1])
+    const l = parseFloat(array[2])
 
-    for (let i = 1; i <= count; i++) {
-      const newL = (l + i * (1 / (count + 1))) % 1
-      colors.push(RGBToHex(...HSLToRGB(h, s, newL)))
-    }
+    const ratio = 0.1 // Adjust this value to control how much the lightness changes
+    const newL = Math.max(0, l * (1 + ratio))
+
+    const colors = [hex, HSLToHex([h, s, newL].join())]
 
     return colors
   }
-
-  console.log(square(mainColor))
+  console.log(monochromatic(mainColor))
   return <div>{square(mainColor)}</div>
 }
