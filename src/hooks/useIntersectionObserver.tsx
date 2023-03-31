@@ -1,23 +1,38 @@
-import { useEffect, useState } from "react";
+/** @format */
 
-export default function useIntersectionObserver(ref, options) {
-  const [isIntersecting, setIsIntersecting] = useState(false);
+import { useEffect, useState, MutableRefObject } from "react"
+
+export default function useIntersectionObserver(
+  ref: MutableRefObject<Element | null>,
+  options = {},
+  baseColor: string
+) {
+  const [isIntersecting, setIsIntersecting] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      setIsIntersecting(entry.isIntersecting);
-    }, options);
+      if (entry.isIntersecting) {
+        setIsIntersecting(true)
+        if (ref.current) {
+          observer.unobserve(ref.current) // Stop observing when the element is in view
+        }
+      }
+    }, options)
 
     if (ref.current) {
-      observer.observe(ref.current);
+      observer.observe(ref.current)
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current);
+        observer.unobserve(ref.current)
       }
-    };
-  }, [ref, options]);
+    }
+  }, [ref, options, baseColor])
 
-  return isIntersecting;
+  useEffect(() => {
+    setIsIntersecting(false)
+  }, [baseColor])
+
+  return isIntersecting
 }
