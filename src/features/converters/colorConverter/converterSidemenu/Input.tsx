@@ -2,11 +2,17 @@
 
 import React from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import { handleInputBtn, setInputText, convertColor } from "../colorConverterSlice"
+import {
+  handleInputBtn,
+  setInputText,
+  convertColor,
+} from "../colorConverterSlice"
 import { inputBtns } from "../colorConverterSlice"
 
 export default function Input() {
-  const { inputType, inputText, error } = useAppSelector(store => store.colorConverter)
+  const { inputType, inputText, error } = useAppSelector(
+    (store) => store.colorConverter
+  )
   const dispatch = useAppDispatch()
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,7 +21,9 @@ export default function Input() {
   }
   return (
     <div className="menuContainer m-4    ">
-      <div className="menuHeader py-1 text-center">Input Color Value</div>
+      <div className="menuHeader py-1  text-center  text-xs italic text-slate-200">
+        Input Color Value
+      </div>
       <div className="menuBlock m-2 flex justify-between px-2 py-1">
         {inputBtns.map((btnType, i) => (
           <div
@@ -25,7 +33,9 @@ export default function Input() {
               dispatch(convertColor())
             }}
             className={`${
-              inputType.name === btnType.name ? "btnSecondary" : "btnSecondaryDisabled"
+              inputType.name === btnType.name
+                ? "btnSecondary"
+                : "btnSecondaryDisabled"
             }   h-8 px-3 text-sm leading-4`}
           >
             {btnType.name}
@@ -39,7 +49,7 @@ export default function Input() {
               type="text"
               required
               value={inputText}
-              onChange={e => {
+              onChange={(e) => {
                 dispatch(setInputText(e.target.value))
                 dispatch(convertColor())
               }}

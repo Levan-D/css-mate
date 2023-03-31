@@ -8,6 +8,7 @@ import RgbToHex from "../../../utils/colors/RGBToHex"
 import { ChromePicker, SwatchesPicker } from "react-color"
 import { color } from "../../../components/ColorPicker"
 import RandomColorGenerator from "../../../utils/colors/RandomColorGenerator"
+import SideMenu from "../../../components/SideMenu"
 
 type props = {
   setMainColor: React.Dispatch<React.SetStateAction<string>>
@@ -61,77 +62,84 @@ export default function PaletteSideMenu({ setMainColor }: props) {
   }
 
   return (
-    <div className="menuContainer border-2 border-white py-2">
-      {/* color picker */}
-      <div className="  m-2 ">
-        <div
-          onClick={handleClick}
-          style={{
-            background: color,
-          }}
-          className={`h-20 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
-        ></div>
-        {displayColorPicker ? (
-          <div className="absolute z-10 select-none">
+    <SideMenu title={`Palette Generator`}>
+      <div className="menuContainer  m-2 ">
+        <div className="menuHeader   py-1 text-center text-xs italic text-slate-200">
+          Input Color Value
+        </div>
+        <div className="menuBlock m-2   px-2 py-1">
+          {/* color picker */}
+          <div className="  m-2 ">
             <div
-              className="fixed top-0 right-0 bottom-0  left-0  "
-              onMouseDown={() => setDisplayColorPicker(false)}
-            />
-            <div className="translate-x-10   ">
-              <ChromePicker
-                disableAlpha={true}
-                color={color}
-                onChange={handleChange}
-                onChangeComplete={handleChangeComplete}
+              onClick={handleClick}
+              style={{
+                background: color,
+              }}
+              className={`h-20 w-full cursor-pointer select-none rounded-lg border-2 border-transparent  leading-[18px] duration-200 sm:hover:border-white`}
+            ></div>
+            {displayColorPicker ? (
+              <div className="absolute z-10 select-none">
+                <div
+                  className="fixed top-0 right-0 bottom-0  left-0  "
+                  onMouseDown={() => setDisplayColorPicker(false)}
+                />
+                <div className="translate-x-10   ">
+                  <ChromePicker
+                    disableAlpha={true}
+                    color={color}
+                    onChange={handleChange}
+                    onChangeComplete={handleChangeComplete}
+                  />
+                </div>
+              </div>
+            ) : null}
+          </div>
+          {/* color picker */}
+          {/* hex color input */}
+          <div className=" mx-2 mb-2 flex gap-2">
+            <input
+              type="text"
+              id="hexText"
+              value={temp}
+              placeholder={color}
+              onChange={(e) => setTemp(e.target.value)}
+              onKeyDown={(e) => handleOnKeyDown(e)}
+              onBlur={handleOnBlur}
+              className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
+            ></input>
+            <div onClick={handleRandomColor} className="btnSecondary w-20">
+              <img
+                src={dice}
+                alt=""
+                className="inline-block  w-20  -translate-y-[2px] scale-[2] "
               />
             </div>
-          </div>
-        ) : null}
-      </div>
-      {/* color picker */}
-      {/* hex color input */}
-      <div className=" mx-2 mb-2 flex gap-2">
-        <input
-          type="text"
-          id="hexText"
-          value={temp}
-          placeholder={color}
-          onChange={e => setTemp(e.target.value)}
-          onKeyDown={e => handleOnKeyDown(e)}
-          onBlur={handleOnBlur}
-          className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
-        ></input>
-        <div onClick={handleRandomColor} className="btnSecondary w-20">
-          <img
-            src={dice}
-            alt=""
-            className="inline-block  w-20  -translate-y-[2px] scale-[2] "
-          />
-        </div>
-        <div
-          onClick={() => setDisplaySwatches(true)}
-          className="btnSecondary w-full text-center"
-        >
-          Swatches
-        </div>
+            <div
+              onClick={() => setDisplaySwatches(true)}
+              className="btnSecondary w-full text-center"
+            >
+              Swatches
+            </div>
 
-        {displaySwatches ? (
-          <div className="absolute z-10 select-none">
-            <div
-              className="fixed top-0 right-0 bottom-0  left-0  "
-              onMouseDown={() => setDisplaySwatches(false)}
-            />
-            <div className="translate-x-4 translate-y-10 rounded-md border-2">
-              <SwatchesPicker
-                width={280}
-                height={280}
-                onChangeComplete={handleChangeComplete}
-              />
-            </div>
+            {displaySwatches ? (
+              <div className="absolute z-10 select-none">
+                <div
+                  className="fixed top-0 right-0 bottom-0  left-0  "
+                  onMouseDown={() => setDisplaySwatches(false)}
+                />
+                <div className="translate-x-4 translate-y-10 rounded-md border-2">
+                  <SwatchesPicker
+                    width={280}
+                    height={280}
+                    onChangeComplete={handleChangeComplete}
+                  />
+                </div>
+              </div>
+            ) : null}
           </div>
-        ) : null}
+          {/* hex color input */}
+        </div>
       </div>
-      {/* hex color input */}
-    </div>
+    </SideMenu>
   )
 }

@@ -1,4 +1,3 @@
-
 /** @format */
 
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
@@ -8,7 +7,7 @@ import { inputBtns, convertColor, inputBtnsProps } from "../colorConverterSlice"
 
 export default function Output() {
   const { inputType, outputType, outputText, inputText } = useAppSelector(
-    store => store.colorConverter
+    (store) => store.colorConverter
   )
   const dispatch = useAppDispatch()
 
@@ -24,14 +23,18 @@ export default function Output() {
   }
   return (
     <div className="menuContainer m-4  pb-4  ">
-      <div className="menuHeader py-1 text-center">Output Color Value</div>
+      <div className="menuHeader py-1 text-center text-xs italic text-slate-200">
+        Output Color Value
+      </div>
       <div className="menuBlock m-2 flex justify-between px-2 py-1">
         {inputBtns.map((btnType, i) => (
           <div
             key={i}
             onClick={() => handleClick(btnType)}
             className={`${
-              outputType.name === btnType.name ? "btnSecondary" : "btnSecondaryDisabled"
+              outputType.name === btnType.name
+                ? "btnSecondary"
+                : "btnSecondaryDisabled"
             } ${
               inputType.name === btnType.name && " cursor-auto opacity-60"
             }   h-8 px-3 text-sm leading-4`}

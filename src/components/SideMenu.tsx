@@ -36,7 +36,7 @@ const SideMenu = ({ title, children, resetState }: SideMenuProps) => {
       }  z-40 mx-auto  h-fit w-96 rounded-xl border-2 bg-darkJungle-900 md:mx-0`}
     >
       <div className="menuHeader flex justify-between gap-4 !bg-primary  p-4  pb-2  ">
-        <h2 className=" mb-1 grow select-none font-bold">{title}</h2>
+        <h2 className=" mb-1 grow select-none font-cursiveCustom">{title}</h2>
 
         {resetState && (
           <div>
