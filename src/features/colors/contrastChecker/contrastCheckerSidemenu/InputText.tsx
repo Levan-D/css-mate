@@ -109,7 +109,7 @@ export default function InputText() {
           onClick={() => dispatch(toggleTextSize())}
           className={`btnSecondary `}
         >
-          {textSize ? "L" : "S"}
+          {textSize ? "L" : "N"}
         </div>
         <div
           onClick={() => setDisplaySwatchesOne(true)}
