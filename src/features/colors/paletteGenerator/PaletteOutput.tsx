@@ -42,33 +42,29 @@ export default function PaletteOutput({ mainColor }: props) {
     baseColor
   )
 
-  const compoundColorsRef = useRef(null)
-  const isCompoundColorsInView = useIntersectionObserver(compoundColorsRef, {}, baseColor)
+  const compoundRef = useRef(null)
+  const isCompoundInView = useIntersectionObserver(compoundRef, {}, baseColor)
 
-  const gradientPaletteRef = useRef(null)
-  const isGradientPaletteInView = useIntersectionObserver(
-    gradientPaletteRef,
-    {},
-    baseColor
-  )
+  const gradientRef = useRef(null)
+  const isGradientInView = useIntersectionObserver(gradientRef, {}, baseColor)
 
-  const mutedPaletteRef = useRef(null)
-  const isMutedPaletteInView = useIntersectionObserver(mutedPaletteRef, {}, baseColor)
+  const mutedRef = useRef(null)
+  const isMutedInView = useIntersectionObserver(mutedRef, {}, baseColor)
 
-  const borderGradientRef = useRef(null)
-  const isBorderGradientInView = useIntersectionObserver(borderGradientRef, {}, baseColor)
+  const borderRef = useRef(null)
+  const isBorderInView = useIntersectionObserver(borderRef, {}, baseColor)
 
-  const vetoGradientRef = useRef(null)
-  const isVetoGradientInView = useIntersectionObserver(vetoGradientRef, {}, baseColor)
+  const vetoRef = useRef(null)
+  const isVetoInView = useIntersectionObserver(vetoRef, {}, baseColor)
 
-  const smokeyGradientRef = useRef(null)
-  const isSmokeyGradientInView = useIntersectionObserver(smokeyGradientRef, {}, baseColor)
+  const smokeyRef = useRef(null)
+  const isSmokeyInView = useIntersectionObserver(smokeyRef, {}, baseColor)
 
-  const bobGradientRef = useRef(null)
-  const isBobGradientInView = useIntersectionObserver(bobGradientRef, {}, baseColor)
+  const bobRef = useRef(null)
+  const isBobInView = useIntersectionObserver(bobRef, {}, baseColor)
 
-  const fawnGradientRef = useRef(null)
-  const isFawnGradientInView = useIntersectionObserver(fawnGradientRef, {}, baseColor)
+  const fawnRef = useRef(null)
+  const isFawnInView = useIntersectionObserver(fawnRef, {}, baseColor)
 
   const handleGenerate = () => {
     if (baseColor !== mainColor) {
@@ -169,89 +165,89 @@ export default function PaletteOutput({ mainColor }: props) {
       />
 
       <PaletteContainer
-        compRef={compoundColorsRef}
-        conditional={isCompoundColorsInView}
+        compRef={compoundRef}
+        conditional={isCompoundInView}
         colorInput={baseColor}
         amount={3}
-        title={`Compound Colors`}
-        type={`compoundColors`}
+        title={`Compound `}
+        type={`compound`}
         descr={`Mix and match! Choose colors that aren't direct neighbors on
         the color wheel for a diverse yet slightly less harmonious look.`}
       />
 
       <PaletteContainer
-        compRef={gradientPaletteRef}
-        conditional={isGradientPaletteInView}
+        compRef={gradientRef}
+        conditional={isGradientInView}
         colorInput={baseColor}
         amount={5}
-        title={`Gradient Palette`}
-        type={`gradientPalette`}
-        descr={`        Smooth transitions! Generate a cohesive palette by blending colors
+        title={`Gradient`}
+        type={`gradient`}
+        descr={`Smooth transitions! Generate a cohesive palette by blending colors
         seamlessly for backgrounds, illustrations, or visual elements.`}
       />
 
       <PaletteContainer
-        compRef={mutedPaletteRef}
-        conditional={isMutedPaletteInView}
+        compRef={mutedRef}
+        conditional={isMutedInView}
         colorInput={baseColor}
         amount={4}
-        title={`Muted Palette`}
-        type={`mutedPalette`}
+        title={`Muted`}
+        type={`muted`}
         descr={`Soft and subtle! Reduce saturation for a soothing, muted,
          or pastel palette that complements the main color.`}
       />
 
       <PaletteContainer
-        compRef={borderGradientRef}
-        conditional={isBorderGradientInView}
+        compRef={borderRef}
+        conditional={isBorderInView}
         colorInput={baseColor}
         amount={6}
-        title={`Border Gradient`}
-        type={`borderGradient`}
+        title={`Border`}
+        type={`border`}
         descr={`Soft and subtle! Reduce saturation for a soothing, muted,
          or pastel palette that complements the main color.`}
       />
 
       <PaletteContainer
-        compRef={vetoGradientRef}
-        conditional={isVetoGradientInView}
+        compRef={vetoRef}
+        conditional={isVetoInView}
         colorInput={baseColor}
         amount={6}
-        title={`Veto Gradient`}
-        type={`vetoGradient`}
+        title={`Veto`}
+        type={`veto`}
         descr={`Soft and subtle! Reduce saturation for a soothing, muted,
          or pastel palette that complements the main color.`}
       />
 
       <PaletteContainer
-        compRef={smokeyGradientRef}
-        conditional={isSmokeyGradientInView}
+        compRef={smokeyRef}
+        conditional={isSmokeyInView}
         colorInput={baseColor}
         amount={6}
-        title={`Smokey Gradient`}
-        type={`smokeyGradient`}
+        title={`Smokey`}
+        type={`smokey`}
         descr={`Soft and subtle! Reduce saturation for a soothing, muted,
          or pastel palette that complements the main color.`}
       />
 
       <PaletteContainer
-        compRef={bobGradientRef}
-        conditional={isBobGradientInView}
+        compRef={bobRef}
+        conditional={isBobInView}
         colorInput={baseColor}
         amount={4}
-        title={`Bob Gradient`}
-        type={`bobGradient`}
+        title={`Bob`}
+        type={`bob`}
         descr={`Soft and subtle! Reduce saturation for a soothing, muted,
          or pastel palette that complements the main color.`}
       />
 
       <PaletteContainer
-        compRef={fawnGradientRef}
-        conditional={isFawnGradientInView}
+        compRef={fawnRef}
+        conditional={isFawnInView}
         colorInput={baseColor}
         amount={4}
-        title={`Fawn Gradient`}
-        type={`fawnGradient`}
+        title={`Fawn`}
+        type={`fawn`}
         descr={`Soft and subtle! Reduce saturation for a soothing, muted,
          or pastel palette that complements the main color.`}
       />

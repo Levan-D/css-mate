@@ -22,22 +22,22 @@ export default function calculatePalette(type: string, color: string) {
       return monochromatic(color)
     case "shadesTintsTones":
       return shadesTintsTones(color)
-    case "compoundColors":
-      return compoundColors(color)
-    case "gradientPalette":
-      return gradientPalette(color)
-    case "mutedPalette":
-      return mutedPalette(color)
-    case "borderGradient":
-      return borderGradient(color)
-    case "vetoGradient":
-      return vetoGradient(color)
-    case "smokeyGradient":
-      return smokeyGradient(color)
-    case "bobGradient":
-      return bobGradient(color)
-    case "fawnGradient":
-      return fawnGradient(color)
+    case "compound":
+      return compound(color)
+    case "gradient":
+      return gradient(color)
+    case "muted":
+      return muted(color)
+    case "border":
+      return border(color)
+    case "veto":
+      return veto(color)
+    case "smokey":
+      return smokey(color)
+    case "bob":
+      return bob(color)
+    case "fawn":
+      return fawn(color)
 
     default:
       return []
@@ -142,7 +142,7 @@ function shadesTintsTones(hex: string, count = 4) {
   return colors
 }
 
-function compoundColors(hex: string, angle = 30) {
+function compound(hex: string, angle = 30) {
   const [h, s, l] = hexDestructure(hex)
 
   const colors = [
@@ -154,7 +154,7 @@ function compoundColors(hex: string, angle = 30) {
   return colors
 }
 
-function gradientPalette(hex: string, count = 4) {
+function gradient(hex: string, count = 4) {
   const [h1, s1, l1] = hexDestructure(hex)
 
   const h2 = adjustHue(h1, 30)
@@ -175,7 +175,7 @@ function gradientPalette(hex: string, count = 4) {
   return colors
 }
 
-function mutedPalette(hex: string, count = 4) {
+function muted(hex: string, count = 4) {
   const [h, s, l] = hexDestructure(hex)
 
   const colors = []
@@ -191,12 +191,7 @@ function mutedPalette(hex: string, count = 4) {
   return colors
 }
 
-function borderGradient(
-  hex: string,
-  count = 6,
-  saturationFactor = 1,
-  lightnessFactor = 0.9
-) {
+function border(hex: string, count = 6, saturationFactor = 1, lightnessFactor = 0.9) {
   const [h, s, l] = hexDestructure(hex)
 
   function adjustValue(input: number, factor: number, maxValue: number) {
@@ -248,7 +243,7 @@ function borderGradient(
   return colors
 }
 
-function vetoGradient(hex: string, count = 6) {
+function veto(hex: string, count = 6) {
   const [h, s, l] = hexDestructure(hex)
 
   const colorStart = HexToRGB(hex)
@@ -275,7 +270,7 @@ function vetoGradient(hex: string, count = 6) {
   return colors
 }
 
-function smokeyGradient(
+function smokey(
   hex: string,
   count = 5,
   startAdjust = 0.9,
@@ -320,7 +315,7 @@ function smokeyGradient(
   return colors
 }
 
-function bobGradient(hex: string, count = 4) {
+function bob(hex: string, count = 4) {
   const [h, s, l] = hexDestructure(hex)
 
   function adjustValue(input: number, factor: number, maxValue: number) {
@@ -363,7 +358,7 @@ function bobGradient(hex: string, count = 4) {
   return colors
 }
 
-function fawnGradient(hex: string, count = 4) {
+function fawn(hex: string, count = 4) {
   const [h, s, l] = hexDestructure(hex)
 
   const minLightness = 72
@@ -384,8 +379,6 @@ function fawnGradient(hex: string, count = 4) {
 
   colors.shift()
   colors.unshift(hex)
-
-  return colors
 
   return colors
 }
