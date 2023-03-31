@@ -189,7 +189,7 @@ export default function PaletteOutput({ mainColor }: props) {
 
   return (
     <div className="mt-32">
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Complementary
@@ -214,7 +214,7 @@ export default function PaletteOutput({ mainColor }: props) {
         </div>
       </div>
 
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Analogous
@@ -237,7 +237,7 @@ export default function PaletteOutput({ mainColor }: props) {
           ))}
         </div>
       </div>
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Triadic
@@ -260,7 +260,7 @@ export default function PaletteOutput({ mainColor }: props) {
           ))}
         </div>
       </div>
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Split Complementary
@@ -283,7 +283,7 @@ export default function PaletteOutput({ mainColor }: props) {
           ))}
         </div>
       </div>
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Tetradic
@@ -306,7 +306,7 @@ export default function PaletteOutput({ mainColor }: props) {
           ))}
         </div>
       </div>
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Monochromatic
@@ -329,7 +329,7 @@ export default function PaletteOutput({ mainColor }: props) {
           ))}
         </div>
       </div>
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Shades,Tints, & Tones
@@ -352,7 +352,7 @@ export default function PaletteOutput({ mainColor }: props) {
           ))}
         </div>
       </div>
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Compound
@@ -376,7 +376,7 @@ export default function PaletteOutput({ mainColor }: props) {
           ))}
         </div>
       </div>
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Gradient
@@ -400,7 +400,7 @@ export default function PaletteOutput({ mainColor }: props) {
           ))}
         </div>
       </div>
-      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-white bg-darkJungle-900">
+      <div className="my-16 mx-auto w-fit  rounded-xl border-2  border-slate-500 bg-darkJungle-900">
         <div className="menuHeader     px-4 py-2">
           <h3 className="  text-center font-cursiveCustom  text-lg text-slate-300 ">
             Pastel
