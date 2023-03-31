@@ -204,8 +204,7 @@ export default function PaletteOutput({ mainColor }: props) {
         amount={6}
         title={`Border`}
         type={`border`}
-        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
-         or pastel palette that complements the main color.`}
+        descr={``}
       />
 
       <PaletteContainer
@@ -215,8 +214,7 @@ export default function PaletteOutput({ mainColor }: props) {
         amount={6}
         title={`Veto`}
         type={`veto`}
-        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
-         or pastel palette that complements the main color.`}
+        descr={``}
       />
 
       <PaletteContainer
@@ -226,8 +224,7 @@ export default function PaletteOutput({ mainColor }: props) {
         amount={6}
         title={`Smokey`}
         type={`smokey`}
-        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
-         or pastel palette that complements the main color.`}
+        descr={``}
       />
 
       <PaletteContainer
@@ -237,8 +234,7 @@ export default function PaletteOutput({ mainColor }: props) {
         amount={4}
         title={`Bob`}
         type={`bob`}
-        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
-         or pastel palette that complements the main color.`}
+        descr={``}
       />
 
       <PaletteContainer
@@ -248,8 +244,7 @@ export default function PaletteOutput({ mainColor }: props) {
         amount={4}
         title={`Fawn`}
         type={`fawn`}
-        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
-         or pastel palette that complements the main color.`}
+        descr={``}
       />
     </div>
   )
