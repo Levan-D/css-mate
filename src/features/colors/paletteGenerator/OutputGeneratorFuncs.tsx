@@ -2,6 +2,34 @@
 import HSLToHex from "../../../utils/colors/HSLToHex"
 import HexToHSL from "../../../utils/colors/HexToHSL"
 
+export default function calculatePalette(type: string, color: string) {
+  switch (type) {
+    case "complementary":
+      return complementary(color)
+    case "analogous":
+      return analogous(color)
+    case "triadic":
+      return triadic(color)
+    case "splitComplementary":
+      return splitComplementary(color)
+    case "tetradic":
+      return tetradic(color)
+    case "monochromatic":
+      return monochromatic(color)
+    case "shadesTintsTones":
+      return shadesTintsTones(color)
+    case "compoundColors":
+      return compoundColors(color)
+    case "gradientPalette":
+      return gradientPalette(color)
+    case "mutedPalette":
+      return mutedPalette(color)
+
+    default:
+      return []
+  }
+}
+
 function adjustHue(h: number, degrees: number) {
   return h + degrees > 360 ? h + degrees - 360 : h + degrees
 }
@@ -168,32 +196,4 @@ function mutedPalette(hex: string, count = 4) {
   }
 
   return colors
-}
-
-export default function calculatePalette(type: string, color: string) {
-  switch (type) {
-    case "complementary":
-      return complementary(color)
-    case "analogous":
-      return analogous(color)
-    case "triadic":
-      return triadic(color)
-    case "splitComplementary":
-      return splitComplementary(color)
-    case "tetradic":
-      return tetradic(color)
-    case "monochromatic":
-      return monochromatic(color)
-    case "shadesTintsTones":
-      return shadesTintsTones(color)
-    case "compoundColors":
-      return compoundColors(color)
-    case "gradientPalette":
-      return gradientPalette(color)
-    case "mutedPalette":
-      return mutedPalette(color)
-
-    default:
-      return []
-  }
 }
