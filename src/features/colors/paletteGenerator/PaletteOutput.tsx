@@ -7,6 +7,7 @@ import HexToRGB from "../../../utils/colors/HexToRGB"
 import HSLToHex from "../../../utils/colors/HSLToHex"
 //@ts-ignore
 import colorNamer from "color-namer"
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver"
 
 type props = {
   mainColor: string
