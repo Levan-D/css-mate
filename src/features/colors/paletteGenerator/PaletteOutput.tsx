@@ -55,6 +55,18 @@ export default function PaletteOutput({ mainColor }: props) {
   const mutedPaletteRef = useRef(null)
   const isMutedPaletteInView = useIntersectionObserver(mutedPaletteRef, {}, baseColor)
 
+  const borderGradientRef = useRef(null)
+  const isBorderGradientInView = useIntersectionObserver(borderGradientRef, {}, baseColor)
+
+  const vetoGradientRef = useRef(null)
+  const isVetoGradientInView = useIntersectionObserver(vetoGradientRef, {}, baseColor)
+
+  const bobGradientRef = useRef(null)
+  const isBobGradientInView = useIntersectionObserver(bobGradientRef, {}, baseColor)
+
+  const fawnGradientRef = useRef(null)
+  const isFawnGradientInView = useIntersectionObserver(fawnGradientRef, {}, baseColor)
+
   const handleGenerate = () => {
     if (baseColor !== mainColor) {
       setBaseColor(mainColor)
@@ -182,6 +194,50 @@ export default function PaletteOutput({ mainColor }: props) {
         amount={4}
         title={`Muted Palette`}
         type={`mutedPalette`}
+        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
+         or pastel palette that complements the main color.`}
+      />
+
+      <PaletteContainer
+        compRef={borderGradientRef}
+        conditional={isBorderGradientInView}
+        colorInput={baseColor}
+        amount={6}
+        title={`Border Gradient`}
+        type={`borderGradient`}
+        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
+         or pastel palette that complements the main color.`}
+      />
+
+      <PaletteContainer
+        compRef={vetoGradientRef}
+        conditional={isVetoGradientInView}
+        colorInput={baseColor}
+        amount={6}
+        title={`Veto Gradient`}
+        type={`vetoGradient`}
+        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
+         or pastel palette that complements the main color.`}
+      />
+
+      <PaletteContainer
+        compRef={bobGradientRef}
+        conditional={isBobGradientInView}
+        colorInput={baseColor}
+        amount={4}
+        title={`Bob Gradient`}
+        type={`bobGradient`}
+        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
+         or pastel palette that complements the main color.`}
+      />
+
+      <PaletteContainer
+        compRef={fawnGradientRef}
+        conditional={isFawnGradientInView}
+        colorInput={baseColor}
+        amount={4}
+        title={`Fawn Gradient`}
+        type={`fawnGradient`}
         descr={`Soft and subtle! Reduce saturation for a soothing, muted,
          or pastel palette that complements the main color.`}
       />

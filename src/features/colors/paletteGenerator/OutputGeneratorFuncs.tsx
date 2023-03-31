@@ -1,6 +1,10 @@
 /** @format */
 import HSLToHex from "../../../utils/colors/HSLToHex"
 import HexToHSL from "../../../utils/colors/HexToHSL"
+import RgbToHex from "../../../utils/colors/RGBToHex"
+import HSLToRGB from "../../../utils/colors/HSLToRGB"
+import HexToRGB from "../../../utils/colors/HexToRGB"
+import RGBToHSL from "../../../utils/colors/RGBToHSL"
 
 export default function calculatePalette(type: string, color: string) {
   switch (type) {
@@ -24,6 +28,14 @@ export default function calculatePalette(type: string, color: string) {
       return gradientPalette(color)
     case "mutedPalette":
       return mutedPalette(color)
+    case "borderGradient":
+      return borderGradient(color)
+    case "vetoGradient":
+      return vetoGradient(color)
+    case "bobGradient":
+      return bobGradient(color)
+    case "fawnGradient":
+      return fawnGradient(color)
 
     default:
       return []
@@ -173,6 +185,160 @@ function mutedPalette(hex: string, count = 4) {
 
     colors.push(HSLToHex([newH, newS, newL].join()))
   }
+
+  return colors
+}
+
+function borderGradient(
+  hex: string,
+  count = 6,
+  saturationFactor = 1,
+  lightnessFactor = 0.9
+) {
+  const [h, s, l] = hexDestructure(hex)
+
+  function adjustValue(input: number, factor: number, maxValue: number) {
+    const output = input * factor
+    if (output <= maxValue) {
+      return output
+    } else {
+      return maxValue
+    }
+  }
+
+  const colorStart = HexToRGB(hex)
+    .split(",")
+    .map(str => Number(str))
+  const colorEnd = HSLToRGB(
+    [adjustHue(h, 90), adjustValue(s, saturationFactor, 100), l].join()
+  )
+    .split(",")
+    .map(str => Number(str))
+
+  const rDiff = (colorEnd[0] - colorStart[0]) / (count - 1)
+  const gDiff = (colorEnd[1] - colorStart[1]) / (count - 1)
+  const bDiff = (colorEnd[2] - colorStart[2]) / (count - 1)
+
+  const colors = []
+
+  for (let i = 0; i < count; i++) {
+    const r = Math.round(colorStart[0] + rDiff * i)
+    const g = Math.round(colorStart[1] + gDiff * i)
+    const b = Math.round(colorStart[2] + bDiff * i)
+    const rgbColor = `${r}, ${g}, ${b}`
+    const hslColor = RGBToHSL(rgbColor)
+    const [stepH, stepS, stepL] = hslColor.split(",").map(str => parseFloat(str))
+
+    const vibrantHSLColor = [
+      stepH,
+      adjustValue(stepS, saturationFactor, 100),
+      adjustValue(stepL, lightnessFactor, 100),
+    ].join()
+
+    colors.push(HSLToHex(vibrantHSLColor))
+  }
+  colors.shift()
+  colors.pop()
+
+  colors.unshift(hex)
+  colors.push(RgbToHex(colorEnd.join()))
+
+  return colors
+}
+
+function vetoGradient(hex: string, count = 6) {
+  const [h, s, l] = hexDestructure(hex)
+
+  const colorStart = HexToRGB(hex)
+    .split(",")
+    .map(str => Number(str))
+  const colorEnd = HSLToRGB([adjustHue(h, -90), s, l].join())
+    .split(",")
+    .map(str => Number(str))
+
+  const rDiff = (colorEnd[0] - colorStart[0]) / (count - 1)
+  const gDiff = (colorEnd[1] - colorStart[1]) / (count - 1)
+  const bDiff = (colorEnd[2] - colorStart[2]) / (count - 1)
+
+  const colors = []
+
+  for (let i = 0; i < count; i++) {
+    const r = Math.round(colorStart[0] + rDiff * i)
+    const g = Math.round(colorStart[1] + gDiff * i)
+    const b = Math.round(colorStart[2] + bDiff * i)
+
+    colors.push(RgbToHex(`${r}, ${g}, ${b}`))
+  }
+
+  return colors
+}
+
+function bobGradient(hex: string, count = 4) {
+  const [h, s, l] = hexDestructure(hex)
+
+  function adjustValue(input: number, factor: number, maxValue: number) {
+    const output = input * factor
+    if (output <= maxValue) {
+      return output
+    } else {
+      return maxValue
+    }
+  }
+
+  const colorStart = HSLToRGB(
+    [adjustHue(h, 90), adjustValue(s, 1, 100), adjustValue(l, 1.5, 100)].join()
+  )
+    .split(",")
+    .map(str => Number(str))
+
+  const colorEnd = HSLToRGB([adjustHue(h, 90), adjustValue(s, 1, 100), l].join())
+    .split(",")
+    .map(str => Number(str))
+
+  const rDiff = (colorEnd[0] - colorStart[0]) / (count - 1)
+  const gDiff = (colorEnd[1] - colorStart[1]) / (count - 1)
+  const bDiff = (colorEnd[2] - colorStart[2]) / (count - 1)
+
+  const colors = []
+
+  for (let i = 0; i < count; i++) {
+    const r = Math.round(colorStart[0] + rDiff * i)
+    const g = Math.round(colorStart[1] + gDiff * i)
+    const b = Math.round(colorStart[2] + bDiff * i)
+    const rgbColor = `${r}, ${g}, ${b}`
+
+    colors.push(RgbToHex(rgbColor))
+  }
+
+  colors.shift()
+  colors.unshift(hex)
+
+  return colors
+}
+
+function fawnGradient(hex: string, count = 4) {
+  const [h, s, l] = hexDestructure(hex)
+
+  const minLightness = 72
+  const lightnessStep = 5
+
+  const colors = []
+
+  for (let i = 0; i < count; i++) {
+    const newHue = -20 + (h / 12) * i // Add an offset of 30 to shift the hue towards beige
+
+    const newSaturation = s
+    const newLightness = minLightness + i * lightnessStep
+
+    const hex = HSLToHex([newHue, newSaturation, newLightness].join())
+
+    colors.push(hex)
+  }
+
+  colors.shift()
+  colors.unshift(hex)
+
+  return colors
 
   return colors
 }
