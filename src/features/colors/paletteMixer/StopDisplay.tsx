@@ -47,7 +47,7 @@ export default function StopDisplay() {
             B
           </div>
         </div>
-        <div className="mr-20 basis-[15%] text-center text-lg  italic text-slate-300">
+        <div className="mr-20 basis-[15%] font-cursiveCustom text-center text-lg  italic text-slate-300">
           Shades
         </div>
         <div></div>

@@ -1,27 +1,27 @@
 /** @format */
 
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
+import type { PayloadAction } from "@reduxjs/toolkit"
 
 interface initialStateType {
-  backgroundColor: string;
-  textColor: string;
-  shadowColor: string;
-  shadowOpacity: number;
-  shadow: boolean;
-  bold: boolean;
-  textSize: boolean;
+  backgroundColor: string
+  textColor: string
+  shadowColor: string
+  shadowOpacity: number
+  shadow: boolean
+  bold: boolean
+  textSize: boolean
 }
 
 const initialState: initialStateType = {
-  backgroundColor: `#5ea1ff`,
+  backgroundColor: `#516683`,
   textColor: `#ff725e`,
   shadowColor: `255,255,255`,
   shadowOpacity: 1,
   shadow: false,
   bold: false,
   textSize: false,
-};
+}
 
 const colorChekerSlice = createSlice({
   name: "colorChecker",
@@ -31,37 +31,37 @@ const colorChekerSlice = createSlice({
       state,
       action: PayloadAction<initialStateType["backgroundColor"]>
     ) => {
-      state.backgroundColor = action.payload;
+      state.backgroundColor = action.payload
     },
     setTextColor: (
       state,
       action: PayloadAction<initialStateType["textColor"]>
     ) => {
-      state.textColor = action.payload;
+      state.textColor = action.payload
     },
     setShadowOpacity: (
       state,
       action: PayloadAction<initialStateType["shadowOpacity"]>
     ) => {
-      state.shadowOpacity = action.payload;
+      state.shadowOpacity = action.payload
     },
     setShadowColor: (
       state,
       action: PayloadAction<initialStateType["shadowColor"]>
     ) => {
-      state.shadowColor = action.payload;
+      state.shadowColor = action.payload
     },
     toggleBold: (state) => {
-      state.bold = !state.bold;
+      state.bold = !state.bold
     },
     toggleTextSize: (state) => {
-      state.textSize = !state.textSize;
+      state.textSize = !state.textSize
     },
     toggleShadow: (state) => {
-      state.shadow = !state.shadow;
+      state.shadow = !state.shadow
     },
   },
-});
+})
 
 export const {
   setBackgroundColor,
@@ -71,5 +71,5 @@ export const {
   setShadowOpacity,
   toggleShadow,
   toggleTextSize,
-} = colorChekerSlice.actions;
-export default colorChekerSlice.reducer;
+} = colorChekerSlice.actions
+export default colorChekerSlice.reducer
