@@ -32,6 +32,8 @@ export default function calculatePalette(type: string, color: string) {
       return borderGradient(color)
     case "vetoGradient":
       return vetoGradient(color)
+    case "smokeyGradient":
+      return smokeyGradient(color)
     case "bobGradient":
       return bobGradient(color)
     case "fawnGradient":
@@ -266,6 +268,51 @@ function vetoGradient(hex: string, count = 6) {
     const r = Math.round(colorStart[0] + rDiff * i)
     const g = Math.round(colorStart[1] + gDiff * i)
     const b = Math.round(colorStart[2] + bDiff * i)
+
+    colors.push(RgbToHex(`${r}, ${g}, ${b}`))
+  }
+
+  return colors
+}
+
+function smokeyGradient(
+  hex: string,
+  count = 5,
+  startAdjust = 0.9,
+  endAdjust = 0.3,
+  mixFactor = 0.5
+) {
+  function mixColorWithGrayscale(color: number[], factor: number) {
+    const gray = 0.299 * color[0] + 0.587 * color[1] + 0.114 * color[2]
+    const mixedColor = color.map(channel =>
+      Math.round(channel * (1 - factor) + gray * factor)
+    )
+    return mixedColor
+  }
+
+  const rgb = HexToRGB(hex)
+    .split(",")
+    .map(str => Number(str))
+
+  const startColor = mixColorWithGrayscale(
+    rgb.map(channel => Math.round(channel * startAdjust)),
+    mixFactor
+  )
+  const endColor = mixColorWithGrayscale(
+    rgb.map(channel => Math.round(channel * endAdjust)),
+    mixFactor
+  )
+
+  const rDiff = (endColor[0] - startColor[0]) / (count - 1)
+  const gDiff = (endColor[1] - startColor[1]) / (count - 1)
+  const bDiff = (endColor[2] - startColor[2]) / (count - 1)
+
+  const colors = [hex]
+
+  for (let i = 0; i < count; i++) {
+    const r = Math.round(startColor[0] + rDiff * i)
+    const g = Math.round(startColor[1] + gDiff * i)
+    const b = Math.round(startColor[2] + bDiff * i)
 
     colors.push(RgbToHex(`${r}, ${g}, ${b}`))
   }

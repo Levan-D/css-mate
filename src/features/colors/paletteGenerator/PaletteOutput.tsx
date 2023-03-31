@@ -61,6 +61,9 @@ export default function PaletteOutput({ mainColor }: props) {
   const vetoGradientRef = useRef(null)
   const isVetoGradientInView = useIntersectionObserver(vetoGradientRef, {}, baseColor)
 
+  const smokeyGradientRef = useRef(null)
+  const isSmokeyGradientInView = useIntersectionObserver(smokeyGradientRef, {}, baseColor)
+
   const bobGradientRef = useRef(null)
   const isBobGradientInView = useIntersectionObserver(bobGradientRef, {}, baseColor)
 
@@ -216,6 +219,17 @@ export default function PaletteOutput({ mainColor }: props) {
         amount={6}
         title={`Veto Gradient`}
         type={`vetoGradient`}
+        descr={`Soft and subtle! Reduce saturation for a soothing, muted,
+         or pastel palette that complements the main color.`}
+      />
+
+      <PaletteContainer
+        compRef={smokeyGradientRef}
+        conditional={isSmokeyGradientInView}
+        colorInput={baseColor}
+        amount={6}
+        title={`Smokey Gradient`}
+        type={`smokeyGradient`}
         descr={`Soft and subtle! Reduce saturation for a soothing, muted,
          or pastel palette that complements the main color.`}
       />
