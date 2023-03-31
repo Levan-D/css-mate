@@ -34,12 +34,18 @@ function adjustHue(h: number, degrees: number) {
   return h + degrees > 360 ? h + degrees - 360 : h + degrees
 }
 
+function hexDestructure(hex: string) {
+  const array = HexToHSL(hex).split(",")
+  const h = parseFloat(array[0])
+  const s = parseFloat(array[1])
+  const l = parseFloat(array[2])
+
+  return [h, s, l]
+}
+
 function complementary(hex: string) {
   if (hex) {
-    const array = HexToHSL(hex).split(",")
-    const h = parseFloat(array[0])
-    const s = parseFloat(array[1])
-    const l = parseFloat(array[2])
+    const [h, s, l] = hexDestructure(hex)
 
     const newHue = adjustHue(h, 180)
 
@@ -48,10 +54,7 @@ function complementary(hex: string) {
 }
 
 function analogous(hex: string) {
-  const array = HexToHSL(hex).split(",")
-  const h = parseFloat(array[0])
-  const s = parseFloat(array[1])
-  const l = parseFloat(array[2])
+  const [h, s, l] = hexDestructure(hex)
 
   const colors = [
     hex,
@@ -63,10 +66,7 @@ function analogous(hex: string) {
 }
 
 function triadic(hex: string) {
-  const array = HexToHSL(hex).split(",")
-  const h = parseFloat(array[0])
-  const s = parseFloat(array[1])
-  const l = parseFloat(array[2])
+  const [h, s, l] = hexDestructure(hex)
 
   const colors = [
     hex,
@@ -78,10 +78,7 @@ function triadic(hex: string) {
 }
 
 function splitComplementary(hex: string) {
-  const array = HexToHSL(hex).split(",")
-  const h = parseFloat(array[0])
-  const s = parseFloat(array[1])
-  const l = parseFloat(array[2])
+  const [h, s, l] = hexDestructure(hex)
 
   const colors = [
     hex,
@@ -93,10 +90,7 @@ function splitComplementary(hex: string) {
 }
 
 function tetradic(hex: string) {
-  const array = HexToHSL(hex).split(",")
-  const h = parseFloat(array[0])
-  const s = parseFloat(array[1])
-  const l = parseFloat(array[2])
+  const [h, s, l] = hexDestructure(hex)
 
   const colors = [
     hex,
@@ -109,10 +103,7 @@ function tetradic(hex: string) {
 }
 
 function monochromatic(hex: string) {
-  const array = HexToHSL(hex).split(",")
-  const h = parseFloat(array[0])
-  const s = parseFloat(array[1])
-  const l = parseFloat(array[2])
+  const [h, s, l] = hexDestructure(hex)
 
   const ratio = 0.1 // Adjust this value to control how much the lightness changes
   const newL = Math.max(0, l * (1 + ratio))
@@ -123,10 +114,7 @@ function monochromatic(hex: string) {
 }
 
 function shadesTintsTones(hex: string, count = 4) {
-  const array = HexToHSL(hex).split(",")
-  const h = parseFloat(array[0])
-  const s = parseFloat(array[1])
-  const l = parseFloat(array[2])
+  const [h, s, l] = hexDestructure(hex)
 
   const step = 1 / (count + 1)
   const colors = []
@@ -141,10 +129,7 @@ function shadesTintsTones(hex: string, count = 4) {
 }
 
 function compoundColors(hex: string, angle = 30) {
-  const array = HexToHSL(hex).split(",")
-  const h = parseFloat(array[0])
-  const s = parseFloat(array[1])
-  const l = parseFloat(array[2])
+  const [h, s, l] = hexDestructure(hex)
 
   const colors = [
     hex,
@@ -156,10 +141,7 @@ function compoundColors(hex: string, angle = 30) {
 }
 
 function gradientPalette(hex: string, count = 4) {
-  const array = HexToHSL(hex).split(",")
-  const h1 = parseFloat(array[0])
-  const s1 = parseFloat(array[1])
-  const l1 = parseFloat(array[2])
+  const [h1, s1, l1] = hexDestructure(hex)
 
   const h2 = adjustHue(h1, 30)
   const s2 = s1
@@ -180,10 +162,7 @@ function gradientPalette(hex: string, count = 4) {
 }
 
 function mutedPalette(hex: string, count = 4) {
-  const array = HexToHSL(hex).split(",")
-  const h = parseFloat(array[0])
-  const s = parseFloat(array[1])
-  const l = parseFloat(array[2])
+  const [h, s, l] = hexDestructure(hex)
 
   const colors = []
 
