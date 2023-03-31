@@ -5,7 +5,6 @@ import { useAppSelector } from "../../../app/hooks"
 import { selectInbetweenColors } from "./paletteMixerSlice"
 import RgbToHex from "../../../utils/colors/RGBToHex"
 import ColorCard from "../../../components/ColorCard"
-import Tooltip from "../../../components/Tooltip"
 import ContrastChecker from "../../../utils/colors/ContrastChecker"
 
 export default function StopDisplay() {
@@ -47,7 +46,7 @@ export default function StopDisplay() {
             B
           </div>
         </div>
-        <div className="mr-20 basis-[15%] font-cursiveCustom text-center text-lg  italic text-slate-300">
+        <div className="mr-20 basis-[15%] text-center font-cursiveCustom text-lg  italic text-slate-300">
           Shades
         </div>
         <div></div>
@@ -77,11 +76,25 @@ export default function StopDisplay() {
                         </div>
                         <div className="rounded-md bg-slate-200 bg-opacity-60 px-2">
                           <span>
-                            {ContrastChecker(RgbToHex(stop.color), "#000000").ratio}
+                            {
+                              ContrastChecker(
+                                RgbToHex(stop.color),
+                                "#000000",
+                                toggleBold,
+                                false
+                              ).ratio
+                            }
                           </span>
                           &#32;
                           <span>
-                            {ContrastChecker(RgbToHex(stop.color), "#000000").rating}
+                            {
+                              ContrastChecker(
+                                RgbToHex(stop.color),
+                                "#000000",
+                                toggleBold,
+                                false
+                              ).rating
+                            }
                           </span>
                         </div>
                       </div>
@@ -96,11 +109,25 @@ export default function StopDisplay() {
                         </div>
                         <div className="rounded-md bg-slate-700 bg-opacity-60 px-2">
                           <span>
-                            {ContrastChecker(RgbToHex(stop.color), "#ffffff").ratio}
+                            {
+                              ContrastChecker(
+                                RgbToHex(stop.color),
+                                "#ffffff",
+                                toggleBold,
+                                false
+                              ).ratio
+                            }
                           </span>
                           &#32;
                           <span>
-                            {ContrastChecker(RgbToHex(stop.color), "#ffffff").rating}
+                            {
+                              ContrastChecker(
+                                RgbToHex(stop.color),
+                                "#ffffff",
+                                toggleBold,
+                                false
+                              ).rating
+                            }
                           </span>
                         </div>
                       </div>

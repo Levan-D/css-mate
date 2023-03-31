@@ -1,17 +1,29 @@
 /** @format */
 import HexToRGB from "./HexToRGB"
 
-export default function ContrastChecker(bgColor: string, textColor: string) {
+export default function ContrastChecker(
+  bgColor: string,
+  textColor: string,
+  fontLarge: boolean,
+  fontBold: boolean
+) {
   const bgLuminance = getRelativeLuminance(bgColor)
   const textLuminance = getRelativeLuminance(textColor)
   const contrastRatio =
     (Math.max(bgLuminance, textLuminance) + 0.05) /
     (Math.min(bgLuminance, textLuminance) + 0.05)
 
+  const isLargeText = fontLarge ? true : fontBold ? true : false
+  const isGigaLargeText = fontLarge && fontBold
+
   if (contrastRatio >= 7) {
     return { rating: "Great", ratio: "7 : 1" }
+  } else if (contrastRatio >= 4.5 && isGigaLargeText) {
+    return { rating: "Good", ratio: "4.5 : 1" }
   } else if (contrastRatio >= 4.5) {
     return { rating: "Ok", ratio: "4.5 : 1" }
+  } else if (contrastRatio >= 2.9 && isLargeText) {
+    return { rating: "Ok", ratio: "3 : 1" }
   } else if (contrastRatio >= 2.9) {
     return { rating: "Poor", ratio: "3 : 1" }
   } else {

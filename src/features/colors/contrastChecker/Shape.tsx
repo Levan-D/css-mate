@@ -12,7 +12,7 @@ export default function Shape() {
     shadow,
     shadowOpacity,
     textSize,
-  } = useAppSelector((store) => store.contrastChecker)
+  } = useAppSelector(store => store.contrastChecker)
 
   return (
     <div
@@ -28,9 +28,7 @@ export default function Shape() {
         <div></div>
       </div>
 
-      <div
-        className={`     flex h-72 w-[344px] flex-col justify-around  md:h-[390px]  `}
-      >
+      <div className={`     flex h-72 w-[344px] flex-col justify-around  md:h-[390px]  `}>
         <div className="mt-2 flex justify-center gap-8 text-black">
           <div
             className={`  ${textSize ? "text-[18px]" : "text-[14px]"} ${
@@ -45,9 +43,13 @@ export default function Shape() {
             Black
           </div>
           <div className=" rounded-md bg-slate-200 bg-opacity-60 px-4 py-1">
-            <span>{ContrastChecker(backgroundColor, "#000000").ratio}</span>
+            <span>
+              {ContrastChecker(backgroundColor, "#000000", bold, textSize).ratio}
+            </span>
             &#160;&#160;
-            <span>{ContrastChecker(backgroundColor, "#000000").rating}</span>
+            <span>
+              {ContrastChecker(backgroundColor, "#000000", bold, textSize).rating}
+            </span>
           </div>
         </div>
 
@@ -66,9 +68,13 @@ export default function Shape() {
             Custom
           </div>
           <div className=" rounded-md bg-slate-200 bg-opacity-60 px-4 py-1">
-            <span>{ContrastChecker(backgroundColor, textColor).ratio}</span>
+            <span>
+              {ContrastChecker(backgroundColor, textColor, bold, textSize).ratio}
+            </span>
             &#160;&#160;
-            <span>{ContrastChecker(backgroundColor, textColor).rating}</span>
+            <span>
+              {ContrastChecker(backgroundColor, textColor, bold, textSize).rating}
+            </span>
           </div>
         </div>
 
@@ -86,9 +92,13 @@ export default function Shape() {
             white
           </div>
           <div className=" rounded-md bg-slate-200 bg-opacity-60 px-4 py-1 text-black">
-            <span>{ContrastChecker(backgroundColor, "#ffffff").ratio}</span>
+            <span>
+              {ContrastChecker(backgroundColor, "#ffffff", bold, textSize).ratio}
+            </span>
             &#160; &#160;
-            <span>{ContrastChecker(backgroundColor, "#ffffff").rating}</span>
+            <span>
+              {ContrastChecker(backgroundColor, "#ffffff", bold, textSize).rating}
+            </span>
           </div>
         </div>
       </div>
