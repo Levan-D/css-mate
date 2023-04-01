@@ -24,8 +24,8 @@ const CategoryLayout = () => {
   return (
     <div>
       {!pathArray[1] ? (
-        <div className=" mt-[10vh]  ">
-          <h2 className=" mx-auto my-12 flex w-fit max-w-3xl  select-none text-center  !font-cursiveCustom text-4xl ">
+        <div>
+          <h2 className=" mx-auto my-20 flex w-fit max-w-3xl  select-none text-center  !font-cursiveCustom text-4xl ">
             {pageButtons[categoryIndex].catName.split("").map((letter, i) => (
               <div
                 key={uuidv4()}
