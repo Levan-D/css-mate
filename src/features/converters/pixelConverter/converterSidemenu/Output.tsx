@@ -3,17 +3,17 @@
 import React from "react"
 import { useAppSelector, useAppDispatch } from "../../../../app/hooks"
 
+type ConversionFn = (
+  numb: number,
+  baseNumb: number,
+  PPINumb: number,
+  state: boolean
+) => number
+
 export default function Output() {
   const { inputType, inputNumb, base, PPI, flip } = useAppSelector(
     store => store.pixelConverter
   )
-
-  type ConversionFn = (
-    numb: number,
-    baseNumb: number,
-    PPINumb: number,
-    state: boolean
-  ) => number
 
   const conversions: Record<string, ConversionFn> = {
     PT: (numb, _, __, state) => (state ? (numb * 96) / 72 : (numb * 72) / 96),
