@@ -8,52 +8,32 @@ export default function Output() {
     store => store.pixelConverter
   )
 
+  type ConversionFn = (
+    numb: number,
+    baseNumb: number,
+    PPINumb: number,
+    state: boolean
+  ) => number
+
+  const conversions: Record<string, ConversionFn> = {
+    PT: (numb, _, __, state) => (state ? (numb * 96) / 72 : (numb * 72) / 96),
+    EM: (numb, baseNumb, __, state) => (state ? numb / baseNumb : numb * baseNumb),
+    IN: (numb, __, PPINumb, state) => (state ? numb * PPINumb : numb / PPINumb),
+    CM: (numb, __, PPINumb, state) =>
+      state ? (numb * PPINumb) / 2.54 : (numb / PPINumb) * 2.54,
+    MM: (numb, __, PPINumb, state) =>
+      state ? (numb * PPINumb) / 25.4 : (numb / PPINumb) * 25.4,
+  }
+
   const calculateOutput = (
     type: string,
     numb: number,
     baseNumb: number,
     PPINumb: number,
     state: boolean
-  ) => {
-    switch (type) {
-      case "PT":
-        if (!state) {
-          return (numb * 72) / 96
-        } else if (state) {
-          return (numb * 96) / 72
-        }
-
-      case "EM":
-        if (!state) {
-          return numb * baseNumb
-        } else if (state) {
-          return numb / baseNumb
-        }
-
-      case "IN":
-        if (!state) {
-          return numb / PPINumb
-        } else if (state) {
-          return numb * PPINumb
-        }
-
-      case "CM":
-        if (!state) {
-          return (numb / PPINumb) * 2.54
-        } else if (state) {
-          return (numb * PPINumb) / 2.54
-        }
-
-      case "MM":
-        if (!state) {
-          return (numb / PPINumb) * 25.4
-        } else if (state) {
-          return (numb * PPINumb) / 25.4
-        }
-
-      default:
-        return 0
-    }
+  ): number => {
+    const conversionFn = conversions[type]
+    return conversionFn ? conversionFn(numb, baseNumb, PPINumb, state) : 0
   }
 
   return (
