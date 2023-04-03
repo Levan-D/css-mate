@@ -6,7 +6,7 @@ CSS-Mate is a React application designed to help web developers visualize CSS ru
 ## Features
 
 - Visualize CSS rules in real-time with instant updates
-- View and use CSS cheat sheets for quick reference
+- View and use HTML cheat sheets for quick reference
 - Experiment with color palettes
 - Fully responsive design that works on all screen sizes 
 
