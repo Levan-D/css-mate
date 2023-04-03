@@ -12,7 +12,7 @@ CSS-Mate is a React application designed to help web developers visualize CSS ru
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/Levan-D/css-mate.git`
+1. Clone the repository: ```sh git clone https://github.com/Levan-D/css-mate.git```
 2. Install dependencies: ``npm install``
 3. Start the app: `npm start`
 4. Open `http://localhost:3000` in your browser
