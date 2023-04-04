@@ -159,11 +159,11 @@ export default function BlogGenerator({ data }: Data) {
         {data.title}
       </h2>
       {data.sections.map(section => (
-        <div key={uuidv4()}>
-          <h3 id={section.id} className="mt-16 mb-4 font-cursiveCustom text-xl">
+        <div key={uuidv4()} className="menuContainer mb-4  mt-16 ">
+          <h3 id={section.id} className="menuHeader py-4  px-6 font-cursiveCustom text-xl">
             {section.title}
           </h3>
-          <div key={uuidv4()} className="my-8">
+          <div key={uuidv4()} className="my-8 py-4  px-8">
             {section.content.map(piece => SwitchFunc(piece))}
           </div>
         </div>

@@ -437,7 +437,7 @@ export const blogData: BlogData = {
         {
           type: "demo",
           styleC:
-            "z-40 block !my-40 mx-auto md:mx-0 w-[300px]  rotate-[-7deg] rounded-sm bg-gradient-to-r from-orange-400 to-orange-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] md:rotate-[-25deg] ",
+            " -translate-x-[50px]   z-40 block !my-40 mx-auto md:mx-0 w-[300px]  rotate-[-7deg] rounded-sm bg-gradient-to-r from-orange-400 to-orange-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] md:rotate-[-25deg] ",
           styleQ: "block translate-y-[20px] font-cursiveCustom text-lg",
           quote: "Carpe diem. Seize the day, boys. Make your lives extraordinary..",
           styleA:
@@ -447,7 +447,7 @@ export const blogData: BlogData = {
         {
           type: "demo",
           styleC:
-            "z-20 mt-20 absolute hidden w-[300px] translate-y-[-550px] translate-x-[300px] rotate-[30deg]  rotate-[30deg] rounded-sm  bg-gradient-to-r from-red-400  to-red-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)]  md:block md:translate-y-[-520px] lg:rotate-[4deg]",
+            "z-20 mt-20 absolute hidden w-[300px]  translate-x-[250px] rotate-[30deg]  rotate-[30deg] rounded-sm  bg-gradient-to-r from-red-400  to-red-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)]  md:block md:translate-y-[-550px] lg:rotate-[4deg]",
           styleQ:
             "block translate-y-[20px] translate-x-[15px] font-cursiveCustom text-lg",
           quote: "They may take our lives, but they'll never take our freedom!",
@@ -458,7 +458,7 @@ export const blogData: BlogData = {
         {
           type: "demo",
           styleC:
-            " z-20 mt-20 absolute hidden w-[300px] translate-y-[-450px] translate-x-[600px]   rotate-[30deg] rounded-sm  bg-gradient-to-r from-purple-400 to-purple-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)]  lg:block",
+            " z-20 mt-20 absolute hidden w-[300px] translate-y-[-450px] translate-x-[500px]   rotate-[30deg] rounded-sm  bg-gradient-to-r from-purple-400 to-purple-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)]  lg:block",
           styleQ:
             "block  translate-y-[30px] translate-x-[15px] font-cursiveCustom text-lg",
           quote: "What we've got here is failure to communicate.",
