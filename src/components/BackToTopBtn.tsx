@@ -34,7 +34,7 @@ const BackToTopBtn = () => {
         onClick={scrollToTopSmooth}
         className={`${
           !showButton ? " collapse opacity-0" : " opacity-100"
-        }  fixed bottom-4 right-4 cursor-pointer rounded-full bg-slate-100  p-3 shadow-[3px_3px_2px_0px_rgba(_255,_114,_94,0.40)] duration-300 active:bg-slate-500 sm:hover:translate-y-[-5px] 8xl:right-[calc(50%-1240px)]`}
+        }  fixed bottom-4 right-4 z-50 cursor-pointer rounded-full bg-slate-100  p-3 shadow-[3px_3px_2px_0px_rgba(_255,_114,_94,0.40)] duration-300 active:bg-slate-500 sm:hover:translate-y-[-5px] 8xl:right-[calc(50%-1240px)]`}
       >
         <ChevronIcon
           height={26}
