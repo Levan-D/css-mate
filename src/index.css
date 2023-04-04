@@ -15,13 +15,13 @@
     @apply w-fit cursor-pointer select-none rounded-md bg-slate-400 py-2 px-4  font-bold text-slate-800 shadow-primaryDark duration-200 active:brightness-90 sm:hover:brightness-110;
   }
   .btnSecondary {
-    @apply w-fit  cursor-pointer select-none rounded-md bg-blue-300 py-2 px-4 text-slate-900  shadow-primaryDark  active:brightness-90 sm:hover:bg-blue-300 sm:hover:brightness-110;
+    @apply w-fit  cursor-pointer  select-none rounded-md bg-blue-300 py-2 px-4 text-slate-900  shadow-primaryDark  active:brightness-90 sm:hover:bg-blue-300 sm:hover:brightness-110;
   }
   .btnSecondaryDisabled {
     @apply w-fit  cursor-pointer select-none rounded-md bg-transparent px-4 pt-2 text-white shadow-[inset_0px_0px_0px_1px_rgba(255,255,255,1),2px_3px_2px_0px_rgba(255,_255,_255,0.3)] duration-200 active:brightness-90;
   }
   .menuHeader {
-    @apply rounded-t-lg border-b-2 border-darkJungle-500 bg-darkJungle-600 font-semibold;
+    @apply rounded-t-lg border-b-2 border-darkJungle-500 bg-darkJungle-700 font-semibold;
   }
   .menuContainer {
     @apply rounded-xl border-2 border-darkJungle-700 bg-darkJungle-800;

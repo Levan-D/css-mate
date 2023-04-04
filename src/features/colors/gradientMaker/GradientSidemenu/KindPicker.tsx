@@ -23,7 +23,7 @@ const KindPicker = () => {
           }}
           className={`${
             kind === btnKind.value ? "btnSecondary" : "btnSecondaryDisabled"
-          }   h-8 text-sm leading-4`}
+          }   h-8 text-sm  leading-4`}
         >
           {btnKind.name}
         </div>

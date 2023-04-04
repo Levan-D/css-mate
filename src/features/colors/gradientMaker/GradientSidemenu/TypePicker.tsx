@@ -18,9 +18,7 @@ const TypePicker = () => {
           onClick={() => {
             dispatch(setType(btnType))
           }}
-          className={`${
-            type === btnType ? "btnSecondary" : "btnSecondaryDisabled"
-          }   h-8 text-sm leading-4`}
+          className={`${type === btnType ? "btnSecondary" : "btnSecondaryDisabled"}   `}
         >
           {btnType.charAt(0).toUpperCase() + btnType.slice(1)}
         </div>
