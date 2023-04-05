@@ -1,26 +1,26 @@
 /** @format */
 
-import FlooFGPTIcon from "../../assets/icons/floofGPT.png"
-import { useAppDispatch, useAppSelector } from "../../app/hooks"
-import { setIsOpen, setIsExpanded } from "./floofGPTSlice"
-import { useLocation, Link } from "react-router-dom"
-import Tooltip from "../../components/Tooltip"
+import FlooFGPTIcon from "../../assets/icons/floofGPT.png";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { setIsOpen, setIsExpanded } from "./floofGPTSlice";
+import { Link } from "react-router-dom";
+import Tooltip from "../../components/Tooltip";
 
 const Nav = () => {
-  const dispatch = useAppDispatch()
-  const { isExpanded } = useAppSelector(state => state.floof)
-  const location = useLocation()
+  const dispatch = useAppDispatch();
+  const { isExpanded } = useAppSelector((state) => state.floof);
+  const { path } = useAppSelector((store) => store.navbar);
 
   const meow = () => {
-    let audio = new Audio("/meow.mp3")
-    audio.volume = 0.2
-    audio.play()
-  }
+    let audio = new Audio("/meow.mp3");
+    audio.volume = 0.2;
+    audio.play();
+  };
 
   const handleMinimize = () => {
-    dispatch(setIsOpen(false))
-    dispatch(setIsExpanded(false))
-  }
+    dispatch(setIsOpen(false));
+    dispatch(setIsExpanded(false));
+  };
 
   return (
     <div className={` flex justify-between  bg-primary p-1 sm:rounded-t-xl`}>
@@ -39,13 +39,15 @@ const Nav = () => {
         >
           : premier A.I. floofsistant
         </span>
-        {location.pathname === "/floof-gpt" && (
-          <span className={` hidden font-normal  italic duration-200 sm:inline  `}>
+        {path.includes("/floof-gpt") && (
+          <span
+            className={` hidden font-normal  italic duration-200 sm:inline  `}
+          >
             : premier A.I. floofsistant
           </span>
         )}
       </p>
-      {location.pathname !== "/floof-gpt" && (
+      {!path.includes("/floof-gpt") && (
         <>
           <Link to="/floof-gpt">
             <Tooltip text="Fullscreen">
@@ -79,7 +81,7 @@ const Nav = () => {
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

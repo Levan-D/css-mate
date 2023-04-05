@@ -43,7 +43,7 @@ const Navbar = () => {
         !location.pathname.includes("/gradient-maker")
           ? "bg-primary"
           : "bg-primary md:bg-transparent"
-      }  z-40 h-fit     md:h-16`}
+      }  z-20 h-fit     md:h-16`}
     >
       <nav className="mx-auto h-fit max-w-4xl items-center justify-between align-bottom md:flex md:h-16 md:px-4">
         {/* home */}

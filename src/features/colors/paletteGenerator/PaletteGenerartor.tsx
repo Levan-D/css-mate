@@ -19,7 +19,7 @@ export default function PaletteGenerartor() {
       </p>
 
       <p className="mb-8 text-center font-cursiveCustom text-base">
-        Just input a color and explore!
+        Just input a color and explore or <br /> choose one of our carefully curated palettes from the side menu!
       </p>
 
       <div className="mx-auto   mt-12 w-fit">
