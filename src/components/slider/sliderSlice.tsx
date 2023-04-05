@@ -7,7 +7,6 @@ interface navbarState {
   isMin: boolean;
   minWidth: number;
   maxWidth: number;
-  title: string;
   renderedPaths: ["/gradient-maker", "/palette-generator"];
 }
 
@@ -16,7 +15,6 @@ const initialState: navbarState = {
   isMin: true,
   minWidth: 400,
   maxWidth: 700,
-  title: "dasdsadadasdadasd",
   renderedPaths: ["/gradient-maker", "/palette-generator"],
 };
 

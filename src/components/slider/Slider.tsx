@@ -53,7 +53,7 @@ export default function Slider() {
                 width={26}
                 fill={!isOpen ? "white" : "#ff725e"}
                 className={`${
-                  isOpen ? "translate-x-[-26px] rotate-[180deg]" : ""
+                  isOpen ? "translate-x-[-30px] rotate-[180deg]" : ""
                 } cursor-pointer duration-300 `}
               />
             </div>
