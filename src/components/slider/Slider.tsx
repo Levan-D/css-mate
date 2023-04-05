@@ -1,34 +1,36 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { setIsOpen, setIsMin } from "./sliderSlice";
+/** @format */
+
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { setIsOpen, setIsMin } from "./sliderSlice"
 // @ts-ignore
-import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg";
+import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg"
 
 export default function Slider() {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
   const { isOpen, isMin, minWidth, maxWidth, renderedPaths } = useAppSelector(
-    (store) => store.slider
-  );
-  const { path } = useAppSelector((store) => store.navbar);
+    store => store.slider
+  )
+  const { path } = useAppSelector(store => store.navbar)
 
   const generateTitle = (path: string) => {
     if (path.includes("/gradient-maker")) {
-      return "Gradient swatches";
+      return "Gradient swatches"
     } else if (path.includes("/palette-generator")) {
-      return "Palette swatches";
+      return "Palette swatches"
     }
-  };
+  }
 
   const generateBody = (path: string) => {
     if (path.includes("/gradient-maker")) {
-      return "Gradient swatches";
+      return "Gradient swatches"
     } else if (path.includes("/palette-generator")) {
-      return "Palette swatches";
+      return "Palette swatches"
     }
-  };
+  }
 
   return (
     <>
-      {renderedPaths.some((x) => path.includes(x)) && (
+      {renderedPaths.some(x => path.includes(x)) && (
         <>
           <div
             className={`fixed top-0 left-0 z-50 flex  h-screen  justify-center transition-transform duration-500`}
@@ -77,14 +79,15 @@ export default function Slider() {
               />
             </div>
           </div>
-          {isOpen && (
-            <div
-              className="fixed top-0 right-0 bottom-0 left-0 z-30 bg-slate-900 opacity-20		 "
-              onMouseDown={() => dispatch(setIsOpen())}
-            ></div>
-          )}
+
+          <div
+            className={` ${
+              isOpen ? "visible opacity-20" : "collapse opacity-0"
+            }  fixed top-0 right-0 bottom-0 left-0 z-30 bg-slate-900 duration-500`}
+            onMouseDown={() => dispatch(setIsOpen())}
+          ></div>
         </>
       )}
     </>
-  );
+  )
 }
