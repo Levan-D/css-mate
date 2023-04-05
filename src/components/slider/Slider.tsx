@@ -38,7 +38,9 @@ export default function Slider() {
 
   const generateBody = (path: string) => {
     if (path.includes("/gradient-maker")) {
-      return gradientSwatches.map((swatch, i) => <GradientCard swatch={swatch} key={i} />)
+      return gradientSwatches.map((swatch, i) => (
+        <GradientCard apply={true} swatch={swatch} key={i} />
+      ))
     } else if (path.includes("/palette-generator")) {
       return "Palette swatches"
     }
@@ -91,7 +93,7 @@ export default function Slider() {
               <div
                 className={` ${
                   isOpen && !isChanging ? `opacity-100` : `opacity-0`
-                } invisTrack py-4 mr-10 flex h-[92vh] flex-wrap justify-center gap-4 overflow-y-scroll transition-opacity delay-200 duration-300`}
+                } invisTrack mr-10 flex h-[92vh] flex-wrap justify-center gap-4 overflow-y-scroll py-4 transition-opacity delay-200 duration-300`}
               >
                 {generateBody(path)}
               </div>
@@ -115,7 +117,7 @@ export default function Slider() {
           <div
             className={` ${
               isOpen ? "visible opacity-20" : "collapse opacity-0"
-            }  fixed top-0 right-0 bottom-0 left-0 z-30 bg-slate-900 duration-1000`}
+            }  fixed top-0 right-0 bottom-0 left-0 z-30 bg-slate-900 duration-[700ms]`}
             onMouseDown={() => dispatch(setIsOpen(false))}
           ></div>
         </>

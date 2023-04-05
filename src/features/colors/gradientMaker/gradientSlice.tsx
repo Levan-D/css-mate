@@ -5,10 +5,11 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../../app/store"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
+import type { gradientSwatches } from "../../../data/GradientData"
 
 interface initialStateType {
-  type: string
-  kind: string
+  type: "linear" | "conic" | "radial"
+  kind: "repeating" | "constant"
   currentTab: number
 
   linearParams: {
@@ -84,10 +85,10 @@ const GradientSlice = createSlice({
   initialState,
   reducers: {
     resetState: () => initialState,
-    setType: (state, action: PayloadAction<string>) => {
+    setType: (state, action: PayloadAction<initialStateType["type"]>) => {
       state.type = action.payload
     },
-    setKind: (state, action: PayloadAction<string>) => {
+    setKind: (state, action: PayloadAction<initialStateType["kind"]>) => {
       state.kind = action.payload
     },
     setRadialShape: (state, action: PayloadAction<string>) => {
@@ -120,6 +121,23 @@ const GradientSlice = createSlice({
     ) => {
       state.stops[action.payload.index].stop.percent = action.payload.percent
     },
+
+    setNewStops: {
+      reducer: (state, action: PayloadAction<initialStateType["stops"]>) => {
+        // The action.payload is already modified by the prepare function
+        state.stops = action.payload
+      },
+      prepare: (payload: gradientSwatches["stops"]) => {
+        // Modify the payload as needed
+
+        const modifiedPayload = payload.map(x => {
+          return { id: uuidv4(), stop: x }
+        })
+        // Return the modified payload
+        return { payload: modifiedPayload }
+      },
+    },
+
     addNewStop: state => {
       if (state.stops.length < 10) {
         state.stops.push({
@@ -181,6 +199,7 @@ export const {
   setStopOpacity,
   setStopPercentage,
   addNewStop,
+  setNewStops,
   deleteStop,
   setConicDegree,
   setLinearDegree,
