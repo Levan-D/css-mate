@@ -62,7 +62,7 @@ export default function PaletteSideMenu({ setMainColor }: props) {
   }
 
   return (
-    <SideMenu title={`Palette Generator`}>
+    <SideMenu title={`Palette generator`}>
       <div className="menuContainer  m-2 ">
         <div className="menuHeader   py-1 text-center text-xs italic text-slate-200">
           Input Color Value

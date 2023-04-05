@@ -1,20 +1,21 @@
 /** @format */
 
-import React, { useState } from "react"
-import PaletteSideMenu from "./PaletteSideMenu"
-import PaletteOutput from "./PaletteOutput"
+import React, { useState } from "react";
+import PaletteSideMenu from "./PaletteSideMenu";
+import PaletteOutput from "./PaletteOutput";
 
 export default function PaletteGenerartor() {
-  const [mainColor, setMainColor] = useState("#5ea1ff")
+  const [mainColor, setMainColor] = useState("#5ea1ff");
 
   return (
-    <div className=" mx-4   mb-16  mt-8">
+    <main className=" mx-4   mb-16  mt-8">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Generate <span className="text-secondary-300">color palettes</span> for your
-        project with ease
+        Generate <span className="text-secondary-300">color palettes</span> for
+        your project with ease
       </h1>
       <p className=" mb-2 text-center font-cursiveCustom text-base">
-        Discover the perfect color palette for your projects with our all-in-one generator
+        Discover the perfect color palette for your projects with our all-in-one
+        generator
       </p>
 
       <p className="mb-8 text-center font-cursiveCustom text-base">
@@ -26,6 +27,6 @@ export default function PaletteGenerartor() {
       </div>
 
       <PaletteOutput mainColor={mainColor} />
-    </div>
-  )
+    </main>
+  );
 }

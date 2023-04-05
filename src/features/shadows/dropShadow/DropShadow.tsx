@@ -11,15 +11,16 @@ const DropShadow = () => {
   const TOCData = blogData.sections.map(section => section.id)
   TOCData.unshift(blogData.id)
   TOCData.unshift(`Tool`)
+  
   return (
-    <div className=" my-16 mx-4">
+    <main className=" my-16 mx-4">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Generate <span className="text-secondary-300">drop shadows</span> for your project
-        with ease
+        Generate <span className="text-secondary-300">drop shadows</span> for
+        your project with ease
       </h1>
-      <div className="mb-8 text-center font-cursiveCustom text-base">
+      <p className="mb-8 text-center font-cursiveCustom text-base">
         Scroll below for tips & tricks
-      </div>
+      </p>
       <TableOfContents TOCData={TOCData} />
       <div
         id="Tool"
@@ -34,8 +35,8 @@ const DropShadow = () => {
       <div className="mx-auto mt-56 max-w-3xl ">
         <BlogGenerator data={blogData} />
       </div>
-    </div>
-  )
+    </main>
+  );
 }
 
 export default DropShadow

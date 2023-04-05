@@ -5,7 +5,7 @@ import Shape from "./Shape"
 
 export default function ColorConverter() {
   return (
-    <div className="mx-4  mt-8   ">
+    <main className="mx-4  my-8   ">
       <h1 className="mb-8 text-center font-cursiveCustom   text-2xl">
         Convert
         <span className="text-secondary-300">&#32;colors&#32;</span>
@@ -14,6 +14,6 @@ export default function ColorConverter() {
 
       <ConverterSidemenu />
       <Shape />
-    </div>
-  )
+    </main>
+  );
 }

@@ -1,22 +1,22 @@
 /** @format */
 
-import { BlogData } from "../../../components/BlogGenerator"
+import { BlogData } from "../../../components/BlogGenerator";
 
 export type boxShadowPresetsType = {
-  name: string
+  name: string;
   presets: {
-    titile: string
+    titile: string;
     settings: {
-      horizontal: number
-      vertical: number
-      blur: number
-      spread: number
-      opacity: number
-      inset: boolean
-      shadowColor: string
-    }
-  }[]
-}
+      horizontal: number;
+      vertical: number;
+      blur: number;
+      spread: number;
+      opacity: number;
+      inset: boolean;
+      shadowColor: string;
+    };
+  }[];
+};
 
 export const boxShadowPresets: boxShadowPresetsType[] = [
   {
@@ -214,7 +214,7 @@ export const boxShadowPresets: boxShadowPresetsType[] = [
       },
     ],
   },
-]
+];
 
 export const btnResponse: string[] = [
   "Dont click me!",
@@ -235,12 +235,13 @@ export const btnResponse: string[] = [
   "3",
   "2",
   "1",
-]
+];
 
 export const blogData: BlogData = {
   title: (
     <span>
-      The aforementioned <span className="text-secondary-300">tips & tricks</span>
+      The aforementioned{" "}
+      <span className="text-secondary-300">tips & tricks</span>
     </span>
   ),
   id: "Tips & tricks",
@@ -439,7 +440,8 @@ export const blogData: BlogData = {
           styleC:
             " -translate-x-[50px]   z-40 block !my-40 mx-auto md:mx-0 w-[300px]  rotate-[-7deg] rounded-sm bg-gradient-to-r from-orange-400 to-orange-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)] md:rotate-[-25deg] ",
           styleQ: "block translate-y-[20px] font-cursiveCustom text-lg",
-          quote: "Carpe diem. Seize the day, boys. Make your lives extraordinary..",
+          quote:
+            "Carpe diem. Seize the day, boys. Make your lives extraordinary..",
           styleA:
             "mt-4 translate-y-[105px] translate-x-4 text-right font-handWritten text-2xl font-bold text-slate-900",
           author: "John Keating",
@@ -447,7 +449,7 @@ export const blogData: BlogData = {
         {
           type: "demo",
           styleC:
-            "z-20 mt-20 absolute hidden w-[300px]  translate-x-[250px] rotate-[30deg]  rotate-[30deg] rounded-sm  bg-gradient-to-r from-red-400  to-red-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)]  md:block md:translate-y-[-550px] lg:rotate-[4deg]",
+            "z-20 mt-20 absolute hidden w-[300px]  lg:translate-x-[250px] md:translate-x-[350px] rotate-[30deg]  rotate-[30deg] rounded-sm  bg-gradient-to-r from-red-400  to-red-500 px-6 py-16 text-white shadow-[0px_0px_0px_30px_rgba(230,230,230,1),0px_30px_0px_30px_rgba(230,230,230,1),-10px_60px_30px_5px_rgba(0,_0,_0,1),35px_60px_30px_0px_rgba(0,_0,_0,1),35px_-10px_30px_0px_rgba(0,_0,_0,1)]  md:block md:translate-y-[-500px]  lg:translate-y-[-550px] lg:rotate-[4deg]",
           styleQ:
             "block translate-y-[20px] translate-x-[15px] font-cursiveCustom text-lg",
           quote: "They may take our lives, but they'll never take our freedom!",
@@ -479,4 +481,4 @@ export const blogData: BlogData = {
       ],
     },
   ],
-}
+};

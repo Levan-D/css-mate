@@ -10,13 +10,15 @@ const Gradient = () => {
   const [visibility, setVisibility] = useState(true)
 
   return (
-    <div className="mx-4 mb-16 mt-8   ">
-      <h1 className="mb-8 text-center font-cursiveCustom   text-2xl drop-shadow-[0px_0px_5px_rgba(0,_0,_0,0.7)] filter">
+    <main className="mx-4 mb-16 mt-8   ">
+      <h1 className="mb-2 text-center font-cursiveCustom   text-2xl drop-shadow-[0px_0px_3px_rgba(0,_0,_0,0.7)] filter">
         Generate
-        <span className="text-secondary-300">&#32;CSS linear gradient&#32;</span>
+        <span className="text-secondary-300">
+          &#32;CSS linear gradient&#32;
+        </span>
         backgrounds below
         <span
-          onClick={() => setVisibility(x => !x)}
+          onClick={() => setVisibility((x) => !x)}
           className={`ml-2 inline-block h-7 w-7 translate-y-1 cursor-pointer rounded-full bg-white duration-300  ${
             !visibility
               ? ` hover:shadow-[inset_0px_0px_0px_2px_#ff725e] `
@@ -35,6 +37,9 @@ const Gradient = () => {
           />
         </span>
       </h1>
+      <p className="mb-8 text-center font-cursiveCustom text-base drop-shadow-[0px_0px_3px_rgba(0,_0,_0,0.7)] filter">
+        Check out gradient swatches from the left slider menu
+      </p>
 
       <div
         className={`${
@@ -46,8 +51,8 @@ const Gradient = () => {
           <GradientOutput />
         </div>
       </div>
-    </div>
-  )
+    </main>
+  );
 }
 
 export default Gradient

@@ -8,21 +8,22 @@ import PaletteOutput from "./PaletteOutput"
 
 export default function PaletteMixer() {
   return (
-    <div className=" mx-4   mb-16  mt-8">
+    <main className=" mx-4   mb-16  mt-8">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Mix <span className="text-secondary-300">colors</span> and create gradients below
+        Mix <span className="text-secondary-300">colors</span> and create
+        gradients below
       </h1>
       <p className=" mb-2 text-center font-cursiveCustom text-base">
-        Pick the starting & ending color by clicking the shade rectangle, from swatches,
-        or by entering a custom hex value.
+        Pick the starting & ending color by clicking the shade rectangle, from
+        swatches, or by entering a custom hex value.
       </p>
       <p className="mb-2 text-center font-cursiveCustom text-base">
-        Pick a color close to white as the last shade to create a neutral tint palette for
-        your styleguide.
+        Pick a color close to white as the last shade to create a neutral tint
+        palette for your styleguide.
       </p>
       <p className="mb-8 text-center font-cursiveCustom text-base">
-        You can also check contrast ratios of backgrounds and textcolors for readability
-        based on w3 standards.
+        You can also check contrast ratios of backgrounds and textcolors for
+        readability based on w3 standards.
       </p>
 
       <div className="mt-16 mb-16 flex flex-col justify-between gap-16 md:flex-row md:justify-center md:gap-4 lg:gap-12 ">
@@ -32,6 +33,6 @@ export default function PaletteMixer() {
         <StopDisplay />
       </div>
       <PaletteOutput />
-    </div>
-  )
+    </main>
+  );
 }

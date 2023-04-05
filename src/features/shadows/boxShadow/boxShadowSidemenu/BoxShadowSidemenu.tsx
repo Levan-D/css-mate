@@ -1,10 +1,10 @@
 /** @format */
 
-import React from "react"
-import SideMenu from "../../../../components/SideMenu"
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import ColorPicker from "../../../../components/ColorPicker"
-import Presets from "./Presets"
+import React from "react";
+import SideMenu from "../../../../components/SideMenu";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
+import ColorPicker from "../../../../components/ColorPicker";
+import Presets from "./Presets";
 import {
   setColor,
   resetState as resetStateAction,
@@ -13,36 +13,58 @@ import {
   deleteTabPage,
   selectBoxShadowTabs,
   addBoxShadow,
-} from "../boxShadowSlice"
-import Sliders from "./Sliders"
-import TabsNConditions from "../../../../components/TabsNConditions"
+} from "../boxShadowSlice";
+import Sliders from "./Sliders";
+import TabsNConditions from "../../../../components/TabsNConditions";
 
 const BoxShadowSidemenu = () => {
-  const dispatch = useAppDispatch()
-  const { boxShadowData, currentTab } = useAppSelector(state => state.boxShadow)
-  const tabs = useAppSelector(selectBoxShadowTabs)
+  const dispatch = useAppDispatch();
+  const { boxShadowData, currentTab } = useAppSelector(
+    (state) => state.boxShadow
+  );
+  const tabs = useAppSelector(selectBoxShadowTabs);
 
   const resetState = (): void => {
-    dispatch(resetStateAction())
-  }
+    dispatch(resetStateAction());
+  };
 
   const handleColorPick = (color: string) => {
-    dispatch(setColor(color))
-  }
+    dispatch(setColor(color));
+  };
 
   const handleSetTabPage = (i: number) => {
-    dispatch(setTabPage(i))
-  }
+    dispatch(setTabPage(i));
+  };
   const handleTabDelete = (id: string) => {
-    dispatch(deleteTabPage(id))
-  }
+    dispatch(deleteTabPage(id));
+  };
   const handleAddBoxShadow = (id: string) => {
-    dispatch(addBoxShadow())
-  }
+    dispatch(addBoxShadow());
+  };
+
+  const toolInfo = (
+    <div className="w-[380px]">
+      <h4 className="menuHeader px-4  py-1">How to use:</h4>
+      <ul className="my-2 ml-4 list-decimal  px-4 py-1 text-sm text-slate-200 [&>*]:my-1">
+        <li>Move sliders to adjust the shadow.</li>
+        <li>Click "+" button to add an additional shadow.</li>
+        <li>
+          Choose shadow color from predefined colors or customize it yourself
+          with "cust" button.
+        </li>
+        <li>Toggle inner and outer shadow with "Inner" button.</li>
+        <li>Scroll below and copy the CSS rule.</li>
+      </ul>
+    </div>
+  );
 
   return (
     <div>
-      <SideMenu title={`Box shadow config`} resetState={resetState}>
+      <SideMenu
+        title={`Box shadow config`}
+        resetState={resetState}
+        toolInfo={toolInfo}
+      >
         <div className="menuContainer m-4  pb-4  ">
           {tabs && (
             <TabsNConditions
@@ -72,7 +94,7 @@ const BoxShadowSidemenu = () => {
         <Presets />
       </SideMenu>
     </div>
-  )
-}
+  );
+};
 
-export default BoxShadowSidemenu
+export default BoxShadowSidemenu;
