@@ -1,9 +1,12 @@
 /** @format */
+import { useEffect, useState } from "react"
 
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setIsOpen, setIsMin } from "./sliderSlice"
 // @ts-ignore
 import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg"
+import GradientCard from "../GradientCard"
+import { gradientSwatches } from "../../data/GradientData"
 
 export default function Slider() {
   const dispatch = useAppDispatch()
@@ -11,6 +14,19 @@ export default function Slider() {
     store => store.slider
   )
   const { path } = useAppSelector(store => store.navbar)
+  const [isChanging, setIsChanging] = useState(false)
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [isOpen])
 
   const generateTitle = (path: string) => {
     if (path.includes("/gradient-maker")) {
@@ -22,9 +38,19 @@ export default function Slider() {
 
   const generateBody = (path: string) => {
     if (path.includes("/gradient-maker")) {
-      return "Gradient swatches"
+      return gradientSwatches.map((swatch, i) => <GradientCard swatch={swatch} key={i} />)
     } else if (path.includes("/palette-generator")) {
       return "Palette swatches"
+    }
+  }
+
+  const handleIsChanging = () => {
+    if (!isChanging) {
+      setIsChanging(true)
+      setTimeout(() => {
+        dispatch(setIsMin())
+        setIsChanging(false)
+      }, 450)
     }
   }
 
@@ -50,7 +76,7 @@ export default function Slider() {
                 <h3 className="  p-2 font-cursiveCustom text-lg">
                   {generateTitle(path)}
                 </h3>
-                <div onClick={() => dispatch(setIsMin())}>
+                <div onClick={handleIsChanging}>
                   <ChevronIcon
                     height={26}
                     width={26}
@@ -62,7 +88,13 @@ export default function Slider() {
                 </div>
               </div>
 
-              <div> {generateBody(path)}</div>
+              <div
+                className={` ${
+                  isOpen && !isChanging ? `opacity-100` : `opacity-0`
+                } invisTrack py-4 mr-10 flex h-[92vh] flex-wrap justify-center gap-4 overflow-y-scroll transition-opacity delay-200 duration-300`}
+              >
+                {generateBody(path)}
+              </div>
             </div>
 
             <div
@@ -83,8 +115,8 @@ export default function Slider() {
           <div
             className={` ${
               isOpen ? "visible opacity-20" : "collapse opacity-0"
-            }  fixed top-0 right-0 bottom-0 left-0 z-30 bg-slate-900 duration-500`}
-            onMouseDown={() => dispatch(setIsOpen())}
+            }  fixed top-0 right-0 bottom-0 left-0 z-30 bg-slate-900 duration-1000`}
+            onMouseDown={() => dispatch(setIsOpen(false))}
           ></div>
         </>
       )}

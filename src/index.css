@@ -84,15 +84,27 @@
     border-radius: 5px;
   }
 
+  .invisTrack::-webkit-scrollbar-track {
+    background: #4e5d71;
+    border-radius: 5px;
+  }
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #ff725e;
+    border-radius: 5px;
+  }
+  .invisTrack::-webkit-scrollbar-thumb {
+    background: #3a495c;
     border-radius: 5px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #e6614f;
+  }
+  .invisTrack::-webkit-scrollbar-thumb:hover {
+    background: rgb(56, 70, 87);
   }
   /* scrollbar */
   .gridChild {
