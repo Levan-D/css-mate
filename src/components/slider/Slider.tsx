@@ -8,7 +8,7 @@ export default function Slider() {
   const { isOpen, isMin, minWidth, maxWidth, title, renderedPaths } =
     useAppSelector((store) => store.slider);
   const { path } = useAppSelector((store) => store.navbar);
-  console.log("path:", renderedPaths);
+
   return (
     <>
       {renderedPaths.some((x) => path.includes(x)) && (
@@ -60,7 +60,7 @@ export default function Slider() {
           </div>
           {isOpen && (
             <div
-              className="fixed top-0 right-0 bottom-0 left-0 z-30 backdrop-blur-sm		 "
+              className="fixed top-0 right-0 bottom-0 left-0 z-30 bg-slate-900 opacity-20		 "
               onMouseDown={() => dispatch(setIsOpen())}
             ></div>
           )}
