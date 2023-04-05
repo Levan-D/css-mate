@@ -5,9 +5,26 @@ import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg";
 
 export default function Slider() {
   const dispatch = useAppDispatch();
-  const { isOpen, isMin, minWidth, maxWidth, title, renderedPaths } =
-    useAppSelector((store) => store.slider);
+  const { isOpen, isMin, minWidth, maxWidth, renderedPaths } = useAppSelector(
+    (store) => store.slider
+  );
   const { path } = useAppSelector((store) => store.navbar);
+
+  const generateTitle = (path: string) => {
+    if (path.includes("/gradient-maker")) {
+      return "Gradient swatches";
+    } else if (path.includes("/palette-generator")) {
+      return "Palette swatches";
+    }
+  };
+
+  const generateBody = (path: string) => {
+    if (path.includes("/gradient-maker")) {
+      return "Gradient swatches";
+    } else if (path.includes("/palette-generator")) {
+      return "Palette swatches";
+    }
+  };
 
   return (
     <>
@@ -28,7 +45,9 @@ export default function Slider() {
               style={{ width: isMin ? minWidth + "px" : maxWidth + "px" }}
             >
               <div className="menuHeader flex items-center justify-between rounded-t-none ">
-                <h3 className="  p-2 font-cursiveCustom text-lg">{title}</h3>
+                <h3 className="  p-2 font-cursiveCustom text-lg">
+                  {generateTitle(path)}
+                </h3>
                 <div onClick={() => dispatch(setIsMin())}>
                   <ChevronIcon
                     height={26}
@@ -41,7 +60,7 @@ export default function Slider() {
                 </div>
               </div>
 
-              <div> babies</div>
+              <div> {generateBody(path)}</div>
             </div>
 
             <div
