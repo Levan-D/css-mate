@@ -1,17 +1,21 @@
 /** @format */
 
-import React from "react"
-import { gradientSwatches } from "../data/GradientData"
-import Tooltip from "./Tooltip"
-import { useAppDispatch, useAppSelector } from "../app/hooks"
-import { setNewStops } from "../features/colors/gradientMaker/gradientSlice"
+import React from "react";
+import { gradientSwatches } from "../data/GradientData";
+import Tooltip from "./Tooltip";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { setNewStops } from "../features/colors/gradientMaker/gradientSlice";
+//@ts-ignore
+import { ReactComponent as CopyIcon } from "../assets/icons/copy.svg";
+//@ts-ignore
+import { ReactComponent as SubmitIcon } from "../assets/icons/submit.svg";
 
-type Props = { swatch: gradientSwatches; apply?: boolean }
+type Props = { swatch: gradientSwatches; apply?: boolean };
 
 export default function GradientCard({ swatch, apply = false }: Props) {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   //   const kind = Gradient.kind === "repeating" ? "repeating-" : ""
-  const type = swatch.type
+  const type = swatch.type;
   //   const params =
   //     Gradient.type === "linear"
   //       ? Gradient.linearParams.degree + `deg`
@@ -19,10 +23,12 @@ export default function GradientCard({ swatch, apply = false }: Props) {
   //       ? `${Gradient.radialParams.shape} at ${Gradient.radialParams.coords.x}% ${Gradient.radialParams.coords.y}%`
   //       : `from ${Gradient.conicParams.degree}deg at ${Gradient.conicParams.coords.x}% ${Gradient.conicParams.coords.y}%`
   const style = swatch.stops
-    .map(stop => `rgba(${stop.color}, ${stop.opacity / 100}) ${stop.percent}%`)
-    .join(",")
+    .map(
+      (stop) => `rgba(${stop.color}, ${stop.opacity / 100}) ${stop.percent}%`
+    )
+    .join(",");
 
-  const gradient = `${``}${type}-gradient(${135}deg, ${style})`
+  const gradient = `${``}${type}-gradient(${135}deg, ${style})`;
   return (
     <div className="rounded-lg bg-slate-500 p-2 duration-300 hover:shadow-[0px_0px_12px_6px_rgba(255,_255,_255,0.7)]">
       <div
@@ -42,28 +48,29 @@ export default function GradientCard({ swatch, apply = false }: Props) {
       <div className="flex items-center justify-between p-1 pt-2">
         <div>{swatch.name}</div>
         <div className="flex  gap-2">
+          <Tooltip text="Copied" onClick={true}>
+            <div
+              onClick={() => {
+                navigator.clipboard.writeText(`background: ${gradient};`);
+              }}
+              className="btnSecondary shadow-custom  py-1 px-2 text-sm"
+            >
+              <CopyIcon height={20} width={20} />
+            </div>
+          </Tooltip>
+
           {apply && (
             <Tooltip text="Applied" onClick={true}>
               <div
                 onClick={() => dispatch(setNewStops(swatch.stops))}
-                className="btnSecondary shadow-custom  py-1 text-sm"
+                className="btnSecondary shadow-custom  py-0 pr-0 pl-[5px] text-sm"
               >
-                Apply
+                <SubmitIcon height={28} width={30} />
               </div>
             </Tooltip>
           )}
-          <Tooltip text="Copied" onClick={true}>
-            <div
-              onClick={() => {
-                navigator.clipboard.writeText(`background: ${gradient};`)
-              }}
-              className="btnSecondary shadow-custom  py-1 text-sm"
-            >
-              Copy
-            </div>
-          </Tooltip>
         </div>
       </div>
     </div>
-  )
+  );
 }
