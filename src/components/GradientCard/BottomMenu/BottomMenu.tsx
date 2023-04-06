@@ -8,8 +8,39 @@ import { v4 as uuidv4 } from "uuid";
 
 type Props = {
   swatch: gradientSwatches;
-  setGradient: React.Dispatch<React.SetStateAction<string>>;
+  setGradient: React.Dispatch<
+    React.SetStateAction<{
+      string: string;
+      data: {
+        type: string;
+        kind: string;
+        linearParams: {
+          degree: number;
+        };
+        radialParams: {
+          shape: string;
+          coords: {
+            x: number;
+            y: number;
+          };
+        };
+        conicParams: {
+          degree: number;
+          coords: {
+            x: number;
+            y: number;
+          };
+        };
+        stops: {
+          percent: number;
+          color: string;
+          opacity: number;
+        }[];
+      };
+    }>
+  >;
 };
+
 type type = "linear" | "conic" | "radial";
 type kind = "const" | "repeat";
 
@@ -19,14 +50,16 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
   const [paramsVis, setParamsVis] = useState(false);
 
   const [radialVis, setRadialVis] = useState(false);
+  const [conicVis, setConicVis] = useState(false);
 
   const [type, setType] = useState(swatch.type);
   const [kind, setKind] = useState("const");
 
   const [tempLinearDeg, setTempLinearDeg] = useState<number | string>("");
+  const [tempConicDeg, setTempConicDeg] = useState<number | string>("");
 
   const [stopsData, setStopsData] = useState(swatch.stops);
-  const stopArray = stopsData.map((stop) => stop.percent);
+  const stopArray = stopsData.map((stop) => stop.stop.percent);
   const [effect, setEffect] = useState(false);
 
   const typeBtns: type[] = ["linear", "radial", "conic"];
@@ -50,6 +83,30 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
     },
   });
 
+  const resetState = () => {
+    setType(() => swatch.type);
+    setKind(() => `const`);
+    setStopsData(() => swatch.stops);
+    setLinearParams({
+      degree: 135,
+    });
+    setRadialParams({
+      shape: "circle",
+      coords: {
+        x: 50,
+        y: 50,
+      },
+    });
+    setConicParams({
+      degree: 0,
+      coords: {
+        x: 50,
+        y: 50,
+      },
+    });
+    setEffect(() => true);
+  };
+
   const handleTypeClick = (type: type) => {
     setType(() => type);
     setEffect(() => true);
@@ -63,6 +120,7 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
   const handleStopsChange = (value: number[], i: number) => {
     const copyArray = [...stopsData];
     copyArray[i] = { ...copyArray[i], percent: value[i] };
+    console.log("copyArray:", stopsData);
     setStopsData(() => copyArray);
     setEffect(() => true);
   };
@@ -81,13 +139,26 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
 
     const styleTemp = stopsData
       .map(
-        (stop) => `rgba(${stop.color}, ${stop.opacity / 100}) ${stop.percent}%`
+        (stop) =>
+          `rgba(${stop.stop.color}, ${stop.stop.opacity / 100}) ${
+            stop.stop.percent
+          }%`
       )
       .join(",");
 
-    setGradient(
-      () => `${kindTemp}${typeTemp}-gradient(${paramsTemp}, ${styleTemp})`
-    );
+    setGradient({
+      string: `${kindTemp}${typeTemp}-gradient(${paramsTemp}, ${styleTemp})`,
+      data: {
+        type: typeTemp,
+        kind: kindTemp,
+        linearParams: {
+          degree: 135,
+        },
+        radialParams: radialParams,
+        conicParams: conicParams,
+        stops: stopsData,
+      },
+    });
   };
 
   const HandleStopPercentage = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -131,16 +202,57 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
     }
   };
 
+  const HandleStopPercentageConic = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    let value = Number(e.target.value);
+
+    if (value > 360) {
+      value = 360;
+    } else if (value < 0) {
+      value = 0;
+    }
+
+    setTempConicDeg(value);
+  };
+
+  const handleOnBLurStopConic = () => {
+    if (typeof tempConicDeg === "number") {
+      setConicParams({
+        ...conicParams,
+        degree: tempConicDeg,
+      });
+      setEffect(() => true);
+
+      setTempConicDeg("");
+    }
+  };
+
+  const handleOnKeyDownStopConic = (
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key === "Enter") {
+      handleOnBLurStop();
+      setTempConicDeg("");
+      e.currentTarget.blur();
+    }
+  };
+
   useEffect(() => {
     if (effect) {
       triggerGradChange();
       setEffect(() => false);
-      console.log(`aaaaa`);
     }
   }, [effect]);
 
   return (
     <div className="flex justify-around gap-2">
+      {/* reset */}
+      <div onClick={resetState} className="btnSecondary ml-2 py-1 px-2 text-sm">
+        &#8634;
+      </div>
+
+      {/* reset */}
       {/* types */}
       <div
         onClick={() => {
@@ -148,14 +260,14 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
           setKindVis(() => false);
           setParamsVis(() => false);
         }}
-        className="btnSecondary ml-2 py-1 px-2 text-sm"
+        className="btnSecondary  py-1 px-2 text-sm"
       >
         {type.charAt(0).toUpperCase() + type.slice(1)}
       </div>
       {typeVis && (
         <div
           onMouseLeave={() => setTypeVis(() => false)}
-          className="menuContainer absolute z-50 flex translate-x-4 translate-y-2 gap-2  border-2 border-white py-4 px-4"
+          className="menuContainer absolute z-50 flex -translate-x-10 gap-2  border-2 border-white py-4 px-4"
         >
           {typeBtns.map((btn) => (
             <div
@@ -183,7 +295,7 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
       {kindVis && (
         <div
           onMouseLeave={() => setKindVis(() => false)}
-          className="menuContainer absolute z-50 flex translate-x-12 translate-y-2 gap-2  border-2 border-white py-4 px-4"
+          className="menuContainer absolute z-50 flex  gap-2  border-2 border-white py-4 px-4"
         >
           {kindBtns.map((btn) => (
             <div
@@ -204,9 +316,9 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
           setKindVis(() => false);
           setParamsVis((x) => !x);
         }}
-        className="btnSecondary py-1 px-2 text-sm "
+        className="btnSecondary py-0 px-2 text-lg "
       >
-        Params
+        &#9881;
       </div>
       {paramsVis && type === "linear" && (
         <div
@@ -214,7 +326,7 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
             setParamsVis(() => false);
             setRadialVis(() => false);
           }}
-          className="menuContainer absolute z-50 flex translate-x-16 translate-y-2 gap-2  border-2 border-white py-4 px-4"
+          className="menuContainer absolute z-50 flex translate-x-[40px] gap-2  border-2 border-white py-4 px-4"
         >
           <input
             type="number"
@@ -234,8 +346,11 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
       )}
       {paramsVis && type === "radial" && (
         <div
-          onMouseLeave={() => setParamsVis(() => false)}
-          className="menuContainer absolute z-50 flex translate-x-16 translate-y-2 gap-2  border-2 border-white py-4 px-4"
+          onMouseLeave={() => {
+            setParamsVis(() => false);
+            setRadialVis(() => false);
+          }}
+          className="menuContainer absolute z-50 flex translate-x-[48px]  gap-2  border-2 border-white py-4 px-4"
         >
           <div
             onClick={handleShapeChange}
@@ -323,15 +438,100 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
       )}
       {paramsVis && type === "conic" && (
         <div
-          onMouseLeave={() => setParamsVis(() => false)}
-          className="menuContainer absolute z-50 flex translate-x-16 translate-y-2 gap-2  border-2 border-white py-4 px-4"
+          onMouseLeave={() => {
+            setParamsVis(() => false);
+            setConicVis(() => false);
+          }}
+          className="menuContainer absolute z-50 flex translate-x-[42px]  gap-2  border-2 border-white py-4 px-4"
         >
-          ccccc
+          <input
+            type="number"
+            id="stopInput"
+            value={tempConicDeg}
+            placeholder={conicParams.degree.toString()}
+            onBlur={() => handleOnBLurStopConic()}
+            onFocus={() => setTempConicDeg(Number(conicParams.degree))}
+            onChange={(e) => HandleStopPercentageConic(e)}
+            onKeyDown={(e) => handleOnKeyDownStopConic(e)}
+            className="  removeArrow block h-8 w-10 appearance-none rounded-md  border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-white duration-200 sm:hover:border-slate-300  "
+          ></input>
+          <div
+            onClick={() => setConicVis((x) => !x)}
+            className="duration-2000 grow cursor-pointer select-none text-center italic leading-7 text-slate-300 sm:hover:text-white "
+          >
+            Cords
+          </div>
+
+          {conicVis && (
+            <div className="-translate-x-[33px] -translate-y-24">
+              <div className="absolute top-0 left-0 z-40 h-screen w-screen "></div>
+              <div className="menuBlock absolute z-50 w-32 translate-y-8 translate-x-[-80px] gap-4 border-slate-500 bg-darkJungle-400 px-1  ">
+                <div className="flex justify-end ">
+                  <div
+                    className="z-50 my-1  h-6 w-6 cursor-pointer rounded-full  border-2 border-transparent text-center leading-5 text-slate-300 sm:hover:border-slate-300"
+                    onClick={() =>
+                      setConicParams({
+                        ...conicParams,
+                        coords: { x: 50, y: 50 },
+                      })
+                    }
+                  >
+                    &#8634;
+                  </div>
+                  <div
+                    className="z-50 my-1  h-6 w-6 cursor-pointer rounded-full border-2  border-transparent text-center text-xl leading-4 text-slate-300 sm:hover:border-slate-300"
+                    onClick={() => {
+                      setConicVis(() => false);
+                      setParamsVis(() => false);
+                    }}
+                  >
+                    &#215;
+                  </div>
+                </div>
+
+                <div className="translate-y-[-12px] px-2">
+                  {Object.entries(conicParams.coords).map((coord, i) => (
+                    <div key={i} className="mb-6">
+                      <div className="text-xs italic text-slate-300">
+                        {coord[0]}
+                      </div>
+                      <ReactSlider
+                        className="customSlider group"
+                        trackClassName="customSlider-track"
+                        thumbClassName="customSlider-thumb"
+                        min={0}
+                        max={100}
+                        defaultValue={coord[1]}
+                        renderThumb={(props, state) => (
+                          <div style={{ background: "black" }} {...props}>
+                            <div className="w-10 translate-y-[-30px] translate-x-[-10px] select-none rounded-lg border-2 bg-darkJungle-700  text-center  sm:hidden sm:group-hover:block">
+                              {state.valueNow}
+                            </div>
+                          </div>
+                        )}
+                        value={coord[1]}
+                        onChange={(value) => {
+                          setConicParams({
+                            ...conicParams,
+                            coords: {
+                              ...conicParams.coords,
+                              [coord[0]]: value,
+                            },
+                          });
+                          setEffect(() => true);
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
       {/* params */}
       {/* slider */}
-      <div className="mr-2 w-20 pt-1">
+      <div className="mr-2 w-[76px] pt-1">
         <ReactSlider
           className="customSlider"
           trackClassName="customSlider-track"
@@ -345,13 +545,13 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
             <div style={{ background: "black" }} {...props}>
               <div
                 style={{
-                  backgroundColor: RgbToHex(stopsData[state.index].color),
+                  backgroundColor: RgbToHex(stopsData[state.index].stop.color),
                   color: ColorInverter(
-                    RgbToHex(stopsData[state.index].color),
+                    RgbToHex(stopsData[state.index].stop.color),
                     "bw"
                   ),
                   borderColor: ColorInverter(
-                    RgbToHex(stopsData[state.index].color),
+                    RgbToHex(stopsData[state.index].stop.color),
                     "bw"
                   ),
                 }}
