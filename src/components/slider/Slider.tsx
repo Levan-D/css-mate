@@ -1,64 +1,64 @@
 /** @format */
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-import { useAppDispatch, useAppSelector } from "../../app/hooks"
-import { setIsOpen, setIsMin } from "./sliderSlice"
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { setIsOpen, setIsMin } from "./sliderSlice";
 // @ts-ignore
-import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg"
-import GradientCard from "../GradientCard"
-import { gradientSwatches } from "../../data/GradientData"
+import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg";
+import GradientCard from "../GradientCard/GradientCard";
+import { gradientSwatches } from "../../data/GradientData";
 
 export default function Slider() {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const { isOpen, isMin, minWidth, maxWidth, renderedPaths } = useAppSelector(
-    store => store.slider
-  )
-  const { path } = useAppSelector(store => store.navbar)
-  const [isChanging, setIsChanging] = useState(false)
+    (store) => store.slider
+  );
+  const { path } = useAppSelector((store) => store.navbar);
+  const [isChanging, setIsChanging] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = "auto"
-    }
-  }, [isOpen])
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   const generateTitle = (path: string) => {
     if (path.includes("/gradient-maker")) {
-      return "Gradient swatches"
+      return "Gradient swatches";
     } else if (path.includes("/palette-generator")) {
-      return "Palette swatches"
+      return "Palette swatches";
     }
-  }
+  };
 
   const generateBody = (path: string) => {
     if (path.includes("/gradient-maker")) {
       return gradientSwatches.map((swatch, i) => (
         <GradientCard apply={true} swatch={swatch} key={i} />
-      ))
+      ));
     } else if (path.includes("/palette-generator")) {
-      return "Palette swatches"
+      return "Palette swatches";
     }
-  }
+  };
 
   const handleIsChanging = () => {
     if (!isChanging) {
-      setIsChanging(true)
+      setIsChanging(true);
       setTimeout(() => {
-        dispatch(setIsMin())
-        setIsChanging(false)
-      }, 450)
+        dispatch(setIsMin());
+        setIsChanging(false);
+      }, 450);
     }
-  }
+  };
 
   return (
     <>
-      {renderedPaths.some(x => path.includes(x)) && (
+      {renderedPaths.some((x) => path.includes(x)) && (
         <>
           <div
             className={`fixed top-0 left-0 z-50 flex  h-screen  justify-center transition-transform duration-500`}
@@ -123,5 +123,5 @@ export default function Slider() {
         </>
       )}
     </>
-  )
+  );
 }
