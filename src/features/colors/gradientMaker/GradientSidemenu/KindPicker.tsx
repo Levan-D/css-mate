@@ -8,7 +8,7 @@ const KindPicker = () => {
   const dispatch = useAppDispatch()
   const { kind } = useAppSelector(store => store.Gradient)
 
-  const kinds = [
+  const kinds: { value: "repeating" | "constant"; name: string }[] = [
     { value: "constant", name: "Const" },
     { value: "repeating", name: "Repeat" },
   ]
