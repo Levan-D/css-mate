@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { gradientSwatches } from "../../data/GradientData";
 import Tooltip from "../Tooltip";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
@@ -15,12 +15,10 @@ import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg";
 import BottomMenu from "./BottomMenu/BottomMenu";
 
 type Props = { swatch: gradientSwatches; apply?: boolean };
-type kind = "linear" | "conic" | "radial";
 
 export default function GradientCard({ swatch, apply = false }: Props) {
   const dispatch = useAppDispatch();
   const [menuVis, setMenuVis] = useState(false);
-  // const [stopsData, setStopsData] = useState(swatch.stops);
   const [gradient, setGradient] = useState(
     `${``}${swatch.type}-gradient(${135}deg, ${swatch.stops
       .map(
