@@ -1,10 +1,10 @@
 /** @format */
 
 export type gradientSwatches = {
-  name: string
-  type: "linear" | "conic" | "radial"
-  stops: { percent: number; color: string; opacity: number }[]
-}
+  name: string;
+  type: "linear" | "conic" | "radial";
+  stops: { percent: number; color: string; opacity: number }[];
+};
 
 export const gradientSwatches: gradientSwatches[] = [
   {
@@ -212,7 +212,7 @@ export const gradientSwatches: gradientSwatches[] = [
     name: "Orange Pop",
     type: "linear",
     stops: [
-      { percent: 20, color: "2255,209,67", opacity: 100 },
+      { percent: 20, color: "255,209,67", opacity: 100 },
       { percent: 80, color: "255,145,83", opacity: 100 },
     ],
   },
@@ -298,4 +298,4 @@ export const gradientSwatches: gradientSwatches[] = [
       { percent: 80, color: "168,251,60", opacity: 100 },
     ],
   },
-]
+];
