@@ -9,7 +9,7 @@ import ColorInverter from "../../../../utils/colors/ColorInverter"
 
 const StopsSlider = () => {
   const dispatch = useAppDispatch()
-  const { stops, offset } = useAppSelector(store => store.Gradient)
+  const { stops } = useAppSelector(store => store.Gradient)
   const stopArray = stops.map(stop => stop.stop.percent)
 
   return (
@@ -21,7 +21,7 @@ const StopsSlider = () => {
         min={0}
         max={100}
         snapDragDisabled
-        minDistance={offset}
+        minDistance={1}
         defaultValue={stopArray}
         renderThumb={(props, state) => (
           <div style={{ background: "black" }} {...props}>
