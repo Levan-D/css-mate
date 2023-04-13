@@ -12,10 +12,12 @@ import {
 } from "../gradientSlice"
 const StopsDisplay = () => {
   const dispatch = useAppDispatch()
-  const { stops, offset } = useAppSelector(store => store.Gradient)
+  const { stops } = useAppSelector(store => store.Gradient)
 
   const [tempHex, setTempHex] = useState({ value: "", index: 0 })
   const [tempStop, setTempStop] = useState({ value: 0, index: 100 })
+
+  const offset = 1
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
     dispatch(
