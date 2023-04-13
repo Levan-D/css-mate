@@ -40,8 +40,8 @@ module.exports = {
         },
       },
       boxShadow: {
-        primaryDark: "2px 3px 2px 0px rgba(255,255,255,0.30)",
-        primaryBr: "2px 3px 2px 0px rgba(0,0,0,0.30)",
+        primaryDark: "1px 2px 2px 0px rgba(255,255,255,0.30)",
+        primaryBr: "1px 2px 2px 0px rgba(0,0,0,0.30)",
       },
       textShadow: {
         sm: "0 1px 2px var(--tw-shadow-color)",
