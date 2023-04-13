@@ -1,20 +1,21 @@
 /** @format */
 
 import React, { useState, useEffect } from "react"
-
 import { gradientSwatches } from "../../../data/GradientData"
-//@ts-ignore
-import { v4 as uuidv4 } from "uuid"
 import TypeBtns from "./TypeBtns"
 import KindBtns from "./KindBtns"
 import LinearParams from "./LinearParams"
 import RadialParams from "./RadialParams"
 import ConicParams from "./ConicParams"
 import StopSlider from "./StopSlider"
+import type { initialGradientStateType } from "../../../features/colors/gradientMaker/gradientSlice"
+//@ts-ignore
+import { v4 as uuidv4 } from "uuid"
 
 type Props = {
   swatch: gradientSwatches
   setGradient: React.Dispatch<React.SetStateAction<string>>
+  setGradientData: React.Dispatch<React.SetStateAction<initialGradientStateType>>
 }
 const buttonData = [
   {
@@ -42,7 +43,7 @@ const buttonData = [
 type type = "linear" | "conic" | "radial"
 type kind = "const" | "repeat"
 
-export default function BottomMenu({ swatch, setGradient }: Props) {
+export default function BottomMenu({ swatch, setGradient, setGradientData }: Props) {
   const [typeVis, setTypeVis] = useState(true)
   const [kindVis, setKindVis] = useState(false)
   const [paramsVis, setParamsVis] = useState(false)
@@ -134,6 +135,17 @@ export default function BottomMenu({ swatch, setGradient }: Props) {
       .join(",")
 
     setGradient(`${kindTemp}${typeTemp}-gradient(${paramsTemp}, ${styleTemp})`)
+
+    const kindData = kind !== "const" ? "repeating" : "constant"
+
+    setGradientData({
+      type: type,
+      kind: kindData,
+      linearParams: linearParams,
+      radialParams: radialParams,
+      conicParams: conicParams,
+      stops: stopsData,
+    })
   }
 
   const handleShapeChange = () => {

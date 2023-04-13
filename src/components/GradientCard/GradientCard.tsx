@@ -11,8 +11,10 @@ import { ReactComponent as CopyIcon } from "../../assets/icons/copy.svg"
 import { ReactComponent as SubmitIcon } from "../../assets/icons/submit.svg"
 // @ts-ignore
 import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg"
-
 import BottomMenu from "./BottomMenu/BottomMenu"
+//@ts-ignore
+import { v4 as uuidv4 } from "uuid"
+import { initialGradientStateType } from "../../features/colors/gradientMaker/gradientSlice"
 
 type Props = { swatch: gradientSwatches; apply?: boolean }
 
@@ -28,46 +30,28 @@ export default function GradientCard({ swatch, apply = false }: Props) {
   const [menuVis, setMenuVis] = useState(false)
   const [gradient, setGradient] = useState(style)
 
-  // const [gradientData, setGradientData] = useState({
-  //   type: "linear",
-  //   kind: "constant",
-  //   linearParams: {
-  //     degree: 135,
-  //   },
-  //   radialParams: {
-  //     shape: "circle",
-  //     coords: {
-  //       x: 50,
-  //       y: 50,
-  //     },
-  //   },
-  //   conicParams: {
-  //     degree: 0,
-  //     coords: {
-  //       x: 50,
-  //       y: 50,
-  //     },
-  //   },
-  //   stops: [
-  //     {
-  //       id: uuidv4(),
-  //       stop: {
-  //         percent: 20,
-  //         color: `94,161,255`,
-  //         opacity: 100,
-  //       },
-  //     },
-
-  //     {
-  //       id: uuidv4(),
-  //       stop: {
-  //         percent: 80,
-  //         color: `255,114,94`,
-  //         opacity: 100,
-  //       },
-  //     },
-  //   ],
-  // })
+  const [gradientData, setGradientData] = useState<initialGradientStateType>({
+    type: "linear",
+    kind: "constant",
+    linearParams: {
+      degree: 135,
+    },
+    radialParams: {
+      shape: "circle",
+      coords: {
+        x: 50,
+        y: 50,
+      },
+    },
+    conicParams: {
+      degree: 0,
+      coords: {
+        x: 50,
+        y: 50,
+      },
+    },
+    stops: swatch.stops,
+  })
 
   useEffect(() => {
     setMenuVis(() => false)
@@ -135,7 +119,11 @@ export default function GradientCard({ swatch, apply = false }: Props) {
             : " collapse  h-0  scale-y-0 overflow-hidden opacity-0"
         }  flex origin-top justify-around gap-2	rounded-lg  bg-slate-600	duration-300 ease-out`}
       >
-        <BottomMenu swatch={swatch} setGradient={setGradient} />
+        <BottomMenu
+          swatch={swatch}
+          setGradient={setGradient}
+          setGradientData={setGradientData}
+        />
       </div>
     </div>
   )

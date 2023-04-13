@@ -1,7 +1,5 @@
 /** @format */
 
-import React from "react"
-
 import RgbToHex from "../../../utils/colors/RGBToHex"
 import ColorInverter from "../../../utils/colors/ColorInverter"
 import ReactSlider from "react-slider"
