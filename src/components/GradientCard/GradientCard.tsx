@@ -67,9 +67,7 @@ export default function GradientCard({ swatch, apply = false }: Props) {
       >
         <div className="flex h-36 w-72 items-center justify-center opacity-0 transition delay-100 duration-300 group-hover:opacity-100">
           <div className="mx-4 w-fit break-words rounded-lg bg-slate-500 bg-opacity-50 p-2 text-center">
-            {`background: ${gradient};`.length > 110
-              ? `background: ${gradient};`.slice(0, 110) + "..."
-              : `background: ${gradient};`}
+            {gradient.length > 110 ? gradient.slice(0, 110) + "..." : gradient}
           </div>
         </div>
       </div>
