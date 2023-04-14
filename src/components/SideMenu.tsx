@@ -1,34 +1,31 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useState } from "react"
 // @ts-ignore
-import { ReactComponent as RestartIcon } from "../assets/icons/restart.svg";
-import Tooltip from "./Tooltip";
-import ToolInfo from "./ToolInfo";
+import { ReactComponent as RestartIcon } from "../assets/icons/restart.svg"
+import Tooltip from "./Tooltip"
+import ToolInfo from "./ToolInfo"
 
-type SideMenuProps = {
-  title: string;
-  resetState?: Function;
-  toolInfo?: React.ReactNode;
-  children: React.ReactNode;
-};
+type Props = {
+  title: string
+  resetState?: Function
+  toolInfo?: React.ReactNode
+  children: React.ReactNode
+}
 
-const SideMenu = ({ title, children, resetState, toolInfo }: SideMenuProps) => {
-  const [visi, setVisi] = useState(true);
+const SideMenu = ({ title, children, resetState, toolInfo }: Props) => {
+  const [visi, setVisi] = useState(true)
 
   const handleVisi = () => {
-    setVisi((x) => !x);
-  };
+    setVisi(x => !x)
+  }
 
   if (!visi) {
     return (
-      <div
-        className="h-10 cursor-pointer text-6xl leading-8"
-        onClick={handleVisi}
-      >
+      <div className="h-10 cursor-pointer text-6xl leading-8" onClick={handleVisi}>
         &#128065;
       </div>
-    );
+    )
   }
 
   return (
@@ -49,7 +46,7 @@ const SideMenu = ({ title, children, resetState, toolInfo }: SideMenuProps) => {
                 width={30}
                 onClick={() => {
                   if (resetState !== undefined) {
-                    resetState();
+                    resetState()
                   }
                 }}
               />
@@ -59,7 +56,7 @@ const SideMenu = ({ title, children, resetState, toolInfo }: SideMenuProps) => {
       </div>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default SideMenu;
+export default SideMenu

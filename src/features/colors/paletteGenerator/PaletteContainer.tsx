@@ -7,7 +7,7 @@ import colorNamer from "color-namer"
 import calculatePalette from "./OutputGeneratorFuncs"
 import HexToRGB from "../../../utils/colors/HexToRGB"
 
-type props = {
+type Props = {
   compRef: MutableRefObject<HTMLDivElement | null>
   conditional: boolean
   colorInput: string
@@ -25,7 +25,7 @@ export default function PaletteContainer({
   type,
   descr,
   amount,
-}: props) {
+}: Props) {
   function colorNamerFunc(hex: string) {
     try {
       return colorNamer(hex).ntc[0].name

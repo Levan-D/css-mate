@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useState, useEffect } from "react"
-import type { gradientSwatches } from "../../data/GradientData"
 import Tooltip from "../Tooltip"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setNewStops } from "../../features/colors/gradientMaker/gradientSlice"
@@ -14,9 +13,8 @@ import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg"
 import BottomMenu from "./BottomMenu/BottomMenu"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
-import { initialGradientStateType } from "../../features/colors/gradientMaker/gradientSlice"
 
-type Props = { swatch: gradientSwatches; apply?: boolean }
+type Props = { swatch: GradientSwatchesType; apply?: boolean }
 
 export default function GradientCard({ swatch, apply = false }: Props) {
   const style = `${``}${swatch.type}-gradient(${135}deg, ${swatch.stops

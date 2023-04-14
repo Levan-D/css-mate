@@ -3,7 +3,6 @@
 import Output from "../../../components/Output"
 import { selectBoxShadowStyle } from "./boxShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
-import { OutputRenderArrayType } from "../../../components/Output"
 //@ts-ignore
 import SyntaxHighlighter from "react-syntax-highlighter"
 //@ts-ignore

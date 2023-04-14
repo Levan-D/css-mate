@@ -4,7 +4,6 @@ import React from "react"
 import Output from "../../../components/Output"
 import { selectTextShadowStyle } from "./textShadowSlice"
 import { useAppSelector } from "../../../app/hooks"
-import { OutputRenderArrayType } from "../../../components/Output"
 //@ts-ignore
 import SyntaxHighlighter from "react-syntax-highlighter"
 //@ts-ignore

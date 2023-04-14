@@ -1,54 +1,47 @@
 /** @format */
 
-import React, { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import {
-  setTextColor,
-  toggleBold,
-  toggleTextSize,
-} from "../contrastCheckerSlice";
+import React, { useState } from "react"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import { setTextColor, toggleBold, toggleTextSize } from "../contrastCheckerSlice"
 //@ts-ignore
-import { ChromePicker, SwatchesPicker } from "react-color";
-import { color } from "../../../../components/ColorPicker";
+import { ChromePicker, SwatchesPicker } from "react-color"
 
 export default function InputText() {
-  const { textColor, bold, textSize } = useAppSelector(
-    (store) => store.contrastChecker
-  );
-  const dispatch = useAppDispatch();
-  const [displayColorPicker, setDisplayColorPicker] = useState(false);
-  const [displaySwatchesOne, setDisplaySwatchesOne] = useState(false);
-  const [color, setColor] = useState("");
+  const { textColor, bold, textSize } = useAppSelector(store => store.contrastChecker)
+  const dispatch = useAppDispatch()
+  const [displayColorPicker, setDisplayColorPicker] = useState(false)
+  const [displaySwatchesOne, setDisplaySwatchesOne] = useState(false)
+  const [color, setColor] = useState("")
 
   const handleClick = () => {
-    setDisplayColorPicker(!displayColorPicker);
-  };
+    setDisplayColorPicker(!displayColorPicker)
+  }
 
-  const handleChange = (color: color) => {
-    dispatch(setTextColor(`${color.hex}`));
-    setColor("");
-  };
+  const handleChange = (color: ChromePickerType) => {
+    dispatch(setTextColor(`${color.hex}`))
+    setColor("")
+  }
 
   const handleOnBlur = () => {
-    const colorRegex = /^#[0-9A-F]{6}$/i;
-    let newHex = color;
-    newHex.replace(/\s+/g, "");
+    const colorRegex = /^#[0-9A-F]{6}$/i
+    let newHex = color
+    newHex.replace(/\s+/g, "")
 
     if (!newHex.startsWith("#")) {
-      newHex = "#" + newHex;
+      newHex = "#" + newHex
     }
 
     if (colorRegex.test(newHex)) {
-      dispatch(setTextColor(newHex));
+      dispatch(setTextColor(newHex))
     }
-  };
+  }
 
   const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      handleOnBlur();
-      setColor("");
+      handleOnBlur()
+      setColor("")
     }
-  };
+  }
 
   return (
     <div className="menuContainer m-4    ">
@@ -94,7 +87,7 @@ export default function InputText() {
           id="hexText"
           value={color}
           placeholder={textColor}
-          onChange={(e) => setColor(e.target.value)}
+          onChange={e => setColor(e.target.value)}
           onKeyDown={handleOnKeyDown}
           onBlur={handleOnBlur}
           className=" block h-10 w-20   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
@@ -105,10 +98,7 @@ export default function InputText() {
         >
           B
         </div>
-        <div
-          onClick={() => dispatch(toggleTextSize())}
-          className={`btnSecondary `}
-        >
+        <div onClick={() => dispatch(toggleTextSize())} className={`btnSecondary `}>
           {textSize ? "L" : "N"}
         </div>
         <div
@@ -125,11 +115,7 @@ export default function InputText() {
               onMouseDown={() => setDisplaySwatchesOne(false)}
             />
             <div className="translate-x-4 translate-y-10 rounded-md border-2">
-              <SwatchesPicker
-                width={280}
-                height={280}
-                onChange={handleChange}
-              />
+              <SwatchesPicker width={280} height={280} onChange={handleChange} />
             </div>
           </div>
         ) : null}
@@ -137,5 +123,5 @@ export default function InputText() {
         {/* hex color input */}
       </div>
     </div>
-  );
+  )
 }

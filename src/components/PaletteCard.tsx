@@ -2,12 +2,11 @@
 
 import React from "react"
 import Tooltip from "./Tooltip"
-import type { paletteSwatches } from "../data/PaletteData"
 //@ts-ignore
 import { ReactComponent as CopyIcon } from "../assets/icons/copy.svg"
 import ColorInverter from "../utils/colors/ColorInverter"
 
-type Props = { swatch: paletteSwatches }
+type Props = { swatch: PaletteSwatchesType }
 
 export default function PaletteCard({ swatch }: Props) {
   const basis = (1 / swatch.colors.length) * 100

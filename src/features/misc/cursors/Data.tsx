@@ -1,7 +1,7 @@
 /** @format */
 import React, { ReactNode } from "react"
 
-export type CursorType = {
+type CursorType = {
   category: string
   contents: {
     name: string

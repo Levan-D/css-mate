@@ -5,33 +5,6 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../../app/store"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
-import type { gradientSwatches } from "../../../data/GradientData"
-
-export interface initialGradientStateType {
-  type: "linear" | "conic" | "radial"
-  kind: "repeating" | "constant"
-
-  linearParams: {
-    degree: number
-  }
-  radialParams: {
-    shape: string
-    coords: { x: number; y: number }
-  }
-  conicParams: {
-    degree: number
-    coords: { x: number; y: number }
-  }
-
-  stops: {
-    id: string
-    stop: {
-      percent: number
-      color: string
-      opacity: number
-    }
-  }[]
-}
 
 const initialState: initialGradientStateType = {
   type: "linear",

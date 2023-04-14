@@ -3,11 +3,13 @@
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
 
-type Props = { handleKindClick: (kind: kind) => void; kindType: kind }
-type kind = "const" | "repeat"
+type Props = {
+  handleKindClick: (kind: GradientBtnKind) => void
+  kindType: GradientBtnKind
+}
 
 export default function KindBtns({ handleKindClick, kindType }: Props) {
-  const kindBtns: kind[] = ["const", "repeat"]
+  const kindBtns: GradientBtnKind[] = ["const", "repeat"]
 
   return (
     <div className=" m-2  flex  justify-center   gap-2 ">

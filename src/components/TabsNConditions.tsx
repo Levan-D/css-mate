@@ -5,7 +5,7 @@ import Tooltip from "./Tooltip"
 //@ts-ignore
 import { ReactComponent as AddIcon } from "../assets/icons/add.svg"
 
-type TabsNConditionsType = {
+type Props = {
   tabs: { name: string; id: string }[]
   currentTab: number
   children: React.ReactNode
@@ -21,7 +21,7 @@ const TabsNConditions = ({
   handleOnDoubleClick,
   handleAddIconClick,
   children,
-}: TabsNConditionsType) => {
+}: Props) => {
   return (
     <div>
       <div className="menuHeader flex  justify-between  gap-2  py-2   px-3  ">

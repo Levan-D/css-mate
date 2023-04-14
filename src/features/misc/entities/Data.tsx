@@ -1,7 +1,5 @@
 /** @format */
 
-import { CatDisplayDataType } from "../../../components/CatDisplay"
-
 export const EntitiesData: CatDisplayDataType[] = [
   {
     category: "Commons",

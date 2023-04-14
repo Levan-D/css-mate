@@ -2,21 +2,15 @@
 
 import { Link } from "react-router-dom"
 import { useAppSelector } from "../../app/hooks"
-import { pageButtonsType } from "../../data/PageButtons"
 
-type DropeDownType = {
-  category: pageButtonsType
+type Props = {
+  category: PageButtonsType
   subMenuVis: string
   windowWidth: number
   handleSubMenuClick: (path: string) => void
 }
 
-const DropDown = ({
-  category,
-  subMenuVis,
-  windowWidth,
-  handleSubMenuClick,
-}: DropeDownType) => {
+const DropDown = ({ category, subMenuVis, windowWidth, handleSubMenuClick }: Props) => {
   const { pathArray } = useAppSelector(store => store.navbar)
   return (
     <div>

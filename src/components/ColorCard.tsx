@@ -3,7 +3,7 @@
 import React from "react"
 import Tooltip from "./Tooltip"
 
-type props = {
+type Props = {
   bgColor: string
   children?: React.ReactNode
   hex: string
@@ -11,7 +11,7 @@ type props = {
   colorName: string
 }
 
-export default function ColorCard({ bgColor, children, hex, rgb, colorName }: props) {
+export default function ColorCard({ bgColor, children, hex, rgb, colorName }: Props) {
   return (
     <div className="menuBlock w-40">
       <div

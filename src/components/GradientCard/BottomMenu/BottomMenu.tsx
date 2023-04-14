@@ -8,12 +8,11 @@ import LinearParams from "./LinearParams"
 import RadialParams from "./RadialParams"
 import ConicParams from "./ConicParams"
 import StopSlider from "./StopSlider"
-import type { initialGradientStateType } from "../../../features/colors/gradientMaker/gradientSlice"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
 
 type Props = {
-  swatch: gradientSwatches
+  swatch: GradientSwatchesType
   setGradient: React.Dispatch<React.SetStateAction<string>>
   setGradientData: React.Dispatch<React.SetStateAction<initialGradientStateType>>
 }
@@ -40,9 +39,6 @@ const buttonData = [
   },
 ]
 
-type type = "linear" | "conic" | "radial"
-type kind = "const" | "repeat"
-
 export default function BottomMenu({ swatch, setGradient, setGradientData }: Props) {
   const [typeVis, setTypeVis] = useState(true)
   const [kindVis, setKindVis] = useState(false)
@@ -50,7 +46,7 @@ export default function BottomMenu({ swatch, setGradient, setGradientData }: Pro
   const [stopsVis, setStopsVis] = useState(false)
 
   const [type, setType] = useState(swatch.type)
-  const [kind, setKind] = useState<kind>("const")
+  const [kind, setKind] = useState<GradientBtnKind>("const")
 
   const [stopsData, setStopsData] = useState(swatch.stops)
   const [effect, setEffect] = useState(false)
@@ -97,12 +93,12 @@ export default function BottomMenu({ swatch, setGradient, setGradientData }: Pro
     setEffect(() => true)
   }
 
-  const handleTypeClick = (type: type) => {
+  const handleTypeClick = (type: GradientBtnType) => {
     setType(() => type)
     setEffect(() => true)
   }
 
-  const handleKindClick = (kind: kind) => {
+  const handleKindClick = (kind: GradientBtnKind) => {
     setKind(() => kind)
     setEffect(() => true)
   }

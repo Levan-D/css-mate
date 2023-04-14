@@ -5,21 +5,21 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import ColorConverter from "../../../utils/colors/ColorConverter"
 import ColorValidator from "../../../utils/colors/ColorValidator"
 
-export interface inputBtnsProps {
+interface ColorNamerBtnsType {
   name: "HEX" | "RGB" | "HSL" | "CMYK" | "HSV"
   value: "#ffffff" | "255, 255, 255" | "0, 0%, 100%" | "0%, 0%, 0%, 0%"
 }
 
 interface initialStateType {
-  inputType: inputBtnsProps
-  outputType: inputBtnsProps
+  inputType: ColorNamerBtnsType
+  outputType: ColorNamerBtnsType
   inputText: string
   outputText: string
   isColorValid: boolean
   error: boolean
 }
 
-export const inputBtns: inputBtnsProps[] = [
+export const inputBtns: ColorNamerBtnsType[] = [
   { name: `HEX`, value: "#ffffff" },
   { name: `RGB`, value: "255, 255, 255" },
   { name: `HSL`, value: "0, 0%, 100%" },

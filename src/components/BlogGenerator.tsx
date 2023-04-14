@@ -7,7 +7,7 @@ import SyntaxHighlighter from "react-syntax-highlighter"
 //@ts-ignore
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
-type Content =
+type ContentType =
   | {
       type: "paragraph"
       data: string[]
@@ -40,20 +40,10 @@ type Content =
       subHeader: string
     }
 
-export type BlogData = {
-  title: React.ReactNode
-  id: string
-  sections: {
-    title: string
-    id: string
-    content: Content[]
-  }[]
-}
+type Props = { data: BlogDataType }
 
-type Data = { data: BlogData }
-
-export default function BlogGenerator({ data }: Data) {
-  const SwitchFunc = (piece: Content) => {
+export default function BlogGenerator({ data }: Props) {
+  const SwitchFunc = (piece: ContentType) => {
     switch (piece.type) {
       case "paragraph":
         if (Array.isArray(piece.data)) {
@@ -160,7 +150,10 @@ export default function BlogGenerator({ data }: Data) {
       </h2>
       {data.sections.map(section => (
         <div key={uuidv4()} className="menuContainer mb-4  mt-16 ">
-          <h3 id={section.id} className="menuHeader py-4  px-6 font-cursiveCustom text-xl">
+          <h3
+            id={section.id}
+            className="menuHeader py-4  px-6 font-cursiveCustom text-xl"
+          >
             {section.title}
           </h3>
           <div key={uuidv4()} className="my-8 py-4  px-8">

@@ -6,24 +6,23 @@ import dice from "../../../assets/icons/dice.png"
 import RgbToHex from "../../../utils/colors/RGBToHex"
 //@ts-ignore
 import { ChromePicker, SwatchesPicker } from "react-color"
-import { color } from "../../../components/ColorPicker"
 import RandomColorGenerator from "../../../utils/colors/RandomColorGenerator"
 import SideMenu from "../../../components/SideMenu"
 
-type props = {
+type Props = {
   setMainColor: React.Dispatch<React.SetStateAction<string>>
 }
-export default function PaletteSideMenu({ setMainColor }: props) {
+export default function PaletteSideMenu({ setMainColor }: Props) {
   const [displayColorPicker, setDisplayColorPicker] = useState(false)
   const [displaySwatches, setDisplaySwatches] = useState(false)
   const [temp, setTemp] = useState("")
   const [color, setColor] = useState("#5ea1ff")
 
-  const handleChange = (color: color) => {
+  const handleChange = (color: ChromePickerType) => {
     setColor(color.hex)
   }
 
-  const handleChangeComplete = (color: color) => {
+  const handleChangeComplete = (color: ChromePickerType) => {
     setMainColor(color.hex)
     setColor(color.hex)
   }
@@ -102,8 +101,8 @@ export default function PaletteSideMenu({ setMainColor }: props) {
               id="hexText"
               value={temp}
               placeholder={color}
-              onChange={(e) => setTemp(e.target.value)}
-              onKeyDown={(e) => handleOnKeyDown(e)}
+              onChange={e => setTemp(e.target.value)}
+              onKeyDown={e => handleOnKeyDown(e)}
               onBlur={handleOnBlur}
               className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
             ></input>

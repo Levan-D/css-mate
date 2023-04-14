@@ -2,7 +2,7 @@
 
 import React, { memo, useState } from "react"
 
-export type TooltipProps = {
+type Props = {
   text: string
   onClick?: boolean
   dArrow?: boolean
@@ -10,7 +10,7 @@ export type TooltipProps = {
   customCSS?: string
 }
 
-const Tooltip = memo(({ text, children, onClick, dArrow, customCSS }: TooltipProps) => {
+const Tooltip = memo(({ text, children, onClick, dArrow, customCSS }: Props) => {
   const [style, setStyle] = useState(onClick ? false : true)
   return (
     <span

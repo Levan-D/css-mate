@@ -30,19 +30,7 @@ import PaletteGenerartor from "../features/colors/paletteGenerator/PaletteGenera
 import ColorNamer from "../features/colors/colorNamer/ColorNamer"
 import ContrastChecker from "../features/colors/contrastChecker/ContrastChecker"
 
-export type pageButtonsType = {
-  catName: string
-  catPath: string
-  catCon: {
-    name: string
-    path: string
-    element: React.ComponentType<any>
-    description: string
-    icon: string
-  }[]
-}
-
-export const pageButtons: pageButtonsType[] = [
+export const pageButtons: PageButtonsType[] = [
   {
     catName: "Shadows",
     catPath: "shadows",

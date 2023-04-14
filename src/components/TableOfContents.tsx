@@ -4,11 +4,11 @@ import { useState, useEffect } from "react"
 // @ts-ignore
 import { ReactComponent as ChevronIcon } from "../assets/icons/chevron.svg"
 
-type tableOfContetsType = {
+type Props = {
   TOCData: string[]
 }
 
-const TableOfContents = ({ TOCData }: tableOfContetsType) => {
+const TableOfContents = ({ TOCData }: Props) => {
   const [visibility, setVisibility] = useState(true)
   const [tableOffset, setTableOffset] = useState(false)
 

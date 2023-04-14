@@ -6,7 +6,7 @@ import ColorConverter from "../../../utils/colors/ColorConverter"
 import ColorValidator from "../../../utils/colors/ColorValidator"
 import { RootState } from "../../../app/store"
 
-export interface inputBtnsProps {
+export interface ColorConverterBtnsType {
   name: "HEX" | "RGB" | "HSL" | "CMYK" | "HSV"
   value: "#ffffff" | "255, 255, 255" | "0, 0%, 100%" | "0%, 0%, 0%, 0%"
   outputValue:
@@ -18,13 +18,13 @@ export interface inputBtnsProps {
 }
 
 interface initialStateType {
-  inputType: inputBtnsProps
-  outputType: inputBtnsProps
+  inputType: ColorConverterBtnsType
+  outputType: ColorConverterBtnsType
   inputText: string
   outputText: string
   error: boolean
 }
-export const inputBtns: inputBtnsProps[] = [
+export const inputBtns: ColorConverterBtnsType[] = [
   { name: `HEX`, outputValue: "#ffffff", value: "#ffffff" },
   { name: `RGB`, outputValue: "RGB(255, 255, 255)", value: "255, 255, 255" },
   { name: `HSL`, outputValue: "HSL(0, 0%, 100%)", value: "0, 0%, 100%" },

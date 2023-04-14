@@ -1,6 +1,5 @@
 /** @format */
 
-import { BlogData } from "../../../components/BlogGenerator"
 // @ts-ignore
 import { ReactComponent as Star } from "../../../assets/misc/star.svg"
 
@@ -25,7 +24,7 @@ export const btnResponse: string[] = [
   "1",
 ]
 
-export const blogData: BlogData = {
+export const blogData: BlogDataType = {
   title: (
     <span>
       The aforementioned <span className="text-secondary-300">tips & tricks</span>

@@ -4,19 +4,12 @@ import { ReactNode, useState } from "react"
 
 import Tooltip from "./Tooltip"
 
-export type OutputRenderArrayType = {
-  title: string
-  copy: string
-  content: JSX.Element[] | string[]
-}
-
-type OutputProps = {
+type Props = {
   renderArray: OutputRenderArrayType[]
-
   comments?: { onActive: number; comment: ReactNode }[]
 }
 
-const Output = ({ renderArray, comments }: OutputProps) => {
+const Output = ({ renderArray, comments }: Props) => {
   const [selectedBtn, setSelectedBtn] = useState(0)
   return (
     <div

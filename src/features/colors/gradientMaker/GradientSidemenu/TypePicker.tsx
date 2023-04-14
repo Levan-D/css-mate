@@ -4,13 +4,11 @@ import React from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { setType } from "../gradientSlice"
 
-type kind = "linear" | "conic" | "radial"
-
 const TypePicker = () => {
   const dispatch = useAppDispatch()
   const { type } = useAppSelector(store => store.Gradient)
 
-  const types: kind[] = ["linear", "radial", "conic"]
+  const types: GradientBtnType[] = ["linear", "radial", "conic"]
 
   return (
     <div className="menuBlock m-2 flex justify-around px-2 py-1">

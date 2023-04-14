@@ -1,6 +1,5 @@
 /** @format */
 
-import { BlogData } from "../../../components/BlogGenerator"
 
 export const quotes: string[] = [
   `May the Force be with you.`,
@@ -35,7 +34,7 @@ export const quotes: string[] = [
   `Oh, Jerry, don't let's ask for the moon. We have the stars.`,
 ]
 
-export const blogData: BlogData = {
+export const blogData: BlogDataType = {
   title: (
     <span>
       The aforementioned <span className="text-secondary-300">tips & tricks</span>

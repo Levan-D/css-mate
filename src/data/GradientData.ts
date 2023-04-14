@@ -1,17 +1,10 @@
 /** @format */
 //@ts-ignore
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid"
 
-export type gradientSwatches = {
-  name: string;
-  type: "linear" | "conic" | "radial";
-  stops: {
-    id: string;
-    stop: { percent: number; color: string; opacity: number };
-  }[];
-};
 
-export const gradientSwatches: gradientSwatches[] = [
+
+export const gradientSwatches: GradientSwatchesType[] = [
   {
     name: "Strawberry Lemon",
     type: "linear",
@@ -471,4 +464,4 @@ export const gradientSwatches: gradientSwatches[] = [
       },
     ],
   },
-];
+]

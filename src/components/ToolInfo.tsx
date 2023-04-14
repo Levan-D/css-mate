@@ -1,19 +1,19 @@
 /** @format */
 
-import React, { memo, useState } from "react";
-import Tooltip from "./Tooltip";
+import React, { memo, useState } from "react"
+import Tooltip from "./Tooltip"
 
-export type TooltipProps = {
-  children: React.ReactNode;
-};
+type Props = {
+  children: React.ReactNode
+}
 
-const ToolInfo = memo(({ children }: TooltipProps) => {
-  const [visibility, setVisibility] = useState(false);
+const ToolInfo = memo(({ children }: Props) => {
+  const [visibility, setVisibility] = useState(false)
   return (
     <div>
       <Tooltip text={`Tool info`}>
         <div
-          onClick={() => setVisibility((x) => !x)}
+          onClick={() => setVisibility(x => !x)}
           className="h-6 w-6 cursor-help select-none rounded-full border-2 border-white text-center font-cursiveCustom"
         >
           i
@@ -30,9 +30,9 @@ const ToolInfo = memo(({ children }: TooltipProps) => {
         </div>
       )}
     </div>
-  );
-});
+  )
+})
 
-ToolInfo.displayName = "Tooltip";
+ToolInfo.displayName = "Tooltip"
 
-export default ToolInfo;
+export default ToolInfo

@@ -1,53 +1,48 @@
 /** @format */
 
-import React, { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import {
-  setShadowColor,
-  toggleShadow,
-  setShadowOpacity,
-} from "../contrastCheckerSlice";
+import React, { useState } from "react"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import { setShadowColor, toggleShadow, setShadowOpacity } from "../contrastCheckerSlice"
 //@ts-ignore
-import { ChromePicker, SwatchesPicker } from "react-color";
-import { color } from "../../../../components/ColorPicker";
-import RgbToHex from "../../../../utils/colors/RGBToHex";
-import ReactSlider from "react-slider";
+import { ChromePicker, SwatchesPicker } from "react-color"
+import RgbToHex from "../../../../utils/colors/RGBToHex"
+import ReactSlider from "react-slider"
 
 export default function InputShadow() {
   const { shadowColor, shadow, shadowOpacity } = useAppSelector(
-    (store) => store.contrastChecker
-  );
-  const dispatch = useAppDispatch();
-  const [displayColorPicker, setDisplayColorPicker] = useState(false);
-  const [displaySwatchesOne, setDisplaySwatchesOne] = useState(false);
-  const [color, setColor] = useState("");
+    store => store.contrastChecker
+  )
+  const dispatch = useAppDispatch()
+  const [displayColorPicker, setDisplayColorPicker] = useState(false)
+  const [displaySwatchesOne, setDisplaySwatchesOne] = useState(false)
+  const [color, setColor] = useState("")
 
   const handleClick = () => {
-    setDisplayColorPicker(!displayColorPicker);
-  };
+    setDisplayColorPicker(!displayColorPicker)
+  }
 
-  const handleChange = (color: color) => {
-    dispatch(setShadowColor(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`));
-    setColor("");
-  };
+  const handleChange = (color: ChromePickerType) => {
+    dispatch(setShadowColor(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`))
+    setColor("")
+  }
 
   const handleOnBlur = () => {
     const RGBRegex =
-      /^(?:\s*(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\s*,){2}\s*(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\s*$/;
-    let newRGB = color;
-    newRGB.replace(/[^,%#\d\w\s]/g, "");
+      /^(?:\s*(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\s*,){2}\s*(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\s*$/
+    let newRGB = color
+    newRGB.replace(/[^,%#\d\w\s]/g, "")
 
     if (RGBRegex.test(newRGB)) {
-      dispatch(setShadowColor(newRGB));
+      dispatch(setShadowColor(newRGB))
     }
-  };
+  }
 
   const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      handleOnBlur();
-      setColor("");
+      handleOnBlur()
+      setColor("")
     }
-  };
+  }
 
   return (
     <div className="menuContainer m-4    ">
@@ -67,7 +62,7 @@ export default function InputShadow() {
             type="number"
             value={shadowOpacity}
             step={0.01}
-            onChange={(e) => dispatch(setShadowOpacity(Number(e.target.value)))}
+            onChange={e => dispatch(setShadowOpacity(Number(e.target.value)))}
             className=" w-14 rounded-md bg-darkJungle-300 text-center md:text-right"
           />
         </div>
@@ -79,7 +74,7 @@ export default function InputShadow() {
             min={0}
             max={100}
             value={shadowOpacity * 100}
-            onChange={(value) => dispatch(setShadowOpacity(value / 100))}
+            onChange={value => dispatch(setShadowOpacity(value / 100))}
           />
         </div>
       </div>
@@ -118,7 +113,7 @@ export default function InputShadow() {
           id="hexText"
           value={color}
           placeholder={shadowColor}
-          onChange={(e) => setColor(e.target.value)}
+          onChange={e => setColor(e.target.value)}
           onKeyDown={handleOnKeyDown}
           onBlur={handleOnBlur}
           className=" block h-10 w-28   rounded-md border-2 border-darkJungle-400 bg-darkJungle-600 text-center  text-white placeholder-slate-300  duration-200 sm:hover:border-slate-300  "
@@ -143,16 +138,12 @@ export default function InputShadow() {
               onMouseDown={() => setDisplaySwatchesOne(false)}
             />
             <div className="translate-x-4 translate-y-10 rounded-md border-2">
-              <SwatchesPicker
-                width={280}
-                height={280}
-                onChange={handleChange}
-              />
+              <SwatchesPicker width={280} height={280} onChange={handleChange} />
             </div>
           </div>
         ) : null}
       </div>
       {/* hex color input */}
     </div>
-  );
+  )
 }

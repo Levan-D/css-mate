@@ -3,22 +3,13 @@
 import { useState, useMemo, ReactNode } from "react"
 import Tooltip from "./Tooltip"
 
-export type CatDisplayDataType = {
-  category: string
-  content: {
-    character: ReactNode | string
-    hexadecimal: string
-    description?: string
-  }[]
-}
-
-type CatDisplayType = {
+type Props = {
   Data: CatDisplayDataType[]
   Headers: string[]
   flexBasis: string
 }
 
-const CatDisplay = ({ Data, Headers, flexBasis }: CatDisplayType) => {
+const CatDisplay = ({ Data, Headers, flexBasis }: Props) => {
   const navBtns: string[] = []
 
   Data.forEach(data => {

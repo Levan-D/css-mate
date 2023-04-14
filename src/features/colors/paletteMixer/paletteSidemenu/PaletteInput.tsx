@@ -8,7 +8,6 @@ import HexToRGB from "../../../../utils/colors/HexToRGB"
 import { setStart, setEnd, setReset } from "../paletteMixerSlice"
 //@ts-ignore
 import { ChromePicker, SwatchesPicker } from "react-color"
-import { color } from "../../../../components/ColorPicker"
 import RandomColorGenerator from "../../../../utils/colors/RandomColorGenerator"
 
 export default function PaletteInput() {
@@ -33,7 +32,7 @@ export default function PaletteInput() {
     dispatch(setReset())
   }, [reset])
 
-  const handleChange = (color: color, type: "end" | "start") => {
+  const handleChange = (color: ChromePickerType, type: "end" | "start") => {
     if (type === "start") {
       setColorSt(color.hex)
     } else if (type === "end") {
@@ -41,7 +40,7 @@ export default function PaletteInput() {
     }
   }
 
-  const handleChangeComplete = (color: color, type: "end" | "start") => {
+  const handleChangeComplete = (color: ChromePickerType, type: "end" | "start") => {
     if (type === "start") {
       dispatch(setStart(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`))
       setColorSt(color.hex)
@@ -138,8 +137,8 @@ export default function PaletteInput() {
                 <ChromePicker
                   disableAlpha={true}
                   color={colorSt}
-                  onChange={(color: color) => handleChange(color, "start")}
-                  onChangeComplete={(color: color) =>
+                  onChange={(color: ChromePickerType) => handleChange(color, "start")}
+                  onChangeComplete={(color: ChromePickerType) =>
                     handleChangeComplete(color, "start")
                   }
                 />
@@ -186,7 +185,7 @@ export default function PaletteInput() {
                 <SwatchesPicker
                   width={280}
                   height={280}
-                  onChangeComplete={(color: color) =>
+                  onChangeComplete={(color: ChromePickerType) =>
                     handleChangeComplete(color, "start")
                   }
                 />
@@ -223,8 +222,10 @@ export default function PaletteInput() {
                 <ChromePicker
                   disableAlpha={true}
                   color={colorEn}
-                  onChange={(color: color) => handleChange(color, "end")}
-                  onChangeComplete={(color: color) => handleChangeComplete(color, "end")}
+                  onChange={(color: ChromePickerType) => handleChange(color, "end")}
+                  onChangeComplete={(color: ChromePickerType) =>
+                    handleChangeComplete(color, "end")
+                  }
                 />
               </div>
             </div>
@@ -271,7 +272,9 @@ export default function PaletteInput() {
                 <SwatchesPicker
                   width={280}
                   height={280}
-                  onChangeComplete={(color: color) => handleChangeComplete(color, "end")}
+                  onChangeComplete={(color: ChromePickerType) =>
+                    handleChangeComplete(color, "end")
+                  }
                 />
               </div>
             </div>

@@ -6,11 +6,11 @@ import PaletteContainer from "./PaletteContainer"
 
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver"
 
-type props = {
+type Props = {
   mainColor: string
 }
 
-export default function PaletteOutput({ mainColor }: props) {
+export default function PaletteOutput({ mainColor }: Props) {
   const [baseColor, setBaseColor] = useState(mainColor)
 
   const complementaryRef = useRef(null)

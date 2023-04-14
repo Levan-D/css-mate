@@ -2,7 +2,6 @@
 
 import Output from "../../../components/Output"
 import { useAppSelector } from "../../../app/hooks"
-import { OutputRenderArrayType } from "../../../components/Output"
 import { selectDropShadowStyle } from "./dropShadowSlice"
 //@ts-ignore
 import SyntaxHighlighter from "react-syntax-highlighter"

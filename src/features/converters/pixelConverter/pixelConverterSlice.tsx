@@ -3,16 +3,16 @@
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 
-export type inputBtnsProps = "PT" | "EM" | "IN" | "CM" | "MM"
+type PixelConverterBtnsType = "PT" | "EM" | "IN" | "CM" | "MM"
 
 interface initialStateType {
-  inputType: inputBtnsProps
+  inputType: PixelConverterBtnsType
   inputNumb: number
   base: number
-  PPI:number
+  PPI: number
   flip: boolean
 }
-export const inputBtnsPX: inputBtnsProps[] = ["PT", "EM", "IN", "CM", "MM"]
+export const inputBtnsPX: PixelConverterBtnsType[] = ["PT", "EM", "IN", "CM", "MM"]
 
 const initialState: initialStateType = {
   inputType: inputBtnsPX[0],
@@ -46,6 +46,12 @@ const pixelConverterSlice = createSlice({
   },
 })
 
-export const { resetState, handleInputBtn, setInputNumb, setInputBase, setFlip,setInputPPI } =
-  pixelConverterSlice.actions
+export const {
+  resetState,
+  handleInputBtn,
+  setInputNumb,
+  setInputBase,
+  setFlip,
+  setInputPPI,
+} = pixelConverterSlice.actions
 export default pixelConverterSlice.reducer

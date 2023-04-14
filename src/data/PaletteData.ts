@@ -1,11 +1,6 @@
 /** @format */
 
-export type paletteSwatches = {
-  name: string
-  colors: string[]
-}
-
-export const paletteSwatches: paletteSwatches[] = [
+export const paletteSwatches: PaletteSwatchesType[] = [
   {
     name: `Summer Vibes`,
     colors: ["#FFB3B3", `#FFDBA4`, `#FFE9AE`, `#C1EFFF`],
@@ -73,7 +68,8 @@ export const paletteSwatches: paletteSwatches[] = [
   {
     name: "Pastel Dreams",
     colors: ["#B8D8D8", "#7A9E9F", "#4F6367", "#Eef5DB"],
-  }, {
+  },
+  {
     name: "Candy Crush",
     colors: ["#FF6F59", "#254441", "#43AA8B", "#B2B09B"],
   },

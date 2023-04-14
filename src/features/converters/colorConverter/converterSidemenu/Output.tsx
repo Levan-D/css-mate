@@ -3,18 +3,18 @@
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { handleOutputBtn } from "../colorConverterSlice"
 import Tooltip from "../../../../components/Tooltip"
-import { inputBtns, convertColor, inputBtnsProps } from "../colorConverterSlice"
+import { inputBtns, convertColor, ColorConverterBtnsType } from "../colorConverterSlice"
 
 export default function Output() {
   const { inputType, outputType, outputText, inputText } = useAppSelector(
-    (store) => store.colorConverter
+    store => store.colorConverter
   )
   const dispatch = useAppDispatch()
 
   const outputString =
     outputType.name === "HEX" ? outputText : `${outputType.name}(${outputText})`
 
-  const handleClick = (btnType: inputBtnsProps) => {
+  const handleClick = (btnType: ColorConverterBtnsType) => {
     dispatch(handleOutputBtn(btnType))
 
     if (inputText !== "") {
@@ -32,9 +32,7 @@ export default function Output() {
             key={i}
             onClick={() => handleClick(btnType)}
             className={`${
-              outputType.name === btnType.name
-                ? "btnSecondary"
-                : "btnSecondaryDisabled"
+              outputType.name === btnType.name ? "btnSecondary" : "btnSecondaryDisabled"
             } ${
               inputType.name === btnType.name && " cursor-auto opacity-60"
             }   h-8 px-3 text-sm leading-4`}

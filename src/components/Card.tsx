@@ -4,14 +4,14 @@ import React from "react"
 import { Link } from "react-router-dom"
 import styles from "./card.module.css"
 
-type CardProps = {
+type Props = {
   title: string
   children: React.ReactNode
   description: string
   path: string
 }
 
-const Card = ({ title, children, path, description }: CardProps) => {
+const Card = ({ title, children, path, description }: Props) => {
   return (
     <Link to={path}>
       <div className="group h-[270px] w-[240px] duration-300 [perspective:1000px] hover:scale-110 sm:hover:translate-y-[-10px]  ">

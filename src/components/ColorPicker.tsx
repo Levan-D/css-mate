@@ -5,25 +5,9 @@ import { useState } from "react"
 import { ChromePicker } from "react-color"
 import ColorInverter from "../utils/colors/ColorInverter"
 
-type ColorPickerProps = { handleColorPick: (color: string) => void }
+type Props = { handleColorPick: (color: string) => void }
 
-export type color = {
-  hex: string
-  rgb: {
-    r: number
-    g: number
-    b: number
-    a: number
-  }
-  hsl: {
-    h: number
-    s: number
-    l: number
-    a: number
-  }
-}
-
-const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
+const ColorPicker = ({ handleColorPick }: Props) => {
   const [color, setColor] = useState({
     hex: `#000000`,
     rgb: {
@@ -69,11 +53,11 @@ const ColorPicker = ({ handleColorPick }: ColorPickerProps) => {
       name: "black",
     },
   ]
-  const handleChange = (color: color) => {
+  const handleChange = (color: ChromePickerType) => {
     setColor(color)
   }
 
-  const handleChangeComplete = (color: color) => {
+  const handleChangeComplete = (color: ChromePickerType) => {
     handleColorPick(`${color.rgb.r},${color.rgb.g},${color.rgb.b}`)
   }
 
