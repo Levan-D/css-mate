@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from "react"
-import { gradientSwatches } from "../../data/GradientData"
+import type { gradientSwatches } from "../../data/GradientData"
 import Tooltip from "../Tooltip"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setNewStops } from "../../features/colors/gradientMaker/gradientSlice"

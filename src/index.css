@@ -121,9 +121,8 @@
 }
 
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -131,11 +130,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 1);
   background: rgb(18, 30, 47);
-  background: linear-gradient(
-    150deg,
-    rgba(18, 30, 47, 1) 0%,
-    rgba(6, 10, 15, 1) 100%
-  );
+  background: linear-gradient(150deg, rgba(18, 30, 47, 1) 0%, rgba(6, 10, 15, 1) 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

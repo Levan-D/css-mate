@@ -7,6 +7,8 @@ import { setIsOpen, setIsMin } from "./sliderSlice"
 import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg"
 import GradientCard from "../GradientCard/GradientCard"
 import { gradientSwatches } from "../../data/GradientData"
+import PaletteCard from "../PaletteCard"
+import { paletteSwatches } from "../../data/PaletteData"
 
 export default function Slider() {
   const dispatch = useAppDispatch()
@@ -42,7 +44,7 @@ export default function Slider() {
         <GradientCard apply={true} swatch={swatch} key={i} />
       ))
     } else if (path.includes("/palette-generator")) {
-      return "Palette swatches"
+      return paletteSwatches.map((swatch, i) => <PaletteCard swatch={swatch} key={i} />)
     }
   }
 
