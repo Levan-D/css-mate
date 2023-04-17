@@ -16,7 +16,7 @@ const BoxShadow = () => {
   return (
     <main className=" my-16 mx-4">
       <Helmet>
-        <title>Box Shadows - CSS Mate</title>
+        <title>Box Shadow - CSS Mate</title>
         <meta
           name="description"
           content="Create stunning box shadows for your website with our CSS and Tailwind CSS box shadow generator app. Our app lets you customize your box shadows with a wide range of options, including color, blur, spread, and position, and provides CSS rule output for easy integration into your website or Tailwind CSS project. With our box shadow generator, you can create unique and eye-catching designs that will make your website stand out."

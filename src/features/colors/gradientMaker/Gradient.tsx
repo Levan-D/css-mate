@@ -27,7 +27,7 @@ const Gradient = () => {
       </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl drop-shadow-[0px_0px_3px_rgba(0,_0,_0,0.7)] filter">
         Generate
-        <span className="text-secondary-300">&#32;CSS linear gradient&#32;</span>
+        <span className="text-secondary-300">&#32;CSS gradient&#32;</span>
         backgrounds below
         <span
           onClick={() => setVisibility(x => !x)}
