@@ -7,6 +7,15 @@ const path = require("path")
 const OUTPUT_DIR = "dist" // Change this to your Vite build output directory
 const URL = "http://localhost:3000" // Change this to your app's URL
 
+function ensureDirectoryExistence(filePath) {
+  const dirname = path.dirname(filePath)
+  if (fs.existsSync(dirname)) {
+    return true
+  }
+  ensureDirectoryExistence(dirname)
+  fs.mkdirSync(dirname)
+}
+
 ;(async () => {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
@@ -41,6 +50,7 @@ const URL = "http://localhost:3000" // Change this to your app's URL
     const content = await page.content()
     const outputFile = path.join(OUTPUT_DIR, route.output)
 
+    ensureDirectoryExistence(outputFile) // Add this line before writing the file
     fs.writeFileSync(outputFile, content)
     console.log(`Prerendered: ${route.path}`)
   }
