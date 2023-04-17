@@ -22,7 +22,7 @@ jobs:
         run: npm run build # The build command of your project
 
       - name: Start local server
-        run: npm run serve & sleep 5
+        run: npm run preview & sleep 5
 
       - name: Prerender
         run: npm run prerender
