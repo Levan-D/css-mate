@@ -6,6 +6,8 @@ import BoxShadowSidemenu from "./boxShadowSidemenu/BoxShadowSidemenu"
 import TableOfContents from "../../../components/TableOfContents"
 import { blogData } from "./Data"
 import BlogGenerator from "../../../components/BlogGenerator"
+//@ts-ignore
+import { Helmet } from "react-helmet"
 
 const BoxShadow = () => {
   const TOCData = blogData.sections.map(section => section.id)
@@ -13,9 +15,21 @@ const BoxShadow = () => {
   TOCData.unshift(`Tool`)
   return (
     <main className=" my-16 mx-4">
+      <Helmet>
+        <title>Box Shadows - CSS Mate</title>
+        <meta
+          name="description"
+          content="Create stunning box shadows for your website with our CSS and Tailwind CSS box shadow generator app. Our app lets you customize your box shadows with a wide range of options, including color, blur, spread, and position, and provides CSS rule output for easy integration into your website or Tailwind CSS project. With our box shadow generator, you can create unique and eye-catching designs that will make your website stand out."
+        />
+
+        <meta
+          name="keywords"
+          content="box shadow generator, CSS box shadows, Tailwind CSS, web design, web development, design tools, shadow customization, box shadow color, box shadow blur, box shadow spread, box shadow position, CSS properties, CSS rule output, Tailwind CSS integration, responsive design, user interface design"
+        />
+      </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Generate <span className="text-secondary-300">box shadows</span> for
-        your project with ease
+        Generate <span className="text-secondary-300">box shadows</span> for your project
+        with ease
       </h1>
       <p className="mb-8 text-center font-cursiveCustom text-base">
         Scroll below for tips & tricks
@@ -35,7 +49,7 @@ const BoxShadow = () => {
         <BlogGenerator data={blogData} />
       </div>
     </main>
-  );
+  )
 }
 
 export default BoxShadow

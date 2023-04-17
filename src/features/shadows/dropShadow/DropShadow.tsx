@@ -6,17 +6,31 @@ import DropShadowSidemenu from "./dropShadowSidemenu/DropShadowSidemenu"
 import TableOfContents from "../../../components/TableOfContents"
 import { blogData } from "./Data"
 import BlogGenerator from "../../../components/BlogGenerator"
+//@ts-ignore
+import { Helmet } from "react-helmet"
 
 const DropShadow = () => {
   const TOCData = blogData.sections.map(section => section.id)
   TOCData.unshift(blogData.id)
   TOCData.unshift(`Tool`)
-  
+
   return (
     <main className=" my-16 mx-4">
+      <Helmet>
+        <title>Drop Shadow - CSS Mate</title>
+        <meta
+          name="description"
+          content="Create stunning drop shadows for your website with our CSS drop shadow generator app. Our app lets you customize your drop shadows with a wide range of options, including color, blur, spread, and position, making it easy to create unique and eye-catching designs. Use our app to streamline your drop shadow design process and add depth to your website."
+        />
+
+        <meta
+          name="keywords"
+          content="drop shadow generator, CSS drop shadows, web design, graphic design, design tools, shadow customization, drop shadow color, drop shadow blur, drop shadow spread, drop shadow position, CSS properties, responsive design, user interface design"
+        />
+      </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Generate <span className="text-secondary-300">drop shadows</span> for
-        your project with ease
+        Generate <span className="text-secondary-300">drop shadows</span> for your project
+        with ease
       </h1>
       <p className="mb-8 text-center font-cursiveCustom text-base">
         Scroll below for tips & tricks
@@ -36,7 +50,7 @@ const DropShadow = () => {
         <BlogGenerator data={blogData} />
       </div>
     </main>
-  );
+  )
 }
 
 export default DropShadow
