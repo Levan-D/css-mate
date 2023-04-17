@@ -20,7 +20,7 @@ const Home = () => {
       <div className="mx-auto max-w-3xl text-center font-cursiveCustom">
         <h1 className={`typing text-6xl ${styles.bounce} `}>Hello,</h1>
         <h2 className="mt-6 text-xl ">
-          Welcome to our collection of AAAAAAAAAAAAAAAAAAA
+          Welcome to our collection of
           <span className="text-secondary-300"> CSS and HTML tools! </span>
           Whether you're a seasoned web developer or just getting started, our
           tools are designed to make your life easier. Here, you'll find a wide
