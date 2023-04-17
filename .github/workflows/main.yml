@@ -24,9 +24,6 @@ jobs:
       - name: Prerender and serve
         run: npm run prerender:serve
 
-      - name: Prerender
-        run: npm run prerender
-
       - name: Push
         uses: s0/git-publish-subdir-action@develop
         env:
