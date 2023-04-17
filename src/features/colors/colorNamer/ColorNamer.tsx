@@ -3,7 +3,6 @@
 import ColorNamerSidemenu from "./colorNamerSidemenu/ColorNamerSidemenu"
 //@ts-ignore
 import { Helmet } from "react-helmet"
-import colorNamer from "../../../assets/openGraphTags/colorNamer.png"
 
 export default function ColorNamer() {
   return (
@@ -20,7 +19,11 @@ export default function ColorNamer() {
           property="og:description"
           content="Discover the perfect color for your project with our color naming app.  Try our color naming app today and take your design to the next level."
         />
-        <meta property="og:image" content={colorNamer} />
+        <meta
+          property="og:image"
+          content={`${process.env.PUBLIC_URL}/openGraphTags/colorNamer.png`}
+        />
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://cssmate.online/colors/color-namer" />
       </Helmet>
