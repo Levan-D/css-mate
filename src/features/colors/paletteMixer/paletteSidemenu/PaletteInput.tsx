@@ -164,7 +164,7 @@ export default function PaletteInput() {
           <div onClick={() => handleRandomColor("start")} className="btnSecondary w-20">
             <img
               src={dice}
-              alt=""
+              alt="dice icon"
               className="inline-block  w-20  -translate-y-[2px] scale-[2] "
             />
           </div>
@@ -250,7 +250,7 @@ export default function PaletteInput() {
           <div onClick={() => handleRandomColor("end")} className="btnSecondary w-20">
             <img
               src={dice}
-              alt=""
+              alt="dice icon"
               className="inline-block  w-20  -translate-y-[2px] scale-[2]"
             />
           </div>

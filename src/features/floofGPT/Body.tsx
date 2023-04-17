@@ -32,7 +32,7 @@ const Body = () => {
               <img
                 className="w-6 rounded-full bg-primary "
                 src={response.user === "floofGPT" ? FlooFGPTIcon : UserIcon}
-                alt=""
+                alt="chat user icon"
               />
             </div>
             <div className="text-sm leading-6  "> {response.timeStamp.split(",")[1]}</div>
@@ -56,7 +56,11 @@ const Body = () => {
       {askFloofGPTStatus.loading && (
         <div className="flex">
           <div>
-            <img className="w-6 rounded-full bg-primary " src={FlooFGPTIcon} alt="" />
+            <img
+              className="w-6 rounded-full bg-primary "
+              src={FlooFGPTIcon}
+              alt="ai chatbot icon"
+            />
           </div>
           <div className={`${styles.ldsRipple} translate-x-2`}>
             <div></div>

@@ -109,7 +109,7 @@ export default function PaletteSideMenu({ setMainColor }: Props) {
             <div onClick={handleRandomColor} className="btnSecondary w-20">
               <img
                 src={dice}
-                alt=""
+                alt="dice icon"
                 className="inline-block  w-20  -translate-y-[2px] scale-[2] "
               />
             </div>

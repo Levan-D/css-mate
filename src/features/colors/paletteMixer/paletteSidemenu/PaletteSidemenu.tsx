@@ -25,7 +25,7 @@ export default function PaletteSidemenu() {
           Analogous colors mix better - the closer they are on the color wheel
           the nicer inbetween colors they will generate. 
           <div className="mx-auto my-4 w-56 pr-4">
-            <img src={colorWheel} alt="" />
+            <img src={colorWheel} alt="color wheel" />
           </div>
         </li>
       </ul>

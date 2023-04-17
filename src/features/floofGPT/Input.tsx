@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { askFloofGPT, pushUserResponse } from "./floofGPTSlice"
 
 const Input = () => {
-  const { isOpen, askFloofGPTStatus } = useAppSelector((state) => state.floof)
+  const { isOpen, askFloofGPTStatus } = useAppSelector(state => state.floof)
   const dispatch = useAppDispatch()
   const [inputText, setInputText] = useState("")
   const inputRef = useRef<HTMLInputElement>(null)
@@ -35,7 +35,7 @@ const Input = () => {
             required
             ref={inputRef}
             value={inputText}
-            onChange={(e) => {
+            onChange={e => {
               setInputText(e.target.value)
             }}
             autoComplete="off"
@@ -47,7 +47,7 @@ const Input = () => {
             <img
               className="h-7 px-1 duration-200 active:brightness-75 sm:hover:brightness-90 "
               src={SendIcon}
-              alt=""
+              alt="send icon"
             />
           </button>
         </div>

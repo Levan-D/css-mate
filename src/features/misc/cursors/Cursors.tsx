@@ -11,8 +11,8 @@ const Cursors = () => {
   return (
     <main className="my-16 mx-4">
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
-        Almost every CSS <span className="text-secondary-300">cursor</span> type
-        presented below
+        Almost every CSS <span className="text-secondary-300">cursor</span> type presented
+        below
       </h1>
       <p className="mb-8 text-center font-cursiveCustom text-base">
         Hover over to demo and click to copy!
@@ -26,8 +26,7 @@ const Cursors = () => {
       <p className=" text-center">
         You can also set custom cursors using the
         <span className="text-secondary-300">
-          &#32; cursor: url&#x28; image link&#x29;, x y, fallback cursor
-          type;&#32;
+          &#32; cursor: url&#x28; image link&#x29;, x y, fallback cursor type;&#32;
         </span>
         property.
       </p>
@@ -37,7 +36,7 @@ const Cursors = () => {
 
       <div>
         {cursorData.map((cursor, i) => {
-          TOCData.push(cursor.category);
+          TOCData.push(cursor.category)
           return (
             <div key={i}>
               <h2
@@ -66,11 +65,11 @@ const Cursors = () => {
                         <div
                           className={`btnPrimary flex gap-1 shadow-primaryBr`}
                           onClick={() => {
-                            navigator.clipboard.writeText(content.vanilla);
+                            navigator.clipboard.writeText(content.vanilla)
                           }}
                         >
                           <div>
-                            <img src={cssIcon} className="w-6" alt="" />
+                            <img src={cssIcon} className="w-6" alt="css icon" />
                           </div>
 
                           <div className="text-sm leading-6">Copy</div>
@@ -80,11 +79,15 @@ const Cursors = () => {
                         <div
                           className={`btnPrimary flex gap-1 shadow-primaryBr`}
                           onClick={() => {
-                            navigator.clipboard.writeText(content.tailwind);
+                            navigator.clipboard.writeText(content.tailwind)
                           }}
                         >
                           <div>
-                            <img src={tailwindIcon} className="w-6" alt="" />
+                            <img
+                              src={tailwindIcon}
+                              className="w-6"
+                              alt="tailwind css icon"
+                            />
                           </div>
                           <div className="text-sm leading-6">Copy</div>
                         </div>
@@ -94,11 +97,11 @@ const Cursors = () => {
                 ))}
               </div>
             </div>
-          );
+          )
         })}
       </div>
     </main>
-  );
+  )
 }
 
 export default Cursors

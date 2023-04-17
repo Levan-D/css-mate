@@ -95,7 +95,7 @@ const Navbar = () => {
             className={` my-1 ml-4 hidden shrink-0  cursor-pointer select-none rounded-full border-2  border-transparent text-lg duration-300 active:brightness-75 md:block md:hover:border-white`}
           >
             <a href="https://github.com/Levan-D/CSSHomie" target="_blank">
-              <img className="h-6" src={githubIcon} alt="" />
+              <img className="h-6" src={githubIcon} alt="github icon" />
             </a>
           </li>
           {/* github link */}

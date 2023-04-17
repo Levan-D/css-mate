@@ -47,7 +47,7 @@ export default function BlogGenerator({ data }: Props) {
     switch (piece.type) {
       case "paragraph":
         if (Array.isArray(piece.data)) {
-          return piece.data.map(paragraph => <div key={uuidv4()}>{paragraph}</div>)
+          return piece.data.map(paragraph => <p key={uuidv4()}>{paragraph}</p>)
         }
 
       case "code":

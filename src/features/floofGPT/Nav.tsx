@@ -1,26 +1,26 @@
 /** @format */
 
-import FlooFGPTIcon from "../../assets/icons/floofGPT.png";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { setIsOpen, setIsExpanded } from "./floofGPTSlice";
-import { Link } from "react-router-dom";
-import Tooltip from "../../components/Tooltip";
+import FlooFGPTIcon from "../../assets/icons/floofGPT.png"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { setIsOpen, setIsExpanded } from "./floofGPTSlice"
+import { Link } from "react-router-dom"
+import Tooltip from "../../components/Tooltip"
 
 const Nav = () => {
-  const dispatch = useAppDispatch();
-  const { isExpanded } = useAppSelector((state) => state.floof);
-  const { path } = useAppSelector((store) => store.navbar);
+  const dispatch = useAppDispatch()
+  const { isExpanded } = useAppSelector(state => state.floof)
+  const { path } = useAppSelector(store => store.navbar)
 
   const meow = () => {
-    let audio = new Audio("/meow.mp3");
-    audio.volume = 0.2;
-    audio.play();
-  };
+    let audio = new Audio("/meow.mp3")
+    audio.volume = 0.2
+    audio.play()
+  }
 
   const handleMinimize = () => {
-    dispatch(setIsOpen(false));
-    dispatch(setIsExpanded(false));
-  };
+    dispatch(setIsOpen(false))
+    dispatch(setIsExpanded(false))
+  }
 
   return (
     <div className={` flex justify-between  bg-primary p-1 sm:rounded-t-xl`}>
@@ -28,7 +28,7 @@ const Nav = () => {
         onClick={meow}
         className="w-fit cursor-pointer select-none rounded-full border-2 shadow-primaryBr duration-200 sm:hover:border-secondary-300 sm:hover:brightness-110"
       >
-        <img className="w-8  " src={FlooFGPTIcon} alt="" />
+        <img className="w-8  " src={FlooFGPTIcon} alt="ai chatbot icon" />
       </div>
       <p className="text-md grow text-center font-bold leading-8  ">
         FlooF-GPT
@@ -40,9 +40,7 @@ const Nav = () => {
           : premier A.I. floofsistant
         </span>
         {path.includes("/floof-gpt") && (
-          <span
-            className={` hidden font-normal  italic duration-200 sm:inline  `}
-          >
+          <span className={` hidden font-normal  italic duration-200 sm:inline  `}>
             : premier A.I. floofsistant
           </span>
         )}
@@ -81,7 +79,7 @@ const Nav = () => {
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
