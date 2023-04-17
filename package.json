@@ -11,7 +11,8 @@
 
   },
   "reactSnap": {
-    "inlineCss": true
+    "inlineCss": true,
+    "distDir": "dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
