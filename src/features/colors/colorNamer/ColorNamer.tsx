@@ -21,7 +21,7 @@ export default function ColorNamer() {
         />
         <meta
           property="og:image"
-          content={`${process.env.PUBLIC_URL}/openGraphTags/colorNamer.png`}
+          content={`${import.meta.env.BASE_URL}openGraphTags/colorNamer.png`}
         />
 
         <meta property="og:type" content="website" />
