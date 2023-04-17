@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prerender": "node prerender.js",
+    "prerender": "node prerender.cjs",
     "build:prerender": "npm run build && npm run serve & sleep 5 && npm run prerender"
   },
   "dependencies": {
