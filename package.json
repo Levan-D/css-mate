@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prerender": "node prerender.cjs",
-    "build:prerender": "npm run build && npm run serve & sleep 5 && npm run prerender"
+    "build:prerender": "npm run build && npm run serve & sleep 5 && npm run prerender",
+    "prerender:serve": "start-server-and-test preview http://localhost:3000 prerender"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
@@ -26,6 +27,7 @@
     "react-router-dom": "^6.6.1",
     "react-slider": "^2.0.4",
     "react-syntax-highlighter": "^15.5.0",
+    "start-server-and-test": "^2.0.0",
     "uuid": "^9.0.0",
     "vite-plugin-svgr": "^2.4.0"
   },
