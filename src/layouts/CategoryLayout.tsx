@@ -8,6 +8,8 @@ import { Link } from "react-router-dom"
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid"
 import styles from "./categoryLayout.module.css"
+//@ts-ignore
+import { Helmet } from "react-helmet"
 
 const CategoryLayout = () => {
   const { categoryIndex, pathArray, windowWidth } = useAppSelector(store => store.navbar)
@@ -21,8 +23,16 @@ const CategoryLayout = () => {
 
   const translate = (270 * (pageBLength - 1)) / 2
 
+  const header = pathArray[0]
+    ? pathArray[0].slice(0, 1).toUpperCase() + pathArray[0].slice(1)
+    : ""
+
   return (
     <div>
+      <Helmet>
+        <title>{header} - CSS Mate</title>
+        <meta name="description" content={`${pathArray[0]} selection menu`} />
+      </Helmet>
       {!pathArray[1] ? (
         <div>
           <h2 className=" mx-auto my-20 flex w-fit max-w-3xl  select-none text-center  !font-cursiveCustom text-4xl ">
