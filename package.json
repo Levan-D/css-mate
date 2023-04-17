@@ -6,12 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "postbuild": "react-snap"
-
-  },
-  "reactSnap": {
-    "inlineCss": true
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
@@ -26,7 +21,6 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",
     "react-slider": "^2.0.4",
-    "react-snap": "^1.23.0",
     "react-syntax-highlighter": "^15.5.0",
     "uuid": "^9.0.0",
     "vite-plugin-svgr": "^2.4.0"
