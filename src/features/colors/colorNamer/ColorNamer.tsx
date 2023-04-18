@@ -24,6 +24,7 @@ export default function ColorNamer() {
           property="og:image"
           content={`${import.meta.env.BASE_URL}openGraphTags/colorNamer.png`}
         />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://cssmate.online/colors/color-namer" />
       </Helmet>
       <h1 className="mb-8 text-center font-cursiveCustom   text-2xl">
