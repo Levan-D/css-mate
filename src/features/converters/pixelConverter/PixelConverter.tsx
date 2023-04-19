@@ -31,10 +31,6 @@ export default function PixelConverter() {
         />
 
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://cssmate.online/converters/pixel-converter"
-        />
       </Helmet>
       <h1 className="mb-8 text-center font-cursiveCustom   text-2xl">
         Convert
