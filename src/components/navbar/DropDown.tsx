@@ -22,9 +22,10 @@ const DropDown = ({ category, subMenuVis, windowWidth, handleSubMenuClick }: Pro
     <div
       className={`${
         subMenuVis === category.catPath && `bg-slate-500`
-      }   mx-8 rounded-b-lg sm:mx-16 md:mx-0   `}
+      }   mx-8 rounded-b-lg sm:mx-16   md:mx-0`}
     >
       <ul
+        style={{ boxShadow: `3px 6px 8px 0px rgb(59 130 246 / 0.5)` }}
         className={` ${dropDownVisibility} dropdown-transition collapse hidden origin-top translate-x-[0]  rounded-lg  border-0 bg-none from-[#151f36] to-slate-900 px-4 py-2 opacity-0  ease-in-out md:absolute md:block md:translate-x-[-40px]  md:scale-y-0 md:border-2 md:bg-gradient-to-r md:group-hover:visible md:group-hover:scale-y-100 md:group-hover:opacity-100`}
       >
         {category.catCon.map((btn, index) => (
