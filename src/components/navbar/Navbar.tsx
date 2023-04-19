@@ -66,21 +66,21 @@ const Navbar = () => {
             <li
               key={i}
               onClick={() => handleSubMenuClick(category.catPath)}
-              className={` group  shrink-0 cursor-pointer select-none whitespace-nowrap   rounded-2xl font-cursiveCustom  text-xl  font-bold md:mb-0  `}
+              className={` group  shrink-0  select-none whitespace-nowrap   rounded-2xl font-cursiveCustom  text-xl  font-bold md:mb-0  `}
             >
               {windowWidth < 768 ? (
                 <div
                   onClick={() => handleSubMenuClick(category.catPath)}
                   className={`  ${
                     subMenuVis === category.catPath && `bg-slate-500`
-                  } mx-8 rounded-t-lg  pt-2  sm:mx-16  `}
+                  } mx-8 rounded-t-lg  pt-2  sm:mx-16  cursor-pointer`}
                 >
                   <div
                     className={` ${
                       pathArray[0] === category.catPath && "   !bg-secondary-300  "
                     } ${
                       subMenuVis === category.catPath && "    !bg-slate-600  "
-                    } mx-8 rounded-full pb-1 pt-2  sm:mx-16`}
+                    } mx-8 rounded-full pb-1 pt-2 cursor-pointer sm:mx-16`}
                   >
                     {" "}
                     {category.catName}

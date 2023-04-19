@@ -32,10 +32,10 @@ const DropDown = ({ category, subMenuVis, windowWidth, handleSubMenuClick }: Pro
             key={index}
             onClick={() => handleSubMenuClick(category.catPath)}
             className={`   ${pathArray[1] === btn.path ? " !bg-secondary-300" : ""} 
-            mx-8 shrink-0 cursor-pointer select-none  rounded-2xl font-cursiveCustom text-base  font-bold duration-300  hover:bg-secondary-200 active:brightness-75 sm:mx-16 md:mx-0 md:text-lg `}
+            mx-8 shrink-0  select-none  rounded-2xl font-cursiveCustom text-base  font-bold duration-300  hover:bg-secondary-200 active:brightness-75 sm:mx-16 md:mx-0 md:text-lg `}
           >
             <Link
-              className="inline-block w-full px-4 pt-2 pb-1 md:pt-1 md:pb-0"
+              className="inline-block w-full cursor-pointer px-4 pt-2 pb-1 md:pt-1 md:pb-0"
               to={category.catPath + "/" + btn.path}
             >
               {btn.name}
