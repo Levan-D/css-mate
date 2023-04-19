@@ -34,7 +34,7 @@ const BoxShadow = () => {
         />
         <meta
           property="og:image"
-          content="https://cssmate.online/openGraphTags/boxShadows.png"
+          content="https://cssmate.online/openGraphTags/boxShadow.png"
         />
 
         <meta property="og:type" content="website" />

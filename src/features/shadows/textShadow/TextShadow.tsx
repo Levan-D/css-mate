@@ -35,7 +35,7 @@ const TextShadow = () => {
         />
         <meta
           property="og:image"
-          content="https://cssmate.online/openGraphTags/textShadows.png"
+          content="https://cssmate.online/openGraphTags/textShadow.png"
         />
 
         <meta property="og:type" content="website" />

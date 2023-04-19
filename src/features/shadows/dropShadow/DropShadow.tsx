@@ -35,7 +35,7 @@ const DropShadow = () => {
         />
         <meta
           property="og:image"
-          content="https://cssmate.online/openGraphTags/dropShadows.png"
+          content="https://cssmate.online/openGraphTags/dropShadow.png"
         />
 
         <meta property="og:type" content="website" />
