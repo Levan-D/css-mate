@@ -23,8 +23,8 @@ const RootLayout = () => {
         background: path.includes("/gradient-maker") ? linearGradient : "",
       }}
     >
-      <BackToTopBtn />
-      <FloofGPT />
+      {/* <BackToTopBtn /> */}
+      {/* <FloofGPT /> */}
       <Slider />
       <Navbar />
 

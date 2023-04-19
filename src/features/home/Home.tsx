@@ -23,7 +23,7 @@ const Home = () => {
         <title>Home Page - CSS Mate</title>
         <meta
           name="description"
-          content="Discover a wide range of CSS and HTML tools, cheatsheets, and converters to make your web development easier. Start exploring now!"
+          content="Discover a wide range of CSS and HTML tools, cheat sheets, and converters to make your web development easier. Start exploring now!"
         />
         <meta name="keywords" content="homepage, css tools, html tools,landing page" />
       </Helmet>
