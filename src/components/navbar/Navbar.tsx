@@ -73,14 +73,14 @@ const Navbar = () => {
                   onClick={() => handleSubMenuClick(category.catPath)}
                   className={`  ${
                     subMenuVis === category.catPath && `bg-slate-500`
-                  } mx-16  rounded-t-lg  pt-2  `}
+                  } mx-8 rounded-t-lg  pt-2  sm:mx-16  `}
                 >
                   <div
                     className={` ${
                       pathArray[0] === category.catPath && "   !bg-secondary-300  "
                     } ${
                       subMenuVis === category.catPath && "    !bg-slate-600  "
-                    } mx-16 rounded-full pb-1  pt-2`}
+                    } mx-8 rounded-full pb-1 pt-2  sm:mx-16`}
                   >
                     {" "}
                     {category.catName}

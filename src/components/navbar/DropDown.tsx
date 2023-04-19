@@ -22,7 +22,7 @@ const DropDown = ({ category, subMenuVis, windowWidth, handleSubMenuClick }: Pro
     <div
       className={`${
         subMenuVis === category.catPath && `bg-slate-500`
-      }  mx-16 md:mx-0 rounded-b-lg   `}
+      }   mx-8 rounded-b-lg sm:mx-16 md:mx-0   `}
     >
       <ul
         className={` ${dropDownVisibility} dropdown-transition collapse hidden origin-top translate-x-[0]  rounded-lg  border-0 bg-none from-[#151f36] to-slate-900 px-4 py-2 opacity-0  ease-in-out md:absolute md:block md:translate-x-[-40px]  md:scale-y-0 md:border-2 md:bg-gradient-to-r md:group-hover:visible md:group-hover:scale-y-100 md:group-hover:opacity-100`}
@@ -32,7 +32,7 @@ const DropDown = ({ category, subMenuVis, windowWidth, handleSubMenuClick }: Pro
             key={index}
             onClick={() => handleSubMenuClick(category.catPath)}
             className={`   ${pathArray[1] === btn.path ? " !bg-secondary-300" : ""} 
-            shrink-0 cursor-pointer select-none rounded-2xl mx-16 md:mx-0  font-cursiveCustom text-base  font-bold duration-300 active:brightness-75 md:text-lg hover:bg-secondary-200 `}
+            mx-8 shrink-0 cursor-pointer select-none  rounded-2xl font-cursiveCustom text-base  font-bold duration-300  hover:bg-secondary-200 active:brightness-75 sm:mx-16 md:mx-0 md:text-lg `}
           >
             <Link
               className="inline-block w-full px-4 pt-2 pb-1 md:pt-1 md:pb-0"
