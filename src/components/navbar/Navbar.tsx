@@ -47,7 +47,10 @@ const Navbar = () => {
     >
       <nav className="mx-auto h-fit max-w-4xl items-center justify-between align-bottom md:flex md:h-16 md:px-4">
         {/* home */}
-        <div className="mx-auto w-fit py-2 pl-8 md:mx-0 md:p-0 ">
+        <div
+          className="mx-auto w-fit py-2 pl-8 md:mx-0 md:p-0 "
+          onClick={() => handleSubMenuClick("")}
+        >
           <Link to="/">
             <img
               className="h-12 cursor-pointer duration-200 active:brightness-75  "
@@ -62,22 +65,41 @@ const Navbar = () => {
           {pageButtons.map((category, i) => (
             <li
               key={i}
-              className={` ${
-                windowWidth > 540
-                  ? pathArray[0] === category.catPath &&
-                    "   mx-4 !bg-slate-500 md:mx-0 md:!bg-secondary-300  "
-                  : subMenuVis === category.catPath &&
-                    "   mx-4 !bg-slate-500 md:mx-0 md:!bg-secondary-300  "
-              }  group shrink-0 cursor-pointer select-none whitespace-nowrap rounded-2xl  px-4 py-1 font-cursiveCustom text-xl  font-bold duration-200  md:hover:bg-secondary-200 `}
+              onClick={() => handleSubMenuClick(category.catPath)}
+              className={` group  shrink-0 cursor-pointer select-none whitespace-nowrap   rounded-2xl font-cursiveCustom  text-xl  font-bold md:mb-0  `}
             >
-              {windowWidth < 540 ? (
-                <div onClick={() => handleSubMenuClick(category.catPath)}>
-                  {category.catName}
+              {windowWidth < 768 ? (
+                <div
+                  onClick={() => handleSubMenuClick(category.catPath)}
+                  className={`  ${
+                    subMenuVis === category.catPath && `bg-slate-500`
+                  } mx-16  rounded-t-lg  pt-2  `}
+                >
+                  <div
+                    className={` ${
+                      pathArray[0] === category.catPath && "   !bg-secondary-300  "
+                    } ${
+                      subMenuVis === category.catPath && "    !bg-slate-600  "
+                    } mx-16 rounded-full pb-1  pt-2`}
+                  >
+                    {" "}
+                    {category.catName}
+                  </div>
                 </div>
               ) : (
-                <Link to={category.catPath}>
-                  <div> {category.catName}</div>
-                </Link>
+                <div className="py-3">
+                  <Link to={category.catPath}>
+                    <div
+                      className={`${
+                        pathArray[0] === category.catPath && "   !bg-secondary-300  "
+                      } ${
+                        subMenuVis === category.catPath && "    !bg-secondary-300  "
+                      } rounded-full px-4 py-1 duration-200  hover:bg-secondary-200`}
+                    >
+                      {category.catName}
+                    </div>
+                  </Link>
+                </div>
               )}
 
               {/* dropdown menu */}
@@ -92,7 +114,7 @@ const Navbar = () => {
           ))}
           {/* github link */}
           <li
-            className={` my-1 ml-4 hidden shrink-0  cursor-pointer select-none rounded-full border-2  border-transparent text-lg duration-300 active:brightness-75 md:block md:hover:border-white`}
+            className={` my-3.5 ml-4 hidden h-7 shrink-0 cursor-pointer select-none rounded-full border-2  border-transparent text-lg duration-300 active:brightness-75 md:block md:hover:border-white`}
           >
             <a href="https://github.com/Levan-D/CSSHomie" target="_blank">
               <img className="h-6" src={githubIcon} alt="github icon" />

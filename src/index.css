@@ -70,7 +70,11 @@
     box-shadow: 0 0 0 8px rgba(95, 157, 247, 0.4);
   }
   /* sliders */
-
+  .dropdown-transition {
+    transition-property: opacity, transform;
+    transition-duration: 150ms, 200ms;
+    transition-timing-function: ease;
+  }
   /* scrollbar */
   /* width */
   ::-webkit-scrollbar {
