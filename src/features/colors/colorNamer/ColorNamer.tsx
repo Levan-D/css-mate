@@ -22,8 +22,9 @@ export default function ColorNamer() {
         />
         <meta
           property="og:image"
-          content={`${import.meta.env.BASE_URL}openGraphTags/colorNamer.png`}
+          content="https://cssmate.online/openGraphTags/colorNamer.png"
         />
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://cssmate.online/colors/color-namer" />
       </Helmet>

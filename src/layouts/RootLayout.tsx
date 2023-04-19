@@ -1,18 +1,18 @@
 /** @format */
 
-import BackToTopBtn from "../components/BackToTopBtn";
-import FloofGPT from "../features/floofGPT/FloofGPT";
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/Footer";
-import { Outlet } from "react-router-dom";
-import { useAppSelector } from "../app/hooks";
-import { selectGradientStyle } from "../features/colors/gradientMaker/gradientSlice";
-import Slider from "../components/slider/Slider";
+import BackToTopBtn from "../components/BackToTopBtn"
+import FloofGPT from "../features/floofGPT/FloofGPT"
+import Navbar from "../components/navbar/Navbar"
+import Footer from "../components/Footer"
+import { Outlet } from "react-router-dom"
+import { useAppSelector } from "../app/hooks"
+import { selectGradientStyle } from "../features/colors/gradientMaker/gradientSlice"
+import Slider from "../components/slider/Slider"
 
 const RootLayout = () => {
-  const { path } = useAppSelector((store) => store.navbar);
+  const { path } = useAppSelector(store => store.navbar)
 
-  const linearGradient = useAppSelector(selectGradientStyle);
+  const linearGradient = useAppSelector(selectGradientStyle)
 
   return (
     <div
@@ -23,8 +23,8 @@ const RootLayout = () => {
         background: path.includes("/gradient-maker") ? linearGradient : "",
       }}
     >
-      {/* <BackToTopBtn /> */}
-      {/* <FloofGPT /> */}
+      <BackToTopBtn />
+      <FloofGPT />
       <Slider />
       <Navbar />
 
@@ -34,7 +34,7 @@ const RootLayout = () => {
 
       {!location.pathname.includes("/gradient-maker") && <Footer />}
     </div>
-  );
-};
+  )
+}
 
-export default RootLayout;
+export default RootLayout
