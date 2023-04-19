@@ -23,6 +23,19 @@ const Cursors = () => {
           name="keywords"
           content="CSS cursor rules, cursor visualization, web development, design tools, web design, graphic design, user interface design, user experience design, web typography, web accessibility, responsive design"
         />
+
+        <meta property="og:title" content="Cursors" />
+        <meta
+          property="og:description"
+          content="Easily visualize all CSS cursor rules with our comprehensive cursor rule visualization app. Our app provides a quick reference guide for all commonly used CSS cursor rules, including visual representations and descriptions, making it easy to select the perfect cursor style for your website. Use our app to streamline your CSS coding process and save time on your web development projects."
+        />
+        <meta
+          property="og:image"
+          content="https://cssmate.online/openGraphTags/cursor.png"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cssmate.online/misc/cursors" />
       </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Almost every CSS <span className="text-secondary-300">cursor</span> type presented

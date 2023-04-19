@@ -26,6 +26,19 @@ const Home = () => {
           content="Discover a wide range of CSS and HTML tools, cheat sheets, and converters to make your web development easier. Start exploring now!"
         />
         <meta name="keywords" content="homepage, css tools, html tools,landing page" />
+
+        <meta property="og:title" content="Home Page" />
+        <meta
+          property="og:description"
+          content="Discover a wide range of CSS and HTML tools, cheat sheets, and converters to make your web development easier. Start exploring now!"
+        />
+        <meta
+          property="og:image"
+          content="https://cssmate.online/openGraphTags/homepage.png"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cssmate.online/" />
       </Helmet>
       <div className="mx-auto max-w-3xl text-center font-cursiveCustom">
         <h1 className={`typing text-6xl ${styles.bounce} `}>Hello,</h1>

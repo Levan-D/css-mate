@@ -14,13 +14,26 @@ export default function PaletteMixer() {
         <title>Palette Mixer - CSS Mate</title>
         <meta
           name="description"
-          content="Create custom color blends for your design projects with our easy-to-use color mixer app. Our app lets you mix two colors and generate a custom number of color steps in between, making it easy to create unique gradients and color blends. Use our app to experiment with different color combinations and find the perfect blend for your next project."
+          content="Create custom color blends for your design projects with our easy-to-use palette mixer app. Our app lets you mix two colors and generate a custom number of color steps in between, making it easy to create unique gradients and color blends. Use our app to experiment with different color combinations and find the perfect blend for your next project."
         />
 
         <meta
           name="keywords"
           content="color mixer, color blending, color steps, gradient generator, web design, graphic design, color schemes, color selection, color combinations, color matching, color theory, color palettes, custom color blends, color picker"
         />
+
+        <meta property="og:title" content="Palette Mixer" />
+        <meta
+          property="og:description"
+          content="Create custom color blends for your design projects with our easy-to-use palette mixer app. Our app lets you mix two colors and generate a custom number of color steps in between, making it easy to create unique gradients and color blends. Use our app to experiment with different color combinations and find the perfect blend for your next project."
+        />
+        <meta
+          property="og:image"
+          content="https://cssmate.online/openGraphTags/paletteMixer.png"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cssmate.online/colors/palette-mixer" />
       </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Mix <span className="text-secondary-300">colors</span> and create gradients below

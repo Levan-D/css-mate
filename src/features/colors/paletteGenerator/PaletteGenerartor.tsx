@@ -22,6 +22,22 @@ export default function PaletteGenerartor() {
           name="keywords"
           content="color palettes, hex color input, color schemes, complementary colors, design tools, web design, graphic design, color generator, palette generator, color matching, color harmony, color coordination, color selection, color picker, color theory"
         />
+
+        <meta property="og:title" content="Palette Generator" />
+        <meta
+          property="og:description"
+          content="Create beautiful color palettes for your design projects with our hex color palette generator app. Our app lets you generate a palette of complementary colors based on a hex color input, making it easy to create cohesive designs with just a few clicks. Use our app to explore new color schemes and find the perfect palette for your next project."
+        />
+        <meta
+          property="og:image"
+          content="https://cssmate.online/openGraphTags/paletteGenerator.png"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://cssmate.online/colors/palette-generator"
+        />
       </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Generate <span className="text-secondary-300">color palettes</span> for your

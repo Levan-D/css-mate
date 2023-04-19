@@ -32,6 +32,16 @@ const CategoryLayout = () => {
       <Helmet>
         <title>{header} - CSS Mate</title>
         <meta name="description" content={`${pathArray[0]} selection menu`} />
+
+        <meta property="og:title" content={`${header} selection`} />
+        <meta property="og:description" content={`${pathArray[0]} selection menu`} />
+        <meta
+          property="og:image"
+          content={`https://cssmate.online/openGraphTags/${pathArray[0]}.png`}
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://cssmate.online/${pathArray[0]}`} />
       </Helmet>
       {!pathArray[1] ? (
         <div>

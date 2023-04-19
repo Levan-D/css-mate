@@ -24,6 +24,19 @@ const Gradient = () => {
           name="keywords"
           content="CSS gradients, gradient generator, CSS rule output, web design, web development, color gradients, background gradients, linear gradients, radial gradients, gradient direction, gradient opacity, CSS properties, CSS customization, CSS code, web design tools"
         />
+
+        <meta property="og:title" content="Gradient Generator" />
+        <meta
+          property="og:description"
+          content="Create stunning gradients for your website with our easy-to-use CSS gradient generator app. Our app lets you customize your gradients with a wide range of options, including direction, colors, and opacity, and provides CSS rule output for easy integration into your website. With our CSS gradient generator, you can create unique and eye-catching designs that will make your website stand out."
+        />
+        <meta
+          property="og:image"
+          content="https://cssmate.online/openGraphTags/gradient.png"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cssmate.online/colors/gradient-maker" />
       </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl drop-shadow-[0px_0px_3px_rgba(0,_0,_0,0.7)] filter">
         Generate

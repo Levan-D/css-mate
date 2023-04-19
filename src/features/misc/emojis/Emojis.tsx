@@ -19,6 +19,19 @@ const Emojis = () => {
           name="keywords"
           content="HTML emojis, emoji cheat sheet, web development, design tools, character references, web design, graphic design, user interface design, user experience design, expressive web design, web typography"
         />
+
+        <meta property="og:title" content="Emojis" />
+        <meta
+          property="og:description"
+          content="Enhance your website with fun and expressive emojis using our HTML emoji cheat sheet app. Our app provides a comprehensive guide to all commonly used HTML emojis,  making it easy to add personality and emotion to your website. Use our app to streamline your HTML coding process and save time on your web development projects."
+        />
+        <meta
+          property="og:image"
+          content="https://cssmate.online/openGraphTags/emoji.png"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cssmate.online/misc/emojis" />
       </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl">
         Did you know html had <span className="text-secondary-300">Emojis</span>?

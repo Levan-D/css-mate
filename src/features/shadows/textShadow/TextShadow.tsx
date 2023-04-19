@@ -27,6 +27,19 @@ const TextShadow = () => {
           name="keywords"
           content="text shadow generator, CSS text shadows, web design, graphic design, design tools, shadow customization, text shadow color, text shadow blur, text shadow position, CSS properties, typography, responsive design, user interface design"
         />
+
+        <meta property="og:title" content="Text Shadow" />
+        <meta
+          property="og:description"
+          content="Create unique text effects for your website with our CSS text shadow generator app. Our app lets you customize your text shadows with a wide range of options, including color, blur, and position, making it easy to create stunning typography designs. Use our app to streamline your text shadow design process and make your website stand out."
+        />
+        <meta
+          property="og:image"
+          content="https://cssmate.online/openGraphTags/textShadows.png"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cssmate.online/shadows/text-shadow" />
       </Helmet>
       <h1 className="mb-2 text-center font-cursiveCustom   text-2xl ">
         Generate <span className="text-secondary-300">text shadows</span> for your project

@@ -20,6 +20,22 @@ export default function ContrastChecker() {
           name="keywords"
           content="contrast checker, accessibility tool, WCAG-compliant, web accessibility, visual impairments, text contrast, background contrast, color contrast, accessibility standards, accessibility guidelines, web design, accessibility best practices"
         />
+
+        <meta property="og:title" content="Contrast Checker" />
+        <meta
+          property="og:description"
+          content="Ensure your website meets accessibility standards with our WCAG-compliant contrast checker app. Our app uses WCAG recommendations to help you check the contrast between text and background, ensuring that your website is accessible to all users, including those with visual impairments. Improve your website's accessibility today with our easy-to-use contrast checker app."
+        />
+        <meta
+          property="og:image"
+          content="https://cssmate.online/openGraphTags/contrastChecker.png"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://cssmate.online/colors/contrast-checker"
+        />
       </Helmet>
 
       <h1 className="mb-8 text-center font-cursiveCustom   text-2xl">
