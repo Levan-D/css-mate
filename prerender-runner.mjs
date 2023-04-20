@@ -1,11 +1,13 @@
 /** @format */
 
-import { spawn } from "child_process"
+import { createRequire } from "module"
+const require = createRequire(import.meta.url)
 
-const tsNode = spawn("npx", ["ts-node", "./prerender.ts"], {
-  stdio: "inherit",
-})
+// Register the ts-node module loader
+require("ts-node/register")
 
-tsNode.on("exit", code => {
-  process.exit(code)
+// Import the prerender.ts script and run it
+import("./prerender.ts").catch(error => {
+  console.error(error)
+  process.exit(1)
 })
