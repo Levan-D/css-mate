@@ -1,6 +1,6 @@
 /** @format */
 
-const pageButtons = require("./src/data/pageButtons").pageButtons
+const pageButtons = require("./src/data/PageButtons").pageButtons
 const puppeteer = require("puppeteer")
 const fs = require("fs")
 const path = require("path")
