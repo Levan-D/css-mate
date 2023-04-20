@@ -1,7 +1,7 @@
 /** @format */
 
 require("ts-node").register()
-import { routePathsForm } from "../src/data/PageButtonsCommon"
+import { routePathsForm } from "../src/data/PageButtons"
 
 const pageButtons = routePathsForm
 
