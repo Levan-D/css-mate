@@ -18,9 +18,6 @@ jobs:
       - name: Install all dependencies
         run: npm install
 
-      - name: Compile TypeScript
-        run: npx tsc
-
       - name: Build
         run: npm run build # The build command of your project
 
