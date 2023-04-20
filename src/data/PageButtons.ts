@@ -30,7 +30,7 @@ import PaletteGenerartor from "../features/colors/paletteGenerator/PaletteGenera
 import ColorNamer from "../features/colors/colorNamer/ColorNamer"
 import ContrastChecker from "../features/colors/contrastChecker/ContrastChecker"
 
-type routePaths = {
+export type RoutePath = {
   catName: string
   catPath: string
   catCon: {
@@ -181,12 +181,13 @@ export const pageButtons: PageButtonsType[] = [
   },
 ]
 
-export const routePaths: routePaths[] = pageButtons.map(
+export const routePaths: RoutePath[] = pageButtons.map(
   ({ catName, catPath, catCon }) => ({
     catName,
     catPath,
     catCon: catCon.map(({ name, path }) => ({ name, path })),
   })
 )
+
 console.log(routePaths)
 console.log(pageButtons)
