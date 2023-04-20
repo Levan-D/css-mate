@@ -1,4 +1,4 @@
 /** @format */
 
 require("ts-node").register({ transpileOnly: true })
-require("./prerender.ts")
+require("./prerender.js")
