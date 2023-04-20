@@ -94,3 +94,8 @@ type GradientSwatchesType = {
     stop: { percent: number; color: string; opacity: number }
   }[]
 }
+
+declare module "*.png" {
+  const value: any
+  export default value
+}
