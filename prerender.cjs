@@ -1,8 +1,7 @@
 /** @format */
 
 ;(async () => {
-  const pageButtonsCommon = await import("./src/data/pageButtonsCommon.js")
-  const pageButtons = pageButtonsCommon.pageButtons
+  const { pageButtons } = require("./src/data/pageButtonsCommon.js")
 
   const puppeteer = require("puppeteer")
   const fs = require("fs")
