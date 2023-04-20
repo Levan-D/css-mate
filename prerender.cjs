@@ -2,7 +2,7 @@
 
 ;(async () => {
   const pageButtonsModule = await import("./src/data/PageButtonsCommon.js")
-  const pageButtons = pageButtonsModule.routePaths
+  const pageButtons = pageButtonsModule.routePathsForm
 
   const puppeteer = require("puppeteer")
   const fs = require("fs")
