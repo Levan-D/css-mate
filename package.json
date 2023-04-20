@@ -7,10 +7,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview --port 3000",
-    "prerender": "node prerender.cjs",
+    "prerender": "babel-node prerender.js",
     "prerender:serve": "start-server-and-test preview http://localhost:3000 prerender"
   },
   "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.4",
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.3.5",
     "color-namer": "^1.4.0",
