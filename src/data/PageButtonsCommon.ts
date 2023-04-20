@@ -2,4 +2,4 @@
 
 import { routePaths } from "./PageButtons"
 
-export const routePathsForm = routePaths
+export const routePathsForm = { ...routePaths }
