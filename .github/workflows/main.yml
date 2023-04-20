@@ -22,7 +22,7 @@ jobs:
         run: npm run build # The build command of your project
 
       - name: Compile TypeScript
-        run: npx tsc src/data/PageButtons.ts --outDir src/data --jsx react
+        run: npx tsc src/data/PageButtonsCommon.ts --outDir src/data --jsx react
 
       - name: Prerender and serve
         run: npm run prerender:serve

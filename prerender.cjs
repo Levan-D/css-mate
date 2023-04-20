@@ -1,8 +1,8 @@
 /** @format */
 
 ;(async () => {
-  const pageButtonsModule = await import("./src/data/PageButtons.js")
-  const pageButtons = pageButtonsModule.pageButtons
+  const pageButtonsModule = await import("./src/data/PageButtonsCommon.js")
+  const pageButtons = pageButtonsModule.routePaths
 
   const puppeteer = require("puppeteer")
   const fs = require("fs")
