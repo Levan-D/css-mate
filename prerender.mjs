@@ -1,4 +1,4 @@
 import tsNode from "ts-node";
-tsNode.register({ transpileOnly: true, project: './tsconfig.prerender.json' });
+tsNode.register({ transpileOnly: true });
 
-import("./prerender.js");
+import("./prerender.ts");
