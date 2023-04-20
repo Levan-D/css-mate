@@ -39,6 +39,18 @@ type routePaths = {
   }[]
 }
 
+type PageButtonsType = {
+  catName: string
+  catPath: string
+  catCon: {
+    name: string
+    path: string
+    element: React.ComponentType<any>
+    description: string
+    icon: string
+  }[]
+}
+
 export const pageButtons: PageButtonsType[] = [
   {
     catName: "Shadows",
