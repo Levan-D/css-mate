@@ -21,9 +21,6 @@ jobs:
       - name: Build
         run: npm run build # The build command of your project
 
-      - name: Compile TypeScript
-        run: npx tsc src/data/PageButtonsCommon.ts --outDir src/data
-
       - name: Prerender and serve
         run: npm run prerender:serve
 
