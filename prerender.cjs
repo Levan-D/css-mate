@@ -1,4 +1,2 @@
-/** @format */
-
-require("ts-node").register({ transpileOnly: true })
-require("./prerender.js")
+require("ts-node").register({ transpileOnly: true });
+require("./prerender.ts");
