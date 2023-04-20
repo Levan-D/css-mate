@@ -1,5 +1,5 @@
 import { pageButtons } from "./PageButtons";
 
-module.exports = {
+export {
   pageButtons,
 };
