@@ -5,5 +5,5 @@ import { pageButtons } from "./PageButtons"
 export const routePaths = pageButtons.map(({ catName, catPath, catCon }) => ({
   catName,
   catPath,
-  catCon: catCon.map(({ name, path, element }) => ({ name, path, element })),
+  catCon: catCon.map(({ name, path }) => ({ name, path })),
 }))
