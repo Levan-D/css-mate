@@ -38,6 +38,10 @@ function ensureDirectoryExistence(filePath) {
       path: "/converters/color-converter",
       output: "converters/color-converter/index.html",
     },
+    {
+      path: "/converters/pixel-converter",
+      output: "converters/pixel-converter/index.html",
+    },
     { path: "/misc", output: "misc/index.html" },
     { path: "/misc/cursors", output: "misc/cursors/index.html" },
     { path: "/misc/emojis", output: "misc/emojis/index.html" },

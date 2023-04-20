@@ -78,6 +78,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://cssmate.online/converters/pixel-converter</loc>
+    <lastmod>2023-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://cssmate.online/misc</loc>
     <lastmod>2023-04-17</lastmod>
