@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview --port 3000",
-    "prerender": "node prerender.cjs",
+    "prerender": "node prerender.mjs",
     "prerender:serve": "start-server-and-test preview http://localhost:3000 prerender"
   },
   "dependencies": {

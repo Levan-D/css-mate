@@ -1,6 +1,5 @@
 /** @format */
 
-require("ts-node").register()
 
 import { routePaths } from "./src/data/PageButtons"
 
