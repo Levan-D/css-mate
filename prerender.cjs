@@ -4,7 +4,6 @@ const puppeteer = require("puppeteer")
 const fs = require("fs")
 const path = require("path")
 
-
 const OUTPUT_DIR = "dist" // Change this to your Vite build output directory
 const URL = "http://localhost:3000" // Change this to your app's URL
 
