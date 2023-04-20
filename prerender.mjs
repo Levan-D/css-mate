@@ -1,6 +1,7 @@
 /** @format */
 
-import { routePaths } from "./src/data/PageButtons.ts"
+
+import { routePaths } from "./src/data/PageButtons"
 
 const pageButtons = routePaths
 
