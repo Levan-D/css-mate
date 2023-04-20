@@ -3,7 +3,6 @@
 ;(async () => {
   const { pageButtons } = await import("./src/data/pageButtonsCommon.js")
 
-  const pageButtons = require("./src/data/pageButtonsCommon").pageButtons
   const puppeteer = require("puppeteer")
   const fs = require("fs")
   const path = require("path")
