@@ -1,7 +1,7 @@
 /** @format */
 
 ;(async () => {
-  const { pageButtons } = require("./src/data/pageButtonsCommon.js")
+const pageButtonsCommon = await import("./dist/assets/PageButtonsCommon.js")
 
   const puppeteer = require("puppeteer")
   const fs = require("fs")
