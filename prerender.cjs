@@ -1,16 +1,15 @@
 /** @format */
 
 require("ts-node").register()
-const path = require("path");
-
-import { routePaths } from path.join(__dirname, "./src/data/PageButtons.ts");
-
+const { renderToString } = require("@vue/server-renderer")
+const { createApp } = require("./dist/server/entry-server.js")
+const path = require("path")
+const routePaths = require(path.join(__dirname, "./src/data/PageButtons.ts")).routePaths
 
 const pageButtons = routePaths
 
 const puppeteer = require("puppeteer")
 const fs = require("fs")
-const path = require("path")
 
 const OUTPUT_DIR = "dist" // Change this to your Vite build output directory
 const URL = "http://localhost:3000" // Change this to your app's URL
