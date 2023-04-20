@@ -1,8 +1,10 @@
 /** @format */
 
 require("ts-node").register()
+const path = require("path");
 
-import { routePaths } from "./src/data/PageButtons"
+import { routePaths } from path.join(__dirname, "./src/data/PageButtons.ts");
+
 
 const pageButtons = routePaths
 
