@@ -30,27 +30,6 @@ import PaletteGenerartor from "../features/colors/paletteGenerator/PaletteGenera
 import ColorNamer from "../features/colors/colorNamer/ColorNamer"
 import ContrastChecker from "../features/colors/contrastChecker/ContrastChecker"
 
-export type RoutePath = {
-  catName: string
-  catPath: string
-  catCon: {
-    name: string
-    path: string
-  }[]
-}
-
-type PageButtonsType = {
-  catName: string
-  catPath: string
-  catCon: {
-    name: string
-    path: string
-    element: React.ComponentType<any>
-    description: string
-    icon: string
-  }[]
-}
-
 export const pageButtons: PageButtonsType[] = [
   {
     catName: "Shadows",
@@ -180,14 +159,3 @@ export const pageButtons: PageButtonsType[] = [
     ],
   },
 ]
-
-export const routePaths: RoutePath[] = pageButtons.map(
-  ({ catName, catPath, catCon }) => ({
-    catName,
-    catPath,
-    catCon: catCon.map(({ name, path }) => ({ name, path })),
-  })
-)
-
-console.log(routePaths)
-console.log(pageButtons)
