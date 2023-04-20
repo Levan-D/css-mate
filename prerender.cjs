@@ -1,8 +1,7 @@
 /** @format */
 
 require("ts-node").register()
-const myModule = require("./src/data/PageButtonsCommon.js")
-
+const myModule = require("./src/data/PageButtons.ts")
 const pageButtons = myModule.routePathsForm
 
 const puppeteer = require("puppeteer")
