@@ -1,8 +1,9 @@
 /** @format */
 
 require("ts-node").register()
-const myModule = require("./src/data/PageButtons.ts")
-const pageButtons = myModule.routePathsForm
+import { routePathsForm } from "../src/data/PageButtonsCommon"
+
+const pageButtons = routePathsForm
 
 const puppeteer = require("puppeteer")
 const fs = require("fs")
