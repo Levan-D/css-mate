@@ -1,7 +1,6 @@
 /** @format */
 
 import { useAppSelector } from "../app/hooks"
-import styles from "./bgAnimattion.module.css"
 
 type Props = {}
 
