@@ -1,11 +1,11 @@
 /** @format */
 
-import React from "react"
 import { pageButtons } from "../../data/PageButtons"
 import Card from "../../components/Card"
 import styles from "./home.module.css"
 //@ts-ignore
 import { Helmet } from "react-helmet"
+import BgAnimation from "../../components/BgAnimation"
 
 const Home = () => {
   const generateAnimationDelay = (categoryIndex: number, cardIndex: number) => {
@@ -40,6 +40,7 @@ const Home = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://cssmate.online/" />
       </Helmet>
+      <BgAnimation />
       <div className="mx-auto max-w-3xl text-center font-cursiveCustom">
         <h1 className={`typing text-6xl ${styles.bounce} `}>Hello,</h1>
         <h2 className="mt-6 text-xl ">

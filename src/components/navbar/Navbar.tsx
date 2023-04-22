@@ -6,7 +6,7 @@ import logo from "../../assets/logo/logo.png"
 import { Link, useLocation } from "react-router-dom"
 import { pageButtons } from "../../data/PageButtons"
 import githubIcon from "../../assets/icons/github.png"
-import { setPath, setWindowWidth } from "./navbarSlice"
+import { setPath, setWindowWidth, setDocHeight } from "./navbarSlice"
 import DropDown from "./DropDown"
 
 const Navbar = () => {
@@ -14,7 +14,6 @@ const Navbar = () => {
   const location = useLocation()
 
   const { pathArray, windowWidth } = useAppSelector(store => store.navbar)
-
   const [subMenuVis, setSubMenuVis] = useState("")
 
   const handleSubMenuClick = (path: string) => {
@@ -25,16 +24,32 @@ const Navbar = () => {
 
   const updateWindowWidth = () => {
     dispatch(setWindowWidth(window.innerWidth))
+
     setSubMenuVis("")
+  }
+  const updateDocHeight = () => {
+    dispatch(setDocHeight(document.documentElement.offsetHeight))
+    console.log(document.documentElement.offsetHeight)
   }
 
   useEffect(() => {
     dispatch(setPath(location.pathname))
+    updateDocHeight()
     window.addEventListener("resize", updateWindowWidth)
-
     window.scrollTo(0, 0)
 
-    return () => window.removeEventListener("resize", updateWindowWidth)
+    const resizeObserver = new ResizeObserver(() => {
+      if (document.documentElement.isConnected) {
+        updateDocHeight()
+      }
+    })
+
+    resizeObserver.observe(document.documentElement)
+
+    return () => {
+      window.removeEventListener("resize", updateWindowWidth)
+      resizeObserver.disconnect()
+    }
   }, [location])
 
   return (
@@ -73,14 +88,14 @@ const Navbar = () => {
                   onClick={() => handleSubMenuClick(category.catPath)}
                   className={`  ${
                     subMenuVis === category.catPath && `bg-slate-500`
-                  } mx-8 rounded-t-lg  pt-2  sm:mx-16  cursor-pointer`}
+                  } mx-8 cursor-pointer  rounded-t-lg  pt-2  sm:mx-16`}
                 >
                   <div
                     className={` ${
                       pathArray[0] === category.catPath && "   !bg-secondary-300  "
                     } ${
                       subMenuVis === category.catPath && "    !bg-slate-600  "
-                    } mx-8 rounded-full pb-1 pt-2 cursor-pointer sm:mx-16`}
+                    } mx-8 cursor-pointer rounded-full pb-1 pt-2 sm:mx-16`}
                   >
                     {" "}
                     {category.catName}

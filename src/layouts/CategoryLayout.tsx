@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from "uuid"
 import styles from "./categoryLayout.module.css"
 //@ts-ignore
 import { Helmet } from "react-helmet"
+import BgAnimation from "../components/BgAnimation"
 
 const CategoryLayout = () => {
   const { categoryIndex, pathArray, windowWidth } = useAppSelector(store => store.navbar)
@@ -43,8 +44,10 @@ const CategoryLayout = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://cssmate.online/${pathArray[0]}`} />
       </Helmet>
+
       {!pathArray[1] ? (
         <div>
+          <BgAnimation />
           <h2 className=" mx-auto my-20 flex w-fit max-w-3xl  select-none text-center  !font-cursiveCustom text-4xl ">
             {pageButtons[categoryIndex].catName.split("").map((letter, i) => (
               <div
