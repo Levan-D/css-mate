@@ -24,7 +24,7 @@ const RootLayout = () => {
       }}
     >
       <BackToTopBtn />
-      <FloofGPT />
+      {/* <FloofGPT /> */}
       <Slider />
       <Navbar />
 
