@@ -28,9 +28,9 @@ const RootLayout = () => {
       <Slider />
       <Navbar />
 
-      <main className="mx-auto max-w-6xl grow">
+      <div className="mx-auto max-w-6xl grow">
         <Outlet />
-      </main>
+      </div>
 
       {!location.pathname.includes("/gradient-maker") && <Footer />}
     </div>
