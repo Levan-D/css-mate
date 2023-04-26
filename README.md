@@ -1,6 +1,6 @@
 # CSS Mate
 
-![image not available](public/openGraphTags/homepage.jpg)
+![image not available](public/openGraphTags/homepage.png)
 
 Visit at https://cssmate.online/
 
